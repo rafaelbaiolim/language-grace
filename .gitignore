@@ -1,0 +1,2 @@
+starting/examples/*
+!starting/examples/*.g4
