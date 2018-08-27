@@ -1,4 +1,4 @@
-# Trabalho ILP 2018
+﻿# Trabalho ILP 2018
 Informática UEM 
 ================
 Branch utilizando a ferramenta antrl4 para o Trabalho de ILP 2018 
@@ -13,3 +13,10 @@ Instalação do Antrl4
 $ chmod +x utils/antrl-install.sh
 $ sh utils/antrl-install.sh
 ```
+
+Parser Palavras Reservadas
+==============================
+```
+$ php starting/utils/parse_reservados.php > ilp.g4
+```
+
