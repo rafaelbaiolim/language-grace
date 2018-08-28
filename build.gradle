@@ -1,0 +1,1 @@
+task getHomeDir << { println gradle.gradleHomeDir }

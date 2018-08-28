@@ -1,2 +1,4 @@
 starting/examples/*
 !starting/examples/*.g4
+generated/examples/*
+!generated/examples/*.g4

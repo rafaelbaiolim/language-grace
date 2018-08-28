@@ -80,10 +80,10 @@ function getSpecialType($r)
 
 function getSpace($item)
 {
-    $total = 18;
+    $total = 5;
     $crepet = ($total - strlen($item));
     if ($crepet > 0) {
-        return str_repeat(" ", $crepet);
+        return str_repeat(" ", 1);
     } else {
         return " ";
 
