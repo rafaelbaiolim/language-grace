@@ -15,12 +15,14 @@ $ sh utils/antrl-install.sh
 
 InteliJ 
 ==============================
+
 A build deste projeto assim como os testes unitários estão
 sendo executados na IDE InteliJ Community 
 
 Execução
-#########
+==============================
 No terminal da IDE 
+
 ```
 $ gradle generateGrammarSource
 ```
