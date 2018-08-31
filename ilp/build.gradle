@@ -1,1 +1,17 @@
-//implementar métodos para compilar e setar os packages do antlr4
+apply plugin: 'antlr'
+repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    antlr "org.antlr:antlr4:4.5.3"
+    compile "org.antlr:antlr4-runtime:4.5.3"
+}
+
+generateGrammarSource {
+    maxHeapSize = "64m"
+    arguments += ['-package', 'uem.antrl']
+    outputDirectory = new File("src/uem/antrl/".toString())
+}

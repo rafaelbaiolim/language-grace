@@ -2,7 +2,7 @@ parser grammar IlpParser;
 options { tokenVocab=IlpLex; }
 
 expression
-    : 'qualquercoisa'
+    : T_FALSE
     ;
 
 command
@@ -19,7 +19,7 @@ cmdAtrib
     ;
 
 atrib
-    : T_ID (T_EQUAL | T_INCREMENT | T_DECREMENT | T_INC_MULT | T_INC_DIV | T_INC_MOD ) expression
+    : ID (T_EQUAL | T_INCREMENT | T_DECREMENT | T_INC_MULT | T_INC_DIV | T_INC_MOD ) expression
     ;
 
 cmdIf
@@ -54,7 +54,7 @@ cmdReturn
     ;
 
 //cmdCallProc
-//    : T_ID '{' [ expression {',' expression} ] '}' ';';
+//    : ID '{' [ expression {',' expression} ] '}' ';';
 
 lstOP
     : T_EQUAL
@@ -72,15 +72,15 @@ lstTipo
     ;
 
 literal
-    : T_NUMBER
-    | StringLiteral
+    : NUMBER_LITERAL
+    | STRING_LITERAL
     | T_FALSE
     | T_TRUE
     ;
 
 specVarSimple
-    : T_ID
-    | T_ID T_EQUAL literal
+    : ID
+    | ID T_EQUAL literal
     ;
 
 specVarSimpleIni
@@ -88,7 +88,7 @@ specVarSimpleIni
     ;
 
 specVarArr
-    : specVarSimple '[' T_NUMBER ']'
+    : specVarSimple '[' NUMBER_LITERAL ']'
     ;
 
 lstArrIni
@@ -121,12 +121,3 @@ declVar
 cmdRead
     : T_READ declVar ';'
     ; //var -> id ?
-
-//cmdWirite
-//    : T_WRITE expression {',' expression } ;
-
-opTern
-    : 'opTern'; //não implementado
-
-//block
-//    : '{' {cmdSimple} {command} '}' ;
