@@ -1,7 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f4b8f1db-f7b9-4023-94f5-6d051b468b07" name="Default Changelist" comment="Adicionado arquivos do projeto c/ inteliJ&#10;&#10;+ Separado Lex e Parse&#10;+ Adicionado testes unitário Var Assign" />
+    <list default="true" id="f4b8f1db-f7b9-4023-94f5-6d051b468b07" name="Default Changelist" comment="Adicionado arquivos do projeto c/ inteliJ&#10;&#10;+ Separado Lex e Parse&#10;+ Adicionado testes unitário Var Assign">
+      <change beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/main/antlr/IlpLex.g4" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/main/antlr/IlpLex.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/main/antlr/IlpLex.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/main/antlr/IlpLex.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/main/antlr/IlpParser.g4" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/main/antlr/IlpParser.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/Lexer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antrl/IlpLex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antrl/IlpLex.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antrl/IlpLex.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antrl/IlpParser$AtribContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antrl/IlpParser$CmdAtribContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antrl/IlpParser$CmdForContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antrl/IlpParser$CmdIfContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antrl/IlpParser$CmdReadContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antrl/IlpParser$CmdReturnContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antrl/IlpParser$CmdSimpleContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antrl/IlpParser$CmdSkipContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antrl/IlpParser$CmdStopContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antrl/IlpParser$CmdWhileContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antrl/IlpParser$CommandContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antrl/IlpParser$DeclVarContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antrl/IlpParser$ExpressionContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antrl/IlpParser$ForInitContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antrl/IlpParser$ForIteraContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antrl/IlpParser$ListSpecVarsContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antrl/IlpParser$LiteralContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antrl/IlpParser$LstArrIniContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antrl/IlpParser$LstOPContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antrl/IlpParser$LstTipoContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antrl/IlpParser$SpecVarArrContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antrl/IlpParser$SpecVarArrIniContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antrl/IlpParser$SpecVarContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antrl/IlpParser$SpecVarSimpleContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antrl/IlpParser$SpecVarSimpleIniContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antrl/IlpParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antrl/IlpParser.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antrl/IlpParser.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antrl/IlpParserBaseListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antrl/IlpParserListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/antlr/IlpLex.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/antlr/IlpLex.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/antlr/IlpLex.tokens" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/antlr/IlpParser.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/antlr/IlpParser.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/antrl/IlpLex.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/antrl/IlpLex.tokens" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/antrl/IlpParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/antrl/IlpParser.tokens" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/antrl/IlpParserBaseListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/antrl/IlpParserListener.java" beforeDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,30 +106,34 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.97" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="g4" value="6" />
-          <entry key="gradle" value="4" />
-          <entry key="java" value="4" />
+          <entry key="g4" value="9" />
+          <entry key="gradle" value="5" />
+          <entry key="iml" value="1" />
+          <entry key="java" value="9" />
           <entry key="test" value="3" />
-          <entry key="tokens" value="1" />
+          <entry key="tokens" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="ANTLR v4 grammar file" value="6" />
-          <entry key="Groovy" value="4" />
-          <entry key="JAVA" value="4" />
+          <entry key="ANTLR v4 grammar file" value="9" />
+          <entry key="Groovy" value="5" />
+          <entry key="IDEA_MODULE" value="1" />
+          <entry key="JAVA" value="9" />
           <entry key="PLAIN_TEXT" value="4" />
+          <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="g4" value="94" />
-          <entry key="gradle" value="235" />
+          <entry key="g4" value="840" />
+          <entry key="gradle" value="274" />
           <entry key="java" value="985" />
           <entry key="test" value="12" />
           <entry key="txt" value="149" />
@@ -86,8 +141,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="ANTLR v4 grammar file" value="94" />
-          <entry key="Groovy" value="235" />
+          <entry key="ANTLR v4 grammar file" value="840" />
+          <entry key="Groovy" value="274" />
           <entry key="JAVA" value="985" />
           <entry key="PLAIN_TEXT" value="161" />
         </counts>
@@ -95,20 +150,64 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tests/LexTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="64" column="9" lean-forward="true" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.4680851">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/antlr/IlpParser.g4">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="160">
+                  <caret line="34" column="8" lean-forward="true" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/antlr/IlpLex.g4">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="309">
+                  <caret line="42" column="22" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/tests/LexTest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="194">
+                  <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/build.gradle">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="225">
+                  <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/antlr/IlpParser.g4">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="330">
+                  <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -121,9 +220,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>fun</find>
-      <find>SandyLexer</find>
-      <find>contru</find>
       <find>construc</find>
       <find>VAR</find>
       <find>getToken</find>
@@ -145,6 +241,15 @@
       <find>T_NUMBER</find>
       <find>StringLiteral</find>
       <find>testVarLex</find>
+      <find>minus</find>
+      <find>DIV</find>
+      <find>dec</find>
+      <find>block</find>
+      <find>command</find>
+      <find>?</find>
+      <find>exp</find>
+      <find>OR</find>
+      <find>expression</find>
     </findStrings>
     <replaceStrings>
       <replace>public void</replace>
@@ -152,6 +257,8 @@
       <replace>IlpLex</replace>
       <replace>NUMBER_LITERAL</replace>
       <replace>testEqualsVarLex</replace>
+      <replace>exp</replace>
+      <replace>expr</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/tests</dir>
@@ -191,9 +298,10 @@
         <option value="$PROJECT_DIR$/tests/assets/var1.lex.test" />
         <option value="$PROJECT_DIR$/src/uem/Lexer.java" />
         <option value="$PROJECT_DIR$/src/uem/antrl/IlpParser.g4" />
+        <option value="$PROJECT_DIR$/tests/LexTest.java" />
+        <option value="$PROJECT_DIR$/src/main/antlr/IlpLex.g4" />
         <option value="$PROJECT_DIR$/src/main/antlr/IlpParser.g4" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/tests/LexTest.java" />
       </list>
     </option>
   </component>
@@ -210,10 +318,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="75" />
-    <option name="y" value="16" />
-    <option name="width" value="1275" />
-    <option name="height" value="732" />
+    <option name="x" value="1581" />
+    <option name="y" value="110" />
+    <option name="width" value="1273" />
+    <option name="height" value="724" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -221,8 +329,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -234,6 +342,36 @@
               <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
               <item name="ilp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ilp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="antlr" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ilp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="uem" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ilp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="uem" type="462c0819:PsiDirectoryNode" />
+              <item name="antrl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ilp" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ilp" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -266,16 +404,17 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/antrl" />
-      <recent name="$PROJECT_DIR$/tests" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/antlr" />
+      <recent name="$PROJECT_DIR$/tests/assets" />
+      <recent name="$PROJECT_DIR$/src/uem/antrl" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/tests/assets" />
-      <recent name="$PROJECT_DIR$/src/uem/antrl" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/antrl" />
+      <recent name="$PROJECT_DIR$/tests" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -382,13 +521,11 @@
       <updated>1535643558545</updated>
       <workItem from="1535643563870" duration="8279000" />
       <workItem from="1535689342097" duration="6715000" />
+      <workItem from="1535773746539" duration="7314000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LexTest - 2018.08.31 at 01h 57m 58s.xml">
-      <configuration name="LexTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="LexTest - 2018.08.31 at 01h 59m 39s.xml">
       <configuration name="LexTest" configurationId="JUnit" />
     </history-entry>
@@ -416,21 +553,25 @@
     <history-entry file="LexTest - 2018.08.31 at 13h 21m 00s.xml">
       <configuration name="LexTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="LexTest - 2018.09.01 at 00h 50m 40s.xml">
+      <configuration name="LexTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14994000" />
+    <option name="totallyTimeSpent" value="22308000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
+    <frame x="1360" y="-4" width="1360" height="772" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="UI Designer" order="0" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.20318726" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.17732115" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.43012422" />
+      <window_info anchor="bottom" id="Terminal" order="2" visible="true" weight="0.29192546" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
       <window_info anchor="bottom" id="ANTLR Preview" order="4" weight="0.32919255" />
       <window_info anchor="bottom" id="Messages" order="5" weight="0.32919255" />
@@ -512,14 +653,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="227" column="17" selection-start-line="227" selection-start-column="17" selection-end-line="227" selection-end-column="17" />
-          <folding>
-            <element signature="e#6961#6962#0" expanded="true" />
-            <element signature="e#6995#6996#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/antrl/IlpParser.java" />
     <entry file="file://$PROJECT_DIR$/src/uem/antrl/IlpLexer.java" />
     <entry file="file://$PROJECT_DIR$/src/uem/antrl/Ilp-parser.g4" />
     <entry file="file://$PROJECT_DIR$/tests/MainTest.java" />
@@ -534,9 +670,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -554,13 +687,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/antrl/IlpLex.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8">
-          <caret line="21" column="18" selection-start-line="21" selection-end-line="21" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/antrl/IlpLex.g4" />
     <entry file="file://$PROJECT_DIR$/tests/assets/var1.lex.test">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -568,20 +695,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/antrl/IlpParser.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1875">
-          <caret line="125" column="5" selection-start-line="125" selection-start-column="5" selection-end-line="125" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/antrl/IlpParser.g4" />
     <entry file="file://$PROJECT_DIR$/src/uem/antrl/IlpLex.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1350">
           <caret line="94" column="11" selection-start-line="94" selection-start-column="11" selection-end-line="94" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -595,30 +713,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/antlr/IlpLex.tokens">
+    <entry file="file://$PROJECT_DIR$/ilp.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/antlr/IlpParser.g4">
+    <entry file="file://$PROJECT_DIR$/src/main/antlr/IlpLex.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state relative-caret-position="309">
+          <caret line="42" column="22" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
+    <entry file="file://$PROJECT_DIR$/src/uem/antrl/IlpParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state relative-caret-position="126">
+          <caret line="971" column="22" lean-forward="true" selection-start-line="971" selection-start-column="22" selection-end-line="971" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/antlr/IlpLex.tokens">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/antlr/IlpParser.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/LexTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="64" column="9" lean-forward="true" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
+        <state relative-caret-position="194">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
         </state>
       </provider>
     </entry>

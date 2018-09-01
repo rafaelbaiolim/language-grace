@@ -16,18 +16,6 @@ public class IlpParserBaseListener implements IlpParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExpression(IlpParser.ExpressionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitExpression(IlpParser.ExpressionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterCommand(IlpParser.CommandContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -71,6 +59,30 @@ public class IlpParserBaseListener implements IlpParserListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitAtrib(IlpParser.AtribContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterBlocK(IlpParser.BlocKContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitBlocK(IlpParser.BlocKContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExpression(IlpParser.ExpressionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExpression(IlpParser.ExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -167,6 +179,18 @@ public class IlpParserBaseListener implements IlpParserListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitCmdReturn(IlpParser.CmdReturnContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCmdCallProc(IlpParser.CmdCallProcContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCmdCallProc(IlpParser.CmdCallProcContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

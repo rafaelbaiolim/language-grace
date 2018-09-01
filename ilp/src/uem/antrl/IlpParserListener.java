@@ -8,16 +8,6 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface IlpParserListener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by {@link IlpParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void enterExpression(IlpParser.ExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link IlpParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void exitExpression(IlpParser.ExpressionContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link IlpParser#command}.
 	 * @param ctx the parse tree
 	 */
@@ -57,6 +47,26 @@ public interface IlpParserListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitAtrib(IlpParser.AtribContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link IlpParser#blocK}.
+	 * @param ctx the parse tree
+	 */
+	void enterBlocK(IlpParser.BlocKContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link IlpParser#blocK}.
+	 * @param ctx the parse tree
+	 */
+	void exitBlocK(IlpParser.BlocKContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link IlpParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterExpression(IlpParser.ExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link IlpParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitExpression(IlpParser.ExpressionContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link IlpParser#cmdIf}.
 	 * @param ctx the parse tree
@@ -137,6 +147,16 @@ public interface IlpParserListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitCmdReturn(IlpParser.CmdReturnContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link IlpParser#cmdCallProc}.
+	 * @param ctx the parse tree
+	 */
+	void enterCmdCallProc(IlpParser.CmdCallProcContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link IlpParser#cmdCallProc}.
+	 * @param ctx the parse tree
+	 */
+	void exitCmdCallProc(IlpParser.CmdCallProcContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link IlpParser#lstOP}.
 	 * @param ctx the parse tree

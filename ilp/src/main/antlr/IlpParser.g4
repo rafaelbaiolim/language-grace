@@ -1,12 +1,8 @@
 parser grammar IlpParser;
 options { tokenVocab=IlpLex; }
 
-expression
-    : T_FALSE
-    ;
-
 command
-    : cmdSimple; //| block;
+    : cmdSimple;
 
 
 cmdSimple
@@ -18,27 +14,49 @@ cmdAtrib
     : atrib ';'
     ;
 
+
 atrib
     : ID (T_EQUAL | T_INCREMENT | T_DECREMENT | T_INC_MULT | T_INC_DIV | T_INC_MOD ) expression
     ;
 
+blocK
+    : '{' declVar '}'
+    | '{' command '}'
+    ;
+
+expression
+    : left=expression operator='?' right=expression operator=':' right=expression
+    | expression operator=('||' | '&&' | '==' | '!=' | '<' | '<=' | '>' | '>=' ) expression
+    | expression operator=( '+'| '-' | '/' | '*' | '%') expression
+    | ( '+' | '-' | '++' | '--' ) expression
+    | '-' expression
+    | '!' expression
+    | '(' expression ')'
+    | ID
+    | NUMBER_LITERAL
+    | STRING_LITERAL
+    ;
+
+
 cmdIf
-    : T_IF '{' expression '}' command
+    : T_IF '(' expression ')' command
     | T_ELSE command
     ;
 
 cmdWhile
-    : T_WHILE '{' expression '}' command
+    : T_WHILE '(' expression ')' command
     ;
 
 forInit
-    : cmdAtrib;
+    : cmdAtrib
+    ;
 
 forItera
-    : cmdAtrib;
+    : cmdAtrib
+    ;
 
 cmdFor
-    : T_FOR '{' forInit ';' expression ';' forItera '}' command
+    : T_FOR '(' forInit ';' expression ';' forItera ')' command
     ;
 
 cmdStop
@@ -53,8 +71,8 @@ cmdReturn
     : T_RETURN  expression ';'
     ;
 
-//cmdCallProc
-//    : ID '{' [ expression {',' expression} ] '}' ';';
+cmdCallProc
+    : ID '(' expression {',' expression} ')' ';';
 
 lstOP
     : T_EQUAL

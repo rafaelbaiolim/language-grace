@@ -1,12 +1,8 @@
 parser grammar IlpParser;
 options { tokenVocab=IlpLex; }
 
-expression
-    : T_FALSE
-    ;
-
 command
-    : cmdSimple; //| block;
+    : cmdSimple;
 
 
 cmdSimple
@@ -18,17 +14,37 @@ cmdAtrib
     : atrib ';'
     ;
 
+
 atrib
-    : ID (T_EQUAL | T_INCREMENT | T_DECREMENT | T_INC_MULT | T_INC_DIV | T_INC_MOD ) expression
+    : ID (T_EQUAL | T_INCREMENT | T_DECREMENT | T_INC_MULT | T_INC_DIV | T_INC_MOD ) expr
     ;
 
+blocK
+    : '{' declVar '}'
+    | '{' command '}'
+    ;
+
+expr
+    : left=expr operator='?' right=expr operator=':' right=expr
+    | expr operator=('||' | '&&' | '==' | '!=' | '<' | '<=' | '>' | '>=' ) expr
+    | expr operator=( '+'| '-' | '/' | '*' | '%') expr
+    | ( '+' | '-' | '++' | '--' ) expr
+    | '-' expr
+    | '!' expr
+    | '(' expr ')'
+    | ID
+    | NUMBER_LITERAL
+    | STRING_LITERAL
+    ;
+
+
 cmdIf
-    : T_IF '{' expression '}' command
+    : T_IF '(' expr ')' command
     | T_ELSE command
     ;
 
 cmdWhile
-    : T_WHILE '{' expression '}' command
+    : T_WHILE '(' expr ')' command
     ;
 
 forInit
@@ -38,7 +54,7 @@ forItera
     : cmdAtrib;
 
 cmdFor
-    : T_FOR '{' forInit ';' expression ';' forItera '}' command
+    : T_FOR '(' forInit ';' expr ';' forItera ')' command
     ;
 
 cmdStop
@@ -50,11 +66,11 @@ cmdSkip
     ;
 
 cmdReturn
-    : T_RETURN  expression ';'
+    : T_RETURN  expr ';'
     ;
 
-//cmdCallProc
-//    : ID '{' [ expression {',' expression} ] '}' ';';
+cmdCallProc
+    : ID '(' expr {',' expr} ')' ';';
 
 lstOP
     : T_EQUAL

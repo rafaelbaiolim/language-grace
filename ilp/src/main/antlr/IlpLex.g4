@@ -40,7 +40,17 @@ T_INC_MULT  : '*=' ;
 T_INC_DIV  : '/=' ;
 T_INC_MOD : '%=' ;
 T_LOWER  : '<' ;
+T_LOWER_OR_EQUAL  : '<=' ;
 T_DOT : '.';
+T_TERN : '?';
+
+NEG_UN : '!';
+OR : '||';
+AND : '&&';
+
+PLUS_INC  : '++' ;
+MINUS_DEC : '--';
+
 
 ID : [_]*[a-z][A-Za-z0-9_]* ;
 COMMENT : '//' ~ [\r\n]* -> skip;
