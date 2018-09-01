@@ -1,4 +1,4 @@
-﻿# Trabalho ILP 2018 
+﻿# :carousel_horse:  Trabalho ILP 2018 
 
 Informática UEM 
 ================
@@ -45,4 +45,3 @@ Testes Unitários
 ==============================
 * [x] Var
 
-:carousel_horse: 

@@ -90,7 +90,7 @@
           <entry key="g4" value="1133" />
           <entry key="gradle" value="603" />
           <entry key="java" value="1101" />
-          <entry key="md" value="399" />
+          <entry key="md" value="401" />
           <entry key="test" value="13" />
           <entry key="txt" value="149" />
         </counts>
@@ -100,7 +100,7 @@
           <entry key="ANTLR v4 grammar file" value="1133" />
           <entry key="Groovy" value="603" />
           <entry key="JAVA" value="1101" />
-          <entry key="Markdown" value="399" />
+          <entry key="Markdown" value="401" />
           <entry key="PLAIN_TEXT" value="162" />
         </counts>
       </usages-collector>
@@ -133,8 +133,8 @@
         <entry file="file://$PROJECT_DIR$/../README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="242">
-                <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
+              <first_editor>
+                <caret column="20" selection-start-column="20" selection-end-column="20" />
               </first_editor>
               <second_editor />
             </state>
@@ -536,7 +536,7 @@
       <updated>1535643558545</updated>
       <workItem from="1535643563870" duration="8279000" />
       <workItem from="1535689342097" duration="6715000" />
-      <workItem from="1535773746539" duration="17766000" />
+      <workItem from="1535773746539" duration="17828000" />
     </task>
     <servers />
   </component>
@@ -573,7 +573,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32760000" />
+    <option name="totallyTimeSpent" value="32822000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
@@ -582,11 +582,11 @@
       <window_info id="UI Designer" order="0" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.24940239" />
+      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.24940239" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="2" visible="true" weight="0.42701864" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.42701864" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
       <window_info anchor="bottom" id="ANTLR Preview" order="4" weight="0.8664596" />
       <window_info anchor="bottom" id="Messages" order="5" weight="0.32919255" />
@@ -831,8 +831,8 @@
     <entry file="file://$PROJECT_DIR$/../README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="242">
-            <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
+          <first_editor>
+            <caret column="20" selection-start-column="20" selection-end-column="20" />
           </first_editor>
           <second_editor />
         </state>
