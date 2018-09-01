@@ -72,7 +72,7 @@ cmdReturn
     ;
 
 cmdCallProc
-    : ID '(' expression {',' expression} ')' ';';
+    : ID '(' expression ')' ';';
 
 lstOP
     : T_EQUAL

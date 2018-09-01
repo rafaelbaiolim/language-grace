@@ -16,7 +16,7 @@ cmdAtrib
 
 
 atrib
-    : ID (T_EQUAL | T_INCREMENT | T_DECREMENT | T_INC_MULT | T_INC_DIV | T_INC_MOD ) expr
+    : ID (T_EQUAL | T_INCREMENT | T_DECREMENT | T_INC_MULT | T_INC_DIV | T_INC_MOD ) expression
     ;
 
 blocK
@@ -24,14 +24,14 @@ blocK
     | '{' command '}'
     ;
 
-expr
-    : left=expr operator='?' right=expr operator=':' right=expr
-    | expr operator=('||' | '&&' | '==' | '!=' | '<' | '<=' | '>' | '>=' ) expr
-    | expr operator=( '+'| '-' | '/' | '*' | '%') expr
-    | ( '+' | '-' | '++' | '--' ) expr
-    | '-' expr
-    | '!' expr
-    | '(' expr ')'
+expression
+    : left=expression operator='?' right=expression operator=':' right=expression
+    | expression operator=('||' | '&&' | '==' | '!=' | '<' | '<=' | '>' | '>=' ) expression
+    | expression operator=( '+'| '-' | '/' | '*' | '%') expression
+    | ( '+' | '-' | '++' | '--' ) expression
+    | '-' expression
+    | '!' expression
+    | '(' expression ')'
     | ID
     | NUMBER_LITERAL
     | STRING_LITERAL
@@ -39,22 +39,24 @@ expr
 
 
 cmdIf
-    : T_IF '(' expr ')' command
+    : T_IF '(' expression ')' command
     | T_ELSE command
     ;
 
 cmdWhile
-    : T_WHILE '(' expr ')' command
+    : T_WHILE '(' expression ')' command
     ;
 
 forInit
-    : cmdAtrib;
+    : cmdAtrib
+    ;
 
 forItera
-    : cmdAtrib;
+    : cmdAtrib
+    ;
 
 cmdFor
-    : T_FOR '(' forInit ';' expr ';' forItera ')' command
+    : T_FOR '(' forInit ';' expression ';' forItera ')' command
     ;
 
 cmdStop
@@ -66,11 +68,11 @@ cmdSkip
     ;
 
 cmdReturn
-    : T_RETURN  expr ';'
+    : T_RETURN  expression ';'
     ;
 
 cmdCallProc
-    : ID '(' expr {',' expr} ')' ';';
+    : ID '(' expression ')' ';';
 
 lstOP
     : T_EQUAL
