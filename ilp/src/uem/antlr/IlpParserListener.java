@@ -78,15 +78,15 @@ public interface IlpParserListener extends ParseTreeListener {
 	 */
 	void exitAtrib(IlpParser.AtribContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link IlpParser#blocK}.
+	 * Enter a parse tree produced by {@link IlpParser#block}.
 	 * @param ctx the parse tree
 	 */
-	void enterBlocK(IlpParser.BlocKContext ctx);
+	void enterBlock(IlpParser.BlockContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link IlpParser#blocK}.
+	 * Exit a parse tree produced by {@link IlpParser#block}.
 	 * @param ctx the parse tree
 	 */
-	void exitBlocK(IlpParser.BlocKContext ctx);
+	void exitBlock(IlpParser.BlockContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link IlpParser#expression}.
 	 * @param ctx the parse tree

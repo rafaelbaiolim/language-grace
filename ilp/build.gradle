@@ -13,7 +13,7 @@ dependencies {
 
 task copyTokenFile {
     copy {
-        from "src/uem/antlr/IlpLex.tokens"
+        from "src/uem/antlr/IlpLexer.tokens"
         into "src/main/antlr/"
     }
 }

@@ -1,4 +1,4 @@
-lexer grammar IlpLex;
+lexer grammar IlpLexer;
 
 T_ELSE  : 'else' ;
 T_FALSE  : 'false' ;

@@ -100,13 +100,13 @@ public class IlpParserBaseListener implements IlpParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterBlocK(IlpParser.BlocKContext ctx) { }
+	@Override public void enterBlock(IlpParser.BlockContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitBlocK(IlpParser.BlocKContext ctx) { }
+	@Override public void exitBlock(IlpParser.BlockContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

@@ -1,4 +1,4 @@
-// Generated from IlpLex.g4 by ANTLR 4.5.3
+// Generated from IlpLexer.g4 by ANTLR 4.5.3
 package uem.antlr;
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
@@ -10,7 +10,7 @@ import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.misc.*;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
-public class IlpLex extends Lexer {
+public class IlpLexer extends Lexer {
 	static { RuntimeMetaData.checkVersion("4.5.3", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
@@ -97,13 +97,13 @@ public class IlpLex extends Lexer {
 	}
 
 
-	public IlpLex(CharStream input) {
+	public IlpLexer(CharStream input) {
 		super(input);
 		_interp = new LexerATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
 	@Override
-	public String getGrammarFileName() { return "IlpLex.g4"; }
+	public String getGrammarFileName() { return "IlpLexer.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }

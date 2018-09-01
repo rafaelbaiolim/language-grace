@@ -1,33 +1,36 @@
 parser grammar IlpParser;
-options { tokenVocab=IlpLex; }
+options { tokenVocab=IlpLexer; }
 
 ilpFile : lines=line+ ;
-
-line : stmt (WS | EOF);
-
-stmt : declVar
-     | expression
-     ;
+line : command (WS | EOF);
 
 command
-    : cmdSimple;
-
+    : cmdSimple
+    | block
+    ;
 
 cmdSimple
     : cmdAtrib
     | cmdIf
+    | cmdWhile
+    | cmdFor
+    | cmdStop
+    | cmdSkip
+    | cmdReturn
+    | cmdCallProc
+    | cmdRead
+    | cmdWrite
     ;
 
 cmdAtrib
     : atrib ';'
     ;
 
-
 atrib
     : ID (T_EQUAL | T_INCREMENT | T_DECREMENT | T_INC_MULT | T_INC_DIV | T_INC_MOD ) expression
     ;
 
-blocK
+block
     : '{' declVar '}'
     | '{' command '}'
     ;
@@ -145,5 +148,9 @@ declVar
     ;
 
 cmdRead
-    : T_READ declVar ';'
-    ; //var -> id ?
+    : T_READ (ID | STRING_LITERAL | NUMBER ) ';' //verificar se literais entram
+    ;
+
+cmdWrite
+    : T_WRITE expression ';'
+    | ',' expression

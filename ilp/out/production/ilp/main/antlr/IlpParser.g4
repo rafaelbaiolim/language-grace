@@ -1,17 +1,18 @@
 parser grammar IlpParser;
-options { tokenVocab=IlpLex; }
+options { tokenVocab=IlpLexer; }
 
 ilpFile : lines=line+ ;
 
 line : stmt (WS | EOF);
 
-stmt : declVar
+stmt : command
      | expression
      ;
 
 command
-    : cmdSimple;
-
+    : cmdSimple
+    | block
+    ;
 
 cmdSimple
     : cmdAtrib
@@ -22,12 +23,11 @@ cmdAtrib
     : atrib ';'
     ;
 
-
 atrib
     : ID (T_EQUAL | T_INCREMENT | T_DECREMENT | T_INC_MULT | T_INC_DIV | T_INC_MOD ) expression
     ;
 
-blocK
+block
     : '{' declVar '}'
     | '{' command '}'
     ;
