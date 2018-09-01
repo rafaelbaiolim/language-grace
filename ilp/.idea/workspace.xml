@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4b8f1db-f7b9-4023-94f5-6d051b468b07" name="Default Changelist" comment="Adicionado arquivos do projeto c/ inteliJ&#10;&#10;+ Separado Lex e Parse&#10;+ Adicionado testes unitário Var Assign">
-      <change beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/antlr/IlpLex.tokens" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/antlr/IlpParser.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/antlr/IlpParser.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpLex.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpLex.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpParser.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpParserBaseListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpParserListener.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -97,7 +83,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="g4" value="840" />
+          <entry key="g4" value="860" />
           <entry key="gradle" value="599" />
           <entry key="java" value="985" />
           <entry key="test" value="12" />
@@ -106,7 +92,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="ANTLR v4 grammar file" value="840" />
+          <entry key="ANTLR v4 grammar file" value="860" />
           <entry key="Groovy" value="599" />
           <entry key="JAVA" value="985" />
           <entry key="PLAIN_TEXT" value="161" />
@@ -115,14 +101,14 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.47440946">
+    <splitter split-orientation="horizontal" split-proportion="0.6303696">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/antlr/IlpParser.g4">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="140">
-                  <caret line="74" column="24" selection-start-line="74" selection-start-column="24" selection-end-line="74" selection-end-column="24" />
+                <state relative-caret-position="45">
+                  <caret line="3" column="7" lean-forward="true" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
                 </state>
               </provider>
             </entry>
@@ -140,23 +126,14 @@
       </split-first>
       <split-second>
         <leaf>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tests/LexTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="194">
+                <state relative-caret-position="24">
                   <caret line="16" selection-start-line="16" selection-end-line="16" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/uem/antlr/IlpParser.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="974" column="26" lean-forward="true" selection-start-line="974" selection-start-column="26" selection-end-line="974" selection-end-column="26" />
                 </state>
               </provider>
             </entry>
@@ -177,7 +154,7 @@
             <entry file="file://$PROJECT_DIR$/src/main/antlr/IlpParser.g4">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="330">
-                  <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
+                  <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
                 </state>
               </provider>
             </entry>
@@ -362,7 +339,7 @@
     <property name="create.test.in.the.same.root" value="true" />
     <property name="js.buildTools.grunt.grunt-cli.package" value="" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/antlr/IlpParser.g4" />
     <property name="nodejs.jest.jest_package" value="" />
     <property name="nodejs.protractor.protractor_package" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -532,14 +509,11 @@
       <updated>1535643558545</updated>
       <workItem from="1535643563870" duration="8279000" />
       <workItem from="1535689342097" duration="6715000" />
-      <workItem from="1535773746539" duration="10044000" />
+      <workItem from="1535773746539" duration="10836000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LexTest - 2018.08.31 at 01h 59m 39s.xml">
-      <configuration name="LexTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="LexTest - 2018.08.31 at 02h 00m 16s.xml">
       <configuration name="LexTest" configurationId="JUnit" />
     </history-entry>
@@ -567,9 +541,12 @@
     <history-entry file="LexTest - 2018.09.01 at 00h 50m 40s.xml">
       <configuration name="LexTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="LexTest - 2018.09.01 at 13h 56m 53s.xml">
+      <configuration name="LexTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25038000" />
+    <option name="totallyTimeSpent" value="25830000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1360" y="-4" width="1360" height="772" extended-state="6" />
@@ -584,8 +561,8 @@
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="2" weight="0.29192546" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="ANTLR Preview" order="4" weight="0.32919255" />
-      <window_info active="true" anchor="bottom" id="Messages" order="5" visible="true" weight="0.32919255" />
+      <window_info anchor="bottom" id="ANTLR Preview" order="4" weight="0.0" />
+      <window_info anchor="bottom" id="Messages" order="5" weight="0.32919255" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Tool Output" order="7" weight="0.32919255" />
       <window_info anchor="bottom" id="Find" order="8" weight="0.32919255" />
@@ -765,9 +742,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/antlr/IlpParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="970" column="26" lean-forward="true" selection-start-line="970" selection-start-column="26" selection-end-line="970" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tests/LexTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
+        <state relative-caret-position="24">
           <caret line="16" selection-start-line="16" selection-end-line="16" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -775,17 +759,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/antlr/IlpParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="974" column="26" lean-forward="true" selection-start-line="974" selection-start-column="26" selection-end-line="974" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/antlr/IlpParser.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="74" column="24" selection-start-line="74" selection-start-column="24" selection-end-line="74" selection-end-column="24" />
+        <state relative-caret-position="45">
+          <caret line="3" column="7" lean-forward="true" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
         </state>
       </provider>
     </entry>
