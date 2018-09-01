@@ -1,6 +1,14 @@
 parser grammar IlpParser;
 options { tokenVocab=IlpLex; }
 
+ilpFile : lines=line+ ;
+
+line : stmt (WS | EOF);
+
+stmt : declVar
+     | expression
+     ;
+
 command
     : cmdSimple;
 

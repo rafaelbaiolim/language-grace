@@ -1,5 +1,5 @@
 // Generated from IlpParser.g4 by ANTLR 4.5.3
-package uem.antrl;
+package uem.antlr;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -7,6 +7,36 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  * {@link IlpParser}.
  */
 public interface IlpParserListener extends ParseTreeListener {
+	/**
+	 * Enter a parse tree produced by {@link IlpParser#ilpFile}.
+	 * @param ctx the parse tree
+	 */
+	void enterIlpFile(IlpParser.IlpFileContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link IlpParser#ilpFile}.
+	 * @param ctx the parse tree
+	 */
+	void exitIlpFile(IlpParser.IlpFileContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link IlpParser#line}.
+	 * @param ctx the parse tree
+	 */
+	void enterLine(IlpParser.LineContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link IlpParser#line}.
+	 * @param ctx the parse tree
+	 */
+	void exitLine(IlpParser.LineContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link IlpParser#stmt}.
+	 * @param ctx the parse tree
+	 */
+	void enterStmt(IlpParser.StmtContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link IlpParser#stmt}.
+	 * @param ctx the parse tree
+	 */
+	void exitStmt(IlpParser.StmtContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link IlpParser#command}.
 	 * @param ctx the parse tree

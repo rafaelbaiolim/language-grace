@@ -2,7 +2,7 @@ package uem;
 
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.Token;
-import uem.antrl.IlpLex;
+import uem.antlr.IlpLex;
 
 import java.io.IOException;
 import java.io.StringReader;
