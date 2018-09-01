@@ -1,4 +1,5 @@
-﻿# Trabalho ILP 2018
+﻿# Trabalho ILP 2018 
+
 Informática UEM 
 ================
 Repositório destinado a Implementação do Trabalho de ILP 2018 
@@ -27,6 +28,21 @@ No terminal da IDE
 $ gradle generateGrammarSource && gradle copyTokenFile
 ```
 
-Testes 
+Antrl4
+==============================
+Os arquivos .g4 (src/main/antlr) podem executados/ testados 
+com a ferramenta antrl4 separadamente.
+
+```
+$ antlr4 *.g4
+$ javac *.java
+$ grun Ilp command -tree 
+```
+Caso o nome da linguagem seja alterado manter os arquivos no formato
+['NomeLP']Lexer.g4 e ['NomeLP']Parser.g4
+
+Testes Unitários
 ==============================
 * [x] Var
+
+:carousel_horse: 

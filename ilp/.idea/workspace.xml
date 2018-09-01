@@ -2,58 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4b8f1db-f7b9-4023-94f5-6d051b468b07" name="Default Changelist" comment="Adicionado arquivos do projeto c/ inteliJ&#10;&#10;+ Separado Lex e Parse&#10;+ Adicionado testes unitário Var Assign">
-      <change beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/main/antlr/IlpLex.g4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/main/antlr/IlpParser.g4" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/main/antlr/IlpParser.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/Lexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/Lexer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpLex.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpLex.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$AtribContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$AtribContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$BlocKContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdAtribContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdAtribContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdCallProcContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdCallProcContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdForContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdForContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdIfContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdIfContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdReadContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdReadContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdReturnContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdReturnContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdSimpleContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdSimpleContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdSkipContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdSkipContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdStopContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdStopContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdWhileContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdWhileContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CommandContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CommandContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$DeclVarContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$DeclVarContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$ExpressionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$ExpressionContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$ForInitContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$ForInitContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$ForIteraContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$ForIteraContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$ListSpecVarsContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$ListSpecVarsContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$LiteralContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$LiteralContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$LstArrIniContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$LstArrIniContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$LstOPContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$LstOPContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$LstTipoContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$LstTipoContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$SpecVarArrContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$SpecVarArrContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$SpecVarArrIniContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$SpecVarArrIniContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$SpecVarContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$SpecVarContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$SpecVarSimpleContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$SpecVarSimpleContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$SpecVarSimpleIniContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$SpecVarSimpleIniContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$StmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$StmtContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParserBaseListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParserBaseListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParserListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParserListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/ilp/tests/LexTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/ilp/tests/LexTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/antlr/IlpLex.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/antlr/IlpLexer.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/antlr/IlpLex.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/antlr/IlpParser.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/antlr/IlpParser.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/Lexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/Lexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpLex.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpLex.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/antlr/IlpParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpParserBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/antlr/IlpParserBaseListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpParserListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/antlr/IlpParserListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -119,6 +68,7 @@
           <entry key="gradle" value="7" />
           <entry key="iml" value="1" />
           <entry key="java" value="25" />
+          <entry key="md" value="1" />
           <entry key="test" value="5" />
           <entry key="tokens" value="4" />
         </counts>
@@ -130,6 +80,7 @@
           <entry key="Groovy" value="7" />
           <entry key="IDEA_MODULE" value="1" />
           <entry key="JAVA" value="25" />
+          <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="6" />
           <entry key="YAML" value="3" />
         </counts>
@@ -139,6 +90,7 @@
           <entry key="g4" value="1133" />
           <entry key="gradle" value="603" />
           <entry key="java" value="1101" />
+          <entry key="md" value="399" />
           <entry key="test" value="13" />
           <entry key="txt" value="149" />
         </counts>
@@ -148,6 +100,7 @@
           <entry key="ANTLR v4 grammar file" value="1133" />
           <entry key="Groovy" value="603" />
           <entry key="JAVA" value="1101" />
+          <entry key="Markdown" value="399" />
           <entry key="PLAIN_TEXT" value="162" />
         </counts>
       </usages-collector>
@@ -167,11 +120,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/antlr/IlpParser.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
+            <state relative-caret-position="177">
               <caret line="150" column="79" selection-start-line="150" selection-start-column="79" selection-end-line="150" selection-end-column="79" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="242">
+                <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -237,7 +202,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>T__1</find>
       <find>T_LEFT_SQUARE</find>
       <find>SEMICO</find>
       <find>LGT_</find>
@@ -267,6 +231,7 @@
       <find>block</find>
       <find>return</find>
       <find>{</find>
+      <find>.Parser</find>
     </findStrings>
     <replaceStrings>
       <replace>public void</replace>
@@ -275,8 +240,8 @@
       <replace>testEqualsVarLex</replace>
       <replace>exp</replace>
       <replace>expr</replace>
-      <replace>IlpLexer</replace>
       <replace>expression</replace>
+      <replace>IlpLexer</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/tests</dir>
@@ -323,6 +288,7 @@
         <option value="$PROJECT_DIR$/src/uem/Lexer.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/antlr/IlpParser.g4" />
+        <option value="$PROJECT_DIR$/../README.md" />
       </list>
     </option>
   </component>
@@ -400,7 +366,7 @@
     <property name="js.buildTools.grunt.grunt-cli.package" value="" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/uem" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/antlr/IlpParser.g4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../README.md" />
     <property name="nodejs.jest.jest_package" value="" />
     <property name="nodejs.protractor.protractor_package" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -570,7 +536,7 @@
       <updated>1535643558545</updated>
       <workItem from="1535643563870" duration="8279000" />
       <workItem from="1535689342097" duration="6715000" />
-      <workItem from="1535773746539" duration="16980000" />
+      <workItem from="1535773746539" duration="17766000" />
     </task>
     <servers />
   </component>
@@ -607,7 +573,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31974000" />
+    <option name="totallyTimeSpent" value="32760000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
@@ -616,13 +582,13 @@
       <window_info id="UI Designer" order="0" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.24940239" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.24940239" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="2" weight="0.42701864" />
+      <window_info anchor="bottom" id="Terminal" order="2" visible="true" weight="0.42701864" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="ANTLR Preview" order="4" visible="true" weight="0.51863354" />
+      <window_info anchor="bottom" id="ANTLR Preview" order="4" weight="0.8664596" />
       <window_info anchor="bottom" id="Messages" order="5" weight="0.32919255" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Tool Output" order="7" weight="0.32919255" />
@@ -857,8 +823,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/antlr/IlpParser.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
+        <state relative-caret-position="177">
           <caret line="150" column="79" selection-start-line="150" selection-start-column="79" selection-end-line="150" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="242">
+            <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
