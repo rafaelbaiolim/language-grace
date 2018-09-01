@@ -24,7 +24,7 @@ Execução
 No terminal da IDE 
 
 ```
-$ gradle generateGrammarSource
+$ gradle generateGrammarSource && gradle copyTokenFile
 ```
 
 Testes 

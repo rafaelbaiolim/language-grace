@@ -10,15 +10,17 @@ dependencies {
     compile "org.antlr:antlr4-runtime:4.5.3"
 }
 
-task tokenFile{
+
+task copyTokenFile {
     copy {
-        from 'src/uem/antrl/IlpLex.tokens'
-        into "src/main/antrl/"
+        from "src/uem/antlr/IlpLex.tokens"
+        into "src/main/antlr/"
     }
 }
 
 generateGrammarSource {
     maxHeapSize = "64m"
     arguments += ['-package', 'uem.antrl']
-    outputDirectory = new File("src/uem/antrl/".toString())
+    outputDirectory = new File("src/uem/antlr/".toString())
 }
+
