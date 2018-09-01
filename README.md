@@ -1,8 +1,8 @@
 ﻿# Trabalho ILP 2018
-
 Informática UEM 
 ================
-Branch utilizando a ferramenta antrl4 para o Trabalho de ILP 2018 
+Repositório destinado a Implementação do Trabalho de ILP 2018 
+utilizando a ferramenta antrl4.
 
 Doc Online Compilada.: https://ilp2018.readthedocs.io/en/latest/
 
