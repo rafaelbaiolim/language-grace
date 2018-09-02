@@ -20,8 +20,7 @@ public class Lexer {
         do {
             if (t.getType() == -1) {
                 tokens.add("EOF");
-            } else if (t.getType() != IlpLexer.WS) {
-
+            }else if (t.getType() != IlpLexer.WS) {
                 tokens.add(lexer.ruleNames[t.getType() - 1]);
             }
             t = lexer.nextToken();

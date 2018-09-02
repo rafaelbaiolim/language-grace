@@ -40,18 +40,6 @@ public class IlpParserBaseListener implements IlpParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStmt(IlpParser.StmtContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitStmt(IlpParser.StmtContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterCommand(IlpParser.CommandContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -244,13 +232,13 @@ public class IlpParserBaseListener implements IlpParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterLstTipo(IlpParser.LstTipoContext ctx) { }
+	@Override public void enterLstType(IlpParser.LstTypeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitLstTipo(IlpParser.LstTipoContext ctx) { }
+	@Override public void exitLstType(IlpParser.LstTypeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -371,6 +359,30 @@ public class IlpParserBaseListener implements IlpParserListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitCmdRead(IlpParser.CmdReadContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCmdWrite(IlpParser.CmdWriteContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCmdWrite(IlpParser.CmdWriteContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterVariable(IlpParser.VariableContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitVariable(IlpParser.VariableContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

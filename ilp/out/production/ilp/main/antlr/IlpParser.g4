@@ -94,7 +94,7 @@ lstOP
     | T_SLASH
     ;
 
-lstTipo
+lstType
     : T_INT
     | T_STRING
     | T_BOOL
@@ -144,13 +144,19 @@ listSpecVars
     ;
 
 declVar
-    : T_VAR listSpecVars ':' lstTipo ';'
+    : T_VAR listSpecVars ':' lstType ';'
     ;
 
 cmdRead
-    : T_READ (ID | STRING_LITERAL | NUMBER ) ';' //verificar se literais entram
+    : T_READ (ID | STRING_LITERAL | NUMBER_LITERAL ) ';' //verificar se literais entram
     ;
 
 cmdWrite
     : T_WRITE expression ';'
     | ',' expression
+    ;
+
+variable
+    : ID
+    | ID '[' expression ']'
+    ;

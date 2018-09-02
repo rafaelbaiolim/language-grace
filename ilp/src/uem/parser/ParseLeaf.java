@@ -9,11 +9,16 @@ public class ParseLeaf extends ParseTreeEl {
 
     @Override
     public String toString() {
-        return "T[" + this.tex + "]";
+        return "{" + this.tex + "}";
     }
 
     @Override
     String identationMultLines(String ident) {
-        return (ident + "T[" + this.tex + "]\n");
+        return (ident + "{" + this.tex + "}\n");
+    }
+
+    @Override
+    String identationMultLines() {
+        return this.identationMultLines(" ");
     }
 }

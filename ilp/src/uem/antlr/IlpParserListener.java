@@ -28,16 +28,6 @@ public interface IlpParserListener extends ParseTreeListener {
 	 */
 	void exitLine(IlpParser.LineContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link IlpParser#stmt}.
-	 * @param ctx the parse tree
-	 */
-	void enterStmt(IlpParser.StmtContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link IlpParser#stmt}.
-	 * @param ctx the parse tree
-	 */
-	void exitStmt(IlpParser.StmtContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link IlpParser#command}.
 	 * @param ctx the parse tree
 	 */
@@ -198,15 +188,15 @@ public interface IlpParserListener extends ParseTreeListener {
 	 */
 	void exitLstOP(IlpParser.LstOPContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link IlpParser#lstTipo}.
+	 * Enter a parse tree produced by {@link IlpParser#lstType}.
 	 * @param ctx the parse tree
 	 */
-	void enterLstTipo(IlpParser.LstTipoContext ctx);
+	void enterLstType(IlpParser.LstTypeContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link IlpParser#lstTipo}.
+	 * Exit a parse tree produced by {@link IlpParser#lstType}.
 	 * @param ctx the parse tree
 	 */
-	void exitLstTipo(IlpParser.LstTipoContext ctx);
+	void exitLstType(IlpParser.LstTypeContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link IlpParser#literal}.
 	 * @param ctx the parse tree
@@ -307,4 +297,24 @@ public interface IlpParserListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitCmdRead(IlpParser.CmdReadContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link IlpParser#cmdWrite}.
+	 * @param ctx the parse tree
+	 */
+	void enterCmdWrite(IlpParser.CmdWriteContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link IlpParser#cmdWrite}.
+	 * @param ctx the parse tree
+	 */
+	void exitCmdWrite(IlpParser.CmdWriteContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link IlpParser#variable}.
+	 * @param ctx the parse tree
+	 */
+	void enterVariable(IlpParser.VariableContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link IlpParser#variable}.
+	 * @param ctx the parse tree
+	 */
+	void exitVariable(IlpParser.VariableContext ctx);
 }
