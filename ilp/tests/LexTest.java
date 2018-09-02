@@ -49,7 +49,9 @@ public class LexTest {
 
     protected void assertEq(String filename, String[] wantedTokens, TypeTest typeTest) throws IOException {
         String recived = Arrays.toString(wantedTokens);
-        String wanted = Arrays.toString(myUnit.getTokens(myUnit.lexFromCode(tests.TestUtils.GetFileContent(filename))).toArray());
+        String wanted = Arrays.toString(myUnit.getTokens(
+                myUnit.lexFromCode(tests.TestUtils.GetFileContent(filename)))
+                .toArray());
 
         switch (typeTest) {
             case EQUALS:

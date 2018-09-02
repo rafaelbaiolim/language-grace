@@ -2,12 +2,7 @@ parser grammar IlpParser;
 options { tokenVocab=IlpLexer; }
 
 ilpFile : lines=line+ ;
-
-line : stmt (WS | EOF);
-
-stmt : command
-     | expression
-     ;
+line : command (WS | EOF);
 
 command
     : cmdSimple
@@ -17,6 +12,14 @@ command
 cmdSimple
     : cmdAtrib
     | cmdIf
+    | cmdWhile
+    | cmdFor
+    | cmdStop
+    | cmdSkip
+    | cmdReturn
+    | cmdCallProc
+    | cmdRead
+    | cmdWrite
     ;
 
 cmdAtrib
@@ -145,5 +148,9 @@ declVar
     ;
 
 cmdRead
-    : T_READ declVar ';'
-    ; //var -> id ?
+    : T_READ (ID | STRING_LITERAL | NUMBER ) ';' //verificar se literais entram
+    ;
+
+cmdWrite
+    : T_WRITE expression ';'
+    | ',' expression
