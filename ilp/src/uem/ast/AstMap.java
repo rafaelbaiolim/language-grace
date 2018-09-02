@@ -2,6 +2,7 @@ package uem.ast;
 
 import org.antlr.v4.runtime.Token;
 import uem.antlr.IlpParser;
+import uem.ast.type.Type;
 
 public class AstMap {
 
