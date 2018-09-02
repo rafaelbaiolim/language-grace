@@ -5,7 +5,7 @@ Informática UEM
 Repositório destinado a Implementação do Trabalho de ILP 2018 
 utilizando a ferramenta antrl4.
 
-Doc Online Compilada.: https://ilp2018.readthedocs.io/en/latest/
+Doc Online Compilada.: https://din-ilp2018.readthedocs.io/en/latest
 
 Instalação do Antrl4 
 =======================
