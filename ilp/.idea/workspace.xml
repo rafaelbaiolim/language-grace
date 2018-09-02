@@ -2,60 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4b8f1db-f7b9-4023-94f5-6d051b468b07" name="Default Changelist" comment="Adicionado arquivos do projeto c/ inteliJ&#10;&#10;+ Separado Lex e Parse&#10;+ Adicionado testes unitário Var Assign">
-      <change beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/main/antlr/IlpParser.g4" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/main/antlr/IlpParser.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$AtribContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$AtribContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$BlockContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$BlockContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdAtribContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdAtribContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdCallProcContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdCallProcContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdForContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdForContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdIfContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdIfContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdReadContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdReadContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdReturnContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdReturnContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdSimpleContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdSimpleContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdSkipContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdSkipContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdStopContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdStopContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdWhileContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdWhileContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CommandContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CommandContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$DeclVarContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$DeclVarContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$ExpressionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$ExpressionContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$ForInitContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$ForInitContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$ForIteraContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$ForIteraContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$LineContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$LineContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$ListSpecVarsContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$ListSpecVarsContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$LiteralContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$LiteralContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$LstArrIniContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$LstArrIniContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$LstOPContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$LstOPContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$LstTipoContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$SpecVarArrContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$SpecVarArrContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$SpecVarArrIniContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$SpecVarArrIniContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$SpecVarContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$SpecVarContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$SpecVarSimpleContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$SpecVarSimpleContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$SpecVarSimpleIniContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$SpecVarSimpleIniContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$StmtContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParserBaseListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParserBaseListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParserListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParserListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/parser/ParseLeaf.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/parser/ParseLeaf.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/parser/ParseTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/parser/ParseTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/parser/ParseTreeEl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/parser/ParseTreeEl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/parser/ParseTreeNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ilp/uem/parser/ParseTreeNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/antlr/IlpLexer.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/antlr/IlpParser.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/antlr/IlpParser.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/Lexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/Lexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/antlr/IlpParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpParserBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/antlr/IlpParserBaseListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpParserListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/antlr/IlpParserListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/parser/ParseLeaf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/parser/ParseLeaf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/parser/ParseTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/parser/ParseTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/parser/ParseTreeEl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/parser/ParseTreeEl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/parser/ParseTreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/parser/ParseTreeNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ilp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ilp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/Lexer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$AtribContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$BlockContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdAtribContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdCallProcContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdForContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdIfContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdReadContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdReturnContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdSimpleContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdSkipContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdStopContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdWhileContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CmdWriteContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$CommandContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$DeclVarContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$ExpressionContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$ForInitContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$ForIteraContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$LineContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$ListSpecVarsContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$LiteralContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$LstArrIniContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$LstOPContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$LstTypeContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$SpecVarArrContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$SpecVarArrIniContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$SpecVarContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$SpecVarSimpleContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$SpecVarSimpleIniContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser$VariableContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParserBaseListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/antlr/IlpParserListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/parser/ParseLeaf.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/parser/ParseTree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/parser/ParseTreeEl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ilp/uem/parser/ParseTreeNode.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -63,6 +50,45 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file pinned="false" current-in-tab="true">
+              <entry file="dummy://kotlinDecompiled/Ast.decompiled.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="356">
+                    <caret line="623" column="4" lean-forward="true" selection-start-line="621" selection-start-column="3" selection-end-line="623" selection-end-column="4" />
+                    <folding>
+                      <element signature="e#54476#57718#0" />
+                      <element signature="e#57840#60423#0" />
+                      <element signature="e#60680#62306#0" />
+                      <element signature="e#60680#64520#0" />
+                      <element signature="e#64804#66512#0" />
+                      <element signature="e#64804#68823#0" />
+                      <element signature="e#69082#70296#0" />
+                      <element signature="e#69082#71911#0" />
+                      <element signature="e#72033#72556#0" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/uem/ast/Ast.kt">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="238">
+                    <caret line="14" column="7" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="7" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-356103321">
@@ -117,12 +143,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="10" />
+          <entry key="class" value="11" />
           <entry key="g4" value="16" />
           <entry key="gradle" value="7" />
           <entry key="iml" value="1" />
-          <entry key="java" value="56" />
-          <entry key="kt" value="1" />
+          <entry key="java" value="80" />
+          <entry key="kt" value="3" />
           <entry key="md" value="1" />
           <entry key="test" value="5" />
           <entry key="tokens" value="4" />
@@ -131,11 +157,11 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="ANTLR v4 grammar file" value="16" />
-          <entry key="CLASS" value="10" />
+          <entry key="CLASS" value="11" />
           <entry key="Groovy" value="7" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="56" />
-          <entry key="Kotlin" value="1" />
+          <entry key="JAVA" value="80" />
+          <entry key="Kotlin" value="3" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="6" />
           <entry key="YAML" value="3" />
@@ -145,7 +171,7 @@
         <counts>
           <entry key="g4" value="1204" />
           <entry key="gradle" value="603" />
-          <entry key="java" value="2960" />
+          <entry key="java" value="3232" />
           <entry key="md" value="401" />
           <entry key="test" value="13" />
           <entry key="txt" value="149" />
@@ -155,7 +181,7 @@
         <counts>
           <entry key="ANTLR v4 grammar file" value="1204" />
           <entry key="Groovy" value="603" />
-          <entry key="JAVA" value="2960" />
+          <entry key="JAVA" value="3232" />
           <entry key="Markdown" value="401" />
           <entry key="PLAIN_TEXT" value="162" />
         </counts>
@@ -164,14 +190,83 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/uem/Lexer.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/uem/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+            <state relative-caret-position="289">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/BinaryExpression.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/SumExpression.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+              <folding>
+                <element signature="e#126#127#0" expanded="true" />
+                <element signature="e#153#154#0" expanded="true" />
+                <element signature="e#203#204#0" expanded="true" />
+                <element signature="e#230#231#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/uem/ast/Ast.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/Expression.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/uem/ast/stmt/Statement.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/uem/ast/Type.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/uem/ast/Node.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -184,22 +279,13 @@
         <option value="Arquillian JUnit Test Class" />
         <option value="JUnit5 Test Class" />
         <option value="Kotlin File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>testVarLex</find>
-      <find>minus</find>
-      <find>DIV</find>
-      <find>dec</find>
-      <find>command</find>
-      <find>?</find>
-      <find>exp</find>
-      <find>OR</find>
-      <find>expression</find>
-      <find>expr</find>
       <find>proc</find>
       <find>cmdAtr</find>
       <find>cmdSim</find>
@@ -220,6 +306,16 @@
       <find>lstTipo</find>
       <find>T[</find>
       <find>&gt;&gt;[</find>
+      <find>position</find>
+      <find>Position</find>
+      <find>node</find>
+      <find>public interface</find>
+      <find>public Position</find>
+      <find>Expression</find>
+      <find>.*Expression</find>
+      <find>@NotNull</find>
+      <find>SumExpression</find>
+      <find>pos</find>
     </findStrings>
     <replaceStrings>
       <replace>public void</replace>
@@ -231,10 +327,10 @@
       <replace>expression</replace>
       <replace>IlpLexer</replace>
       <replace>lstType</replace>
-      <replace>lst</replace>
       <replace>&gt;&gt;</replace>
       <replace>&gt;&gt;[</replace>
       <replace>-&gt;[</replace>
+      <replace>lst</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/tests</dir>
@@ -290,6 +386,16 @@
         <option value="$PROJECT_DIR$/src/uem/parser/ParseTree.java" />
         <option value="$PROJECT_DIR$/src/uem/parser/ParseLeaf.java" />
         <option value="$PROJECT_DIR$/src/uem/Lexer.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/Ast.kt" />
+        <option value="$PROJECT_DIR$/src/uem/ast/expr/Expression.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/Point.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/Position.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/Node.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/stmt/Statement.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/Type.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/expr/BinaryExpression.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/expr/SumExpression.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/Ast.java" />
       </list>
     </option>
   </component>
@@ -306,10 +412,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="64" />
-    <option name="y" value="-11" />
-    <option name="width" value="1303" />
-    <option name="height" value="780" />
+    <option name="x" value="1477" />
+    <option name="y" value="127" />
+    <option name="width" value="975" />
+    <option name="height" value="550" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -341,12 +447,7 @@
               <item name="ilp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="uem" type="462c0819:PsiDirectoryNode" />
-              <item name="parser" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ilp" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="ast" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -375,26 +476,28 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.41924778" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/antrl" />
+      <recent name="$PROJECT_DIR$/tests" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="uem.ast" />
+      <recent name="uem.ast.expr" />
       <recent name="uem.parser" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/antlr" />
       <recent name="$PROJECT_DIR$/tests/assets" />
       <recent name="$PROJECT_DIR$/src/uem/antrl" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/antrl" />
-      <recent name="$PROJECT_DIR$/tests" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -542,7 +645,7 @@
       <workItem from="1535643563870" duration="8279000" />
       <workItem from="1535689342097" duration="6715000" />
       <workItem from="1535773746539" duration="23583000" />
-      <workItem from="1535893959640" duration="3939000" />
+      <workItem from="1535893959640" duration="9240000" />
     </task>
     <servers />
   </component>
@@ -579,31 +682,32 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42516000" />
+    <option name="totallyTimeSpent" value="47817000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
+    <frame x="1360" y="-4" width="1360" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="UI Designer" order="0" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.24223107" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.21156773" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="2" weight="0.32919255" />
+      <window_info anchor="bottom" id="Terminal" order="2" weight="0.22515528" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
       <window_info anchor="bottom" id="ANTLR Preview" order="4" weight="0.32919255" />
       <window_info anchor="bottom" id="Messages" order="5" weight="0.32919255" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Tool Output" order="7" weight="0.32919255" />
       <window_info anchor="bottom" id="Find" order="8" weight="0.32919255" />
-      <window_info anchor="bottom" id="Run" order="9" visible="true" weight="0.51397514" />
+      <window_info anchor="bottom" id="Run" order="9" visible="true" weight="0.0" />
       <window_info anchor="bottom" id="Debug" order="10" weight="0.32919255" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="13" />
+      <window_info anchor="right" id="Kotlin Bytecode" visible="true" weight="0.0" />
       <window_info anchor="right" id="Database" order="0" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info anchor="right" id="Maven Projects" order="2" />
@@ -650,31 +754,25 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>dummy://kotlinDecompiled/Ast.decompiled.java</url>
+          <line>530</line>
+          <properties>
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.g4" />
-    <entry file="jar://$PROJECT_DIR$/lib/antlr4-runtime-4.7.1.jar!/org/antlr/v4/runtime/Lexer.class" />
-    <entry file="jar://$PROJECT_DIR$/lib/antlr4-runtime-4.7.1.jar!/org/antlr/v4/runtime/Recognizer.class" />
-    <entry file="jar:///usr/local/lib/antlr-4.5.3-complete.jar!/org/antlr/v4/runtime/Token.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/antrl/IlpListener.java" />
-    <entry file="file://$PROJECT_DIR$/src/uem/antrl/IlpBaseListener.java" />
-    <entry file="jar:///usr/local/lib/antlr-4.5.3-complete.jar!/org/antlr/v4/runtime/atn/ATN.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="75" column="23" selection-start-line="75" selection-start-column="23" selection-end-line="75" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/antrl/IlpLexer.java" />
     <entry file="file://$PROJECT_DIR$/src/uem/antrl/Ilp-parser.g4" />
     <entry file="file://$PROJECT_DIR$/tests/MainTest.java" />
     <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/util/function/BiConsumer.class">
@@ -1054,16 +1152,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/uem/parser/ParseTreeNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -1081,11 +1169,110 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/uem/Lexer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        <state relative-caret-position="255">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/Position.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#234#235#0" expanded="true" />
+            <element signature="e#260#261#0" expanded="true" />
+            <element signature="e#291#292#0" expanded="true" />
+            <element signature="e#319#320#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/Point.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/Expression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/lang/String.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/Type.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/stmt/Statement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/BinaryExpression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/Ast.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="7" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/SumExpression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding>
+            <element signature="e#126#127#0" expanded="true" />
+            <element signature="e#153#154#0" expanded="true" />
+            <element signature="e#203#204#0" expanded="true" />
+            <element signature="e#230#231#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/Ast.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
         </state>
       </provider>
     </entry>

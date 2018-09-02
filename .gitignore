@@ -2,3 +2,4 @@ starting/examples/*
 !starting/examples/*.g4
 generated/*
 !generated/*.g4
+ilp/out/*
