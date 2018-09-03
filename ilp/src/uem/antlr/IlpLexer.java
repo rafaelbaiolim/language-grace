@@ -25,8 +25,8 @@ public class IlpLexer extends Lexer {
 		T_COMP=30, T_EQUAL=31, T_DIFFERENT=32, T_GREATER=33, T_GREATER_OR_EQUAL=34, 
 		T_INCREMENT=35, T_DECREMENT=36, T_INC_MULT=37, T_INC_DIV=38, T_INC_MOD=39, 
 		T_LOWER=40, T_LOWER_OR_EQUAL=41, T_DOT=42, T_TERN=43, NEG_UN=44, OR=45, 
-		AND=46, PLUS_INC=47, MINUS_DEC=48, ID=49, COMMENT=50, WS=51, NUMBER_LITERAL=52, 
-		STRING_LITERAL=53;
+		AND=46, PLUS_INC=47, MINUS_DEC=48, ID=49, COMMENT=50, WS=51, NUMBERLITERAL=52, 
+		STRINGLITERAL=53;
 	public static String[] modeNames = {
 		"DEFAULT_MODE"
 	};
@@ -40,8 +40,8 @@ public class IlpLexer extends Lexer {
 		"T_DIFFERENT", "T_GREATER", "T_GREATER_OR_EQUAL", "T_INCREMENT", "T_DECREMENT", 
 		"T_INC_MULT", "T_INC_DIV", "T_INC_MOD", "T_LOWER", "T_LOWER_OR_EQUAL", 
 		"T_DOT", "T_TERN", "NEG_UN", "OR", "AND", "PLUS_INC", "MINUS_DEC", "ID", 
-		"COMMENT", "WS", "NUMBER_LITERAL", "STRING_LITERAL", "EncodingPrefix", 
-		"SCharSequence", "SChar", "EscapeSequence"
+		"COMMENT", "WS", "NUMBERLITERAL", "STRINGLITERAL", "EncodingPrefix", "SCharSequence", 
+		"SChar", "EscapeSequence"
 	};
 
 	private static final String[] _LITERAL_NAMES = {
@@ -61,7 +61,7 @@ public class IlpLexer extends Lexer {
 		"T_COMP", "T_EQUAL", "T_DIFFERENT", "T_GREATER", "T_GREATER_OR_EQUAL", 
 		"T_INCREMENT", "T_DECREMENT", "T_INC_MULT", "T_INC_DIV", "T_INC_MOD", 
 		"T_LOWER", "T_LOWER_OR_EQUAL", "T_DOT", "T_TERN", "NEG_UN", "OR", "AND", 
-		"PLUS_INC", "MINUS_DEC", "ID", "COMMENT", "WS", "NUMBER_LITERAL", "STRING_LITERAL"
+		"PLUS_INC", "MINUS_DEC", "ID", "COMMENT", "WS", "NUMBERLITERAL", "STRINGLITERAL"
 	};
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 

@@ -57,8 +57,8 @@ COMMENT : '//' ~ [\r\n]* -> skip;
 
 WS : [ \t\r\n]+ -> skip ;
 
-NUMBER_LITERAL : [0-9]+;
-STRING_LITERAL
+NUMBERLITERAL : [0-9]+;
+STRINGLITERAL
     :   EncodingPrefix? '"' SCharSequence? '"'
     ;
 

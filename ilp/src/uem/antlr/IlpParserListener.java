@@ -188,25 +188,89 @@ public interface IlpParserListener extends ParseTreeListener {
 	 */
 	void exitLstOP(IlpParser.LstOPContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link IlpParser#lstType}.
+	 * Enter a parse tree produced by the {@code integer}
+	 * labeled alternative in {@link IlpParser#lstType}.
 	 * @param ctx the parse tree
 	 */
-	void enterLstType(IlpParser.LstTypeContext ctx);
+	void enterInteger(IlpParser.IntegerContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link IlpParser#lstType}.
+	 * Exit a parse tree produced by the {@code integer}
+	 * labeled alternative in {@link IlpParser#lstType}.
 	 * @param ctx the parse tree
 	 */
-	void exitLstType(IlpParser.LstTypeContext ctx);
+	void exitInteger(IlpParser.IntegerContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link IlpParser#literal}.
+	 * Enter a parse tree produced by the {@code string}
+	 * labeled alternative in {@link IlpParser#lstType}.
 	 * @param ctx the parse tree
 	 */
-	void enterLiteral(IlpParser.LiteralContext ctx);
+	void enterString(IlpParser.StringContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link IlpParser#literal}.
+	 * Exit a parse tree produced by the {@code string}
+	 * labeled alternative in {@link IlpParser#lstType}.
 	 * @param ctx the parse tree
 	 */
-	void exitLiteral(IlpParser.LiteralContext ctx);
+	void exitString(IlpParser.StringContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code bool}
+	 * labeled alternative in {@link IlpParser#lstType}.
+	 * @param ctx the parse tree
+	 */
+	void enterBool(IlpParser.BoolContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code bool}
+	 * labeled alternative in {@link IlpParser#lstType}.
+	 * @param ctx the parse tree
+	 */
+	void exitBool(IlpParser.BoolContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code intLiteral}
+	 * labeled alternative in {@link IlpParser#literal}.
+	 * @param ctx the parse tree
+	 */
+	void enterIntLiteral(IlpParser.IntLiteralContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code intLiteral}
+	 * labeled alternative in {@link IlpParser#literal}.
+	 * @param ctx the parse tree
+	 */
+	void exitIntLiteral(IlpParser.IntLiteralContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code stringLiteral}
+	 * labeled alternative in {@link IlpParser#literal}.
+	 * @param ctx the parse tree
+	 */
+	void enterStringLiteral(IlpParser.StringLiteralContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code stringLiteral}
+	 * labeled alternative in {@link IlpParser#literal}.
+	 * @param ctx the parse tree
+	 */
+	void exitStringLiteral(IlpParser.StringLiteralContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code trueLiteral}
+	 * labeled alternative in {@link IlpParser#literal}.
+	 * @param ctx the parse tree
+	 */
+	void enterTrueLiteral(IlpParser.TrueLiteralContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code trueLiteral}
+	 * labeled alternative in {@link IlpParser#literal}.
+	 * @param ctx the parse tree
+	 */
+	void exitTrueLiteral(IlpParser.TrueLiteralContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code falseLiteral}
+	 * labeled alternative in {@link IlpParser#literal}.
+	 * @param ctx the parse tree
+	 */
+	void enterFalseLiteral(IlpParser.FalseLiteralContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code falseLiteral}
+	 * labeled alternative in {@link IlpParser#literal}.
+	 * @param ctx the parse tree
+	 */
+	void exitFalseLiteral(IlpParser.FalseLiteralContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link IlpParser#specVarSimple}.
 	 * @param ctx the parse tree

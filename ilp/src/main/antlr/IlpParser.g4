@@ -44,8 +44,8 @@ expression
     | '!' expression
     | '(' expression ')'
     | ID
-    | NUMBER_LITERAL
-    | STRING_LITERAL
+    | NUMBERLITERAL
+    | STRINGLITERAL
     ;
 
 
@@ -95,16 +95,16 @@ lstOP
     ;
 
 lstType
-    : T_INT
-    | T_STRING
-    | T_BOOL
+    : T_INT       # integer
+    | T_STRING    # string
+    | T_BOOL      # bool
     ;
 
 literal
-    : NUMBER_LITERAL
-    | STRING_LITERAL
-    | T_FALSE
-    | T_TRUE
+    : NUMBERLITERAL # intLiteral
+    | STRINGLITERAL # stringLiteral
+    | T_FALSE        # trueLiteral
+    | T_TRUE         # falseLiteral
     ;
 
 specVarSimple
@@ -117,7 +117,7 @@ specVarSimpleIni
     ;
 
 specVarArr
-    : specVarSimple '[' NUMBER_LITERAL ']'
+    : specVarSimple '[' NUMBERLITERAL ']'
     ;
 
 lstArrIni
@@ -148,7 +148,7 @@ declVar
     ;
 
 cmdRead
-    : T_READ (ID | STRING_LITERAL | NUMBER_LITERAL ) ';' //verificar se literais entram
+    : T_READ (ID | STRINGLITERAL | NUMBERLITERAL ) ';' //verificar se literais entram
     ;
 
 cmdWrite
