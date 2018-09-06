@@ -22,6 +22,7 @@ public class ParseTreeNode extends ParseTreeEl {
 
     @Override
     public String toString() {
+
         return "Node(" + this.name + ") " + this.children;
     }
 

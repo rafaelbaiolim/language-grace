@@ -2,11 +2,15 @@ parser grammar IlpParser;
 options { tokenVocab=IlpLexer; }
 
 ilpFile : lines=line+ ;
-line : command (WS | EOF);
+line : statement;
 
 command
     : cmdSimple
     | block
+    ;
+
+statement
+    : declVar # assignmentStatement
     ;
 
 cmdSimple
@@ -36,16 +40,15 @@ block
     ;
 
 expression
-    : left=expression operator='?' right=expression operator=':' right=expression
-    | expression operator=('||' | '&&' | '==' | '!=' | '<' | '<=' | '>' | '>=' ) expression
-    | expression operator=( '+'| '-' | '/' | '*' | '%') expression
-    | ( '+' | '-' | '++' | '--' ) expression
-    | '-' expression
-    | '!' expression
-    | '(' expression ')'
-    | ID
-    | NUMBERLITERAL
-    | STRINGLITERAL
+    : left=expression operator='?' right=expression operator=':' right=expression  # binaryOperation
+    | expression operator=('||' | '&&' | '==' | '!=' | '<' | '<=' | '>' | '>=' ) expression  # binaryOperation
+    | expression operator=( '+'| '-' | '/' | '*' | '%') expression # binaryOperation
+    | expression ( '+' | '-' | '++' | '--' ) # binaryOperation
+    | '-' expression        # minusExpression
+    | '!' expression        # differenceExpression
+    | '(' expression ')'    # parenExpression
+    | ID                    # varReference
+    | literal               # literalReference
     ;
 
 
@@ -101,15 +104,15 @@ lstType
     ;
 
 literal
-    : NUMBERLITERAL # intLiteral
-    | STRINGLITERAL # stringLiteral
+    : NUMBERLITERAL  # intLiteral
+    | STRINGLITERAL  # stringLiteral
     | T_FALSE        # trueLiteral
     | T_TRUE         # falseLiteral
     ;
 
 specVarSimple
     : ID
-    | ID T_EQUAL literal
+    | ID '=' literal
     ;
 
 specVarSimpleIni
@@ -139,8 +142,8 @@ specVar
 
 
 listSpecVars
-    : specVar
-    | specVar ',' listSpecVars
+    : specVar                       # directSpecVar
+    | specVar ',' listSpecVars      # indirectSpecVar
     ;
 
 declVar

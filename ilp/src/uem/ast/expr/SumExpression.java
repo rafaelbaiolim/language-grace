@@ -10,12 +10,12 @@ public class SumExpression implements BinaryExpression {
 
     @Override
     public Expression getLeft() {
-        return null;
+        return this.left;
     }
 
     @Override
     public Expression getRight() {
-        return null;
+        return this.right;
     }
 
     public SumExpression(Expression left, Expression right, Position position) {
@@ -23,6 +23,13 @@ public class SumExpression implements BinaryExpression {
         this.left = left;
         this.right = right;
         this.position = position;
+    }
+
+    public SumExpression(Expression left, Expression right) {
+        super();
+        this.left = left;
+        this.right = right;
+        this.position = null;
     }
 
 }

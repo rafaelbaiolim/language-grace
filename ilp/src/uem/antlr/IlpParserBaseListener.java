@@ -52,6 +52,18 @@ public class IlpParserBaseListener implements IlpParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterAssignmentStatement(IlpParser.AssignmentStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAssignmentStatement(IlpParser.AssignmentStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterCmdSimple(IlpParser.CmdSimpleContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -100,13 +112,73 @@ public class IlpParserBaseListener implements IlpParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExpression(IlpParser.ExpressionContext ctx) { }
+	@Override public void enterMinusExpression(IlpParser.MinusExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExpression(IlpParser.ExpressionContext ctx) { }
+	@Override public void exitMinusExpression(IlpParser.MinusExpressionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterDifferenceExpression(IlpParser.DifferenceExpressionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitDifferenceExpression(IlpParser.DifferenceExpressionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterLiteralReference(IlpParser.LiteralReferenceContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitLiteralReference(IlpParser.LiteralReferenceContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterParenExpression(IlpParser.ParenExpressionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitParenExpression(IlpParser.ParenExpressionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterBinaryOperation(IlpParser.BinaryOperationContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitBinaryOperation(IlpParser.BinaryOperationContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterVarReference(IlpParser.VarReferenceContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitVarReference(IlpParser.VarReferenceContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -388,13 +460,25 @@ public class IlpParserBaseListener implements IlpParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterListSpecVars(IlpParser.ListSpecVarsContext ctx) { }
+	@Override public void enterDirectSpecVar(IlpParser.DirectSpecVarContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitListSpecVars(IlpParser.ListSpecVarsContext ctx) { }
+	@Override public void exitDirectSpecVar(IlpParser.DirectSpecVarContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterIndirectSpecVar(IlpParser.IndirectSpecVarContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitIndirectSpecVar(IlpParser.IndirectSpecVarContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

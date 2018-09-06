@@ -38,6 +38,18 @@ public interface IlpParserListener extends ParseTreeListener {
 	 */
 	void exitCommand(IlpParser.CommandContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code assignmentStatement}
+	 * labeled alternative in {@link IlpParser#statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterAssignmentStatement(IlpParser.AssignmentStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code assignmentStatement}
+	 * labeled alternative in {@link IlpParser#statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitAssignmentStatement(IlpParser.AssignmentStatementContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link IlpParser#cmdSimple}.
 	 * @param ctx the parse tree
 	 */
@@ -78,15 +90,77 @@ public interface IlpParserListener extends ParseTreeListener {
 	 */
 	void exitBlock(IlpParser.BlockContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link IlpParser#expression}.
+	 * Enter a parse tree produced by the {@code minusExpression}
+	 * labeled alternative in {@link IlpParser#expression}.
 	 * @param ctx the parse tree
 	 */
-	void enterExpression(IlpParser.ExpressionContext ctx);
+	void enterMinusExpression(IlpParser.MinusExpressionContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link IlpParser#expression}.
+	 * Exit a parse tree produced by the {@code minusExpression}
+	 * labeled alternative in {@link IlpParser#expression}.
 	 * @param ctx the parse tree
 	 */
-	void exitExpression(IlpParser.ExpressionContext ctx);
+	void exitMinusExpression(IlpParser.MinusExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code differenceExpression}
+	 * labeled alternative in {@link IlpParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterDifferenceExpression(IlpParser.DifferenceExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code differenceExpression}
+	 * labeled alternative in {@link IlpParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitDifferenceExpression(IlpParser.DifferenceExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code literalReference}
+	 * labeled alternative in {@link IlpParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterLiteralReference(IlpParser.LiteralReferenceContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code literalReference}
+	 * labeled alternative in {@link IlpParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitLiteralReference(IlpParser.LiteralReferenceContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code parenExpression}
+	 * labeled alternative in {@link IlpParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterParenExpression(IlpParser.ParenExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code parenExpression}
+	 * labeled alternative in {@link IlpParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitParenExpression(IlpParser.ParenExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code binaryOperation}
+	 * labeled alternative in {@link IlpParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterBinaryOperation(IlpParser.BinaryOperationContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code binaryOperation}
+	 * labeled alternative in {@link IlpParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitBinaryOperation(IlpParser.BinaryOperationContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code varReference}
+	 * labeled alternative in {@link IlpParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterVarReference(IlpParser.VarReferenceContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code varReference}
+	 * labeled alternative in {@link IlpParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitVarReference(IlpParser.VarReferenceContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link IlpParser#cmdIf}.
 	 * @param ctx the parse tree
@@ -332,15 +406,29 @@ public interface IlpParserListener extends ParseTreeListener {
 	 */
 	void exitSpecVar(IlpParser.SpecVarContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link IlpParser#listSpecVars}.
+	 * Enter a parse tree produced by the {@code directSpecVar}
+	 * labeled alternative in {@link IlpParser#listSpecVars}.
 	 * @param ctx the parse tree
 	 */
-	void enterListSpecVars(IlpParser.ListSpecVarsContext ctx);
+	void enterDirectSpecVar(IlpParser.DirectSpecVarContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link IlpParser#listSpecVars}.
+	 * Exit a parse tree produced by the {@code directSpecVar}
+	 * labeled alternative in {@link IlpParser#listSpecVars}.
 	 * @param ctx the parse tree
 	 */
-	void exitListSpecVars(IlpParser.ListSpecVarsContext ctx);
+	void exitDirectSpecVar(IlpParser.DirectSpecVarContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code indirectSpecVar}
+	 * labeled alternative in {@link IlpParser#listSpecVars}.
+	 * @param ctx the parse tree
+	 */
+	void enterIndirectSpecVar(IlpParser.IndirectSpecVarContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code indirectSpecVar}
+	 * labeled alternative in {@link IlpParser#listSpecVars}.
+	 * @param ctx the parse tree
+	 */
+	void exitIndirectSpecVar(IlpParser.IndirectSpecVarContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link IlpParser#declVar}.
 	 * @param ctx the parse tree

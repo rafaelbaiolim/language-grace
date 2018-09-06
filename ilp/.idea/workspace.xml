@@ -7,16 +7,19 @@
       <change beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/antlr/IlpLexer.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/antlr/IlpLexer.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/antlr/IlpLexer.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/antlr/IlpLexer.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/antlr/IlpLexer.tokens" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/antlr/IlpParser.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/antlr/IlpParser.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/antlr/IlpLexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpLexer.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/antlr/IlpLexer.tokens" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/antlr/IlpParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpParser.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/antlr/IlpParser.tokens" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpParserBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/antlr/IlpParserBaseListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpParserListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/antlr/IlpParserListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpLexer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpLexer.tokens" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpParser.tokens" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpParserBaseListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpParserListener.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/uem/ast/AstMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/AstMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/ast/expr/SumExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/expr/SumExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/parser/ParseTreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/parser/ParseTreeNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/parser/ParseTreeToAstMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/parser/ParseTreeToAstMap.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -73,44 +76,46 @@
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.52" value="1" />
           <entry key="project.open.time.66" value="1" />
+          <entry key="project.open.time.69" value="1" />
+          <entry key="project.open.time.81" value="1" />
           <entry key="project.open.time.97" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="13" />
-          <entry key="g4" value="21" />
-          <entry key="gradle" value="10" />
+          <entry key="class" value="20" />
+          <entry key="g4" value="35" />
+          <entry key="gradle" value="11" />
           <entry key="iml" value="1" />
-          <entry key="java" value="115" />
-          <entry key="kt" value="4" />
+          <entry key="java" value="175" />
+          <entry key="kt" value="7" />
           <entry key="kts" value="1" />
           <entry key="md" value="1" />
           <entry key="test" value="5" />
-          <entry key="tokens" value="5" />
+          <entry key="tokens" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="ANTLR v4 grammar file" value="21" />
-          <entry key="CLASS" value="13" />
-          <entry key="Groovy" value="10" />
+          <entry key="ANTLR v4 grammar file" value="35" />
+          <entry key="CLASS" value="20" />
+          <entry key="Groovy" value="11" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="115" />
-          <entry key="Kotlin" value="5" />
+          <entry key="JAVA" value="175" />
+          <entry key="Kotlin" value="8" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="6" />
-          <entry key="YAML" value="4" />
+          <entry key="YAML" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="10" />
-          <entry key="g4" value="1269" />
+          <entry key="g4" value="1547" />
           <entry key="gradle" value="603" />
-          <entry key="java" value="4096" />
-          <entry key="kt" value="29" />
+          <entry key="java" value="7381" />
+          <entry key="kt" value="60" />
           <entry key="kts" value="30" />
           <entry key="md" value="401" />
           <entry key="test" value="13" />
@@ -119,10 +124,10 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="ANTLR v4 grammar file" value="1269" />
+          <entry key="ANTLR v4 grammar file" value="1547" />
           <entry key="Groovy" value="603" />
-          <entry key="JAVA" value="4096" />
-          <entry key="Kotlin" value="59" />
+          <entry key="JAVA" value="7381" />
+          <entry key="Kotlin" value="90" />
           <entry key="Markdown" value="401" />
           <entry key="PLAIN_TEXT" value="172" />
         </counts>
@@ -130,70 +135,141 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/uem/ast/AstMap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/uem/ast/type/NumberType.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-              <folding>
-                <element signature="e#311#312#0" expanded="true" />
-                <element signature="e#347#348#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.6486056">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/uem/ast/AstMap.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="92">
+                  <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#4412#4413#0" expanded="true" />
+                    <element signature="e#4448#4449#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/uem/parser/TreeToAst.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="187">
+                  <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#252#253#0" expanded="true" />
+                    <element signature="e#306#307#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/uem/parser/ParseTreeNode.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="340">
+                  <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+                  <folding>
+                    <element signature="e#211#212#0" expanded="true" />
+                    <element signature="e#233#234#0" expanded="true" />
+                    <element signature="e#274#275#0" expanded="true" />
+                    <element signature="e#306#307#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/uem/parser/ParseTreeToAstMap.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="51">
+                  <caret line="3" column="27" lean-forward="true" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/NumberLiteral.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="153">
+                  <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+                  <folding>
+                    <element signature="e#291#292#0" expanded="true" />
+                    <element signature="e#326#327#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/antlr/IlpParser.g4">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="107">
+                  <caret line="140" column="5" lean-forward="true" selection-start-line="140" selection-start-column="5" selection-end-line="140" selection-end-column="5" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/uem/ast/Ast.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="34">
+                  <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/uem/Main.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="238">
+                  <caret line="14" column="85" lean-forward="true" selection-start-line="14" selection-start-column="85" selection-end-line="14" selection-end-column="85" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/antlr/IlpParser.g4">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="280">
+                  <caret line="145" column="46" selection-start-line="145" selection-start-column="46" selection-end-line="145" selection-end-column="46" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Arquillian JUnit Test Class" />
         <option value="JUnit5 Test Class" />
-        <option value="Kotlin File" />
         <option value="Kotlin Script" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Kotlin File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>{</find>
-      <find>.Parser</find>
-      <find>toParseTree</find>
-      <find>var</find>
-      <find>declVar</find>
-      <find>ParseTree</find>
-      <find>Tipo</find>
-      <find>lstlst</find>
-      <find>lstTipo</find>
-      <find>T[</find>
-      <find>&gt;&gt;[</find>
-      <find>position</find>
-      <find>Position</find>
-      <find>node</find>
-      <find>public interface</find>
       <find>public Position</find>
       <find>Expression</find>
       <find>.*Expression</find>
       <find>@NotNull</find>
       <find>SumExpression</find>
       <find>pos</find>
-      <find>Sandy</find>
       <find>Ilp</find>
       <find>var3</find>
       <find>lstType</find>
@@ -202,6 +278,22 @@
       <find>NUMBER_LITERAL</find>
       <find>STRING_LITERAL</find>
       <find>Facade</find>
+      <find>stringLiteral</find>
+      <find>literal</find>
+      <find>print</find>
+      <find>var</find>
+      <find>IntLitE</find>
+      <find>INtLi</find>
+      <find>parseTreeNode</find>
+      <find>ParseTreeNode</find>
+      <find>ParseTreeElement</find>
+      <find>ParseTreeEl</find>
+      <find>expression</find>
+      <find>declVar</find>
+      <find>Sandy</find>
+      <find>line()</find>
+      <find>setBuildParseTree</find>
+      <find>ParseTreeToAstMapper</find>
     </findStrings>
     <replaceStrings>
       <replace>public void</replace>
@@ -217,15 +309,18 @@
       <replace>&gt;&gt;[</replace>
       <replace>-&gt;[</replace>
       <replace>lst</replace>
-      <replace>Ilp</replace>
       <replace>NUMBERLITERAL</replace>
       <replace>STRINGLITERAL</replace>
+      <replace>Ilp</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/tests</dir>
-      <dir>$PROJECT_DIR$</dir>
       <dir>$PROJECT_DIR$/src/uem/antlr</dir>
       <dir>$PROJECT_DIR$/src/main/antlr</dir>
+      <dir>$PROJECT_DIR$/src</dir>
+      <dir>$PROJECT_DIR$</dir>
+      <dir>$PROJECT_DIR$/src/uem/parser</dir>
+      <dir>$PROJECT_DIR$/src/uem</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -240,14 +335,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/uem/antrl/IlpLexer.java" />
-        <option value="$PROJECT_DIR$/src/uem/antrl/IlpListener.java" />
-        <option value="$PROJECT_DIR$/src/uem/antrl/IlpParser.java" />
-        <option value="$PROJECT_DIR$/src/uem/antrl/Ilp-parser.g4" />
-        <option value="$PROJECT_DIR$/src/uem/antrl/Ilp.g4" />
-        <option value="$PROJECT_DIR$/src/uem/antrl/IlpLexer.g4" />
-        <option value="$PROJECT_DIR$/tests/MainTest.java" />
-        <option value="$PROJECT_DIR$/tests/assets/var.lex.test" />
         <option value="$PROJECT_DIR$/tests/TestUtils.java" />
         <option value="$PROJECT_DIR$/tests/assets/var2.lex.test" />
         <option value="$PROJECT_DIR$/src/uem/antrl/IlpLex.g4" />
@@ -255,7 +342,6 @@
         <option value="$PROJECT_DIR$/src/uem/antrl/IlpParser.g4" />
         <option value="$PROJECT_DIR$/src/main/antlr/IlpLex.g4" />
         <option value="$PROJECT_DIR$/src/uem/antlr/IlpParserListener.java" />
-        <option value="$PROJECT_DIR$/src/main/antlr/IlpLexer.g4" />
         <option value="$PROJECT_DIR$/tests/assets/var1.lex.test" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/../README.md" />
@@ -264,10 +350,6 @@
         <option value="$PROJECT_DIR$/src/uem/parser/Parser.java" />
         <option value="$PROJECT_DIR$/src/uem/antlr/IlpLexer.java" />
         <option value="$PROJECT_DIR$/tests/LexTest.java" />
-        <option value="$PROJECT_DIR$/src/uem/parser/ParseTreeEl.java" />
-        <option value="$PROJECT_DIR$/src/uem/parser/ParseTreeNode.java" />
-        <option value="$PROJECT_DIR$/src/uem/Main.java" />
-        <option value="$PROJECT_DIR$/src/uem/parser/ParseTree.java" />
         <option value="$PROJECT_DIR$/src/uem/parser/ParseLeaf.java" />
         <option value="$PROJECT_DIR$/src/uem/Lexer.java" />
         <option value="$PROJECT_DIR$/src/uem/ast/Ast.kt" />
@@ -275,22 +357,35 @@
         <option value="$PROJECT_DIR$/src/uem/ast/Point.java" />
         <option value="$PROJECT_DIR$/src/uem/ast/Position.java" />
         <option value="$PROJECT_DIR$/src/uem/ast/Node.java" />
-        <option value="$PROJECT_DIR$/src/uem/ast/stmt/Statement.java" />
         <option value="$PROJECT_DIR$/src/uem/ast/Type.java" />
         <option value="$PROJECT_DIR$/src/uem/ast/expr/BinaryExpression.java" />
-        <option value="$PROJECT_DIR$/src/uem/ast/expr/SumExpression.java" />
         <option value="$PROJECT_DIR$/src/uem/ast/Ast.java" />
         <option value="$PROJECT_DIR$/src/uem/ast/stmt/DeclVar.java" />
         <option value="$PROJECT_DIR$/src/uem/ast/AstMap.kt" />
-        <option value="$PROJECT_DIR$/src/uem/antlr/IlpParser.java" />
         <option value="$PROJECT_DIR$/src/uem/ast/Model.kts" />
-        <option value="$PROJECT_DIR$/src/uem/parser/ParseTreeToAstMap.java" />
-        <option value="$PROJECT_DIR$/src/main/antlr/IlpParser.g4" />
         <option value="$PROJECT_DIR$/src/uem/ast/type/NumberType.java" />
         <option value="$PROJECT_DIR$/src/uem/ast/type/StringType.java" />
-        <option value="$PROJECT_DIR$/src/uem/ast/AstMap.java" />
         <option value="$PROJECT_DIR$/tests/MapAstTest.java" />
         <option value="$PROJECT_DIR$/tests/AstMapTest.java" />
+        <option value="$PROJECT_DIR$/src/uem/antlr/IlpParser.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/expr/NumberLiteral.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/expr/SumExpression.java" />
+        <option value="$PROJECT_DIR$/src/uem/bosta.kt" />
+        <option value="$PROJECT_DIR$/src/uem/ast/ParseTreeToAstMapper.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/TreeToAst.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/stmt/IlpFile.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/bosta.kt" />
+        <option value="$PROJECT_DIR$/src/uem/ast/Hm.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/stmt/Statement.java" />
+        <option value="$PROJECT_DIR$/src/uem/parser/ParseTreeToAstMap.java" />
+        <option value="$PROJECT_DIR$/src/uem/parser/ParseTreeEl.java" />
+        <option value="$PROJECT_DIR$/src/uem/parser/TreeToAst.java" />
+        <option value="$PROJECT_DIR$/src/uem/parser/ParseTree.java" />
+        <option value="$PROJECT_DIR$/src/uem/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/antlr/IlpLexer.g4" />
+        <option value="$PROJECT_DIR$/src/uem/parser/ParseTreeNode.java" />
+        <option value="$PROJECT_DIR$/src/main/antlr/IlpParser.g4" />
+        <option value="$PROJECT_DIR$/src/uem/ast/AstMap.java" />
       </list>
     </option>
   </component>
@@ -307,10 +402,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="64" />
-    <option name="y" value="-11" />
-    <option name="width" value="1297" />
-    <option name="height" value="780" />
+    <option name="x" value="65" />
+    <option name="y" value="-4" />
+    <option name="width" value="1295" />
+    <option name="height" value="772" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -318,8 +413,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -378,7 +473,69 @@
             <path>
               <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
               <item name="ilp" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="uem" type="462c0819:PsiDirectoryNode" />
+              <item name="parser" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="antlr-4.5.3-complete" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="antlr-4.5.3-complete" type="70bed36:NamedLibraryElementNode" />
+              <item name="antlr-4.5.3-complete.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="antlr-4.5.3-complete" type="70bed36:NamedLibraryElementNode" />
+              <item name="antlr-4.5.3-complete.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="antlr-4.5.3-complete" type="70bed36:NamedLibraryElementNode" />
+              <item name="antlr-4.5.3-complete.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="antlr" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="antlr-4.5.3-complete" type="70bed36:NamedLibraryElementNode" />
+              <item name="antlr-4.5.3-complete.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="antlr" type="462c0819:PsiDirectoryNode" />
+              <item name="v4" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="antlr-4.5.3-complete" type="70bed36:NamedLibraryElementNode" />
+              <item name="antlr-4.5.3-complete.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="antlr" type="462c0819:PsiDirectoryNode" />
+              <item name="v4" type="462c0819:PsiDirectoryNode" />
+              <item name="runtime" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="antlr-4.5.3-complete" type="70bed36:NamedLibraryElementNode" />
+              <item name="antlr-4.5.3-complete.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="antlr" type="462c0819:PsiDirectoryNode" />
+              <item name="v4" type="462c0819:PsiDirectoryNode" />
+              <item name="runtime" type="462c0819:PsiDirectoryNode" />
+              <item name="atn" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -399,7 +556,7 @@
     <property name="js.buildTools.grunt.grunt-cli.package" value="" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/uem" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../astcompil" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../hm/LangSandbox" />
     <property name="nodejs.jest.jest_package" value="" />
     <property name="nodejs.protractor.protractor_package" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -413,11 +570,11 @@
       <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="uem.ast.stmt" />
+      <recent name="uem.ast.expr" />
       <recent name="" />
       <recent name="uem.ast.type" />
       <recent name="uem.ast" />
-      <recent name="uem.ast.expr" />
-      <recent name="uem.parser" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/antlr" />
@@ -579,6 +736,8 @@
       <workItem from="1535773746539" duration="23583000" />
       <workItem from="1535893959640" duration="12888000" />
       <workItem from="1535988262552" duration="3090000" />
+      <workItem from="1536012812430" duration="21148000" />
+      <workItem from="1536185978415" duration="9854000" />
     </task>
     <servers />
   </component>
@@ -615,23 +774,23 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54555000" />
+    <option name="totallyTimeSpent" value="85557000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="1297" height="780" extended-state="6" />
+    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="UI Designer" order="0" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.23538831" />
+      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.0" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="2" weight="0.48447204" />
+      <window_info anchor="bottom" id="Terminal" order="2" weight="0.6226708" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="ANTLR Preview" order="4" weight="0.32919255" />
-      <window_info active="true" anchor="bottom" id="Messages" order="5" visible="true" weight="0.32919255" />
+      <window_info anchor="bottom" id="ANTLR Preview" order="4" weight="0.5621118" />
+      <window_info anchor="bottom" id="Messages" order="5" weight="0.32919255" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Tool Output" order="7" weight="0.32919255" />
       <window_info anchor="bottom" id="Find" order="8" weight="0.32919255" />
@@ -647,7 +806,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="4" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="5" weight="0.24940239" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="6" weight="0.25" />
-      <window_info anchor="right" id="Kotlin Bytecode" order="7" visible="true" weight="0.0" />
+      <window_info anchor="right" id="Kotlin Bytecode" order="7" weight="0.1674277" />
     </layout>
     <layout-to-restore>
       <window_info id="UI Designer" order="0" />
@@ -706,106 +865,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/uem/antlr/IlpLex.java" />
-    <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/util/List.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/assets/var1.lex.test">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="9" selection-start-column="9" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/assets/var2.doc.lex.test">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="36" lean-forward="true" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="420">
-            <caret line="28" column="3" lean-forward="true" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/parser.kt" />
-    <entry file="file://$PROJECT_DIR$/src/uem/parser/Parser.java" />
-    <entry file="jar:///usr/local/lib/antlr-4.5.3-complete.jar!/org/antlr/v4/runtime/ANTLRInputStream.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/local/lib/antlr-4.5.3-complete.jar!/org/antlr/runtime/TokenSource.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/local/lib/antlr-4.5.3-complete.jar!/org/antlr/runtime/Lexer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/local/lib/antlr-4.5.3-complete.jar!/org/antlr/v4/runtime/Lexer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="13" column="38" lean-forward="true" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/local/lib/antlr-4.5.3-complete.jar!/org/antlr/runtime/CommonTokenStream.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/LexTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="51" column="47" selection-start-line="51" selection-start-column="47" selection-end-line="51" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/local/lib/antlr-4.5.3-complete.jar!/org/antlr/v4/runtime/TokenSource.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/local/lib/antlr-4.5.3-complete.jar!/org/antlr/v4/runtime/CommonTokenStream.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/TestUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -813,61 +876,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/parser/ParseTreeEl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/parser/ParseTree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/parser/ParseLeaf.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
-          <folding>
-            <element signature="e#305#306#0" expanded="true" />
-            <element signature="e#361#362#0" expanded="true" />
-            <element signature="e#411#412#0" expanded="true" />
-            <element signature="e#459#460#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/parser/ParseTreeNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="4" column="48" lean-forward="true" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
-          <folding>
-            <element signature="e#211#212#0" expanded="true" />
-            <element signature="e#233#234#0" expanded="true" />
-            <element signature="e#222#223#0" expanded="true" />
-            <element signature="e#254#255#0" expanded="true" />
-            <element signature="e#417#418#0" expanded="true" />
-            <element signature="e#482#483#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/Lexer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -892,256 +900,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/uem/ast/Ast.kt" />
-    <entry file="file://$PROJECT_DIR$/src/uem/ast/stmt/DeclVar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#158#159#0" expanded="true" />
-            <element signature="e#186#187#0" expanded="true" />
-            <element signature="e#227#228#0" expanded="true" />
-            <element signature="e#257#258#0" expanded="true" />
-            <element signature="e#473#474#0" expanded="true" />
-            <element signature="e#509#510#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/ast/stmt/Statement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/ast/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/ast/Point.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/ast/Ast.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/uem/ast/AstMap.kt" />
     <entry file="file://$PROJECT_DIR$/src/uem/ast/Model.kts" />
     <entry file="file://$PROJECT_DIR$/src/uem/ast/Type.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/antlr/IlpLexer.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="83" column="5" lean-forward="true" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/BinaryExpression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/antlr/IlpParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="1250" column="38" selection-start-line="1250" selection-start-column="24" selection-end-line="1250" selection-end-column="38" />
-          <folding>
-            <element signature="e#4322#4323#0" expanded="true" />
-            <element signature="e#4346#4347#0" expanded="true" />
-            <element signature="e#4396#4397#0" expanded="true" />
-            <element signature="e#4420#4421#0" expanded="true" />
-            <element signature="e#4953#4954#0" expanded="true" />
-            <element signature="e#5003#5004#0" expanded="true" />
-            <element signature="e#5038#5039#0" expanded="true" />
-            <element signature="e#5089#5090#0" expanded="true" />
-            <element signature="e#5160#5161#0" expanded="true" />
-            <element signature="e#5197#5198#0" expanded="true" />
-            <element signature="e#6647#6648#0" expanded="true" />
-            <element signature="e#6701#6702#0" expanded="true" />
-            <element signature="e#6901#6902#0" expanded="true" />
-            <element signature="e#6938#6939#0" expanded="true" />
-            <element signature="e#8031#8032#0" expanded="true" />
-            <element signature="e#8087#8088#0" expanded="true" />
-            <element signature="e#8119#8120#0" expanded="true" />
-            <element signature="e#8171#8172#0" expanded="true" />
-            <element signature="e#8242#8243#0" expanded="true" />
-            <element signature="e#8279#8280#0" expanded="true" />
-            <element signature="e#9652#9653#0" expanded="true" />
-            <element signature="e#9707#9708#0" expanded="true" />
-            <element signature="e#9739#9740#0" expanded="true" />
-            <element signature="e#9791#9792#0" expanded="true" />
-            <element signature="e#9829#9830#0" expanded="true" />
-            <element signature="e#9884#9885#0" expanded="true" />
-            <element signature="e#9918#9919#0" expanded="true" />
-            <element signature="e#9971#9972#0" expanded="true" />
-            <element signature="e#10007#10008#0" expanded="true" />
-            <element signature="e#10061#10062#0" expanded="true" />
-            <element signature="e#10097#10098#0" expanded="true" />
-            <element signature="e#10151#10152#0" expanded="true" />
-            <element signature="e#10191#10192#0" expanded="true" />
-            <element signature="e#10247#10248#0" expanded="true" />
-            <element signature="e#10291#10292#0" expanded="true" />
-            <element signature="e#10349#10350#0" expanded="true" />
-            <element signature="e#10385#10386#0" expanded="true" />
-            <element signature="e#10439#10440#0" expanded="true" />
-            <element signature="e#10477#10478#0" expanded="true" />
-            <element signature="e#10532#10533#0" expanded="true" />
-            <element signature="e#10605#10606#0" expanded="true" />
-            <element signature="e#10642#10643#0" expanded="true" />
-            <element signature="e#12662#12663#0" expanded="true" />
-            <element signature="e#12714#12715#0" expanded="true" />
-            <element signature="e#12786#12787#0" expanded="true" />
-            <element signature="e#12823#12824#0" expanded="true" />
-            <element signature="e#13897#13898#0" expanded="true" />
-            <element signature="e#13954#13955#0" expanded="true" />
-            <element signature="e#14503#14504#0" expanded="true" />
-            <element signature="e#14540#14541#0" expanded="true" />
-            <element signature="e#15821#15822#0" expanded="true" />
-            <element signature="e#15875#15876#0" expanded="true" />
-            <element signature="e#15911#15912#0" expanded="true" />
-            <element signature="e#15965#15966#0" expanded="true" />
-            <element signature="e#16034#16035#0" expanded="true" />
-            <element signature="e#16071#16072#0" expanded="true" />
-            <element signature="e#17561#17562#0" expanded="true" />
-            <element signature="e#17617#17618#0" expanded="true" />
-            <element signature="e#17664#17665#0" expanded="true" />
-            <element signature="e#17721#17722#0" expanded="true" />
-            <element signature="e#18038#18039#0" expanded="true" />
-            <element signature="e#18075#18076#0" expanded="true" />
-            <element signature="e#23268#23269#0" expanded="true" />
-            <element signature="e#23325#23326#0" expanded="true" />
-            <element signature="e#23361#23362#0" expanded="true" />
-            <element signature="e#23415#23416#0" expanded="true" />
-            <element signature="e#23557#23558#0" expanded="true" />
-            <element signature="e#23594#23595#0" expanded="true" />
-            <element signature="e#25062#25063#0" expanded="true" />
-            <element signature="e#25119#25120#0" expanded="true" />
-            <element signature="e#25155#25156#0" expanded="true" />
-            <element signature="e#25209#25210#0" expanded="true" />
-            <element signature="e#25281#25282#0" expanded="true" />
-            <element signature="e#25318#25319#0" expanded="true" />
-            <element signature="e#26447#26448#0" expanded="true" />
-            <element signature="e#26502#26503#0" expanded="true" />
-            <element signature="e#26573#26574#0" expanded="true" />
-            <element signature="e#26610#26611#0" expanded="true" />
-            <element signature="e#27575#27576#0" expanded="true" />
-            <element signature="e#27630#27631#0" expanded="true" />
-            <element signature="e#27702#27703#0" expanded="true" />
-            <element signature="e#27739#27740#0" expanded="true" />
-            <element signature="e#28779#28780#0" expanded="true" />
-            <element signature="e#28833#28834#0" expanded="true" />
-            <element signature="e#28875#28876#0" expanded="true" />
-            <element signature="e#28932#28933#0" expanded="true" />
-            <element signature="e#28970#28971#0" expanded="true" />
-            <element signature="e#29025#29026#0" expanded="true" />
-            <element signature="e#29061#29062#0" expanded="true" />
-            <element signature="e#29115#29116#0" expanded="true" />
-            <element signature="e#29185#29186#0" expanded="true" />
-            <element signature="e#29222#29223#0" expanded="true" />
-            <element signature="e#30586#30587#0" expanded="true" />
-            <element signature="e#30623#30624#0" expanded="true" />
-            <element signature="e#31737#31738#0" expanded="true" />
-            <element signature="e#31774#31775#0" expanded="true" />
-            <element signature="e#32865#32866#0" expanded="true" />
-            <element signature="e#32922#32923#0" expanded="true" />
-            <element signature="e#32995#32996#0" expanded="true" />
-            <element signature="e#33032#33033#0" expanded="true" />
-            <element signature="e#34167#34168#0" expanded="true" />
-            <element signature="e#34224#34225#0" expanded="true" />
-            <element signature="e#34299#34300#0" expanded="true" />
-            <element signature="e#34336#34337#0" expanded="true" />
-            <element signature="e#35980#35981#0" expanded="true" />
-            <element signature="e#36017#36018#0" expanded="true" />
-            <element signature="e#37480#37481#0" expanded="true" />
-            <element signature="e#37517#37518#0" expanded="true" />
-            <element signature="e#39041#39042#0" expanded="true" />
-            <element signature="e#39078#39079#0" expanded="true" />
-            <element signature="e#40420#40421#0" expanded="true" />
-            <element signature="e#40474#40475#0" expanded="true" />
-            <element signature="e#40551#40552#0" expanded="true" />
-            <element signature="e#40588#40589#0" expanded="true" />
-            <element signature="e#41939#41940#0" expanded="true" />
-            <element signature="e#41998#41999#0" expanded="true" />
-            <element signature="e#42051#42052#0" expanded="true" />
-            <element signature="e#42111#42112#0" expanded="true" />
-            <element signature="e#42143#42144#0" expanded="true" />
-            <element signature="e#42195#42196#0" expanded="true" />
-            <element signature="e#42275#42276#0" expanded="true" />
-            <element signature="e#42312#42313#0" expanded="true" />
-            <element signature="e#43434#43435#0" expanded="true" />
-            <element signature="e#43494#43495#0" expanded="true" />
-            <element signature="e#43657#43658#0" expanded="true" />
-            <element signature="e#43694#43695#0" expanded="true" />
-            <element signature="e#44824#44825#0" expanded="true" />
-            <element signature="e#44877#44878#0" expanded="true" />
-            <element signature="e#44918#44919#0" expanded="true" />
-            <element signature="e#44972#44973#0" expanded="true" />
-            <element signature="e#45045#45046#0" expanded="true" />
-            <element signature="e#45082#45083#0" expanded="true" />
-            <element signature="e#46386#46387#0" expanded="true" />
-            <element signature="e#46443#46444#0" expanded="true" />
-            <element signature="e#46483#46484#0" expanded="true" />
-            <element signature="e#46539#46540#0" expanded="true" />
-            <element signature="e#46616#46617#0" expanded="true" />
-            <element signature="e#46653#46654#0" expanded="true" />
-            <element signature="e#47845#47846#0" expanded="true" />
-            <element signature="e#47905#47906#0" expanded="true" />
-            <element signature="e#47959#47960#0" expanded="true" />
-            <element signature="e#48022#48023#0" expanded="true" />
-            <element signature="e#48064#48065#0" expanded="true" />
-            <element signature="e#48121#48122#0" expanded="true" />
-            <element signature="e#48169#48170#0" expanded="true" />
-            <element signature="e#48229#48230#0" expanded="true" />
-            <element signature="e#48300#48301#0" expanded="true" />
-            <element signature="e#48337#48338#0" expanded="true" />
-            <element signature="e#49772#49773#0" expanded="true" />
-            <element signature="e#49826#49827#0" expanded="true" />
-            <element signature="e#49872#49873#0" expanded="true" />
-            <element signature="e#49931#49932#0" expanded="true" />
-            <element signature="e#50007#50008#0" expanded="true" />
-            <element signature="e#50044#50045#0" expanded="true" />
-            <element signature="e#51447#51448#0" expanded="true" />
-            <element signature="e#51506#51507#0" expanded="true" />
-            <element signature="e#51542#51543#0" expanded="true" />
-            <element signature="e#51596#51597#0" expanded="true" />
-            <element signature="e#51667#51668#0" expanded="true" />
-            <element signature="e#51704#51705#0" expanded="true" />
-            <element signature="e#53166#53167#0" expanded="true" />
-            <element signature="e#53203#53204#0" expanded="true" />
-            <element signature="e#54536#54537#0" expanded="true" />
-            <element signature="e#54593#54594#0" expanded="true" />
-            <element signature="e#54665#54666#0" expanded="true" />
-            <element signature="e#54702#54703#0" expanded="true" />
-            <element signature="e#56116#56117#0" expanded="true" />
-            <element signature="e#56173#56174#0" expanded="true" />
-            <element signature="e#56245#56246#0" expanded="true" />
-            <element signature="e#56282#56283#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/uem/antlr/IlpParserListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -1163,30 +924,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/Expression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/parser/ParseTreeToAstMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/SumExpression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="25" column="5" lean-forward="true" selection-start-line="20" selection-start-column="4" selection-end-line="25" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/uem/ast/type/Type.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1201,34 +938,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/antlr/IlpParser.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="104" column="19" selection-start-line="104" selection-start-column="6" selection-end-line="104" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="16" column="30" lean-forward="true" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/AstMapTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
           <caret line="38" column="55" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/ast/AstMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1239,13 +952,268 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///usr/local/lib/antlr-4.5.3-complete.jar!/org/antlr/v4/tool/ast/PlusBlockAST.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="19" column="41" lean-forward="true" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/SumExpression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/uem/ast/type/NumberType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding>
             <element signature="e#311#312#0" expanded="true" />
             <element signature="e#347#348#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/bosta.kt" />
+    <entry file="file://$PROJECT_DIR$/src/uem/parser/ParseLeaf.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/Lexer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/stmt/IlpFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/bosta.kt" />
+    <entry file="jar:///usr/local/lib/antlr-4.5.3-complete.jar!/org/antlr/v4/runtime/Parser.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1236">
+          <caret line="103" column="33" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/local/lib/antlr-4.5.3-complete.jar!/org/antlr/v4/runtime/atn/ATN.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="39" column="33" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/Hm.java" />
+    <entry file="jar:///usr/local/lib/antlr-4.5.3-complete.jar!/org/antlr/runtime/tree/CommonTreeAdaptor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/local/lib/antlr-4.5.3-complete.jar!/org/antlr/runtime/tree/CommonTreeNodeStream.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/antlr/IlpLexer.tokens">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/Expression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/BinaryExpression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/stmt/Statement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/Point.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/parser/ParseTreeEl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="27" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/parser/ParseTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/antlr/IlpLexer.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/antlr/SandyParser.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="48" lean-forward="true" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/antlr/SandyLexer.g4">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="85" lean-forward="true" selection-start-line="14" selection-start-column="85" selection-end-line="14" selection-end-column="85" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/Ast.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/stmt/DeclVar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/local/lib/antlr-4.5.3-complete.jar!/org/antlr/v4/runtime/ParserRuleContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="168" column="43" selection-start-line="168" selection-start-column="43" selection-end-line="168" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/antlr/IlpParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="290" column="30" selection-start-line="290" selection-start-column="30" selection-end-line="290" selection-end-column="30" />
+          <folding>
+            <element signature="e#9521#9522#0" expanded="true" />
+            <element signature="e#9575#9576#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/parser/ParseTreeNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding>
+            <element signature="e#211#212#0" expanded="true" />
+            <element signature="e#233#234#0" expanded="true" />
+            <element signature="e#274#275#0" expanded="true" />
+            <element signature="e#306#307#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/parser/TreeToAst.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#252#253#0" expanded="true" />
+            <element signature="e#306#307#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/parser/ParseTreeToAstMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="27" lean-forward="true" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/NumberLiteral.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="e#291#292#0" expanded="true" />
+            <element signature="e#326#327#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/antlr/IlpParser.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="140" column="5" lean-forward="true" selection-start-line="140" selection-start-column="5" selection-end-line="140" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/AstMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4412#4413#0" expanded="true" />
+            <element signature="e#4448#4449#0" expanded="true" />
           </folding>
         </state>
       </provider>
