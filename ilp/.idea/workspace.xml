@@ -9,7 +9,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/antlr/IlpLexer.tokens" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/antlr/IlpParser.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/antlr/IlpParser.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpLexer.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpLexer.tokens" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpParser.java" beforeDir="false" />
@@ -17,9 +16,6 @@
       <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpParserBaseListener.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpParserListener.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/uem/ast/AstMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/AstMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/ast/expr/SumExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/expr/SumExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/parser/ParseTreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/parser/ParseTreeNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/parser/ParseTreeToAstMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/parser/ParseTreeToAstMap.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,6 +23,30 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/uem/ast/AstMap.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="554">
+                    <caret line="176" lean-forward="true" selection-start-line="176" selection-end-line="176" />
+                    <folding>
+                      <element signature="imports" expanded="true" />
+                      <element signature="e#5427#5428#0" expanded="true" />
+                      <element signature="e#5463#5464#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-356103321">
@@ -75,11 +95,12 @@
         <counts>
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.52" value="1" />
+          <entry key="project.open.time.63" value="1" />
           <entry key="project.open.time.66" value="1" />
           <entry key="project.open.time.69" value="1" />
           <entry key="project.open.time.81" value="1" />
           <entry key="project.open.time.97" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -88,7 +109,7 @@
           <entry key="g4" value="35" />
           <entry key="gradle" value="11" />
           <entry key="iml" value="1" />
-          <entry key="java" value="175" />
+          <entry key="java" value="180" />
           <entry key="kt" value="7" />
           <entry key="kts" value="1" />
           <entry key="md" value="1" />
@@ -102,7 +123,7 @@
           <entry key="CLASS" value="20" />
           <entry key="Groovy" value="11" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="175" />
+          <entry key="JAVA" value="180" />
           <entry key="Kotlin" value="8" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="6" />
@@ -112,9 +133,9 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="10" />
-          <entry key="g4" value="1547" />
+          <entry key="g4" value="1722" />
           <entry key="gradle" value="603" />
-          <entry key="java" value="7381" />
+          <entry key="java" value="7814" />
           <entry key="kt" value="60" />
           <entry key="kts" value="30" />
           <entry key="md" value="401" />
@@ -124,9 +145,9 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="ANTLR v4 grammar file" value="1547" />
+          <entry key="ANTLR v4 grammar file" value="1722" />
           <entry key="Groovy" value="603" />
-          <entry key="JAVA" value="7381" />
+          <entry key="JAVA" value="7814" />
           <entry key="Kotlin" value="90" />
           <entry key="Markdown" value="401" />
           <entry key="PLAIN_TEXT" value="172" />
@@ -135,120 +156,26 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.6486056">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/uem/ast/AstMap.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="92">
-                  <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#4412#4413#0" expanded="true" />
-                    <element signature="e#4448#4449#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/uem/parser/TreeToAst.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
-                  <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#252#253#0" expanded="true" />
-                    <element signature="e#306#307#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/uem/parser/ParseTreeNode.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="340">
-                  <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-                  <folding>
-                    <element signature="e#211#212#0" expanded="true" />
-                    <element signature="e#233#234#0" expanded="true" />
-                    <element signature="e#274#275#0" expanded="true" />
-                    <element signature="e#306#307#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/uem/parser/ParseTreeToAstMap.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="51">
-                  <caret line="3" column="27" lean-forward="true" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/NumberLiteral.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-                  <folding>
-                    <element signature="e#291#292#0" expanded="true" />
-                    <element signature="e#326#327#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/antlr/IlpParser.g4">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="107">
-                  <caret line="140" column="5" lean-forward="true" selection-start-line="140" selection-start-column="5" selection-end-line="140" selection-end-column="5" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/uem/ast/Ast.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="34">
-                  <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/uem/Main.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="14" column="85" lean-forward="true" selection-start-line="14" selection-start-column="85" selection-end-line="14" selection-end-column="85" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/antlr/IlpParser.g4">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="280">
-                  <caret line="145" column="46" selection-start-line="145" selection-start-column="46" selection-end-line="145" selection-end-column="46" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/antlr/IlpParser.g4">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/uem/ast/stmt/IlpFile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -264,7 +191,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>public Position</find>
       <find>Expression</find>
       <find>.*Expression</find>
       <find>@NotNull</find>
@@ -280,7 +206,6 @@
       <find>Facade</find>
       <find>stringLiteral</find>
       <find>literal</find>
-      <find>print</find>
       <find>var</find>
       <find>IntLitE</find>
       <find>INtLi</find>
@@ -289,11 +214,13 @@
       <find>ParseTreeElement</find>
       <find>ParseTreeEl</find>
       <find>expression</find>
-      <find>declVar</find>
       <find>Sandy</find>
       <find>line()</find>
       <find>setBuildParseTree</find>
       <find>ParseTreeToAstMapper</find>
+      <find>print</find>
+      <find>atrib</find>
+      <find>declVar</find>
     </findStrings>
     <replaceStrings>
       <replace>public void</replace>
@@ -402,9 +329,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="65" />
+    <option name="x" value="1360" />
     <option name="y" value="-4" />
-    <option name="width" value="1295" />
+    <option name="width" value="1360" />
     <option name="height" value="772" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -422,121 +349,6 @@
               <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
               <item name="ilp" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ilp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ilp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="antlr" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ilp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="uem" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ilp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="uem" type="462c0819:PsiDirectoryNode" />
-              <item name="ast" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ilp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="uem" type="462c0819:PsiDirectoryNode" />
-              <item name="ast" type="462c0819:PsiDirectoryNode" />
-              <item name="expr" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ilp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="uem" type="462c0819:PsiDirectoryNode" />
-              <item name="ast" type="462c0819:PsiDirectoryNode" />
-              <item name="stmt" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ilp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="uem" type="462c0819:PsiDirectoryNode" />
-              <item name="ast" type="462c0819:PsiDirectoryNode" />
-              <item name="type" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ilp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="uem" type="462c0819:PsiDirectoryNode" />
-              <item name="parser" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="antlr-4.5.3-complete" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="antlr-4.5.3-complete" type="70bed36:NamedLibraryElementNode" />
-              <item name="antlr-4.5.3-complete.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="antlr-4.5.3-complete" type="70bed36:NamedLibraryElementNode" />
-              <item name="antlr-4.5.3-complete.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="antlr-4.5.3-complete" type="70bed36:NamedLibraryElementNode" />
-              <item name="antlr-4.5.3-complete.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="antlr" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="antlr-4.5.3-complete" type="70bed36:NamedLibraryElementNode" />
-              <item name="antlr-4.5.3-complete.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="antlr" type="462c0819:PsiDirectoryNode" />
-              <item name="v4" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="antlr-4.5.3-complete" type="70bed36:NamedLibraryElementNode" />
-              <item name="antlr-4.5.3-complete.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="antlr" type="462c0819:PsiDirectoryNode" />
-              <item name="v4" type="462c0819:PsiDirectoryNode" />
-              <item name="runtime" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="antlr-4.5.3-complete" type="70bed36:NamedLibraryElementNode" />
-              <item name="antlr-4.5.3-complete.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="antlr" type="462c0819:PsiDirectoryNode" />
-              <item name="v4" type="462c0819:PsiDirectoryNode" />
-              <item name="runtime" type="462c0819:PsiDirectoryNode" />
-              <item name="atn" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -547,6 +359,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="SearchEverywhereHistoryKey" value="main.&#9;FILE&#9;file:///home/rafaellb/Documents/uem/ilp2018/compilador/ilp/src/uem/Main.java&#10;De&#9;FILE&#9;file:///home/rafaellb/Documents/uem/ilp2018/compilador/ilp/src/uem/ast/stmt/DeclVar.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="ANTLRv4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
@@ -737,7 +550,8 @@
       <workItem from="1535893959640" duration="12888000" />
       <workItem from="1535988262552" duration="3090000" />
       <workItem from="1536012812430" duration="21148000" />
-      <workItem from="1536185978415" duration="9854000" />
+      <workItem from="1536185978415" duration="13492000" />
+      <workItem from="1536507362827" duration="7579000" />
     </task>
     <servers />
   </component>
@@ -774,26 +588,26 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85557000" />
+    <option name="totallyTimeSpent" value="96774000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
+    <frame x="65" y="-4" width="1295" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="UI Designer" order="0" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.0" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.0888711" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="2" weight="0.6226708" />
+      <window_info anchor="bottom" id="Terminal" order="2" weight="0.32919255" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="ANTLR Preview" order="4" weight="0.5621118" />
+      <window_info anchor="bottom" id="ANTLR Preview" order="4" weight="0.32919255" />
       <window_info anchor="bottom" id="Messages" order="5" weight="0.32919255" />
       <window_info anchor="bottom" id="Message" order="6" />
-      <window_info anchor="bottom" id="Tool Output" order="7" weight="0.32919255" />
-      <window_info anchor="bottom" id="Find" order="8" weight="0.32919255" />
+      <window_info anchor="bottom" id="Find" order="7" weight="0.32919255" />
+      <window_info anchor="bottom" id="Tool Output" order="8" weight="0.32919255" />
       <window_info anchor="bottom" id="Run" order="9" weight="0.32919255" />
       <window_info anchor="bottom" id="Debug" order="10" weight="0.32919255" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
@@ -973,17 +787,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/ast/type/NumberType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <element signature="e#311#312#0" expanded="true" />
-            <element signature="e#347#348#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/uem/bosta.kt" />
     <entry file="file://$PROJECT_DIR$/src/uem/parser/ParseLeaf.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -996,16 +799,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/ast/stmt/IlpFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -1088,9 +881,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1101,43 +891,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/antlr/SandyParser.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="48" lean-forward="true" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/antlr/SandyLexer.g4">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="85" lean-forward="true" selection-start-line="14" selection-start-column="85" selection-end-line="14" selection-end-column="85" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/ast/Ast.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/ast/stmt/DeclVar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/antlr/SandyParser.g4" />
+    <entry file="file://$PROJECT_DIR$/src/main/antlr/SandyLexer.g4" />
     <entry file="jar:///usr/local/lib/antlr-4.5.3-complete.jar!/org/antlr/v4/runtime/ParserRuleContext.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1156,15 +911,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/parser/ParseTreeNode.java">
+    <entry file="file://$PROJECT_DIR$/src/uem/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+        <state relative-caret-position="238">
+          <caret line="14" column="70" lean-forward="true" selection-start-line="14" selection-start-column="70" selection-end-line="14" selection-end-column="85" />
           <folding>
-            <element signature="e#211#212#0" expanded="true" />
-            <element signature="e#233#234#0" expanded="true" />
-            <element signature="e#274#275#0" expanded="true" />
-            <element signature="e#306#307#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/stmt/IlpFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/stmt/DeclVar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/type/NumberType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+          <folding>
+            <element signature="e#311#312#0" expanded="true" />
+            <element signature="e#347#348#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1181,17 +961,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/parser/ParseTreeNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding>
+            <element signature="e#211#212#0" expanded="true" />
+            <element signature="e#233#234#0" expanded="true" />
+            <element signature="e#274#275#0" expanded="true" />
+            <element signature="e#306#307#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/uem/parser/ParseTreeToAstMap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="27" lean-forward="true" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+          <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/NumberLiteral.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding>
             <element signature="e#291#292#0" expanded="true" />
             <element signature="e#326#327#0" expanded="true" />
@@ -1199,21 +992,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/Ast.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/antlr/IlpParser.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="140" column="5" lean-forward="true" selection-start-line="140" selection-start-column="5" selection-end-line="140" selection-end-column="5" />
+        <state relative-caret-position="119">
+          <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/uem/ast/AstMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+        <state relative-caret-position="554">
+          <caret line="176" lean-forward="true" selection-start-line="176" selection-end-line="176" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4412#4413#0" expanded="true" />
-            <element signature="e#4448#4449#0" expanded="true" />
+            <element signature="e#5427#5428#0" expanded="true" />
+            <element signature="e#5463#5464#0" expanded="true" />
           </folding>
         </state>
       </provider>

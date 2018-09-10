@@ -6,12 +6,13 @@ import uem.antlr.IlpParser.IntLiteralContext;
 import uem.ast.expr.Expression;
 import uem.ast.expr.NumberLiteral;
 import uem.ast.expr.SumExpression;
-import uem.ast.stmt.DeclVar;
 import uem.ast.stmt.IlpFile;
 import uem.ast.stmt.Statement;
 import uem.ast.type.NumberType;
 import uem.ast.type.StringType;
 import uem.ast.type.Type;
+
+import static uem.antlr.IlpParser.*;
 
 public class AstMap {
 
@@ -28,7 +29,7 @@ public class AstMap {
     }
 
 
-    public IlpFile getAst(IlpParser.IlpFileContext ilpFileCtx) {
+    public IlpFile getAst(IlpFileContext ilpFileCtx) {
         ilpFileCtx.line().forEach(el -> {
             this.getAst(
                     el.statement(),
@@ -42,16 +43,50 @@ public class AstMap {
         return null;
     }
 
-    public final IlpParser.ListSpecVarsContext getAst(IlpParser.ListSpecVarsContext listspec, Position pos) {
 
+    public final SpecVarContext getAst(SpecVarContext listspec, Position pos) {
+        String canonicalListDecl = listspec.getClass().getCanonicalName();
+        if (canonicalListDecl.equals(DirectSpecVarContext.class.getCanonicalName())) {
+
+        }
+        throw new UnsupportedOperationException(this.getClass().getCanonicalName());
     }
 
 
-    public final Statement getAst(IlpParser.StatementContext ctxStmt, Position pos) {
+    /**
+     * Map Decl Var List
+     *
+     * @param listspec
+     * @return
+     */
+    public final ListSpecVarsContext getAst(ListSpecVarsContext listspec) {
+        String canonicalListDecl = listspec.getClass().getCanonicalName();
+
+        if (canonicalListDecl.equals(DirectSpecVarContext.class.getCanonicalName())) {
+
+        }
+        throw new UnsupportedOperationException(this.getClass().getCanonicalName());
+    }
+
+
+    public final Statement getAst(StatementContext ctxStmt, Position pos) {
         String canonicalStmt = ctxStmt.getClass().getCanonicalName();
-        if(canonicalStmt.equals(IlpParser.AssignmentStatementContext.class.getCanonicalName())){
-            //((IlpParser.AssignmentStatementContext) ctxStmt).declVar().T_VAR().getText();
-            ((IlpParser.AssignmentStatementContext) ctxStmt).declVar().listSpecVars();
+
+        //DeclVar
+        if (canonicalStmt.equals(DeclVarContext.class.getCanonicalName())) {
+
+        }
+
+        //Assign
+        if (canonicalStmt.equals(AssignmentStatementContext.class.getCanonicalName())) {
+            //   IlpParser.DeclVarContext dclVar = ((IlpParser.AssignmentStatementContext) ctxStmt).declVar();
+//            return new DeclVar(
+//                    dclVar.T_VAR().getText(), //token name value
+//            );
+
+            // IlpParser.ListSpecVarsContext lstSpec = dclVar.listSpecVars();
+            //this.getAst(lstSpec);
+
         }
 
         throw new UnsupportedOperationException(this.getClass().getCanonicalName());
@@ -63,14 +98,14 @@ public class AstMap {
      * @param typeCtx
      * @return
      */
-    public final Type getAst(IlpParser.LstTypeContext typeCtx) {
+    public final Type getAst(LstTypeContext typeCtx) {
         String canonicalType = typeCtx.getClass().getCanonicalName();
         System.out.println(canonicalType);
         if (canonicalType.equals(IntLiteralContext.class.getCanonicalName())) {
             return new NumberType();
         }
 
-        if (canonicalType.equals(IlpParser.StringLiteralContext.class.getCanonicalName())) {
+        if (canonicalType.equals(StringLiteralContext.class.getCanonicalName())) {
             return new StringType();
         }
 
@@ -83,22 +118,22 @@ public class AstMap {
      * @param exprCtx
      * @return
      */
-    public final Expression getAst(IlpParser.ExpressionContext exprCtx) {
+    public final Expression getAst(ExpressionContext exprCtx) {
         String canonicalExprCtx = exprCtx.getClass().getCanonicalName();
 
         //Block
-        if (canonicalExprCtx.equals(IlpParser.ParenExpressionContext.class.getCanonicalName())) {
+        if (canonicalExprCtx.equals(ParenExpressionContext.class.getCanonicalName())) {
             return this.getAst(exprCtx);
         }
 
         //Binarios
-        if (canonicalExprCtx.equals(IlpParser.BinaryOperationContext.class.getCanonicalName())) {
-            return this.getAst((IlpParser.BinaryOperationContext) exprCtx);
+        if (canonicalExprCtx.equals(BinaryOperationContext.class.getCanonicalName())) {
+            return this.getAst((BinaryOperationContext) exprCtx);
         }
 
         //Literais
-        if (canonicalExprCtx.equals(IlpParser.LiteralReferenceContext.class.getCanonicalName())) {
-            return this.getAst((IlpParser.LiteralReferenceContext) exprCtx);
+        if (canonicalExprCtx.equals(LiteralReferenceContext.class.getCanonicalName())) {
+            return this.getAst((LiteralReferenceContext) exprCtx);
         }
 
         throw new UnsupportedOperationException(this.getClass().getCanonicalName());
@@ -110,24 +145,24 @@ public class AstMap {
      * @param binExprCtx
      * @return
      */
-    public final Expression getAst(IlpParser.BinaryOperationContext binExprCtx) {
+    public final Expression getAst(BinaryOperationContext binExprCtx) {
         String operator = binExprCtx.operator.getText();
 
         if (operator.equals("+")) {
             return (Expression) new SumExpression(
-                    this.getAst((IlpParser.ExpressionContext) binExprCtx.left),
-                    this.getAst((IlpParser.ExpressionContext) binExprCtx.right)
+                    this.getAst((ExpressionContext) binExprCtx.left),
+                    this.getAst((ExpressionContext) binExprCtx.right)
             );
         }
 
         throw new UnsupportedOperationException(this.getClass().getCanonicalName());
     }
 
-    public final Expression getAst(IlpParser.LiteralReferenceContext literalCtx) {
+    public final Expression getAst(LiteralReferenceContext literalCtx) {
         System.out.println(literalCtx.getText());
         System.exit(0);
 
-        if (literalCtx.equals(IlpParser.ParenExpressionContext.class.getCanonicalName())) {
+        if (literalCtx.equals(ParenExpressionContext.class.getCanonicalName())) {
             return null;
         }
 

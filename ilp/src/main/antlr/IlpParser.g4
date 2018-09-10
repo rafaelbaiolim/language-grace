@@ -4,13 +4,36 @@ options { tokenVocab=IlpLexer; }
 ilpFile : lines=line+ ;
 line : statement;
 
+lstOP
+    : T_EQUAL
+    | T_PLUS
+    | T_MINUS
+    | T_ASTERISK
+    | T_PERCENT
+    | T_SLASH
+    ;
+
+lstType
+    : T_INT       # integer
+    | T_STRING    # string
+    | T_BOOL      # bool
+    ;
+
+literal
+    : NUMBERLITERAL  # intLiteral
+    | STRINGLITERAL  # stringLiteral
+    | T_FALSE        # trueLiteral
+    | T_TRUE         # falseLiteral
+    ;
+
 command
     : cmdSimple
     | block
     ;
 
 statement
-    : declVar # assignmentStatement
+    : declVar #declVarStatement
+    | atrib   #assignmentStatement
     ;
 
 cmdSimple
@@ -31,7 +54,7 @@ cmdAtrib
     ;
 
 atrib
-    : ID (T_EQUAL | T_INCREMENT | T_DECREMENT | T_INC_MULT | T_INC_DIV | T_INC_MOD ) expression
+    : variable (T_EQUAL | T_INCREMENT | T_DECREMENT | T_INC_MULT | T_INC_DIV | T_INC_MOD ) expression
     ;
 
 block
@@ -50,7 +73,6 @@ expression
     | ID                    # varReference
     | literal               # literalReference
     ;
-
 
 cmdIf
     : T_IF '(' expression ')' command
@@ -88,31 +110,23 @@ cmdReturn
 cmdCallProc
     : ID '(' expression ')' ';';
 
-lstOP
-    : T_EQUAL
-    | T_PLUS
-    | T_MINUS
-    | T_ASTERISK
-    | T_PERCENT
-    | T_SLASH
+cmdRead
+    : T_READ ( STRINGLITERAL | NUMBERLITERAL | variable ) ';' //verificar se literais entram
     ;
 
-lstType
-    : T_INT       # integer
-    | T_STRING    # string
-    | T_BOOL      # bool
+cmdWrite
+    : T_WRITE expression ';'
+    | ',' expression
     ;
 
-literal
-    : NUMBERLITERAL  # intLiteral
-    | STRINGLITERAL  # stringLiteral
-    | T_FALSE        # trueLiteral
-    | T_TRUE         # falseLiteral
+variable
+    : ID
+    | ID '[' expression ']'
     ;
 
 specVarSimple
-    : ID
-    | ID '=' literal
+    : ID                #declaration
+    | ID '=' expression #directAssign
     ;
 
 specVarSimpleIni
@@ -132,34 +146,18 @@ specVarArrIni
     : specVarArr '=' '{' lstArrIni '}'
     ;
 
-
 specVar
-    : specVarSimple
-    | specVarSimpleIni
-    | specVarArr
-    | specVarArrIni
+    : specVarSimple      #directSpecVar
+    | specVarSimpleIni   #directSpecVarSimpleIni
+    | specVarArr         #directSpecVarArr
+    | specVarArrIni      #directSpecVarArrIni
     ;
 
-
 listSpecVars
-    : specVar                       # directSpecVar
-    | specVar ',' listSpecVars      # indirectSpecVar
+    : specVar                       # directListSpecVar
+    | specVar ',' listSpecVars      # indirectListSpecVar
     ;
 
 declVar
     : T_VAR listSpecVars ':' lstType ';'
-    ;
-
-cmdRead
-    : T_READ (ID | STRINGLITERAL | NUMBERLITERAL ) ';' //verificar se literais entram
-    ;
-
-cmdWrite
-    : T_WRITE expression ';'
-    | ',' expression
-    ;
-
-variable
-    : ID
-    | ID '[' expression ']'
     ;
