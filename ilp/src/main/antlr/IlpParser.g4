@@ -63,10 +63,10 @@ block
     ;
 
 expression
-    : left=expression operator='?' right=expression operator=':' right=expression  # binaryOperation
-    | expression operator=('||' | '&&' | '==' | '!=' | '<' | '<=' | '>' | '>=' ) expression  # binaryOperation
+    : left=expression operator='?' right=expression operator=':' right=expression  #ternaryOperation
+    | expression operator=('||' | '&&' | '==' | '!=' | '<' | '<=' | '>' | '>=' ) expression  #compareOperation
     | expression operator=( '+'| '-' | '/' | '*' | '%') expression # binaryOperation
-    | expression ( '+' | '-' | '++' | '--' ) # binaryOperation
+    | expression ( '+' | '-' | '++' | '--' ) #incrementOperation
     | '-' expression        # minusExpression
     | '!' expression        # differenceExpression
     | '(' expression ')'    # parenExpression
