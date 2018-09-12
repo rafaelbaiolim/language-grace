@@ -196,6 +196,18 @@ public interface IlpParserListener extends ParseTreeListener {
 	 */
 	void exitBlock(IlpParser.BlockContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code incrementOperation}
+	 * labeled alternative in {@link IlpParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterIncrementOperation(IlpParser.IncrementOperationContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code incrementOperation}
+	 * labeled alternative in {@link IlpParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitIncrementOperation(IlpParser.IncrementOperationContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code minusExpression}
 	 * labeled alternative in {@link IlpParser#expression}.
 	 * @param ctx the parse tree
@@ -220,6 +232,18 @@ public interface IlpParserListener extends ParseTreeListener {
 	 */
 	void exitDifferenceExpression(IlpParser.DifferenceExpressionContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code ternaryOperation}
+	 * labeled alternative in {@link IlpParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterTernaryOperation(IlpParser.TernaryOperationContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code ternaryOperation}
+	 * labeled alternative in {@link IlpParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitTernaryOperation(IlpParser.TernaryOperationContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code literalReference}
 	 * labeled alternative in {@link IlpParser#expression}.
 	 * @param ctx the parse tree
@@ -231,6 +255,18 @@ public interface IlpParserListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitLiteralReference(IlpParser.LiteralReferenceContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code compareOperation}
+	 * labeled alternative in {@link IlpParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterCompareOperation(IlpParser.CompareOperationContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code compareOperation}
+	 * labeled alternative in {@link IlpParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitCompareOperation(IlpParser.CompareOperationContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code parenExpression}
 	 * labeled alternative in {@link IlpParser#expression}.

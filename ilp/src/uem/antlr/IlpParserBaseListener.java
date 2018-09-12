@@ -220,6 +220,18 @@ public class IlpParserBaseListener implements IlpParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterIncrementOperation(IlpParser.IncrementOperationContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitIncrementOperation(IlpParser.IncrementOperationContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterMinusExpression(IlpParser.MinusExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -244,6 +256,18 @@ public class IlpParserBaseListener implements IlpParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterTernaryOperation(IlpParser.TernaryOperationContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTernaryOperation(IlpParser.TernaryOperationContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterLiteralReference(IlpParser.LiteralReferenceContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -251,6 +275,18 @@ public class IlpParserBaseListener implements IlpParserListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitLiteralReference(IlpParser.LiteralReferenceContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCompareOperation(IlpParser.CompareOperationContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCompareOperation(IlpParser.CompareOperationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

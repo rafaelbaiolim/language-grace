@@ -32,4 +32,8 @@ public class MultiplicationExpression implements BinaryExpression {
         this.position = null;
     }
 
+    @Override
+    public Position getPosition() {
+        return this.position;
+    }
 }

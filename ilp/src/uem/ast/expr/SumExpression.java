@@ -32,4 +32,8 @@ public class SumExpression implements BinaryExpression {
         this.position = null;
     }
 
+    @Override
+    public Position getPosition() {
+        return this.position;
+    }
 }

@@ -32,4 +32,8 @@ public class DivisionExpression implements BinaryExpression {
         this.position = null;
     }
 
+    @Override
+    public Position getPosition() {
+        return this.position;
+    }
 }

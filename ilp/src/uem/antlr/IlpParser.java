@@ -913,6 +913,21 @@ public class IlpParser extends Parser {
 			super.copyFrom(ctx);
 		}
 	}
+	public static class IncrementOperationContext extends ExpressionContext {
+		public ExpressionContext left;
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
+		}
+		public IncrementOperationContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterIncrementOperation(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitIncrementOperation(this);
+		}
+	}
 	public static class MinusExpressionContext extends ExpressionContext {
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
@@ -941,6 +956,26 @@ public class IlpParser extends Parser {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitDifferenceExpression(this);
 		}
 	}
+	public static class TernaryOperationContext extends ExpressionContext {
+		public ExpressionContext left;
+		public Token operator;
+		public ExpressionContext right;
+		public List<ExpressionContext> expression() {
+			return getRuleContexts(ExpressionContext.class);
+		}
+		public ExpressionContext expression(int i) {
+			return getRuleContext(ExpressionContext.class,i);
+		}
+		public TernaryOperationContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterTernaryOperation(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitTernaryOperation(this);
+		}
+	}
 	public static class LiteralReferenceContext extends ExpressionContext {
 		public LiteralContext literal() {
 			return getRuleContext(LiteralContext.class,0);
@@ -953,6 +988,26 @@ public class IlpParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitLiteralReference(this);
+		}
+	}
+	public static class CompareOperationContext extends ExpressionContext {
+		public ExpressionContext left;
+		public Token operator;
+		public ExpressionContext right;
+		public List<ExpressionContext> expression() {
+			return getRuleContexts(ExpressionContext.class);
+		}
+		public ExpressionContext expression(int i) {
+			return getRuleContext(ExpressionContext.class,i);
+		}
+		public CompareOperationContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterCompareOperation(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitCompareOperation(this);
 		}
 	}
 	public static class ParenExpressionContext extends ExpressionContext {
@@ -1094,42 +1149,44 @@ public class IlpParser extends Parser {
 					switch ( getInterpreter().adaptivePredict(_input,8,_ctx) ) {
 					case 1:
 						{
-						_localctx = new BinaryOperationContext(new ExpressionContext(_parentctx, _parentState));
-						((BinaryOperationContext)_localctx).left = _prevctx;
+						_localctx = new TernaryOperationContext(new ExpressionContext(_parentctx, _parentState));
+						((TernaryOperationContext)_localctx).left = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(134);
 						if (!(precpred(_ctx, 9))) throw new FailedPredicateException(this, "precpred(_ctx, 9)");
 						setState(135);
-						((BinaryOperationContext)_localctx).operator = match(T_TERN);
+						((TernaryOperationContext)_localctx).operator = match(T_TERN);
 						setState(136);
-						((BinaryOperationContext)_localctx).right = expression(0);
+						((TernaryOperationContext)_localctx).right = expression(0);
 						setState(137);
-						((BinaryOperationContext)_localctx).operator = match(T_COLON);
+						((TernaryOperationContext)_localctx).operator = match(T_COLON);
 						setState(138);
-						((BinaryOperationContext)_localctx).right = expression(10);
+						((TernaryOperationContext)_localctx).right = expression(10);
 						}
 						break;
 					case 2:
 						{
-						_localctx = new BinaryOperationContext(new ExpressionContext(_parentctx, _parentState));
+						_localctx = new CompareOperationContext(new ExpressionContext(_parentctx, _parentState));
+						((CompareOperationContext)_localctx).left = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(140);
 						if (!(precpred(_ctx, 8))) throw new FailedPredicateException(this, "precpred(_ctx, 8)");
 						setState(141);
-						((BinaryOperationContext)_localctx).operator = _input.LT(1);
+						((CompareOperationContext)_localctx).operator = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_COMP) | (1L << T_DIFFERENT) | (1L << T_GREATER) | (1L << T_GREATER_OR_EQUAL) | (1L << T_LOWER) | (1L << T_LOWER_OR_EQUAL) | (1L << OR) | (1L << AND))) != 0)) ) {
-							((BinaryOperationContext)_localctx).operator = (Token)_errHandler.recoverInline(this);
+							((CompareOperationContext)_localctx).operator = (Token)_errHandler.recoverInline(this);
 						} else {
 							consume();
 						}
 						setState(142);
-						expression(9);
+						((CompareOperationContext)_localctx).right = expression(9);
 						}
 						break;
 					case 3:
 						{
 						_localctx = new BinaryOperationContext(new ExpressionContext(_parentctx, _parentState));
+						((BinaryOperationContext)_localctx).left = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(143);
 						if (!(precpred(_ctx, 7))) throw new FailedPredicateException(this, "precpred(_ctx, 7)");
@@ -1142,12 +1199,13 @@ public class IlpParser extends Parser {
 							consume();
 						}
 						setState(145);
-						expression(8);
+						((BinaryOperationContext)_localctx).right = expression(8);
 						}
 						break;
 					case 4:
 						{
-						_localctx = new BinaryOperationContext(new ExpressionContext(_parentctx, _parentState));
+						_localctx = new IncrementOperationContext(new ExpressionContext(_parentctx, _parentState));
+						((IncrementOperationContext)_localctx).left = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(146);
 						if (!(precpred(_ctx, 6))) throw new FailedPredicateException(this, "precpred(_ctx, 6)");

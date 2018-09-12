@@ -31,5 +31,9 @@ public class SubtractionExpression implements BinaryExpression {
         this.right = right;
         this.position = null;
     }
+    @Override
+    public Position getPosition() {
+        return this.position;
+    }
 
 }

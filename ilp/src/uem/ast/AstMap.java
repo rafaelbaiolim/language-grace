@@ -9,6 +9,9 @@ import uem.ast.type.NumberType;
 import uem.ast.type.StringType;
 import uem.ast.type.Type;
 
+import java.util.HashMap;
+import java.util.LinkedList;
+
 public class AstMap {
 
 
@@ -25,6 +28,7 @@ public class AstMap {
 
 
     public IlpFile getAst(IlpFileContext ilpFileCtx) {
+        LinkedList<Expression> linked = new LinkedList<>();
         ilpFileCtx.line().forEach(el -> {
             Expression ast = this.getAst(
                     el.statement(),
@@ -33,7 +37,9 @@ public class AstMap {
                             this.getEndPoint(el.getStop())
                     )
             );
+            linked.add(ast);
         });
+        
         return null;
     }
 
@@ -164,25 +170,25 @@ public class AstMap {
         String operator = binExprCtx.operator.getText();
 
         if (operator.equals("+")) {
-            return (Expression) new SumExpression(
+            return new SumExpression(
                     this.getAst(binExprCtx.left),
                     this.getAst(binExprCtx.right)
             );
         }
         if (operator.equals("-")) {
-            return (Expression) new SubtractionExpression(
+            return new SubtractionExpression(
                     this.getAst(binExprCtx.left),
                     this.getAst(binExprCtx.right)
             );
         }
         if (operator.equals("*")) {
-            return (Expression) new MultiplicationExpression(
+            return new MultiplicationExpression(
                     this.getAst(binExprCtx.left),
                     this.getAst(binExprCtx.right)
             );
         }
         if (operator.equals("/")) {
-            return (Expression) new DivisionExpression(
+            return new DivisionExpression(
                     this.getAst(binExprCtx.left),
                     this.getAst(binExprCtx.right)
             );

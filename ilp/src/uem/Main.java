@@ -18,7 +18,7 @@ class Main {
          new TreeToAst().map(new IlpParser(cm).ilpFile());
 
         } catch (Exception ex) {
-
+            System.out.println(ex.getMessage());
         }
 
     }
