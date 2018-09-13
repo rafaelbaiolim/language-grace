@@ -3,21 +3,21 @@ package uem.ast.stmt;
 import uem.ast.Position;
 import uem.ast.expr.Expression;
 
-public class VarReference implements Statement {
+public class VarReference implements Expression {
 
     private final String varName;
-    private final Expression value;
     private final Position position;
 
-    public VarReference(String varName, Expression value, Position position) {
+    public VarReference(String varName, Position position) {
         super();
         this.varName = varName;
-        this.value = value;
         this.position = position;
     }
 
-    public Expression getValue() {
-        return value;
+    public VarReference(String varName) {
+        super();
+        this.varName = varName;
+        this.position = null;
     }
 
     public String getVarName() {

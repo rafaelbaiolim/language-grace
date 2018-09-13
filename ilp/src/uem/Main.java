@@ -12,7 +12,7 @@ class Main {
 
     public static void main(String[] args) throws IOException {
         uem.Lexer lex = new uem.Lexer();
-        CommonTokenStream cm = new CommonTokenStream(lex.lexFromCode("var a = 1 + 5:int;"));
+        CommonTokenStream cm = new CommonTokenStream(lex.lexFromCode("var a = 1 + 5,b = 2 - 1,d = 5,a * b:int;"));
         ParseTree pt = new ParseTree();
         try {
          new TreeToAst().map(new IlpParser(cm).ilpFile());

@@ -16,6 +16,13 @@ public class DeclVar implements Statement {
         this.position = position;
     }
 
+    public DeclVar(String varName, Expression value) {
+        super();
+        this.varName = varName;
+        this.value = value;
+        this.position = null;
+    }
+
     public Expression getValue() {
         return value;
     }

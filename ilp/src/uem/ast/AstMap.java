@@ -3,13 +3,14 @@ package uem.ast;
 import org.antlr.v4.runtime.Token;
 import uem.antlr.IlpParser.*;
 import uem.ast.expr.*;
+import uem.ast.stmt.DeclVar;
 import uem.ast.stmt.IlpFile;
 import uem.ast.stmt.Statement;
+import uem.ast.stmt.VarReference;
 import uem.ast.type.NumberType;
 import uem.ast.type.StringType;
 import uem.ast.type.Type;
 
-import java.util.HashMap;
 import java.util.LinkedList;
 
 public class AstMap {
@@ -28,9 +29,9 @@ public class AstMap {
 
 
     public IlpFile getAst(IlpFileContext ilpFileCtx) {
-        LinkedList<Expression> linked = new LinkedList<>();
+        LinkedList<Statement> linked = new LinkedList<>();
         ilpFileCtx.line().forEach(el -> {
-            Expression ast = this.getAst(
+            Statement ast = this.getAst(
                     el.statement(),
                     new Position(
                             this.getStartPoint(el.getStart()),
@@ -39,28 +40,34 @@ public class AstMap {
             );
             linked.add(ast);
         });
-        
+
         return null;
     }
 
-    public final Expression getAst(DeclVarStatementContext declVarStmtCtx,Position pos) {
+    public final Expression getAst(DeclVarStatementContext declVarStmtCtx, Position pos) {
         declVarStmtCtx.getClass().getCanonicalName();
         throw new UnsupportedOperationException(this.getClass().getCanonicalName());
     }
 
+    /**
+     * @param specVarSimple
+     * @return
+     * @Todo.: Tratar os outros tipos de assign aqui
+     */
+    public final Statement getAst(SpecVarSimpleContext specVarSimple) {
+        DirectAssignContext asDirectAssignCtxt = (DirectAssignContext) specVarSimple;
+
         /**
-         * @Todo.: Tratar os outros tipos de assign aqui
-         * @param specVarSimple
-         * @return
+         * specVarSimple:directAssign
          */
-    public final Expression getAst(SpecVarSimpleContext specVarSimple) {
-        DirectAssignContext specVarSimple1 = (DirectAssignContext) specVarSimple;
-        return this.getAst(((DirectAssignContext) specVarSimple).expression());
+        return new DeclVar(asDirectAssignCtxt.ID().getText(),
+                this.getAst(asDirectAssignCtxt.expression())
+        );
 
 //        throw new UnsupportedOperationException(this.getClass().getCanonicalName());
     }
 
-    public final Expression getAst(SpecVarContext listspec) {
+    public final Statement getAst(SpecVarContext listspec) {
         String canonicalListDecl = listspec.getClass().getCanonicalName();
         if (canonicalListDecl.equals(DirectSpecVarContext.class.getCanonicalName())) {
             return this.getAst(((DirectSpecVarContext) listspec).specVarSimple());
@@ -74,9 +81,12 @@ public class AstMap {
      * @param listspec
      * @return
      */
-    public final Expression getAst(ListSpecVarsContext listspec) {
+    public final Statement getAst(ListSpecVarsContext listspec) {
         String canonicalListDecl = listspec.getClass().getCanonicalName();
 
+        /**
+         * Variaveis direta
+         */
         if (canonicalListDecl.equals(DirectListSpecVarContext.class.getCanonicalName())) {
             DirectListSpecVarContext directList = (DirectListSpecVarContext) listspec;
             String directListCanonicalName = directList.specVar().getClass().getCanonicalName();
@@ -85,17 +95,27 @@ public class AstMap {
                 return this.getAst(directList.specVar());
             }
         }
+
+        /**
+         * Recursao lista de variaveis
+         */
+        if (canonicalListDecl.equals(IndirectListSpecVarContext.class.getCanonicalName())) {
+            IndirectListSpecVarContext indirectList = (IndirectListSpecVarContext) listspec;
+            return this.getAst(indirectList);
+        }
+
+
+
         throw new UnsupportedOperationException(this.getClass().getCanonicalName());
     }
 
 
-    public final Expression getAst(StatementContext ctxStmt, Position pos) {
+    public final Statement getAst(StatementContext ctxStmt, Position pos) {
         String canonicalStmt = ctxStmt.getClass().getCanonicalName();
         //DeclVar
         if (canonicalStmt.equals(DeclVarStatementContext.class.getCanonicalName())) {
             ListSpecVarsContext listSpecVarsContext = ((DeclVarStatementContext) ctxStmt).declVar().listSpecVars();
-            return this.getAst(listSpecVarsContext);
-
+            return this.getAst(listSpecVarsContext); // :statment
         }
 
         //Assign
@@ -155,6 +175,12 @@ public class AstMap {
         //Literais
         if (canonicalExprCtx.equals(LiteralReferenceContext.class.getCanonicalName())) {
             return this.getAst((LiteralReferenceContext) exprCtx);
+        }
+
+        //VarReference
+        if (canonicalExprCtx.equals(VarReferenceContext.class.getCanonicalName())) {
+            VarReferenceContext asVarRefCtx = (VarReferenceContext) exprCtx;
+            return new VarReference(asVarRefCtx.ID().getText());
         }
 
         throw new UnsupportedOperationException(this.getClass().getCanonicalName());
