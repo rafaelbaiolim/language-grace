@@ -1,5 +1,5 @@
-// Generated from IlpParser.g4 by ANTLR 4.5.3
-package uem.antlr;
+// Generated from /home/rafaellb/Documents/uem/ilp2018/compilador/ilp/src/main/antlr/IlpParser.g4 by ANTLR 4.7
+package main.antlr;
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -472,13 +472,25 @@ public class IlpParserBaseListener implements IlpParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSpecVarSimple(IlpParser.SpecVarSimpleContext ctx) { }
+	@Override public void enterDeclaration(IlpParser.DeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSpecVarSimple(IlpParser.SpecVarSimpleContext ctx) { }
+	@Override public void exitDeclaration(IlpParser.DeclarationContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterDirectAssign(IlpParser.DirectAssignContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitDirectAssign(IlpParser.DirectAssignContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

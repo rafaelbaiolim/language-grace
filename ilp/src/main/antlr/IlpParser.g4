@@ -63,15 +63,15 @@ block
     ;
 
 expression
-    : left=expression operator='?' right=expression operator=':' right=expression  #ternaryOperation
+    : left=expression operator='?' right=expression operator=':' right=expression                       #ternaryOperation
     | left=expression operator=('||' | '&&' | '==' | '!=' | '<' | '<=' | '>' | '>=' ) right=expression  #compareOperation
-    | left=expression operator=( '+'| '-' | '/' | '*' | '%') right=expression #binaryOperation
-    | left=expression ( '+' | '-' | '++' | '--' ) #incrementOperation
-    | '-' expression        #minusExpression
-    | '!' expression        #differenceExpression
-    | '(' expression ')'    #parenExpression
-    | ID                    #varReference
-    | literal               #literalReference
+    | left=expression operator=( '+'| '-' | '/' | '*' | '%') right=expression                           #binaryOperation
+    | left=expression ( '+' | '-' | '++' | '--' )                                                       #incrementOperation
+    | '-' expression                                                                                    #minusExpression
+    | '!' expression                                                                                    #differenceExpression
+    | '(' expression ')'                                                                                #parenExpression
+    | ID                                                                                                #varReference
+    | literal                                                                                           #literalReference
     ;
 
 cmdIf
@@ -120,17 +120,15 @@ cmdWrite
     ;
 
 variable
-    : ID
-    | ID '[' expression ']'
+    : ID ('[' expression ']')*
     ;
 
 specVarSimple
-    : ID                #declaration
-    | ID '=' expression #directAssign
+    : ID
     ;
 
 specVarSimpleIni
-    : specVarSimple lstOP specVarSimple
+    : ID '=' expression
     ;
 
 specVarArr
@@ -138,8 +136,7 @@ specVarArr
     ;
 
 lstArrIni
-    : literal
-    | literal ',' literal
+    : literal (',' literal)*
     ;
 
 specVarArrIni
@@ -154,8 +151,7 @@ specVar
     ;
 
 listSpecVars
-    : specVar                       # directListSpecVar
-    | specVar ',' listSpecVars      # indirectListSpecVar
+    : specVar (',' specVar)*
     ;
 
 declVar

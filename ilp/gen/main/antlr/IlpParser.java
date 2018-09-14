@@ -1,5 +1,5 @@
-// Generated from IlpParser.g4 by ANTLR 4.5.3
-package uem.antlr;
+// Generated from /home/rafaellb/Documents/uem/ilp2018/compilador/ilp/src/main/antlr/IlpParser.g4 by ANTLR 4.7
+package main.antlr;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class IlpParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.5.3", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.7", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -133,6 +133,11 @@ public class IlpParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitIlpFile(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitIlpFile(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final IlpFileContext ilpFile() throws RecognitionException {
@@ -185,6 +190,11 @@ public class IlpParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitLine(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitLine(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final LineContext line() throws RecognitionException {
@@ -227,6 +237,11 @@ public class IlpParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitLstOP(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitLstOP(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final LstOPContext lstOP() throws RecognitionException {
@@ -240,7 +255,10 @@ public class IlpParser extends Parser {
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_PLUS) | (1L << T_MINUS) | (1L << T_ASTERISK) | (1L << T_SLASH) | (1L << T_PERCENT) | (1L << T_EQUAL))) != 0)) ) {
 			_errHandler.recoverInline(this);
-			} else {
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
 				consume();
 			}
 			}
@@ -278,6 +296,11 @@ public class IlpParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitString(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitString(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 	public static class BoolContext extends LstTypeContext {
 		public TerminalNode T_BOOL() { return getToken(IlpParser.T_BOOL, 0); }
@@ -289,6 +312,11 @@ public class IlpParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitBool(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitBool(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 	public static class IntegerContext extends LstTypeContext {
@@ -302,6 +330,11 @@ public class IlpParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitInteger(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitInteger(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final LstTypeContext lstType() throws RecognitionException {
@@ -309,6 +342,7 @@ public class IlpParser extends Parser {
 		enterRule(_localctx, 6, RULE_lstType);
 		try {
 			setState(76);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T_INT:
 				_localctx = new IntegerContext(_localctx);
@@ -371,6 +405,11 @@ public class IlpParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitFalseLiteral(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitFalseLiteral(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 	public static class StringLiteralContext extends LiteralContext {
 		public TerminalNode STRINGLITERAL() { return getToken(IlpParser.STRINGLITERAL, 0); }
@@ -382,6 +421,11 @@ public class IlpParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitStringLiteral(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitStringLiteral(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 	public static class IntLiteralContext extends LiteralContext {
@@ -395,6 +439,11 @@ public class IlpParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitIntLiteral(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitIntLiteral(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 	public static class TrueLiteralContext extends LiteralContext {
 		public TerminalNode T_FALSE() { return getToken(IlpParser.T_FALSE, 0); }
@@ -407,6 +456,11 @@ public class IlpParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitTrueLiteral(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitTrueLiteral(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final LiteralContext literal() throws RecognitionException {
@@ -414,6 +468,7 @@ public class IlpParser extends Parser {
 		enterRule(_localctx, 8, RULE_literal);
 		try {
 			setState(82);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case NUMBERLITERAL:
 				_localctx = new IntLiteralContext(_localctx);
@@ -481,6 +536,11 @@ public class IlpParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitCommand(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitCommand(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final CommandContext command() throws RecognitionException {
@@ -488,6 +548,7 @@ public class IlpParser extends Parser {
 		enterRule(_localctx, 10, RULE_command);
 		try {
 			setState(86);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T_ELSE:
 			case T_FOR:
@@ -552,6 +613,11 @@ public class IlpParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitAssignmentStatement(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitAssignmentStatement(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 	public static class DeclVarStatementContext extends StatementContext {
 		public DeclVarContext declVar() {
@@ -566,6 +632,11 @@ public class IlpParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitDeclVarStatement(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitDeclVarStatement(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final StatementContext statement() throws RecognitionException {
@@ -573,6 +644,7 @@ public class IlpParser extends Parser {
 		enterRule(_localctx, 12, RULE_statement);
 		try {
 			setState(90);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T_VAR:
 				_localctx = new DeclVarStatementContext(_localctx);
@@ -647,6 +719,11 @@ public class IlpParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitCmdSimple(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitCmdSimple(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -756,6 +833,11 @@ public class IlpParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitCmdAtrib(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitCmdAtrib(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final CmdAtribContext cmdAtrib() throws RecognitionException {
@@ -806,6 +888,11 @@ public class IlpParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitAtrib(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitAtrib(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final AtribContext atrib() throws RecognitionException {
@@ -821,7 +908,10 @@ public class IlpParser extends Parser {
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_EQUAL) | (1L << T_INCREMENT) | (1L << T_DECREMENT) | (1L << T_INC_MULT) | (1L << T_INC_DIV) | (1L << T_INC_MOD))) != 0)) ) {
 			_errHandler.recoverInline(this);
-			} else {
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
 				consume();
 			}
 			setState(109);
@@ -857,6 +947,11 @@ public class IlpParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitBlock(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitBlock(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -927,6 +1022,11 @@ public class IlpParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitIncrementOperation(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitIncrementOperation(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 	public static class MinusExpressionContext extends ExpressionContext {
 		public ExpressionContext expression() {
@@ -941,6 +1041,11 @@ public class IlpParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitMinusExpression(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitMinusExpression(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 	public static class DifferenceExpressionContext extends ExpressionContext {
 		public ExpressionContext expression() {
@@ -954,6 +1059,11 @@ public class IlpParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitDifferenceExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitDifferenceExpression(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 	public static class TernaryOperationContext extends ExpressionContext {
@@ -975,6 +1085,11 @@ public class IlpParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitTernaryOperation(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitTernaryOperation(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 	public static class LiteralReferenceContext extends ExpressionContext {
 		public LiteralContext literal() {
@@ -988,6 +1103,11 @@ public class IlpParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitLiteralReference(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitLiteralReference(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 	public static class CompareOperationContext extends ExpressionContext {
@@ -1009,6 +1129,11 @@ public class IlpParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitCompareOperation(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitCompareOperation(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 	public static class ParenExpressionContext extends ExpressionContext {
 		public ExpressionContext expression() {
@@ -1022,6 +1147,11 @@ public class IlpParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitParenExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitParenExpression(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 	public static class BinaryOperationContext extends ExpressionContext {
@@ -1043,6 +1173,11 @@ public class IlpParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitBinaryOperation(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitBinaryOperation(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 	public static class VarReferenceContext extends ExpressionContext {
 		public TerminalNode ID() { return getToken(IlpParser.ID, 0); }
@@ -1054,6 +1189,11 @@ public class IlpParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitVarReference(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitVarReference(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1074,6 +1214,7 @@ public class IlpParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(132);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T_MINUS:
 				{
@@ -1176,7 +1317,10 @@ public class IlpParser extends Parser {
 						_la = _input.LA(1);
 						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_COMP) | (1L << T_DIFFERENT) | (1L << T_GREATER) | (1L << T_GREATER_OR_EQUAL) | (1L << T_LOWER) | (1L << T_LOWER_OR_EQUAL) | (1L << OR) | (1L << AND))) != 0)) ) {
 							((CompareOperationContext)_localctx).operator = (Token)_errHandler.recoverInline(this);
-						} else {
+						}
+						else {
+							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+							_errHandler.reportMatch(this);
 							consume();
 						}
 						setState(142);
@@ -1195,7 +1339,10 @@ public class IlpParser extends Parser {
 						_la = _input.LA(1);
 						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_PLUS) | (1L << T_MINUS) | (1L << T_ASTERISK) | (1L << T_SLASH) | (1L << T_PERCENT))) != 0)) ) {
 							((BinaryOperationContext)_localctx).operator = (Token)_errHandler.recoverInline(this);
-						} else {
+						}
+						else {
+							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+							_errHandler.reportMatch(this);
 							consume();
 						}
 						setState(145);
@@ -1213,7 +1360,10 @@ public class IlpParser extends Parser {
 						_la = _input.LA(1);
 						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_PLUS) | (1L << T_MINUS) | (1L << PLUS_INC) | (1L << MINUS_DEC))) != 0)) ) {
 						_errHandler.recoverInline(this);
-						} else {
+						}
+						else {
+							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+							_errHandler.reportMatch(this);
 							consume();
 						}
 						}
@@ -1259,6 +1409,11 @@ public class IlpParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitCmdIf(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitCmdIf(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final CmdIfContext cmdIf() throws RecognitionException {
@@ -1266,6 +1421,7 @@ public class IlpParser extends Parser {
 		enterRule(_localctx, 24, RULE_cmdIf);
 		try {
 			setState(161);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T_IF:
 				enterOuterAlt(_localctx, 1);
@@ -1326,6 +1482,11 @@ public class IlpParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitCmdWhile(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitCmdWhile(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final CmdWhileContext cmdWhile() throws RecognitionException {
@@ -1373,6 +1534,11 @@ public class IlpParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitForInit(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitForInit(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ForInitContext forInit() throws RecognitionException {
@@ -1411,6 +1577,11 @@ public class IlpParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitForItera(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitForItera(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1460,6 +1631,11 @@ public class IlpParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitCmdFor(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitCmdFor(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1514,6 +1690,11 @@ public class IlpParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitCmdStop(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitCmdStop(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final CmdStopContext cmdStop() throws RecognitionException {
@@ -1552,6 +1733,11 @@ public class IlpParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitCmdSkip(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitCmdSkip(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1594,6 +1780,11 @@ public class IlpParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitCmdReturn(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitCmdReturn(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1638,6 +1829,11 @@ public class IlpParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitCmdCallProc(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitCmdCallProc(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1689,6 +1885,11 @@ public class IlpParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitCmdRead(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitCmdRead(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final CmdReadContext cmdRead() throws RecognitionException {
@@ -1700,6 +1901,7 @@ public class IlpParser extends Parser {
 			setState(199);
 			match(T_READ);
 			setState(203);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case STRINGLITERAL:
 				{
@@ -1754,6 +1956,11 @@ public class IlpParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitCmdWrite(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitCmdWrite(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final CmdWriteContext cmdWrite() throws RecognitionException {
@@ -1761,6 +1968,7 @@ public class IlpParser extends Parser {
 		enterRule(_localctx, 44, RULE_cmdWrite);
 		try {
 			setState(213);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T_WRITE:
 				enterOuterAlt(_localctx, 1);
@@ -1799,11 +2007,8 @@ public class IlpParser extends Parser {
 
 	public static class VariableContext extends ParserRuleContext {
 		public TerminalNode ID() { return getToken(IlpParser.ID, 0); }
-		public List<ExpressionContext> expression() {
-			return getRuleContexts(ExpressionContext.class);
-		}
-		public ExpressionContext expression(int i) {
-			return getRuleContext(ExpressionContext.class,i);
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
 		}
 		public VariableContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1817,35 +2022,40 @@ public class IlpParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitVariable(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitVariable(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final VariableContext variable() throws RecognitionException {
 		VariableContext _localctx = new VariableContext(_ctx, getState());
 		enterRule(_localctx, 46, RULE_variable);
-		int _la;
 		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(215);
-			match(ID);
-			setState(222);
+			setState(221);
 			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while (_la==T_LEFT_SQUARE) {
+			switch ( getInterpreter().adaptivePredict(_input,13,_ctx) ) {
+			case 1:
+				enterOuterAlt(_localctx, 1);
 				{
+				setState(215);
+				match(ID);
+				}
+				break;
+			case 2:
+				enterOuterAlt(_localctx, 2);
 				{
 				setState(216);
-				match(T_LEFT_SQUARE);
+				match(ID);
 				setState(217);
-				expression(0);
+				match(T_LEFT_SQUARE);
 				setState(218);
+				expression(0);
+				setState(219);
 				match(T_RIGHT_SQUARE);
 				}
-				}
-				setState(224);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
+				break;
 			}
 		}
 		catch (RecognitionException re) {
@@ -1860,18 +2070,51 @@ public class IlpParser extends Parser {
 	}
 
 	public static class SpecVarSimpleContext extends ParserRuleContext {
-		public TerminalNode ID() { return getToken(IlpParser.ID, 0); }
 		public SpecVarSimpleContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_specVarSimple; }
+	 
+		public SpecVarSimpleContext() { }
+		public void copyFrom(SpecVarSimpleContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class DirectAssignContext extends SpecVarSimpleContext {
+		public TerminalNode ID() { return getToken(IlpParser.ID, 0); }
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
+		}
+		public DirectAssignContext(SpecVarSimpleContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterSpecVarSimple(this);
+			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterDirectAssign(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitSpecVarSimple(this);
+			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitDirectAssign(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitDirectAssign(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class DeclarationContext extends SpecVarSimpleContext {
+		public TerminalNode ID() { return getToken(IlpParser.ID, 0); }
+		public DeclarationContext(SpecVarSimpleContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterDeclaration(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitDeclaration(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitDeclaration(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1879,10 +2122,29 @@ public class IlpParser extends Parser {
 		SpecVarSimpleContext _localctx = new SpecVarSimpleContext(_ctx, getState());
 		enterRule(_localctx, 48, RULE_specVarSimple);
 		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(225);
-			match(ID);
+			setState(227);
+			_errHandler.sync(this);
+			switch ( getInterpreter().adaptivePredict(_input,14,_ctx) ) {
+			case 1:
+				_localctx = new DeclarationContext(_localctx);
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(223);
+				match(ID);
+				}
+				break;
+			case 2:
+				_localctx = new DirectAssignContext(_localctx);
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(224);
+				match(ID);
+				setState(225);
+				match(T_EQUAL);
+				setState(226);
+				expression(0);
+				}
+				break;
 			}
 		}
 		catch (RecognitionException re) {
@@ -1897,9 +2159,14 @@ public class IlpParser extends Parser {
 	}
 
 	public static class SpecVarSimpleIniContext extends ParserRuleContext {
-		public TerminalNode ID() { return getToken(IlpParser.ID, 0); }
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
+		public List<SpecVarSimpleContext> specVarSimple() {
+			return getRuleContexts(SpecVarSimpleContext.class);
+		}
+		public SpecVarSimpleContext specVarSimple(int i) {
+			return getRuleContext(SpecVarSimpleContext.class,i);
+		}
+		public LstOPContext lstOP() {
+			return getRuleContext(LstOPContext.class,0);
 		}
 		public SpecVarSimpleIniContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1913,6 +2180,11 @@ public class IlpParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitSpecVarSimpleIni(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitSpecVarSimpleIni(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final SpecVarSimpleIniContext specVarSimpleIni() throws RecognitionException {
@@ -1921,12 +2193,12 @@ public class IlpParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(227);
-			match(ID);
-			setState(228);
-			match(T_EQUAL);
 			setState(229);
-			expression(0);
+			specVarSimple();
+			setState(230);
+			lstOP();
+			setState(231);
+			specVarSimple();
 			}
 		}
 		catch (RecognitionException re) {
@@ -1957,6 +2229,11 @@ public class IlpParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitSpecVarArr(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitSpecVarArr(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final SpecVarArrContext specVarArr() throws RecognitionException {
@@ -1965,13 +2242,13 @@ public class IlpParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(231);
-			specVarSimple();
-			setState(232);
-			match(T_LEFT_SQUARE);
 			setState(233);
-			match(NUMBERLITERAL);
+			specVarSimple();
 			setState(234);
+			match(T_LEFT_SQUARE);
+			setState(235);
+			match(NUMBERLITERAL);
+			setState(236);
 			match(T_RIGHT_SQUARE);
 			}
 		}
@@ -2005,33 +2282,38 @@ public class IlpParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitLstArrIni(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitLstArrIni(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final LstArrIniContext lstArrIni() throws RecognitionException {
 		LstArrIniContext _localctx = new LstArrIniContext(_ctx, getState());
 		enterRule(_localctx, 54, RULE_lstArrIni);
-		int _la;
 		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(236);
-			literal();
-			setState(241);
+			setState(243);
 			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while (_la==T_COMMA) {
+			switch ( getInterpreter().adaptivePredict(_input,15,_ctx) ) {
+			case 1:
+				enterOuterAlt(_localctx, 1);
 				{
-				{
-				setState(237);
-				match(T_COMMA);
 				setState(238);
 				literal();
 				}
+				break;
+			case 2:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(239);
+				literal();
+				setState(240);
+				match(T_COMMA);
+				setState(241);
+				literal();
 				}
-				setState(243);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
+				break;
 			}
 		}
 		catch (RecognitionException re) {
@@ -2064,6 +2346,11 @@ public class IlpParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitSpecVarArrIni(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitSpecVarArrIni(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final SpecVarArrIniContext specVarArrIni() throws RecognitionException {
@@ -2072,15 +2359,15 @@ public class IlpParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(244);
-			specVarArr();
 			setState(245);
-			match(T_EQUAL);
+			specVarArr();
 			setState(246);
-			match(T_LEFT_CURLY_BRACE);
+			match(T_EQUAL);
 			setState(247);
-			lstArrIni();
+			match(T_LEFT_CURLY_BRACE);
 			setState(248);
+			lstArrIni();
+			setState(249);
 			match(T_RIGHT_CURLY_BRACE);
 			}
 		}
@@ -2119,6 +2406,11 @@ public class IlpParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitDirectSpecVarArr(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitDirectSpecVarArr(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 	public static class DirectSpecVarSimpleIniContext extends SpecVarContext {
 		public SpecVarSimpleIniContext specVarSimpleIni() {
@@ -2132,6 +2424,11 @@ public class IlpParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitDirectSpecVarSimpleIni(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitDirectSpecVarSimpleIni(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 	public static class DirectSpecVarArrIniContext extends SpecVarContext {
@@ -2147,6 +2444,11 @@ public class IlpParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitDirectSpecVarArrIni(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitDirectSpecVarArrIni(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 	public static class DirectSpecVarContext extends SpecVarContext {
 		public SpecVarSimpleContext specVarSimple() {
@@ -2161,20 +2463,25 @@ public class IlpParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitDirectSpecVar(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitDirectSpecVar(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final SpecVarContext specVar() throws RecognitionException {
 		SpecVarContext _localctx = new SpecVarContext(_ctx, getState());
 		enterRule(_localctx, 58, RULE_specVar);
 		try {
-			setState(254);
+			setState(255);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,15,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,16,_ctx) ) {
 			case 1:
 				_localctx = new DirectSpecVarContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(250);
+				setState(251);
 				specVarSimple();
 				}
 				break;
@@ -2182,7 +2489,7 @@ public class IlpParser extends Parser {
 				_localctx = new DirectSpecVarSimpleIniContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(251);
+				setState(252);
 				specVarSimpleIni();
 				}
 				break;
@@ -2190,7 +2497,7 @@ public class IlpParser extends Parser {
 				_localctx = new DirectSpecVarArrContext(_localctx);
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(252);
+				setState(253);
 				specVarArr();
 				}
 				break;
@@ -2198,7 +2505,7 @@ public class IlpParser extends Parser {
 				_localctx = new DirectSpecVarArrIniContext(_localctx);
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(253);
+				setState(254);
 				specVarArrIni();
 				}
 				break;
@@ -2216,11 +2523,11 @@ public class IlpParser extends Parser {
 	}
 
 	public static class ListSpecVarsContext extends ParserRuleContext {
-		public List<SpecVarContext> specVar() {
-			return getRuleContexts(SpecVarContext.class);
+		public SpecVarContext specVar() {
+			return getRuleContext(SpecVarContext.class,0);
 		}
-		public SpecVarContext specVar(int i) {
-			return getRuleContext(SpecVarContext.class,i);
+		public ListSpecVarsContext listSpecVars() {
+			return getRuleContext(ListSpecVarsContext.class,0);
 		}
 		public ListSpecVarsContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -2234,6 +2541,11 @@ public class IlpParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitListSpecVars(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitListSpecVars(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ListSpecVarsContext listSpecVars() throws RecognitionException {
@@ -2243,24 +2555,28 @@ public class IlpParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(256);
+			setState(257);
 			specVar();
-			setState(261);
+			setState(259);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (_la==T_COMMA) {
+			if (_la==T_COMMA) {
 				{
-				{
-				setState(257);
-				match(T_COMMA);
 				setState(258);
-				specVar();
+				match(T_COMMA);
 				}
-				}
-				setState(263);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
 			}
+
+			setState(262);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			if (_la==ID) {
+				{
+				setState(261);
+				listSpecVars();
+				}
+			}
+
 			}
 		}
 		catch (RecognitionException re) {
@@ -2293,6 +2609,11 @@ public class IlpParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitDeclVar(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IlpParserVisitor ) return ((IlpParserVisitor<? extends T>)visitor).visitDeclVar(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2347,7 +2668,7 @@ public class IlpParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\67\u0111\4\2\t\2"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\67\u0111\4\2\t\2"+
 		"\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13"+
 		"\t\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
 		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31\t\31"+
@@ -2362,78 +2683,79 @@ public class IlpParser extends Parser {
 		"\3\21\3\21\3\22\3\22\3\22\3\22\3\22\3\22\3\22\3\22\3\22\3\22\3\23\3\23"+
 		"\3\23\3\24\3\24\3\24\3\25\3\25\3\25\3\25\3\26\3\26\3\26\3\26\3\26\3\26"+
 		"\3\27\3\27\3\27\3\27\5\27\u00ce\n\27\3\27\3\27\3\30\3\30\3\30\3\30\3\30"+
-		"\3\30\5\30\u00d8\n\30\3\31\3\31\3\31\3\31\3\31\7\31\u00df\n\31\f\31\16"+
-		"\31\u00e2\13\31\3\32\3\32\3\33\3\33\3\33\3\33\3\34\3\34\3\34\3\34\3\34"+
-		"\3\35\3\35\3\35\7\35\u00f2\n\35\f\35\16\35\u00f5\13\35\3\36\3\36\3\36"+
-		"\3\36\3\36\3\36\3\37\3\37\3\37\3\37\5\37\u0101\n\37\3 \3 \3 \7 \u0106"+
-		"\n \f \16 \u0109\13 \3!\3!\3!\3!\3!\3!\3!\2\3\30\"\2\4\6\b\n\f\16\20\22"+
-		"\24\26\30\32\34\36 \"$&(*,.\60\62\64\668:<>@\2\7\4\2\33\37!!\4\2!!%)\6"+
-		"\2  \"$*+/\60\3\2\33\37\4\2\33\34\61\62\u0114\2C\3\2\2\2\4G\3\2\2\2\6"+
-		"I\3\2\2\2\bN\3\2\2\2\nT\3\2\2\2\fX\3\2\2\2\16\\\3\2\2\2\20h\3\2\2\2\22"+
-		"j\3\2\2\2\24m\3\2\2\2\26y\3\2\2\2\30\u0086\3\2\2\2\32\u00a3\3\2\2\2\34"+
-		"\u00a5\3\2\2\2\36\u00ab\3\2\2\2 \u00ad\3\2\2\2\"\u00af\3\2\2\2$\u00b9"+
-		"\3\2\2\2&\u00bc\3\2\2\2(\u00bf\3\2\2\2*\u00c3\3\2\2\2,\u00c9\3\2\2\2."+
-		"\u00d7\3\2\2\2\60\u00d9\3\2\2\2\62\u00e3\3\2\2\2\64\u00e5\3\2\2\2\66\u00e9"+
-		"\3\2\2\28\u00ee\3\2\2\2:\u00f6\3\2\2\2<\u0100\3\2\2\2>\u0102\3\2\2\2@"+
-		"\u010a\3\2\2\2BD\5\4\3\2CB\3\2\2\2DE\3\2\2\2EC\3\2\2\2EF\3\2\2\2F\3\3"+
-		"\2\2\2GH\5\16\b\2H\5\3\2\2\2IJ\t\2\2\2J\7\3\2\2\2KO\7\t\2\2LO\7\16\2\2"+
-		"MO\7\6\2\2NK\3\2\2\2NL\3\2\2\2NM\3\2\2\2O\t\3\2\2\2PU\7\66\2\2QU\7\67"+
-		"\2\2RU\7\4\2\2SU\7\5\2\2TP\3\2\2\2TQ\3\2\2\2TR\3\2\2\2TS\3\2\2\2U\13\3"+
-		"\2\2\2VY\5\20\t\2WY\5\26\f\2XV\3\2\2\2XW\3\2\2\2Y\r\3\2\2\2Z]\5@!\2[]"+
-		"\5\24\13\2\\Z\3\2\2\2\\[\3\2\2\2]\17\3\2\2\2^i\5\22\n\2_i\5\32\16\2`i"+
-		"\5\34\17\2ai\5\"\22\2bi\5$\23\2ci\5&\24\2di\5(\25\2ei\5*\26\2fi\5,\27"+
-		"\2gi\5.\30\2h^\3\2\2\2h_\3\2\2\2h`\3\2\2\2ha\3\2\2\2hb\3\2\2\2hc\3\2\2"+
-		"\2hd\3\2\2\2he\3\2\2\2hf\3\2\2\2hg\3\2\2\2i\21\3\2\2\2jk\5\24\13\2kl\7"+
-		"\31\2\2l\23\3\2\2\2mn\5\60\31\2no\t\3\2\2op\5\30\r\2p\25\3\2\2\2qr\7\26"+
-		"\2\2rs\5@!\2st\7\27\2\2tz\3\2\2\2uv\7\26\2\2vw\5\f\7\2wx\7\27\2\2xz\3"+
-		"\2\2\2yq\3\2\2\2yu\3\2\2\2z\27\3\2\2\2{|\b\r\1\2|}\7\34\2\2}\u0087\5\30"+
-		"\r\7~\177\7.\2\2\177\u0087\5\30\r\6\u0080\u0081\7\22\2\2\u0081\u0082\5"+
-		"\30\r\2\u0082\u0083\7\23\2\2\u0083\u0087\3\2\2\2\u0084\u0087\7\63\2\2"+
-		"\u0085\u0087\5\n\6\2\u0086{\3\2\2\2\u0086~\3\2\2\2\u0086\u0080\3\2\2\2"+
-		"\u0086\u0084\3\2\2\2\u0086\u0085\3\2\2\2\u0087\u0098\3\2\2\2\u0088\u0089"+
-		"\f\13\2\2\u0089\u008a\7-\2\2\u008a\u008b\5\30\r\2\u008b\u008c\7\32\2\2"+
-		"\u008c\u008d\5\30\r\f\u008d\u0097\3\2\2\2\u008e\u008f\f\n\2\2\u008f\u0090"+
-		"\t\4\2\2\u0090\u0097\5\30\r\13\u0091\u0092\f\t\2\2\u0092\u0093\t\5\2\2"+
-		"\u0093\u0097\5\30\r\n\u0094\u0095\f\b\2\2\u0095\u0097\t\6\2\2\u0096\u0088"+
-		"\3\2\2\2\u0096\u008e\3\2\2\2\u0096\u0091\3\2\2\2\u0096\u0094\3\2\2\2\u0097"+
-		"\u009a\3\2\2\2\u0098\u0096\3\2\2\2\u0098\u0099\3\2\2\2\u0099\31\3\2\2"+
-		"\2\u009a\u0098\3\2\2\2\u009b\u009c\7\b\2\2\u009c\u009d\7\22\2\2\u009d"+
-		"\u009e\5\30\r\2\u009e\u009f\7\23\2\2\u009f\u00a0\5\f\7\2\u00a0\u00a4\3"+
-		"\2\2\2\u00a1\u00a2\7\3\2\2\u00a2\u00a4\5\f\7\2\u00a3\u009b\3\2\2\2\u00a3"+
-		"\u00a1\3\2\2\2\u00a4\33\3\2\2\2\u00a5\u00a6\7\20\2\2\u00a6\u00a7\7\22"+
-		"\2\2\u00a7\u00a8\5\30\r\2\u00a8\u00a9\7\23\2\2\u00a9\u00aa\5\f\7\2\u00aa"+
-		"\35\3\2\2\2\u00ab\u00ac\5\22\n\2\u00ac\37\3\2\2\2\u00ad\u00ae\5\22\n\2"+
-		"\u00ae!\3\2\2\2\u00af\u00b0\7\7\2\2\u00b0\u00b1\7\22\2\2\u00b1\u00b2\5"+
-		"\36\20\2\u00b2\u00b3\7\31\2\2\u00b3\u00b4\5\30\r\2\u00b4\u00b5\7\31\2"+
-		"\2\u00b5\u00b6\5 \21\2\u00b6\u00b7\7\23\2\2\u00b7\u00b8\5\f\7\2\u00b8"+
-		"#\3\2\2\2\u00b9\u00ba\7\r\2\2\u00ba\u00bb\7\31\2\2\u00bb%\3\2\2\2\u00bc"+
-		"\u00bd\7\f\2\2\u00bd\u00be\7\31\2\2\u00be\'\3\2\2\2\u00bf\u00c0\7\13\2"+
-		"\2\u00c0\u00c1\5\30\r\2\u00c1\u00c2\7\31\2\2\u00c2)\3\2\2\2\u00c3\u00c4"+
-		"\7\63\2\2\u00c4\u00c5\7\22\2\2\u00c5\u00c6\5\30\r\2\u00c6\u00c7\7\23\2"+
-		"\2\u00c7\u00c8\7\31\2\2\u00c8+\3\2\2\2\u00c9\u00cd\7\n\2\2\u00ca\u00ce"+
-		"\7\67\2\2\u00cb\u00ce\7\66\2\2\u00cc\u00ce\5\60\31\2\u00cd\u00ca\3\2\2"+
-		"\2\u00cd\u00cb\3\2\2\2\u00cd\u00cc\3\2\2\2\u00ce\u00cf\3\2\2\2\u00cf\u00d0"+
-		"\7\31\2\2\u00d0-\3\2\2\2\u00d1\u00d2\7\21\2\2\u00d2\u00d3\5\30\r\2\u00d3"+
-		"\u00d4\7\31\2\2\u00d4\u00d8\3\2\2\2\u00d5\u00d6\7\30\2\2\u00d6\u00d8\5"+
-		"\30\r\2\u00d7\u00d1\3\2\2\2\u00d7\u00d5\3\2\2\2\u00d8/\3\2\2\2\u00d9\u00e0"+
-		"\7\63\2\2\u00da\u00db\7\24\2\2\u00db\u00dc\5\30\r\2\u00dc\u00dd\7\25\2"+
-		"\2\u00dd\u00df\3\2\2\2\u00de\u00da\3\2\2\2\u00df\u00e2\3\2\2\2\u00e0\u00de"+
-		"\3\2\2\2\u00e0\u00e1\3\2\2\2\u00e1\61\3\2\2\2\u00e2\u00e0\3\2\2\2\u00e3"+
-		"\u00e4\7\63\2\2\u00e4\63\3\2\2\2\u00e5\u00e6\7\63\2\2\u00e6\u00e7\7!\2"+
-		"\2\u00e7\u00e8\5\30\r\2\u00e8\65\3\2\2\2\u00e9\u00ea\5\62\32\2\u00ea\u00eb"+
-		"\7\24\2\2\u00eb\u00ec\7\66\2\2\u00ec\u00ed\7\25\2\2\u00ed\67\3\2\2\2\u00ee"+
-		"\u00f3\5\n\6\2\u00ef\u00f0\7\30\2\2\u00f0\u00f2\5\n\6\2\u00f1\u00ef\3"+
-		"\2\2\2\u00f2\u00f5\3\2\2\2\u00f3\u00f1\3\2\2\2\u00f3\u00f4\3\2\2\2\u00f4"+
-		"9\3\2\2\2\u00f5\u00f3\3\2\2\2\u00f6\u00f7\5\66\34\2\u00f7\u00f8\7!\2\2"+
-		"\u00f8\u00f9\7\26\2\2\u00f9\u00fa\58\35\2\u00fa\u00fb\7\27\2\2\u00fb;"+
-		"\3\2\2\2\u00fc\u0101\5\62\32\2\u00fd\u0101\5\64\33\2\u00fe\u0101\5\66"+
-		"\34\2\u00ff\u0101\5:\36\2\u0100\u00fc\3\2\2\2\u0100\u00fd\3\2\2\2\u0100"+
-		"\u00fe\3\2\2\2\u0100\u00ff\3\2\2\2\u0101=\3\2\2\2\u0102\u0107\5<\37\2"+
-		"\u0103\u0104\7\30\2\2\u0104\u0106\5<\37\2\u0105\u0103\3\2\2\2\u0106\u0109"+
-		"\3\2\2\2\u0107\u0105\3\2\2\2\u0107\u0108\3\2\2\2\u0108?\3\2\2\2\u0109"+
-		"\u0107\3\2\2\2\u010a\u010b\7\17\2\2\u010b\u010c\5> \2\u010c\u010d\7\32"+
-		"\2\2\u010d\u010e\5\b\5\2\u010e\u010f\7\31\2\2\u010fA\3\2\2\2\23ENTX\\"+
-		"hy\u0086\u0096\u0098\u00a3\u00cd\u00d7\u00e0\u00f3\u0100\u0107";
+		"\3\30\5\30\u00d8\n\30\3\31\3\31\3\31\3\31\3\31\3\31\5\31\u00e0\n\31\3"+
+		"\32\3\32\3\32\3\32\5\32\u00e6\n\32\3\33\3\33\3\33\3\33\3\34\3\34\3\34"+
+		"\3\34\3\34\3\35\3\35\3\35\3\35\3\35\5\35\u00f6\n\35\3\36\3\36\3\36\3\36"+
+		"\3\36\3\36\3\37\3\37\3\37\3\37\5\37\u0102\n\37\3 \3 \5 \u0106\n \3 \5"+
+		" \u0109\n \3!\3!\3!\3!\3!\3!\3!\2\3\30\"\2\4\6\b\n\f\16\20\22\24\26\30"+
+		"\32\34\36 \"$&(*,.\60\62\64\668:<>@\2\7\4\2\33\37!!\4\2!!%)\6\2  \"$*"+
+		"+/\60\3\2\33\37\4\2\33\34\61\62\2\u0116\2C\3\2\2\2\4G\3\2\2\2\6I\3\2\2"+
+		"\2\bN\3\2\2\2\nT\3\2\2\2\fX\3\2\2\2\16\\\3\2\2\2\20h\3\2\2\2\22j\3\2\2"+
+		"\2\24m\3\2\2\2\26y\3\2\2\2\30\u0086\3\2\2\2\32\u00a3\3\2\2\2\34\u00a5"+
+		"\3\2\2\2\36\u00ab\3\2\2\2 \u00ad\3\2\2\2\"\u00af\3\2\2\2$\u00b9\3\2\2"+
+		"\2&\u00bc\3\2\2\2(\u00bf\3\2\2\2*\u00c3\3\2\2\2,\u00c9\3\2\2\2.\u00d7"+
+		"\3\2\2\2\60\u00df\3\2\2\2\62\u00e5\3\2\2\2\64\u00e7\3\2\2\2\66\u00eb\3"+
+		"\2\2\28\u00f5\3\2\2\2:\u00f7\3\2\2\2<\u0101\3\2\2\2>\u0103\3\2\2\2@\u010a"+
+		"\3\2\2\2BD\5\4\3\2CB\3\2\2\2DE\3\2\2\2EC\3\2\2\2EF\3\2\2\2F\3\3\2\2\2"+
+		"GH\5\16\b\2H\5\3\2\2\2IJ\t\2\2\2J\7\3\2\2\2KO\7\t\2\2LO\7\16\2\2MO\7\6"+
+		"\2\2NK\3\2\2\2NL\3\2\2\2NM\3\2\2\2O\t\3\2\2\2PU\7\66\2\2QU\7\67\2\2RU"+
+		"\7\4\2\2SU\7\5\2\2TP\3\2\2\2TQ\3\2\2\2TR\3\2\2\2TS\3\2\2\2U\13\3\2\2\2"+
+		"VY\5\20\t\2WY\5\26\f\2XV\3\2\2\2XW\3\2\2\2Y\r\3\2\2\2Z]\5@!\2[]\5\24\13"+
+		"\2\\Z\3\2\2\2\\[\3\2\2\2]\17\3\2\2\2^i\5\22\n\2_i\5\32\16\2`i\5\34\17"+
+		"\2ai\5\"\22\2bi\5$\23\2ci\5&\24\2di\5(\25\2ei\5*\26\2fi\5,\27\2gi\5.\30"+
+		"\2h^\3\2\2\2h_\3\2\2\2h`\3\2\2\2ha\3\2\2\2hb\3\2\2\2hc\3\2\2\2hd\3\2\2"+
+		"\2he\3\2\2\2hf\3\2\2\2hg\3\2\2\2i\21\3\2\2\2jk\5\24\13\2kl\7\31\2\2l\23"+
+		"\3\2\2\2mn\5\60\31\2no\t\3\2\2op\5\30\r\2p\25\3\2\2\2qr\7\26\2\2rs\5@"+
+		"!\2st\7\27\2\2tz\3\2\2\2uv\7\26\2\2vw\5\f\7\2wx\7\27\2\2xz\3\2\2\2yq\3"+
+		"\2\2\2yu\3\2\2\2z\27\3\2\2\2{|\b\r\1\2|}\7\34\2\2}\u0087\5\30\r\7~\177"+
+		"\7.\2\2\177\u0087\5\30\r\6\u0080\u0081\7\22\2\2\u0081\u0082\5\30\r\2\u0082"+
+		"\u0083\7\23\2\2\u0083\u0087\3\2\2\2\u0084\u0087\7\63\2\2\u0085\u0087\5"+
+		"\n\6\2\u0086{\3\2\2\2\u0086~\3\2\2\2\u0086\u0080\3\2\2\2\u0086\u0084\3"+
+		"\2\2\2\u0086\u0085\3\2\2\2\u0087\u0098\3\2\2\2\u0088\u0089\f\13\2\2\u0089"+
+		"\u008a\7-\2\2\u008a\u008b\5\30\r\2\u008b\u008c\7\32\2\2\u008c\u008d\5"+
+		"\30\r\f\u008d\u0097\3\2\2\2\u008e\u008f\f\n\2\2\u008f\u0090\t\4\2\2\u0090"+
+		"\u0097\5\30\r\13\u0091\u0092\f\t\2\2\u0092\u0093\t\5\2\2\u0093\u0097\5"+
+		"\30\r\n\u0094\u0095\f\b\2\2\u0095\u0097\t\6\2\2\u0096\u0088\3\2\2\2\u0096"+
+		"\u008e\3\2\2\2\u0096\u0091\3\2\2\2\u0096\u0094\3\2\2\2\u0097\u009a\3\2"+
+		"\2\2\u0098\u0096\3\2\2\2\u0098\u0099\3\2\2\2\u0099\31\3\2\2\2\u009a\u0098"+
+		"\3\2\2\2\u009b\u009c\7\b\2\2\u009c\u009d\7\22\2\2\u009d\u009e\5\30\r\2"+
+		"\u009e\u009f\7\23\2\2\u009f\u00a0\5\f\7\2\u00a0\u00a4\3\2\2\2\u00a1\u00a2"+
+		"\7\3\2\2\u00a2\u00a4\5\f\7\2\u00a3\u009b\3\2\2\2\u00a3\u00a1\3\2\2\2\u00a4"+
+		"\33\3\2\2\2\u00a5\u00a6\7\20\2\2\u00a6\u00a7\7\22\2\2\u00a7\u00a8\5\30"+
+		"\r\2\u00a8\u00a9\7\23\2\2\u00a9\u00aa\5\f\7\2\u00aa\35\3\2\2\2\u00ab\u00ac"+
+		"\5\22\n\2\u00ac\37\3\2\2\2\u00ad\u00ae\5\22\n\2\u00ae!\3\2\2\2\u00af\u00b0"+
+		"\7\7\2\2\u00b0\u00b1\7\22\2\2\u00b1\u00b2\5\36\20\2\u00b2\u00b3\7\31\2"+
+		"\2\u00b3\u00b4\5\30\r\2\u00b4\u00b5\7\31\2\2\u00b5\u00b6\5 \21\2\u00b6"+
+		"\u00b7\7\23\2\2\u00b7\u00b8\5\f\7\2\u00b8#\3\2\2\2\u00b9\u00ba\7\r\2\2"+
+		"\u00ba\u00bb\7\31\2\2\u00bb%\3\2\2\2\u00bc\u00bd\7\f\2\2\u00bd\u00be\7"+
+		"\31\2\2\u00be\'\3\2\2\2\u00bf\u00c0\7\13\2\2\u00c0\u00c1\5\30\r\2\u00c1"+
+		"\u00c2\7\31\2\2\u00c2)\3\2\2\2\u00c3\u00c4\7\63\2\2\u00c4\u00c5\7\22\2"+
+		"\2\u00c5\u00c6\5\30\r\2\u00c6\u00c7\7\23\2\2\u00c7\u00c8\7\31\2\2\u00c8"+
+		"+\3\2\2\2\u00c9\u00cd\7\n\2\2\u00ca\u00ce\7\67\2\2\u00cb\u00ce\7\66\2"+
+		"\2\u00cc\u00ce\5\60\31\2\u00cd\u00ca\3\2\2\2\u00cd\u00cb\3\2\2\2\u00cd"+
+		"\u00cc\3\2\2\2\u00ce\u00cf\3\2\2\2\u00cf\u00d0\7\31\2\2\u00d0-\3\2\2\2"+
+		"\u00d1\u00d2\7\21\2\2\u00d2\u00d3\5\30\r\2\u00d3\u00d4\7\31\2\2\u00d4"+
+		"\u00d8\3\2\2\2\u00d5\u00d6\7\30\2\2\u00d6\u00d8\5\30\r\2\u00d7\u00d1\3"+
+		"\2\2\2\u00d7\u00d5\3\2\2\2\u00d8/\3\2\2\2\u00d9\u00e0\7\63\2\2\u00da\u00db"+
+		"\7\63\2\2\u00db\u00dc\7\24\2\2\u00dc\u00dd\5\30\r\2\u00dd\u00de\7\25\2"+
+		"\2\u00de\u00e0\3\2\2\2\u00df\u00d9\3\2\2\2\u00df\u00da\3\2\2\2\u00e0\61"+
+		"\3\2\2\2\u00e1\u00e6\7\63\2\2\u00e2\u00e3\7\63\2\2\u00e3\u00e4\7!\2\2"+
+		"\u00e4\u00e6\5\30\r\2\u00e5\u00e1\3\2\2\2\u00e5\u00e2\3\2\2\2\u00e6\63"+
+		"\3\2\2\2\u00e7\u00e8\5\62\32\2\u00e8\u00e9\5\6\4\2\u00e9\u00ea\5\62\32"+
+		"\2\u00ea\65\3\2\2\2\u00eb\u00ec\5\62\32\2\u00ec\u00ed\7\24\2\2\u00ed\u00ee"+
+		"\7\66\2\2\u00ee\u00ef\7\25\2\2\u00ef\67\3\2\2\2\u00f0\u00f6\5\n\6\2\u00f1"+
+		"\u00f2\5\n\6\2\u00f2\u00f3\7\30\2\2\u00f3\u00f4\5\n\6\2\u00f4\u00f6\3"+
+		"\2\2\2\u00f5\u00f0\3\2\2\2\u00f5\u00f1\3\2\2\2\u00f69\3\2\2\2\u00f7\u00f8"+
+		"\5\66\34\2\u00f8\u00f9\7!\2\2\u00f9\u00fa\7\26\2\2\u00fa\u00fb\58\35\2"+
+		"\u00fb\u00fc\7\27\2\2\u00fc;\3\2\2\2\u00fd\u0102\5\62\32\2\u00fe\u0102"+
+		"\5\64\33\2\u00ff\u0102\5\66\34\2\u0100\u0102\5:\36\2\u0101\u00fd\3\2\2"+
+		"\2\u0101\u00fe\3\2\2\2\u0101\u00ff\3\2\2\2\u0101\u0100\3\2\2\2\u0102="+
+		"\3\2\2\2\u0103\u0105\5<\37\2\u0104\u0106\7\30\2\2\u0105\u0104\3\2\2\2"+
+		"\u0105\u0106\3\2\2\2\u0106\u0108\3\2\2\2\u0107\u0109\5> \2\u0108\u0107"+
+		"\3\2\2\2\u0108\u0109\3\2\2\2\u0109?\3\2\2\2\u010a\u010b\7\17\2\2\u010b"+
+		"\u010c\5> \2\u010c\u010d\7\32\2\2\u010d\u010e\5\b\5\2\u010e\u010f\7\31"+
+		"\2\2\u010fA\3\2\2\2\25ENTX\\hy\u0086\u0096\u0098\u00a3\u00cd\u00d7\u00df"+
+		"\u00e5\u00f5\u0101\u0105\u0108";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

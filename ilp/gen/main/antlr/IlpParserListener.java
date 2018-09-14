@@ -1,5 +1,5 @@
-// Generated from IlpParser.g4 by ANTLR 4.5.3
-package uem.antlr;
+// Generated from /home/rafaellb/Documents/uem/ilp2018/compilador/ilp/src/main/antlr/IlpParser.g4 by ANTLR 4.7
+package main.antlr;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -424,15 +424,29 @@ public interface IlpParserListener extends ParseTreeListener {
 	 */
 	void exitVariable(IlpParser.VariableContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link IlpParser#specVarSimple}.
+	 * Enter a parse tree produced by the {@code declaration}
+	 * labeled alternative in {@link IlpParser#specVarSimple}.
 	 * @param ctx the parse tree
 	 */
-	void enterSpecVarSimple(IlpParser.SpecVarSimpleContext ctx);
+	void enterDeclaration(IlpParser.DeclarationContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link IlpParser#specVarSimple}.
+	 * Exit a parse tree produced by the {@code declaration}
+	 * labeled alternative in {@link IlpParser#specVarSimple}.
 	 * @param ctx the parse tree
 	 */
-	void exitSpecVarSimple(IlpParser.SpecVarSimpleContext ctx);
+	void exitDeclaration(IlpParser.DeclarationContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code directAssign}
+	 * labeled alternative in {@link IlpParser#specVarSimple}.
+	 * @param ctx the parse tree
+	 */
+	void enterDirectAssign(IlpParser.DirectAssignContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code directAssign}
+	 * labeled alternative in {@link IlpParser#specVarSimple}.
+	 * @param ctx the parse tree
+	 */
+	void exitDirectAssign(IlpParser.DirectAssignContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link IlpParser#specVarSimpleIni}.
 	 * @param ctx the parse tree
