@@ -2,15 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4b8f1db-f7b9-4023-94f5-6d051b468b07" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/uem/ast/stmt/SpecVar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/uem/semantic/Error.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/antlr/IlpParser.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/antlr/IlpParser.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/antlr/IlpParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpParserBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/antlr/IlpParserBaseListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpParserListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/antlr/IlpParserListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/antlr/IlpLexer.tokens" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpLexer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpLexer.tokens" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpParser.tokens" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpParserBaseListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpParserListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/ast/AstMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/AstMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/ast/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/ast/stmt/IlpFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/stmt/IlpFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/ast/stmt/SpecvarList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/stmt/DeclVar.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,6 +43,34 @@
     </option>
     <expand />
     <select />
+  </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/main/antlr/IlpParser.g4">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="374">
+                    <caret line="22" column="27" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="27" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/uem/Main.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="306">
+                    <caret line="23" selection-start-line="23" selection-end-line="23" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-356103321">
@@ -96,11 +135,11 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="24" />
-          <entry key="g4" value="40" />
+          <entry key="g4" value="41" />
           <entry key="gradle" value="12" />
           <entry key="iml" value="1" />
-          <entry key="java" value="207" />
-          <entry key="kt" value="7" />
+          <entry key="java" value="227" />
+          <entry key="kt" value="8" />
           <entry key="kts" value="1" />
           <entry key="md" value="1" />
           <entry key="test" value="5" />
@@ -109,12 +148,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="ANTLR v4 grammar file" value="40" />
+          <entry key="ANTLR v4 grammar file" value="41" />
           <entry key="CLASS" value="24" />
           <entry key="Groovy" value="12" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="207" />
-          <entry key="Kotlin" value="8" />
+          <entry key="JAVA" value="227" />
+          <entry key="Kotlin" value="9" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="6" />
           <entry key="YAML" value="6" />
@@ -122,25 +161,25 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="10" />
+          <entry key="dummy" value="21" />
           <entry key="g4" value="3117" />
           <entry key="gradle" value="603" />
-          <entry key="java" value="9971" />
-          <entry key="kt" value="60" />
+          <entry key="java" value="11104" />
+          <entry key="kt" value="88" />
           <entry key="kts" value="30" />
           <entry key="md" value="401" />
           <entry key="test" value="13" />
-          <entry key="txt" value="245" />
+          <entry key="txt" value="283" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="ANTLR v4 grammar file" value="3117" />
           <entry key="Groovy" value="603" />
-          <entry key="JAVA" value="9971" />
-          <entry key="Kotlin" value="90" />
+          <entry key="JAVA" value="11104" />
+          <entry key="Kotlin" value="118" />
           <entry key="Markdown" value="401" />
-          <entry key="PLAIN_TEXT" value="268" />
+          <entry key="PLAIN_TEXT" value="317" />
         </counts>
       </usages-collector>
     </session>
@@ -150,8 +189,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/uem/ast/AstMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="534">
-              <caret line="126" column="16" selection-start-line="126" selection-start-column="16" selection-end-line="126" selection-end-column="16" />
+            <state relative-caret-position="408">
+              <caret line="33" column="33" lean-forward="true" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/uem/semantic/Validator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="67" selection-start-line="12" selection-start-column="67" selection-end-line="12" selection-end-column="67" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -160,28 +211,59 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/uem/semantic/Error.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+              <folding>
+                <element signature="e#251#252#0" expanded="true" />
+                <element signature="e#277#278#0" expanded="true" />
+                <element signature="e#317#318#0" expanded="true" />
+                <element signature="e#347#348#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/uem/ast/Node.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/uem/antlr/IlpParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="35139">
-              <caret line="2228" selection-start-line="2228" selection-end-line="2228" />
+            <state relative-caret-position="126">
+              <caret line="2282" selection-start-line="2282" selection-end-line="2282" />
+              <folding>
+                <element signature="e#65063#65064#0" expanded="true" />
+                <element signature="e#65126#65127#0" expanded="true" />
+                <element signature="e#68052#68053#0" expanded="true" />
+                <element signature="e#68105#68106#0" expanded="true" />
+                <element signature="e#69822#69823#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/uem/ast/stmt/DeclVar.java">
+        <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/NumberLiteral.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+              <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/uem/ast/stmt/VarReference.java">
+        <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/BoolLiteral.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="5" column="47" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="47" />
+            <state relative-caret-position="119">
+              <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -201,44 +283,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/uem/ast/stmt/IlpFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="21" selection-start-column="21" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/uem/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+              <caret line="13" column="31" lean-forward="true" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+              <folding>
+                <element signature="e#361#362#0" expanded="true" />
+                <element signature="e#388#389#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/uem/ast/stmt/SpecvarList.java">
+        <entry file="file://$PROJECT_DIR$/src/uem/Lexer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/antlr/IlpParser.g4">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="146" column="32" selection-start-line="146" selection-start-column="26" selection-end-line="146" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/antlr/IlpLexer.g4">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1496">
-              <caret line="88" column="5" lean-forward="true" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
+            <state relative-caret-position="6">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
@@ -259,17 +318,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>atrib</find>
-      <find>declVar</find>
-      <find>directAssin</find>
-      <find>Direct</find>
-      <find>(Direct</find>
       <find>SpecVar</find>
       <find>SpecVarC</find>
       <find>directList</find>
       <find>DirectSpecVarContext</find>
       <find>DirectAssignContext</find>
-      <find>print</find>
       <find>System.</find>
       <find>DeclVarCon</find>
       <find>DeclVarStat</find>
@@ -289,6 +342,12 @@
       <find>assign</find>
       <find>indirect</find>
       <find>specVar</find>
+      <find>direct</find>
+      <find>spec</find>
+      <find>Ini</find>
+      <find>specVarSimpleIni</find>
+      <find>print</find>
+      <find>intL</find>
     </findStrings>
     <replaceStrings>
       <replace>public void</replace>
@@ -330,13 +389,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/uem/antlr/IlpParserListener.java" />
-        <option value="$PROJECT_DIR$/tests/assets/var1.lex.test" />
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/../README.md" />
-        <option value="$PROJECT_DIR$/src/uem/parser.kt" />
-        <option value="$PROJECT_DIR$/src/uem/Parser.java" />
-        <option value="$PROJECT_DIR$/src/uem/parser/Parser.java" />
         <option value="$PROJECT_DIR$/src/uem/antlr/IlpLexer.java" />
         <option value="$PROJECT_DIR$/tests/LexTest.java" />
         <option value="$PROJECT_DIR$/src/uem/parser/ParseLeaf.java" />
@@ -345,7 +397,6 @@
         <option value="$PROJECT_DIR$/src/uem/ast/expr/Expression.java" />
         <option value="$PROJECT_DIR$/src/uem/ast/Point.java" />
         <option value="$PROJECT_DIR$/src/uem/ast/Position.java" />
-        <option value="$PROJECT_DIR$/src/uem/ast/Node.java" />
         <option value="$PROJECT_DIR$/src/uem/ast/Type.java" />
         <option value="$PROJECT_DIR$/src/uem/ast/Ast.java" />
         <option value="$PROJECT_DIR$/src/uem/ast/AstMap.kt" />
@@ -358,7 +409,6 @@
         <option value="$PROJECT_DIR$/src/uem/bosta.kt" />
         <option value="$PROJECT_DIR$/src/uem/ast/ParseTreeToAstMapper.java" />
         <option value="$PROJECT_DIR$/src/uem/ast/TreeToAst.java" />
-        <option value="$PROJECT_DIR$/src/uem/ast/stmt/IlpFile.java" />
         <option value="$PROJECT_DIR$/src/uem/ast/bosta.kt" />
         <option value="$PROJECT_DIR$/src/uem/ast/Hm.java" />
         <option value="$PROJECT_DIR$/src/uem/ast/stmt/Statement.java" />
@@ -373,14 +423,23 @@
         <option value="$PROJECT_DIR$/src/uem/ast/expr/DivisionExpression.java" />
         <option value="$PROJECT_DIR$/src/uem/ast/expr/SubtractionExpression.java" />
         <option value="$PROJECT_DIR$/src/uem/ast/expr/SumExpression.java" />
-        <option value="$PROJECT_DIR$/src/uem/ast/stmt/DeclVar.java" />
         <option value="$PROJECT_DIR$/src/uem/ast/expr/MultiplicationExpression.java" />
         <option value="$PROJECT_DIR$/src/uem/ast/stmt/VarReference.java" />
-        <option value="$PROJECT_DIR$/src/uem/Main.java" />
-        <option value="$PROJECT_DIR$/src/uem/ast/AstMap.java" />
-        <option value="$PROJECT_DIR$/src/uem/ast/stmt/SpecvarList.java" />
         <option value="$PROJECT_DIR$/src/main/antlr/IlpLexer.g4" />
+        <option value="$PROJECT_DIR$/src/uem/ast/stmt/ListSpecVar.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/stmt/SpecvarList.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/stmt/SpecVar.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/stmt/DeclVar.java" />
         <option value="$PROJECT_DIR$/src/main/antlr/IlpParser.g4" />
+        <option value="$PROJECT_DIR$/src/uem/ast/stmt/IlpFile.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/expr/BoolLiteral.java" />
+        <option value="$PROJECT_DIR$/src/uem/Main.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/type/BooleanType.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/AstMap.java" />
+        <option value="$PROJECT_DIR$/src/uem/semantic/test.kt" />
+        <option value="$PROJECT_DIR$/src/uem/ast/Node.java" />
+        <option value="$PROJECT_DIR$/src/uem/semantic/Error.java" />
+        <option value="$PROJECT_DIR$/src/uem/semantic/Validator.java" />
       </list>
     </option>
   </component>
@@ -399,7 +458,7 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="65" />
     <option name="y" value="-4" />
-    <option name="width" value="1295" />
+    <option name="width" value="1301" />
     <option name="height" value="772" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -438,30 +497,7 @@
               <item name="ilp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="uem" type="462c0819:PsiDirectoryNode" />
-              <item name="antlr" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ilp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="uem" type="462c0819:PsiDirectoryNode" />
-              <item name="ast" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ilp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="uem" type="462c0819:PsiDirectoryNode" />
-              <item name="ast" type="462c0819:PsiDirectoryNode" />
-              <item name="expr" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ilp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="uem" type="462c0819:PsiDirectoryNode" />
-              <item name="ast" type="462c0819:PsiDirectoryNode" />
-              <item name="stmt" type="462c0819:PsiDirectoryNode" />
+              <item name="semantic" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -497,24 +533,24 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="uem.ast.stmt" />
-      <recent name="uem.ast.expr" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/antrl" />
+      <recent name="$PROJECT_DIR$/tests" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="uem.ast.type" />
+      <recent name="uem.ast.expr" />
+      <recent name="uem.ast.stmt" />
+      <recent name="" />
       <recent name="uem.ast" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/antlr" />
       <recent name="$PROJECT_DIR$/tests/assets" />
       <recent name="$PROJECT_DIR$/src/uem/antrl" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/antrl" />
-      <recent name="$PROJECT_DIR$/tests" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -671,7 +707,7 @@
       <workItem from="1536619343106" duration="8501000" />
       <workItem from="1536710429559" duration="210000" />
       <workItem from="1536723633518" duration="16125000" />
-      <workItem from="1536879487507" duration="6329000" />
+      <workItem from="1536879487507" duration="14266000" />
     </task>
     <task id="LOCAL-00001" summary="Mais um caso de lontrice no parser arrumado -&gt; alias de operação binária">
       <created>1536794172992</created>
@@ -694,7 +730,14 @@
       <option name="project" value="LOCAL" />
       <updated>1536817048718</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Arrumado regras do parser">
+      <created>1536887853351</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1536887853351</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -730,26 +773,55 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128169000" />
+    <option name="totallyTimeSpent" value="136106000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="1297" height="780" extended-state="6" />
+    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
     <layout>
       <window_info id="UI Designer" order="0" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.20176141" />
+      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.2565737" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="2" visible="true" weight="0.32919255" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.32919255" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="4" weight="0.32919255" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.32919255" />
       <window_info anchor="bottom" id="Tool Output" order="7" weight="0.32919255" />
-      <window_info anchor="bottom" id="Run" order="8" weight="0.32919255" />
-      <window_info anchor="bottom" x="1408" y="132" width="1249" height="591" id="Debug" order="9" type="WINDOWED" weight="0.32919255" />
+      <window_info anchor="bottom" id="Run" order="8" weight="0.0" />
+      <window_info anchor="bottom" x="1409" y="132" width="1248" height="591" id="Debug" order="9" type="WINDOWED" weight="0.32919255" />
+      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="12" />
+      <window_info anchor="right" id="Database" order="0" weight="0.3298639" />
+      <window_info anchor="right" id="Palette&#9;" order="1" />
+      <window_info anchor="right" id="Maven Projects" order="2" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="4" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="5" weight="0.2489992" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="6" weight="0.25" />
+      <window_info anchor="right" id="Kotlin Bytecode" order="7" weight="0.17427702" />
+      <window_info anchor="right" x="1459" y="101" width="1218" height="444" id="ANTLR Preview" order="8" type="WINDOWED" weight="0.67894316" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="UI Designer" order="0" />
+      <window_info id="Favorites" order="1" side_tool="true" />
+      <window_info id="Designer" order="2" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.21056846" />
+      <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="2" weight="0.32919255" />
+      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="4" weight="0.32919255" />
+      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info anchor="bottom" id="Find" order="6" weight="0.32919255" />
+      <window_info anchor="bottom" id="Tool Output" order="7" weight="0.32919255" />
+      <window_info anchor="bottom" id="Run" order="8" visible="true" weight="0.32919255" />
+      <window_info anchor="bottom" x="1409" y="132" width="1248" height="591" id="Debug" order="9" type="WINDOWED" visible="true" weight="0.32919255" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="12" />
@@ -761,35 +833,7 @@
       <window_info anchor="right" id="Ant Build" order="5" weight="0.2489992" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="6" weight="0.25" />
       <window_info anchor="right" id="Kotlin Bytecode" order="7" weight="0.1674277" />
-      <window_info active="true" anchor="right" x="1459" y="101" width="1218" height="444" id="ANTLR Preview" order="8" type="WINDOWED" visible="true" weight="0.67894316" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="UI Designer" order="0" />
-      <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="3" weight="0.24940239" />
-      <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="2" weight="0.32919255" />
-      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="ANTLR Preview" order="4" weight="0.32919255" />
-      <window_info anchor="bottom" id="Messages" order="5" weight="0.32919255" />
-      <window_info anchor="bottom" id="Message" order="6" />
-      <window_info anchor="bottom" id="Tool Output" order="7" weight="0.32919255" />
-      <window_info anchor="bottom" id="Find" order="8" />
-      <window_info active="true" anchor="bottom" id="Run" order="9" visible="true" weight="0.32919255" />
-      <window_info anchor="bottom" id="Debug" order="10" weight="0.0" />
-      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="13" />
-      <window_info anchor="right" id="Database" order="0" />
-      <window_info anchor="right" id="Palette&#9;" order="1" />
-      <window_info anchor="right" id="Maven Projects" order="2" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="4" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="5" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="6" weight="0.25" />
+      <window_info anchor="right" x="1459" y="101" width="1218" height="444" id="ANTLR Preview" order="8" type="WINDOWED" weight="0.67894316" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -804,7 +848,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Mais um caso de lontrice no parser arrumado -&gt; alias de operação binária" />
     <MESSAGE value="Atualizado" />
-    <option name="LAST_COMMIT_MESSAGE" value="Atualizado" />
+    <MESSAGE value="Arrumado regras do parser" />
+    <option name="LAST_COMMIT_MESSAGE" value="Arrumado regras do parser" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -819,39 +864,15 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/uem/ast/AstMap.java</url>
-          <line>198</line>
+          <line>38</line>
           <properties />
-          <option name="timeStamp" value="14" />
+          <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/uem/ast/AstMap.java</url>
-          <line>204</line>
+          <line>118</line>
           <properties />
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/uem/ast/AstMap.java</url>
-          <line>210</line>
-          <properties />
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/uem/ast/AstMap.java</url>
-          <line>216</line>
-          <properties />
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/uem/Main.java</url>
-          <line>20</line>
-          <properties />
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/uem/ast/AstMap.java</url>
-          <line>103</line>
-          <properties />
-          <option name="timeStamp" value="24" />
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -866,6 +887,41 @@
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
+        <expression-string>typeCtx</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>ctxStmt</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>specVarSimpleIni.ID().getText()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>canonicalListDecl</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>listspec.specVar()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>listspec.specVar();</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>lstStmtSpecVar</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>ex.getMessage()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
@@ -875,98 +931,14 @@
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>System.out.println(ex.getMessage())</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>ast</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>ex</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>this.getAst(binExprCtx.left)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>this.getAst(binExprCtx.right)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>Exception ex</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>el.statement().getClass().getCanonicalName()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/uem/antlr/IlpLexer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="27" column="69" selection-start-line="27" selection-start-column="69" selection-end-line="27" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/ast/type/Type.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/antlr/IlpParser.tokens">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-74">
-          <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/AstMapTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="38" column="55" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/ast/type/StringType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/local/lib/antlr-4.5.3-complete.jar!/org/antlr/v4/tool/ast/PlusBlockAST.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="19" column="41" lean-forward="true" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/uem/bosta.kt" />
     <entry file="file://$PROJECT_DIR$/src/uem/parser/ParseLeaf.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/Lexer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1002,13 +974,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/uem/antlr/IlpLexer.tokens">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/ast/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/uem/ast/stmt/Statement.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1047,13 +1012,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/ast/type/NumberType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/uem/parser/ParseTreeNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -1065,13 +1023,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/NumberLiteral.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1119,6 +1070,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
           <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="37" selection-end-column="5" />
+          <folding>
+            <element signature="e#806#807#0" expanded="true" />
+            <element signature="e#833#834#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1126,6 +1081,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="295">
           <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+          <folding>
+            <element signature="e#814#815#0" expanded="true" />
+            <element signature="e#850#851#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1140,6 +1099,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+          <folding>
+            <element signature="e#824#825#0" expanded="true" />
+            <element signature="e#851#852#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1154,6 +1117,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
           <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+          <folding>
+            <element signature="e#786#787#0" expanded="true" />
+            <element signature="e#822#823#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1164,34 +1131,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/ast/AstMap.java">
+    <entry file="file://$PROJECT_DIR$/src/main/antlr/IlpLexer.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="126" column="16" selection-start-line="126" selection-start-column="16" selection-end-line="126" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="1496">
+          <caret line="88" column="5" lean-forward="true" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/antlr/IlpParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35139">
-          <caret line="2228" selection-start-line="2228" selection-end-line="2228" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/stmt/ListSpecVar.java">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/uem/ast/stmt/DeclVar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="272">
+          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/stmt/SpecVar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/type/NumberType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+          <folding>
+            <element signature="e#311#312#0" expanded="true" />
+            <element signature="e#347#348#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/uem/ast/stmt/VarReference.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="47" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="47" />
+        <state relative-caret-position="170">
+          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -1207,36 +1185,118 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/uem/ast/stmt/IlpFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="21" selection-start-column="21" selection-end-column="21" />
+        <state relative-caret-position="170">
+          <caret line="13" column="31" lean-forward="true" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+          <folding>
+            <element signature="e#361#362#0" expanded="true" />
+            <element signature="e#388#389#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/Lexer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/NumberLiteral.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/BoolLiteral.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/antlr/IlpParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="2282" selection-start-line="2282" selection-end-line="2282" />
+          <folding>
+            <element signature="e#65063#65064#0" expanded="true" />
+            <element signature="e#65126#65127#0" expanded="true" />
+            <element signature="e#68052#68053#0" expanded="true" />
+            <element signature="e#68105#68106#0" expanded="true" />
+            <element signature="e#69822#69823#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/type/BooleanType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/uem/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/ast/stmt/SpecvarList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/antlr/IlpLexer.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1496">
-          <caret line="88" column="5" lean-forward="true" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
+        <state relative-caret-position="306">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/antlr/IlpParser.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="146" column="32" selection-start-line="146" selection-start-column="26" selection-end-line="146" selection-end-column="32" />
+        <state relative-caret-position="374">
+          <caret line="22" column="27" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/AstMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="33" column="33" lean-forward="true" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/semantic/test.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="47" lean-forward="true" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+          <folding>
+            <element signature="e#22#96#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/semantic/Error.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <folding>
+            <element signature="e#251#252#0" expanded="true" />
+            <element signature="e#277#278#0" expanded="true" />
+            <element signature="e#317#318#0" expanded="true" />
+            <element signature="e#347#348#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/semantic/Validator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="67" selection-start-line="12" selection-start-column="67" selection-end-line="12" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

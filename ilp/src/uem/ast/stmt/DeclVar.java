@@ -1,30 +1,22 @@
 package uem.ast.stmt;
 
 import uem.ast.Position;
-import uem.ast.expr.Expression;
+import uem.ast.type.Type;
+
+import java.util.List;
 
 public class DeclVar implements Statement {
 
-    private final String varName;
-    private final Expression value;
+    final String varName = null;
+    private final List<Statement> stmt;
     private final Position position;
+    private final Type type;
 
-    public DeclVar(String varName, Expression value, Position position) {
+    public DeclVar(List<Statement> stmt, Type type) {
         super();
-        this.varName = varName;
-        this.value = value;
-        this.position = position;
-    }
-
-    public DeclVar(String varName, Expression value) {
-        super();
-        this.varName = varName;
-        this.value = value;
+        this.stmt = stmt;
         this.position = null;
-    }
-
-    public Expression getValue() {
-        return value;
+        this.type = type;
     }
 
     public String getVarName() {

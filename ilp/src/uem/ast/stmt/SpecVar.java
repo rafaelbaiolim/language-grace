@@ -3,26 +3,35 @@ package uem.ast.stmt;
 import uem.ast.Position;
 import uem.ast.expr.Expression;
 
-import java.util.List;
-
-public class SpecvarList implements Statement {
+public class SpecVar implements Statement {
 
     private final String varName;
-    private final List<Statement> stmt;
+    private final Expression value;
     private final Position position;
 
-    public SpecvarList(String varName, Expression value, List<Statement> stmt, Position position) {
+    public SpecVar(String varName, Expression value, Position position) {
         super();
         this.varName = varName;
-        this.stmt = stmt;
+        this.value = value;
         this.position = position;
     }
 
-    public SpecvarList(String varName, Expression value, List<Statement> stmt) {
+    public SpecVar(String varName) {
         super();
         this.varName = varName;
-        this.stmt = stmt;
+        this.value = null;
         this.position = null;
+    }
+
+    public SpecVar(String varName, Expression value) {
+        super();
+        this.varName = varName;
+        this.value = value;
+        this.position = null;
+    }
+
+    public Expression getValue() {
+        return value;
     }
 
     public String getVarName() {
