@@ -1,8 +1,218 @@
 parser grammar GraceParser;
 options { tokenVocab=GraceLexer; }
+/**
+    https://din-ilp2018.readthedocs.io/en/latest/espec_sintatica.html
+    Docs » Especificação Sintática 0.6
+    Verificar se o programa sempre iniciar com proc / func
+**/
 
 graceFile : lines=line+ ;
 line : statement;
+
+statement
+    : declVar #declVarStatement
+    | atrib   #assignmentStatement
+    ;
+
+expression
+    : left=expression operator='?' right=expression operator=':' right=expression                       #ternaryOperation
+    | left=expression operator=('||' | '&&' | '==' | '!=' | '<' | '<=' | '>' | '>=' ) right=expression  #compareOperation
+    | left=expression operator=( '+'| '-' | '/' | '*' | '%') right=expression                           #binaryOperation
+    | left=expression ( '+' | '-' | '++' | '--' )                                                       #incrementOperation
+    | '-' expression                                                                                    #minusExpression
+    | '!' expression                                                                                    #differenceExpression
+    | '(' expression ')'                                                                                #parenExpression
+    | ID                                                                                                #varReference
+    | literal                                                                                           #literalReference
+    ;
+
+// Variáveis
+
+declVar
+    : T_VAR listSpecVars ':' lstType ';'
+    ;
+
+listSpecVars
+    : specVar (',' specVar)*
+    ;
+
+specVar
+    : specVarSimple      #directSpecVar
+    | specVarSimpleIni   #directSpecVarSimpleIni
+    | specVarArr         #directSpecVarArr
+    | specVarArrIni      #directSpecVarArrIni
+    ;
+
+specVarSimple
+    : ID
+    {$block::symbols.add($ID.text);}
+    ;
+
+specVarSimpleIni
+    : ID '=' expression
+    {$block::symbols.add($ID.text);}
+    ;
+
+
+specVarArr
+    : specVarSimple '[' NUMBERLITERAL ']'
+    ;
+
+specVarArrIni
+    : specVarArr '=' '{' literal (',' literal)* '}'
+    ;
+
+// Declaração de Subprogramas
+
+decSub
+    : decProc | decFunc
+    ;
+
+// Declaração de Procedimentos
+
+decProc
+    : 'def' ID '(' lstParam ')' block
+    ;
+
+ decFunc
+    : 'def' ID '(' lstParam ')' ':' lstType block
+    ;
+
+
+// Lista de Parâmetros
+
+lstParam
+    : specParam (',' specParam)*
+    ;
+
+specParam
+    : param (',' param)* ':' lstType
+    ;
+
+param
+    : ID
+    | ID '[' ']'
+    ;
+
+// Comandos
+
+command
+    : cmdSimple
+    | block
+    ;
+
+
+// A seguir são especificados os comandos simples:
+
+cmdSimple
+    : cmdAtrib
+    | cmdIf
+    | cmdWhile
+    | cmdFor
+    | cmdStop
+    | cmdSkip
+    | cmdReturn
+    | cmdCallProc
+    | cmdRead
+    | cmdWrite
+    ;
+
+// Atribuição
+
+cmdAtrib
+    : atrib ';'
+    ;
+
+atrib
+    : ID ('='|'+='|'-='|'*='|'/='|'%=') expression
+        {
+            if( !$block::symbols.contains($ID.text) ){
+                System.err.println( "Undefined var: " + $ID.text );
+            }
+        }
+    ;
+
+// Condicional If
+
+cmdIf
+    : 'if' '(' expression ')' command ('else' command)*
+    ;
+
+// Laço While
+
+cmdWhile
+    : 'while' '(' expression ')' command
+    ;
+
+// Laço For
+
+cmdFor
+    : 'for' '(' forInit ';' expression ';' forItera ')' command
+    ;
+
+forInit
+    : cmdAtrib
+    ;
+
+forItera
+    : cmdAtrib
+    ;
+
+// Interrupção de Laço
+
+cmdStop
+    : 'stop' ';'
+    ;
+
+// Salto de iteração do laço
+
+cmdSkip
+    : 'skip' ';'
+    ;
+
+// Retorno de subprograma
+
+cmdReturn
+    : 'return' (expression)* ';'
+    ;
+
+// Chamada de procedimento
+
+cmdCallProc
+    : ID '(' (expression* (',' expression)? ) ')' ';'
+    ;
+
+// Entrada Read
+
+cmdRead
+    : 'read' variable ';'
+    ;
+
+// Saída Write
+
+cmdWrite
+    : 'write' expression (',' expression)* ';'
+    ;
+
+// Bloco de Comandos
+
+block
+locals [ List<String> symbols = new ArrayList<>() ]
+    : '{' declVar* command* '}'
+    {System.out.println("symbols=" + $symbols);}
+    ;
+
+// Operador Ternário (opTern -> exp:ternaryOperation)
+
+// Uso de Variável
+
+variable
+    : ID
+    | ID '[' expression ']'
+    ;
+
+
+// Listas de Tipos
 
 lstOP
     : T_EQUAL
@@ -24,143 +234,4 @@ literal
     | STRINGLITERAL  # stringLiteral
     | T_FALSE        # trueLiteral
     | T_TRUE         # falseLiteral
-    ;
-
-command
-    : cmdSimple
-    ;
-
-statement
-    : declVar #declVarStatement
-    | atrib   #assignmentStatement
-    ;
-
-cmdSimple
-    : cmdAtrib
-    | cmdIf
-    | cmdWhile
-    | cmdFor
-    | cmdStop
-    | cmdSkip
-    | cmdReturn
-    | cmdCallProc
-    | cmdRead
-    | cmdWrite
-    ;
-
-cmdAtrib
-    : atrib ';'
-    ;
-
-atrib
-    : ID (T_EQUAL | T_INCREMENT | T_DECREMENT | T_INC_MULT | T_INC_DIV | T_INC_MOD ) expression
-        {
-            if( !$block::symbols.contains($ID.text) ){
-                System.err.println( "Undefined var: " + $ID.text );
-            }
-        }
-    ;
-
-block
-locals [ List<String> symbols = new ArrayList<>() ]
-    : '{' declVar* cmdSimple* '}'
-    {System.out.println("symbols=" + $symbols);}
-    ;
-
-expression
-    : left=expression operator='?' right=expression operator=':' right=expression                       #ternaryOperation
-    | left=expression operator=('||' | '&&' | '==' | '!=' | '<' | '<=' | '>' | '>=' ) right=expression  #compareOperation
-    | left=expression operator=( '+'| '-' | '/' | '*' | '%') right=expression                           #binaryOperation
-    | left=expression ( '+' | '-' | '++' | '--' )                                                       #incrementOperation
-    | '-' expression                                                                                    #minusExpression
-    | '!' expression                                                                                    #differenceExpression
-    | '(' expression ')'                                                                                #parenExpression
-    | ID                                                                                                #varReference
-    | literal                                                                                           #literalReference
-    ;
-
-cmdIf
-    : T_IF '(' expression ')' command
-    | T_ELSE command
-    ;
-
-cmdWhile
-    : T_WHILE '(' expression ')' command
-    ;
-
-forInit
-    : cmdAtrib
-    ;
-
-forItera
-    : cmdAtrib
-    ;
-
-cmdFor
-    : T_FOR '(' forInit ';' expression ';' forItera ')' command
-    ;
-
-cmdStop
-    : T_STOP ';'
-    ;
-
-cmdSkip
-    : T_SKIP ';'
-    ;
-
-cmdReturn
-    : T_RETURN  expression ';'
-    ;
-
-cmdCallProc
-    : ID '(' expression ')' ';';
-
-cmdRead
-    : T_READ ( STRINGLITERAL | NUMBERLITERAL | variable ) ';' //verificar se literais entram
-    ;
-
-cmdWrite
-    : T_WRITE expression ';'
-    | ',' expression
-    ;
-
-variable
-    : ID ('[' expression ']')*
-    ;
-
-specVarSimple
-    : ID
-    {$block::symbols.add($ID.text);}
-    ;
-
-specVarSimpleIni
-    : ID '=' expression
-    {$block::symbols.add($ID.text);}
-    ;
-
-specVarArr
-    : specVarSimple '[' NUMBERLITERAL ']'
-    ;
-
-lstArrIni
-    : literal (',' literal)*
-    ;
-
-specVarArrIni
-    : specVarArr '=' '{' lstArrIni '}'
-    ;
-
-specVar
-    : specVarSimple      #directSpecVar
-    | specVarSimpleIni   #directSpecVarSimpleIni
-    | specVarArr         #directSpecVarArr
-    | specVarArrIni      #directSpecVarArrIni
-    ;
-
-listSpecVars
-    : specVar (',' specVar)*
-    ;
-
-declVar
-    : T_VAR listSpecVars ':' lstType ';'
     ;

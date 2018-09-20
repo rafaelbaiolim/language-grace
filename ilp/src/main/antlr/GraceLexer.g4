@@ -1,5 +1,10 @@
 lexer grammar GraceLexer;
+/**
+    https://din-ilp2018.readthedocs.io/en/latest/espec_lexica.html
+    Docs » Especificação Léxica 0.6
+**/
 
+T_DEF : 'def' ;
 T_ELSE  : 'else' ;
 T_FALSE  : 'false' ;
 T_TRUE  : 'true' ;
