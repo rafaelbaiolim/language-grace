@@ -1,7 +1,7 @@
-parser grammar IlpParser;
-options { tokenVocab=IlpLexer; }
+parser grammar GraceParser;
+options { tokenVocab=GraceLexer; }
 
-ilpFile : lines=line+ ;
+graceFile : lines=line+ ;
 line : statement;
 
 lstOP
@@ -28,13 +28,11 @@ literal
 
 command
     : cmdSimple
-    | block
     ;
 
 statement
     : declVar #declVarStatement
     | atrib   #assignmentStatement
-    | command #cmdStatement
     ;
 
 cmdSimple

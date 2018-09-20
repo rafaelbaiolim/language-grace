@@ -1,4 +1,4 @@
-// Generated from IlpParser.g4 by ANTLR 4.5.3
+// Generated from GraceParser.g4 by ANTLR 4.5.3
 package uem.antlr;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -10,7 +10,7 @@ import java.util.Iterator;
 import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
-public class IlpParser extends Parser {
+public class GraceParser extends Parser {
 	static { RuntimeMetaData.checkVersion("4.5.3", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
@@ -28,7 +28,7 @@ public class IlpParser extends Parser {
 		AND=46, PLUS_INC=47, MINUS_DEC=48, ID=49, COMMENT=50, WS=51, NUMBERLITERAL=52, 
 		STRINGLITERAL=53;
 	public static final int
-		RULE_ilpFile = 0, RULE_line = 1, RULE_lstOP = 2, RULE_lstType = 3, RULE_literal = 4, 
+		RULE_graceFile = 0, RULE_line = 1, RULE_lstOP = 2, RULE_lstType = 3, RULE_literal = 4, 
 		RULE_command = 5, RULE_statement = 6, RULE_cmdSimple = 7, RULE_cmdAtrib = 8, 
 		RULE_atrib = 9, RULE_block = 10, RULE_expression = 11, RULE_cmdIf = 12, 
 		RULE_cmdWhile = 13, RULE_forInit = 14, RULE_forItera = 15, RULE_cmdFor = 16, 
@@ -37,7 +37,7 @@ public class IlpParser extends Parser {
 		RULE_specVarSimpleIni = 25, RULE_specVarArr = 26, RULE_lstArrIni = 27, 
 		RULE_specVarArrIni = 28, RULE_specVar = 29, RULE_listSpecVars = 30, RULE_declVar = 31;
 	public static final String[] ruleNames = {
-		"ilpFile", "line", "lstOP", "lstType", "literal", "command", "statement", 
+		"graceFile", "line", "lstOP", "lstType", "literal", "command", "statement", 
 		"cmdSimple", "cmdAtrib", "atrib", "block", "expression", "cmdIf", "cmdWhile", 
 		"forInit", "forItera", "cmdFor", "cmdStop", "cmdSkip", "cmdReturn", "cmdCallProc", 
 		"cmdRead", "cmdWrite", "variable", "specVarSimple", "specVarSimpleIni", 
@@ -98,7 +98,7 @@ public class IlpParser extends Parser {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "IlpParser.g4"; }
+	public String getGrammarFileName() { return "GraceParser.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -109,11 +109,11 @@ public class IlpParser extends Parser {
 	@Override
 	public ATN getATN() { return _ATN; }
 
-	public IlpParser(TokenStream input) {
+	public GraceParser(TokenStream input) {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
-	public static class IlpFileContext extends ParserRuleContext {
+	public static class GraceFileContext extends ParserRuleContext {
 		public LineContext lines;
 		public List<LineContext> line() {
 			return getRuleContexts(LineContext.class);
@@ -121,23 +121,23 @@ public class IlpParser extends Parser {
 		public LineContext line(int i) {
 			return getRuleContext(LineContext.class,i);
 		}
-		public IlpFileContext(ParserRuleContext parent, int invokingState) {
+		public GraceFileContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_ilpFile; }
+		@Override public int getRuleIndex() { return RULE_graceFile; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterIlpFile(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterGraceFile(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitIlpFile(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitGraceFile(this);
 		}
 	}
 
-	public final IlpFileContext ilpFile() throws RecognitionException {
-		IlpFileContext _localctx = new IlpFileContext(_ctx, getState());
-		enterRule(_localctx, 0, RULE_ilpFile);
+	public final GraceFileContext graceFile() throws RecognitionException {
+		GraceFileContext _localctx = new GraceFileContext(_ctx, getState());
+		enterRule(_localctx, 0, RULE_graceFile);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
@@ -149,7 +149,7 @@ public class IlpParser extends Parser {
 				{
 				{
 				setState(64);
-				((IlpFileContext)_localctx).lines = line();
+				((GraceFileContext)_localctx).lines = line();
 				}
 				}
 				setState(67); 
@@ -179,11 +179,11 @@ public class IlpParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_line; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterLine(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterLine(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitLine(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitLine(this);
 		}
 	}
 
@@ -209,23 +209,23 @@ public class IlpParser extends Parser {
 	}
 
 	public static class LstOPContext extends ParserRuleContext {
-		public TerminalNode T_EQUAL() { return getToken(IlpParser.T_EQUAL, 0); }
-		public TerminalNode T_PLUS() { return getToken(IlpParser.T_PLUS, 0); }
-		public TerminalNode T_MINUS() { return getToken(IlpParser.T_MINUS, 0); }
-		public TerminalNode T_ASTERISK() { return getToken(IlpParser.T_ASTERISK, 0); }
-		public TerminalNode T_PERCENT() { return getToken(IlpParser.T_PERCENT, 0); }
-		public TerminalNode T_SLASH() { return getToken(IlpParser.T_SLASH, 0); }
+		public TerminalNode T_EQUAL() { return getToken(GraceParser.T_EQUAL, 0); }
+		public TerminalNode T_PLUS() { return getToken(GraceParser.T_PLUS, 0); }
+		public TerminalNode T_MINUS() { return getToken(GraceParser.T_MINUS, 0); }
+		public TerminalNode T_ASTERISK() { return getToken(GraceParser.T_ASTERISK, 0); }
+		public TerminalNode T_PERCENT() { return getToken(GraceParser.T_PERCENT, 0); }
+		public TerminalNode T_SLASH() { return getToken(GraceParser.T_SLASH, 0); }
 		public LstOPContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_lstOP; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterLstOP(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterLstOP(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitLstOP(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitLstOP(this);
 		}
 	}
 
@@ -268,39 +268,39 @@ public class IlpParser extends Parser {
 		}
 	}
 	public static class StringContext extends LstTypeContext {
-		public TerminalNode T_STRING() { return getToken(IlpParser.T_STRING, 0); }
+		public TerminalNode T_STRING() { return getToken(GraceParser.T_STRING, 0); }
 		public StringContext(LstTypeContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterString(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterString(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitString(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitString(this);
 		}
 	}
 	public static class BoolContext extends LstTypeContext {
-		public TerminalNode T_BOOL() { return getToken(IlpParser.T_BOOL, 0); }
+		public TerminalNode T_BOOL() { return getToken(GraceParser.T_BOOL, 0); }
 		public BoolContext(LstTypeContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterBool(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterBool(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitBool(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitBool(this);
 		}
 	}
 	public static class IntegerContext extends LstTypeContext {
-		public TerminalNode T_INT() { return getToken(IlpParser.T_INT, 0); }
+		public TerminalNode T_INT() { return getToken(GraceParser.T_INT, 0); }
 		public IntegerContext(LstTypeContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterInteger(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterInteger(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitInteger(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitInteger(this);
 		}
 	}
 
@@ -361,51 +361,51 @@ public class IlpParser extends Parser {
 		}
 	}
 	public static class FalseLiteralContext extends LiteralContext {
-		public TerminalNode T_TRUE() { return getToken(IlpParser.T_TRUE, 0); }
+		public TerminalNode T_TRUE() { return getToken(GraceParser.T_TRUE, 0); }
 		public FalseLiteralContext(LiteralContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterFalseLiteral(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterFalseLiteral(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitFalseLiteral(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitFalseLiteral(this);
 		}
 	}
 	public static class StringLiteralContext extends LiteralContext {
-		public TerminalNode STRINGLITERAL() { return getToken(IlpParser.STRINGLITERAL, 0); }
+		public TerminalNode STRINGLITERAL() { return getToken(GraceParser.STRINGLITERAL, 0); }
 		public StringLiteralContext(LiteralContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterStringLiteral(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterStringLiteral(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitStringLiteral(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitStringLiteral(this);
 		}
 	}
 	public static class IntLiteralContext extends LiteralContext {
-		public TerminalNode NUMBERLITERAL() { return getToken(IlpParser.NUMBERLITERAL, 0); }
+		public TerminalNode NUMBERLITERAL() { return getToken(GraceParser.NUMBERLITERAL, 0); }
 		public IntLiteralContext(LiteralContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterIntLiteral(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterIntLiteral(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitIntLiteral(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitIntLiteral(this);
 		}
 	}
 	public static class TrueLiteralContext extends LiteralContext {
-		public TerminalNode T_FALSE() { return getToken(IlpParser.T_FALSE, 0); }
+		public TerminalNode T_FALSE() { return getToken(GraceParser.T_FALSE, 0); }
 		public TrueLiteralContext(LiteralContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterTrueLiteral(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterTrueLiteral(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitTrueLiteral(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitTrueLiteral(this);
 		}
 	}
 
@@ -466,20 +466,17 @@ public class IlpParser extends Parser {
 		public CmdSimpleContext cmdSimple() {
 			return getRuleContext(CmdSimpleContext.class,0);
 		}
-		public BlockContext block() {
-			return getRuleContext(BlockContext.class,0);
-		}
 		public CommandContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_command; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterCommand(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCommand(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitCommand(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCommand(this);
 		}
 	}
 
@@ -487,34 +484,10 @@ public class IlpParser extends Parser {
 		CommandContext _localctx = new CommandContext(_ctx, getState());
 		enterRule(_localctx, 10, RULE_command);
 		try {
-			setState(86);
-			switch (_input.LA(1)) {
-			case T_ELSE:
-			case T_FOR:
-			case T_IF:
-			case T_READ:
-			case T_RETURN:
-			case T_SKIP:
-			case T_STOP:
-			case T_WHILE:
-			case T_WRITE:
-			case T_COMMA:
-			case ID:
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(84);
-				cmdSimple();
-				}
-				break;
-			case T_LEFT_CURLY_BRACE:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(85);
-				block();
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(84);
+			cmdSimple();
 			}
 		}
 		catch (RecognitionException re) {
@@ -546,11 +519,11 @@ public class IlpParser extends Parser {
 		public AssignmentStatementContext(StatementContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterAssignmentStatement(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterAssignmentStatement(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitAssignmentStatement(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitAssignmentStatement(this);
 		}
 	}
 	public static class DeclVarStatementContext extends StatementContext {
@@ -560,11 +533,11 @@ public class IlpParser extends Parser {
 		public DeclVarStatementContext(StatementContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterDeclVarStatement(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDeclVarStatement(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitDeclVarStatement(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDeclVarStatement(this);
 		}
 	}
 
@@ -572,13 +545,13 @@ public class IlpParser extends Parser {
 		StatementContext _localctx = new StatementContext(_ctx, getState());
 		enterRule(_localctx, 12, RULE_statement);
 		try {
-			setState(90);
+			setState(88);
 			switch (_input.LA(1)) {
 			case T_VAR:
 				_localctx = new DeclVarStatementContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(88);
+				setState(86);
 				declVar();
 				}
 				break;
@@ -586,7 +559,7 @@ public class IlpParser extends Parser {
 				_localctx = new AssignmentStatementContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(89);
+				setState(87);
 				atrib();
 				}
 				break;
@@ -642,11 +615,11 @@ public class IlpParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_cmdSimple; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterCmdSimple(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdSimple(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitCmdSimple(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdSimple(this);
 		}
 	}
 
@@ -654,76 +627,76 @@ public class IlpParser extends Parser {
 		CmdSimpleContext _localctx = new CmdSimpleContext(_ctx, getState());
 		enterRule(_localctx, 14, RULE_cmdSimple);
 		try {
-			setState(102);
+			setState(100);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,5,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,4,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(92);
+				setState(90);
 				cmdAtrib();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(93);
+				setState(91);
 				cmdIf();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(94);
+				setState(92);
 				cmdWhile();
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(95);
+				setState(93);
 				cmdFor();
 				}
 				break;
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(96);
+				setState(94);
 				cmdStop();
 				}
 				break;
 			case 6:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(97);
+				setState(95);
 				cmdSkip();
 				}
 				break;
 			case 7:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(98);
+				setState(96);
 				cmdReturn();
 				}
 				break;
 			case 8:
 				enterOuterAlt(_localctx, 8);
 				{
-				setState(99);
+				setState(97);
 				cmdCallProc();
 				}
 				break;
 			case 9:
 				enterOuterAlt(_localctx, 9);
 				{
-				setState(100);
+				setState(98);
 				cmdRead();
 				}
 				break;
 			case 10:
 				enterOuterAlt(_localctx, 10);
 				{
-				setState(101);
+				setState(99);
 				cmdWrite();
 				}
 				break;
@@ -750,11 +723,11 @@ public class IlpParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_cmdAtrib; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterCmdAtrib(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdAtrib(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitCmdAtrib(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdAtrib(this);
 		}
 	}
 
@@ -764,9 +737,9 @@ public class IlpParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(104);
+			setState(102);
 			atrib();
-			setState(105);
+			setState(103);
 			match(T_SEMICOLON);
 			}
 		}
@@ -783,27 +756,27 @@ public class IlpParser extends Parser {
 
 	public static class AtribContext extends ParserRuleContext {
 		public Token ID;
-		public TerminalNode ID() { return getToken(IlpParser.ID, 0); }
-		public TerminalNode T_INCREMENT() { return getToken(IlpParser.T_INCREMENT, 0); }
-		public TerminalNode T_DECREMENT() { return getToken(IlpParser.T_DECREMENT, 0); }
-		public TerminalNode T_INC_MULT() { return getToken(IlpParser.T_INC_MULT, 0); }
-		public TerminalNode T_INC_DIV() { return getToken(IlpParser.T_INC_DIV, 0); }
-		public TerminalNode T_INC_MOD() { return getToken(IlpParser.T_INC_MOD, 0); }
-		public TerminalNode T_EQUAL() { return getToken(IlpParser.T_EQUAL, 0); }
+		public TerminalNode ID() { return getToken(GraceParser.ID, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
+		public TerminalNode T_EQUAL() { return getToken(GraceParser.T_EQUAL, 0); }
+		public TerminalNode T_INCREMENT() { return getToken(GraceParser.T_INCREMENT, 0); }
+		public TerminalNode T_DECREMENT() { return getToken(GraceParser.T_DECREMENT, 0); }
+		public TerminalNode T_INC_MULT() { return getToken(GraceParser.T_INC_MULT, 0); }
+		public TerminalNode T_INC_DIV() { return getToken(GraceParser.T_INC_DIV, 0); }
+		public TerminalNode T_INC_MOD() { return getToken(GraceParser.T_INC_MOD, 0); }
 		public AtribContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_atrib; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterAtrib(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterAtrib(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitAtrib(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitAtrib(this);
 		}
 	}
 
@@ -812,39 +785,24 @@ public class IlpParser extends Parser {
 		enterRule(_localctx, 18, RULE_atrib);
 		int _la;
 		try {
-			setState(114);
-			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,6,_ctx) ) {
-			case 1:
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(107);
-				match(ID);
-				setState(108);
-				_la = _input.LA(1);
-				if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_INCREMENT) | (1L << T_DECREMENT) | (1L << T_INC_MULT) | (1L << T_INC_DIV) | (1L << T_INC_MOD))) != 0)) ) {
-				_errHandler.recoverInline(this);
-				} else {
-					consume();
-				}
-				}
-				break;
-			case 2:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(109);
-				((AtribContext)_localctx).ID = match(ID);
-				setState(110);
-				match(T_EQUAL);
-				setState(111);
-				expression(0);
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(105);
+			((AtribContext)_localctx).ID = match(ID);
+			setState(106);
+			_la = _input.LA(1);
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_EQUAL) | (1L << T_INCREMENT) | (1L << T_DECREMENT) | (1L << T_INC_MULT) | (1L << T_INC_DIV) | (1L << T_INC_MOD))) != 0)) ) {
+			_errHandler.recoverInline(this);
+			} else {
+				consume();
+			}
+			setState(107);
+			expression(0);
 
-				            if( !((BlockContext)getInvokingContext(10)).symbols.contains((((AtribContext)_localctx).ID!=null?((AtribContext)_localctx).ID.getText():null)) ){
-				                System.err.println( "Undefined var: " + (((AtribContext)_localctx).ID!=null?((AtribContext)_localctx).ID.getText():null) );
-				            }
-				        
-				}
-				break;
+			            if( !((BlockContext)getInvokingContext(10)).symbols.contains((((AtribContext)_localctx).ID!=null?((AtribContext)_localctx).ID.getText():null)) ){
+			                System.err.println( "Undefined var: " + (((AtribContext)_localctx).ID!=null?((AtribContext)_localctx).ID.getText():null) );
+			            }
+			        
 			}
 		}
 		catch (RecognitionException re) {
@@ -878,11 +836,11 @@ public class IlpParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_block; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterBlock(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterBlock(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitBlock(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitBlock(this);
 		}
 	}
 
@@ -893,37 +851,37 @@ public class IlpParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(116);
+			setState(110);
 			match(T_LEFT_CURLY_BRACE);
-			setState(120);
+			setState(114);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==T_VAR) {
 				{
 				{
-				setState(117);
+				setState(111);
 				declVar();
+				}
+				}
+				setState(116);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			}
+			setState(120);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_ELSE) | (1L << T_FOR) | (1L << T_IF) | (1L << T_READ) | (1L << T_RETURN) | (1L << T_SKIP) | (1L << T_STOP) | (1L << T_WHILE) | (1L << T_WRITE) | (1L << T_COMMA) | (1L << ID))) != 0)) {
+				{
+				{
+				setState(117);
+				cmdSimple();
 				}
 				}
 				setState(122);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(124); 
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			do {
-				{
-				{
-				setState(123);
-				cmdSimple();
-				}
-				}
-				setState(126); 
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_ELSE) | (1L << T_FOR) | (1L << T_IF) | (1L << T_READ) | (1L << T_RETURN) | (1L << T_SKIP) | (1L << T_STOP) | (1L << T_WHILE) | (1L << T_WRITE) | (1L << T_COMMA) | (1L << ID))) != 0) );
-			setState(128);
+			setState(123);
 			match(T_RIGHT_CURLY_BRACE);
 			System.out.println("symbols=" + _localctx.symbols);
 			}
@@ -958,11 +916,11 @@ public class IlpParser extends Parser {
 		public IncrementOperationContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterIncrementOperation(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterIncrementOperation(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitIncrementOperation(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitIncrementOperation(this);
 		}
 	}
 	public static class MinusExpressionContext extends ExpressionContext {
@@ -972,11 +930,11 @@ public class IlpParser extends Parser {
 		public MinusExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterMinusExpression(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterMinusExpression(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitMinusExpression(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitMinusExpression(this);
 		}
 	}
 	public static class DifferenceExpressionContext extends ExpressionContext {
@@ -986,11 +944,11 @@ public class IlpParser extends Parser {
 		public DifferenceExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterDifferenceExpression(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDifferenceExpression(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitDifferenceExpression(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDifferenceExpression(this);
 		}
 	}
 	public static class TernaryOperationContext extends ExpressionContext {
@@ -1006,11 +964,11 @@ public class IlpParser extends Parser {
 		public TernaryOperationContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterTernaryOperation(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterTernaryOperation(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitTernaryOperation(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitTernaryOperation(this);
 		}
 	}
 	public static class LiteralReferenceContext extends ExpressionContext {
@@ -1020,11 +978,11 @@ public class IlpParser extends Parser {
 		public LiteralReferenceContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterLiteralReference(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterLiteralReference(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitLiteralReference(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitLiteralReference(this);
 		}
 	}
 	public static class CompareOperationContext extends ExpressionContext {
@@ -1040,11 +998,11 @@ public class IlpParser extends Parser {
 		public CompareOperationContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterCompareOperation(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCompareOperation(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitCompareOperation(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCompareOperation(this);
 		}
 	}
 	public static class ParenExpressionContext extends ExpressionContext {
@@ -1054,11 +1012,11 @@ public class IlpParser extends Parser {
 		public ParenExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterParenExpression(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterParenExpression(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitParenExpression(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitParenExpression(this);
 		}
 	}
 	public static class BinaryOperationContext extends ExpressionContext {
@@ -1074,23 +1032,23 @@ public class IlpParser extends Parser {
 		public BinaryOperationContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterBinaryOperation(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterBinaryOperation(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitBinaryOperation(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitBinaryOperation(this);
 		}
 	}
 	public static class VarReferenceContext extends ExpressionContext {
-		public TerminalNode ID() { return getToken(IlpParser.ID, 0); }
+		public TerminalNode ID() { return getToken(GraceParser.ID, 0); }
 		public VarReferenceContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterVarReference(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterVarReference(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitVarReference(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitVarReference(this);
 		}
 	}
 
@@ -1110,7 +1068,7 @@ public class IlpParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(142);
+			setState(137);
 			switch (_input.LA(1)) {
 			case T_MINUS:
 				{
@@ -1118,9 +1076,9 @@ public class IlpParser extends Parser {
 				_ctx = _localctx;
 				_prevctx = _localctx;
 
-				setState(132);
+				setState(127);
 				match(T_MINUS);
-				setState(133);
+				setState(128);
 				expression(5);
 				}
 				break;
@@ -1129,9 +1087,9 @@ public class IlpParser extends Parser {
 				_localctx = new DifferenceExpressionContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(134);
+				setState(129);
 				match(NEG_UN);
-				setState(135);
+				setState(130);
 				expression(4);
 				}
 				break;
@@ -1140,11 +1098,11 @@ public class IlpParser extends Parser {
 				_localctx = new ParenExpressionContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(136);
+				setState(131);
 				match(T_LEFT_PAREN);
-				setState(137);
+				setState(132);
 				expression(0);
-				setState(138);
+				setState(133);
 				match(T_RIGHT_PAREN);
 				}
 				break;
@@ -1153,7 +1111,7 @@ public class IlpParser extends Parser {
 				_localctx = new VarReferenceContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(140);
+				setState(135);
 				match(ID);
 				}
 				break;
@@ -1165,7 +1123,7 @@ public class IlpParser extends Parser {
 				_localctx = new LiteralReferenceContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(141);
+				setState(136);
 				literal();
 				}
 				break;
@@ -1173,31 +1131,31 @@ public class IlpParser extends Parser {
 				throw new NoViableAltException(this);
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(160);
+			setState(155);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,11,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,9,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
-					setState(158);
+					setState(153);
 					_errHandler.sync(this);
-					switch ( getInterpreter().adaptivePredict(_input,10,_ctx) ) {
+					switch ( getInterpreter().adaptivePredict(_input,8,_ctx) ) {
 					case 1:
 						{
 						_localctx = new TernaryOperationContext(new ExpressionContext(_parentctx, _parentState));
 						((TernaryOperationContext)_localctx).left = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(144);
+						setState(139);
 						if (!(precpred(_ctx, 9))) throw new FailedPredicateException(this, "precpred(_ctx, 9)");
-						setState(145);
+						setState(140);
 						((TernaryOperationContext)_localctx).operator = match(T_TERN);
-						setState(146);
+						setState(141);
 						((TernaryOperationContext)_localctx).right = expression(0);
-						setState(147);
+						setState(142);
 						((TernaryOperationContext)_localctx).operator = match(T_COLON);
-						setState(148);
+						setState(143);
 						((TernaryOperationContext)_localctx).right = expression(10);
 						}
 						break;
@@ -1206,9 +1164,9 @@ public class IlpParser extends Parser {
 						_localctx = new CompareOperationContext(new ExpressionContext(_parentctx, _parentState));
 						((CompareOperationContext)_localctx).left = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(150);
+						setState(145);
 						if (!(precpred(_ctx, 8))) throw new FailedPredicateException(this, "precpred(_ctx, 8)");
-						setState(151);
+						setState(146);
 						((CompareOperationContext)_localctx).operator = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_COMP) | (1L << T_DIFFERENT) | (1L << T_GREATER) | (1L << T_GREATER_OR_EQUAL) | (1L << T_LOWER) | (1L << T_LOWER_OR_EQUAL) | (1L << OR) | (1L << AND))) != 0)) ) {
@@ -1216,7 +1174,7 @@ public class IlpParser extends Parser {
 						} else {
 							consume();
 						}
-						setState(152);
+						setState(147);
 						((CompareOperationContext)_localctx).right = expression(9);
 						}
 						break;
@@ -1225,9 +1183,9 @@ public class IlpParser extends Parser {
 						_localctx = new BinaryOperationContext(new ExpressionContext(_parentctx, _parentState));
 						((BinaryOperationContext)_localctx).left = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(153);
+						setState(148);
 						if (!(precpred(_ctx, 7))) throw new FailedPredicateException(this, "precpred(_ctx, 7)");
-						setState(154);
+						setState(149);
 						((BinaryOperationContext)_localctx).operator = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_PLUS) | (1L << T_MINUS) | (1L << T_ASTERISK) | (1L << T_SLASH) | (1L << T_PERCENT))) != 0)) ) {
@@ -1235,7 +1193,7 @@ public class IlpParser extends Parser {
 						} else {
 							consume();
 						}
-						setState(155);
+						setState(150);
 						((BinaryOperationContext)_localctx).right = expression(8);
 						}
 						break;
@@ -1244,9 +1202,9 @@ public class IlpParser extends Parser {
 						_localctx = new IncrementOperationContext(new ExpressionContext(_parentctx, _parentState));
 						((IncrementOperationContext)_localctx).left = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(156);
+						setState(151);
 						if (!(precpred(_ctx, 6))) throw new FailedPredicateException(this, "precpred(_ctx, 6)");
-						setState(157);
+						setState(152);
 						_la = _input.LA(1);
 						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_PLUS) | (1L << T_MINUS) | (1L << PLUS_INC) | (1L << MINUS_DEC))) != 0)) ) {
 						_errHandler.recoverInline(this);
@@ -1258,9 +1216,9 @@ public class IlpParser extends Parser {
 					}
 					} 
 				}
-				setState(162);
+				setState(157);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,11,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,9,_ctx);
 			}
 			}
 		}
@@ -1276,25 +1234,25 @@ public class IlpParser extends Parser {
 	}
 
 	public static class CmdIfContext extends ParserRuleContext {
-		public TerminalNode T_IF() { return getToken(IlpParser.T_IF, 0); }
+		public TerminalNode T_IF() { return getToken(GraceParser.T_IF, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
 		public CommandContext command() {
 			return getRuleContext(CommandContext.class,0);
 		}
-		public TerminalNode T_ELSE() { return getToken(IlpParser.T_ELSE, 0); }
+		public TerminalNode T_ELSE() { return getToken(GraceParser.T_ELSE, 0); }
 		public CmdIfContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_cmdIf; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterCmdIf(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdIf(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitCmdIf(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdIf(this);
 		}
 	}
 
@@ -1302,29 +1260,29 @@ public class IlpParser extends Parser {
 		CmdIfContext _localctx = new CmdIfContext(_ctx, getState());
 		enterRule(_localctx, 24, RULE_cmdIf);
 		try {
-			setState(171);
+			setState(166);
 			switch (_input.LA(1)) {
 			case T_IF:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(163);
+				setState(158);
 				match(T_IF);
-				setState(164);
+				setState(159);
 				match(T_LEFT_PAREN);
-				setState(165);
+				setState(160);
 				expression(0);
-				setState(166);
+				setState(161);
 				match(T_RIGHT_PAREN);
-				setState(167);
+				setState(162);
 				command();
 				}
 				break;
 			case T_ELSE:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(169);
+				setState(164);
 				match(T_ELSE);
-				setState(170);
+				setState(165);
 				command();
 				}
 				break;
@@ -1344,7 +1302,7 @@ public class IlpParser extends Parser {
 	}
 
 	public static class CmdWhileContext extends ParserRuleContext {
-		public TerminalNode T_WHILE() { return getToken(IlpParser.T_WHILE, 0); }
+		public TerminalNode T_WHILE() { return getToken(GraceParser.T_WHILE, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
@@ -1357,11 +1315,11 @@ public class IlpParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_cmdWhile; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterCmdWhile(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdWhile(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitCmdWhile(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdWhile(this);
 		}
 	}
 
@@ -1371,15 +1329,15 @@ public class IlpParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(173);
+			setState(168);
 			match(T_WHILE);
-			setState(174);
+			setState(169);
 			match(T_LEFT_PAREN);
-			setState(175);
+			setState(170);
 			expression(0);
-			setState(176);
+			setState(171);
 			match(T_RIGHT_PAREN);
-			setState(177);
+			setState(172);
 			command();
 			}
 		}
@@ -1404,11 +1362,11 @@ public class IlpParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_forInit; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterForInit(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterForInit(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitForInit(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitForInit(this);
 		}
 	}
 
@@ -1418,7 +1376,7 @@ public class IlpParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(179);
+			setState(174);
 			cmdAtrib();
 			}
 		}
@@ -1443,11 +1401,11 @@ public class IlpParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_forItera; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterForItera(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterForItera(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitForItera(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitForItera(this);
 		}
 	}
 
@@ -1457,7 +1415,7 @@ public class IlpParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(181);
+			setState(176);
 			cmdAtrib();
 			}
 		}
@@ -1473,7 +1431,7 @@ public class IlpParser extends Parser {
 	}
 
 	public static class CmdForContext extends ParserRuleContext {
-		public TerminalNode T_FOR() { return getToken(IlpParser.T_FOR, 0); }
+		public TerminalNode T_FOR() { return getToken(GraceParser.T_FOR, 0); }
 		public ForInitContext forInit() {
 			return getRuleContext(ForInitContext.class,0);
 		}
@@ -1492,11 +1450,11 @@ public class IlpParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_cmdFor; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterCmdFor(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdFor(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitCmdFor(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdFor(this);
 		}
 	}
 
@@ -1506,23 +1464,23 @@ public class IlpParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(183);
+			setState(178);
 			match(T_FOR);
-			setState(184);
+			setState(179);
 			match(T_LEFT_PAREN);
-			setState(185);
+			setState(180);
 			forInit();
-			setState(186);
+			setState(181);
 			match(T_SEMICOLON);
-			setState(187);
+			setState(182);
 			expression(0);
-			setState(188);
+			setState(183);
 			match(T_SEMICOLON);
-			setState(189);
+			setState(184);
 			forItera();
-			setState(190);
+			setState(185);
 			match(T_RIGHT_PAREN);
-			setState(191);
+			setState(186);
 			command();
 			}
 		}
@@ -1538,18 +1496,18 @@ public class IlpParser extends Parser {
 	}
 
 	public static class CmdStopContext extends ParserRuleContext {
-		public TerminalNode T_STOP() { return getToken(IlpParser.T_STOP, 0); }
+		public TerminalNode T_STOP() { return getToken(GraceParser.T_STOP, 0); }
 		public CmdStopContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_cmdStop; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterCmdStop(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdStop(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitCmdStop(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdStop(this);
 		}
 	}
 
@@ -1559,9 +1517,9 @@ public class IlpParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(193);
+			setState(188);
 			match(T_STOP);
-			setState(194);
+			setState(189);
 			match(T_SEMICOLON);
 			}
 		}
@@ -1577,18 +1535,18 @@ public class IlpParser extends Parser {
 	}
 
 	public static class CmdSkipContext extends ParserRuleContext {
-		public TerminalNode T_SKIP() { return getToken(IlpParser.T_SKIP, 0); }
+		public TerminalNode T_SKIP() { return getToken(GraceParser.T_SKIP, 0); }
 		public CmdSkipContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_cmdSkip; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterCmdSkip(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdSkip(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitCmdSkip(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdSkip(this);
 		}
 	}
 
@@ -1598,9 +1556,9 @@ public class IlpParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(196);
+			setState(191);
 			match(T_SKIP);
-			setState(197);
+			setState(192);
 			match(T_SEMICOLON);
 			}
 		}
@@ -1616,7 +1574,7 @@ public class IlpParser extends Parser {
 	}
 
 	public static class CmdReturnContext extends ParserRuleContext {
-		public TerminalNode T_RETURN() { return getToken(IlpParser.T_RETURN, 0); }
+		public TerminalNode T_RETURN() { return getToken(GraceParser.T_RETURN, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
@@ -1626,11 +1584,11 @@ public class IlpParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_cmdReturn; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterCmdReturn(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdReturn(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitCmdReturn(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdReturn(this);
 		}
 	}
 
@@ -1640,11 +1598,11 @@ public class IlpParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(199);
+			setState(194);
 			match(T_RETURN);
-			setState(200);
+			setState(195);
 			expression(0);
-			setState(201);
+			setState(196);
 			match(T_SEMICOLON);
 			}
 		}
@@ -1660,7 +1618,7 @@ public class IlpParser extends Parser {
 	}
 
 	public static class CmdCallProcContext extends ParserRuleContext {
-		public TerminalNode ID() { return getToken(IlpParser.ID, 0); }
+		public TerminalNode ID() { return getToken(GraceParser.ID, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
@@ -1670,11 +1628,11 @@ public class IlpParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_cmdCallProc; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterCmdCallProc(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdCallProc(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitCmdCallProc(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdCallProc(this);
 		}
 	}
 
@@ -1684,15 +1642,15 @@ public class IlpParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(203);
+			setState(198);
 			match(ID);
-			setState(204);
+			setState(199);
 			match(T_LEFT_PAREN);
-			setState(205);
+			setState(200);
 			expression(0);
-			setState(206);
+			setState(201);
 			match(T_RIGHT_PAREN);
-			setState(207);
+			setState(202);
 			match(T_SEMICOLON);
 			}
 		}
@@ -1708,9 +1666,9 @@ public class IlpParser extends Parser {
 	}
 
 	public static class CmdReadContext extends ParserRuleContext {
-		public TerminalNode T_READ() { return getToken(IlpParser.T_READ, 0); }
-		public TerminalNode STRINGLITERAL() { return getToken(IlpParser.STRINGLITERAL, 0); }
-		public TerminalNode NUMBERLITERAL() { return getToken(IlpParser.NUMBERLITERAL, 0); }
+		public TerminalNode T_READ() { return getToken(GraceParser.T_READ, 0); }
+		public TerminalNode STRINGLITERAL() { return getToken(GraceParser.STRINGLITERAL, 0); }
+		public TerminalNode NUMBERLITERAL() { return getToken(GraceParser.NUMBERLITERAL, 0); }
 		public VariableContext variable() {
 			return getRuleContext(VariableContext.class,0);
 		}
@@ -1720,11 +1678,11 @@ public class IlpParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_cmdRead; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterCmdRead(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdRead(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitCmdRead(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdRead(this);
 		}
 	}
 
@@ -1734,32 +1692,32 @@ public class IlpParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(209);
+			setState(204);
 			match(T_READ);
-			setState(213);
+			setState(208);
 			switch (_input.LA(1)) {
 			case STRINGLITERAL:
 				{
-				setState(210);
+				setState(205);
 				match(STRINGLITERAL);
 				}
 				break;
 			case NUMBERLITERAL:
 				{
-				setState(211);
+				setState(206);
 				match(NUMBERLITERAL);
 				}
 				break;
 			case ID:
 				{
-				setState(212);
+				setState(207);
 				variable();
 				}
 				break;
 			default:
 				throw new NoViableAltException(this);
 			}
-			setState(215);
+			setState(210);
 			match(T_SEMICOLON);
 			}
 		}
@@ -1775,7 +1733,7 @@ public class IlpParser extends Parser {
 	}
 
 	public static class CmdWriteContext extends ParserRuleContext {
-		public TerminalNode T_WRITE() { return getToken(IlpParser.T_WRITE, 0); }
+		public TerminalNode T_WRITE() { return getToken(GraceParser.T_WRITE, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
@@ -1785,11 +1743,11 @@ public class IlpParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_cmdWrite; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterCmdWrite(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdWrite(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitCmdWrite(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdWrite(this);
 		}
 	}
 
@@ -1797,25 +1755,25 @@ public class IlpParser extends Parser {
 		CmdWriteContext _localctx = new CmdWriteContext(_ctx, getState());
 		enterRule(_localctx, 44, RULE_cmdWrite);
 		try {
-			setState(223);
+			setState(218);
 			switch (_input.LA(1)) {
 			case T_WRITE:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(217);
+				setState(212);
 				match(T_WRITE);
-				setState(218);
+				setState(213);
 				expression(0);
-				setState(219);
+				setState(214);
 				match(T_SEMICOLON);
 				}
 				break;
 			case T_COMMA:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(221);
+				setState(216);
 				match(T_COMMA);
-				setState(222);
+				setState(217);
 				expression(0);
 				}
 				break;
@@ -1835,7 +1793,7 @@ public class IlpParser extends Parser {
 	}
 
 	public static class VariableContext extends ParserRuleContext {
-		public TerminalNode ID() { return getToken(IlpParser.ID, 0); }
+		public TerminalNode ID() { return getToken(GraceParser.ID, 0); }
 		public List<ExpressionContext> expression() {
 			return getRuleContexts(ExpressionContext.class);
 		}
@@ -1848,11 +1806,11 @@ public class IlpParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_variable; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterVariable(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterVariable(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitVariable(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitVariable(this);
 		}
 	}
 
@@ -1863,23 +1821,23 @@ public class IlpParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(225);
+			setState(220);
 			match(ID);
-			setState(232);
+			setState(227);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==T_LEFT_SQUARE) {
 				{
 				{
-				setState(226);
+				setState(221);
 				match(T_LEFT_SQUARE);
-				setState(227);
+				setState(222);
 				expression(0);
-				setState(228);
+				setState(223);
 				match(T_RIGHT_SQUARE);
 				}
 				}
-				setState(234);
+				setState(229);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -1898,18 +1856,18 @@ public class IlpParser extends Parser {
 
 	public static class SpecVarSimpleContext extends ParserRuleContext {
 		public Token ID;
-		public TerminalNode ID() { return getToken(IlpParser.ID, 0); }
+		public TerminalNode ID() { return getToken(GraceParser.ID, 0); }
 		public SpecVarSimpleContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_specVarSimple; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterSpecVarSimple(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterSpecVarSimple(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitSpecVarSimple(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitSpecVarSimple(this);
 		}
 	}
 
@@ -1919,7 +1877,7 @@ public class IlpParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(235);
+			setState(230);
 			((SpecVarSimpleContext)_localctx).ID = match(ID);
 			((BlockContext)getInvokingContext(10)).symbols.add((((SpecVarSimpleContext)_localctx).ID!=null?((SpecVarSimpleContext)_localctx).ID.getText():null));
 			}
@@ -1936,7 +1894,8 @@ public class IlpParser extends Parser {
 	}
 
 	public static class SpecVarSimpleIniContext extends ParserRuleContext {
-		public TerminalNode ID() { return getToken(IlpParser.ID, 0); }
+		public Token ID;
+		public TerminalNode ID() { return getToken(GraceParser.ID, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
@@ -1946,11 +1905,11 @@ public class IlpParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_specVarSimpleIni; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterSpecVarSimpleIni(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterSpecVarSimpleIni(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitSpecVarSimpleIni(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitSpecVarSimpleIni(this);
 		}
 	}
 
@@ -1960,12 +1919,13 @@ public class IlpParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(238);
-			match(ID);
-			setState(239);
+			setState(233);
+			((SpecVarSimpleIniContext)_localctx).ID = match(ID);
+			setState(234);
 			match(T_EQUAL);
-			setState(240);
+			setState(235);
 			expression(0);
+			((BlockContext)getInvokingContext(10)).symbols.add((((SpecVarSimpleIniContext)_localctx).ID!=null?((SpecVarSimpleIniContext)_localctx).ID.getText():null));
 			}
 		}
 		catch (RecognitionException re) {
@@ -1983,18 +1943,18 @@ public class IlpParser extends Parser {
 		public SpecVarSimpleContext specVarSimple() {
 			return getRuleContext(SpecVarSimpleContext.class,0);
 		}
-		public TerminalNode NUMBERLITERAL() { return getToken(IlpParser.NUMBERLITERAL, 0); }
+		public TerminalNode NUMBERLITERAL() { return getToken(GraceParser.NUMBERLITERAL, 0); }
 		public SpecVarArrContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_specVarArr; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterSpecVarArr(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterSpecVarArr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitSpecVarArr(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitSpecVarArr(this);
 		}
 	}
 
@@ -2004,13 +1964,13 @@ public class IlpParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(242);
+			setState(238);
 			specVarSimple();
-			setState(243);
+			setState(239);
 			match(T_LEFT_SQUARE);
-			setState(244);
+			setState(240);
 			match(NUMBERLITERAL);
-			setState(245);
+			setState(241);
 			match(T_RIGHT_SQUARE);
 			}
 		}
@@ -2038,11 +1998,11 @@ public class IlpParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_lstArrIni; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterLstArrIni(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterLstArrIni(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitLstArrIni(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitLstArrIni(this);
 		}
 	}
 
@@ -2053,21 +2013,21 @@ public class IlpParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(247);
+			setState(243);
 			literal();
-			setState(252);
+			setState(248);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==T_COMMA) {
 				{
 				{
-				setState(248);
+				setState(244);
 				match(T_COMMA);
-				setState(249);
+				setState(245);
 				literal();
 				}
 				}
-				setState(254);
+				setState(250);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -2097,11 +2057,11 @@ public class IlpParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_specVarArrIni; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterSpecVarArrIni(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterSpecVarArrIni(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitSpecVarArrIni(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitSpecVarArrIni(this);
 		}
 	}
 
@@ -2111,15 +2071,15 @@ public class IlpParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(255);
+			setState(251);
 			specVarArr();
-			setState(256);
+			setState(252);
 			match(T_EQUAL);
-			setState(257);
+			setState(253);
 			match(T_LEFT_CURLY_BRACE);
-			setState(258);
+			setState(254);
 			lstArrIni();
-			setState(259);
+			setState(255);
 			match(T_RIGHT_CURLY_BRACE);
 			}
 		}
@@ -2152,11 +2112,11 @@ public class IlpParser extends Parser {
 		public DirectSpecVarArrContext(SpecVarContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterDirectSpecVarArr(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDirectSpecVarArr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitDirectSpecVarArr(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDirectSpecVarArr(this);
 		}
 	}
 	public static class DirectSpecVarSimpleIniContext extends SpecVarContext {
@@ -2166,11 +2126,11 @@ public class IlpParser extends Parser {
 		public DirectSpecVarSimpleIniContext(SpecVarContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterDirectSpecVarSimpleIni(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDirectSpecVarSimpleIni(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitDirectSpecVarSimpleIni(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDirectSpecVarSimpleIni(this);
 		}
 	}
 	public static class DirectSpecVarArrIniContext extends SpecVarContext {
@@ -2180,11 +2140,11 @@ public class IlpParser extends Parser {
 		public DirectSpecVarArrIniContext(SpecVarContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterDirectSpecVarArrIni(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDirectSpecVarArrIni(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitDirectSpecVarArrIni(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDirectSpecVarArrIni(this);
 		}
 	}
 	public static class DirectSpecVarContext extends SpecVarContext {
@@ -2194,11 +2154,11 @@ public class IlpParser extends Parser {
 		public DirectSpecVarContext(SpecVarContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterDirectSpecVar(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDirectSpecVar(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitDirectSpecVar(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDirectSpecVar(this);
 		}
 	}
 
@@ -2206,14 +2166,14 @@ public class IlpParser extends Parser {
 		SpecVarContext _localctx = new SpecVarContext(_ctx, getState());
 		enterRule(_localctx, 58, RULE_specVar);
 		try {
-			setState(265);
+			setState(261);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,17,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,15,_ctx) ) {
 			case 1:
 				_localctx = new DirectSpecVarContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(261);
+				setState(257);
 				specVarSimple();
 				}
 				break;
@@ -2221,7 +2181,7 @@ public class IlpParser extends Parser {
 				_localctx = new DirectSpecVarSimpleIniContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(262);
+				setState(258);
 				specVarSimpleIni();
 				}
 				break;
@@ -2229,7 +2189,7 @@ public class IlpParser extends Parser {
 				_localctx = new DirectSpecVarArrContext(_localctx);
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(263);
+				setState(259);
 				specVarArr();
 				}
 				break;
@@ -2237,7 +2197,7 @@ public class IlpParser extends Parser {
 				_localctx = new DirectSpecVarArrIniContext(_localctx);
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(264);
+				setState(260);
 				specVarArrIni();
 				}
 				break;
@@ -2267,11 +2227,11 @@ public class IlpParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_listSpecVars; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterListSpecVars(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterListSpecVars(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitListSpecVars(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitListSpecVars(this);
 		}
 	}
 
@@ -2282,21 +2242,21 @@ public class IlpParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(267);
+			setState(263);
 			specVar();
-			setState(272);
+			setState(268);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==T_COMMA) {
 				{
 				{
-				setState(268);
+				setState(264);
 				match(T_COMMA);
-				setState(269);
+				setState(265);
 				specVar();
 				}
 				}
-				setState(274);
+				setState(270);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -2314,7 +2274,7 @@ public class IlpParser extends Parser {
 	}
 
 	public static class DeclVarContext extends ParserRuleContext {
-		public TerminalNode T_VAR() { return getToken(IlpParser.T_VAR, 0); }
+		public TerminalNode T_VAR() { return getToken(GraceParser.T_VAR, 0); }
 		public ListSpecVarsContext listSpecVars() {
 			return getRuleContext(ListSpecVarsContext.class,0);
 		}
@@ -2327,11 +2287,11 @@ public class IlpParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_declVar; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).enterDeclVar(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDeclVar(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof IlpParserListener ) ((IlpParserListener)listener).exitDeclVar(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDeclVar(this);
 		}
 	}
 
@@ -2341,15 +2301,15 @@ public class IlpParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(275);
+			setState(271);
 			match(T_VAR);
-			setState(276);
+			setState(272);
 			listSpecVars();
-			setState(277);
+			setState(273);
 			match(T_COLON);
-			setState(278);
+			setState(274);
 			lstType();
-			setState(279);
+			setState(275);
 			match(T_SEMICOLON);
 			}
 		}
@@ -2386,98 +2346,96 @@ public class IlpParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\67\u011c\4\2\t\2"+
+		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\67\u0118\4\2\t\2"+
 		"\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13"+
 		"\t\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
 		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31\t\31"+
 		"\4\32\t\32\4\33\t\33\4\34\t\34\4\35\t\35\4\36\t\36\4\37\t\37\4 \t \4!"+
 		"\t!\3\2\6\2D\n\2\r\2\16\2E\3\3\3\3\3\4\3\4\3\5\3\5\3\5\5\5O\n\5\3\6\3"+
-		"\6\3\6\3\6\5\6U\n\6\3\7\3\7\5\7Y\n\7\3\b\3\b\5\b]\n\b\3\t\3\t\3\t\3\t"+
-		"\3\t\3\t\3\t\3\t\3\t\3\t\5\ti\n\t\3\n\3\n\3\n\3\13\3\13\3\13\3\13\3\13"+
-		"\3\13\3\13\5\13u\n\13\3\f\3\f\7\fy\n\f\f\f\16\f|\13\f\3\f\6\f\177\n\f"+
-		"\r\f\16\f\u0080\3\f\3\f\3\f\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3"+
-		"\r\5\r\u0091\n\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3"+
-		"\r\7\r\u00a1\n\r\f\r\16\r\u00a4\13\r\3\16\3\16\3\16\3\16\3\16\3\16\3\16"+
-		"\3\16\5\16\u00ae\n\16\3\17\3\17\3\17\3\17\3\17\3\17\3\20\3\20\3\21\3\21"+
-		"\3\22\3\22\3\22\3\22\3\22\3\22\3\22\3\22\3\22\3\22\3\23\3\23\3\23\3\24"+
-		"\3\24\3\24\3\25\3\25\3\25\3\25\3\26\3\26\3\26\3\26\3\26\3\26\3\27\3\27"+
-		"\3\27\3\27\5\27\u00d8\n\27\3\27\3\27\3\30\3\30\3\30\3\30\3\30\3\30\5\30"+
-		"\u00e2\n\30\3\31\3\31\3\31\3\31\3\31\7\31\u00e9\n\31\f\31\16\31\u00ec"+
-		"\13\31\3\32\3\32\3\32\3\33\3\33\3\33\3\33\3\34\3\34\3\34\3\34\3\34\3\35"+
-		"\3\35\3\35\7\35\u00fd\n\35\f\35\16\35\u0100\13\35\3\36\3\36\3\36\3\36"+
-		"\3\36\3\36\3\37\3\37\3\37\3\37\5\37\u010c\n\37\3 \3 \3 \7 \u0111\n \f"+
-		" \16 \u0114\13 \3!\3!\3!\3!\3!\3!\3!\2\3\30\"\2\4\6\b\n\f\16\20\22\24"+
-		"\26\30\32\34\36 \"$&(*,.\60\62\64\668:<>@\2\7\4\2\33\37!!\3\2%)\6\2  "+
-		"\"$*+/\60\3\2\33\37\4\2\33\34\61\62\u0121\2C\3\2\2\2\4G\3\2\2\2\6I\3\2"+
-		"\2\2\bN\3\2\2\2\nT\3\2\2\2\fX\3\2\2\2\16\\\3\2\2\2\20h\3\2\2\2\22j\3\2"+
-		"\2\2\24t\3\2\2\2\26v\3\2\2\2\30\u0090\3\2\2\2\32\u00ad\3\2\2\2\34\u00af"+
-		"\3\2\2\2\36\u00b5\3\2\2\2 \u00b7\3\2\2\2\"\u00b9\3\2\2\2$\u00c3\3\2\2"+
-		"\2&\u00c6\3\2\2\2(\u00c9\3\2\2\2*\u00cd\3\2\2\2,\u00d3\3\2\2\2.\u00e1"+
-		"\3\2\2\2\60\u00e3\3\2\2\2\62\u00ed\3\2\2\2\64\u00f0\3\2\2\2\66\u00f4\3"+
-		"\2\2\28\u00f9\3\2\2\2:\u0101\3\2\2\2<\u010b\3\2\2\2>\u010d\3\2\2\2@\u0115"+
-		"\3\2\2\2BD\5\4\3\2CB\3\2\2\2DE\3\2\2\2EC\3\2\2\2EF\3\2\2\2F\3\3\2\2\2"+
-		"GH\5\16\b\2H\5\3\2\2\2IJ\t\2\2\2J\7\3\2\2\2KO\7\t\2\2LO\7\16\2\2MO\7\6"+
-		"\2\2NK\3\2\2\2NL\3\2\2\2NM\3\2\2\2O\t\3\2\2\2PU\7\66\2\2QU\7\67\2\2RU"+
-		"\7\4\2\2SU\7\5\2\2TP\3\2\2\2TQ\3\2\2\2TR\3\2\2\2TS\3\2\2\2U\13\3\2\2\2"+
-		"VY\5\20\t\2WY\5\26\f\2XV\3\2\2\2XW\3\2\2\2Y\r\3\2\2\2Z]\5@!\2[]\5\24\13"+
-		"\2\\Z\3\2\2\2\\[\3\2\2\2]\17\3\2\2\2^i\5\22\n\2_i\5\32\16\2`i\5\34\17"+
-		"\2ai\5\"\22\2bi\5$\23\2ci\5&\24\2di\5(\25\2ei\5*\26\2fi\5,\27\2gi\5.\30"+
-		"\2h^\3\2\2\2h_\3\2\2\2h`\3\2\2\2ha\3\2\2\2hb\3\2\2\2hc\3\2\2\2hd\3\2\2"+
-		"\2he\3\2\2\2hf\3\2\2\2hg\3\2\2\2i\21\3\2\2\2jk\5\24\13\2kl\7\31\2\2l\23"+
-		"\3\2\2\2mn\7\63\2\2nu\t\3\2\2op\7\63\2\2pq\7!\2\2qr\5\30\r\2rs\b\13\1"+
-		"\2su\3\2\2\2tm\3\2\2\2to\3\2\2\2u\25\3\2\2\2vz\7\26\2\2wy\5@!\2xw\3\2"+
-		"\2\2y|\3\2\2\2zx\3\2\2\2z{\3\2\2\2{~\3\2\2\2|z\3\2\2\2}\177\5\20\t\2~"+
-		"}\3\2\2\2\177\u0080\3\2\2\2\u0080~\3\2\2\2\u0080\u0081\3\2\2\2\u0081\u0082"+
-		"\3\2\2\2\u0082\u0083\7\27\2\2\u0083\u0084\b\f\1\2\u0084\27\3\2\2\2\u0085"+
-		"\u0086\b\r\1\2\u0086\u0087\7\34\2\2\u0087\u0091\5\30\r\7\u0088\u0089\7"+
-		".\2\2\u0089\u0091\5\30\r\6\u008a\u008b\7\22\2\2\u008b\u008c\5\30\r\2\u008c"+
-		"\u008d\7\23\2\2\u008d\u0091\3\2\2\2\u008e\u0091\7\63\2\2\u008f\u0091\5"+
-		"\n\6\2\u0090\u0085\3\2\2\2\u0090\u0088\3\2\2\2\u0090\u008a\3\2\2\2\u0090"+
-		"\u008e\3\2\2\2\u0090\u008f\3\2\2\2\u0091\u00a2\3\2\2\2\u0092\u0093\f\13"+
-		"\2\2\u0093\u0094\7-\2\2\u0094\u0095\5\30\r\2\u0095\u0096\7\32\2\2\u0096"+
-		"\u0097\5\30\r\f\u0097\u00a1\3\2\2\2\u0098\u0099\f\n\2\2\u0099\u009a\t"+
-		"\4\2\2\u009a\u00a1\5\30\r\13\u009b\u009c\f\t\2\2\u009c\u009d\t\5\2\2\u009d"+
-		"\u00a1\5\30\r\n\u009e\u009f\f\b\2\2\u009f\u00a1\t\6\2\2\u00a0\u0092\3"+
-		"\2\2\2\u00a0\u0098\3\2\2\2\u00a0\u009b\3\2\2\2\u00a0\u009e\3\2\2\2\u00a1"+
-		"\u00a4\3\2\2\2\u00a2\u00a0\3\2\2\2\u00a2\u00a3\3\2\2\2\u00a3\31\3\2\2"+
-		"\2\u00a4\u00a2\3\2\2\2\u00a5\u00a6\7\b\2\2\u00a6\u00a7\7\22\2\2\u00a7"+
-		"\u00a8\5\30\r\2\u00a8\u00a9\7\23\2\2\u00a9\u00aa\5\f\7\2\u00aa\u00ae\3"+
-		"\2\2\2\u00ab\u00ac\7\3\2\2\u00ac\u00ae\5\f\7\2\u00ad\u00a5\3\2\2\2\u00ad"+
-		"\u00ab\3\2\2\2\u00ae\33\3\2\2\2\u00af\u00b0\7\20\2\2\u00b0\u00b1\7\22"+
-		"\2\2\u00b1\u00b2\5\30\r\2\u00b2\u00b3\7\23\2\2\u00b3\u00b4\5\f\7\2\u00b4"+
-		"\35\3\2\2\2\u00b5\u00b6\5\22\n\2\u00b6\37\3\2\2\2\u00b7\u00b8\5\22\n\2"+
-		"\u00b8!\3\2\2\2\u00b9\u00ba\7\7\2\2\u00ba\u00bb\7\22\2\2\u00bb\u00bc\5"+
-		"\36\20\2\u00bc\u00bd\7\31\2\2\u00bd\u00be\5\30\r\2\u00be\u00bf\7\31\2"+
-		"\2\u00bf\u00c0\5 \21\2\u00c0\u00c1\7\23\2\2\u00c1\u00c2\5\f\7\2\u00c2"+
-		"#\3\2\2\2\u00c3\u00c4\7\r\2\2\u00c4\u00c5\7\31\2\2\u00c5%\3\2\2\2\u00c6"+
-		"\u00c7\7\f\2\2\u00c7\u00c8\7\31\2\2\u00c8\'\3\2\2\2\u00c9\u00ca\7\13\2"+
-		"\2\u00ca\u00cb\5\30\r\2\u00cb\u00cc\7\31\2\2\u00cc)\3\2\2\2\u00cd\u00ce"+
-		"\7\63\2\2\u00ce\u00cf\7\22\2\2\u00cf\u00d0\5\30\r\2\u00d0\u00d1\7\23\2"+
-		"\2\u00d1\u00d2\7\31\2\2\u00d2+\3\2\2\2\u00d3\u00d7\7\n\2\2\u00d4\u00d8"+
-		"\7\67\2\2\u00d5\u00d8\7\66\2\2\u00d6\u00d8\5\60\31\2\u00d7\u00d4\3\2\2"+
-		"\2\u00d7\u00d5\3\2\2\2\u00d7\u00d6\3\2\2\2\u00d8\u00d9\3\2\2\2\u00d9\u00da"+
-		"\7\31\2\2\u00da-\3\2\2\2\u00db\u00dc\7\21\2\2\u00dc\u00dd\5\30\r\2\u00dd"+
-		"\u00de\7\31\2\2\u00de\u00e2\3\2\2\2\u00df\u00e0\7\30\2\2\u00e0\u00e2\5"+
-		"\30\r\2\u00e1\u00db\3\2\2\2\u00e1\u00df\3\2\2\2\u00e2/\3\2\2\2\u00e3\u00ea"+
-		"\7\63\2\2\u00e4\u00e5\7\24\2\2\u00e5\u00e6\5\30\r\2\u00e6\u00e7\7\25\2"+
-		"\2\u00e7\u00e9\3\2\2\2\u00e8\u00e4\3\2\2\2\u00e9\u00ec\3\2\2\2\u00ea\u00e8"+
-		"\3\2\2\2\u00ea\u00eb\3\2\2\2\u00eb\61\3\2\2\2\u00ec\u00ea\3\2\2\2\u00ed"+
-		"\u00ee\7\63\2\2\u00ee\u00ef\b\32\1\2\u00ef\63\3\2\2\2\u00f0\u00f1\7\63"+
-		"\2\2\u00f1\u00f2\7!\2\2\u00f2\u00f3\5\30\r\2\u00f3\65\3\2\2\2\u00f4\u00f5"+
-		"\5\62\32\2\u00f5\u00f6\7\24\2\2\u00f6\u00f7\7\66\2\2\u00f7\u00f8\7\25"+
-		"\2\2\u00f8\67\3\2\2\2\u00f9\u00fe\5\n\6\2\u00fa\u00fb\7\30\2\2\u00fb\u00fd"+
-		"\5\n\6\2\u00fc\u00fa\3\2\2\2\u00fd\u0100\3\2\2\2\u00fe\u00fc\3\2\2\2\u00fe"+
-		"\u00ff\3\2\2\2\u00ff9\3\2\2\2\u0100\u00fe\3\2\2\2\u0101\u0102\5\66\34"+
-		"\2\u0102\u0103\7!\2\2\u0103\u0104\7\26\2\2\u0104\u0105\58\35\2\u0105\u0106"+
-		"\7\27\2\2\u0106;\3\2\2\2\u0107\u010c\5\62\32\2\u0108\u010c\5\64\33\2\u0109"+
-		"\u010c\5\66\34\2\u010a\u010c\5:\36\2\u010b\u0107\3\2\2\2\u010b\u0108\3"+
-		"\2\2\2\u010b\u0109\3\2\2\2\u010b\u010a\3\2\2\2\u010c=\3\2\2\2\u010d\u0112"+
-		"\5<\37\2\u010e\u010f\7\30\2\2\u010f\u0111\5<\37\2\u0110\u010e\3\2\2\2"+
-		"\u0111\u0114\3\2\2\2\u0112\u0110\3\2\2\2\u0112\u0113\3\2\2\2\u0113?\3"+
-		"\2\2\2\u0114\u0112\3\2\2\2\u0115\u0116\7\17\2\2\u0116\u0117\5> \2\u0117"+
-		"\u0118\7\32\2\2\u0118\u0119\5\b\5\2\u0119\u011a\7\31\2\2\u011aA\3\2\2"+
-		"\2\25ENTX\\htz\u0080\u0090\u00a0\u00a2\u00ad\u00d7\u00e1\u00ea\u00fe\u010b"+
-		"\u0112";
+		"\6\3\6\3\6\5\6U\n\6\3\7\3\7\3\b\3\b\5\b[\n\b\3\t\3\t\3\t\3\t\3\t\3\t\3"+
+		"\t\3\t\3\t\3\t\5\tg\n\t\3\n\3\n\3\n\3\13\3\13\3\13\3\13\3\13\3\f\3\f\7"+
+		"\fs\n\f\f\f\16\fv\13\f\3\f\7\fy\n\f\f\f\16\f|\13\f\3\f\3\f\3\f\3\r\3\r"+
+		"\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\5\r\u008c\n\r\3\r\3\r\3\r\3\r\3\r"+
+		"\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\7\r\u009c\n\r\f\r\16\r\u009f\13\r"+
+		"\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\5\16\u00a9\n\16\3\17\3\17\3\17"+
+		"\3\17\3\17\3\17\3\20\3\20\3\21\3\21\3\22\3\22\3\22\3\22\3\22\3\22\3\22"+
+		"\3\22\3\22\3\22\3\23\3\23\3\23\3\24\3\24\3\24\3\25\3\25\3\25\3\25\3\26"+
+		"\3\26\3\26\3\26\3\26\3\26\3\27\3\27\3\27\3\27\5\27\u00d3\n\27\3\27\3\27"+
+		"\3\30\3\30\3\30\3\30\3\30\3\30\5\30\u00dd\n\30\3\31\3\31\3\31\3\31\3\31"+
+		"\7\31\u00e4\n\31\f\31\16\31\u00e7\13\31\3\32\3\32\3\32\3\33\3\33\3\33"+
+		"\3\33\3\33\3\34\3\34\3\34\3\34\3\34\3\35\3\35\3\35\7\35\u00f9\n\35\f\35"+
+		"\16\35\u00fc\13\35\3\36\3\36\3\36\3\36\3\36\3\36\3\37\3\37\3\37\3\37\5"+
+		"\37\u0108\n\37\3 \3 \3 \7 \u010d\n \f \16 \u0110\13 \3!\3!\3!\3!\3!\3"+
+		"!\3!\2\3\30\"\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&(*,.\60\62\64"+
+		"\668:<>@\2\7\4\2\33\37!!\4\2!!%)\6\2  \"$*+/\60\3\2\33\37\4\2\33\34\61"+
+		"\62\u011b\2C\3\2\2\2\4G\3\2\2\2\6I\3\2\2\2\bN\3\2\2\2\nT\3\2\2\2\fV\3"+
+		"\2\2\2\16Z\3\2\2\2\20f\3\2\2\2\22h\3\2\2\2\24k\3\2\2\2\26p\3\2\2\2\30"+
+		"\u008b\3\2\2\2\32\u00a8\3\2\2\2\34\u00aa\3\2\2\2\36\u00b0\3\2\2\2 \u00b2"+
+		"\3\2\2\2\"\u00b4\3\2\2\2$\u00be\3\2\2\2&\u00c1\3\2\2\2(\u00c4\3\2\2\2"+
+		"*\u00c8\3\2\2\2,\u00ce\3\2\2\2.\u00dc\3\2\2\2\60\u00de\3\2\2\2\62\u00e8"+
+		"\3\2\2\2\64\u00eb\3\2\2\2\66\u00f0\3\2\2\28\u00f5\3\2\2\2:\u00fd\3\2\2"+
+		"\2<\u0107\3\2\2\2>\u0109\3\2\2\2@\u0111\3\2\2\2BD\5\4\3\2CB\3\2\2\2DE"+
+		"\3\2\2\2EC\3\2\2\2EF\3\2\2\2F\3\3\2\2\2GH\5\16\b\2H\5\3\2\2\2IJ\t\2\2"+
+		"\2J\7\3\2\2\2KO\7\t\2\2LO\7\16\2\2MO\7\6\2\2NK\3\2\2\2NL\3\2\2\2NM\3\2"+
+		"\2\2O\t\3\2\2\2PU\7\66\2\2QU\7\67\2\2RU\7\4\2\2SU\7\5\2\2TP\3\2\2\2TQ"+
+		"\3\2\2\2TR\3\2\2\2TS\3\2\2\2U\13\3\2\2\2VW\5\20\t\2W\r\3\2\2\2X[\5@!\2"+
+		"Y[\5\24\13\2ZX\3\2\2\2ZY\3\2\2\2[\17\3\2\2\2\\g\5\22\n\2]g\5\32\16\2^"+
+		"g\5\34\17\2_g\5\"\22\2`g\5$\23\2ag\5&\24\2bg\5(\25\2cg\5*\26\2dg\5,\27"+
+		"\2eg\5.\30\2f\\\3\2\2\2f]\3\2\2\2f^\3\2\2\2f_\3\2\2\2f`\3\2\2\2fa\3\2"+
+		"\2\2fb\3\2\2\2fc\3\2\2\2fd\3\2\2\2fe\3\2\2\2g\21\3\2\2\2hi\5\24\13\2i"+
+		"j\7\31\2\2j\23\3\2\2\2kl\7\63\2\2lm\t\3\2\2mn\5\30\r\2no\b\13\1\2o\25"+
+		"\3\2\2\2pt\7\26\2\2qs\5@!\2rq\3\2\2\2sv\3\2\2\2tr\3\2\2\2tu\3\2\2\2uz"+
+		"\3\2\2\2vt\3\2\2\2wy\5\20\t\2xw\3\2\2\2y|\3\2\2\2zx\3\2\2\2z{\3\2\2\2"+
+		"{}\3\2\2\2|z\3\2\2\2}~\7\27\2\2~\177\b\f\1\2\177\27\3\2\2\2\u0080\u0081"+
+		"\b\r\1\2\u0081\u0082\7\34\2\2\u0082\u008c\5\30\r\7\u0083\u0084\7.\2\2"+
+		"\u0084\u008c\5\30\r\6\u0085\u0086\7\22\2\2\u0086\u0087\5\30\r\2\u0087"+
+		"\u0088\7\23\2\2\u0088\u008c\3\2\2\2\u0089\u008c\7\63\2\2\u008a\u008c\5"+
+		"\n\6\2\u008b\u0080\3\2\2\2\u008b\u0083\3\2\2\2\u008b\u0085\3\2\2\2\u008b"+
+		"\u0089\3\2\2\2\u008b\u008a\3\2\2\2\u008c\u009d\3\2\2\2\u008d\u008e\f\13"+
+		"\2\2\u008e\u008f\7-\2\2\u008f\u0090\5\30\r\2\u0090\u0091\7\32\2\2\u0091"+
+		"\u0092\5\30\r\f\u0092\u009c\3\2\2\2\u0093\u0094\f\n\2\2\u0094\u0095\t"+
+		"\4\2\2\u0095\u009c\5\30\r\13\u0096\u0097\f\t\2\2\u0097\u0098\t\5\2\2\u0098"+
+		"\u009c\5\30\r\n\u0099\u009a\f\b\2\2\u009a\u009c\t\6\2\2\u009b\u008d\3"+
+		"\2\2\2\u009b\u0093\3\2\2\2\u009b\u0096\3\2\2\2\u009b\u0099\3\2\2\2\u009c"+
+		"\u009f\3\2\2\2\u009d\u009b\3\2\2\2\u009d\u009e\3\2\2\2\u009e\31\3\2\2"+
+		"\2\u009f\u009d\3\2\2\2\u00a0\u00a1\7\b\2\2\u00a1\u00a2\7\22\2\2\u00a2"+
+		"\u00a3\5\30\r\2\u00a3\u00a4\7\23\2\2\u00a4\u00a5\5\f\7\2\u00a5\u00a9\3"+
+		"\2\2\2\u00a6\u00a7\7\3\2\2\u00a7\u00a9\5\f\7\2\u00a8\u00a0\3\2\2\2\u00a8"+
+		"\u00a6\3\2\2\2\u00a9\33\3\2\2\2\u00aa\u00ab\7\20\2\2\u00ab\u00ac\7\22"+
+		"\2\2\u00ac\u00ad\5\30\r\2\u00ad\u00ae\7\23\2\2\u00ae\u00af\5\f\7\2\u00af"+
+		"\35\3\2\2\2\u00b0\u00b1\5\22\n\2\u00b1\37\3\2\2\2\u00b2\u00b3\5\22\n\2"+
+		"\u00b3!\3\2\2\2\u00b4\u00b5\7\7\2\2\u00b5\u00b6\7\22\2\2\u00b6\u00b7\5"+
+		"\36\20\2\u00b7\u00b8\7\31\2\2\u00b8\u00b9\5\30\r\2\u00b9\u00ba\7\31\2"+
+		"\2\u00ba\u00bb\5 \21\2\u00bb\u00bc\7\23\2\2\u00bc\u00bd\5\f\7\2\u00bd"+
+		"#\3\2\2\2\u00be\u00bf\7\r\2\2\u00bf\u00c0\7\31\2\2\u00c0%\3\2\2\2\u00c1"+
+		"\u00c2\7\f\2\2\u00c2\u00c3\7\31\2\2\u00c3\'\3\2\2\2\u00c4\u00c5\7\13\2"+
+		"\2\u00c5\u00c6\5\30\r\2\u00c6\u00c7\7\31\2\2\u00c7)\3\2\2\2\u00c8\u00c9"+
+		"\7\63\2\2\u00c9\u00ca\7\22\2\2\u00ca\u00cb\5\30\r\2\u00cb\u00cc\7\23\2"+
+		"\2\u00cc\u00cd\7\31\2\2\u00cd+\3\2\2\2\u00ce\u00d2\7\n\2\2\u00cf\u00d3"+
+		"\7\67\2\2\u00d0\u00d3\7\66\2\2\u00d1\u00d3\5\60\31\2\u00d2\u00cf\3\2\2"+
+		"\2\u00d2\u00d0\3\2\2\2\u00d2\u00d1\3\2\2\2\u00d3\u00d4\3\2\2\2\u00d4\u00d5"+
+		"\7\31\2\2\u00d5-\3\2\2\2\u00d6\u00d7\7\21\2\2\u00d7\u00d8\5\30\r\2\u00d8"+
+		"\u00d9\7\31\2\2\u00d9\u00dd\3\2\2\2\u00da\u00db\7\30\2\2\u00db\u00dd\5"+
+		"\30\r\2\u00dc\u00d6\3\2\2\2\u00dc\u00da\3\2\2\2\u00dd/\3\2\2\2\u00de\u00e5"+
+		"\7\63\2\2\u00df\u00e0\7\24\2\2\u00e0\u00e1\5\30\r\2\u00e1\u00e2\7\25\2"+
+		"\2\u00e2\u00e4\3\2\2\2\u00e3\u00df\3\2\2\2\u00e4\u00e7\3\2\2\2\u00e5\u00e3"+
+		"\3\2\2\2\u00e5\u00e6\3\2\2\2\u00e6\61\3\2\2\2\u00e7\u00e5\3\2\2\2\u00e8"+
+		"\u00e9\7\63\2\2\u00e9\u00ea\b\32\1\2\u00ea\63\3\2\2\2\u00eb\u00ec\7\63"+
+		"\2\2\u00ec\u00ed\7!\2\2\u00ed\u00ee\5\30\r\2\u00ee\u00ef\b\33\1\2\u00ef"+
+		"\65\3\2\2\2\u00f0\u00f1\5\62\32\2\u00f1\u00f2\7\24\2\2\u00f2\u00f3\7\66"+
+		"\2\2\u00f3\u00f4\7\25\2\2\u00f4\67\3\2\2\2\u00f5\u00fa\5\n\6\2\u00f6\u00f7"+
+		"\7\30\2\2\u00f7\u00f9\5\n\6\2\u00f8\u00f6\3\2\2\2\u00f9\u00fc\3\2\2\2"+
+		"\u00fa\u00f8\3\2\2\2\u00fa\u00fb\3\2\2\2\u00fb9\3\2\2\2\u00fc\u00fa\3"+
+		"\2\2\2\u00fd\u00fe\5\66\34\2\u00fe\u00ff\7!\2\2\u00ff\u0100\7\26\2\2\u0100"+
+		"\u0101\58\35\2\u0101\u0102\7\27\2\2\u0102;\3\2\2\2\u0103\u0108\5\62\32"+
+		"\2\u0104\u0108\5\64\33\2\u0105\u0108\5\66\34\2\u0106\u0108\5:\36\2\u0107"+
+		"\u0103\3\2\2\2\u0107\u0104\3\2\2\2\u0107\u0105\3\2\2\2\u0107\u0106\3\2"+
+		"\2\2\u0108=\3\2\2\2\u0109\u010e\5<\37\2\u010a\u010b\7\30\2\2\u010b\u010d"+
+		"\5<\37\2\u010c\u010a\3\2\2\2\u010d\u0110\3\2\2\2\u010e\u010c\3\2\2\2\u010e"+
+		"\u010f\3\2\2\2\u010f?\3\2\2\2\u0110\u010e\3\2\2\2\u0111\u0112\7\17\2\2"+
+		"\u0112\u0113\5> \2\u0113\u0114\7\32\2\2\u0114\u0115\5\b\5\2\u0115\u0116"+
+		"\7\31\2\2\u0116A\3\2\2\2\23ENTZftz\u008b\u009b\u009d\u00a8\u00d2\u00dc"+
+		"\u00e5\u00fa\u0107\u010e";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

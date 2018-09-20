@@ -5,11 +5,11 @@ import uem.ast.Position;
 
 import java.util.List;
 
-public class IlpFile implements Node {
+public class GraceFile implements Node {
 
     private final List<Statement> lstStmt;
 
-    public IlpFile(List<Statement> lstStmt) {
+    public GraceFile(List<Statement> lstStmt) {
         super();
         this.lstStmt = lstStmt;
     }

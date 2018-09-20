@@ -1,4 +1,4 @@
-lexer grammar IlpLexer;
+lexer grammar GraceLexer;
 
 T_ELSE  : 'else' ;
 T_FALSE  : 'false' ;

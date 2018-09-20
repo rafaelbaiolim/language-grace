@@ -1,14 +1,13 @@
 package uem.parser;
 
-import uem.antlr.IlpParser;
+import uem.antlr.GraceParser;
 import uem.ast.AstMap;
-import uem.ast.Node;
-import uem.ast.stmt.IlpFile;
+import uem.ast.stmt.GraceFile;
 
 public class TreeToAst implements ParseTreeToAstMap {
 
     @Override
-    public IlpFile map(IlpParser.IlpFileContext ilpFileCtx) {
-        return new AstMap().getAst(ilpFileCtx);
+    public GraceFile map(GraceParser.GraceFileContext graceFileCtx) {
+        return new AstMap().getAst(graceFileCtx);
     }
 }

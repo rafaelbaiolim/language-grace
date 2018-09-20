@@ -1,7 +1,7 @@
 package uem.ast;
 
 import org.antlr.v4.runtime.Token;
-import uem.antlr.IlpParser.*;
+import uem.antlr.GraceParser.*;
 import uem.ast.expr.*;
 import uem.ast.stmt.*;
 import uem.ast.type.BooleanType;
@@ -26,9 +26,9 @@ public class AstMap {
     }
 
 
-    public IlpFile getAst(IlpFileContext ilpFileCtx) {
+    public GraceFile getAst(GraceFileContext graceFileCtx) {
         LinkedList<Statement> linked = new LinkedList<>();
-        ilpFileCtx.line().forEach(el -> {
+        graceFileCtx.line().forEach(el -> {
             Statement ast = this.getAst(
                     el.statement(),
                     new Position(
@@ -38,7 +38,7 @@ public class AstMap {
             );
             linked.add(ast);
         });
-        return new IlpFile(linked);
+        return new GraceFile(linked);
     }
 
     public final Expression getAst(DeclVarStatementContext declVarStmtCtx, Position pos) {
