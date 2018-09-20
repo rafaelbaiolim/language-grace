@@ -3,3 +3,4 @@ starting/examples/*
 generated/*
 !generated/*.g4
 ilp/out/*
+*.class

@@ -34,6 +34,7 @@ command
 statement
     : declVar #declVarStatement
     | atrib   #assignmentStatement
+    | command #cmdStatement
     ;
 
 cmdSimple
@@ -54,12 +55,18 @@ cmdAtrib
     ;
 
 atrib
-    : variable (T_EQUAL | T_INCREMENT | T_DECREMENT | T_INC_MULT | T_INC_DIV | T_INC_MOD ) expression
+    : ID (T_EQUAL | T_INCREMENT | T_DECREMENT | T_INC_MULT | T_INC_DIV | T_INC_MOD ) expression
+        {
+            if( !$block::symbols.contains($ID.text) ){
+                System.err.println( "Undefined var: " + $ID.text );
+            }
+        }
     ;
 
 block
-    : '{' declVar '}'
-    | '{' command '}'
+locals [ List<String> symbols = new ArrayList<>() ]
+    : '{' declVar* cmdSimple* '}'
+    {System.out.println("symbols=" + $symbols);}
     ;
 
 expression
@@ -125,10 +132,12 @@ variable
 
 specVarSimple
     : ID
+    {$block::symbols.add($ID.text);}
     ;
 
 specVarSimpleIni
     : ID '=' expression
+    {$block::symbols.add($ID.text);}
     ;
 
 specVarArr
