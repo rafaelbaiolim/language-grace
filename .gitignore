@@ -3,4 +3,6 @@ starting/examples/*
 generated/*
 !generated/*.g4
 ilp/out/*
+ilp/src/main/antlr/*.java
 *.class
+
