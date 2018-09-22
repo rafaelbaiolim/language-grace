@@ -7,31 +7,13 @@
       <change beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/main/antlr/IlpLexer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/main/antlr/IlpLexer.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/main/antlr/IlpParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/main/antlr/IlpParser.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/main/antlr/IlpParserBaseListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/main/antlr/IlpParserBaseVisitor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/main/antlr/IlpParserListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/main/antlr/IlpParserVisitor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/antlr/IlpLexer.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/antlr/GraceLexer.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/antlr/IlpLexer.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/antlr/IlpParser.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/antlr/GraceParser.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/antlr/IlpParser.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/antlr/grun/tests/scope.ilp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/antlr/grun/tests/scope.grace" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/Lexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/Lexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpLexer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpLexer.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/antlr/GraceParser.tokens" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpParser.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/antlr/GraceLexer.tokens" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpParserBaseListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/antlr/IlpParserListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/ast/AstMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/AstMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/ast/stmt/IlpFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/stmt/GraceFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/parser/ParseTreeToAstMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/parser/ParseTreeToAstMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/parser/TreeToAst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/parser/TreeToAst.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/antlr/GraceParser.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/antlr/GraceParser.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/antlr/GraceLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/antlr/GraceLexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/antlr/GraceLexer.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/antlr/GraceLexer.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/antlr/GraceParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/antlr/GraceParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/antlr/GraceParser.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/antlr/GraceParser.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/antlr/GraceParserBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/antlr/GraceParserBaseListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/antlr/GraceParserListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/antlr/GraceParserListener.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -99,7 +81,7 @@
     <session id="-1930448653">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.20" value="1" />
@@ -109,16 +91,18 @@
           <entry key="project.open.time.65" value="1" />
           <entry key="project.open.time.66" value="2" />
           <entry key="project.open.time.69" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.80" value="1" />
           <entry key="project.open.time.81" value="1" />
           <entry key="project.open.time.97" value="1" />
           <entry key="project.open.time.98" value="1" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="28" />
-          <entry key="g4" value="44" />
+          <entry key="g4" value="48" />
           <entry key="gradle" value="12" />
           <entry key="ilp" value="1" />
           <entry key="iml" value="1" />
@@ -133,7 +117,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="ANTLR v4 grammar file" value="44" />
+          <entry key="ANTLR v4 grammar file" value="48" />
           <entry key="CLASS" value="28" />
           <entry key="Groovy" value="12" />
           <entry key="IDEA_MODULE" value="1" />
@@ -147,7 +131,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="26" />
-          <entry key="g4" value="3577" />
+          <entry key="g4" value="5681" />
           <entry key="gradle" value="603" />
           <entry key="ilp" value="60" />
           <entry key="java" value="11280" />
@@ -155,125 +139,37 @@
           <entry key="kts" value="30" />
           <entry key="md" value="401" />
           <entry key="test" value="13" />
-          <entry key="txt" value="327" />
+          <entry key="txt" value="456" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="ANTLR v4 grammar file" value="3577" />
+          <entry key="ANTLR v4 grammar file" value="5681" />
           <entry key="Groovy" value="603" />
           <entry key="JAVA" value="11280" />
           <entry key="Kotlin" value="118" />
           <entry key="Markdown" value="401" />
-          <entry key="PLAIN_TEXT" value="426" />
+          <entry key="PLAIN_TEXT" value="555" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/antlr/GraceParser.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+            <state relative-caret-position="235">
+              <caret line="85" column="58" selection-start-line="85" selection-start-column="58" selection-end-line="85" selection-end-column="58" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/uem/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/main/antlr/GraceLexer.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/uem/antlr/GraceParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="77" selection-start-line="77" selection-end-line="77" />
-              <folding>
-                <element signature="e#6487#6488#0" expanded="true" />
-                <element signature="e#6543#6544#0" expanded="true" />
-                <element signature="e#6611#6612#0" expanded="true" />
-                <element signature="e#6648#6649#0" expanded="true" />
-                <element signature="e#8094#8095#0" expanded="true" />
-                <element signature="e#8131#8132#0" expanded="true" />
-                <element signature="e#9379#9380#0" expanded="true" />
-                <element signature="e#9416#9417#0" expanded="true" />
-                <element signature="e#9557#9558#0" expanded="true" />
-                <element signature="e#9585#9586#0" expanded="true" />
-                <element signature="e#12296#12297#0" expanded="true" />
-                <element signature="e#12333#12334#0" expanded="true" />
-                <element signature="e#12474#12475#0" expanded="true" />
-                <element signature="e#12502#12503#0" expanded="true" />
-                <element signature="e#16048#16049#0" expanded="true" />
-                <element signature="e#16104#16105#0" expanded="true" />
-                <element signature="e#16175#16176#0" expanded="true" />
-                <element signature="e#16212#16213#0" expanded="true" />
-                <element signature="e#17221#17222#0" expanded="true" />
-                <element signature="e#17258#17259#0" expanded="true" />
-                <element signature="e#17405#17406#0" expanded="true" />
-                <element signature="e#17433#17434#0" expanded="true" />
-                <element signature="e#17543#17544#0" expanded="true" />
-                <element signature="e#17595#17596#0" expanded="true" />
-                <element signature="e#18149#18150#0" expanded="true" />
-                <element signature="e#18203#18204#0" expanded="true" />
-                <element signature="e#19562#19563#0" expanded="true" />
-                <element signature="e#19617#19618#0" expanded="true" />
-                <element signature="e#19649#19650#0" expanded="true" />
-                <element signature="e#19701#19702#0" expanded="true" />
-                <element signature="e#19739#19740#0" expanded="true" />
-                <element signature="e#19794#19795#0" expanded="true" />
-                <element signature="e#19828#19829#0" expanded="true" />
-                <element signature="e#19881#19882#0" expanded="true" />
-                <element signature="e#19917#19918#0" expanded="true" />
-                <element signature="e#19971#19972#0" expanded="true" />
-                <element signature="e#20007#20008#0" expanded="true" />
-                <element signature="e#20061#20062#0" expanded="true" />
-                <element signature="e#20101#20102#0" expanded="true" />
-                <element signature="e#20157#20158#0" expanded="true" />
-                <element signature="e#20201#20202#0" expanded="true" />
-                <element signature="e#20259#20260#0" expanded="true" />
-                <element signature="e#20295#20296#0" expanded="true" />
-                <element signature="e#20349#20350#0" expanded="true" />
-                <element signature="e#20387#20388#0" expanded="true" />
-                <element signature="e#20442#20443#0" expanded="true" />
-                <element signature="e#20515#20516#0" expanded="true" />
-                <element signature="e#20552#20553#0" expanded="true" />
-                <element signature="e#22582#22583#0" expanded="true" />
-                <element signature="e#22634#22635#0" expanded="true" />
-                <element signature="e#22706#22707#0" expanded="true" />
-                <element signature="e#22743#22744#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/uem/parser/TreeToAst.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
-              <folding>
-                <element signature="e#243#244#0" expanded="true" />
-                <element signature="e#299#300#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/uem/parser/ParseTreeToAstMap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="133">
+              <caret line="85" column="22" lean-forward="true" selection-start-line="85" selection-start-column="22" selection-end-line="85" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -294,16 +190,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Statement</find>
-      <find>Simple</find>
-      <find>binary</find>
-      <find>operator</find>
-      <find>SumE</find>
-      <find>DeclVar</find>
-      <find>new Dec</find>
-      <find>directAssign</find>
-      <find>Sum</find>
-      <find>direc</find>
       <find>VarRefere</find>
       <find>specVarSimple</find>
       <find>assign</find>
@@ -324,6 +210,16 @@
       <find>Ilp</find>
       <find>kotlin</find>
       <find>block</find>
+      <find>while</find>
+      <find>cmdFor</find>
+      <find>cmdStop</find>
+      <find>cmdSkip</find>
+      <find>Programa</find>
+      <find>atr</find>
+      <find>proc</find>
+      <find>decl</find>
+      <find>ask</find>
+      <find>arr</find>
     </findStrings>
     <replaceStrings>
       <replace>public void</replace>
@@ -343,6 +239,7 @@
       <replace>STRINGLITERAL</replace>
       <replace>Ilp</replace>
       <replace>Grace</replace>
+      <replace>bloco</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/tests</dir>
@@ -366,7 +263,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/uem/parser/ParseLeaf.java" />
         <option value="$PROJECT_DIR$/src/uem/Lexer.java" />
         <option value="$PROJECT_DIR$/src/uem/ast/Ast.kt" />
         <option value="$PROJECT_DIR$/src/uem/ast/expr/Expression.java" />
@@ -416,6 +312,7 @@
         <option value="$PROJECT_DIR$/src/main/antlr/grun/tests/scope.ilp" />
         <option value="$PROJECT_DIR$/src/uem/Main.java" />
         <option value="$PROJECT_DIR$/src/uem/parser/ParseTreeToAstMap.java" />
+        <option value="$PROJECT_DIR$/src/main/antlr/GraceLexer.g4" />
         <option value="$PROJECT_DIR$/src/main/antlr/GraceParser.g4" />
       </list>
     </option>
@@ -433,9 +330,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="715" />
+    <option name="x" value="1360" />
     <option name="y" value="-4" />
-    <option name="width" value="651" />
+    <option name="width" value="1360" />
     <option name="height" value="772" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -453,52 +350,23 @@
             </path>
             <path>
               <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="ilp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="antlr-4.5.3-complete" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="antlr-4.5.3-complete" type="70bed36:NamedLibraryElementNode" />
-              <item name="antlr-4.5.3-complete.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="antlr-4.5.3-complete" type="70bed36:NamedLibraryElementNode" />
-              <item name="antlr-4.5.3-complete.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="antlr-4.5.3-complete" type="70bed36:NamedLibraryElementNode" />
-              <item name="antlr-4.5.3-complete.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="ilp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="antlr" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="antlr-4.5.3-complete" type="70bed36:NamedLibraryElementNode" />
-              <item name="antlr-4.5.3-complete.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="antlr" type="462c0819:PsiDirectoryNode" />
-              <item name="v4" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
               <item name="antlr-4.5.3-complete" type="70bed36:NamedLibraryElementNode" />
-              <item name="antlr-4.5.3-complete.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="antlr" type="462c0819:PsiDirectoryNode" />
-              <item name="v4" type="462c0819:PsiDirectoryNode" />
-              <item name="runtime" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -522,7 +390,7 @@
     <property name="js.buildTools.grunt.grunt-cli.package" value="" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/uem" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Documents/hm" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/compilers/grammars-v4" />
     <property name="nodejs.jest.jest_package" value="" />
     <property name="nodejs.protractor.protractor_package" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -710,7 +578,9 @@
       <workItem from="1536710429559" duration="210000" />
       <workItem from="1536723633518" duration="16125000" />
       <workItem from="1536879487507" duration="14966000" />
-      <workItem from="1537286052142" duration="13253000" />
+      <workItem from="1537286052142" duration="19170000" />
+      <workItem from="1537571433364" duration="106000" />
+      <workItem from="1537572061576" duration="5537000" />
     </task>
     <task id="LOCAL-00001" summary="Mais um caso de lontrice no parser arrumado -&gt; alias de operação binária">
       <created>1536794172992</created>
@@ -747,7 +617,14 @@
       <option name="project" value="LOCAL" />
       <updated>1536921128129</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Sincronizado secções da documentação usando os comentários dos arquivos antlr">
+      <created>1537423614031</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1537423614031</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -783,20 +660,29 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150059000" />
+    <option name="totallyTimeSpent" value="161619000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
+    <frame x="1360" y="-4" width="1360" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="UI Designer" order="0" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.29641435" />
+      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.18112633" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="2" weight="0.32919255" />
+      <window_info anchor="bottom" id="Terminal" order="2" visible="true" weight="0.0" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="4" weight="0.32919255" />
       <window_info anchor="bottom" id="Message" order="5" />
@@ -805,9 +691,9 @@
       <window_info anchor="bottom" x="280" y="102" width="871" height="560" id="Debug" order="8" type="WINDOWED" weight="0.32919255" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info active="true" anchor="bottom" id="Run" order="12" visible="true" weight="0.32919255" />
-      <window_info anchor="right" id="Database" order="0" weight="0.3298639" />
+      <window_info anchor="bottom" id="TODO" order="11" weight="0.32919255" />
+      <window_info anchor="bottom" id="Run" order="12" weight="0.32919255" />
+      <window_info anchor="right" id="Database" order="0" weight="0.329653" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info anchor="right" id="Maven Projects" order="2" />
       <window_info anchor="right" id="Palette" order="3" />
@@ -815,7 +701,7 @@
       <window_info anchor="right" id="Ant Build" order="5" weight="0.2489992" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="6" weight="0.25" />
       <window_info anchor="right" id="Kotlin Bytecode" order="7" weight="0.17427702" />
-      <window_info anchor="right" x="106" y="143" width="1218" height="472" id="ANTLR Preview" order="8" type="WINDOWED" weight="0.67894316" />
+      <window_info anchor="right" x="1796" y="205" width="817" height="479" id="ANTLR Preview" order="8" type="WINDOWED" weight="0.67894316" />
     </layout>
     <layout-to-restore>
       <window_info id="UI Designer" order="0" />
@@ -861,7 +747,8 @@
     <MESSAGE value="Atualizado" />
     <MESSAGE value="Arrumado regras do parser" />
     <MESSAGE value="Iniciado analise semantica" />
-    <option name="LAST_COMMIT_MESSAGE" value="Iniciado analise semantica" />
+    <MESSAGE value="Sincronizado secções da documentação usando os comentários dos arquivos antlr" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sincronizado secções da documentação usando os comentários dos arquivos antlr" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -952,9 +839,7 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/uem/antlr/IlpLexer.tokens">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/antlr/IlpLexer.tokens" />
     <entry file="file://$PROJECT_DIR$/src/uem/ast/Point.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1020,11 +905,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/antlr/IlpLexer.tokens">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1428" />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/antlr/IlpLexer.tokens" />
     <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/Expression.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1036,10 +917,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
           <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="37" selection-end-column="5" />
-          <folding>
-            <element signature="e#806#807#0" expanded="true" />
-            <element signature="e#833#834#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1047,10 +924,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="295">
           <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
-          <folding>
-            <element signature="e#814#815#0" expanded="true" />
-            <element signature="e#850#851#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1065,10 +938,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-          <folding>
-            <element signature="e#824#825#0" expanded="true" />
-            <element signature="e#851#852#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1083,10 +952,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
           <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-          <folding>
-            <element signature="e#786#787#0" expanded="true" />
-            <element signature="e#822#823#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1109,10 +974,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-          <folding>
-            <element signature="e#311#312#0" expanded="true" />
-            <element signature="e#347#348#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1138,36 +999,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/antlr/IlpParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="117" column="15" selection-start-line="117" selection-start-column="11" selection-end-line="117" selection-end-column="15" />
-          <folding>
-            <element signature="e#65063#65064#0" expanded="true" />
-            <element signature="e#65126#65127#0" expanded="true" />
-            <element signature="e#68052#68053#0" expanded="true" />
-            <element signature="e#68105#68106#0" expanded="true" />
-            <element signature="e#69768#69769#0" expanded="true" />
-            <element signature="e#69822#69823#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/antlr/IlpLexer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="99" column="11" selection-start-line="99" selection-start-column="11" selection-end-line="99" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/antlr/IlpParser.java" />
+    <entry file="file://$PROJECT_DIR$/src/uem/antlr/IlpLexer.java" />
     <entry file="jar:///usr/local/lib/antlr-4.5.3-complete.jar!/org/antlr/runtime/TokenRewriteStream.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
           <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
-          <folding>
-            <element signature="e#674#675#0" expanded="true" />
-            <element signature="e#701#702#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1175,9 +1012,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="67" selection-start-line="12" selection-start-column="67" selection-end-line="12" selection-end-column="67" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1185,12 +1019,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-          <folding>
-            <element signature="e#251#252#0" expanded="true" />
-            <element signature="e#277#278#0" expanded="true" />
-            <element signature="e#317#318#0" expanded="true" />
-            <element signature="e#347#348#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1222,9 +1050,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/antlr/grun/tests/scope">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/antlr/grun/tests/scope" />
     <entry file="file://$PROJECT_DIR$/src/uem/ast/Node.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1236,13 +1062,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/antlr/GraceLexer.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="36" column="17" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1277,24 +1096,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/parser/ParseTreeToAstMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/uem/parser/TreeToAst.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
-          <folding>
-            <element signature="e#243#244#0" expanded="true" />
-            <element signature="e#299#300#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1302,71 +1107,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="98" column="9" lean-forward="true" selection-start-line="98" selection-start-column="9" selection-end-line="98" selection-end-column="9" />
-          <folding>
-            <element signature="e#3559#3560#0" expanded="true" />
-            <element signature="e#3603#3604#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/parser/ParseTreeToAstMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/uem/antlr/GraceParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
+        <state relative-caret-position="-639">
           <caret line="77" selection-start-line="77" selection-end-line="77" />
-          <folding>
-            <element signature="e#6487#6488#0" expanded="true" />
-            <element signature="e#6543#6544#0" expanded="true" />
-            <element signature="e#6611#6612#0" expanded="true" />
-            <element signature="e#6648#6649#0" expanded="true" />
-            <element signature="e#8094#8095#0" expanded="true" />
-            <element signature="e#8131#8132#0" expanded="true" />
-            <element signature="e#9379#9380#0" expanded="true" />
-            <element signature="e#9416#9417#0" expanded="true" />
-            <element signature="e#9557#9558#0" expanded="true" />
-            <element signature="e#9585#9586#0" expanded="true" />
-            <element signature="e#12296#12297#0" expanded="true" />
-            <element signature="e#12333#12334#0" expanded="true" />
-            <element signature="e#12474#12475#0" expanded="true" />
-            <element signature="e#12502#12503#0" expanded="true" />
-            <element signature="e#16048#16049#0" expanded="true" />
-            <element signature="e#16104#16105#0" expanded="true" />
-            <element signature="e#16175#16176#0" expanded="true" />
-            <element signature="e#16212#16213#0" expanded="true" />
-            <element signature="e#17221#17222#0" expanded="true" />
-            <element signature="e#17258#17259#0" expanded="true" />
-            <element signature="e#17405#17406#0" expanded="true" />
-            <element signature="e#17433#17434#0" expanded="true" />
-            <element signature="e#17543#17544#0" expanded="true" />
-            <element signature="e#17595#17596#0" expanded="true" />
-            <element signature="e#18149#18150#0" expanded="true" />
-            <element signature="e#18203#18204#0" expanded="true" />
-            <element signature="e#19562#19563#0" expanded="true" />
-            <element signature="e#19617#19618#0" expanded="true" />
-            <element signature="e#19649#19650#0" expanded="true" />
-            <element signature="e#19701#19702#0" expanded="true" />
-            <element signature="e#19739#19740#0" expanded="true" />
-            <element signature="e#19794#19795#0" expanded="true" />
-            <element signature="e#19828#19829#0" expanded="true" />
-            <element signature="e#19881#19882#0" expanded="true" />
-            <element signature="e#19917#19918#0" expanded="true" />
-            <element signature="e#19971#19972#0" expanded="true" />
-            <element signature="e#20007#20008#0" expanded="true" />
-            <element signature="e#20061#20062#0" expanded="true" />
-            <element signature="e#20101#20102#0" expanded="true" />
-            <element signature="e#20157#20158#0" expanded="true" />
-            <element signature="e#20201#20202#0" expanded="true" />
-            <element signature="e#20259#20260#0" expanded="true" />
-            <element signature="e#20295#20296#0" expanded="true" />
-            <element signature="e#20349#20350#0" expanded="true" />
-            <element signature="e#20387#20388#0" expanded="true" />
-            <element signature="e#20442#20443#0" expanded="true" />
-            <element signature="e#20515#20516#0" expanded="true" />
-            <element signature="e#20552#20553#0" expanded="true" />
-            <element signature="e#22582#22583#0" expanded="true" />
-            <element signature="e#22634#22635#0" expanded="true" />
-            <element signature="e#22706#22707#0" expanded="true" />
-            <element signature="e#22743#22744#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1377,10 +1131,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/antlr/GraceLexer.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="85" column="22" lean-forward="true" selection-start-line="85" selection-start-column="22" selection-end-line="85" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/antlr/GraceParser.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+        <state relative-caret-position="235">
+          <caret line="85" column="58" selection-start-line="85" selection-start-column="58" selection-end-line="85" selection-end-column="58" />
         </state>
       </provider>
     </entry>

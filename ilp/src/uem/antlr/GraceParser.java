@@ -17,49 +17,51 @@ public class GraceParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T_ELSE=1, T_FALSE=2, T_TRUE=3, T_BOOL=4, T_FOR=5, T_IF=6, T_INT=7, T_READ=8, 
-		T_RETURN=9, T_SKIP=10, T_STOP=11, T_STRING=12, T_VAR=13, T_WHILE=14, T_WRITE=15, 
-		T_LEFT_PAREN=16, T_RIGHT_PAREN=17, T_LEFT_SQUARE=18, T_RIGHT_SQUARE=19, 
-		T_LEFT_CURLY_BRACE=20, T_RIGHT_CURLY_BRACE=21, T_COMMA=22, T_SEMICOLON=23, 
-		T_COLON=24, T_PLUS=25, T_MINUS=26, T_ASTERISK=27, T_SLASH=28, T_PERCENT=29, 
-		T_COMP=30, T_EQUAL=31, T_DIFFERENT=32, T_GREATER=33, T_GREATER_OR_EQUAL=34, 
-		T_INCREMENT=35, T_DECREMENT=36, T_INC_MULT=37, T_INC_DIV=38, T_INC_MOD=39, 
-		T_LOWER=40, T_LOWER_OR_EQUAL=41, T_DOT=42, T_TERN=43, NEG_UN=44, OR=45, 
-		AND=46, PLUS_INC=47, MINUS_DEC=48, ID=49, COMMENT=50, WS=51, NUMBERLITERAL=52, 
-		STRINGLITERAL=53;
+		T_DEF=1, T_ELSE=2, T_FALSE=3, T_TRUE=4, T_BOOL=5, T_FOR=6, T_IF=7, T_INT=8, 
+		T_READ=9, T_RETURN=10, T_SKIP=11, T_STOP=12, T_STRING=13, T_VAR=14, T_WHILE=15, 
+		T_WRITE=16, T_LEFT_PAREN=17, T_RIGHT_PAREN=18, T_LEFT_SQUARE=19, T_RIGHT_SQUARE=20, 
+		T_LEFT_CURLY_BRACE=21, T_RIGHT_CURLY_BRACE=22, T_COMMA=23, T_SEMICOLON=24, 
+		T_COLON=25, T_PLUS=26, T_MINUS=27, T_ASTERISK=28, T_SLASH=29, T_PERCENT=30, 
+		T_COMP=31, T_EQUAL=32, T_DIFFERENT=33, T_GREATER=34, T_GREATER_OR_EQUAL=35, 
+		T_INCREMENT=36, T_DECREMENT=37, T_INC_MULT=38, T_INC_DIV=39, T_INC_MOD=40, 
+		T_LOWER=41, T_LOWER_OR_EQUAL=42, T_DOT=43, T_TERN=44, NEG_UN=45, OR=46, 
+		AND=47, PLUS_INC=48, MINUS_DEC=49, ID=50, COMMENT=51, WS=52, NUMBERLITERAL=53, 
+		STRINGLITERAL=54;
 	public static final int
-		RULE_graceFile = 0, RULE_line = 1, RULE_lstOP = 2, RULE_lstType = 3, RULE_literal = 4, 
-		RULE_command = 5, RULE_statement = 6, RULE_cmdSimple = 7, RULE_cmdAtrib = 8, 
-		RULE_atrib = 9, RULE_block = 10, RULE_expression = 11, RULE_cmdIf = 12, 
-		RULE_cmdWhile = 13, RULE_forInit = 14, RULE_forItera = 15, RULE_cmdFor = 16, 
-		RULE_cmdStop = 17, RULE_cmdSkip = 18, RULE_cmdReturn = 19, RULE_cmdCallProc = 20, 
-		RULE_cmdRead = 21, RULE_cmdWrite = 22, RULE_variable = 23, RULE_specVarSimple = 24, 
-		RULE_specVarSimpleIni = 25, RULE_specVarArr = 26, RULE_lstArrIni = 27, 
-		RULE_specVarArrIni = 28, RULE_specVar = 29, RULE_listSpecVars = 30, RULE_declVar = 31;
+		RULE_graceFile = 0, RULE_line = 1, RULE_statement = 2, RULE_expression = 3, 
+		RULE_declVar = 4, RULE_listSpecVars = 5, RULE_specVar = 6, RULE_specVarSimple = 7, 
+		RULE_specVarSimpleIni = 8, RULE_specVarArr = 9, RULE_specVarArrIni = 10, 
+		RULE_decSub = 11, RULE_decProc = 12, RULE_decFunc = 13, RULE_lstParam = 14, 
+		RULE_specParam = 15, RULE_param = 16, RULE_command = 17, RULE_cmdSimple = 18, 
+		RULE_cmdAtrib = 19, RULE_atrib = 20, RULE_cmdIf = 21, RULE_cmdWhile = 22, 
+		RULE_cmdFor = 23, RULE_forInit = 24, RULE_forItera = 25, RULE_cmdStop = 26, 
+		RULE_cmdSkip = 27, RULE_cmdReturn = 28, RULE_cmdCallProc = 29, RULE_cmdRead = 30, 
+		RULE_cmdWrite = 31, RULE_block = 32, RULE_variable = 33, RULE_lstOP = 34, 
+		RULE_lstType = 35, RULE_literal = 36;
 	public static final String[] ruleNames = {
-		"graceFile", "line", "lstOP", "lstType", "literal", "command", "statement", 
-		"cmdSimple", "cmdAtrib", "atrib", "block", "expression", "cmdIf", "cmdWhile", 
-		"forInit", "forItera", "cmdFor", "cmdStop", "cmdSkip", "cmdReturn", "cmdCallProc", 
-		"cmdRead", "cmdWrite", "variable", "specVarSimple", "specVarSimpleIni", 
-		"specVarArr", "lstArrIni", "specVarArrIni", "specVar", "listSpecVars", 
-		"declVar"
+		"graceFile", "line", "statement", "expression", "declVar", "listSpecVars", 
+		"specVar", "specVarSimple", "specVarSimpleIni", "specVarArr", "specVarArrIni", 
+		"decSub", "decProc", "decFunc", "lstParam", "specParam", "param", "command", 
+		"cmdSimple", "cmdAtrib", "atrib", "cmdIf", "cmdWhile", "cmdFor", "forInit", 
+		"forItera", "cmdStop", "cmdSkip", "cmdReturn", "cmdCallProc", "cmdRead", 
+		"cmdWrite", "block", "variable", "lstOP", "lstType", "literal"
 	};
 
 	private static final String[] _LITERAL_NAMES = {
-		null, "'else'", "'false'", "'true'", "'bool'", "'for'", "'if'", "'int'", 
-		"'read'", "'return'", "'skip'", "'stop'", "'string'", "'var'", "'while'", 
-		"'write'", "'('", "')'", "'['", "']'", "'{'", "'}'", "','", "';'", "':'", 
-		"'+'", "'-'", "'*'", "'/'", "'%'", "'=='", "'='", "'!='", "'>'", "'>='", 
-		"'+='", "'-='", "'*='", "'/='", "'%='", "'<'", "'<='", "'.'", "'?'", "'!'", 
-		"'||'", "'&&'", "'++'", "'--'"
+		null, "'def'", "'else'", "'false'", "'true'", "'bool'", "'for'", "'if'", 
+		"'int'", "'read'", "'return'", "'skip'", "'stop'", "'string'", "'var'", 
+		"'while'", "'write'", "'('", "')'", "'['", "']'", "'{'", "'}'", "','", 
+		"';'", "':'", "'+'", "'-'", "'*'", "'/'", "'%'", "'=='", "'='", "'!='", 
+		"'>'", "'>='", "'+='", "'-='", "'*='", "'/='", "'%='", "'<'", "'<='", 
+		"'.'", "'?'", "'!'", "'||'", "'&&'", "'++'", "'--'"
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
-		null, "T_ELSE", "T_FALSE", "T_TRUE", "T_BOOL", "T_FOR", "T_IF", "T_INT", 
-		"T_READ", "T_RETURN", "T_SKIP", "T_STOP", "T_STRING", "T_VAR", "T_WHILE", 
-		"T_WRITE", "T_LEFT_PAREN", "T_RIGHT_PAREN", "T_LEFT_SQUARE", "T_RIGHT_SQUARE", 
-		"T_LEFT_CURLY_BRACE", "T_RIGHT_CURLY_BRACE", "T_COMMA", "T_SEMICOLON", 
-		"T_COLON", "T_PLUS", "T_MINUS", "T_ASTERISK", "T_SLASH", "T_PERCENT", 
-		"T_COMP", "T_EQUAL", "T_DIFFERENT", "T_GREATER", "T_GREATER_OR_EQUAL", 
+		null, "T_DEF", "T_ELSE", "T_FALSE", "T_TRUE", "T_BOOL", "T_FOR", "T_IF", 
+		"T_INT", "T_READ", "T_RETURN", "T_SKIP", "T_STOP", "T_STRING", "T_VAR", 
+		"T_WHILE", "T_WRITE", "T_LEFT_PAREN", "T_RIGHT_PAREN", "T_LEFT_SQUARE", 
+		"T_RIGHT_SQUARE", "T_LEFT_CURLY_BRACE", "T_RIGHT_CURLY_BRACE", "T_COMMA", 
+		"T_SEMICOLON", "T_COLON", "T_PLUS", "T_MINUS", "T_ASTERISK", "T_SLASH", 
+		"T_PERCENT", "T_COMP", "T_EQUAL", "T_DIFFERENT", "T_GREATER", "T_GREATER_OR_EQUAL", 
 		"T_INCREMENT", "T_DECREMENT", "T_INC_MULT", "T_INC_DIV", "T_INC_MOD", 
 		"T_LOWER", "T_LOWER_OR_EQUAL", "T_DOT", "T_TERN", "NEG_UN", "OR", "AND", 
 		"PLUS_INC", "MINUS_DEC", "ID", "COMMENT", "WS", "NUMBERLITERAL", "STRINGLITERAL"
@@ -142,20 +144,20 @@ public class GraceParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(65); 
+			setState(75); 
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			do {
 				{
 				{
-				setState(64);
+				setState(74);
 				((GraceFileContext)_localctx).lines = line();
 				}
 				}
-				setState(67); 
+				setState(77); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( _la==T_VAR || _la==ID );
+			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_DEF) | (1L << T_VAR) | (1L << ID))) != 0) );
 			}
 		}
 		catch (RecognitionException re) {
@@ -193,301 +195,8 @@ public class GraceParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(69);
+			setState(79);
 			statement();
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class LstOPContext extends ParserRuleContext {
-		public TerminalNode T_EQUAL() { return getToken(GraceParser.T_EQUAL, 0); }
-		public TerminalNode T_PLUS() { return getToken(GraceParser.T_PLUS, 0); }
-		public TerminalNode T_MINUS() { return getToken(GraceParser.T_MINUS, 0); }
-		public TerminalNode T_ASTERISK() { return getToken(GraceParser.T_ASTERISK, 0); }
-		public TerminalNode T_PERCENT() { return getToken(GraceParser.T_PERCENT, 0); }
-		public TerminalNode T_SLASH() { return getToken(GraceParser.T_SLASH, 0); }
-		public LstOPContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_lstOP; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterLstOP(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitLstOP(this);
-		}
-	}
-
-	public final LstOPContext lstOP() throws RecognitionException {
-		LstOPContext _localctx = new LstOPContext(_ctx, getState());
-		enterRule(_localctx, 4, RULE_lstOP);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(71);
-			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_PLUS) | (1L << T_MINUS) | (1L << T_ASTERISK) | (1L << T_SLASH) | (1L << T_PERCENT) | (1L << T_EQUAL))) != 0)) ) {
-			_errHandler.recoverInline(this);
-			} else {
-				consume();
-			}
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class LstTypeContext extends ParserRuleContext {
-		public LstTypeContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_lstType; }
-	 
-		public LstTypeContext() { }
-		public void copyFrom(LstTypeContext ctx) {
-			super.copyFrom(ctx);
-		}
-	}
-	public static class StringContext extends LstTypeContext {
-		public TerminalNode T_STRING() { return getToken(GraceParser.T_STRING, 0); }
-		public StringContext(LstTypeContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterString(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitString(this);
-		}
-	}
-	public static class BoolContext extends LstTypeContext {
-		public TerminalNode T_BOOL() { return getToken(GraceParser.T_BOOL, 0); }
-		public BoolContext(LstTypeContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterBool(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitBool(this);
-		}
-	}
-	public static class IntegerContext extends LstTypeContext {
-		public TerminalNode T_INT() { return getToken(GraceParser.T_INT, 0); }
-		public IntegerContext(LstTypeContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterInteger(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitInteger(this);
-		}
-	}
-
-	public final LstTypeContext lstType() throws RecognitionException {
-		LstTypeContext _localctx = new LstTypeContext(_ctx, getState());
-		enterRule(_localctx, 6, RULE_lstType);
-		try {
-			setState(76);
-			switch (_input.LA(1)) {
-			case T_INT:
-				_localctx = new IntegerContext(_localctx);
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(73);
-				match(T_INT);
-				}
-				break;
-			case T_STRING:
-				_localctx = new StringContext(_localctx);
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(74);
-				match(T_STRING);
-				}
-				break;
-			case T_BOOL:
-				_localctx = new BoolContext(_localctx);
-				enterOuterAlt(_localctx, 3);
-				{
-				setState(75);
-				match(T_BOOL);
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class LiteralContext extends ParserRuleContext {
-		public LiteralContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_literal; }
-	 
-		public LiteralContext() { }
-		public void copyFrom(LiteralContext ctx) {
-			super.copyFrom(ctx);
-		}
-	}
-	public static class FalseLiteralContext extends LiteralContext {
-		public TerminalNode T_TRUE() { return getToken(GraceParser.T_TRUE, 0); }
-		public FalseLiteralContext(LiteralContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterFalseLiteral(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitFalseLiteral(this);
-		}
-	}
-	public static class StringLiteralContext extends LiteralContext {
-		public TerminalNode STRINGLITERAL() { return getToken(GraceParser.STRINGLITERAL, 0); }
-		public StringLiteralContext(LiteralContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterStringLiteral(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitStringLiteral(this);
-		}
-	}
-	public static class IntLiteralContext extends LiteralContext {
-		public TerminalNode NUMBERLITERAL() { return getToken(GraceParser.NUMBERLITERAL, 0); }
-		public IntLiteralContext(LiteralContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterIntLiteral(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitIntLiteral(this);
-		}
-	}
-	public static class TrueLiteralContext extends LiteralContext {
-		public TerminalNode T_FALSE() { return getToken(GraceParser.T_FALSE, 0); }
-		public TrueLiteralContext(LiteralContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterTrueLiteral(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitTrueLiteral(this);
-		}
-	}
-
-	public final LiteralContext literal() throws RecognitionException {
-		LiteralContext _localctx = new LiteralContext(_ctx, getState());
-		enterRule(_localctx, 8, RULE_literal);
-		try {
-			setState(82);
-			switch (_input.LA(1)) {
-			case NUMBERLITERAL:
-				_localctx = new IntLiteralContext(_localctx);
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(78);
-				match(NUMBERLITERAL);
-				}
-				break;
-			case STRINGLITERAL:
-				_localctx = new StringLiteralContext(_localctx);
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(79);
-				match(STRINGLITERAL);
-				}
-				break;
-			case T_FALSE:
-				_localctx = new TrueLiteralContext(_localctx);
-				enterOuterAlt(_localctx, 3);
-				{
-				setState(80);
-				match(T_FALSE);
-				}
-				break;
-			case T_TRUE:
-				_localctx = new FalseLiteralContext(_localctx);
-				enterOuterAlt(_localctx, 4);
-				{
-				setState(81);
-				match(T_TRUE);
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class CommandContext extends ParserRuleContext {
-		public CmdSimpleContext cmdSimple() {
-			return getRuleContext(CmdSimpleContext.class,0);
-		}
-		public CommandContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_command; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCommand(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCommand(this);
-		}
-	}
-
-	public final CommandContext command() throws RecognitionException {
-		CommandContext _localctx = new CommandContext(_ctx, getState());
-		enterRule(_localctx, 10, RULE_command);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(84);
-			cmdSimple();
 			}
 		}
 		catch (RecognitionException re) {
@@ -526,6 +235,20 @@ public class GraceParser extends Parser {
 			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitAssignmentStatement(this);
 		}
 	}
+	public static class DecSubStatementContext extends StatementContext {
+		public DecSubContext decSub() {
+			return getRuleContext(DecSubContext.class,0);
+		}
+		public DecSubStatementContext(StatementContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDecSubStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDecSubStatement(this);
+		}
+	}
 	public static class DeclVarStatementContext extends StatementContext {
 		public DeclVarContext declVar() {
 			return getRuleContext(DeclVarContext.class,0);
@@ -543,15 +266,15 @@ public class GraceParser extends Parser {
 
 	public final StatementContext statement() throws RecognitionException {
 		StatementContext _localctx = new StatementContext(_ctx, getState());
-		enterRule(_localctx, 12, RULE_statement);
+		enterRule(_localctx, 4, RULE_statement);
 		try {
-			setState(88);
+			setState(84);
 			switch (_input.LA(1)) {
 			case T_VAR:
 				_localctx = new DeclVarStatementContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(86);
+				setState(81);
 				declVar();
 				}
 				break;
@@ -559,331 +282,20 @@ public class GraceParser extends Parser {
 				_localctx = new AssignmentStatementContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(87);
+				setState(82);
 				atrib();
+				}
+				break;
+			case T_DEF:
+				_localctx = new DecSubStatementContext(_localctx);
+				enterOuterAlt(_localctx, 3);
+				{
+				setState(83);
+				decSub();
 				}
 				break;
 			default:
 				throw new NoViableAltException(this);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class CmdSimpleContext extends ParserRuleContext {
-		public CmdAtribContext cmdAtrib() {
-			return getRuleContext(CmdAtribContext.class,0);
-		}
-		public CmdIfContext cmdIf() {
-			return getRuleContext(CmdIfContext.class,0);
-		}
-		public CmdWhileContext cmdWhile() {
-			return getRuleContext(CmdWhileContext.class,0);
-		}
-		public CmdForContext cmdFor() {
-			return getRuleContext(CmdForContext.class,0);
-		}
-		public CmdStopContext cmdStop() {
-			return getRuleContext(CmdStopContext.class,0);
-		}
-		public CmdSkipContext cmdSkip() {
-			return getRuleContext(CmdSkipContext.class,0);
-		}
-		public CmdReturnContext cmdReturn() {
-			return getRuleContext(CmdReturnContext.class,0);
-		}
-		public CmdCallProcContext cmdCallProc() {
-			return getRuleContext(CmdCallProcContext.class,0);
-		}
-		public CmdReadContext cmdRead() {
-			return getRuleContext(CmdReadContext.class,0);
-		}
-		public CmdWriteContext cmdWrite() {
-			return getRuleContext(CmdWriteContext.class,0);
-		}
-		public CmdSimpleContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_cmdSimple; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdSimple(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdSimple(this);
-		}
-	}
-
-	public final CmdSimpleContext cmdSimple() throws RecognitionException {
-		CmdSimpleContext _localctx = new CmdSimpleContext(_ctx, getState());
-		enterRule(_localctx, 14, RULE_cmdSimple);
-		try {
-			setState(100);
-			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,4,_ctx) ) {
-			case 1:
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(90);
-				cmdAtrib();
-				}
-				break;
-			case 2:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(91);
-				cmdIf();
-				}
-				break;
-			case 3:
-				enterOuterAlt(_localctx, 3);
-				{
-				setState(92);
-				cmdWhile();
-				}
-				break;
-			case 4:
-				enterOuterAlt(_localctx, 4);
-				{
-				setState(93);
-				cmdFor();
-				}
-				break;
-			case 5:
-				enterOuterAlt(_localctx, 5);
-				{
-				setState(94);
-				cmdStop();
-				}
-				break;
-			case 6:
-				enterOuterAlt(_localctx, 6);
-				{
-				setState(95);
-				cmdSkip();
-				}
-				break;
-			case 7:
-				enterOuterAlt(_localctx, 7);
-				{
-				setState(96);
-				cmdReturn();
-				}
-				break;
-			case 8:
-				enterOuterAlt(_localctx, 8);
-				{
-				setState(97);
-				cmdCallProc();
-				}
-				break;
-			case 9:
-				enterOuterAlt(_localctx, 9);
-				{
-				setState(98);
-				cmdRead();
-				}
-				break;
-			case 10:
-				enterOuterAlt(_localctx, 10);
-				{
-				setState(99);
-				cmdWrite();
-				}
-				break;
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class CmdAtribContext extends ParserRuleContext {
-		public AtribContext atrib() {
-			return getRuleContext(AtribContext.class,0);
-		}
-		public CmdAtribContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_cmdAtrib; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdAtrib(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdAtrib(this);
-		}
-	}
-
-	public final CmdAtribContext cmdAtrib() throws RecognitionException {
-		CmdAtribContext _localctx = new CmdAtribContext(_ctx, getState());
-		enterRule(_localctx, 16, RULE_cmdAtrib);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(102);
-			atrib();
-			setState(103);
-			match(T_SEMICOLON);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class AtribContext extends ParserRuleContext {
-		public Token ID;
-		public TerminalNode ID() { return getToken(GraceParser.ID, 0); }
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
-		}
-		public TerminalNode T_EQUAL() { return getToken(GraceParser.T_EQUAL, 0); }
-		public TerminalNode T_INCREMENT() { return getToken(GraceParser.T_INCREMENT, 0); }
-		public TerminalNode T_DECREMENT() { return getToken(GraceParser.T_DECREMENT, 0); }
-		public TerminalNode T_INC_MULT() { return getToken(GraceParser.T_INC_MULT, 0); }
-		public TerminalNode T_INC_DIV() { return getToken(GraceParser.T_INC_DIV, 0); }
-		public TerminalNode T_INC_MOD() { return getToken(GraceParser.T_INC_MOD, 0); }
-		public AtribContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_atrib; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterAtrib(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitAtrib(this);
-		}
-	}
-
-	public final AtribContext atrib() throws RecognitionException {
-		AtribContext _localctx = new AtribContext(_ctx, getState());
-		enterRule(_localctx, 18, RULE_atrib);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(105);
-			((AtribContext)_localctx).ID = match(ID);
-			setState(106);
-			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_EQUAL) | (1L << T_INCREMENT) | (1L << T_DECREMENT) | (1L << T_INC_MULT) | (1L << T_INC_DIV) | (1L << T_INC_MOD))) != 0)) ) {
-			_errHandler.recoverInline(this);
-			} else {
-				consume();
-			}
-			setState(107);
-			expression(0);
-
-			            if( !((BlockContext)getInvokingContext(10)).symbols.contains((((AtribContext)_localctx).ID!=null?((AtribContext)_localctx).ID.getText():null)) ){
-			                System.err.println( "Undefined var: " + (((AtribContext)_localctx).ID!=null?((AtribContext)_localctx).ID.getText():null) );
-			            }
-			        
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class BlockContext extends ParserRuleContext {
-		public List<String> symbols =  new ArrayList<>();
-		public List<DeclVarContext> declVar() {
-			return getRuleContexts(DeclVarContext.class);
-		}
-		public DeclVarContext declVar(int i) {
-			return getRuleContext(DeclVarContext.class,i);
-		}
-		public List<CmdSimpleContext> cmdSimple() {
-			return getRuleContexts(CmdSimpleContext.class);
-		}
-		public CmdSimpleContext cmdSimple(int i) {
-			return getRuleContext(CmdSimpleContext.class,i);
-		}
-		public BlockContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_block; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterBlock(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitBlock(this);
-		}
-	}
-
-	public final BlockContext block() throws RecognitionException {
-		BlockContext _localctx = new BlockContext(_ctx, getState());
-		enterRule(_localctx, 20, RULE_block);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(110);
-			match(T_LEFT_CURLY_BRACE);
-			setState(114);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while (_la==T_VAR) {
-				{
-				{
-				setState(111);
-				declVar();
-				}
-				}
-				setState(116);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			setState(120);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_ELSE) | (1L << T_FOR) | (1L << T_IF) | (1L << T_READ) | (1L << T_RETURN) | (1L << T_SKIP) | (1L << T_STOP) | (1L << T_WHILE) | (1L << T_WRITE) | (1L << T_COMMA) | (1L << ID))) != 0)) {
-				{
-				{
-				setState(117);
-				cmdSimple();
-				}
-				}
-				setState(122);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			setState(123);
-			match(T_RIGHT_CURLY_BRACE);
-			System.out.println("symbols=" + _localctx.symbols);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1061,14 +473,14 @@ public class GraceParser extends Parser {
 		int _parentState = getState();
 		ExpressionContext _localctx = new ExpressionContext(_ctx, _parentState);
 		ExpressionContext _prevctx = _localctx;
-		int _startState = 22;
-		enterRecursionRule(_localctx, 22, RULE_expression, _p);
+		int _startState = 6;
+		enterRecursionRule(_localctx, 6, RULE_expression, _p);
 		int _la;
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(137);
+			setState(97);
 			switch (_input.LA(1)) {
 			case T_MINUS:
 				{
@@ -1076,9 +488,9 @@ public class GraceParser extends Parser {
 				_ctx = _localctx;
 				_prevctx = _localctx;
 
-				setState(127);
+				setState(87);
 				match(T_MINUS);
-				setState(128);
+				setState(88);
 				expression(5);
 				}
 				break;
@@ -1087,9 +499,9 @@ public class GraceParser extends Parser {
 				_localctx = new DifferenceExpressionContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(129);
+				setState(89);
 				match(NEG_UN);
-				setState(130);
+				setState(90);
 				expression(4);
 				}
 				break;
@@ -1098,11 +510,11 @@ public class GraceParser extends Parser {
 				_localctx = new ParenExpressionContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(131);
+				setState(91);
 				match(T_LEFT_PAREN);
-				setState(132);
+				setState(92);
 				expression(0);
-				setState(133);
+				setState(93);
 				match(T_RIGHT_PAREN);
 				}
 				break;
@@ -1111,7 +523,7 @@ public class GraceParser extends Parser {
 				_localctx = new VarReferenceContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(135);
+				setState(95);
 				match(ID);
 				}
 				break;
@@ -1123,7 +535,7 @@ public class GraceParser extends Parser {
 				_localctx = new LiteralReferenceContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(136);
+				setState(96);
 				literal();
 				}
 				break;
@@ -1131,31 +543,31 @@ public class GraceParser extends Parser {
 				throw new NoViableAltException(this);
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(155);
+			setState(115);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,9,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,4,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
-					setState(153);
+					setState(113);
 					_errHandler.sync(this);
-					switch ( getInterpreter().adaptivePredict(_input,8,_ctx) ) {
+					switch ( getInterpreter().adaptivePredict(_input,3,_ctx) ) {
 					case 1:
 						{
 						_localctx = new TernaryOperationContext(new ExpressionContext(_parentctx, _parentState));
 						((TernaryOperationContext)_localctx).left = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(139);
+						setState(99);
 						if (!(precpred(_ctx, 9))) throw new FailedPredicateException(this, "precpred(_ctx, 9)");
-						setState(140);
+						setState(100);
 						((TernaryOperationContext)_localctx).operator = match(T_TERN);
-						setState(141);
+						setState(101);
 						((TernaryOperationContext)_localctx).right = expression(0);
-						setState(142);
+						setState(102);
 						((TernaryOperationContext)_localctx).operator = match(T_COLON);
-						setState(143);
+						setState(103);
 						((TernaryOperationContext)_localctx).right = expression(10);
 						}
 						break;
@@ -1164,9 +576,9 @@ public class GraceParser extends Parser {
 						_localctx = new CompareOperationContext(new ExpressionContext(_parentctx, _parentState));
 						((CompareOperationContext)_localctx).left = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(145);
+						setState(105);
 						if (!(precpred(_ctx, 8))) throw new FailedPredicateException(this, "precpred(_ctx, 8)");
-						setState(146);
+						setState(106);
 						((CompareOperationContext)_localctx).operator = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_COMP) | (1L << T_DIFFERENT) | (1L << T_GREATER) | (1L << T_GREATER_OR_EQUAL) | (1L << T_LOWER) | (1L << T_LOWER_OR_EQUAL) | (1L << OR) | (1L << AND))) != 0)) ) {
@@ -1174,7 +586,7 @@ public class GraceParser extends Parser {
 						} else {
 							consume();
 						}
-						setState(147);
+						setState(107);
 						((CompareOperationContext)_localctx).right = expression(9);
 						}
 						break;
@@ -1183,9 +595,9 @@ public class GraceParser extends Parser {
 						_localctx = new BinaryOperationContext(new ExpressionContext(_parentctx, _parentState));
 						((BinaryOperationContext)_localctx).left = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(148);
+						setState(108);
 						if (!(precpred(_ctx, 7))) throw new FailedPredicateException(this, "precpred(_ctx, 7)");
-						setState(149);
+						setState(109);
 						((BinaryOperationContext)_localctx).operator = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_PLUS) | (1L << T_MINUS) | (1L << T_ASTERISK) | (1L << T_SLASH) | (1L << T_PERCENT))) != 0)) ) {
@@ -1193,7 +605,7 @@ public class GraceParser extends Parser {
 						} else {
 							consume();
 						}
-						setState(150);
+						setState(110);
 						((BinaryOperationContext)_localctx).right = expression(8);
 						}
 						break;
@@ -1202,9 +614,9 @@ public class GraceParser extends Parser {
 						_localctx = new IncrementOperationContext(new ExpressionContext(_parentctx, _parentState));
 						((IncrementOperationContext)_localctx).left = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(151);
+						setState(111);
 						if (!(precpred(_ctx, 6))) throw new FailedPredicateException(this, "precpred(_ctx, 6)");
-						setState(152);
+						setState(112);
 						_la = _input.LA(1);
 						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_PLUS) | (1L << T_MINUS) | (1L << PLUS_INC) | (1L << MINUS_DEC))) != 0)) ) {
 						_errHandler.recoverInline(this);
@@ -1216,9 +628,9 @@ public class GraceParser extends Parser {
 					}
 					} 
 				}
-				setState(157);
+				setState(117);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,9,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,4,_ctx);
 			}
 			}
 		}
@@ -1233,293 +645,42 @@ public class GraceParser extends Parser {
 		return _localctx;
 	}
 
-	public static class CmdIfContext extends ParserRuleContext {
-		public TerminalNode T_IF() { return getToken(GraceParser.T_IF, 0); }
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
+	public static class DeclVarContext extends ParserRuleContext {
+		public ListSpecVarsContext listSpecVars() {
+			return getRuleContext(ListSpecVarsContext.class,0);
 		}
-		public CommandContext command() {
-			return getRuleContext(CommandContext.class,0);
+		public LstTypeContext lstType() {
+			return getRuleContext(LstTypeContext.class,0);
 		}
-		public TerminalNode T_ELSE() { return getToken(GraceParser.T_ELSE, 0); }
-		public CmdIfContext(ParserRuleContext parent, int invokingState) {
+		public DeclVarContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_cmdIf; }
+		@Override public int getRuleIndex() { return RULE_declVar; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdIf(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDeclVar(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdIf(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDeclVar(this);
 		}
 	}
 
-	public final CmdIfContext cmdIf() throws RecognitionException {
-		CmdIfContext _localctx = new CmdIfContext(_ctx, getState());
-		enterRule(_localctx, 24, RULE_cmdIf);
-		try {
-			setState(166);
-			switch (_input.LA(1)) {
-			case T_IF:
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(158);
-				match(T_IF);
-				setState(159);
-				match(T_LEFT_PAREN);
-				setState(160);
-				expression(0);
-				setState(161);
-				match(T_RIGHT_PAREN);
-				setState(162);
-				command();
-				}
-				break;
-			case T_ELSE:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(164);
-				match(T_ELSE);
-				setState(165);
-				command();
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class CmdWhileContext extends ParserRuleContext {
-		public TerminalNode T_WHILE() { return getToken(GraceParser.T_WHILE, 0); }
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
-		}
-		public CommandContext command() {
-			return getRuleContext(CommandContext.class,0);
-		}
-		public CmdWhileContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_cmdWhile; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdWhile(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdWhile(this);
-		}
-	}
-
-	public final CmdWhileContext cmdWhile() throws RecognitionException {
-		CmdWhileContext _localctx = new CmdWhileContext(_ctx, getState());
-		enterRule(_localctx, 26, RULE_cmdWhile);
+	public final DeclVarContext declVar() throws RecognitionException {
+		DeclVarContext _localctx = new DeclVarContext(_ctx, getState());
+		enterRule(_localctx, 8, RULE_declVar);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(168);
-			match(T_WHILE);
-			setState(169);
-			match(T_LEFT_PAREN);
-			setState(170);
-			expression(0);
-			setState(171);
-			match(T_RIGHT_PAREN);
-			setState(172);
-			command();
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class ForInitContext extends ParserRuleContext {
-		public CmdAtribContext cmdAtrib() {
-			return getRuleContext(CmdAtribContext.class,0);
-		}
-		public ForInitContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_forInit; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterForInit(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitForInit(this);
-		}
-	}
-
-	public final ForInitContext forInit() throws RecognitionException {
-		ForInitContext _localctx = new ForInitContext(_ctx, getState());
-		enterRule(_localctx, 28, RULE_forInit);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(174);
-			cmdAtrib();
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class ForIteraContext extends ParserRuleContext {
-		public CmdAtribContext cmdAtrib() {
-			return getRuleContext(CmdAtribContext.class,0);
-		}
-		public ForIteraContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_forItera; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterForItera(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitForItera(this);
-		}
-	}
-
-	public final ForIteraContext forItera() throws RecognitionException {
-		ForIteraContext _localctx = new ForIteraContext(_ctx, getState());
-		enterRule(_localctx, 30, RULE_forItera);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(176);
-			cmdAtrib();
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class CmdForContext extends ParserRuleContext {
-		public TerminalNode T_FOR() { return getToken(GraceParser.T_FOR, 0); }
-		public ForInitContext forInit() {
-			return getRuleContext(ForInitContext.class,0);
-		}
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
-		}
-		public ForIteraContext forItera() {
-			return getRuleContext(ForIteraContext.class,0);
-		}
-		public CommandContext command() {
-			return getRuleContext(CommandContext.class,0);
-		}
-		public CmdForContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_cmdFor; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdFor(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdFor(this);
-		}
-	}
-
-	public final CmdForContext cmdFor() throws RecognitionException {
-		CmdForContext _localctx = new CmdForContext(_ctx, getState());
-		enterRule(_localctx, 32, RULE_cmdFor);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(178);
-			match(T_FOR);
-			setState(179);
-			match(T_LEFT_PAREN);
-			setState(180);
-			forInit();
-			setState(181);
-			match(T_SEMICOLON);
-			setState(182);
-			expression(0);
-			setState(183);
-			match(T_SEMICOLON);
-			setState(184);
-			forItera();
-			setState(185);
-			match(T_RIGHT_PAREN);
-			setState(186);
-			command();
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class CmdStopContext extends ParserRuleContext {
-		public TerminalNode T_STOP() { return getToken(GraceParser.T_STOP, 0); }
-		public CmdStopContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_cmdStop; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdStop(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdStop(this);
-		}
-	}
-
-	public final CmdStopContext cmdStop() throws RecognitionException {
-		CmdStopContext _localctx = new CmdStopContext(_ctx, getState());
-		enterRule(_localctx, 34, RULE_cmdStop);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(188);
-			match(T_STOP);
-			setState(189);
+			setState(118);
+			match(T_VAR);
+			setState(119);
+			listSpecVars();
+			setState(120);
+			match(T_COLON);
+			setState(121);
+			lstType();
+			setState(122);
 			match(T_SEMICOLON);
 			}
 		}
@@ -1534,553 +695,52 @@ public class GraceParser extends Parser {
 		return _localctx;
 	}
 
-	public static class CmdSkipContext extends ParserRuleContext {
-		public TerminalNode T_SKIP() { return getToken(GraceParser.T_SKIP, 0); }
-		public CmdSkipContext(ParserRuleContext parent, int invokingState) {
+	public static class ListSpecVarsContext extends ParserRuleContext {
+		public List<SpecVarContext> specVar() {
+			return getRuleContexts(SpecVarContext.class);
+		}
+		public SpecVarContext specVar(int i) {
+			return getRuleContext(SpecVarContext.class,i);
+		}
+		public ListSpecVarsContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_cmdSkip; }
+		@Override public int getRuleIndex() { return RULE_listSpecVars; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdSkip(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterListSpecVars(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdSkip(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitListSpecVars(this);
 		}
 	}
 
-	public final CmdSkipContext cmdSkip() throws RecognitionException {
-		CmdSkipContext _localctx = new CmdSkipContext(_ctx, getState());
-		enterRule(_localctx, 36, RULE_cmdSkip);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(191);
-			match(T_SKIP);
-			setState(192);
-			match(T_SEMICOLON);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class CmdReturnContext extends ParserRuleContext {
-		public TerminalNode T_RETURN() { return getToken(GraceParser.T_RETURN, 0); }
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
-		}
-		public CmdReturnContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_cmdReturn; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdReturn(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdReturn(this);
-		}
-	}
-
-	public final CmdReturnContext cmdReturn() throws RecognitionException {
-		CmdReturnContext _localctx = new CmdReturnContext(_ctx, getState());
-		enterRule(_localctx, 38, RULE_cmdReturn);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(194);
-			match(T_RETURN);
-			setState(195);
-			expression(0);
-			setState(196);
-			match(T_SEMICOLON);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class CmdCallProcContext extends ParserRuleContext {
-		public TerminalNode ID() { return getToken(GraceParser.ID, 0); }
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
-		}
-		public CmdCallProcContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_cmdCallProc; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdCallProc(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdCallProc(this);
-		}
-	}
-
-	public final CmdCallProcContext cmdCallProc() throws RecognitionException {
-		CmdCallProcContext _localctx = new CmdCallProcContext(_ctx, getState());
-		enterRule(_localctx, 40, RULE_cmdCallProc);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(198);
-			match(ID);
-			setState(199);
-			match(T_LEFT_PAREN);
-			setState(200);
-			expression(0);
-			setState(201);
-			match(T_RIGHT_PAREN);
-			setState(202);
-			match(T_SEMICOLON);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class CmdReadContext extends ParserRuleContext {
-		public TerminalNode T_READ() { return getToken(GraceParser.T_READ, 0); }
-		public TerminalNode STRINGLITERAL() { return getToken(GraceParser.STRINGLITERAL, 0); }
-		public TerminalNode NUMBERLITERAL() { return getToken(GraceParser.NUMBERLITERAL, 0); }
-		public VariableContext variable() {
-			return getRuleContext(VariableContext.class,0);
-		}
-		public CmdReadContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_cmdRead; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdRead(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdRead(this);
-		}
-	}
-
-	public final CmdReadContext cmdRead() throws RecognitionException {
-		CmdReadContext _localctx = new CmdReadContext(_ctx, getState());
-		enterRule(_localctx, 42, RULE_cmdRead);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(204);
-			match(T_READ);
-			setState(208);
-			switch (_input.LA(1)) {
-			case STRINGLITERAL:
-				{
-				setState(205);
-				match(STRINGLITERAL);
-				}
-				break;
-			case NUMBERLITERAL:
-				{
-				setState(206);
-				match(NUMBERLITERAL);
-				}
-				break;
-			case ID:
-				{
-				setState(207);
-				variable();
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
-			}
-			setState(210);
-			match(T_SEMICOLON);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class CmdWriteContext extends ParserRuleContext {
-		public TerminalNode T_WRITE() { return getToken(GraceParser.T_WRITE, 0); }
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
-		}
-		public CmdWriteContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_cmdWrite; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdWrite(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdWrite(this);
-		}
-	}
-
-	public final CmdWriteContext cmdWrite() throws RecognitionException {
-		CmdWriteContext _localctx = new CmdWriteContext(_ctx, getState());
-		enterRule(_localctx, 44, RULE_cmdWrite);
-		try {
-			setState(218);
-			switch (_input.LA(1)) {
-			case T_WRITE:
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(212);
-				match(T_WRITE);
-				setState(213);
-				expression(0);
-				setState(214);
-				match(T_SEMICOLON);
-				}
-				break;
-			case T_COMMA:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(216);
-				match(T_COMMA);
-				setState(217);
-				expression(0);
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class VariableContext extends ParserRuleContext {
-		public TerminalNode ID() { return getToken(GraceParser.ID, 0); }
-		public List<ExpressionContext> expression() {
-			return getRuleContexts(ExpressionContext.class);
-		}
-		public ExpressionContext expression(int i) {
-			return getRuleContext(ExpressionContext.class,i);
-		}
-		public VariableContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_variable; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterVariable(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitVariable(this);
-		}
-	}
-
-	public final VariableContext variable() throws RecognitionException {
-		VariableContext _localctx = new VariableContext(_ctx, getState());
-		enterRule(_localctx, 46, RULE_variable);
+	public final ListSpecVarsContext listSpecVars() throws RecognitionException {
+		ListSpecVarsContext _localctx = new ListSpecVarsContext(_ctx, getState());
+		enterRule(_localctx, 10, RULE_listSpecVars);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(220);
-			match(ID);
-			setState(227);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while (_la==T_LEFT_SQUARE) {
-				{
-				{
-				setState(221);
-				match(T_LEFT_SQUARE);
-				setState(222);
-				expression(0);
-				setState(223);
-				match(T_RIGHT_SQUARE);
-				}
-				}
-				setState(229);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class SpecVarSimpleContext extends ParserRuleContext {
-		public Token ID;
-		public TerminalNode ID() { return getToken(GraceParser.ID, 0); }
-		public SpecVarSimpleContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_specVarSimple; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterSpecVarSimple(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitSpecVarSimple(this);
-		}
-	}
-
-	public final SpecVarSimpleContext specVarSimple() throws RecognitionException {
-		SpecVarSimpleContext _localctx = new SpecVarSimpleContext(_ctx, getState());
-		enterRule(_localctx, 48, RULE_specVarSimple);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(230);
-			((SpecVarSimpleContext)_localctx).ID = match(ID);
-			((BlockContext)getInvokingContext(10)).symbols.add((((SpecVarSimpleContext)_localctx).ID!=null?((SpecVarSimpleContext)_localctx).ID.getText():null));
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class SpecVarSimpleIniContext extends ParserRuleContext {
-		public Token ID;
-		public TerminalNode ID() { return getToken(GraceParser.ID, 0); }
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
-		}
-		public SpecVarSimpleIniContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_specVarSimpleIni; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterSpecVarSimpleIni(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitSpecVarSimpleIni(this);
-		}
-	}
-
-	public final SpecVarSimpleIniContext specVarSimpleIni() throws RecognitionException {
-		SpecVarSimpleIniContext _localctx = new SpecVarSimpleIniContext(_ctx, getState());
-		enterRule(_localctx, 50, RULE_specVarSimpleIni);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(233);
-			((SpecVarSimpleIniContext)_localctx).ID = match(ID);
-			setState(234);
-			match(T_EQUAL);
-			setState(235);
-			expression(0);
-			((BlockContext)getInvokingContext(10)).symbols.add((((SpecVarSimpleIniContext)_localctx).ID!=null?((SpecVarSimpleIniContext)_localctx).ID.getText():null));
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class SpecVarArrContext extends ParserRuleContext {
-		public SpecVarSimpleContext specVarSimple() {
-			return getRuleContext(SpecVarSimpleContext.class,0);
-		}
-		public TerminalNode NUMBERLITERAL() { return getToken(GraceParser.NUMBERLITERAL, 0); }
-		public SpecVarArrContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_specVarArr; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterSpecVarArr(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitSpecVarArr(this);
-		}
-	}
-
-	public final SpecVarArrContext specVarArr() throws RecognitionException {
-		SpecVarArrContext _localctx = new SpecVarArrContext(_ctx, getState());
-		enterRule(_localctx, 52, RULE_specVarArr);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(238);
-			specVarSimple();
-			setState(239);
-			match(T_LEFT_SQUARE);
-			setState(240);
-			match(NUMBERLITERAL);
-			setState(241);
-			match(T_RIGHT_SQUARE);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class LstArrIniContext extends ParserRuleContext {
-		public List<LiteralContext> literal() {
-			return getRuleContexts(LiteralContext.class);
-		}
-		public LiteralContext literal(int i) {
-			return getRuleContext(LiteralContext.class,i);
-		}
-		public LstArrIniContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_lstArrIni; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterLstArrIni(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitLstArrIni(this);
-		}
-	}
-
-	public final LstArrIniContext lstArrIni() throws RecognitionException {
-		LstArrIniContext _localctx = new LstArrIniContext(_ctx, getState());
-		enterRule(_localctx, 54, RULE_lstArrIni);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(243);
-			literal();
-			setState(248);
+			setState(124);
+			specVar();
+			setState(129);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==T_COMMA) {
 				{
 				{
-				setState(244);
+				setState(125);
 				match(T_COMMA);
-				setState(245);
-				literal();
+				setState(126);
+				specVar();
 				}
 				}
-				setState(250);
+				setState(131);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class SpecVarArrIniContext extends ParserRuleContext {
-		public SpecVarArrContext specVarArr() {
-			return getRuleContext(SpecVarArrContext.class,0);
-		}
-		public LstArrIniContext lstArrIni() {
-			return getRuleContext(LstArrIniContext.class,0);
-		}
-		public SpecVarArrIniContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_specVarArrIni; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterSpecVarArrIni(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitSpecVarArrIni(this);
-		}
-	}
-
-	public final SpecVarArrIniContext specVarArrIni() throws RecognitionException {
-		SpecVarArrIniContext _localctx = new SpecVarArrIniContext(_ctx, getState());
-		enterRule(_localctx, 56, RULE_specVarArrIni);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(251);
-			specVarArr();
-			setState(252);
-			match(T_EQUAL);
-			setState(253);
-			match(T_LEFT_CURLY_BRACE);
-			setState(254);
-			lstArrIni();
-			setState(255);
-			match(T_RIGHT_CURLY_BRACE);
 			}
 		}
 		catch (RecognitionException re) {
@@ -2164,16 +824,16 @@ public class GraceParser extends Parser {
 
 	public final SpecVarContext specVar() throws RecognitionException {
 		SpecVarContext _localctx = new SpecVarContext(_ctx, getState());
-		enterRule(_localctx, 58, RULE_specVar);
+		enterRule(_localctx, 12, RULE_specVar);
 		try {
-			setState(261);
+			setState(136);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,15,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,6,_ctx) ) {
 			case 1:
 				_localctx = new DirectSpecVarContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(257);
+				setState(132);
 				specVarSimple();
 				}
 				break;
@@ -2181,7 +841,7 @@ public class GraceParser extends Parser {
 				_localctx = new DirectSpecVarSimpleIniContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(258);
+				setState(133);
 				specVarSimpleIni();
 				}
 				break;
@@ -2189,7 +849,7 @@ public class GraceParser extends Parser {
 				_localctx = new DirectSpecVarArrContext(_localctx);
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(259);
+				setState(134);
 				specVarArr();
 				}
 				break;
@@ -2197,7 +857,7 @@ public class GraceParser extends Parser {
 				_localctx = new DirectSpecVarArrIniContext(_localctx);
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(260);
+				setState(135);
 				specVarArrIni();
 				}
 				break;
@@ -2214,49 +874,434 @@ public class GraceParser extends Parser {
 		return _localctx;
 	}
 
-	public static class ListSpecVarsContext extends ParserRuleContext {
-		public List<SpecVarContext> specVar() {
-			return getRuleContexts(SpecVarContext.class);
-		}
-		public SpecVarContext specVar(int i) {
-			return getRuleContext(SpecVarContext.class,i);
-		}
-		public ListSpecVarsContext(ParserRuleContext parent, int invokingState) {
+	public static class SpecVarSimpleContext extends ParserRuleContext {
+		public Token ID;
+		public TerminalNode ID() { return getToken(GraceParser.ID, 0); }
+		public SpecVarSimpleContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_listSpecVars; }
+		@Override public int getRuleIndex() { return RULE_specVarSimple; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterListSpecVars(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterSpecVarSimple(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitListSpecVars(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitSpecVarSimple(this);
 		}
 	}
 
-	public final ListSpecVarsContext listSpecVars() throws RecognitionException {
-		ListSpecVarsContext _localctx = new ListSpecVarsContext(_ctx, getState());
-		enterRule(_localctx, 60, RULE_listSpecVars);
+	public final SpecVarSimpleContext specVarSimple() throws RecognitionException {
+		SpecVarSimpleContext _localctx = new SpecVarSimpleContext(_ctx, getState());
+		enterRule(_localctx, 14, RULE_specVarSimple);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(138);
+			((SpecVarSimpleContext)_localctx).ID = match(ID);
+			((BlockContext)getInvokingContext(32)).symbols.add((((SpecVarSimpleContext)_localctx).ID!=null?((SpecVarSimpleContext)_localctx).ID.getText():null));
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class SpecVarSimpleIniContext extends ParserRuleContext {
+		public Token ID;
+		public TerminalNode ID() { return getToken(GraceParser.ID, 0); }
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
+		}
+		public SpecVarSimpleIniContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_specVarSimpleIni; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterSpecVarSimpleIni(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitSpecVarSimpleIni(this);
+		}
+	}
+
+	public final SpecVarSimpleIniContext specVarSimpleIni() throws RecognitionException {
+		SpecVarSimpleIniContext _localctx = new SpecVarSimpleIniContext(_ctx, getState());
+		enterRule(_localctx, 16, RULE_specVarSimpleIni);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(141);
+			((SpecVarSimpleIniContext)_localctx).ID = match(ID);
+			setState(142);
+			match(T_EQUAL);
+			setState(143);
+			expression(0);
+			((BlockContext)getInvokingContext(32)).symbols.add((((SpecVarSimpleIniContext)_localctx).ID!=null?((SpecVarSimpleIniContext)_localctx).ID.getText():null));
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class SpecVarArrContext extends ParserRuleContext {
+		public SpecVarSimpleContext specVarSimple() {
+			return getRuleContext(SpecVarSimpleContext.class,0);
+		}
+		public List<TerminalNode> NUMBERLITERAL() { return getTokens(GraceParser.NUMBERLITERAL); }
+		public TerminalNode NUMBERLITERAL(int i) {
+			return getToken(GraceParser.NUMBERLITERAL, i);
+		}
+		public SpecVarArrContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_specVarArr; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterSpecVarArr(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitSpecVarArr(this);
+		}
+	}
+
+	public final SpecVarArrContext specVarArr() throws RecognitionException {
+		SpecVarArrContext _localctx = new SpecVarArrContext(_ctx, getState());
+		enterRule(_localctx, 18, RULE_specVarArr);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(263);
-			specVar();
-			setState(268);
+			setState(146);
+			specVarSimple();
+			setState(147);
+			match(T_LEFT_SQUARE);
+			setState(149); 
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			do {
+				{
+				{
+				setState(148);
+				match(NUMBERLITERAL);
+				}
+				}
+				setState(151); 
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			} while ( _la==NUMBERLITERAL );
+			setState(153);
+			match(T_RIGHT_SQUARE);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class SpecVarArrIniContext extends ParserRuleContext {
+		public SpecVarArrContext specVarArr() {
+			return getRuleContext(SpecVarArrContext.class,0);
+		}
+		public List<LiteralContext> literal() {
+			return getRuleContexts(LiteralContext.class);
+		}
+		public LiteralContext literal(int i) {
+			return getRuleContext(LiteralContext.class,i);
+		}
+		public SpecVarArrIniContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_specVarArrIni; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterSpecVarArrIni(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitSpecVarArrIni(this);
+		}
+	}
+
+	public final SpecVarArrIniContext specVarArrIni() throws RecognitionException {
+		SpecVarArrIniContext _localctx = new SpecVarArrIniContext(_ctx, getState());
+		enterRule(_localctx, 20, RULE_specVarArrIni);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(155);
+			specVarArr();
+			setState(156);
+			match(T_EQUAL);
+			setState(157);
+			match(T_LEFT_CURLY_BRACE);
+			setState(158);
+			literal();
+			setState(163);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==T_COMMA) {
 				{
 				{
-				setState(264);
+				setState(159);
 				match(T_COMMA);
-				setState(265);
-				specVar();
+				setState(160);
+				literal();
 				}
 				}
-				setState(270);
+				setState(165);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			}
+			setState(166);
+			match(T_RIGHT_CURLY_BRACE);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class DecSubContext extends ParserRuleContext {
+		public DecProcContext decProc() {
+			return getRuleContext(DecProcContext.class,0);
+		}
+		public DecFuncContext decFunc() {
+			return getRuleContext(DecFuncContext.class,0);
+		}
+		public DecSubContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_decSub; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDecSub(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDecSub(this);
+		}
+	}
+
+	public final DecSubContext decSub() throws RecognitionException {
+		DecSubContext _localctx = new DecSubContext(_ctx, getState());
+		enterRule(_localctx, 22, RULE_decSub);
+		try {
+			setState(170);
+			_errHandler.sync(this);
+			switch ( getInterpreter().adaptivePredict(_input,9,_ctx) ) {
+			case 1:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(168);
+				decProc();
+				}
+				break;
+			case 2:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(169);
+				decFunc();
+				}
+				break;
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class DecProcContext extends ParserRuleContext {
+		public TerminalNode ID() { return getToken(GraceParser.ID, 0); }
+		public LstParamContext lstParam() {
+			return getRuleContext(LstParamContext.class,0);
+		}
+		public BlockContext block() {
+			return getRuleContext(BlockContext.class,0);
+		}
+		public DecProcContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_decProc; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDecProc(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDecProc(this);
+		}
+	}
+
+	public final DecProcContext decProc() throws RecognitionException {
+		DecProcContext _localctx = new DecProcContext(_ctx, getState());
+		enterRule(_localctx, 24, RULE_decProc);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(172);
+			match(T_DEF);
+			setState(173);
+			match(ID);
+			setState(174);
+			match(T_LEFT_PAREN);
+			setState(175);
+			lstParam();
+			setState(176);
+			match(T_RIGHT_PAREN);
+			setState(177);
+			block();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class DecFuncContext extends ParserRuleContext {
+		public TerminalNode ID() { return getToken(GraceParser.ID, 0); }
+		public LstParamContext lstParam() {
+			return getRuleContext(LstParamContext.class,0);
+		}
+		public LstTypeContext lstType() {
+			return getRuleContext(LstTypeContext.class,0);
+		}
+		public BlockContext block() {
+			return getRuleContext(BlockContext.class,0);
+		}
+		public DecFuncContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_decFunc; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDecFunc(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDecFunc(this);
+		}
+	}
+
+	public final DecFuncContext decFunc() throws RecognitionException {
+		DecFuncContext _localctx = new DecFuncContext(_ctx, getState());
+		enterRule(_localctx, 26, RULE_decFunc);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(179);
+			match(T_DEF);
+			setState(180);
+			match(ID);
+			setState(181);
+			match(T_LEFT_PAREN);
+			setState(182);
+			lstParam();
+			setState(183);
+			match(T_RIGHT_PAREN);
+			setState(184);
+			match(T_COLON);
+			setState(185);
+			lstType();
+			setState(186);
+			block();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class LstParamContext extends ParserRuleContext {
+		public List<SpecParamContext> specParam() {
+			return getRuleContexts(SpecParamContext.class);
+		}
+		public SpecParamContext specParam(int i) {
+			return getRuleContext(SpecParamContext.class,i);
+		}
+		public LstParamContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_lstParam; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterLstParam(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitLstParam(this);
+		}
+	}
+
+	public final LstParamContext lstParam() throws RecognitionException {
+		LstParamContext _localctx = new LstParamContext(_ctx, getState());
+		enterRule(_localctx, 28, RULE_lstParam);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(188);
+			specParam();
+			setState(193);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			while (_la==T_COMMA) {
+				{
+				{
+				setState(189);
+				match(T_COMMA);
+				setState(190);
+				specParam();
+				}
+				}
+				setState(195);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -2273,44 +1318,1401 @@ public class GraceParser extends Parser {
 		return _localctx;
 	}
 
-	public static class DeclVarContext extends ParserRuleContext {
-		public TerminalNode T_VAR() { return getToken(GraceParser.T_VAR, 0); }
-		public ListSpecVarsContext listSpecVars() {
-			return getRuleContext(ListSpecVarsContext.class,0);
+	public static class SpecParamContext extends ParserRuleContext {
+		public List<ParamContext> param() {
+			return getRuleContexts(ParamContext.class);
+		}
+		public ParamContext param(int i) {
+			return getRuleContext(ParamContext.class,i);
 		}
 		public LstTypeContext lstType() {
 			return getRuleContext(LstTypeContext.class,0);
 		}
-		public DeclVarContext(ParserRuleContext parent, int invokingState) {
+		public SpecParamContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_declVar; }
+		@Override public int getRuleIndex() { return RULE_specParam; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDeclVar(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterSpecParam(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDeclVar(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitSpecParam(this);
 		}
 	}
 
-	public final DeclVarContext declVar() throws RecognitionException {
-		DeclVarContext _localctx = new DeclVarContext(_ctx, getState());
-		enterRule(_localctx, 62, RULE_declVar);
+	public final SpecParamContext specParam() throws RecognitionException {
+		SpecParamContext _localctx = new SpecParamContext(_ctx, getState());
+		enterRule(_localctx, 30, RULE_specParam);
+		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(271);
-			match(T_VAR);
-			setState(272);
-			listSpecVars();
-			setState(273);
+			setState(196);
+			param();
+			setState(201);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			while (_la==T_COMMA) {
+				{
+				{
+				setState(197);
+				match(T_COMMA);
+				setState(198);
+				param();
+				}
+				}
+				setState(203);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			}
+			setState(204);
 			match(T_COLON);
-			setState(274);
+			setState(205);
 			lstType();
-			setState(275);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class ParamContext extends ParserRuleContext {
+		public TerminalNode ID() { return getToken(GraceParser.ID, 0); }
+		public ParamContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_param; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterParam(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitParam(this);
+		}
+	}
+
+	public final ParamContext param() throws RecognitionException {
+		ParamContext _localctx = new ParamContext(_ctx, getState());
+		enterRule(_localctx, 32, RULE_param);
+		try {
+			setState(211);
+			_errHandler.sync(this);
+			switch ( getInterpreter().adaptivePredict(_input,12,_ctx) ) {
+			case 1:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(207);
+				match(ID);
+				}
+				break;
+			case 2:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(208);
+				match(ID);
+				setState(209);
+				match(T_LEFT_SQUARE);
+				setState(210);
+				match(T_RIGHT_SQUARE);
+				}
+				break;
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class CommandContext extends ParserRuleContext {
+		public CmdSimpleContext cmdSimple() {
+			return getRuleContext(CmdSimpleContext.class,0);
+		}
+		public BlockContext block() {
+			return getRuleContext(BlockContext.class,0);
+		}
+		public CommandContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_command; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCommand(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCommand(this);
+		}
+	}
+
+	public final CommandContext command() throws RecognitionException {
+		CommandContext _localctx = new CommandContext(_ctx, getState());
+		enterRule(_localctx, 34, RULE_command);
+		try {
+			setState(215);
+			switch (_input.LA(1)) {
+			case T_FOR:
+			case T_IF:
+			case T_READ:
+			case T_RETURN:
+			case T_SKIP:
+			case T_STOP:
+			case T_WHILE:
+			case T_WRITE:
+			case ID:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(213);
+				cmdSimple();
+				}
+				break;
+			case T_LEFT_CURLY_BRACE:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(214);
+				block();
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class CmdSimpleContext extends ParserRuleContext {
+		public CmdAtribContext cmdAtrib() {
+			return getRuleContext(CmdAtribContext.class,0);
+		}
+		public CmdIfContext cmdIf() {
+			return getRuleContext(CmdIfContext.class,0);
+		}
+		public CmdWhileContext cmdWhile() {
+			return getRuleContext(CmdWhileContext.class,0);
+		}
+		public CmdForContext cmdFor() {
+			return getRuleContext(CmdForContext.class,0);
+		}
+		public CmdStopContext cmdStop() {
+			return getRuleContext(CmdStopContext.class,0);
+		}
+		public CmdSkipContext cmdSkip() {
+			return getRuleContext(CmdSkipContext.class,0);
+		}
+		public CmdReturnContext cmdReturn() {
+			return getRuleContext(CmdReturnContext.class,0);
+		}
+		public CmdCallProcContext cmdCallProc() {
+			return getRuleContext(CmdCallProcContext.class,0);
+		}
+		public CmdReadContext cmdRead() {
+			return getRuleContext(CmdReadContext.class,0);
+		}
+		public CmdWriteContext cmdWrite() {
+			return getRuleContext(CmdWriteContext.class,0);
+		}
+		public CmdSimpleContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_cmdSimple; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdSimple(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdSimple(this);
+		}
+	}
+
+	public final CmdSimpleContext cmdSimple() throws RecognitionException {
+		CmdSimpleContext _localctx = new CmdSimpleContext(_ctx, getState());
+		enterRule(_localctx, 36, RULE_cmdSimple);
+		try {
+			setState(227);
+			_errHandler.sync(this);
+			switch ( getInterpreter().adaptivePredict(_input,14,_ctx) ) {
+			case 1:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(217);
+				cmdAtrib();
+				}
+				break;
+			case 2:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(218);
+				cmdIf();
+				}
+				break;
+			case 3:
+				enterOuterAlt(_localctx, 3);
+				{
+				setState(219);
+				cmdWhile();
+				}
+				break;
+			case 4:
+				enterOuterAlt(_localctx, 4);
+				{
+				setState(220);
+				cmdFor();
+				}
+				break;
+			case 5:
+				enterOuterAlt(_localctx, 5);
+				{
+				setState(221);
+				cmdStop();
+				}
+				break;
+			case 6:
+				enterOuterAlt(_localctx, 6);
+				{
+				setState(222);
+				cmdSkip();
+				}
+				break;
+			case 7:
+				enterOuterAlt(_localctx, 7);
+				{
+				setState(223);
+				cmdReturn();
+				}
+				break;
+			case 8:
+				enterOuterAlt(_localctx, 8);
+				{
+				setState(224);
+				cmdCallProc();
+				}
+				break;
+			case 9:
+				enterOuterAlt(_localctx, 9);
+				{
+				setState(225);
+				cmdRead();
+				}
+				break;
+			case 10:
+				enterOuterAlt(_localctx, 10);
+				{
+				setState(226);
+				cmdWrite();
+				}
+				break;
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class CmdAtribContext extends ParserRuleContext {
+		public AtribContext atrib() {
+			return getRuleContext(AtribContext.class,0);
+		}
+		public CmdAtribContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_cmdAtrib; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdAtrib(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdAtrib(this);
+		}
+	}
+
+	public final CmdAtribContext cmdAtrib() throws RecognitionException {
+		CmdAtribContext _localctx = new CmdAtribContext(_ctx, getState());
+		enterRule(_localctx, 38, RULE_cmdAtrib);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(229);
+			atrib();
+			setState(230);
 			match(T_SEMICOLON);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class AtribContext extends ParserRuleContext {
+		public Token ID;
+		public TerminalNode ID() { return getToken(GraceParser.ID, 0); }
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
+		}
+		public AtribContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_atrib; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterAtrib(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitAtrib(this);
+		}
+	}
+
+	public final AtribContext atrib() throws RecognitionException {
+		AtribContext _localctx = new AtribContext(_ctx, getState());
+		enterRule(_localctx, 40, RULE_atrib);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(232);
+			((AtribContext)_localctx).ID = match(ID);
+			setState(233);
+			_la = _input.LA(1);
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_EQUAL) | (1L << T_INCREMENT) | (1L << T_DECREMENT) | (1L << T_INC_MULT) | (1L << T_INC_DIV) | (1L << T_INC_MOD))) != 0)) ) {
+			_errHandler.recoverInline(this);
+			} else {
+				consume();
+			}
+			setState(234);
+			expression(0);
+
+			            if( !((BlockContext)getInvokingContext(32)).symbols.contains((((AtribContext)_localctx).ID!=null?((AtribContext)_localctx).ID.getText():null)) ){
+			                System.err.println( "Undefined var: " + (((AtribContext)_localctx).ID!=null?((AtribContext)_localctx).ID.getText():null) );
+			            }
+			        
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class CmdIfContext extends ParserRuleContext {
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
+		}
+		public List<CommandContext> command() {
+			return getRuleContexts(CommandContext.class);
+		}
+		public CommandContext command(int i) {
+			return getRuleContext(CommandContext.class,i);
+		}
+		public CmdIfContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_cmdIf; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdIf(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdIf(this);
+		}
+	}
+
+	public final CmdIfContext cmdIf() throws RecognitionException {
+		CmdIfContext _localctx = new CmdIfContext(_ctx, getState());
+		enterRule(_localctx, 42, RULE_cmdIf);
+		try {
+			int _alt;
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(237);
+			match(T_IF);
+			setState(238);
+			match(T_LEFT_PAREN);
+			setState(239);
+			expression(0);
+			setState(240);
+			match(T_RIGHT_PAREN);
+			setState(241);
+			command();
+			setState(246);
+			_errHandler.sync(this);
+			_alt = getInterpreter().adaptivePredict(_input,15,_ctx);
+			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+				if ( _alt==1 ) {
+					{
+					{
+					setState(242);
+					match(T_ELSE);
+					setState(243);
+					command();
+					}
+					} 
+				}
+				setState(248);
+				_errHandler.sync(this);
+				_alt = getInterpreter().adaptivePredict(_input,15,_ctx);
+			}
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class CmdWhileContext extends ParserRuleContext {
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
+		}
+		public CommandContext command() {
+			return getRuleContext(CommandContext.class,0);
+		}
+		public CmdWhileContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_cmdWhile; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdWhile(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdWhile(this);
+		}
+	}
+
+	public final CmdWhileContext cmdWhile() throws RecognitionException {
+		CmdWhileContext _localctx = new CmdWhileContext(_ctx, getState());
+		enterRule(_localctx, 44, RULE_cmdWhile);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(249);
+			match(T_WHILE);
+			setState(250);
+			match(T_LEFT_PAREN);
+			setState(251);
+			expression(0);
+			setState(252);
+			match(T_RIGHT_PAREN);
+			setState(253);
+			command();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class CmdForContext extends ParserRuleContext {
+		public ForInitContext forInit() {
+			return getRuleContext(ForInitContext.class,0);
+		}
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
+		}
+		public ForIteraContext forItera() {
+			return getRuleContext(ForIteraContext.class,0);
+		}
+		public CommandContext command() {
+			return getRuleContext(CommandContext.class,0);
+		}
+		public CmdForContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_cmdFor; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdFor(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdFor(this);
+		}
+	}
+
+	public final CmdForContext cmdFor() throws RecognitionException {
+		CmdForContext _localctx = new CmdForContext(_ctx, getState());
+		enterRule(_localctx, 46, RULE_cmdFor);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(255);
+			match(T_FOR);
+			setState(256);
+			match(T_LEFT_PAREN);
+			setState(257);
+			forInit();
+			setState(258);
+			match(T_SEMICOLON);
+			setState(259);
+			expression(0);
+			setState(260);
+			match(T_SEMICOLON);
+			setState(261);
+			forItera();
+			setState(262);
+			match(T_RIGHT_PAREN);
+			setState(263);
+			command();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class ForInitContext extends ParserRuleContext {
+		public AtribContext atrib() {
+			return getRuleContext(AtribContext.class,0);
+		}
+		public ForInitContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_forInit; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterForInit(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitForInit(this);
+		}
+	}
+
+	public final ForInitContext forInit() throws RecognitionException {
+		ForInitContext _localctx = new ForInitContext(_ctx, getState());
+		enterRule(_localctx, 48, RULE_forInit);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(265);
+			atrib();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class ForIteraContext extends ParserRuleContext {
+		public AtribContext atrib() {
+			return getRuleContext(AtribContext.class,0);
+		}
+		public ForIteraContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_forItera; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterForItera(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitForItera(this);
+		}
+	}
+
+	public final ForIteraContext forItera() throws RecognitionException {
+		ForIteraContext _localctx = new ForIteraContext(_ctx, getState());
+		enterRule(_localctx, 50, RULE_forItera);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(267);
+			atrib();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class CmdStopContext extends ParserRuleContext {
+		public CmdStopContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_cmdStop; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdStop(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdStop(this);
+		}
+	}
+
+	public final CmdStopContext cmdStop() throws RecognitionException {
+		CmdStopContext _localctx = new CmdStopContext(_ctx, getState());
+		enterRule(_localctx, 52, RULE_cmdStop);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(269);
+			match(T_STOP);
+			setState(270);
+			match(T_SEMICOLON);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class CmdSkipContext extends ParserRuleContext {
+		public CmdSkipContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_cmdSkip; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdSkip(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdSkip(this);
+		}
+	}
+
+	public final CmdSkipContext cmdSkip() throws RecognitionException {
+		CmdSkipContext _localctx = new CmdSkipContext(_ctx, getState());
+		enterRule(_localctx, 54, RULE_cmdSkip);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(272);
+			match(T_SKIP);
+			setState(273);
+			match(T_SEMICOLON);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class CmdReturnContext extends ParserRuleContext {
+		public List<ExpressionContext> expression() {
+			return getRuleContexts(ExpressionContext.class);
+		}
+		public ExpressionContext expression(int i) {
+			return getRuleContext(ExpressionContext.class,i);
+		}
+		public CmdReturnContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_cmdReturn; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdReturn(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdReturn(this);
+		}
+	}
+
+	public final CmdReturnContext cmdReturn() throws RecognitionException {
+		CmdReturnContext _localctx = new CmdReturnContext(_ctx, getState());
+		enterRule(_localctx, 56, RULE_cmdReturn);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(275);
+			match(T_RETURN);
+			setState(279);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_FALSE) | (1L << T_TRUE) | (1L << T_LEFT_PAREN) | (1L << T_MINUS) | (1L << NEG_UN) | (1L << ID) | (1L << NUMBERLITERAL) | (1L << STRINGLITERAL))) != 0)) {
+				{
+				{
+				setState(276);
+				expression(0);
+				}
+				}
+				setState(281);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			}
+			setState(282);
+			match(T_SEMICOLON);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class CmdCallProcContext extends ParserRuleContext {
+		public TerminalNode ID() { return getToken(GraceParser.ID, 0); }
+		public List<ExpressionContext> expression() {
+			return getRuleContexts(ExpressionContext.class);
+		}
+		public ExpressionContext expression(int i) {
+			return getRuleContext(ExpressionContext.class,i);
+		}
+		public CmdCallProcContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_cmdCallProc; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdCallProc(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdCallProc(this);
+		}
+	}
+
+	public final CmdCallProcContext cmdCallProc() throws RecognitionException {
+		CmdCallProcContext _localctx = new CmdCallProcContext(_ctx, getState());
+		enterRule(_localctx, 58, RULE_cmdCallProc);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(284);
+			match(ID);
+			setState(285);
+			match(T_LEFT_PAREN);
+			{
+			setState(289);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_FALSE) | (1L << T_TRUE) | (1L << T_LEFT_PAREN) | (1L << T_MINUS) | (1L << NEG_UN) | (1L << ID) | (1L << NUMBERLITERAL) | (1L << STRINGLITERAL))) != 0)) {
+				{
+				{
+				setState(286);
+				expression(0);
+				}
+				}
+				setState(291);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			}
+			setState(294);
+			_la = _input.LA(1);
+			if (_la==T_COMMA) {
+				{
+				setState(292);
+				match(T_COMMA);
+				setState(293);
+				expression(0);
+				}
+			}
+
+			}
+			setState(296);
+			match(T_RIGHT_PAREN);
+			setState(297);
+			match(T_SEMICOLON);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class CmdReadContext extends ParserRuleContext {
+		public VariableContext variable() {
+			return getRuleContext(VariableContext.class,0);
+		}
+		public CmdReadContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_cmdRead; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdRead(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdRead(this);
+		}
+	}
+
+	public final CmdReadContext cmdRead() throws RecognitionException {
+		CmdReadContext _localctx = new CmdReadContext(_ctx, getState());
+		enterRule(_localctx, 60, RULE_cmdRead);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(299);
+			match(T_READ);
+			setState(300);
+			variable();
+			setState(301);
+			match(T_SEMICOLON);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class CmdWriteContext extends ParserRuleContext {
+		public List<ExpressionContext> expression() {
+			return getRuleContexts(ExpressionContext.class);
+		}
+		public ExpressionContext expression(int i) {
+			return getRuleContext(ExpressionContext.class,i);
+		}
+		public CmdWriteContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_cmdWrite; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdWrite(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdWrite(this);
+		}
+	}
+
+	public final CmdWriteContext cmdWrite() throws RecognitionException {
+		CmdWriteContext _localctx = new CmdWriteContext(_ctx, getState());
+		enterRule(_localctx, 62, RULE_cmdWrite);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(303);
+			match(T_WRITE);
+			setState(304);
+			expression(0);
+			setState(309);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			while (_la==T_COMMA) {
+				{
+				{
+				setState(305);
+				match(T_COMMA);
+				setState(306);
+				expression(0);
+				}
+				}
+				setState(311);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			}
+			setState(312);
+			match(T_SEMICOLON);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class BlockContext extends ParserRuleContext {
+		public List<String> symbols =  new ArrayList<>();
+		public List<DeclVarContext> declVar() {
+			return getRuleContexts(DeclVarContext.class);
+		}
+		public DeclVarContext declVar(int i) {
+			return getRuleContext(DeclVarContext.class,i);
+		}
+		public List<CommandContext> command() {
+			return getRuleContexts(CommandContext.class);
+		}
+		public CommandContext command(int i) {
+			return getRuleContext(CommandContext.class,i);
+		}
+		public BlockContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_block; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterBlock(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitBlock(this);
+		}
+	}
+
+	public final BlockContext block() throws RecognitionException {
+		BlockContext _localctx = new BlockContext(_ctx, getState());
+		enterRule(_localctx, 64, RULE_block);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(314);
+			match(T_LEFT_CURLY_BRACE);
+			setState(318);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			while (_la==T_VAR) {
+				{
+				{
+				setState(315);
+				declVar();
+				}
+				}
+				setState(320);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			}
+			setState(324);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_FOR) | (1L << T_IF) | (1L << T_READ) | (1L << T_RETURN) | (1L << T_SKIP) | (1L << T_STOP) | (1L << T_WHILE) | (1L << T_WRITE) | (1L << T_LEFT_CURLY_BRACE) | (1L << ID))) != 0)) {
+				{
+				{
+				setState(321);
+				command();
+				}
+				}
+				setState(326);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			}
+			setState(327);
+			match(T_RIGHT_CURLY_BRACE);
+			System.out.println("symbols=" + _localctx.symbols);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class VariableContext extends ParserRuleContext {
+		public TerminalNode ID() { return getToken(GraceParser.ID, 0); }
+		public List<ExpressionContext> expression() {
+			return getRuleContexts(ExpressionContext.class);
+		}
+		public ExpressionContext expression(int i) {
+			return getRuleContext(ExpressionContext.class,i);
+		}
+		public VariableContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_variable; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterVariable(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitVariable(this);
+		}
+	}
+
+	public final VariableContext variable() throws RecognitionException {
+		VariableContext _localctx = new VariableContext(_ctx, getState());
+		enterRule(_localctx, 66, RULE_variable);
+		int _la;
+		try {
+			setState(340);
+			_errHandler.sync(this);
+			switch ( getInterpreter().adaptivePredict(_input,23,_ctx) ) {
+			case 1:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(330);
+				match(ID);
+				}
+				break;
+			case 2:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(331);
+				match(ID);
+				setState(332);
+				match(T_LEFT_SQUARE);
+				setState(334); 
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+				do {
+					{
+					{
+					setState(333);
+					expression(0);
+					}
+					}
+					setState(336); 
+					_errHandler.sync(this);
+					_la = _input.LA(1);
+				} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_FALSE) | (1L << T_TRUE) | (1L << T_LEFT_PAREN) | (1L << T_MINUS) | (1L << NEG_UN) | (1L << ID) | (1L << NUMBERLITERAL) | (1L << STRINGLITERAL))) != 0) );
+				setState(338);
+				match(T_RIGHT_SQUARE);
+				}
+				break;
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class LstOPContext extends ParserRuleContext {
+		public TerminalNode T_EQUAL() { return getToken(GraceParser.T_EQUAL, 0); }
+		public TerminalNode T_PLUS() { return getToken(GraceParser.T_PLUS, 0); }
+		public TerminalNode T_MINUS() { return getToken(GraceParser.T_MINUS, 0); }
+		public TerminalNode T_ASTERISK() { return getToken(GraceParser.T_ASTERISK, 0); }
+		public TerminalNode T_PERCENT() { return getToken(GraceParser.T_PERCENT, 0); }
+		public TerminalNode T_SLASH() { return getToken(GraceParser.T_SLASH, 0); }
+		public LstOPContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_lstOP; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterLstOP(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitLstOP(this);
+		}
+	}
+
+	public final LstOPContext lstOP() throws RecognitionException {
+		LstOPContext _localctx = new LstOPContext(_ctx, getState());
+		enterRule(_localctx, 68, RULE_lstOP);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(342);
+			_la = _input.LA(1);
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_PLUS) | (1L << T_MINUS) | (1L << T_ASTERISK) | (1L << T_SLASH) | (1L << T_PERCENT) | (1L << T_EQUAL))) != 0)) ) {
+			_errHandler.recoverInline(this);
+			} else {
+				consume();
+			}
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class LstTypeContext extends ParserRuleContext {
+		public LstTypeContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_lstType; }
+	 
+		public LstTypeContext() { }
+		public void copyFrom(LstTypeContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class StringContext extends LstTypeContext {
+		public TerminalNode T_STRING() { return getToken(GraceParser.T_STRING, 0); }
+		public StringContext(LstTypeContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterString(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitString(this);
+		}
+	}
+	public static class BoolContext extends LstTypeContext {
+		public TerminalNode T_BOOL() { return getToken(GraceParser.T_BOOL, 0); }
+		public BoolContext(LstTypeContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterBool(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitBool(this);
+		}
+	}
+	public static class IntegerContext extends LstTypeContext {
+		public TerminalNode T_INT() { return getToken(GraceParser.T_INT, 0); }
+		public IntegerContext(LstTypeContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterInteger(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitInteger(this);
+		}
+	}
+
+	public final LstTypeContext lstType() throws RecognitionException {
+		LstTypeContext _localctx = new LstTypeContext(_ctx, getState());
+		enterRule(_localctx, 70, RULE_lstType);
+		try {
+			setState(347);
+			switch (_input.LA(1)) {
+			case T_INT:
+				_localctx = new IntegerContext(_localctx);
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(344);
+				match(T_INT);
+				}
+				break;
+			case T_STRING:
+				_localctx = new StringContext(_localctx);
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(345);
+				match(T_STRING);
+				}
+				break;
+			case T_BOOL:
+				_localctx = new BoolContext(_localctx);
+				enterOuterAlt(_localctx, 3);
+				{
+				setState(346);
+				match(T_BOOL);
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class LiteralContext extends ParserRuleContext {
+		public LiteralContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_literal; }
+	 
+		public LiteralContext() { }
+		public void copyFrom(LiteralContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class FalseLiteralContext extends LiteralContext {
+		public TerminalNode T_TRUE() { return getToken(GraceParser.T_TRUE, 0); }
+		public FalseLiteralContext(LiteralContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterFalseLiteral(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitFalseLiteral(this);
+		}
+	}
+	public static class StringLiteralContext extends LiteralContext {
+		public TerminalNode STRINGLITERAL() { return getToken(GraceParser.STRINGLITERAL, 0); }
+		public StringLiteralContext(LiteralContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterStringLiteral(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitStringLiteral(this);
+		}
+	}
+	public static class IntLiteralContext extends LiteralContext {
+		public TerminalNode NUMBERLITERAL() { return getToken(GraceParser.NUMBERLITERAL, 0); }
+		public IntLiteralContext(LiteralContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterIntLiteral(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitIntLiteral(this);
+		}
+	}
+	public static class TrueLiteralContext extends LiteralContext {
+		public TerminalNode T_FALSE() { return getToken(GraceParser.T_FALSE, 0); }
+		public TrueLiteralContext(LiteralContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterTrueLiteral(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitTrueLiteral(this);
+		}
+	}
+
+	public final LiteralContext literal() throws RecognitionException {
+		LiteralContext _localctx = new LiteralContext(_ctx, getState());
+		enterRule(_localctx, 72, RULE_literal);
+		try {
+			setState(353);
+			switch (_input.LA(1)) {
+			case NUMBERLITERAL:
+				_localctx = new IntLiteralContext(_localctx);
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(349);
+				match(NUMBERLITERAL);
+				}
+				break;
+			case STRINGLITERAL:
+				_localctx = new StringLiteralContext(_localctx);
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(350);
+				match(STRINGLITERAL);
+				}
+				break;
+			case T_FALSE:
+				_localctx = new TrueLiteralContext(_localctx);
+				enterOuterAlt(_localctx, 3);
+				{
+				setState(351);
+				match(T_FALSE);
+				}
+				break;
+			case T_TRUE:
+				_localctx = new FalseLiteralContext(_localctx);
+				enterOuterAlt(_localctx, 4);
+				{
+				setState(352);
+				match(T_TRUE);
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
 			}
 		}
 		catch (RecognitionException re) {
@@ -2326,7 +2728,7 @@ public class GraceParser extends Parser {
 
 	public boolean sempred(RuleContext _localctx, int ruleIndex, int predIndex) {
 		switch (ruleIndex) {
-		case 11:
+		case 3:
 			return expression_sempred((ExpressionContext)_localctx, predIndex);
 		}
 		return true;
@@ -2346,96 +2748,128 @@ public class GraceParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\67\u0118\4\2\t\2"+
-		"\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13"+
-		"\t\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
+		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\38\u0166\4\2\t\2\4"+
+		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
+		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
 		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31\t\31"+
 		"\4\32\t\32\4\33\t\33\4\34\t\34\4\35\t\35\4\36\t\36\4\37\t\37\4 \t \4!"+
-		"\t!\3\2\6\2D\n\2\r\2\16\2E\3\3\3\3\3\4\3\4\3\5\3\5\3\5\5\5O\n\5\3\6\3"+
-		"\6\3\6\3\6\5\6U\n\6\3\7\3\7\3\b\3\b\5\b[\n\b\3\t\3\t\3\t\3\t\3\t\3\t\3"+
-		"\t\3\t\3\t\3\t\5\tg\n\t\3\n\3\n\3\n\3\13\3\13\3\13\3\13\3\13\3\f\3\f\7"+
-		"\fs\n\f\f\f\16\fv\13\f\3\f\7\fy\n\f\f\f\16\f|\13\f\3\f\3\f\3\f\3\r\3\r"+
-		"\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\5\r\u008c\n\r\3\r\3\r\3\r\3\r\3\r"+
-		"\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\7\r\u009c\n\r\f\r\16\r\u009f\13\r"+
-		"\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\5\16\u00a9\n\16\3\17\3\17\3\17"+
-		"\3\17\3\17\3\17\3\20\3\20\3\21\3\21\3\22\3\22\3\22\3\22\3\22\3\22\3\22"+
-		"\3\22\3\22\3\22\3\23\3\23\3\23\3\24\3\24\3\24\3\25\3\25\3\25\3\25\3\26"+
-		"\3\26\3\26\3\26\3\26\3\26\3\27\3\27\3\27\3\27\5\27\u00d3\n\27\3\27\3\27"+
-		"\3\30\3\30\3\30\3\30\3\30\3\30\5\30\u00dd\n\30\3\31\3\31\3\31\3\31\3\31"+
-		"\7\31\u00e4\n\31\f\31\16\31\u00e7\13\31\3\32\3\32\3\32\3\33\3\33\3\33"+
-		"\3\33\3\33\3\34\3\34\3\34\3\34\3\34\3\35\3\35\3\35\7\35\u00f9\n\35\f\35"+
-		"\16\35\u00fc\13\35\3\36\3\36\3\36\3\36\3\36\3\36\3\37\3\37\3\37\3\37\5"+
-		"\37\u0108\n\37\3 \3 \3 \7 \u010d\n \f \16 \u0110\13 \3!\3!\3!\3!\3!\3"+
-		"!\3!\2\3\30\"\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&(*,.\60\62\64"+
-		"\668:<>@\2\7\4\2\33\37!!\4\2!!%)\6\2  \"$*+/\60\3\2\33\37\4\2\33\34\61"+
-		"\62\u011b\2C\3\2\2\2\4G\3\2\2\2\6I\3\2\2\2\bN\3\2\2\2\nT\3\2\2\2\fV\3"+
-		"\2\2\2\16Z\3\2\2\2\20f\3\2\2\2\22h\3\2\2\2\24k\3\2\2\2\26p\3\2\2\2\30"+
-		"\u008b\3\2\2\2\32\u00a8\3\2\2\2\34\u00aa\3\2\2\2\36\u00b0\3\2\2\2 \u00b2"+
-		"\3\2\2\2\"\u00b4\3\2\2\2$\u00be\3\2\2\2&\u00c1\3\2\2\2(\u00c4\3\2\2\2"+
-		"*\u00c8\3\2\2\2,\u00ce\3\2\2\2.\u00dc\3\2\2\2\60\u00de\3\2\2\2\62\u00e8"+
-		"\3\2\2\2\64\u00eb\3\2\2\2\66\u00f0\3\2\2\28\u00f5\3\2\2\2:\u00fd\3\2\2"+
-		"\2<\u0107\3\2\2\2>\u0109\3\2\2\2@\u0111\3\2\2\2BD\5\4\3\2CB\3\2\2\2DE"+
-		"\3\2\2\2EC\3\2\2\2EF\3\2\2\2F\3\3\2\2\2GH\5\16\b\2H\5\3\2\2\2IJ\t\2\2"+
-		"\2J\7\3\2\2\2KO\7\t\2\2LO\7\16\2\2MO\7\6\2\2NK\3\2\2\2NL\3\2\2\2NM\3\2"+
-		"\2\2O\t\3\2\2\2PU\7\66\2\2QU\7\67\2\2RU\7\4\2\2SU\7\5\2\2TP\3\2\2\2TQ"+
-		"\3\2\2\2TR\3\2\2\2TS\3\2\2\2U\13\3\2\2\2VW\5\20\t\2W\r\3\2\2\2X[\5@!\2"+
-		"Y[\5\24\13\2ZX\3\2\2\2ZY\3\2\2\2[\17\3\2\2\2\\g\5\22\n\2]g\5\32\16\2^"+
-		"g\5\34\17\2_g\5\"\22\2`g\5$\23\2ag\5&\24\2bg\5(\25\2cg\5*\26\2dg\5,\27"+
-		"\2eg\5.\30\2f\\\3\2\2\2f]\3\2\2\2f^\3\2\2\2f_\3\2\2\2f`\3\2\2\2fa\3\2"+
-		"\2\2fb\3\2\2\2fc\3\2\2\2fd\3\2\2\2fe\3\2\2\2g\21\3\2\2\2hi\5\24\13\2i"+
-		"j\7\31\2\2j\23\3\2\2\2kl\7\63\2\2lm\t\3\2\2mn\5\30\r\2no\b\13\1\2o\25"+
-		"\3\2\2\2pt\7\26\2\2qs\5@!\2rq\3\2\2\2sv\3\2\2\2tr\3\2\2\2tu\3\2\2\2uz"+
-		"\3\2\2\2vt\3\2\2\2wy\5\20\t\2xw\3\2\2\2y|\3\2\2\2zx\3\2\2\2z{\3\2\2\2"+
-		"{}\3\2\2\2|z\3\2\2\2}~\7\27\2\2~\177\b\f\1\2\177\27\3\2\2\2\u0080\u0081"+
-		"\b\r\1\2\u0081\u0082\7\34\2\2\u0082\u008c\5\30\r\7\u0083\u0084\7.\2\2"+
-		"\u0084\u008c\5\30\r\6\u0085\u0086\7\22\2\2\u0086\u0087\5\30\r\2\u0087"+
-		"\u0088\7\23\2\2\u0088\u008c\3\2\2\2\u0089\u008c\7\63\2\2\u008a\u008c\5"+
-		"\n\6\2\u008b\u0080\3\2\2\2\u008b\u0083\3\2\2\2\u008b\u0085\3\2\2\2\u008b"+
-		"\u0089\3\2\2\2\u008b\u008a\3\2\2\2\u008c\u009d\3\2\2\2\u008d\u008e\f\13"+
-		"\2\2\u008e\u008f\7-\2\2\u008f\u0090\5\30\r\2\u0090\u0091\7\32\2\2\u0091"+
-		"\u0092\5\30\r\f\u0092\u009c\3\2\2\2\u0093\u0094\f\n\2\2\u0094\u0095\t"+
-		"\4\2\2\u0095\u009c\5\30\r\13\u0096\u0097\f\t\2\2\u0097\u0098\t\5\2\2\u0098"+
-		"\u009c\5\30\r\n\u0099\u009a\f\b\2\2\u009a\u009c\t\6\2\2\u009b\u008d\3"+
-		"\2\2\2\u009b\u0093\3\2\2\2\u009b\u0096\3\2\2\2\u009b\u0099\3\2\2\2\u009c"+
-		"\u009f\3\2\2\2\u009d\u009b\3\2\2\2\u009d\u009e\3\2\2\2\u009e\31\3\2\2"+
-		"\2\u009f\u009d\3\2\2\2\u00a0\u00a1\7\b\2\2\u00a1\u00a2\7\22\2\2\u00a2"+
-		"\u00a3\5\30\r\2\u00a3\u00a4\7\23\2\2\u00a4\u00a5\5\f\7\2\u00a5\u00a9\3"+
-		"\2\2\2\u00a6\u00a7\7\3\2\2\u00a7\u00a9\5\f\7\2\u00a8\u00a0\3\2\2\2\u00a8"+
-		"\u00a6\3\2\2\2\u00a9\33\3\2\2\2\u00aa\u00ab\7\20\2\2\u00ab\u00ac\7\22"+
-		"\2\2\u00ac\u00ad\5\30\r\2\u00ad\u00ae\7\23\2\2\u00ae\u00af\5\f\7\2\u00af"+
-		"\35\3\2\2\2\u00b0\u00b1\5\22\n\2\u00b1\37\3\2\2\2\u00b2\u00b3\5\22\n\2"+
-		"\u00b3!\3\2\2\2\u00b4\u00b5\7\7\2\2\u00b5\u00b6\7\22\2\2\u00b6\u00b7\5"+
-		"\36\20\2\u00b7\u00b8\7\31\2\2\u00b8\u00b9\5\30\r\2\u00b9\u00ba\7\31\2"+
-		"\2\u00ba\u00bb\5 \21\2\u00bb\u00bc\7\23\2\2\u00bc\u00bd\5\f\7\2\u00bd"+
-		"#\3\2\2\2\u00be\u00bf\7\r\2\2\u00bf\u00c0\7\31\2\2\u00c0%\3\2\2\2\u00c1"+
-		"\u00c2\7\f\2\2\u00c2\u00c3\7\31\2\2\u00c3\'\3\2\2\2\u00c4\u00c5\7\13\2"+
-		"\2\u00c5\u00c6\5\30\r\2\u00c6\u00c7\7\31\2\2\u00c7)\3\2\2\2\u00c8\u00c9"+
-		"\7\63\2\2\u00c9\u00ca\7\22\2\2\u00ca\u00cb\5\30\r\2\u00cb\u00cc\7\23\2"+
-		"\2\u00cc\u00cd\7\31\2\2\u00cd+\3\2\2\2\u00ce\u00d2\7\n\2\2\u00cf\u00d3"+
-		"\7\67\2\2\u00d0\u00d3\7\66\2\2\u00d1\u00d3\5\60\31\2\u00d2\u00cf\3\2\2"+
-		"\2\u00d2\u00d0\3\2\2\2\u00d2\u00d1\3\2\2\2\u00d3\u00d4\3\2\2\2\u00d4\u00d5"+
-		"\7\31\2\2\u00d5-\3\2\2\2\u00d6\u00d7\7\21\2\2\u00d7\u00d8\5\30\r\2\u00d8"+
-		"\u00d9\7\31\2\2\u00d9\u00dd\3\2\2\2\u00da\u00db\7\30\2\2\u00db\u00dd\5"+
-		"\30\r\2\u00dc\u00d6\3\2\2\2\u00dc\u00da\3\2\2\2\u00dd/\3\2\2\2\u00de\u00e5"+
-		"\7\63\2\2\u00df\u00e0\7\24\2\2\u00e0\u00e1\5\30\r\2\u00e1\u00e2\7\25\2"+
-		"\2\u00e2\u00e4\3\2\2\2\u00e3\u00df\3\2\2\2\u00e4\u00e7\3\2\2\2\u00e5\u00e3"+
-		"\3\2\2\2\u00e5\u00e6\3\2\2\2\u00e6\61\3\2\2\2\u00e7\u00e5\3\2\2\2\u00e8"+
-		"\u00e9\7\63\2\2\u00e9\u00ea\b\32\1\2\u00ea\63\3\2\2\2\u00eb\u00ec\7\63"+
-		"\2\2\u00ec\u00ed\7!\2\2\u00ed\u00ee\5\30\r\2\u00ee\u00ef\b\33\1\2\u00ef"+
-		"\65\3\2\2\2\u00f0\u00f1\5\62\32\2\u00f1\u00f2\7\24\2\2\u00f2\u00f3\7\66"+
-		"\2\2\u00f3\u00f4\7\25\2\2\u00f4\67\3\2\2\2\u00f5\u00fa\5\n\6\2\u00f6\u00f7"+
-		"\7\30\2\2\u00f7\u00f9\5\n\6\2\u00f8\u00f6\3\2\2\2\u00f9\u00fc\3\2\2\2"+
-		"\u00fa\u00f8\3\2\2\2\u00fa\u00fb\3\2\2\2\u00fb9\3\2\2\2\u00fc\u00fa\3"+
-		"\2\2\2\u00fd\u00fe\5\66\34\2\u00fe\u00ff\7!\2\2\u00ff\u0100\7\26\2\2\u0100"+
-		"\u0101\58\35\2\u0101\u0102\7\27\2\2\u0102;\3\2\2\2\u0103\u0108\5\62\32"+
-		"\2\u0104\u0108\5\64\33\2\u0105\u0108\5\66\34\2\u0106\u0108\5:\36\2\u0107"+
-		"\u0103\3\2\2\2\u0107\u0104\3\2\2\2\u0107\u0105\3\2\2\2\u0107\u0106\3\2"+
-		"\2\2\u0108=\3\2\2\2\u0109\u010e\5<\37\2\u010a\u010b\7\30\2\2\u010b\u010d"+
-		"\5<\37\2\u010c\u010a\3\2\2\2\u010d\u0110\3\2\2\2\u010e\u010c\3\2\2\2\u010e"+
-		"\u010f\3\2\2\2\u010f?\3\2\2\2\u0110\u010e\3\2\2\2\u0111\u0112\7\17\2\2"+
-		"\u0112\u0113\5> \2\u0113\u0114\7\32\2\2\u0114\u0115\5\b\5\2\u0115\u0116"+
-		"\7\31\2\2\u0116A\3\2\2\2\23ENTZftz\u008b\u009b\u009d\u00a8\u00d2\u00dc"+
-		"\u00e5\u00fa\u0107\u010e";
+		"\t!\4\"\t\"\4#\t#\4$\t$\4%\t%\4&\t&\3\2\6\2N\n\2\r\2\16\2O\3\3\3\3\3\4"+
+		"\3\4\3\4\5\4W\n\4\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\5\5d\n\5"+
+		"\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\7\5t\n\5\f\5"+
+		"\16\5w\13\5\3\6\3\6\3\6\3\6\3\6\3\6\3\7\3\7\3\7\7\7\u0082\n\7\f\7\16\7"+
+		"\u0085\13\7\3\b\3\b\3\b\3\b\5\b\u008b\n\b\3\t\3\t\3\t\3\n\3\n\3\n\3\n"+
+		"\3\n\3\13\3\13\3\13\6\13\u0098\n\13\r\13\16\13\u0099\3\13\3\13\3\f\3\f"+
+		"\3\f\3\f\3\f\3\f\7\f\u00a4\n\f\f\f\16\f\u00a7\13\f\3\f\3\f\3\r\3\r\5\r"+
+		"\u00ad\n\r\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\17\3\17\3\17\3\17\3\17"+
+		"\3\17\3\17\3\17\3\17\3\20\3\20\3\20\7\20\u00c2\n\20\f\20\16\20\u00c5\13"+
+		"\20\3\21\3\21\3\21\7\21\u00ca\n\21\f\21\16\21\u00cd\13\21\3\21\3\21\3"+
+		"\21\3\22\3\22\3\22\3\22\5\22\u00d6\n\22\3\23\3\23\5\23\u00da\n\23\3\24"+
+		"\3\24\3\24\3\24\3\24\3\24\3\24\3\24\3\24\3\24\5\24\u00e6\n\24\3\25\3\25"+
+		"\3\25\3\26\3\26\3\26\3\26\3\26\3\27\3\27\3\27\3\27\3\27\3\27\3\27\7\27"+
+		"\u00f7\n\27\f\27\16\27\u00fa\13\27\3\30\3\30\3\30\3\30\3\30\3\30\3\31"+
+		"\3\31\3\31\3\31\3\31\3\31\3\31\3\31\3\31\3\31\3\32\3\32\3\33\3\33\3\34"+
+		"\3\34\3\34\3\35\3\35\3\35\3\36\3\36\7\36\u0118\n\36\f\36\16\36\u011b\13"+
+		"\36\3\36\3\36\3\37\3\37\3\37\7\37\u0122\n\37\f\37\16\37\u0125\13\37\3"+
+		"\37\3\37\5\37\u0129\n\37\3\37\3\37\3\37\3 \3 \3 \3 \3!\3!\3!\3!\7!\u0136"+
+		"\n!\f!\16!\u0139\13!\3!\3!\3\"\3\"\7\"\u013f\n\"\f\"\16\"\u0142\13\"\3"+
+		"\"\7\"\u0145\n\"\f\"\16\"\u0148\13\"\3\"\3\"\3\"\3#\3#\3#\3#\6#\u0151"+
+		"\n#\r#\16#\u0152\3#\3#\5#\u0157\n#\3$\3$\3%\3%\3%\5%\u015e\n%\3&\3&\3"+
+		"&\3&\5&\u0164\n&\3&\2\3\b\'\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \""+
+		"$&(*,.\60\62\64\668:<>@BDFHJ\2\7\6\2!!#%+,\60\61\3\2\34 \4\2\34\35\62"+
+		"\63\4\2\"\"&*\4\2\34 \"\"\u016d\2M\3\2\2\2\4Q\3\2\2\2\6V\3\2\2\2\bc\3"+
+		"\2\2\2\nx\3\2\2\2\f~\3\2\2\2\16\u008a\3\2\2\2\20\u008c\3\2\2\2\22\u008f"+
+		"\3\2\2\2\24\u0094\3\2\2\2\26\u009d\3\2\2\2\30\u00ac\3\2\2\2\32\u00ae\3"+
+		"\2\2\2\34\u00b5\3\2\2\2\36\u00be\3\2\2\2 \u00c6\3\2\2\2\"\u00d5\3\2\2"+
+		"\2$\u00d9\3\2\2\2&\u00e5\3\2\2\2(\u00e7\3\2\2\2*\u00ea\3\2\2\2,\u00ef"+
+		"\3\2\2\2.\u00fb\3\2\2\2\60\u0101\3\2\2\2\62\u010b\3\2\2\2\64\u010d\3\2"+
+		"\2\2\66\u010f\3\2\2\28\u0112\3\2\2\2:\u0115\3\2\2\2<\u011e\3\2\2\2>\u012d"+
+		"\3\2\2\2@\u0131\3\2\2\2B\u013c\3\2\2\2D\u0156\3\2\2\2F\u0158\3\2\2\2H"+
+		"\u015d\3\2\2\2J\u0163\3\2\2\2LN\5\4\3\2ML\3\2\2\2NO\3\2\2\2OM\3\2\2\2"+
+		"OP\3\2\2\2P\3\3\2\2\2QR\5\6\4\2R\5\3\2\2\2SW\5\n\6\2TW\5*\26\2UW\5\30"+
+		"\r\2VS\3\2\2\2VT\3\2\2\2VU\3\2\2\2W\7\3\2\2\2XY\b\5\1\2YZ\7\35\2\2Zd\5"+
+		"\b\5\7[\\\7/\2\2\\d\5\b\5\6]^\7\23\2\2^_\5\b\5\2_`\7\24\2\2`d\3\2\2\2"+
+		"ad\7\64\2\2bd\5J&\2cX\3\2\2\2c[\3\2\2\2c]\3\2\2\2ca\3\2\2\2cb\3\2\2\2"+
+		"du\3\2\2\2ef\f\13\2\2fg\7.\2\2gh\5\b\5\2hi\7\33\2\2ij\5\b\5\fjt\3\2\2"+
+		"\2kl\f\n\2\2lm\t\2\2\2mt\5\b\5\13no\f\t\2\2op\t\3\2\2pt\5\b\5\nqr\f\b"+
+		"\2\2rt\t\4\2\2se\3\2\2\2sk\3\2\2\2sn\3\2\2\2sq\3\2\2\2tw\3\2\2\2us\3\2"+
+		"\2\2uv\3\2\2\2v\t\3\2\2\2wu\3\2\2\2xy\7\20\2\2yz\5\f\7\2z{\7\33\2\2{|"+
+		"\5H%\2|}\7\32\2\2}\13\3\2\2\2~\u0083\5\16\b\2\177\u0080\7\31\2\2\u0080"+
+		"\u0082\5\16\b\2\u0081\177\3\2\2\2\u0082\u0085\3\2\2\2\u0083\u0081\3\2"+
+		"\2\2\u0083\u0084\3\2\2\2\u0084\r\3\2\2\2\u0085\u0083\3\2\2\2\u0086\u008b"+
+		"\5\20\t\2\u0087\u008b\5\22\n\2\u0088\u008b\5\24\13\2\u0089\u008b\5\26"+
+		"\f\2\u008a\u0086\3\2\2\2\u008a\u0087\3\2\2\2\u008a\u0088\3\2\2\2\u008a"+
+		"\u0089\3\2\2\2\u008b\17\3\2\2\2\u008c\u008d\7\64\2\2\u008d\u008e\b\t\1"+
+		"\2\u008e\21\3\2\2\2\u008f\u0090\7\64\2\2\u0090\u0091\7\"\2\2\u0091\u0092"+
+		"\5\b\5\2\u0092\u0093\b\n\1\2\u0093\23\3\2\2\2\u0094\u0095\5\20\t\2\u0095"+
+		"\u0097\7\25\2\2\u0096\u0098\7\67\2\2\u0097\u0096\3\2\2\2\u0098\u0099\3"+
+		"\2\2\2\u0099\u0097\3\2\2\2\u0099\u009a\3\2\2\2\u009a\u009b\3\2\2\2\u009b"+
+		"\u009c\7\26\2\2\u009c\25\3\2\2\2\u009d\u009e\5\24\13\2\u009e\u009f\7\""+
+		"\2\2\u009f\u00a0\7\27\2\2\u00a0\u00a5\5J&\2\u00a1\u00a2\7\31\2\2\u00a2"+
+		"\u00a4\5J&\2\u00a3\u00a1\3\2\2\2\u00a4\u00a7\3\2\2\2\u00a5\u00a3\3\2\2"+
+		"\2\u00a5\u00a6\3\2\2\2\u00a6\u00a8\3\2\2\2\u00a7\u00a5\3\2\2\2\u00a8\u00a9"+
+		"\7\30\2\2\u00a9\27\3\2\2\2\u00aa\u00ad\5\32\16\2\u00ab\u00ad\5\34\17\2"+
+		"\u00ac\u00aa\3\2\2\2\u00ac\u00ab\3\2\2\2\u00ad\31\3\2\2\2\u00ae\u00af"+
+		"\7\3\2\2\u00af\u00b0\7\64\2\2\u00b0\u00b1\7\23\2\2\u00b1\u00b2\5\36\20"+
+		"\2\u00b2\u00b3\7\24\2\2\u00b3\u00b4\5B\"\2\u00b4\33\3\2\2\2\u00b5\u00b6"+
+		"\7\3\2\2\u00b6\u00b7\7\64\2\2\u00b7\u00b8\7\23\2\2\u00b8\u00b9\5\36\20"+
+		"\2\u00b9\u00ba\7\24\2\2\u00ba\u00bb\7\33\2\2\u00bb\u00bc\5H%\2\u00bc\u00bd"+
+		"\5B\"\2\u00bd\35\3\2\2\2\u00be\u00c3\5 \21\2\u00bf\u00c0\7\31\2\2\u00c0"+
+		"\u00c2\5 \21\2\u00c1\u00bf\3\2\2\2\u00c2\u00c5\3\2\2\2\u00c3\u00c1\3\2"+
+		"\2\2\u00c3\u00c4\3\2\2\2\u00c4\37\3\2\2\2\u00c5\u00c3\3\2\2\2\u00c6\u00cb"+
+		"\5\"\22\2\u00c7\u00c8\7\31\2\2\u00c8\u00ca\5\"\22\2\u00c9\u00c7\3\2\2"+
+		"\2\u00ca\u00cd\3\2\2\2\u00cb\u00c9\3\2\2\2\u00cb\u00cc\3\2\2\2\u00cc\u00ce"+
+		"\3\2\2\2\u00cd\u00cb\3\2\2\2\u00ce\u00cf\7\33\2\2\u00cf\u00d0\5H%\2\u00d0"+
+		"!\3\2\2\2\u00d1\u00d6\7\64\2\2\u00d2\u00d3\7\64\2\2\u00d3\u00d4\7\25\2"+
+		"\2\u00d4\u00d6\7\26\2\2\u00d5\u00d1\3\2\2\2\u00d5\u00d2\3\2\2\2\u00d6"+
+		"#\3\2\2\2\u00d7\u00da\5&\24\2\u00d8\u00da\5B\"\2\u00d9\u00d7\3\2\2\2\u00d9"+
+		"\u00d8\3\2\2\2\u00da%\3\2\2\2\u00db\u00e6\5(\25\2\u00dc\u00e6\5,\27\2"+
+		"\u00dd\u00e6\5.\30\2\u00de\u00e6\5\60\31\2\u00df\u00e6\5\66\34\2\u00e0"+
+		"\u00e6\58\35\2\u00e1\u00e6\5:\36\2\u00e2\u00e6\5<\37\2\u00e3\u00e6\5>"+
+		" \2\u00e4\u00e6\5@!\2\u00e5\u00db\3\2\2\2\u00e5\u00dc\3\2\2\2\u00e5\u00dd"+
+		"\3\2\2\2\u00e5\u00de\3\2\2\2\u00e5\u00df\3\2\2\2\u00e5\u00e0\3\2\2\2\u00e5"+
+		"\u00e1\3\2\2\2\u00e5\u00e2\3\2\2\2\u00e5\u00e3\3\2\2\2\u00e5\u00e4\3\2"+
+		"\2\2\u00e6\'\3\2\2\2\u00e7\u00e8\5*\26\2\u00e8\u00e9\7\32\2\2\u00e9)\3"+
+		"\2\2\2\u00ea\u00eb\7\64\2\2\u00eb\u00ec\t\5\2\2\u00ec\u00ed\5\b\5\2\u00ed"+
+		"\u00ee\b\26\1\2\u00ee+\3\2\2\2\u00ef\u00f0\7\t\2\2\u00f0\u00f1\7\23\2"+
+		"\2\u00f1\u00f2\5\b\5\2\u00f2\u00f3\7\24\2\2\u00f3\u00f8\5$\23\2\u00f4"+
+		"\u00f5\7\4\2\2\u00f5\u00f7\5$\23\2\u00f6\u00f4\3\2\2\2\u00f7\u00fa\3\2"+
+		"\2\2\u00f8\u00f6\3\2\2\2\u00f8\u00f9\3\2\2\2\u00f9-\3\2\2\2\u00fa\u00f8"+
+		"\3\2\2\2\u00fb\u00fc\7\21\2\2\u00fc\u00fd\7\23\2\2\u00fd\u00fe\5\b\5\2"+
+		"\u00fe\u00ff\7\24\2\2\u00ff\u0100\5$\23\2\u0100/\3\2\2\2\u0101\u0102\7"+
+		"\b\2\2\u0102\u0103\7\23\2\2\u0103\u0104\5\62\32\2\u0104\u0105\7\32\2\2"+
+		"\u0105\u0106\5\b\5\2\u0106\u0107\7\32\2\2\u0107\u0108\5\64\33\2\u0108"+
+		"\u0109\7\24\2\2\u0109\u010a\5$\23\2\u010a\61\3\2\2\2\u010b\u010c\5*\26"+
+		"\2\u010c\63\3\2\2\2\u010d\u010e\5*\26\2\u010e\65\3\2\2\2\u010f\u0110\7"+
+		"\16\2\2\u0110\u0111\7\32\2\2\u0111\67\3\2\2\2\u0112\u0113\7\r\2\2\u0113"+
+		"\u0114\7\32\2\2\u01149\3\2\2\2\u0115\u0119\7\f\2\2\u0116\u0118\5\b\5\2"+
+		"\u0117\u0116\3\2\2\2\u0118\u011b\3\2\2\2\u0119\u0117\3\2\2\2\u0119\u011a"+
+		"\3\2\2\2\u011a\u011c\3\2\2\2\u011b\u0119\3\2\2\2\u011c\u011d\7\32\2\2"+
+		"\u011d;\3\2\2\2\u011e\u011f\7\64\2\2\u011f\u0123\7\23\2\2\u0120\u0122"+
+		"\5\b\5\2\u0121\u0120\3\2\2\2\u0122\u0125\3\2\2\2\u0123\u0121\3\2\2\2\u0123"+
+		"\u0124\3\2\2\2\u0124\u0128\3\2\2\2\u0125\u0123\3\2\2\2\u0126\u0127\7\31"+
+		"\2\2\u0127\u0129\5\b\5\2\u0128\u0126\3\2\2\2\u0128\u0129\3\2\2\2\u0129"+
+		"\u012a\3\2\2\2\u012a\u012b\7\24\2\2\u012b\u012c\7\32\2\2\u012c=\3\2\2"+
+		"\2\u012d\u012e\7\13\2\2\u012e\u012f\5D#\2\u012f\u0130\7\32\2\2\u0130?"+
+		"\3\2\2\2\u0131\u0132\7\22\2\2\u0132\u0137\5\b\5\2\u0133\u0134\7\31\2\2"+
+		"\u0134\u0136\5\b\5\2\u0135\u0133\3\2\2\2\u0136\u0139\3\2\2\2\u0137\u0135"+
+		"\3\2\2\2\u0137\u0138\3\2\2\2\u0138\u013a\3\2\2\2\u0139\u0137\3\2\2\2\u013a"+
+		"\u013b\7\32\2\2\u013bA\3\2\2\2\u013c\u0140\7\27\2\2\u013d\u013f\5\n\6"+
+		"\2\u013e\u013d\3\2\2\2\u013f\u0142\3\2\2\2\u0140\u013e\3\2\2\2\u0140\u0141"+
+		"\3\2\2\2\u0141\u0146\3\2\2\2\u0142\u0140\3\2\2\2\u0143\u0145\5$\23\2\u0144"+
+		"\u0143\3\2\2\2\u0145\u0148\3\2\2\2\u0146\u0144\3\2\2\2\u0146\u0147\3\2"+
+		"\2\2\u0147\u0149\3\2\2\2\u0148\u0146\3\2\2\2\u0149\u014a\7\30\2\2\u014a"+
+		"\u014b\b\"\1\2\u014bC\3\2\2\2\u014c\u0157\7\64\2\2\u014d\u014e\7\64\2"+
+		"\2\u014e\u0150\7\25\2\2\u014f\u0151\5\b\5\2\u0150\u014f\3\2\2\2\u0151"+
+		"\u0152\3\2\2\2\u0152\u0150\3\2\2\2\u0152\u0153\3\2\2\2\u0153\u0154\3\2"+
+		"\2\2\u0154\u0155\7\26\2\2\u0155\u0157\3\2\2\2\u0156\u014c\3\2\2\2\u0156"+
+		"\u014d\3\2\2\2\u0157E\3\2\2\2\u0158\u0159\t\6\2\2\u0159G\3\2\2\2\u015a"+
+		"\u015e\7\n\2\2\u015b\u015e\7\17\2\2\u015c\u015e\7\7\2\2\u015d\u015a\3"+
+		"\2\2\2\u015d\u015b\3\2\2\2\u015d\u015c\3\2\2\2\u015eI\3\2\2\2\u015f\u0164"+
+		"\7\67\2\2\u0160\u0164\78\2\2\u0161\u0164\7\5\2\2\u0162\u0164\7\6\2\2\u0163"+
+		"\u015f\3\2\2\2\u0163\u0160\3\2\2\2\u0163\u0161\3\2\2\2\u0163\u0162\3\2"+
+		"\2\2\u0164K\3\2\2\2\34OVcsu\u0083\u008a\u0099\u00a5\u00ac\u00c3\u00cb"+
+		"\u00d5\u00d9\u00e5\u00f8\u0119\u0123\u0128\u0137\u0140\u0146\u0152\u0156"+
+		"\u015d\u0163";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

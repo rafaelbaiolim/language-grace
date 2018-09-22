@@ -6,12 +6,20 @@ options { tokenVocab=GraceLexer; }
     Verificar se o programa sempre iniciar com proc / func
 **/
 
+
+/*
+#ask o livro diz que ANTLR4 consegue lidar com recursões diretas a esquerda
+associado o operador na ordem esquerd -> direita,
+trata a Grace para remover e nunca ter a esquerda? ou segue o baile ?
+*/
+
 graceFile : lines=line+ ;
-line : statement;
+line : statement; //#ask: É obrigatório ter uma 'main' ? programa ::= dec {dec}
 
 statement
     : declVar #declVarStatement
     | atrib   #assignmentStatement
+    | decSub  #decSubStatement
     ;
 
 expression
@@ -29,7 +37,7 @@ expression
 // Variáveis
 
 declVar
-    : T_VAR listSpecVars ':' lstType ';'
+    : 'var' listSpecVars ':' lstType ';'
     ;
 
 listSpecVars
@@ -55,7 +63,7 @@ specVarSimpleIni
 
 
 specVarArr
-    : specVarSimple '[' NUMBERLITERAL ']'
+    : specVarSimple '[' NUMBERLITERAL+ ']'
     ;
 
 specVarArrIni
@@ -75,14 +83,14 @@ decProc
     ;
 
  decFunc
-    : 'def' ID '(' lstParam ')' ':' lstType block
+    : 'def' ID '(' lstParam ')' ':' lstType block // #TODO.: Colocar regrade de scope aqui
     ;
 
 
 // Lista de Parâmetros
 
 lstParam
-    : specParam (',' specParam)*
+    : specParam (',' specParam)*  //#ask: listParam não pode ser vazia ? vide gramática
     ;
 
 specParam
@@ -151,11 +159,11 @@ cmdFor
     ;
 
 forInit
-    : cmdAtrib
+    : atrib  // #ask:só entra number aqui ??
     ;
 
 forItera
-    : cmdAtrib
+    : atrib // #ask:=forInit
     ;
 
 // Interrupção de Laço
@@ -208,7 +216,7 @@ locals [ List<String> symbols = new ArrayList<>() ]
 
 variable
     : ID
-    | ID '[' expression ']'
+    | ID '[' expression+ ']' //#ask: Tratar boleanos ? i[] < não casa com a regra de variable então?
     ;
 
 

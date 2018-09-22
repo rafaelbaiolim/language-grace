@@ -28,110 +28,6 @@ public interface GraceParserListener extends ParseTreeListener {
 	 */
 	void exitLine(GraceParser.LineContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link GraceParser#lstOP}.
-	 * @param ctx the parse tree
-	 */
-	void enterLstOP(GraceParser.LstOPContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link GraceParser#lstOP}.
-	 * @param ctx the parse tree
-	 */
-	void exitLstOP(GraceParser.LstOPContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code integer}
-	 * labeled alternative in {@link GraceParser#lstType}.
-	 * @param ctx the parse tree
-	 */
-	void enterInteger(GraceParser.IntegerContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code integer}
-	 * labeled alternative in {@link GraceParser#lstType}.
-	 * @param ctx the parse tree
-	 */
-	void exitInteger(GraceParser.IntegerContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code string}
-	 * labeled alternative in {@link GraceParser#lstType}.
-	 * @param ctx the parse tree
-	 */
-	void enterString(GraceParser.StringContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code string}
-	 * labeled alternative in {@link GraceParser#lstType}.
-	 * @param ctx the parse tree
-	 */
-	void exitString(GraceParser.StringContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code bool}
-	 * labeled alternative in {@link GraceParser#lstType}.
-	 * @param ctx the parse tree
-	 */
-	void enterBool(GraceParser.BoolContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code bool}
-	 * labeled alternative in {@link GraceParser#lstType}.
-	 * @param ctx the parse tree
-	 */
-	void exitBool(GraceParser.BoolContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code intLiteral}
-	 * labeled alternative in {@link GraceParser#literal}.
-	 * @param ctx the parse tree
-	 */
-	void enterIntLiteral(GraceParser.IntLiteralContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code intLiteral}
-	 * labeled alternative in {@link GraceParser#literal}.
-	 * @param ctx the parse tree
-	 */
-	void exitIntLiteral(GraceParser.IntLiteralContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code stringLiteral}
-	 * labeled alternative in {@link GraceParser#literal}.
-	 * @param ctx the parse tree
-	 */
-	void enterStringLiteral(GraceParser.StringLiteralContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code stringLiteral}
-	 * labeled alternative in {@link GraceParser#literal}.
-	 * @param ctx the parse tree
-	 */
-	void exitStringLiteral(GraceParser.StringLiteralContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code trueLiteral}
-	 * labeled alternative in {@link GraceParser#literal}.
-	 * @param ctx the parse tree
-	 */
-	void enterTrueLiteral(GraceParser.TrueLiteralContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code trueLiteral}
-	 * labeled alternative in {@link GraceParser#literal}.
-	 * @param ctx the parse tree
-	 */
-	void exitTrueLiteral(GraceParser.TrueLiteralContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code falseLiteral}
-	 * labeled alternative in {@link GraceParser#literal}.
-	 * @param ctx the parse tree
-	 */
-	void enterFalseLiteral(GraceParser.FalseLiteralContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code falseLiteral}
-	 * labeled alternative in {@link GraceParser#literal}.
-	 * @param ctx the parse tree
-	 */
-	void exitFalseLiteral(GraceParser.FalseLiteralContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link GraceParser#command}.
-	 * @param ctx the parse tree
-	 */
-	void enterCommand(GraceParser.CommandContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link GraceParser#command}.
-	 * @param ctx the parse tree
-	 */
-	void exitCommand(GraceParser.CommandContext ctx);
-	/**
 	 * Enter a parse tree produced by the {@code declVarStatement}
 	 * labeled alternative in {@link GraceParser#statement}.
 	 * @param ctx the parse tree
@@ -156,45 +52,17 @@ public interface GraceParserListener extends ParseTreeListener {
 	 */
 	void exitAssignmentStatement(GraceParser.AssignmentStatementContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link GraceParser#cmdSimple}.
+	 * Enter a parse tree produced by the {@code decSubStatement}
+	 * labeled alternative in {@link GraceParser#statement}.
 	 * @param ctx the parse tree
 	 */
-	void enterCmdSimple(GraceParser.CmdSimpleContext ctx);
+	void enterDecSubStatement(GraceParser.DecSubStatementContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link GraceParser#cmdSimple}.
+	 * Exit a parse tree produced by the {@code decSubStatement}
+	 * labeled alternative in {@link GraceParser#statement}.
 	 * @param ctx the parse tree
 	 */
-	void exitCmdSimple(GraceParser.CmdSimpleContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link GraceParser#cmdAtrib}.
-	 * @param ctx the parse tree
-	 */
-	void enterCmdAtrib(GraceParser.CmdAtribContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link GraceParser#cmdAtrib}.
-	 * @param ctx the parse tree
-	 */
-	void exitCmdAtrib(GraceParser.CmdAtribContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link GraceParser#atrib}.
-	 * @param ctx the parse tree
-	 */
-	void enterAtrib(GraceParser.AtribContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link GraceParser#atrib}.
-	 * @param ctx the parse tree
-	 */
-	void exitAtrib(GraceParser.AtribContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link GraceParser#block}.
-	 * @param ctx the parse tree
-	 */
-	void enterBlock(GraceParser.BlockContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link GraceParser#block}.
-	 * @param ctx the parse tree
-	 */
-	void exitBlock(GraceParser.BlockContext ctx);
+	void exitDecSubStatement(GraceParser.DecSubStatementContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code incrementOperation}
 	 * labeled alternative in {@link GraceParser#expression}.
@@ -304,6 +172,214 @@ public interface GraceParserListener extends ParseTreeListener {
 	 */
 	void exitVarReference(GraceParser.VarReferenceContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link GraceParser#declVar}.
+	 * @param ctx the parse tree
+	 */
+	void enterDeclVar(GraceParser.DeclVarContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GraceParser#declVar}.
+	 * @param ctx the parse tree
+	 */
+	void exitDeclVar(GraceParser.DeclVarContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link GraceParser#listSpecVars}.
+	 * @param ctx the parse tree
+	 */
+	void enterListSpecVars(GraceParser.ListSpecVarsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GraceParser#listSpecVars}.
+	 * @param ctx the parse tree
+	 */
+	void exitListSpecVars(GraceParser.ListSpecVarsContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code directSpecVar}
+	 * labeled alternative in {@link GraceParser#specVar}.
+	 * @param ctx the parse tree
+	 */
+	void enterDirectSpecVar(GraceParser.DirectSpecVarContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code directSpecVar}
+	 * labeled alternative in {@link GraceParser#specVar}.
+	 * @param ctx the parse tree
+	 */
+	void exitDirectSpecVar(GraceParser.DirectSpecVarContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code directSpecVarSimpleIni}
+	 * labeled alternative in {@link GraceParser#specVar}.
+	 * @param ctx the parse tree
+	 */
+	void enterDirectSpecVarSimpleIni(GraceParser.DirectSpecVarSimpleIniContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code directSpecVarSimpleIni}
+	 * labeled alternative in {@link GraceParser#specVar}.
+	 * @param ctx the parse tree
+	 */
+	void exitDirectSpecVarSimpleIni(GraceParser.DirectSpecVarSimpleIniContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code directSpecVarArr}
+	 * labeled alternative in {@link GraceParser#specVar}.
+	 * @param ctx the parse tree
+	 */
+	void enterDirectSpecVarArr(GraceParser.DirectSpecVarArrContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code directSpecVarArr}
+	 * labeled alternative in {@link GraceParser#specVar}.
+	 * @param ctx the parse tree
+	 */
+	void exitDirectSpecVarArr(GraceParser.DirectSpecVarArrContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code directSpecVarArrIni}
+	 * labeled alternative in {@link GraceParser#specVar}.
+	 * @param ctx the parse tree
+	 */
+	void enterDirectSpecVarArrIni(GraceParser.DirectSpecVarArrIniContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code directSpecVarArrIni}
+	 * labeled alternative in {@link GraceParser#specVar}.
+	 * @param ctx the parse tree
+	 */
+	void exitDirectSpecVarArrIni(GraceParser.DirectSpecVarArrIniContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link GraceParser#specVarSimple}.
+	 * @param ctx the parse tree
+	 */
+	void enterSpecVarSimple(GraceParser.SpecVarSimpleContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GraceParser#specVarSimple}.
+	 * @param ctx the parse tree
+	 */
+	void exitSpecVarSimple(GraceParser.SpecVarSimpleContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link GraceParser#specVarSimpleIni}.
+	 * @param ctx the parse tree
+	 */
+	void enterSpecVarSimpleIni(GraceParser.SpecVarSimpleIniContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GraceParser#specVarSimpleIni}.
+	 * @param ctx the parse tree
+	 */
+	void exitSpecVarSimpleIni(GraceParser.SpecVarSimpleIniContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link GraceParser#specVarArr}.
+	 * @param ctx the parse tree
+	 */
+	void enterSpecVarArr(GraceParser.SpecVarArrContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GraceParser#specVarArr}.
+	 * @param ctx the parse tree
+	 */
+	void exitSpecVarArr(GraceParser.SpecVarArrContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link GraceParser#specVarArrIni}.
+	 * @param ctx the parse tree
+	 */
+	void enterSpecVarArrIni(GraceParser.SpecVarArrIniContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GraceParser#specVarArrIni}.
+	 * @param ctx the parse tree
+	 */
+	void exitSpecVarArrIni(GraceParser.SpecVarArrIniContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link GraceParser#decSub}.
+	 * @param ctx the parse tree
+	 */
+	void enterDecSub(GraceParser.DecSubContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GraceParser#decSub}.
+	 * @param ctx the parse tree
+	 */
+	void exitDecSub(GraceParser.DecSubContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link GraceParser#decProc}.
+	 * @param ctx the parse tree
+	 */
+	void enterDecProc(GraceParser.DecProcContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GraceParser#decProc}.
+	 * @param ctx the parse tree
+	 */
+	void exitDecProc(GraceParser.DecProcContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link GraceParser#decFunc}.
+	 * @param ctx the parse tree
+	 */
+	void enterDecFunc(GraceParser.DecFuncContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GraceParser#decFunc}.
+	 * @param ctx the parse tree
+	 */
+	void exitDecFunc(GraceParser.DecFuncContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link GraceParser#lstParam}.
+	 * @param ctx the parse tree
+	 */
+	void enterLstParam(GraceParser.LstParamContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GraceParser#lstParam}.
+	 * @param ctx the parse tree
+	 */
+	void exitLstParam(GraceParser.LstParamContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link GraceParser#specParam}.
+	 * @param ctx the parse tree
+	 */
+	void enterSpecParam(GraceParser.SpecParamContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GraceParser#specParam}.
+	 * @param ctx the parse tree
+	 */
+	void exitSpecParam(GraceParser.SpecParamContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link GraceParser#param}.
+	 * @param ctx the parse tree
+	 */
+	void enterParam(GraceParser.ParamContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GraceParser#param}.
+	 * @param ctx the parse tree
+	 */
+	void exitParam(GraceParser.ParamContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link GraceParser#command}.
+	 * @param ctx the parse tree
+	 */
+	void enterCommand(GraceParser.CommandContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GraceParser#command}.
+	 * @param ctx the parse tree
+	 */
+	void exitCommand(GraceParser.CommandContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link GraceParser#cmdSimple}.
+	 * @param ctx the parse tree
+	 */
+	void enterCmdSimple(GraceParser.CmdSimpleContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GraceParser#cmdSimple}.
+	 * @param ctx the parse tree
+	 */
+	void exitCmdSimple(GraceParser.CmdSimpleContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link GraceParser#cmdAtrib}.
+	 * @param ctx the parse tree
+	 */
+	void enterCmdAtrib(GraceParser.CmdAtribContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GraceParser#cmdAtrib}.
+	 * @param ctx the parse tree
+	 */
+	void exitCmdAtrib(GraceParser.CmdAtribContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link GraceParser#atrib}.
+	 * @param ctx the parse tree
+	 */
+	void enterAtrib(GraceParser.AtribContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GraceParser#atrib}.
+	 * @param ctx the parse tree
+	 */
+	void exitAtrib(GraceParser.AtribContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link GraceParser#cmdIf}.
 	 * @param ctx the parse tree
 	 */
@@ -324,6 +400,16 @@ public interface GraceParserListener extends ParseTreeListener {
 	 */
 	void exitCmdWhile(GraceParser.CmdWhileContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link GraceParser#cmdFor}.
+	 * @param ctx the parse tree
+	 */
+	void enterCmdFor(GraceParser.CmdForContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GraceParser#cmdFor}.
+	 * @param ctx the parse tree
+	 */
+	void exitCmdFor(GraceParser.CmdForContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link GraceParser#forInit}.
 	 * @param ctx the parse tree
 	 */
@@ -343,16 +429,6 @@ public interface GraceParserListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitForItera(GraceParser.ForIteraContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link GraceParser#cmdFor}.
-	 * @param ctx the parse tree
-	 */
-	void enterCmdFor(GraceParser.CmdForContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link GraceParser#cmdFor}.
-	 * @param ctx the parse tree
-	 */
-	void exitCmdFor(GraceParser.CmdForContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link GraceParser#cmdStop}.
 	 * @param ctx the parse tree
@@ -414,6 +490,16 @@ public interface GraceParserListener extends ParseTreeListener {
 	 */
 	void exitCmdWrite(GraceParser.CmdWriteContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link GraceParser#block}.
+	 * @param ctx the parse tree
+	 */
+	void enterBlock(GraceParser.BlockContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GraceParser#block}.
+	 * @param ctx the parse tree
+	 */
+	void exitBlock(GraceParser.BlockContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link GraceParser#variable}.
 	 * @param ctx the parse tree
 	 */
@@ -424,121 +510,97 @@ public interface GraceParserListener extends ParseTreeListener {
 	 */
 	void exitVariable(GraceParser.VariableContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link GraceParser#specVarSimple}.
+	 * Enter a parse tree produced by {@link GraceParser#lstOP}.
 	 * @param ctx the parse tree
 	 */
-	void enterSpecVarSimple(GraceParser.SpecVarSimpleContext ctx);
+	void enterLstOP(GraceParser.LstOPContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link GraceParser#specVarSimple}.
+	 * Exit a parse tree produced by {@link GraceParser#lstOP}.
 	 * @param ctx the parse tree
 	 */
-	void exitSpecVarSimple(GraceParser.SpecVarSimpleContext ctx);
+	void exitLstOP(GraceParser.LstOPContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link GraceParser#specVarSimpleIni}.
+	 * Enter a parse tree produced by the {@code integer}
+	 * labeled alternative in {@link GraceParser#lstType}.
 	 * @param ctx the parse tree
 	 */
-	void enterSpecVarSimpleIni(GraceParser.SpecVarSimpleIniContext ctx);
+	void enterInteger(GraceParser.IntegerContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link GraceParser#specVarSimpleIni}.
+	 * Exit a parse tree produced by the {@code integer}
+	 * labeled alternative in {@link GraceParser#lstType}.
 	 * @param ctx the parse tree
 	 */
-	void exitSpecVarSimpleIni(GraceParser.SpecVarSimpleIniContext ctx);
+	void exitInteger(GraceParser.IntegerContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link GraceParser#specVarArr}.
+	 * Enter a parse tree produced by the {@code string}
+	 * labeled alternative in {@link GraceParser#lstType}.
 	 * @param ctx the parse tree
 	 */
-	void enterSpecVarArr(GraceParser.SpecVarArrContext ctx);
+	void enterString(GraceParser.StringContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link GraceParser#specVarArr}.
+	 * Exit a parse tree produced by the {@code string}
+	 * labeled alternative in {@link GraceParser#lstType}.
 	 * @param ctx the parse tree
 	 */
-	void exitSpecVarArr(GraceParser.SpecVarArrContext ctx);
+	void exitString(GraceParser.StringContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link GraceParser#lstArrIni}.
+	 * Enter a parse tree produced by the {@code bool}
+	 * labeled alternative in {@link GraceParser#lstType}.
 	 * @param ctx the parse tree
 	 */
-	void enterLstArrIni(GraceParser.LstArrIniContext ctx);
+	void enterBool(GraceParser.BoolContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link GraceParser#lstArrIni}.
+	 * Exit a parse tree produced by the {@code bool}
+	 * labeled alternative in {@link GraceParser#lstType}.
 	 * @param ctx the parse tree
 	 */
-	void exitLstArrIni(GraceParser.LstArrIniContext ctx);
+	void exitBool(GraceParser.BoolContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link GraceParser#specVarArrIni}.
+	 * Enter a parse tree produced by the {@code intLiteral}
+	 * labeled alternative in {@link GraceParser#literal}.
 	 * @param ctx the parse tree
 	 */
-	void enterSpecVarArrIni(GraceParser.SpecVarArrIniContext ctx);
+	void enterIntLiteral(GraceParser.IntLiteralContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link GraceParser#specVarArrIni}.
+	 * Exit a parse tree produced by the {@code intLiteral}
+	 * labeled alternative in {@link GraceParser#literal}.
 	 * @param ctx the parse tree
 	 */
-	void exitSpecVarArrIni(GraceParser.SpecVarArrIniContext ctx);
+	void exitIntLiteral(GraceParser.IntLiteralContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code directSpecVar}
-	 * labeled alternative in {@link GraceParser#specVar}.
+	 * Enter a parse tree produced by the {@code stringLiteral}
+	 * labeled alternative in {@link GraceParser#literal}.
 	 * @param ctx the parse tree
 	 */
-	void enterDirectSpecVar(GraceParser.DirectSpecVarContext ctx);
+	void enterStringLiteral(GraceParser.StringLiteralContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code directSpecVar}
-	 * labeled alternative in {@link GraceParser#specVar}.
+	 * Exit a parse tree produced by the {@code stringLiteral}
+	 * labeled alternative in {@link GraceParser#literal}.
 	 * @param ctx the parse tree
 	 */
-	void exitDirectSpecVar(GraceParser.DirectSpecVarContext ctx);
+	void exitStringLiteral(GraceParser.StringLiteralContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code directSpecVarSimpleIni}
-	 * labeled alternative in {@link GraceParser#specVar}.
+	 * Enter a parse tree produced by the {@code trueLiteral}
+	 * labeled alternative in {@link GraceParser#literal}.
 	 * @param ctx the parse tree
 	 */
-	void enterDirectSpecVarSimpleIni(GraceParser.DirectSpecVarSimpleIniContext ctx);
+	void enterTrueLiteral(GraceParser.TrueLiteralContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code directSpecVarSimpleIni}
-	 * labeled alternative in {@link GraceParser#specVar}.
+	 * Exit a parse tree produced by the {@code trueLiteral}
+	 * labeled alternative in {@link GraceParser#literal}.
 	 * @param ctx the parse tree
 	 */
-	void exitDirectSpecVarSimpleIni(GraceParser.DirectSpecVarSimpleIniContext ctx);
+	void exitTrueLiteral(GraceParser.TrueLiteralContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code directSpecVarArr}
-	 * labeled alternative in {@link GraceParser#specVar}.
+	 * Enter a parse tree produced by the {@code falseLiteral}
+	 * labeled alternative in {@link GraceParser#literal}.
 	 * @param ctx the parse tree
 	 */
-	void enterDirectSpecVarArr(GraceParser.DirectSpecVarArrContext ctx);
+	void enterFalseLiteral(GraceParser.FalseLiteralContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code directSpecVarArr}
-	 * labeled alternative in {@link GraceParser#specVar}.
+	 * Exit a parse tree produced by the {@code falseLiteral}
+	 * labeled alternative in {@link GraceParser#literal}.
 	 * @param ctx the parse tree
 	 */
-	void exitDirectSpecVarArr(GraceParser.DirectSpecVarArrContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code directSpecVarArrIni}
-	 * labeled alternative in {@link GraceParser#specVar}.
-	 * @param ctx the parse tree
-	 */
-	void enterDirectSpecVarArrIni(GraceParser.DirectSpecVarArrIniContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code directSpecVarArrIni}
-	 * labeled alternative in {@link GraceParser#specVar}.
-	 * @param ctx the parse tree
-	 */
-	void exitDirectSpecVarArrIni(GraceParser.DirectSpecVarArrIniContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link GraceParser#listSpecVars}.
-	 * @param ctx the parse tree
-	 */
-	void enterListSpecVars(GraceParser.ListSpecVarsContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link GraceParser#listSpecVars}.
-	 * @param ctx the parse tree
-	 */
-	void exitListSpecVars(GraceParser.ListSpecVarsContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link GraceParser#declVar}.
-	 * @param ctx the parse tree
-	 */
-	void enterDeclVar(GraceParser.DeclVarContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link GraceParser#declVar}.
-	 * @param ctx the parse tree
-	 */
-	void exitDeclVar(GraceParser.DeclVarContext ctx);
+	void exitFalseLiteral(GraceParser.FalseLiteralContext ctx);
 }
