@@ -21,6 +21,8 @@ task copyTokenFile {
 generateGrammarSource {
     maxHeapSize = "64m"
     arguments += ['-package', 'uem.antlr']
+    arguments += ['-visitor']
+    arguments += ['-no-listener']
     outputDirectory = new File("src/uem/antlr/".toString())
 }
 

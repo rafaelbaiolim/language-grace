@@ -128,12 +128,9 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_graceFile; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterGraceFile(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitGraceFile(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitGraceFile(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -180,12 +177,9 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_line; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterLine(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitLine(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitLine(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -227,12 +221,9 @@ public class GraceParser extends Parser {
 		}
 		public AssignmentStatementContext(StatementContext ctx) { copyFrom(ctx); }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterAssignmentStatement(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitAssignmentStatement(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitAssignmentStatement(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 	public static class DecSubStatementContext extends StatementContext {
@@ -241,12 +232,9 @@ public class GraceParser extends Parser {
 		}
 		public DecSubStatementContext(StatementContext ctx) { copyFrom(ctx); }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDecSubStatement(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDecSubStatement(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitDecSubStatement(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 	public static class DeclVarStatementContext extends StatementContext {
@@ -255,12 +243,9 @@ public class GraceParser extends Parser {
 		}
 		public DeclVarStatementContext(StatementContext ctx) { copyFrom(ctx); }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDeclVarStatement(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDeclVarStatement(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitDeclVarStatement(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -327,12 +312,9 @@ public class GraceParser extends Parser {
 		}
 		public IncrementOperationContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterIncrementOperation(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitIncrementOperation(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitIncrementOperation(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 	public static class MinusExpressionContext extends ExpressionContext {
@@ -341,12 +323,9 @@ public class GraceParser extends Parser {
 		}
 		public MinusExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterMinusExpression(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitMinusExpression(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitMinusExpression(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 	public static class DifferenceExpressionContext extends ExpressionContext {
@@ -355,12 +334,9 @@ public class GraceParser extends Parser {
 		}
 		public DifferenceExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDifferenceExpression(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDifferenceExpression(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitDifferenceExpression(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 	public static class TernaryOperationContext extends ExpressionContext {
@@ -375,12 +351,9 @@ public class GraceParser extends Parser {
 		}
 		public TernaryOperationContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterTernaryOperation(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitTernaryOperation(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitTernaryOperation(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 	public static class LiteralReferenceContext extends ExpressionContext {
@@ -389,12 +362,9 @@ public class GraceParser extends Parser {
 		}
 		public LiteralReferenceContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterLiteralReference(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitLiteralReference(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitLiteralReference(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 	public static class CompareOperationContext extends ExpressionContext {
@@ -409,12 +379,9 @@ public class GraceParser extends Parser {
 		}
 		public CompareOperationContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCompareOperation(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCompareOperation(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitCompareOperation(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 	public static class ParenExpressionContext extends ExpressionContext {
@@ -423,12 +390,9 @@ public class GraceParser extends Parser {
 		}
 		public ParenExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterParenExpression(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitParenExpression(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitParenExpression(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 	public static class BinaryOperationContext extends ExpressionContext {
@@ -443,24 +407,18 @@ public class GraceParser extends Parser {
 		}
 		public BinaryOperationContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterBinaryOperation(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitBinaryOperation(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitBinaryOperation(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 	public static class VarReferenceContext extends ExpressionContext {
 		public TerminalNode ID() { return getToken(GraceParser.ID, 0); }
 		public VarReferenceContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterVarReference(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitVarReference(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitVarReference(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -657,12 +615,9 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_declVar; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDeclVar(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDeclVar(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitDeclVar(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -707,12 +662,9 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_listSpecVars; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterListSpecVars(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitListSpecVars(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitListSpecVars(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -771,12 +723,9 @@ public class GraceParser extends Parser {
 		}
 		public DirectSpecVarArrContext(SpecVarContext ctx) { copyFrom(ctx); }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDirectSpecVarArr(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDirectSpecVarArr(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitDirectSpecVarArr(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 	public static class DirectSpecVarSimpleIniContext extends SpecVarContext {
@@ -785,12 +734,9 @@ public class GraceParser extends Parser {
 		}
 		public DirectSpecVarSimpleIniContext(SpecVarContext ctx) { copyFrom(ctx); }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDirectSpecVarSimpleIni(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDirectSpecVarSimpleIni(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitDirectSpecVarSimpleIni(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 	public static class DirectSpecVarArrIniContext extends SpecVarContext {
@@ -799,12 +745,9 @@ public class GraceParser extends Parser {
 		}
 		public DirectSpecVarArrIniContext(SpecVarContext ctx) { copyFrom(ctx); }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDirectSpecVarArrIni(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDirectSpecVarArrIni(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitDirectSpecVarArrIni(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 	public static class DirectSpecVarContext extends SpecVarContext {
@@ -813,12 +756,9 @@ public class GraceParser extends Parser {
 		}
 		public DirectSpecVarContext(SpecVarContext ctx) { copyFrom(ctx); }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDirectSpecVar(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDirectSpecVar(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitDirectSpecVar(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -875,19 +815,15 @@ public class GraceParser extends Parser {
 	}
 
 	public static class SpecVarSimpleContext extends ParserRuleContext {
-		public Token ID;
 		public TerminalNode ID() { return getToken(GraceParser.ID, 0); }
 		public SpecVarSimpleContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_specVarSimple; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterSpecVarSimple(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitSpecVarSimple(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitSpecVarSimple(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -898,8 +834,7 @@ public class GraceParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(138);
-			((SpecVarSimpleContext)_localctx).ID = match(ID);
-			((BlockContext)getInvokingContext(32)).symbols.add((((SpecVarSimpleContext)_localctx).ID!=null?((SpecVarSimpleContext)_localctx).ID.getText():null));
+			match(ID);
 			}
 		}
 		catch (RecognitionException re) {
@@ -914,7 +849,6 @@ public class GraceParser extends Parser {
 	}
 
 	public static class SpecVarSimpleIniContext extends ParserRuleContext {
-		public Token ID;
 		public TerminalNode ID() { return getToken(GraceParser.ID, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
@@ -924,12 +858,9 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_specVarSimpleIni; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterSpecVarSimpleIni(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitSpecVarSimpleIni(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitSpecVarSimpleIni(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -939,13 +870,12 @@ public class GraceParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
+			setState(140);
+			match(ID);
 			setState(141);
-			((SpecVarSimpleIniContext)_localctx).ID = match(ID);
-			setState(142);
 			match(T_EQUAL);
-			setState(143);
+			setState(142);
 			expression(0);
-			((BlockContext)getInvokingContext(32)).symbols.add((((SpecVarSimpleIniContext)_localctx).ID!=null?((SpecVarSimpleIniContext)_localctx).ID.getText():null));
 			}
 		}
 		catch (RecognitionException re) {
@@ -972,12 +902,9 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_specVarArr; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterSpecVarArr(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitSpecVarArr(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitSpecVarArr(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -988,25 +915,25 @@ public class GraceParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(146);
+			setState(144);
 			specVarSimple();
-			setState(147);
+			setState(145);
 			match(T_LEFT_SQUARE);
-			setState(149); 
+			setState(147); 
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			do {
 				{
 				{
-				setState(148);
+				setState(146);
 				match(NUMBERLITERAL);
 				}
 				}
-				setState(151); 
+				setState(149); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			} while ( _la==NUMBERLITERAL );
-			setState(153);
+			setState(151);
 			match(T_RIGHT_SQUARE);
 			}
 		}
@@ -1036,12 +963,9 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_specVarArrIni; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterSpecVarArrIni(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitSpecVarArrIni(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitSpecVarArrIni(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1052,31 +976,31 @@ public class GraceParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(155);
+			setState(153);
 			specVarArr();
-			setState(156);
+			setState(154);
 			match(T_EQUAL);
-			setState(157);
+			setState(155);
 			match(T_LEFT_CURLY_BRACE);
-			setState(158);
+			setState(156);
 			literal();
-			setState(163);
+			setState(161);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==T_COMMA) {
 				{
 				{
-				setState(159);
+				setState(157);
 				match(T_COMMA);
-				setState(160);
+				setState(158);
 				literal();
 				}
 				}
-				setState(165);
+				setState(163);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(166);
+			setState(164);
 			match(T_RIGHT_CURLY_BRACE);
 			}
 		}
@@ -1103,12 +1027,9 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_decSub; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDecSub(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDecSub(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitDecSub(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1116,20 +1037,20 @@ public class GraceParser extends Parser {
 		DecSubContext _localctx = new DecSubContext(_ctx, getState());
 		enterRule(_localctx, 22, RULE_decSub);
 		try {
-			setState(170);
+			setState(168);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,9,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(168);
+				setState(166);
 				decProc();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(169);
+				setState(167);
 				decFunc();
 				}
 				break;
@@ -1159,12 +1080,9 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_decProc; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDecProc(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDecProc(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitDecProc(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1174,17 +1092,17 @@ public class GraceParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(172);
+			setState(170);
 			match(T_DEF);
-			setState(173);
+			setState(171);
 			match(ID);
-			setState(174);
+			setState(172);
 			match(T_LEFT_PAREN);
-			setState(175);
+			setState(173);
 			lstParam();
-			setState(176);
+			setState(174);
 			match(T_RIGHT_PAREN);
-			setState(177);
+			setState(175);
 			block();
 			}
 		}
@@ -1215,12 +1133,9 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_decFunc; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDecFunc(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDecFunc(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitDecFunc(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1230,21 +1145,21 @@ public class GraceParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(179);
+			setState(177);
 			match(T_DEF);
-			setState(180);
+			setState(178);
 			match(ID);
-			setState(181);
+			setState(179);
 			match(T_LEFT_PAREN);
-			setState(182);
+			setState(180);
 			lstParam();
-			setState(183);
+			setState(181);
 			match(T_RIGHT_PAREN);
-			setState(184);
+			setState(182);
 			match(T_COLON);
-			setState(185);
+			setState(183);
 			lstType();
-			setState(186);
+			setState(184);
 			block();
 			}
 		}
@@ -1271,12 +1186,9 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_lstParam; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterLstParam(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitLstParam(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitLstParam(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1287,21 +1199,21 @@ public class GraceParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(188);
+			setState(186);
 			specParam();
-			setState(193);
+			setState(191);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==T_COMMA) {
 				{
 				{
-				setState(189);
+				setState(187);
 				match(T_COMMA);
-				setState(190);
+				setState(188);
 				specParam();
 				}
 				}
-				setState(195);
+				setState(193);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -1333,12 +1245,9 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_specParam; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterSpecParam(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitSpecParam(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitSpecParam(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1349,27 +1258,27 @@ public class GraceParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(196);
+			setState(194);
 			param();
-			setState(201);
+			setState(199);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==T_COMMA) {
 				{
 				{
-				setState(197);
+				setState(195);
 				match(T_COMMA);
-				setState(198);
+				setState(196);
 				param();
 				}
 				}
-				setState(203);
+				setState(201);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(204);
+			setState(202);
 			match(T_COLON);
-			setState(205);
+			setState(203);
 			lstType();
 			}
 		}
@@ -1391,12 +1300,9 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_param; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterParam(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitParam(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitParam(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1404,24 +1310,24 @@ public class GraceParser extends Parser {
 		ParamContext _localctx = new ParamContext(_ctx, getState());
 		enterRule(_localctx, 32, RULE_param);
 		try {
-			setState(211);
+			setState(209);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,12,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(207);
+				setState(205);
 				match(ID);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(208);
+				setState(206);
 				match(ID);
-				setState(209);
+				setState(207);
 				match(T_LEFT_SQUARE);
-				setState(210);
+				setState(208);
 				match(T_RIGHT_SQUARE);
 				}
 				break;
@@ -1450,12 +1356,9 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_command; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCommand(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCommand(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitCommand(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1463,7 +1366,7 @@ public class GraceParser extends Parser {
 		CommandContext _localctx = new CommandContext(_ctx, getState());
 		enterRule(_localctx, 34, RULE_command);
 		try {
-			setState(215);
+			setState(213);
 			switch (_input.LA(1)) {
 			case T_FOR:
 			case T_IF:
@@ -1476,14 +1379,14 @@ public class GraceParser extends Parser {
 			case ID:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(213);
+				setState(211);
 				cmdSimple();
 				}
 				break;
 			case T_LEFT_CURLY_BRACE:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(214);
+				setState(212);
 				block();
 				}
 				break;
@@ -1538,12 +1441,9 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_cmdSimple; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdSimple(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdSimple(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitCmdSimple(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1551,76 +1451,76 @@ public class GraceParser extends Parser {
 		CmdSimpleContext _localctx = new CmdSimpleContext(_ctx, getState());
 		enterRule(_localctx, 36, RULE_cmdSimple);
 		try {
-			setState(227);
+			setState(225);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,14,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(217);
+				setState(215);
 				cmdAtrib();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(218);
+				setState(216);
 				cmdIf();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(219);
+				setState(217);
 				cmdWhile();
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(220);
+				setState(218);
 				cmdFor();
 				}
 				break;
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(221);
+				setState(219);
 				cmdStop();
 				}
 				break;
 			case 6:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(222);
+				setState(220);
 				cmdSkip();
 				}
 				break;
 			case 7:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(223);
+				setState(221);
 				cmdReturn();
 				}
 				break;
 			case 8:
 				enterOuterAlt(_localctx, 8);
 				{
-				setState(224);
+				setState(222);
 				cmdCallProc();
 				}
 				break;
 			case 9:
 				enterOuterAlt(_localctx, 9);
 				{
-				setState(225);
+				setState(223);
 				cmdRead();
 				}
 				break;
 			case 10:
 				enterOuterAlt(_localctx, 10);
 				{
-				setState(226);
+				setState(224);
 				cmdWrite();
 				}
 				break;
@@ -1646,12 +1546,9 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_cmdAtrib; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdAtrib(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdAtrib(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitCmdAtrib(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1661,9 +1558,9 @@ public class GraceParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(229);
+			setState(227);
 			atrib();
-			setState(230);
+			setState(228);
 			match(T_SEMICOLON);
 			}
 		}
@@ -1689,12 +1586,9 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_atrib; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterAtrib(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitAtrib(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitAtrib(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1705,16 +1599,16 @@ public class GraceParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(232);
+			setState(230);
 			((AtribContext)_localctx).ID = match(ID);
-			setState(233);
+			setState(231);
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_EQUAL) | (1L << T_INCREMENT) | (1L << T_DECREMENT) | (1L << T_INC_MULT) | (1L << T_INC_DIV) | (1L << T_INC_MOD))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			} else {
 				consume();
 			}
-			setState(234);
+			setState(232);
 			expression(0);
 
 			            if( !((BlockContext)getInvokingContext(32)).symbols.contains((((AtribContext)_localctx).ID!=null?((AtribContext)_localctx).ID.getText():null)) ){
@@ -1749,12 +1643,9 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_cmdIf; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdIf(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdIf(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitCmdIf(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1765,31 +1656,31 @@ public class GraceParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(237);
+			setState(235);
 			match(T_IF);
-			setState(238);
+			setState(236);
 			match(T_LEFT_PAREN);
-			setState(239);
+			setState(237);
 			expression(0);
-			setState(240);
+			setState(238);
 			match(T_RIGHT_PAREN);
-			setState(241);
+			setState(239);
 			command();
-			setState(246);
+			setState(244);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,15,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(242);
+					setState(240);
 					match(T_ELSE);
-					setState(243);
+					setState(241);
 					command();
 					}
 					} 
 				}
-				setState(248);
+				setState(246);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,15,_ctx);
 			}
@@ -1818,12 +1709,9 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_cmdWhile; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdWhile(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdWhile(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitCmdWhile(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1833,15 +1721,15 @@ public class GraceParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(249);
+			setState(247);
 			match(T_WHILE);
-			setState(250);
+			setState(248);
 			match(T_LEFT_PAREN);
-			setState(251);
+			setState(249);
 			expression(0);
-			setState(252);
+			setState(250);
 			match(T_RIGHT_PAREN);
-			setState(253);
+			setState(251);
 			command();
 			}
 		}
@@ -1874,12 +1762,9 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_cmdFor; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdFor(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdFor(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitCmdFor(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1889,23 +1774,23 @@ public class GraceParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(255);
+			setState(253);
 			match(T_FOR);
-			setState(256);
+			setState(254);
 			match(T_LEFT_PAREN);
-			setState(257);
+			setState(255);
 			forInit();
+			setState(256);
+			match(T_SEMICOLON);
+			setState(257);
+			expression(0);
 			setState(258);
 			match(T_SEMICOLON);
 			setState(259);
-			expression(0);
-			setState(260);
-			match(T_SEMICOLON);
-			setState(261);
 			forItera();
-			setState(262);
+			setState(260);
 			match(T_RIGHT_PAREN);
-			setState(263);
+			setState(261);
 			command();
 			}
 		}
@@ -1929,12 +1814,9 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_forInit; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterForInit(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitForInit(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitForInit(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1944,7 +1826,7 @@ public class GraceParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(265);
+			setState(263);
 			atrib();
 			}
 		}
@@ -1968,12 +1850,9 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_forItera; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterForItera(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitForItera(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitForItera(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1983,7 +1862,7 @@ public class GraceParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(267);
+			setState(265);
 			atrib();
 			}
 		}
@@ -2004,12 +1883,9 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_cmdStop; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdStop(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdStop(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitCmdStop(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2019,9 +1895,9 @@ public class GraceParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(269);
+			setState(267);
 			match(T_STOP);
-			setState(270);
+			setState(268);
 			match(T_SEMICOLON);
 			}
 		}
@@ -2042,12 +1918,9 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_cmdSkip; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdSkip(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdSkip(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitCmdSkip(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2057,9 +1930,9 @@ public class GraceParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(272);
+			setState(270);
 			match(T_SKIP);
-			setState(273);
+			setState(271);
 			match(T_SEMICOLON);
 			}
 		}
@@ -2086,12 +1959,9 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_cmdReturn; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdReturn(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdReturn(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitCmdReturn(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2102,23 +1972,23 @@ public class GraceParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(275);
+			setState(273);
 			match(T_RETURN);
-			setState(279);
+			setState(277);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_FALSE) | (1L << T_TRUE) | (1L << T_LEFT_PAREN) | (1L << T_MINUS) | (1L << NEG_UN) | (1L << ID) | (1L << NUMBERLITERAL) | (1L << STRINGLITERAL))) != 0)) {
 				{
 				{
-				setState(276);
+				setState(274);
 				expression(0);
 				}
 				}
-				setState(281);
+				setState(279);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(282);
+			setState(280);
 			match(T_SEMICOLON);
 			}
 		}
@@ -2146,12 +2016,9 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_cmdCallProc; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdCallProc(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdCallProc(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitCmdCallProc(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2162,40 +2029,40 @@ public class GraceParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(284);
+			setState(282);
 			match(ID);
-			setState(285);
+			setState(283);
 			match(T_LEFT_PAREN);
 			{
-			setState(289);
+			setState(287);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_FALSE) | (1L << T_TRUE) | (1L << T_LEFT_PAREN) | (1L << T_MINUS) | (1L << NEG_UN) | (1L << ID) | (1L << NUMBERLITERAL) | (1L << STRINGLITERAL))) != 0)) {
 				{
 				{
-				setState(286);
+				setState(284);
 				expression(0);
 				}
 				}
-				setState(291);
+				setState(289);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(294);
+			setState(292);
 			_la = _input.LA(1);
 			if (_la==T_COMMA) {
 				{
-				setState(292);
+				setState(290);
 				match(T_COMMA);
-				setState(293);
+				setState(291);
 				expression(0);
 				}
 			}
 
 			}
-			setState(296);
+			setState(294);
 			match(T_RIGHT_PAREN);
-			setState(297);
+			setState(295);
 			match(T_SEMICOLON);
 			}
 		}
@@ -2219,12 +2086,9 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_cmdRead; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdRead(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdRead(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitCmdRead(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2234,11 +2098,11 @@ public class GraceParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(299);
+			setState(297);
 			match(T_READ);
-			setState(300);
+			setState(298);
 			variable();
-			setState(301);
+			setState(299);
 			match(T_SEMICOLON);
 			}
 		}
@@ -2265,12 +2129,9 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_cmdWrite; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdWrite(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdWrite(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitCmdWrite(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2281,27 +2142,27 @@ public class GraceParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(303);
+			setState(301);
 			match(T_WRITE);
-			setState(304);
+			setState(302);
 			expression(0);
-			setState(309);
+			setState(307);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==T_COMMA) {
 				{
 				{
-				setState(305);
+				setState(303);
 				match(T_COMMA);
-				setState(306);
+				setState(304);
 				expression(0);
 				}
 				}
-				setState(311);
+				setState(309);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(312);
+			setState(310);
 			match(T_SEMICOLON);
 			}
 		}
@@ -2335,12 +2196,9 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_block; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterBlock(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitBlock(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitBlock(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2351,37 +2209,37 @@ public class GraceParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(314);
+			setState(312);
 			match(T_LEFT_CURLY_BRACE);
-			setState(318);
+			setState(316);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==T_VAR) {
 				{
 				{
-				setState(315);
+				setState(313);
 				declVar();
 				}
 				}
-				setState(320);
+				setState(318);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(324);
+			setState(322);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_FOR) | (1L << T_IF) | (1L << T_READ) | (1L << T_RETURN) | (1L << T_SKIP) | (1L << T_STOP) | (1L << T_WHILE) | (1L << T_WRITE) | (1L << T_LEFT_CURLY_BRACE) | (1L << ID))) != 0)) {
 				{
 				{
-				setState(321);
+				setState(319);
 				command();
 				}
 				}
-				setState(326);
+				setState(324);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(327);
+			setState(325);
 			match(T_RIGHT_CURLY_BRACE);
 			System.out.println("symbols=" + _localctx.symbols);
 			}
@@ -2410,12 +2268,9 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_variable; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterVariable(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitVariable(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitVariable(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2424,38 +2279,38 @@ public class GraceParser extends Parser {
 		enterRule(_localctx, 66, RULE_variable);
 		int _la;
 		try {
-			setState(340);
+			setState(338);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,23,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(330);
+				setState(328);
 				match(ID);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(331);
+				setState(329);
 				match(ID);
-				setState(332);
+				setState(330);
 				match(T_LEFT_SQUARE);
-				setState(334); 
+				setState(332); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				do {
 					{
 					{
-					setState(333);
+					setState(331);
 					expression(0);
 					}
 					}
-					setState(336); 
+					setState(334); 
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_FALSE) | (1L << T_TRUE) | (1L << T_LEFT_PAREN) | (1L << T_MINUS) | (1L << NEG_UN) | (1L << ID) | (1L << NUMBERLITERAL) | (1L << STRINGLITERAL))) != 0) );
-				setState(338);
+				setState(336);
 				match(T_RIGHT_SQUARE);
 				}
 				break;
@@ -2484,12 +2339,9 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_lstOP; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterLstOP(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitLstOP(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitLstOP(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2500,7 +2352,7 @@ public class GraceParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(342);
+			setState(340);
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_PLUS) | (1L << T_MINUS) | (1L << T_ASTERISK) | (1L << T_SLASH) | (1L << T_PERCENT) | (1L << T_EQUAL))) != 0)) ) {
 			_errHandler.recoverInline(this);
@@ -2535,36 +2387,27 @@ public class GraceParser extends Parser {
 		public TerminalNode T_STRING() { return getToken(GraceParser.T_STRING, 0); }
 		public StringContext(LstTypeContext ctx) { copyFrom(ctx); }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterString(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitString(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitString(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 	public static class BoolContext extends LstTypeContext {
 		public TerminalNode T_BOOL() { return getToken(GraceParser.T_BOOL, 0); }
 		public BoolContext(LstTypeContext ctx) { copyFrom(ctx); }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterBool(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitBool(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitBool(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 	public static class IntegerContext extends LstTypeContext {
 		public TerminalNode T_INT() { return getToken(GraceParser.T_INT, 0); }
 		public IntegerContext(LstTypeContext ctx) { copyFrom(ctx); }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterInteger(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitInteger(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitInteger(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2572,13 +2415,13 @@ public class GraceParser extends Parser {
 		LstTypeContext _localctx = new LstTypeContext(_ctx, getState());
 		enterRule(_localctx, 70, RULE_lstType);
 		try {
-			setState(347);
+			setState(345);
 			switch (_input.LA(1)) {
 			case T_INT:
 				_localctx = new IntegerContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(344);
+				setState(342);
 				match(T_INT);
 				}
 				break;
@@ -2586,7 +2429,7 @@ public class GraceParser extends Parser {
 				_localctx = new StringContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(345);
+				setState(343);
 				match(T_STRING);
 				}
 				break;
@@ -2594,7 +2437,7 @@ public class GraceParser extends Parser {
 				_localctx = new BoolContext(_localctx);
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(346);
+				setState(344);
 				match(T_BOOL);
 				}
 				break;
@@ -2628,48 +2471,36 @@ public class GraceParser extends Parser {
 		public TerminalNode T_TRUE() { return getToken(GraceParser.T_TRUE, 0); }
 		public FalseLiteralContext(LiteralContext ctx) { copyFrom(ctx); }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterFalseLiteral(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitFalseLiteral(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitFalseLiteral(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 	public static class StringLiteralContext extends LiteralContext {
 		public TerminalNode STRINGLITERAL() { return getToken(GraceParser.STRINGLITERAL, 0); }
 		public StringLiteralContext(LiteralContext ctx) { copyFrom(ctx); }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterStringLiteral(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitStringLiteral(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitStringLiteral(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 	public static class IntLiteralContext extends LiteralContext {
 		public TerminalNode NUMBERLITERAL() { return getToken(GraceParser.NUMBERLITERAL, 0); }
 		public IntLiteralContext(LiteralContext ctx) { copyFrom(ctx); }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterIntLiteral(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitIntLiteral(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitIntLiteral(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 	public static class TrueLiteralContext extends LiteralContext {
 		public TerminalNode T_FALSE() { return getToken(GraceParser.T_FALSE, 0); }
 		public TrueLiteralContext(LiteralContext ctx) { copyFrom(ctx); }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterTrueLiteral(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitTrueLiteral(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitTrueLiteral(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2677,13 +2508,13 @@ public class GraceParser extends Parser {
 		LiteralContext _localctx = new LiteralContext(_ctx, getState());
 		enterRule(_localctx, 72, RULE_literal);
 		try {
-			setState(353);
+			setState(351);
 			switch (_input.LA(1)) {
 			case NUMBERLITERAL:
 				_localctx = new IntLiteralContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(349);
+				setState(347);
 				match(NUMBERLITERAL);
 				}
 				break;
@@ -2691,7 +2522,7 @@ public class GraceParser extends Parser {
 				_localctx = new StringLiteralContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(350);
+				setState(348);
 				match(STRINGLITERAL);
 				}
 				break;
@@ -2699,7 +2530,7 @@ public class GraceParser extends Parser {
 				_localctx = new TrueLiteralContext(_localctx);
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(351);
+				setState(349);
 				match(T_FALSE);
 				}
 				break;
@@ -2707,7 +2538,7 @@ public class GraceParser extends Parser {
 				_localctx = new FalseLiteralContext(_localctx);
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(352);
+				setState(350);
 				match(T_TRUE);
 				}
 				break;
@@ -2748,7 +2579,7 @@ public class GraceParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\38\u0166\4\2\t\2\4"+
+		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\38\u0164\4\2\t\2\4"+
 		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
 		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
 		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31\t\31"+
@@ -2757,34 +2588,34 @@ public class GraceParser extends Parser {
 		"\3\4\3\4\5\4W\n\4\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\5\5d\n\5"+
 		"\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\7\5t\n\5\f\5"+
 		"\16\5w\13\5\3\6\3\6\3\6\3\6\3\6\3\6\3\7\3\7\3\7\7\7\u0082\n\7\f\7\16\7"+
-		"\u0085\13\7\3\b\3\b\3\b\3\b\5\b\u008b\n\b\3\t\3\t\3\t\3\n\3\n\3\n\3\n"+
-		"\3\n\3\13\3\13\3\13\6\13\u0098\n\13\r\13\16\13\u0099\3\13\3\13\3\f\3\f"+
-		"\3\f\3\f\3\f\3\f\7\f\u00a4\n\f\f\f\16\f\u00a7\13\f\3\f\3\f\3\r\3\r\5\r"+
-		"\u00ad\n\r\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\17\3\17\3\17\3\17\3\17"+
-		"\3\17\3\17\3\17\3\17\3\20\3\20\3\20\7\20\u00c2\n\20\f\20\16\20\u00c5\13"+
-		"\20\3\21\3\21\3\21\7\21\u00ca\n\21\f\21\16\21\u00cd\13\21\3\21\3\21\3"+
-		"\21\3\22\3\22\3\22\3\22\5\22\u00d6\n\22\3\23\3\23\5\23\u00da\n\23\3\24"+
-		"\3\24\3\24\3\24\3\24\3\24\3\24\3\24\3\24\3\24\5\24\u00e6\n\24\3\25\3\25"+
-		"\3\25\3\26\3\26\3\26\3\26\3\26\3\27\3\27\3\27\3\27\3\27\3\27\3\27\7\27"+
-		"\u00f7\n\27\f\27\16\27\u00fa\13\27\3\30\3\30\3\30\3\30\3\30\3\30\3\31"+
-		"\3\31\3\31\3\31\3\31\3\31\3\31\3\31\3\31\3\31\3\32\3\32\3\33\3\33\3\34"+
-		"\3\34\3\34\3\35\3\35\3\35\3\36\3\36\7\36\u0118\n\36\f\36\16\36\u011b\13"+
-		"\36\3\36\3\36\3\37\3\37\3\37\7\37\u0122\n\37\f\37\16\37\u0125\13\37\3"+
-		"\37\3\37\5\37\u0129\n\37\3\37\3\37\3\37\3 \3 \3 \3 \3!\3!\3!\3!\7!\u0136"+
-		"\n!\f!\16!\u0139\13!\3!\3!\3\"\3\"\7\"\u013f\n\"\f\"\16\"\u0142\13\"\3"+
-		"\"\7\"\u0145\n\"\f\"\16\"\u0148\13\"\3\"\3\"\3\"\3#\3#\3#\3#\6#\u0151"+
-		"\n#\r#\16#\u0152\3#\3#\5#\u0157\n#\3$\3$\3%\3%\3%\5%\u015e\n%\3&\3&\3"+
-		"&\3&\5&\u0164\n&\3&\2\3\b\'\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \""+
-		"$&(*,.\60\62\64\668:<>@BDFHJ\2\7\6\2!!#%+,\60\61\3\2\34 \4\2\34\35\62"+
-		"\63\4\2\"\"&*\4\2\34 \"\"\u016d\2M\3\2\2\2\4Q\3\2\2\2\6V\3\2\2\2\bc\3"+
-		"\2\2\2\nx\3\2\2\2\f~\3\2\2\2\16\u008a\3\2\2\2\20\u008c\3\2\2\2\22\u008f"+
-		"\3\2\2\2\24\u0094\3\2\2\2\26\u009d\3\2\2\2\30\u00ac\3\2\2\2\32\u00ae\3"+
-		"\2\2\2\34\u00b5\3\2\2\2\36\u00be\3\2\2\2 \u00c6\3\2\2\2\"\u00d5\3\2\2"+
-		"\2$\u00d9\3\2\2\2&\u00e5\3\2\2\2(\u00e7\3\2\2\2*\u00ea\3\2\2\2,\u00ef"+
-		"\3\2\2\2.\u00fb\3\2\2\2\60\u0101\3\2\2\2\62\u010b\3\2\2\2\64\u010d\3\2"+
-		"\2\2\66\u010f\3\2\2\28\u0112\3\2\2\2:\u0115\3\2\2\2<\u011e\3\2\2\2>\u012d"+
-		"\3\2\2\2@\u0131\3\2\2\2B\u013c\3\2\2\2D\u0156\3\2\2\2F\u0158\3\2\2\2H"+
-		"\u015d\3\2\2\2J\u0163\3\2\2\2LN\5\4\3\2ML\3\2\2\2NO\3\2\2\2OM\3\2\2\2"+
+		"\u0085\13\7\3\b\3\b\3\b\3\b\5\b\u008b\n\b\3\t\3\t\3\n\3\n\3\n\3\n\3\13"+
+		"\3\13\3\13\6\13\u0096\n\13\r\13\16\13\u0097\3\13\3\13\3\f\3\f\3\f\3\f"+
+		"\3\f\3\f\7\f\u00a2\n\f\f\f\16\f\u00a5\13\f\3\f\3\f\3\r\3\r\5\r\u00ab\n"+
+		"\r\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\17\3\17\3\17\3\17\3\17\3\17\3"+
+		"\17\3\17\3\17\3\20\3\20\3\20\7\20\u00c0\n\20\f\20\16\20\u00c3\13\20\3"+
+		"\21\3\21\3\21\7\21\u00c8\n\21\f\21\16\21\u00cb\13\21\3\21\3\21\3\21\3"+
+		"\22\3\22\3\22\3\22\5\22\u00d4\n\22\3\23\3\23\5\23\u00d8\n\23\3\24\3\24"+
+		"\3\24\3\24\3\24\3\24\3\24\3\24\3\24\3\24\5\24\u00e4\n\24\3\25\3\25\3\25"+
+		"\3\26\3\26\3\26\3\26\3\26\3\27\3\27\3\27\3\27\3\27\3\27\3\27\7\27\u00f5"+
+		"\n\27\f\27\16\27\u00f8\13\27\3\30\3\30\3\30\3\30\3\30\3\30\3\31\3\31\3"+
+		"\31\3\31\3\31\3\31\3\31\3\31\3\31\3\31\3\32\3\32\3\33\3\33\3\34\3\34\3"+
+		"\34\3\35\3\35\3\35\3\36\3\36\7\36\u0116\n\36\f\36\16\36\u0119\13\36\3"+
+		"\36\3\36\3\37\3\37\3\37\7\37\u0120\n\37\f\37\16\37\u0123\13\37\3\37\3"+
+		"\37\5\37\u0127\n\37\3\37\3\37\3\37\3 \3 \3 \3 \3!\3!\3!\3!\7!\u0134\n"+
+		"!\f!\16!\u0137\13!\3!\3!\3\"\3\"\7\"\u013d\n\"\f\"\16\"\u0140\13\"\3\""+
+		"\7\"\u0143\n\"\f\"\16\"\u0146\13\"\3\"\3\"\3\"\3#\3#\3#\3#\6#\u014f\n"+
+		"#\r#\16#\u0150\3#\3#\5#\u0155\n#\3$\3$\3%\3%\3%\5%\u015c\n%\3&\3&\3&\3"+
+		"&\5&\u0162\n&\3&\2\3\b\'\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&("+
+		"*,.\60\62\64\668:<>@BDFHJ\2\7\6\2!!#%+,\60\61\3\2\34 \4\2\34\35\62\63"+
+		"\4\2\"\"&*\4\2\34 \"\"\u016b\2M\3\2\2\2\4Q\3\2\2\2\6V\3\2\2\2\bc\3\2\2"+
+		"\2\nx\3\2\2\2\f~\3\2\2\2\16\u008a\3\2\2\2\20\u008c\3\2\2\2\22\u008e\3"+
+		"\2\2\2\24\u0092\3\2\2\2\26\u009b\3\2\2\2\30\u00aa\3\2\2\2\32\u00ac\3\2"+
+		"\2\2\34\u00b3\3\2\2\2\36\u00bc\3\2\2\2 \u00c4\3\2\2\2\"\u00d3\3\2\2\2"+
+		"$\u00d7\3\2\2\2&\u00e3\3\2\2\2(\u00e5\3\2\2\2*\u00e8\3\2\2\2,\u00ed\3"+
+		"\2\2\2.\u00f9\3\2\2\2\60\u00ff\3\2\2\2\62\u0109\3\2\2\2\64\u010b\3\2\2"+
+		"\2\66\u010d\3\2\2\28\u0110\3\2\2\2:\u0113\3\2\2\2<\u011c\3\2\2\2>\u012b"+
+		"\3\2\2\2@\u012f\3\2\2\2B\u013a\3\2\2\2D\u0154\3\2\2\2F\u0156\3\2\2\2H"+
+		"\u015b\3\2\2\2J\u0161\3\2\2\2LN\5\4\3\2ML\3\2\2\2NO\3\2\2\2OM\3\2\2\2"+
 		"OP\3\2\2\2P\3\3\2\2\2QR\5\6\4\2R\5\3\2\2\2SW\5\n\6\2TW\5*\26\2UW\5\30"+
 		"\r\2VS\3\2\2\2VT\3\2\2\2VU\3\2\2\2W\7\3\2\2\2XY\b\5\1\2YZ\7\35\2\2Zd\5"+
 		"\b\5\7[\\\7/\2\2\\d\5\b\5\6]^\7\23\2\2^_\5\b\5\2_`\7\24\2\2`d\3\2\2\2"+
@@ -2798,78 +2629,77 @@ public class GraceParser extends Parser {
 		"\2\2\u0083\u0084\3\2\2\2\u0084\r\3\2\2\2\u0085\u0083\3\2\2\2\u0086\u008b"+
 		"\5\20\t\2\u0087\u008b\5\22\n\2\u0088\u008b\5\24\13\2\u0089\u008b\5\26"+
 		"\f\2\u008a\u0086\3\2\2\2\u008a\u0087\3\2\2\2\u008a\u0088\3\2\2\2\u008a"+
-		"\u0089\3\2\2\2\u008b\17\3\2\2\2\u008c\u008d\7\64\2\2\u008d\u008e\b\t\1"+
-		"\2\u008e\21\3\2\2\2\u008f\u0090\7\64\2\2\u0090\u0091\7\"\2\2\u0091\u0092"+
-		"\5\b\5\2\u0092\u0093\b\n\1\2\u0093\23\3\2\2\2\u0094\u0095\5\20\t\2\u0095"+
-		"\u0097\7\25\2\2\u0096\u0098\7\67\2\2\u0097\u0096\3\2\2\2\u0098\u0099\3"+
-		"\2\2\2\u0099\u0097\3\2\2\2\u0099\u009a\3\2\2\2\u009a\u009b\3\2\2\2\u009b"+
-		"\u009c\7\26\2\2\u009c\25\3\2\2\2\u009d\u009e\5\24\13\2\u009e\u009f\7\""+
-		"\2\2\u009f\u00a0\7\27\2\2\u00a0\u00a5\5J&\2\u00a1\u00a2\7\31\2\2\u00a2"+
-		"\u00a4\5J&\2\u00a3\u00a1\3\2\2\2\u00a4\u00a7\3\2\2\2\u00a5\u00a3\3\2\2"+
-		"\2\u00a5\u00a6\3\2\2\2\u00a6\u00a8\3\2\2\2\u00a7\u00a5\3\2\2\2\u00a8\u00a9"+
-		"\7\30\2\2\u00a9\27\3\2\2\2\u00aa\u00ad\5\32\16\2\u00ab\u00ad\5\34\17\2"+
-		"\u00ac\u00aa\3\2\2\2\u00ac\u00ab\3\2\2\2\u00ad\31\3\2\2\2\u00ae\u00af"+
-		"\7\3\2\2\u00af\u00b0\7\64\2\2\u00b0\u00b1\7\23\2\2\u00b1\u00b2\5\36\20"+
-		"\2\u00b2\u00b3\7\24\2\2\u00b3\u00b4\5B\"\2\u00b4\33\3\2\2\2\u00b5\u00b6"+
-		"\7\3\2\2\u00b6\u00b7\7\64\2\2\u00b7\u00b8\7\23\2\2\u00b8\u00b9\5\36\20"+
-		"\2\u00b9\u00ba\7\24\2\2\u00ba\u00bb\7\33\2\2\u00bb\u00bc\5H%\2\u00bc\u00bd"+
-		"\5B\"\2\u00bd\35\3\2\2\2\u00be\u00c3\5 \21\2\u00bf\u00c0\7\31\2\2\u00c0"+
-		"\u00c2\5 \21\2\u00c1\u00bf\3\2\2\2\u00c2\u00c5\3\2\2\2\u00c3\u00c1\3\2"+
-		"\2\2\u00c3\u00c4\3\2\2\2\u00c4\37\3\2\2\2\u00c5\u00c3\3\2\2\2\u00c6\u00cb"+
-		"\5\"\22\2\u00c7\u00c8\7\31\2\2\u00c8\u00ca\5\"\22\2\u00c9\u00c7\3\2\2"+
-		"\2\u00ca\u00cd\3\2\2\2\u00cb\u00c9\3\2\2\2\u00cb\u00cc\3\2\2\2\u00cc\u00ce"+
-		"\3\2\2\2\u00cd\u00cb\3\2\2\2\u00ce\u00cf\7\33\2\2\u00cf\u00d0\5H%\2\u00d0"+
-		"!\3\2\2\2\u00d1\u00d6\7\64\2\2\u00d2\u00d3\7\64\2\2\u00d3\u00d4\7\25\2"+
-		"\2\u00d4\u00d6\7\26\2\2\u00d5\u00d1\3\2\2\2\u00d5\u00d2\3\2\2\2\u00d6"+
-		"#\3\2\2\2\u00d7\u00da\5&\24\2\u00d8\u00da\5B\"\2\u00d9\u00d7\3\2\2\2\u00d9"+
-		"\u00d8\3\2\2\2\u00da%\3\2\2\2\u00db\u00e6\5(\25\2\u00dc\u00e6\5,\27\2"+
-		"\u00dd\u00e6\5.\30\2\u00de\u00e6\5\60\31\2\u00df\u00e6\5\66\34\2\u00e0"+
-		"\u00e6\58\35\2\u00e1\u00e6\5:\36\2\u00e2\u00e6\5<\37\2\u00e3\u00e6\5>"+
-		" \2\u00e4\u00e6\5@!\2\u00e5\u00db\3\2\2\2\u00e5\u00dc\3\2\2\2\u00e5\u00dd"+
-		"\3\2\2\2\u00e5\u00de\3\2\2\2\u00e5\u00df\3\2\2\2\u00e5\u00e0\3\2\2\2\u00e5"+
-		"\u00e1\3\2\2\2\u00e5\u00e2\3\2\2\2\u00e5\u00e3\3\2\2\2\u00e5\u00e4\3\2"+
-		"\2\2\u00e6\'\3\2\2\2\u00e7\u00e8\5*\26\2\u00e8\u00e9\7\32\2\2\u00e9)\3"+
-		"\2\2\2\u00ea\u00eb\7\64\2\2\u00eb\u00ec\t\5\2\2\u00ec\u00ed\5\b\5\2\u00ed"+
-		"\u00ee\b\26\1\2\u00ee+\3\2\2\2\u00ef\u00f0\7\t\2\2\u00f0\u00f1\7\23\2"+
-		"\2\u00f1\u00f2\5\b\5\2\u00f2\u00f3\7\24\2\2\u00f3\u00f8\5$\23\2\u00f4"+
-		"\u00f5\7\4\2\2\u00f5\u00f7\5$\23\2\u00f6\u00f4\3\2\2\2\u00f7\u00fa\3\2"+
-		"\2\2\u00f8\u00f6\3\2\2\2\u00f8\u00f9\3\2\2\2\u00f9-\3\2\2\2\u00fa\u00f8"+
-		"\3\2\2\2\u00fb\u00fc\7\21\2\2\u00fc\u00fd\7\23\2\2\u00fd\u00fe\5\b\5\2"+
-		"\u00fe\u00ff\7\24\2\2\u00ff\u0100\5$\23\2\u0100/\3\2\2\2\u0101\u0102\7"+
-		"\b\2\2\u0102\u0103\7\23\2\2\u0103\u0104\5\62\32\2\u0104\u0105\7\32\2\2"+
-		"\u0105\u0106\5\b\5\2\u0106\u0107\7\32\2\2\u0107\u0108\5\64\33\2\u0108"+
-		"\u0109\7\24\2\2\u0109\u010a\5$\23\2\u010a\61\3\2\2\2\u010b\u010c\5*\26"+
-		"\2\u010c\63\3\2\2\2\u010d\u010e\5*\26\2\u010e\65\3\2\2\2\u010f\u0110\7"+
-		"\16\2\2\u0110\u0111\7\32\2\2\u0111\67\3\2\2\2\u0112\u0113\7\r\2\2\u0113"+
-		"\u0114\7\32\2\2\u01149\3\2\2\2\u0115\u0119\7\f\2\2\u0116\u0118\5\b\5\2"+
-		"\u0117\u0116\3\2\2\2\u0118\u011b\3\2\2\2\u0119\u0117\3\2\2\2\u0119\u011a"+
-		"\3\2\2\2\u011a\u011c\3\2\2\2\u011b\u0119\3\2\2\2\u011c\u011d\7\32\2\2"+
-		"\u011d;\3\2\2\2\u011e\u011f\7\64\2\2\u011f\u0123\7\23\2\2\u0120\u0122"+
-		"\5\b\5\2\u0121\u0120\3\2\2\2\u0122\u0125\3\2\2\2\u0123\u0121\3\2\2\2\u0123"+
-		"\u0124\3\2\2\2\u0124\u0128\3\2\2\2\u0125\u0123\3\2\2\2\u0126\u0127\7\31"+
-		"\2\2\u0127\u0129\5\b\5\2\u0128\u0126\3\2\2\2\u0128\u0129\3\2\2\2\u0129"+
-		"\u012a\3\2\2\2\u012a\u012b\7\24\2\2\u012b\u012c\7\32\2\2\u012c=\3\2\2"+
-		"\2\u012d\u012e\7\13\2\2\u012e\u012f\5D#\2\u012f\u0130\7\32\2\2\u0130?"+
-		"\3\2\2\2\u0131\u0132\7\22\2\2\u0132\u0137\5\b\5\2\u0133\u0134\7\31\2\2"+
-		"\u0134\u0136\5\b\5\2\u0135\u0133\3\2\2\2\u0136\u0139\3\2\2\2\u0137\u0135"+
-		"\3\2\2\2\u0137\u0138\3\2\2\2\u0138\u013a\3\2\2\2\u0139\u0137\3\2\2\2\u013a"+
-		"\u013b\7\32\2\2\u013bA\3\2\2\2\u013c\u0140\7\27\2\2\u013d\u013f\5\n\6"+
-		"\2\u013e\u013d\3\2\2\2\u013f\u0142\3\2\2\2\u0140\u013e\3\2\2\2\u0140\u0141"+
-		"\3\2\2\2\u0141\u0146\3\2\2\2\u0142\u0140\3\2\2\2\u0143\u0145\5$\23\2\u0144"+
-		"\u0143\3\2\2\2\u0145\u0148\3\2\2\2\u0146\u0144\3\2\2\2\u0146\u0147\3\2"+
-		"\2\2\u0147\u0149\3\2\2\2\u0148\u0146\3\2\2\2\u0149\u014a\7\30\2\2\u014a"+
-		"\u014b\b\"\1\2\u014bC\3\2\2\2\u014c\u0157\7\64\2\2\u014d\u014e\7\64\2"+
-		"\2\u014e\u0150\7\25\2\2\u014f\u0151\5\b\5\2\u0150\u014f\3\2\2\2\u0151"+
-		"\u0152\3\2\2\2\u0152\u0150\3\2\2\2\u0152\u0153\3\2\2\2\u0153\u0154\3\2"+
-		"\2\2\u0154\u0155\7\26\2\2\u0155\u0157\3\2\2\2\u0156\u014c\3\2\2\2\u0156"+
-		"\u014d\3\2\2\2\u0157E\3\2\2\2\u0158\u0159\t\6\2\2\u0159G\3\2\2\2\u015a"+
-		"\u015e\7\n\2\2\u015b\u015e\7\17\2\2\u015c\u015e\7\7\2\2\u015d\u015a\3"+
-		"\2\2\2\u015d\u015b\3\2\2\2\u015d\u015c\3\2\2\2\u015eI\3\2\2\2\u015f\u0164"+
-		"\7\67\2\2\u0160\u0164\78\2\2\u0161\u0164\7\5\2\2\u0162\u0164\7\6\2\2\u0163"+
-		"\u015f\3\2\2\2\u0163\u0160\3\2\2\2\u0163\u0161\3\2\2\2\u0163\u0162\3\2"+
-		"\2\2\u0164K\3\2\2\2\34OVcsu\u0083\u008a\u0099\u00a5\u00ac\u00c3\u00cb"+
-		"\u00d5\u00d9\u00e5\u00f8\u0119\u0123\u0128\u0137\u0140\u0146\u0152\u0156"+
-		"\u015d\u0163";
+		"\u0089\3\2\2\2\u008b\17\3\2\2\2\u008c\u008d\7\64\2\2\u008d\21\3\2\2\2"+
+		"\u008e\u008f\7\64\2\2\u008f\u0090\7\"\2\2\u0090\u0091\5\b\5\2\u0091\23"+
+		"\3\2\2\2\u0092\u0093\5\20\t\2\u0093\u0095\7\25\2\2\u0094\u0096\7\67\2"+
+		"\2\u0095\u0094\3\2\2\2\u0096\u0097\3\2\2\2\u0097\u0095\3\2\2\2\u0097\u0098"+
+		"\3\2\2\2\u0098\u0099\3\2\2\2\u0099\u009a\7\26\2\2\u009a\25\3\2\2\2\u009b"+
+		"\u009c\5\24\13\2\u009c\u009d\7\"\2\2\u009d\u009e\7\27\2\2\u009e\u00a3"+
+		"\5J&\2\u009f\u00a0\7\31\2\2\u00a0\u00a2\5J&\2\u00a1\u009f\3\2\2\2\u00a2"+
+		"\u00a5\3\2\2\2\u00a3\u00a1\3\2\2\2\u00a3\u00a4\3\2\2\2\u00a4\u00a6\3\2"+
+		"\2\2\u00a5\u00a3\3\2\2\2\u00a6\u00a7\7\30\2\2\u00a7\27\3\2\2\2\u00a8\u00ab"+
+		"\5\32\16\2\u00a9\u00ab\5\34\17\2\u00aa\u00a8\3\2\2\2\u00aa\u00a9\3\2\2"+
+		"\2\u00ab\31\3\2\2\2\u00ac\u00ad\7\3\2\2\u00ad\u00ae\7\64\2\2\u00ae\u00af"+
+		"\7\23\2\2\u00af\u00b0\5\36\20\2\u00b0\u00b1\7\24\2\2\u00b1\u00b2\5B\""+
+		"\2\u00b2\33\3\2\2\2\u00b3\u00b4\7\3\2\2\u00b4\u00b5\7\64\2\2\u00b5\u00b6"+
+		"\7\23\2\2\u00b6\u00b7\5\36\20\2\u00b7\u00b8\7\24\2\2\u00b8\u00b9\7\33"+
+		"\2\2\u00b9\u00ba\5H%\2\u00ba\u00bb\5B\"\2\u00bb\35\3\2\2\2\u00bc\u00c1"+
+		"\5 \21\2\u00bd\u00be\7\31\2\2\u00be\u00c0\5 \21\2\u00bf\u00bd\3\2\2\2"+
+		"\u00c0\u00c3\3\2\2\2\u00c1\u00bf\3\2\2\2\u00c1\u00c2\3\2\2\2\u00c2\37"+
+		"\3\2\2\2\u00c3\u00c1\3\2\2\2\u00c4\u00c9\5\"\22\2\u00c5\u00c6\7\31\2\2"+
+		"\u00c6\u00c8\5\"\22\2\u00c7\u00c5\3\2\2\2\u00c8\u00cb\3\2\2\2\u00c9\u00c7"+
+		"\3\2\2\2\u00c9\u00ca\3\2\2\2\u00ca\u00cc\3\2\2\2\u00cb\u00c9\3\2\2\2\u00cc"+
+		"\u00cd\7\33\2\2\u00cd\u00ce\5H%\2\u00ce!\3\2\2\2\u00cf\u00d4\7\64\2\2"+
+		"\u00d0\u00d1\7\64\2\2\u00d1\u00d2\7\25\2\2\u00d2\u00d4\7\26\2\2\u00d3"+
+		"\u00cf\3\2\2\2\u00d3\u00d0\3\2\2\2\u00d4#\3\2\2\2\u00d5\u00d8\5&\24\2"+
+		"\u00d6\u00d8\5B\"\2\u00d7\u00d5\3\2\2\2\u00d7\u00d6\3\2\2\2\u00d8%\3\2"+
+		"\2\2\u00d9\u00e4\5(\25\2\u00da\u00e4\5,\27\2\u00db\u00e4\5.\30\2\u00dc"+
+		"\u00e4\5\60\31\2\u00dd\u00e4\5\66\34\2\u00de\u00e4\58\35\2\u00df\u00e4"+
+		"\5:\36\2\u00e0\u00e4\5<\37\2\u00e1\u00e4\5> \2\u00e2\u00e4\5@!\2\u00e3"+
+		"\u00d9\3\2\2\2\u00e3\u00da\3\2\2\2\u00e3\u00db\3\2\2\2\u00e3\u00dc\3\2"+
+		"\2\2\u00e3\u00dd\3\2\2\2\u00e3\u00de\3\2\2\2\u00e3\u00df\3\2\2\2\u00e3"+
+		"\u00e0\3\2\2\2\u00e3\u00e1\3\2\2\2\u00e3\u00e2\3\2\2\2\u00e4\'\3\2\2\2"+
+		"\u00e5\u00e6\5*\26\2\u00e6\u00e7\7\32\2\2\u00e7)\3\2\2\2\u00e8\u00e9\7"+
+		"\64\2\2\u00e9\u00ea\t\5\2\2\u00ea\u00eb\5\b\5\2\u00eb\u00ec\b\26\1\2\u00ec"+
+		"+\3\2\2\2\u00ed\u00ee\7\t\2\2\u00ee\u00ef\7\23\2\2\u00ef\u00f0\5\b\5\2"+
+		"\u00f0\u00f1\7\24\2\2\u00f1\u00f6\5$\23\2\u00f2\u00f3\7\4\2\2\u00f3\u00f5"+
+		"\5$\23\2\u00f4\u00f2\3\2\2\2\u00f5\u00f8\3\2\2\2\u00f6\u00f4\3\2\2\2\u00f6"+
+		"\u00f7\3\2\2\2\u00f7-\3\2\2\2\u00f8\u00f6\3\2\2\2\u00f9\u00fa\7\21\2\2"+
+		"\u00fa\u00fb\7\23\2\2\u00fb\u00fc\5\b\5\2\u00fc\u00fd\7\24\2\2\u00fd\u00fe"+
+		"\5$\23\2\u00fe/\3\2\2\2\u00ff\u0100\7\b\2\2\u0100\u0101\7\23\2\2\u0101"+
+		"\u0102\5\62\32\2\u0102\u0103\7\32\2\2\u0103\u0104\5\b\5\2\u0104\u0105"+
+		"\7\32\2\2\u0105\u0106\5\64\33\2\u0106\u0107\7\24\2\2\u0107\u0108\5$\23"+
+		"\2\u0108\61\3\2\2\2\u0109\u010a\5*\26\2\u010a\63\3\2\2\2\u010b\u010c\5"+
+		"*\26\2\u010c\65\3\2\2\2\u010d\u010e\7\16\2\2\u010e\u010f\7\32\2\2\u010f"+
+		"\67\3\2\2\2\u0110\u0111\7\r\2\2\u0111\u0112\7\32\2\2\u01129\3\2\2\2\u0113"+
+		"\u0117\7\f\2\2\u0114\u0116\5\b\5\2\u0115\u0114\3\2\2\2\u0116\u0119\3\2"+
+		"\2\2\u0117\u0115\3\2\2\2\u0117\u0118\3\2\2\2\u0118\u011a\3\2\2\2\u0119"+
+		"\u0117\3\2\2\2\u011a\u011b\7\32\2\2\u011b;\3\2\2\2\u011c\u011d\7\64\2"+
+		"\2\u011d\u0121\7\23\2\2\u011e\u0120\5\b\5\2\u011f\u011e\3\2\2\2\u0120"+
+		"\u0123\3\2\2\2\u0121\u011f\3\2\2\2\u0121\u0122\3\2\2\2\u0122\u0126\3\2"+
+		"\2\2\u0123\u0121\3\2\2\2\u0124\u0125\7\31\2\2\u0125\u0127\5\b\5\2\u0126"+
+		"\u0124\3\2\2\2\u0126\u0127\3\2\2\2\u0127\u0128\3\2\2\2\u0128\u0129\7\24"+
+		"\2\2\u0129\u012a\7\32\2\2\u012a=\3\2\2\2\u012b\u012c\7\13\2\2\u012c\u012d"+
+		"\5D#\2\u012d\u012e\7\32\2\2\u012e?\3\2\2\2\u012f\u0130\7\22\2\2\u0130"+
+		"\u0135\5\b\5\2\u0131\u0132\7\31\2\2\u0132\u0134\5\b\5\2\u0133\u0131\3"+
+		"\2\2\2\u0134\u0137\3\2\2\2\u0135\u0133\3\2\2\2\u0135\u0136\3\2\2\2\u0136"+
+		"\u0138\3\2\2\2\u0137\u0135\3\2\2\2\u0138\u0139\7\32\2\2\u0139A\3\2\2\2"+
+		"\u013a\u013e\7\27\2\2\u013b\u013d\5\n\6\2\u013c\u013b\3\2\2\2\u013d\u0140"+
+		"\3\2\2\2\u013e\u013c\3\2\2\2\u013e\u013f\3\2\2\2\u013f\u0144\3\2\2\2\u0140"+
+		"\u013e\3\2\2\2\u0141\u0143\5$\23\2\u0142\u0141\3\2\2\2\u0143\u0146\3\2"+
+		"\2\2\u0144\u0142\3\2\2\2\u0144\u0145\3\2\2\2\u0145\u0147\3\2\2\2\u0146"+
+		"\u0144\3\2\2\2\u0147\u0148\7\30\2\2\u0148\u0149\b\"\1\2\u0149C\3\2\2\2"+
+		"\u014a\u0155\7\64\2\2\u014b\u014c\7\64\2\2\u014c\u014e\7\25\2\2\u014d"+
+		"\u014f\5\b\5\2\u014e\u014d\3\2\2\2\u014f\u0150\3\2\2\2\u0150\u014e\3\2"+
+		"\2\2\u0150\u0151\3\2\2\2\u0151\u0152\3\2\2\2\u0152\u0153\7\26\2\2\u0153"+
+		"\u0155\3\2\2\2\u0154\u014a\3\2\2\2\u0154\u014b\3\2\2\2\u0155E\3\2\2\2"+
+		"\u0156\u0157\t\6\2\2\u0157G\3\2\2\2\u0158\u015c\7\n\2\2\u0159\u015c\7"+
+		"\17\2\2\u015a\u015c\7\7\2\2\u015b\u0158\3\2\2\2\u015b\u0159\3\2\2\2\u015b"+
+		"\u015a\3\2\2\2\u015cI\3\2\2\2\u015d\u0162\7\67\2\2\u015e\u0162\78\2\2"+
+		"\u015f\u0162\7\5\2\2\u0160\u0162\7\6\2\2\u0161\u015d\3\2\2\2\u0161\u015e"+
+		"\3\2\2\2\u0161\u015f\3\2\2\2\u0161\u0160\3\2\2\2\u0162K\3\2\2\2\34OVc"+
+		"su\u0083\u008a\u0097\u00a3\u00aa\u00c1\u00c9\u00d3\u00d7\u00e3\u00f6\u0117"+
+		"\u0121\u0126\u0135\u013e\u0144\u0150\u0154\u015b\u0161";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

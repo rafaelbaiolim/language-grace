@@ -69,6 +69,7 @@ public class AstMap {
 
     /**
      * @param listspec
+     * @obs: Alterado no visitor
      * @return
      */
     public final Statement getAst(SpecVarContext listspec) {

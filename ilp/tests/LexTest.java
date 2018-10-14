@@ -22,11 +22,11 @@ public class LexTest {
 
 
     private void filltestEqualsVarLex() {
-        this.testEqualsVarLex.put("var1.lex.test",
+        this.testEqualsVarLex.put("lex/var1.lex.test",
                 new String[]{"T_VAR", "ID", "T_EQUAL", "ID", "T_PLUS", "NUMBER_LITERAL", "T_SEMICOLON"}
         );
 
-        this.testEqualsVarLex.put("var2.doc.lex.test",
+        this.testEqualsVarLex.put("lex/var2.doc.lex.test",
                 new String[]{
                         "T_VAR", "ID", "T_COMMA", "ID", "T_EQUAL", "NUMBER_LITERAL",
                         "T_COMMA", "ID", "T_EQUAL", "NUMBER_LITERAL", "T_PLUS", "ID", "T_COLON",

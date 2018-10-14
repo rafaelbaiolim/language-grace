@@ -53,12 +53,12 @@ specVar
 
 specVarSimple
     : ID
-    {$block::symbols.add($ID.text);}
+    //{$block::symbols.add($ID.text);}
     ;
 
 specVarSimpleIni
     : ID '=' expression
-    {$block::symbols.add($ID.text);}
+    //{$block::symbols.add($ID.text);}
     ;
 
 
