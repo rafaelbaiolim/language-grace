@@ -3,7 +3,7 @@ package uem.visitors;
 import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseVisitor;
 import uem.ast.expr.*;
-import uem.ast.stmt.Statement;
+import uem.ast.stmt.VarReference;
 
 public class ExpressionVisitor extends GraceParserBaseVisitor<Expression> {
 
@@ -22,5 +22,13 @@ public class ExpressionVisitor extends GraceParserBaseVisitor<Expression> {
         throw new UnsupportedOperationException(ctx.getText());
     }
 
+    public Expression visitLiteralReference(GraceParser.LiteralReferenceContext literalRefCtx) {
+        GraceParser.LiteralContext literal = literalRefCtx.literal();
+        return new LiteralVisitor().visit(literal);
+    }
+
+    public Expression visitVarReference(GraceParser.VarReferenceContext varRefCtx){
+        return new VarReference(varRefCtx.ID().getText());
+    }
 
 }

@@ -225,6 +225,11 @@ public class AstMap {
         throw new UnsupportedOperationException(this.getClass().getCanonicalName());
     }
 
+    /**
+     * visitor -> LiteralVisitor
+     * @param literalCtx
+     * @return
+     */
     public final Expression getAst(LiteralReferenceContext literalCtx) {
         LiteralContext literal = literalCtx.literal();
         String canonicalLiteralCtx = literal.getClass().getCanonicalName();
