@@ -7,7 +7,7 @@ utilizando a ferramenta antrl4.
 
 Doc Online Compilada.: https://din-ilp2018.readthedocs.io/en/latest
 
-[Branch de Instalação do Antrl4](/rafaelbaiolim/compilador2018/tree/starting)
+[Branch de Instalação do Antrl4](/tree/starting)
 
 
 
