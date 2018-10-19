@@ -1,38 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f4b8f1db-f7b9-4023-94f5-6d051b468b07" name="Default Changelist" comment="Sincronizado secções da documentação usando os comentários dos arquivos antlr">
-      <change beforePath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/fileSnapshots.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/fileSnapshots.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/antlr/GraceParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/antlr/GraceParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/ast/AstMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/AstMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/ast/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/ast/expr/BoolLiteral.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/expr/BoolLiteral.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/ast/expr/DivisionExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/expr/DivisionExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/ast/expr/MultiplicationExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/expr/MultiplicationExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/ast/expr/NumberLiteral.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/expr/NumberLiteral.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/ast/expr/StringLiteral.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/expr/StringLiteral.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/ast/expr/SubtractionExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/expr/SubtractionExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/ast/expr/SumExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/expr/SumExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/ast/stmt/DeclVar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/stmt/DeclVar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/ast/stmt/GraceFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/stmt/GraceFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/ast/stmt/SpecVar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/stmt/SpecVar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/ast/stmt/Statement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/stmt/Statement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/ast/stmt/VarReference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/expr/VarReference.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/ast/type/BooleanType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/type/BooleanType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/ast/type/NumberType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/type/IntegerType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/ast/type/StringType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/type/StringType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/ast/type/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/type/Type.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/visitors/ExpressionVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/visitors/ExpressionVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/visitors/ListTypeVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/visitors/ListTypeVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/visitors/SpecVarVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/visitors/SpecVarVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/assets/parser/var1.grace" beforeDir="false" afterPath="$PROJECT_DIR$/tests/assets/parser/var1.grace" afterDir="false" />
-    </list>
+    <list default="true" id="f4b8f1db-f7b9-4023-94f5-6d051b468b07" name="Default Changelist" comment="Sincronizado secções da documentação usando os comentários dos arquivos antlr" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,25 +22,6 @@
     </option>
     <expand />
     <select />
-  </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/uem/antlr/GraceParserBaseListener.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="115">
-                    <caret line="168" column="86" selection-start-line="168" selection-start-column="26" selection-end-line="168" selection-end-column="86" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-356103321">
@@ -149,7 +99,7 @@
           <entry key="gradle" value="15" />
           <entry key="ilp" value="1" />
           <entry key="iml" value="1" />
-          <entry key="java" value="411" />
+          <entry key="java" value="412" />
           <entry key="kt" value="8" />
           <entry key="kts" value="1" />
           <entry key="md" value="1" />
@@ -166,7 +116,7 @@
           <entry key="Groovy" value="15" />
           <entry key="IDEA_MODULE" value="1" />
           <entry key="Image" value="5" />
-          <entry key="JAVA" value="411" />
+          <entry key="JAVA" value="412" />
           <entry key="Kotlin" value="9" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="26" />
@@ -202,11 +152,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/uem/listners/RefPhase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="64" column="33" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
+            <state relative-caret-position="-517">
+              <caret line="26" column="29" lean-forward="true" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -229,8 +179,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/uem/visitors/ExpressionVisitor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="-34">
+              <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -248,6 +198,18 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/uem/listners/DefPhase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-266">
+              <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/AstMapTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
@@ -256,11 +218,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/assets/parser/var1.grace">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" column="18" lean-forward="true" selection-end-line="2" selection-end-column="18" />
+              <caret line="2" column="18" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -465,41 +427,6 @@
             <path>
               <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
               <item name="ilp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ilp" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ilp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ilp" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ilp" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ilp" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="lex" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ilp" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="parser" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
@@ -817,7 +744,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="198985000" />
+    <option name="totallyTimeSpent" value="199657000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -830,7 +757,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="-2" width="1360" height="770" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="UI Designer" order="0" />
       <window_info id="Favorites" order="1" side_tool="true" />
@@ -839,8 +765,8 @@
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.847793" weight="0.328125" />
-      <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.15601218" side_tool="true" weight="0.3296875" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="2" sideWeight="0.84703195" visible="true" weight="0.328125" />
+      <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.15296803" side_tool="true" weight="0.328125" />
       <window_info anchor="bottom" id="Messages" order="4" sideWeight="0.49162862" weight="0.328125" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" sideWeight="0.49880287" weight="0.0" />
@@ -849,7 +775,7 @@
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="11" weight="0.32919255" />
-      <window_info active="true" anchor="bottom" id="Run" order="12" sideWeight="0.8439878" visible="true" weight="0.3296875" />
+      <window_info anchor="bottom" id="Run" order="12" sideWeight="0.8439878" weight="0.0" />
       <window_info anchor="right" id="Database" order="0" weight="0.329653" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info anchor="right" id="Maven Projects" order="2" />
@@ -1183,16 +1109,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/listners/DefPhase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="51" column="30" lean-forward="true" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/uem/ast/stmt/Statement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1397,10 +1313,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/visitors/ExpressionVisitor.java">
+    <entry file="file://$PROJECT_DIR$/tests/assets/parser/var2.grace">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="34">
+          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/assets/parser/var1.grace">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="18" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -1414,6 +1337,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/visitors/ExpressionVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/MultiplicationExpression.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-215">
@@ -1424,27 +1354,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/listners/RefPhase.java">
+    <entry file="file://$PROJECT_DIR$/src/uem/listners/DefPhase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="64" column="33" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
+        <state relative-caret-position="-266">
+          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/assets/parser/var2.grace">
+    <entry file="file://$PROJECT_DIR$/src/uem/listners/RefPhase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/assets/parser/var1.grace">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="18" lean-forward="true" selection-end-line="2" selection-end-column="18" />
+        <state relative-caret-position="-517">
+          <caret line="26" column="29" lean-forward="true" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
