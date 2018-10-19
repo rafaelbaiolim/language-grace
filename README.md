@@ -7,12 +7,9 @@ utilizando a ferramenta antrl4.
 
 Doc Online Compilada.: https://din-ilp2018.readthedocs.io/en/latest
 
-Instalação do Antrl4 
-=======================
-```
-$ chmod +x utils/antrl-install.sh
-$ sh utils/antrl-install.sh
-```
+[Branch de Instalação do Antrl4](/rafaelbaiolim/compilador2018/tree/starting)
+
+
 
 InteliJ 
 ==============================
