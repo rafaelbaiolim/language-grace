@@ -1,6 +1,6 @@
-﻿# :carousel_horse:  Trabalho ILP 2018 
+﻿# :carousel_horse:  Trabalho ILP 2018 - Branch Starting
 
-Informática UEM - Branch Starting
+Informática UEM
 ==================================
 Branch com utilitários para auxiliar no entendimento / instalação do projeto.
 
