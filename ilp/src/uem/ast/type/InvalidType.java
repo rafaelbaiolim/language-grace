@@ -1,10 +1,9 @@
 package uem.ast.type;
 
 import org.antlr.v4.runtime.Token;
-import uem.antlr.GraceParser;
 import uem.ast.Position;
 
-public class BooleanType implements Type {
+public class InvalidType implements Type {
 
     private final Position position;
 
@@ -12,17 +11,17 @@ public class BooleanType implements Type {
         return this.position;
     }
 
-    public BooleanType(Position position) {
+    public InvalidType(Position position) {
         this.position = position;
     }
 
-    public BooleanType() {
+    public InvalidType() {
         this.position = null;
     }
 
     @Override
     public int getType() {
-        return GraceParser.T_BOOL;
+        return -1;
     }
 
     @Override

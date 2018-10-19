@@ -1,13 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f4b8f1db-f7b9-4023-94f5-6d051b468b07" name="Default Changelist" comment="">
+    <list default="true" id="f4b8f1db-f7b9-4023-94f5-6d051b468b07" name="Default Changelist" comment="Sincronizado secções da documentação usando os comentários dos arquivos antlr">
+      <change beforePath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/fileSnapshots.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/fileSnapshots.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/uem/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/antlr/GraceParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/antlr/GraceParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/uem/ast/AstMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/AstMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/ast/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/ast/expr/BoolLiteral.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/expr/BoolLiteral.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/ast/expr/DivisionExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/expr/DivisionExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/ast/expr/MultiplicationExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/expr/MultiplicationExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/ast/expr/NumberLiteral.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/expr/NumberLiteral.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/ast/expr/StringLiteral.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/expr/StringLiteral.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/ast/expr/SubtractionExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/expr/SubtractionExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/ast/expr/SumExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/expr/SumExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/ast/stmt/DeclVar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/stmt/DeclVar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/ast/stmt/GraceFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/stmt/GraceFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/ast/stmt/SpecVar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/stmt/SpecVar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/ast/stmt/Statement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/stmt/Statement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/ast/stmt/VarReference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/expr/VarReference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/ast/type/BooleanType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/type/BooleanType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/ast/type/NumberType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/type/IntegerType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/ast/type/StringType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/type/StringType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/ast/type/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/ast/type/Type.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/uem/visitors/ExpressionVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/visitors/ExpressionVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/visitors/GraceFileVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/visitors/GraceFileVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uem/visitors/ListSpecVarVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/visitors/ListSpecVarVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uem/visitors/ListTypeVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/visitors/ListTypeVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/uem/visitors/SpecVarVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uem/visitors/SpecVarVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/assets/parser/var1.grace" beforeDir="false" afterPath="$PROJECT_DIR$/tests/assets/parser/var1.grace" afterDir="false" />
     </list>
@@ -31,6 +53,25 @@
     </option>
     <expand />
     <select />
+  </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/uem/antlr/GraceParserBaseListener.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="115">
+                    <caret line="168" column="86" selection-start-line="168" selection-start-column="26" selection-end-line="168" selection-end-column="86" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-356103321">
@@ -102,44 +143,44 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="34" />
+          <entry key="class" value="38" />
           <entry key="g4" value="59" />
-          <entry key="grace" value="9" />
-          <entry key="gradle" value="14" />
+          <entry key="grace" value="13" />
+          <entry key="gradle" value="15" />
           <entry key="ilp" value="1" />
           <entry key="iml" value="1" />
-          <entry key="java" value="311" />
+          <entry key="java" value="411" />
           <entry key="kt" value="8" />
           <entry key="kts" value="1" />
           <entry key="md" value="1" />
-          <entry key="png" value="3" />
+          <entry key="png" value="5" />
           <entry key="scope" value="1" />
-          <entry key="test" value="9" />
+          <entry key="test" value="10" />
           <entry key="tokens" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="ANTLR v4 grammar file" value="59" />
-          <entry key="CLASS" value="34" />
-          <entry key="Groovy" value="14" />
+          <entry key="CLASS" value="38" />
+          <entry key="Groovy" value="15" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="Image" value="3" />
-          <entry key="JAVA" value="311" />
+          <entry key="Image" value="5" />
+          <entry key="JAVA" value="411" />
           <entry key="Kotlin" value="9" />
           <entry key="Markdown" value="1" />
-          <entry key="PLAIN_TEXT" value="21" />
+          <entry key="PLAIN_TEXT" value="26" />
           <entry key="YAML" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="26" />
+          <entry key="dummy" value="33" />
           <entry key="g4" value="5695" />
-          <entry key="grace" value="149" />
-          <entry key="gradle" value="616" />
+          <entry key="grace" value="180" />
+          <entry key="gradle" value="617" />
           <entry key="ilp" value="60" />
-          <entry key="java" value="13737" />
+          <entry key="java" value="15674" />
           <entry key="kt" value="88" />
           <entry key="kts" value="30" />
           <entry key="md" value="401" />
@@ -150,11 +191,11 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="ANTLR v4 grammar file" value="5695" />
-          <entry key="Groovy" value="616" />
-          <entry key="JAVA" value="13737" />
+          <entry key="Groovy" value="617" />
+          <entry key="JAVA" value="15674" />
           <entry key="Kotlin" value="118" />
           <entry key="Markdown" value="401" />
-          <entry key="PLAIN_TEXT" value="704" />
+          <entry key="PLAIN_TEXT" value="742" />
         </counts>
       </usages-collector>
     </session>
@@ -162,64 +203,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/uem/visitors/ListSpecVarVisitor.java">
+        <entry file="file://$PROJECT_DIR$/src/uem/listners/RefPhase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/uem/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/uem/visitors/ListTypeVisitor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/assets/parser/var1.grace">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/uem/visitors/LiteralVisitor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="10" column="77" selection-start-line="10" selection-start-column="74" selection-end-line="10" selection-end-column="77" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/uem/visitors/ExpressionVisitor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="30" column="57" lean-forward="true" selection-start-line="30" selection-start-column="57" selection-end-line="30" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/uem/visitors/StatementVisitor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="27" lean-forward="true" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+            <state relative-caret-position="275">
+              <caret line="64" column="33" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -228,21 +215,75 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/uem/ast/stmt/DeclVar.java">
+        <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/VarReference.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+            <state relative-caret-position="91">
+              <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/uem/visitors/GraceFileVisitor.java">
+        <entry file="file://$PROJECT_DIR$/src/uem/visitors/ExpressionVisitor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="42" lean-forward="true" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+            <state relative-caret-position="299">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/MultiplicationExpression.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-215">
+              <caret line="10" column="17" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/AstMapTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/assets/parser/var1.grace">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="18" lean-forward="true" selection-end-line="2" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/assets/parser/var2.grace">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/uem/ast/stmt/GraceFile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+              <folding>
+                <element signature="e#417#418#0" expanded="true" />
+                <element signature="e#459#460#0" expanded="true" />
+                <element signature="e#505#506#0" expanded="true" />
+                <element signature="e#541#542#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -264,36 +305,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>GraceFileContext</find>
-      <find>Binary</find>
-      <find>(Expression)</find>
-      <find>SumE</find>
-      <find>BinaryOperationContext</find>
-      <find>listSpecV</find>
-      <find>expression</find>
-      <find>visitDecl</find>
-      <find>DeclVar</find>
-      <find>DeclVarStat</find>
-      <find>listSpecVar</find>
-      <find>ListSpecVars</find>
-      <find>stat</find>
-      <find>ListSpec</find>
-      <find>visitList</find>
-      <find>specVar</find>
-      <find>varSimpleIni</find>
       <find>directSpecVar</find>
       <find>directSpe</find>
       <find>Literal</find>
       <find>LiteralReferenceContext</find>
       <find>SpecVar</find>
       <find>lstType</find>
-      <find>SpecVarVisitor</find>
       <find>DirectSpecVarSimpleIniContext</find>
       <find>Expression</find>
       <find>visitIntLit</find>
-      <find>VarReference</find>
       <find>Ctxt</find>
       <find>visitVar</find>
+      <find>enter</find>
+      <find>var</find>
+      <find>exitDeclVarStatement</find>
+      <find>exitDecl</find>
+      <find>declVar</find>
+      <find>SpecVarVisitor</find>
+      <find>visitT</find>
+      <find>IntL</find>
+      <find>visitString</find>
+      <find>getSymbol</find>
+      <find>ID()</find>
+      <find>new DeclVar</find>
+      <find>exitCall</find>
+      <find>Exit</find>
+      <find>ExitB</find>
+      <find>ExpressionVis</find>
+      <find>VarReference</find>
+      <find>Cymbol</find>
+      <find>new VarRef</find>
     </findStrings>
     <replaceStrings>
       <replace>public void</replace>
@@ -313,18 +354,19 @@
       <replace>STRINGLITERAL</replace>
       <replace>Ilp</replace>
       <replace>bloco</replace>
-      <replace>Grace</replace>
       <replace>Ctx</replace>
       <replace>Literal</replace>
+      <replace>Grace</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/tests</dir>
       <dir>$PROJECT_DIR$/src/uem/antlr</dir>
       <dir>$PROJECT_DIR$/src/main/antlr</dir>
       <dir>$PROJECT_DIR$/src/uem/parser</dir>
-      <dir>$PROJECT_DIR$/src/uem</dir>
-      <dir>$PROJECT_DIR$/src</dir>
       <dir>$PROJECT_DIR$</dir>
+      <dir>$PROJECT_DIR$/src/uem</dir>
+      <dir>$PROJECT_DIR$/src/uem/visitors</dir>
+      <dir>$PROJECT_DIR$/src</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -339,57 +381,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/tests/AstMapTest.java" />
-        <option value="$PROJECT_DIR$/src/uem/ast/expr/NumberLiteral.java" />
-        <option value="$PROJECT_DIR$/src/uem/bosta.kt" />
-        <option value="$PROJECT_DIR$/src/uem/ast/ParseTreeToAstMapper.java" />
-        <option value="$PROJECT_DIR$/src/uem/ast/TreeToAst.java" />
-        <option value="$PROJECT_DIR$/src/uem/ast/bosta.kt" />
-        <option value="$PROJECT_DIR$/src/uem/ast/Hm.java" />
-        <option value="$PROJECT_DIR$/src/uem/ast/stmt/Statement.java" />
-        <option value="$PROJECT_DIR$/src/uem/parser/ParseTreeEl.java" />
-        <option value="$PROJECT_DIR$/src/uem/parser/ParseTree.java" />
-        <option value="$PROJECT_DIR$/src/uem/parser/ParseTreeNode.java" />
-        <option value="$PROJECT_DIR$/src/uem/ast/expr/StringLiteral.java" />
-        <option value="$PROJECT_DIR$/src/uem/ast/expr/BinaryExpression.java" />
-        <option value="$PROJECT_DIR$/src/uem/ast/expr/DivisionExpression.java" />
-        <option value="$PROJECT_DIR$/src/uem/ast/expr/SubtractionExpression.java" />
-        <option value="$PROJECT_DIR$/src/uem/ast/expr/SumExpression.java" />
-        <option value="$PROJECT_DIR$/src/uem/ast/expr/MultiplicationExpression.java" />
-        <option value="$PROJECT_DIR$/src/uem/ast/stmt/VarReference.java" />
-        <option value="$PROJECT_DIR$/src/main/antlr/IlpLexer.g4" />
-        <option value="$PROJECT_DIR$/src/uem/ast/stmt/ListSpecVar.java" />
-        <option value="$PROJECT_DIR$/src/uem/ast/stmt/SpecvarList.java" />
-        <option value="$PROJECT_DIR$/src/uem/ast/stmt/SpecVar.java" />
-        <option value="$PROJECT_DIR$/src/uem/ast/stmt/DeclVar.java" />
-        <option value="$PROJECT_DIR$/src/uem/ast/stmt/IlpFile.java" />
-        <option value="$PROJECT_DIR$/src/uem/ast/expr/BoolLiteral.java" />
-        <option value="$PROJECT_DIR$/src/uem/ast/type/BooleanType.java" />
-        <option value="$PROJECT_DIR$/src/uem/semantic/test.kt" />
-        <option value="$PROJECT_DIR$/src/uem/semantic/Error.java" />
-        <option value="$PROJECT_DIR$/src/uem/semantic/Validator.java" />
         <option value="$PROJECT_DIR$/src/uem/antlr/IlpParser.java" />
-        <option value="$PROJECT_DIR$/src/uem/ast/Node.java" />
         <option value="$PROJECT_DIR$/src/main/antlr/IlpParser.g4" />
         <option value="$PROJECT_DIR$/src/main/antlr/grun/tests/scope.ilp" />
         <option value="$PROJECT_DIR$/src/uem/parser/ParseTreeToAstMap.java" />
         <option value="$PROJECT_DIR$/src/main/antlr/GraceLexer.g4" />
-        <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/uem/visitors/GraceFileVisitorImpl.java" />
         <option value="$PROJECT_DIR$/src/uem/parser/TreeToAst.java" />
         <option value="$PROJECT_DIR$/src/uem/antlr/GraceParserBaseVisitor.java" />
         <option value="$PROJECT_DIR$/src/main/antlr/GraceParser.g4" />
         <option value="$PROJECT_DIR$/src/uem/ast/AstMap.java" />
         <option value="$PROJECT_DIR$/src/uem/visitors/StatmentVisitor.java" />
-        <option value="$PROJECT_DIR$/src/uem/visitors/SpecVarVisitor.java" />
         <option value="$PROJECT_DIR$/src/uem/visitors/ListSpecVarVisitor.java" />
-        <option value="$PROJECT_DIR$/src/uem/visitors/ListTypeVisitor.java" />
         <option value="$PROJECT_DIR$/src/uem/visitors/LiteralVisitor.java" />
-        <option value="$PROJECT_DIR$/tests/assets/parser/var1.grace" />
-        <option value="$PROJECT_DIR$/src/uem/visitors/ExpressionVisitor.java" />
         <option value="$PROJECT_DIR$/src/uem/visitors/StatementVisitor.java" />
         <option value="$PROJECT_DIR$/src/uem/visitors/GraceFileVisitor.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/scope/GlobalScope.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/scope/LocalScope.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/scope/Scope.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/uem/ast/scope/VariableSymbol.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/scope/Symbol.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/scope/BaseScope.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/type/Type.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/type/NumberType.java" />
+        <option value="$PROJECT_DIR$/src/uem/visitors/ListTypeVisitor.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/scope/CheckSymbols.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/stmt/VarReference.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/stmt/DeclVar.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/stmt/SpecVar.java" />
         <option value="$PROJECT_DIR$/src/uem/Main.java" />
+        <option value="$PROJECT_DIR$/src/uem/listners/DefPhase.java" />
+        <option value="$PROJECT_DIR$/src/uem/visitors/SpecVarVisitor.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/Node.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/stmt/Statement.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/type/BooleanType.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/type/InvalidType.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/type/StringType.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/type/IntegerType.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/expr/VarReference.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/expr/SumExpression.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/expr/SubtractionExpression.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/expr/StringLiteral.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/expr/NumberLiteral.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/expr/MultiplicationExpression.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/expr/DivisionExpression.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/expr/BoolLiteral.java" />
+        <option value="$PROJECT_DIR$/src/uem/ast/stmt/GraceFile.java" />
+        <option value="$PROJECT_DIR$/src/uem/visitors/ExpressionVisitor.java" />
+        <option value="$PROJECT_DIR$/src/uem/listners/RefPhase.java" />
+        <option value="$PROJECT_DIR$/tests/assets/parser/var2.grace" />
+        <option value="$PROJECT_DIR$/tests/assets/parser/var1.grace" />
       </list>
     </option>
   </component>
@@ -406,9 +448,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-287" />
-    <option name="y" value="174" />
-    <option name="width" value="1161" />
+    <option name="x" value="1644" />
+    <option name="y" value="152" />
+    <option name="width" value="1141" />
     <option name="height" value="664" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -427,26 +469,12 @@
             <path>
               <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
               <item name="ilp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
               <item name="ilp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="antlr" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ilp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="uem" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ilp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="uem" type="462c0819:PsiDirectoryNode" />
-              <item name="visitors" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
@@ -458,6 +486,13 @@
               <item name="ilp" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ilp" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="lex" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
@@ -469,6 +504,11 @@
             <path>
               <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="ilp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="antlr-4.5.3-complete" type="70bed36:NamedLibraryElementNode" />
             </path>
           </expand>
           <select />
@@ -489,6 +529,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="js.buildTools.grunt.grunt-cli.package" value="" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/uem" />
@@ -502,16 +543,14 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="uem.visitors" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/tests/assets/lex" />
-      <recent name="$PROJECT_DIR$/src/main/antrl" />
-      <recent name="$PROJECT_DIR$/tests" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="uem.visitors" />
@@ -522,12 +561,15 @@
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/tests/assets/parser" />
+      <recent name="$PROJECT_DIR$/src/uem/listners" />
+      <recent name="$PROJECT_DIR$/src/uem/ast/scope" />
       <recent name="$PROJECT_DIR$/src/main/antlr" />
       <recent name="$PROJECT_DIR$/tests/assets" />
-      <recent name="$PROJECT_DIR$/src/uem/antrl" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="uem.visitors" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests/assets/lex" />
+      <recent name="$PROJECT_DIR$/src/main/antrl" />
+      <recent name="$PROJECT_DIR$/tests" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -775,7 +817,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="188145000" />
+    <option name="totallyTimeSpent" value="198985000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -787,27 +829,27 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1299" height="743" extended-state="6" />
+    <frame x="1366" y="-2" width="1360" height="770" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="UI Designer" order="0" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.23144454" />
+      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.24429224" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.8515982" weight="0.0" />
-      <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.5011971" side_tool="true" weight="0.32626426" />
-      <window_info anchor="bottom" id="Messages" order="4" sideWeight="0.49561054" weight="0.0" />
+      <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.847793" weight="0.328125" />
+      <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.15601218" side_tool="true" weight="0.3296875" />
+      <window_info anchor="bottom" id="Messages" order="4" sideWeight="0.49162862" weight="0.328125" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" sideWeight="0.49880287" weight="0.0" />
       <window_info anchor="bottom" id="Tool Output" order="7" sideWeight="0.4980048" weight="0.0" />
-      <window_info anchor="bottom" x="107" y="136" width="1011" height="556" id="Debug" order="8" type="WINDOWED" weight="0.32919255" />
+      <window_info anchor="bottom" x="67" y="55" width="1299" height="713" id="Debug" order="8" type="WINDOWED" weight="0.32919255" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="11" weight="0.32919255" />
-      <window_info active="true" anchor="bottom" id="Run" order="12" sideWeight="0.849162" visible="true" weight="0.32952693" />
+      <window_info active="true" anchor="bottom" id="Run" order="12" sideWeight="0.8439878" visible="true" weight="0.3296875" />
       <window_info anchor="right" id="Database" order="0" weight="0.329653" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info anchor="right" id="Maven Projects" order="2" />
@@ -876,12 +918,6 @@
           </properties>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/uem/visitors/GraceFileVisitor.java</url>
-          <line>18</line>
-          <properties />
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -944,112 +980,120 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///usr/local/lib/antlr-4.5.3-complete.jar!/org/antlr/v4/parse/GrammarASTAdaptor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/antlr/IlpParser.java" />
-    <entry file="file://$PROJECT_DIR$/src/uem/antlr/IlpLexer.java" />
-    <entry file="jar:///usr/local/lib/antlr-4.5.3-complete.jar!/org/antlr/runtime/TokenRewriteStream.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/semantic/Validator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="67" selection-start-line="12" selection-start-column="67" selection-end-line="12" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/semantic/Error.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/NumberLiteral.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/BoolLiteral.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/Lexer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/antlr/grun/tests/scope" />
-    <entry file="file://$PROJECT_DIR$/src/uem/ast/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" lean-forward="true" selection-start-column="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/local/lib/antlr-4.5.3-complete.jar!/org/antlr/v4/runtime/Parser.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="98" column="9" lean-forward="true" selection-start-line="98" selection-start-column="9" selection-end-line="98" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/parser/ParseTreeToAstMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/antlr/GraceLexer.java">
+    <entry file="file://$PROJECT_DIR$/src/uem/visitors/LiteralVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <caret line="10" column="77" selection-start-line="10" selection-start-column="74" selection-end-line="10" selection-end-column="77" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/visitors/GraceFileVisitorImpl.java" />
-    <entry file="file://$PROJECT_DIR$/src/uem/parser/ParseTree.java">
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/scope/LocalScope.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/parser/TreeToAst.java">
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/scope/Scope.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/assets/parser/Screenshot from 2018-10-14 12-27-47.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/local/lib/antlr-4.5.3-complete.jar!/org/antlr/v4/runtime/tree/ParseTreeListener.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/local/lib/antlr-4.5.3-complete.jar!/org/antlr/v4/runtime/tree/ParseTreeProperty.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/ast/Ast.java">
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/scope/GlobalScope.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/antlr/GraceParser.tokens">
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/scope/VariableSymbol.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="97" column="7" lean-forward="true" selection-start-line="97" selection-start-column="7" selection-end-line="97" selection-end-column="7" />
+        <state>
+          <caret column="22" selection-start-column="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/scope/Symbol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#321#322#0" expanded="true" />
+            <element signature="e#353#354#0" expanded="true" />
+            <element signature="e#481#482#0" expanded="true" />
+            <element signature="e#508#509#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/scope/BaseScope.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#243#259#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/antlr/GraceParserListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5831">
+          <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/visitors/GraceFileVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/scope/CheckSymbols.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="36" lean-forward="true" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/antlr/GraceParserBaseVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="350" column="12" lean-forward="true" selection-start-line="350" selection-start-column="12" selection-end-line="350" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -1060,209 +1104,347 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/assets/lex/var2.doc.lex.test">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="29" lean-forward="true" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
+    <entry file="jar:///usr/local/lib/antlr-4.5.3-complete.jar!/org/antlr/v4/runtime/tree/TerminalNode.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="13" column="18" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/ast/stmt/GraceFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/antlr/GraceParserVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="17" column="53" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/antlr/GraceLexer.tokens">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="8" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/test/ilp/var1.lex.test" />
-    <entry file="file://$PROJECT_DIR$/out/test/ilp/var2.doc.lex.test" />
-    <entry file="file://$PROJECT_DIR$/src/main/antlr/grun/tests/scope.grace">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/SumExpression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/Expression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/antlr/GraceParser.tokens">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/antlr/GraceLexer.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="73" column="11" lean-forward="true" selection-start-line="73" selection-start-column="11" selection-end-line="73" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/ast/stmt/Statement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/antlr/GraceParser.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="50" column="45" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/ast/type/Type.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/visitors/SpecVarVisitor/DirectSpecVarSimpleIniContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/local/lib/antlr-4.5.3-complete.jar!/org/antlr/v4/runtime/tree/AbstractParseTreeVisitor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#347#348#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/ast/stmt/DeclVar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/assets/parser/Screenshot from 2018-10-14 12-27-47.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/visitors/SpecVarVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/ast/AstMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="184" column="62" lean-forward="true" selection-start-line="184" selection-start-column="36" selection-end-line="184" selection-end-column="62" />
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/uem/antlr/GraceParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="667" column="9" lean-forward="true" selection-start-line="667" selection-start-column="9" selection-end-line="667" selection-end-column="9" />
+        <state relative-caret-position="186">
+          <caret line="2342" column="22" selection-start-line="2342" selection-start-column="22" selection-end-line="2342" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/uem/visitors/ListTypeVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/assets/parser/var1.grace">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/visitors/LiteralVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="77" selection-start-line="10" selection-start-column="74" selection-end-line="10" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/visitors/ExpressionVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="30" column="57" lean-forward="true" selection-start-line="30" selection-start-column="57" selection-end-line="30" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/antlr/GraceParserBaseVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="110" column="76" lean-forward="true" selection-start-line="110" selection-start-column="41" selection-end-line="110" selection-end-column="76" />
+        <state relative-caret-position="68">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/uem/visitors/StatementVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="27" lean-forward="true" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+        <state relative-caret-position="204">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/uem/visitors/GraceFileVisitor.java">
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/stmt/SpecVar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="42" lean-forward="true" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+        <state relative-caret-position="197">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#975#976#0" expanded="true" />
+            <element signature="e#1017#1018#0" expanded="true" />
+            <element signature="e#1063#1064#0" expanded="true" />
+            <element signature="e#1099#1100#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/uem/visitors/ListSpecVarVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="170">
+          <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/local/lib/antlr-4.5.3-complete.jar!/org/antlr/v4/runtime/tree/ParseTreeWalker.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/uem/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="193">
+          <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/antlr/GraceParserBaseListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="168" column="86" selection-start-line="168" selection-start-column="26" selection-end-line="168" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/visitors/SpecVarVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="60" lean-forward="true" selection-start-line="12" selection-start-column="60" selection-end-line="12" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/listners/DefPhase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="51" column="30" lean-forward="true" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/stmt/Statement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/Expression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/stmt/DeclVar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-65">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/type/IntegerType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#516#517#0" expanded="true" />
+            <element signature="e#543#544#0" expanded="true" />
+            <element signature="e#589#590#0" expanded="true" />
+            <element signature="e#616#617#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/type/InvalidType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#392#393#0" expanded="true" />
+            <element signature="e#417#418#0" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
+            <element signature="e#506#507#0" expanded="true" />
+            <element signature="e#552#553#0" expanded="true" />
+            <element signature="e#579#580#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/type/Type.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/type/StringType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#419#420#0" expanded="true" />
+            <element signature="e#462#463#0" expanded="true" />
+            <element signature="e#519#520#0" expanded="true" />
+            <element signature="e#546#547#0" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#619#620#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/SumExpression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="18" column="18" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#920#921#0" expanded="true" />
+            <element signature="e#962#963#0" expanded="true" />
+            <element signature="e#1008#1009#0" expanded="true" />
+            <element signature="e#1044#1045#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/SubtractionExpression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#944#945#0" expanded="true" />
+            <element signature="e#986#987#0" expanded="true" />
+            <element signature="e#1032#1033#0" expanded="true" />
+            <element signature="e#1068#1069#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/StringLiteral.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#341#342#0" expanded="true" />
+            <element signature="e#383#384#0" expanded="true" />
+            <element signature="e#429#430#0" expanded="true" />
+            <element signature="e#465#466#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/type/BooleanType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#422#423#0" expanded="true" />
+            <element signature="e#463#464#0" expanded="true" />
+            <element signature="e#525#526#0" expanded="true" />
+            <element signature="e#552#553#0" expanded="true" />
+            <element signature="e#598#599#0" expanded="true" />
+            <element signature="e#625#626#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/NumberLiteral.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#340#341#0" expanded="true" />
+            <element signature="e#382#383#0" expanded="true" />
+            <element signature="e#428#429#0" expanded="true" />
+            <element signature="e#464#465#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/BoolLiteral.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#337#338#0" expanded="true" />
+            <element signature="e#379#380#0" expanded="true" />
+            <element signature="e#425#426#0" expanded="true" />
+            <element signature="e#461#462#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/BinaryExpression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/DivisionExpression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/stmt/GraceFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding>
+            <element signature="e#417#418#0" expanded="true" />
+            <element signature="e#459#460#0" expanded="true" />
+            <element signature="e#505#506#0" expanded="true" />
+            <element signature="e#541#542#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/AstMapTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/visitors/ExpressionVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/VarReference.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/ast/expr/MultiplicationExpression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-215">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uem/listners/RefPhase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="64" column="33" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/assets/parser/var2.grace">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/assets/parser/var1.grace">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="18" lean-forward="true" selection-end-line="2" selection-end-column="18" />
         </state>
       </provider>
     </entry>

@@ -1,5 +1,6 @@
 package uem.ast.expr;
 
+import org.antlr.v4.runtime.Token;
 import uem.ast.Position;
 
 public class SubtractionExpression implements BinaryExpression {
@@ -7,6 +8,7 @@ public class SubtractionExpression implements BinaryExpression {
     private final Expression left;
     private final Expression right;
     private final Position position;
+    private Token symToken;
 
     @Override
     public Expression getLeft() {
@@ -34,6 +36,16 @@ public class SubtractionExpression implements BinaryExpression {
     @Override
     public Position getPosition() {
         return this.position;
+    }
+
+    @Override
+    public Token setSymbol(Token sym) {
+        return this.symToken = sym;
+    }
+
+    @Override
+    public Token getSymbol() {
+        return this.symToken;
     }
 
 }

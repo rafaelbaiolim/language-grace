@@ -128,6 +128,14 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_graceFile; }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterGraceFile(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitGraceFile(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitGraceFile(this);
 			else return visitor.visitChildren(this);
@@ -177,6 +185,14 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_line; }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterLine(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitLine(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitLine(this);
 			else return visitor.visitChildren(this);
@@ -221,6 +237,14 @@ public class GraceParser extends Parser {
 		}
 		public AssignmentStatementContext(StatementContext ctx) { copyFrom(ctx); }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterAssignmentStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitAssignmentStatement(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitAssignmentStatement(this);
 			else return visitor.visitChildren(this);
@@ -232,6 +256,14 @@ public class GraceParser extends Parser {
 		}
 		public DecSubStatementContext(StatementContext ctx) { copyFrom(ctx); }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDecSubStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDecSubStatement(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitDecSubStatement(this);
 			else return visitor.visitChildren(this);
@@ -242,6 +274,14 @@ public class GraceParser extends Parser {
 			return getRuleContext(DeclVarContext.class,0);
 		}
 		public DeclVarStatementContext(StatementContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDeclVarStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDeclVarStatement(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitDeclVarStatement(this);
@@ -312,6 +352,14 @@ public class GraceParser extends Parser {
 		}
 		public IncrementOperationContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterIncrementOperation(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitIncrementOperation(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitIncrementOperation(this);
 			else return visitor.visitChildren(this);
@@ -323,6 +371,14 @@ public class GraceParser extends Parser {
 		}
 		public MinusExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterMinusExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitMinusExpression(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitMinusExpression(this);
 			else return visitor.visitChildren(this);
@@ -333,6 +389,14 @@ public class GraceParser extends Parser {
 			return getRuleContext(ExpressionContext.class,0);
 		}
 		public DifferenceExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDifferenceExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDifferenceExpression(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitDifferenceExpression(this);
@@ -351,6 +415,14 @@ public class GraceParser extends Parser {
 		}
 		public TernaryOperationContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterTernaryOperation(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitTernaryOperation(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitTernaryOperation(this);
 			else return visitor.visitChildren(this);
@@ -361,6 +433,14 @@ public class GraceParser extends Parser {
 			return getRuleContext(LiteralContext.class,0);
 		}
 		public LiteralReferenceContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterLiteralReference(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitLiteralReference(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitLiteralReference(this);
@@ -379,6 +459,14 @@ public class GraceParser extends Parser {
 		}
 		public CompareOperationContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCompareOperation(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCompareOperation(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitCompareOperation(this);
 			else return visitor.visitChildren(this);
@@ -389,6 +477,14 @@ public class GraceParser extends Parser {
 			return getRuleContext(ExpressionContext.class,0);
 		}
 		public ParenExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterParenExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitParenExpression(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitParenExpression(this);
@@ -407,6 +503,14 @@ public class GraceParser extends Parser {
 		}
 		public BinaryOperationContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterBinaryOperation(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitBinaryOperation(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitBinaryOperation(this);
 			else return visitor.visitChildren(this);
@@ -415,6 +519,14 @@ public class GraceParser extends Parser {
 	public static class VarReferenceContext extends ExpressionContext {
 		public TerminalNode ID() { return getToken(GraceParser.ID, 0); }
 		public VarReferenceContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterVarReference(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitVarReference(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitVarReference(this);
@@ -615,6 +727,14 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_declVar; }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDeclVar(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDeclVar(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitDeclVar(this);
 			else return visitor.visitChildren(this);
@@ -661,6 +781,14 @@ public class GraceParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_listSpecVars; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterListSpecVars(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitListSpecVars(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitListSpecVars(this);
@@ -723,6 +851,14 @@ public class GraceParser extends Parser {
 		}
 		public DirectSpecVarArrContext(SpecVarContext ctx) { copyFrom(ctx); }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDirectSpecVarArr(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDirectSpecVarArr(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitDirectSpecVarArr(this);
 			else return visitor.visitChildren(this);
@@ -733,6 +869,14 @@ public class GraceParser extends Parser {
 			return getRuleContext(SpecVarSimpleIniContext.class,0);
 		}
 		public DirectSpecVarSimpleIniContext(SpecVarContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDirectSpecVarSimpleIni(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDirectSpecVarSimpleIni(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitDirectSpecVarSimpleIni(this);
@@ -745,6 +889,14 @@ public class GraceParser extends Parser {
 		}
 		public DirectSpecVarArrIniContext(SpecVarContext ctx) { copyFrom(ctx); }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDirectSpecVarArrIni(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDirectSpecVarArrIni(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitDirectSpecVarArrIni(this);
 			else return visitor.visitChildren(this);
@@ -755,6 +907,14 @@ public class GraceParser extends Parser {
 			return getRuleContext(SpecVarSimpleContext.class,0);
 		}
 		public DirectSpecVarContext(SpecVarContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDirectSpecVar(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDirectSpecVar(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitDirectSpecVar(this);
@@ -821,6 +981,14 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_specVarSimple; }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterSpecVarSimple(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitSpecVarSimple(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitSpecVarSimple(this);
 			else return visitor.visitChildren(this);
@@ -857,6 +1025,14 @@ public class GraceParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_specVarSimpleIni; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterSpecVarSimpleIni(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitSpecVarSimpleIni(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitSpecVarSimpleIni(this);
@@ -901,6 +1077,14 @@ public class GraceParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_specVarArr; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterSpecVarArr(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitSpecVarArr(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitSpecVarArr(this);
@@ -962,6 +1146,14 @@ public class GraceParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_specVarArrIni; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterSpecVarArrIni(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitSpecVarArrIni(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitSpecVarArrIni(this);
@@ -1027,6 +1219,14 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_decSub; }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDecSub(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDecSub(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitDecSub(this);
 			else return visitor.visitChildren(this);
@@ -1079,6 +1279,14 @@ public class GraceParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_decProc; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDecProc(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDecProc(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitDecProc(this);
@@ -1133,6 +1341,14 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_decFunc; }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterDecFunc(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitDecFunc(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitDecFunc(this);
 			else return visitor.visitChildren(this);
@@ -1185,6 +1401,14 @@ public class GraceParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_lstParam; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterLstParam(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitLstParam(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitLstParam(this);
@@ -1245,6 +1469,14 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_specParam; }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterSpecParam(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitSpecParam(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitSpecParam(this);
 			else return visitor.visitChildren(this);
@@ -1299,6 +1531,14 @@ public class GraceParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_param; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterParam(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitParam(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitParam(this);
@@ -1355,6 +1595,14 @@ public class GraceParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_command; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCommand(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCommand(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitCommand(this);
@@ -1440,6 +1688,14 @@ public class GraceParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_cmdSimple; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdSimple(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdSimple(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitCmdSimple(this);
@@ -1546,6 +1802,14 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_cmdAtrib; }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdAtrib(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdAtrib(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitCmdAtrib(this);
 			else return visitor.visitChildren(this);
@@ -1585,6 +1849,14 @@ public class GraceParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_atrib; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterAtrib(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitAtrib(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitAtrib(this);
@@ -1642,6 +1914,14 @@ public class GraceParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_cmdIf; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdIf(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdIf(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitCmdIf(this);
@@ -1709,6 +1989,14 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_cmdWhile; }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdWhile(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdWhile(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitCmdWhile(this);
 			else return visitor.visitChildren(this);
@@ -1762,6 +2050,14 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_cmdFor; }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdFor(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdFor(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitCmdFor(this);
 			else return visitor.visitChildren(this);
@@ -1814,6 +2110,14 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_forInit; }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterForInit(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitForInit(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitForInit(this);
 			else return visitor.visitChildren(this);
@@ -1850,6 +2154,14 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_forItera; }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterForItera(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitForItera(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitForItera(this);
 			else return visitor.visitChildren(this);
@@ -1882,6 +2194,14 @@ public class GraceParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_cmdStop; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdStop(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdStop(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitCmdStop(this);
@@ -1917,6 +2237,14 @@ public class GraceParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_cmdSkip; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdSkip(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdSkip(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitCmdSkip(this);
@@ -1958,6 +2286,14 @@ public class GraceParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_cmdReturn; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdReturn(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdReturn(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitCmdReturn(this);
@@ -2015,6 +2351,14 @@ public class GraceParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_cmdCallProc; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdCallProc(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdCallProc(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitCmdCallProc(this);
@@ -2086,6 +2430,14 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_cmdRead; }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdRead(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdRead(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitCmdRead(this);
 			else return visitor.visitChildren(this);
@@ -2128,6 +2480,14 @@ public class GraceParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_cmdWrite; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterCmdWrite(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitCmdWrite(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitCmdWrite(this);
@@ -2195,6 +2555,14 @@ public class GraceParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_block; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterBlock(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitBlock(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitBlock(this);
@@ -2268,6 +2636,14 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_variable; }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterVariable(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitVariable(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitVariable(this);
 			else return visitor.visitChildren(this);
@@ -2339,6 +2715,14 @@ public class GraceParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_lstOP; }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterLstOP(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitLstOP(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitLstOP(this);
 			else return visitor.visitChildren(this);
@@ -2387,6 +2771,14 @@ public class GraceParser extends Parser {
 		public TerminalNode T_STRING() { return getToken(GraceParser.T_STRING, 0); }
 		public StringContext(LstTypeContext ctx) { copyFrom(ctx); }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterString(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitString(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitString(this);
 			else return visitor.visitChildren(this);
@@ -2396,6 +2788,14 @@ public class GraceParser extends Parser {
 		public TerminalNode T_BOOL() { return getToken(GraceParser.T_BOOL, 0); }
 		public BoolContext(LstTypeContext ctx) { copyFrom(ctx); }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterBool(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitBool(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitBool(this);
 			else return visitor.visitChildren(this);
@@ -2404,6 +2804,14 @@ public class GraceParser extends Parser {
 	public static class IntegerContext extends LstTypeContext {
 		public TerminalNode T_INT() { return getToken(GraceParser.T_INT, 0); }
 		public IntegerContext(LstTypeContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterInteger(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitInteger(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitInteger(this);
@@ -2471,6 +2879,14 @@ public class GraceParser extends Parser {
 		public TerminalNode T_TRUE() { return getToken(GraceParser.T_TRUE, 0); }
 		public FalseLiteralContext(LiteralContext ctx) { copyFrom(ctx); }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterFalseLiteral(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitFalseLiteral(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitFalseLiteral(this);
 			else return visitor.visitChildren(this);
@@ -2479,6 +2895,14 @@ public class GraceParser extends Parser {
 	public static class StringLiteralContext extends LiteralContext {
 		public TerminalNode STRINGLITERAL() { return getToken(GraceParser.STRINGLITERAL, 0); }
 		public StringLiteralContext(LiteralContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterStringLiteral(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitStringLiteral(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitStringLiteral(this);
@@ -2489,6 +2913,14 @@ public class GraceParser extends Parser {
 		public TerminalNode NUMBERLITERAL() { return getToken(GraceParser.NUMBERLITERAL, 0); }
 		public IntLiteralContext(LiteralContext ctx) { copyFrom(ctx); }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterIntLiteral(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitIntLiteral(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitIntLiteral(this);
 			else return visitor.visitChildren(this);
@@ -2497,6 +2929,14 @@ public class GraceParser extends Parser {
 	public static class TrueLiteralContext extends LiteralContext {
 		public TerminalNode T_FALSE() { return getToken(GraceParser.T_FALSE, 0); }
 		public TrueLiteralContext(LiteralContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterTrueLiteral(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitTrueLiteral(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitTrueLiteral(this);

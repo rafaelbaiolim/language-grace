@@ -1,12 +1,13 @@
 package uem;
 
-import org.antlr.runtime.tree.CommonTree;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
+import org.antlr.v4.runtime.tree.ParseTreeWalker;
 import uem.antlr.GraceLexer;
 import uem.antlr.GraceParser;
-import uem.parser.TreeToAst;
+import uem.listners.DefPhase;
+import uem.listners.RefPhase;
 import uem.visitors.GraceFileVisitor;
 
 import java.io.FileInputStream;
@@ -31,9 +32,13 @@ class Main {
          * @todo: retornar a validação de blocos depois de implementar visitors
          */
         ParseTree tree = parser.graceFile();
+        ParseTreeWalker walker = new ParseTreeWalker();
 
-        GraceFileVisitor loader = new GraceFileVisitor();
-        loader.visit(tree);
+        DefPhase defPhase = new DefPhase();
+        walker.walk(defPhase, tree);
+
+        RefPhase refPhase = new RefPhase(defPhase.globals, defPhase.scopes);
+        walker.walk(refPhase, tree);
 
     }
 }

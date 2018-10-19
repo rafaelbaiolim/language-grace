@@ -1,5 +1,7 @@
 package uem.ast.type;
 
+import org.antlr.v4.runtime.Token;
+import uem.antlr.GraceParser;
 import uem.ast.Position;
 
 public class StringType implements Type {
@@ -16,6 +18,20 @@ public class StringType implements Type {
 
     public StringType() {
         this.position = null;
+    }
+
+    @Override
+    public int getType() {
+        return GraceParser.T_STRING;
+    }
+    @Override
+    public Token setSymbol(Token sym) {
+        return null;
+    }
+
+    @Override
+    public Token getSymbol() {
+        return null;
     }
 
 }

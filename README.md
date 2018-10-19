@@ -41,6 +41,14 @@ $ grun Ilp command -tree
 Caso o nome da linguagem seja alterado manter os arquivos no formato
 ['NomeLP']Lexer.g4 e ['NomeLP']Parser.g4
 
+
+Livros 
+==============================
+1. [Download](https://drive.google.com/open?id=1xb9krsQnkukff2TdJAjoUP7A07t8Y4I6) -> The Definitive ANTLR4 Reference
+
+2. [Download](https://drive.google.com/open?id=1U50fYxzygedAnlvL41KbZsmv522Q6czU) -> Language Implementation Patterns
+
+
 Testes Unitários
 ==============================
 * [x] Var

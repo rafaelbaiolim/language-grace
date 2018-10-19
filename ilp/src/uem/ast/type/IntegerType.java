@@ -4,7 +4,7 @@ import org.antlr.v4.runtime.Token;
 import uem.antlr.GraceParser;
 import uem.ast.Position;
 
-public class BooleanType implements Type {
+public class IntegerType implements Type {
 
     private final Position position;
 
@@ -12,17 +12,17 @@ public class BooleanType implements Type {
         return this.position;
     }
 
-    public BooleanType(Position position) {
+    public IntegerType(Position position) {
         this.position = position;
     }
 
-    public BooleanType() {
+    public IntegerType() {
         this.position = null;
     }
 
     @Override
     public int getType() {
-        return GraceParser.T_BOOL;
+        return GraceParser.T_INT;
     }
 
     @Override

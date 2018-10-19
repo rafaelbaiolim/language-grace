@@ -5,7 +5,7 @@ import uem.antlr.GraceParser.*;
 import uem.ast.expr.*;
 import uem.ast.stmt.*;
 import uem.ast.type.BooleanType;
-import uem.ast.type.NumberType;
+import uem.ast.type.IntegerType;
 import uem.ast.type.StringType;
 import uem.ast.type.Type;
 
@@ -136,7 +136,7 @@ public class AstMap {
                 canonicalType.equals(IntLiteralContext.class.getCanonicalName()) ||
                         canonicalType.equals(IntegerContext.class.getCanonicalName())
         ) {
-            return new NumberType();
+            return new IntegerType();
         }
 
         if (canonicalType.equals(StringLiteralContext.class.getCanonicalName()) ||

@@ -1,12 +1,13 @@
-package uem.ast.stmt;
+package uem.ast.expr;
 
+import org.antlr.v4.runtime.Token;
 import uem.ast.Position;
-import uem.ast.expr.Expression;
 
 public class VarReference implements Expression {
 
     private final String varName;
     private final Position position;
+    private Token symToken;
 
     public VarReference(String varName, Position position) {
         super();
@@ -21,11 +22,21 @@ public class VarReference implements Expression {
     }
 
     public String getVarName() {
-        return varName;
+        return this.varName;
     }
 
     @Override
     public Position getPosition() {
         return this.position;
+    }
+
+    @Override
+    public Token setSymbol(Token sym) {
+        return this.symToken = sym;
+    }
+
+    @Override
+    public Token getSymbol() {
+        return this.symToken;
     }
 }

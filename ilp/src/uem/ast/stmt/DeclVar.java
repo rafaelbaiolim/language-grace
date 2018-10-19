@@ -1,6 +1,8 @@
 package uem.ast.stmt;
 
+import org.antlr.v4.runtime.Token;
 import uem.ast.Position;
+import uem.ast.scope.Symbol;
 import uem.ast.type.Type;
 
 import java.util.List;
@@ -11,6 +13,7 @@ public class DeclVar implements Statement {
     private final List<Statement> stmt;
     private final Position position;
     private final Type type;
+    private Token symToken;
 
     public DeclVar(List<Statement> stmt, Type type) {
         super();
@@ -19,8 +22,19 @@ public class DeclVar implements Statement {
         this.type = type;
     }
 
+    @Override
     public String getVarName() {
         return varName;
+    }
+
+    @Override
+    public Token setSymbol(Token sym) {
+        return this.symToken = sym;
+    }
+
+    @Override
+    public Token getSymbol() {
+        return this.symToken;
     }
 
     @Override
