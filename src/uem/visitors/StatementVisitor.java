@@ -9,14 +9,19 @@ public class StatementVisitor extends GraceParserBaseVisitor<Statement> {
     public Statement visitDeclVar(GraceParser.DeclVarContext declVarCtx) {
         GraceParser.ListSpecVarsContext listSpecVarsContext = declVarCtx.listSpecVars();
         GraceParser.LstTypeContext listTypeCtx = declVarCtx.lstType();
-
         ListSpecVarVisitor listExprVisit = new ListSpecVarVisitor();
         ListTypeVisitor listTypeVisitor = new ListTypeVisitor();
-
         return new DeclVar(
                 listExprVisit.visit(listSpecVarsContext),
                 listTypeVisitor.visit(listTypeCtx)
         );
+    }
+
+    public Statement visitWhileStatement(GraceParser.CmdWhileContext whileCtx){
+        return null;
+        //return new WhileStmt();
 
     }
+
+
 }

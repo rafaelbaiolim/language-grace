@@ -28,9 +28,7 @@ class Main {
         GraceLexer lexer = new GraceLexer(input);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         GraceParser parser = new GraceParser(tokens);
-        /**
-         * @todo: retornar a validação de blocos depois de implementar visitors
-         */
+
         ParseTree tree = parser.graceFile();
         ParseTreeWalker walker = new ParseTreeWalker();
 

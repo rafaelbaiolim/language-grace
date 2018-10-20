@@ -32,17 +32,21 @@ public class DefPhase extends GraceParserBaseListener {
     }
 
     public void exitDeclVar(GraceParser.DeclVarContext declVarCtx) {
-        GraceParser.ListSpecVarsContext listSpecVarsContext = declVarCtx.listSpecVars();
-        GraceParser.LstTypeContext listTypeCtx = declVarCtx.lstType();
+        try {
+            GraceParser.ListSpecVarsContext listSpecVarsContext = declVarCtx.listSpecVars();
+            GraceParser.LstTypeContext listTypeCtx = declVarCtx.lstType();
 
-        ListSpecVarVisitor listExprVisit = new ListSpecVarVisitor();
-        ListTypeVisitor listTypeVisitor = new ListTypeVisitor();
+            ListSpecVarVisitor listExprVisit = new ListSpecVarVisitor();
+            ListTypeVisitor listTypeVisitor = new ListTypeVisitor();
 
-        List<Statement> lst = listExprVisit.visit(listSpecVarsContext);
-        Type currentType = listTypeVisitor.visit(listTypeCtx);
-        lst.forEach(stmt -> {
-            defineVar(currentType, stmt);
-        });
+            List<Statement> lst = listExprVisit.visit(listSpecVarsContext);
+            Type currentType = listTypeVisitor.visit(listTypeCtx);
+            lst.forEach(stmt -> {
+                defineVar(currentType, stmt);
+            });
+        }catch (Exception ex){
+            //Erro sintático
+        }
     }
 
     void defineVar(Type typeCtx, Statement stmtCtxt) {

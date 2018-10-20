@@ -11,9 +11,9 @@ public class GraceFileVisitor extends GraceParserBaseVisitor {
 
     public GraceFile visitGraceFile(GraceParser.GraceFileContext ctx) {
         LinkedList<Statement> linked = new LinkedList<>();
-        ctx.line().forEach(el -> {
+        ctx.statement().forEach(el -> {
             Statement ast = new StatementVisitor().
-                    visit(el.statement());
+                    visit(el);
             linked.add(ast);
         });
         return new GraceFile(linked);

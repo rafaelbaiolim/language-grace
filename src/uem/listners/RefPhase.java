@@ -34,21 +34,25 @@ public class RefPhase extends GraceParserBaseListener {
 
 
     public void exitDeclVar(GraceParser.DeclVarContext declVarCtx) {
-        GraceParser.ListSpecVarsContext listSpecVarsContext = declVarCtx.listSpecVars();
-        GraceParser.LstTypeContext listTypeCtx = declVarCtx.lstType();
+        try {
+            GraceParser.ListSpecVarsContext listSpecVarsContext = declVarCtx.listSpecVars();
+            GraceParser.LstTypeContext listTypeCtx = declVarCtx.lstType();
 
-        ListSpecVarVisitor listExprVisit = new ListSpecVarVisitor();
-        ListTypeVisitor listTypeVisitor = new ListTypeVisitor();
+            ListSpecVarVisitor listExprVisit = new ListSpecVarVisitor();
+            ListTypeVisitor listTypeVisitor = new ListTypeVisitor();
 
-        List<Statement> lst = listExprVisit.visit(listSpecVarsContext);
-        Type currentType = listTypeVisitor.visit(listTypeCtx);
-        lst.forEach(stmt -> {
-            String name = stmt.getVarName();
-            Symbol var = currentScope.resolve(name);
-            if (var == null) {
-                CheckSymbols.error(stmt.getSymbol(), "no such variable: " + name);
-            }
-        });
+            List<Statement> lst = listExprVisit.visit(listSpecVarsContext);
+            Type currentType = listTypeVisitor.visit(listTypeCtx);
+            lst.forEach(stmt -> {
+                String name = stmt.getVarName();
+                Symbol var = currentScope.resolve(name);
+                if (var == null) {
+                    CheckSymbols.error(stmt.getSymbol(), "no such variable: " + name);
+                }
+            });
+        }catch (Exception ex){
+            //err sintatico
+        }
     }
 
     /**

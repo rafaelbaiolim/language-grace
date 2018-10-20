@@ -17,12 +17,6 @@ public interface GraceParserVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitGraceFile(GraceParser.GraceFileContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link GraceParser#line}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitLine(GraceParser.LineContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code declVarStatement}
 	 * labeled alternative in {@link GraceParser#statement}.
 	 * @param ctx the parse tree
@@ -30,19 +24,19 @@ public interface GraceParserVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitDeclVarStatement(GraceParser.DeclVarStatementContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code assignmentStatement}
-	 * labeled alternative in {@link GraceParser#statement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitAssignmentStatement(GraceParser.AssignmentStatementContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code decSubStatement}
 	 * labeled alternative in {@link GraceParser#statement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitDecSubStatement(GraceParser.DecSubStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code cmd}
+	 * labeled alternative in {@link GraceParser#statement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCmd(GraceParser.CmdContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code incrementOperation}
 	 * labeled alternative in {@link GraceParser#expression}.
@@ -57,6 +51,13 @@ public interface GraceParserVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitMinusExpression(GraceParser.MinusExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code arrReference}
+	 * labeled alternative in {@link GraceParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitArrReference(GraceParser.ArrReferenceContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code differenceExpression}
 	 * labeled alternative in {@link GraceParser#expression}.
@@ -171,11 +172,19 @@ public interface GraceParserVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitSpecVarArrIni(GraceParser.SpecVarArrIniContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link GraceParser#decSub}.
+	 * Visit a parse tree produced by the {@code procedure}
+	 * labeled alternative in {@link GraceParser#decSub}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitDecSub(GraceParser.DecSubContext ctx);
+	T visitProcedure(GraceParser.ProcedureContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code function}
+	 * labeled alternative in {@link GraceParser#decSub}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFunction(GraceParser.FunctionContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link GraceParser#decProc}.
 	 * @param ctx the parse tree
@@ -201,29 +210,123 @@ public interface GraceParserVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitSpecParam(GraceParser.SpecParamContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link GraceParser#param}.
+	 * Visit a parse tree produced by the {@code idParam}
+	 * labeled alternative in {@link GraceParser#param}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitParam(GraceParser.ParamContext ctx);
+	T visitIdParam(GraceParser.IdParamContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link GraceParser#command}.
+	 * Visit a parse tree produced by the {@code arrParam}
+	 * labeled alternative in {@link GraceParser#param}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitCommand(GraceParser.CommandContext ctx);
+	T visitArrParam(GraceParser.ArrParamContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link GraceParser#cmdSimple}.
+	 * Visit a parse tree produced by the {@code cmsimple}
+	 * labeled alternative in {@link GraceParser#command}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitCmdSimple(GraceParser.CmdSimpleContext ctx);
+	T visitCmsimple(GraceParser.CmsimpleContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link GraceParser#cmdAtrib}.
+	 * Visit a parse tree produced by the {@code cmblock}
+	 * labeled alternative in {@link GraceParser#command}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitCmdAtrib(GraceParser.CmdAtribContext ctx);
+	T visitCmblock(GraceParser.CmblockContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code cmAtrib}
+	 * labeled alternative in {@link GraceParser#cmdSimple}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCmAtrib(GraceParser.CmAtribContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code cmIf}
+	 * labeled alternative in {@link GraceParser#cmdSimple}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCmIf(GraceParser.CmIfContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code cmWhile}
+	 * labeled alternative in {@link GraceParser#cmdSimple}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCmWhile(GraceParser.CmWhileContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code cmFor}
+	 * labeled alternative in {@link GraceParser#cmdSimple}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCmFor(GraceParser.CmForContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code cmStop}
+	 * labeled alternative in {@link GraceParser#cmdSimple}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCmStop(GraceParser.CmStopContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code cmSkip}
+	 * labeled alternative in {@link GraceParser#cmdSimple}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCmSkip(GraceParser.CmSkipContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code cmReturn}
+	 * labeled alternative in {@link GraceParser#cmdSimple}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCmReturn(GraceParser.CmReturnContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code cmProc}
+	 * labeled alternative in {@link GraceParser#cmdSimple}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCmProc(GraceParser.CmProcContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code cmRead}
+	 * labeled alternative in {@link GraceParser#cmdSimple}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCmRead(GraceParser.CmReadContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code cmWrite}
+	 * labeled alternative in {@link GraceParser#cmdSimple}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCmWrite(GraceParser.CmWriteContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code atribVar}
+	 * labeled alternative in {@link GraceParser#cmdAtrib}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAtribVar(GraceParser.AtribVarContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code atribArr}
+	 * labeled alternative in {@link GraceParser#cmdAtrib}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAtribArr(GraceParser.AtribArrContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GraceParser#arrAtrib}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitArrAtrib(GraceParser.ArrAtribContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link GraceParser#atrib}.
 	 * @param ctx the parse tree

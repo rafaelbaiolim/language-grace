@@ -28,9 +28,9 @@ public class AstMap {
 
     public GraceFile getAst(GraceFileContext graceFileCtx) {
         LinkedList<Statement> linked = new LinkedList<>();
-        graceFileCtx.line().forEach(el -> {
+        graceFileCtx.statement().forEach(el -> {
             Statement ast = this.getAst(
-                    el.statement(),
+                    el,
                     new Position(
                             this.getStartPoint(el.getStart()),
                             this.getEndPoint(el.getStop())
