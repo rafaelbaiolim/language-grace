@@ -13,7 +13,12 @@ associado o operador na ordem esquerd -> direita,
 trata a Grace para remover e nunca ter a esquerda? ou segue o baile ?
 */
 
-graceFile : (statement)+ ;
+@header {
+    import org.antlr.symtab.*;
+}
+
+graceFile returns [Scope scope]:
+    (statement)+ ;
 
 statement
     : declVar #declVarStatement
@@ -59,7 +64,6 @@ specVarSimpleIni
     : ID '=' expression
     ;
 
-
 specVarArr
     : specVarSimple '[' NUMBERLITERAL+ ']'
     ;
@@ -77,11 +81,11 @@ decSub
 
 // Declaração de Procedimentos
 
-decProc
+decProc returns [Scope scope]
     : 'def' ID '(' lstParam? ')' block
     ;
 
-decFunc
+decFunc returns [Scope scope]
     : 'def' ID '(' lstParam? ')' ':' lstType block
     ;
 
@@ -126,7 +130,7 @@ cmdSimple
 // Atribuição
 
 cmdAtrib
-    : atrib ';'  #atribVar
+    : atrib ';'     #atribVar
     | arrAtrib ';'  #atribArr
     ;
 
@@ -202,7 +206,7 @@ cmdWrite
 
 // Bloco de Comandos
 
-block
+block returns [Scope scope]
     : '{' declVar* command* '}'
     ;
 // Operador Ternário (opTern -> exp:ternaryOperation)

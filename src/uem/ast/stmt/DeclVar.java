@@ -2,7 +2,6 @@ package uem.ast.stmt;
 
 import org.antlr.v4.runtime.Token;
 import uem.ast.Position;
-import uem.ast.scope.Symbol;
 import uem.ast.type.Type;
 
 import java.util.List;

@@ -1,5 +1,8 @@
 // Generated from GraceParser.g4 by ANTLR 4.5.3
 package uem.antlr;
+
+    import org.antlr.symtab.*;
+
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -116,6 +119,7 @@ public class GraceParser extends Parser {
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 	public static class GraceFileContext extends ParserRuleContext {
+		public Scope scope;
 		public List<StatementContext> statement() {
 			return getRuleContexts(StatementContext.class);
 		}
@@ -1289,6 +1293,7 @@ public class GraceParser extends Parser {
 	}
 
 	public static class DecProcContext extends ParserRuleContext {
+		public Scope scope;
 		public TerminalNode ID() { return getToken(GraceParser.ID, 0); }
 		public BlockContext block() {
 			return getRuleContext(BlockContext.class,0);
@@ -1355,6 +1360,7 @@ public class GraceParser extends Parser {
 	}
 
 	public static class DecFuncContext extends ParserRuleContext {
+		public Scope scope;
 		public TerminalNode ID() { return getToken(GraceParser.ID, 0); }
 		public LstTypeContext lstType() {
 			return getRuleContext(LstTypeContext.class,0);
@@ -2892,6 +2898,7 @@ public class GraceParser extends Parser {
 	}
 
 	public static class BlockContext extends ParserRuleContext {
+		public Scope scope;
 		public List<DeclVarContext> declVar() {
 			return getRuleContexts(DeclVarContext.class);
 		}

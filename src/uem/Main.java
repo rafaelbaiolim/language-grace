@@ -6,9 +6,8 @@ import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 import uem.antlr.GraceLexer;
 import uem.antlr.GraceParser;
-import uem.listners.DefPhase;
-import uem.listners.RefPhase;
-import uem.visitors.GraceFileVisitor;
+import uem.listners.FrontEnd;
+import uem.validator.ErrorReport;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -29,14 +28,13 @@ class Main {
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         GraceParser parser = new GraceParser(tokens);
 
+        parser.setErrorHandler(new ErrorReport());
+
         ParseTree tree = parser.graceFile();
         ParseTreeWalker walker = new ParseTreeWalker();
 
-        DefPhase defPhase = new DefPhase();
-        walker.walk(defPhase, tree);
-
-        RefPhase refPhase = new RefPhase(defPhase.globals, defPhase.scopes);
-        walker.walk(refPhase, tree);
+        FrontEnd frontEnd = new FrontEnd();
+        walker.walk(frontEnd, tree);
 
     }
 }

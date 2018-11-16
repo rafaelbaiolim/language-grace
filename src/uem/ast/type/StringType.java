@@ -24,6 +24,17 @@ public class StringType implements Type {
     public int getType() {
         return GraceParser.T_STRING;
     }
+
+    @Override
+    public String getName() {
+        return null;
+    }
+
+    @Override
+    public int getTypeIndex() {
+        return 0;
+    }
+
     @Override
     public Token setSymbol(Token sym) {
         return null;

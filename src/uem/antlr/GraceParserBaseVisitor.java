@@ -1,5 +1,8 @@
 // Generated from GraceParser.g4 by ANTLR 4.5.3
 package uem.antlr;
+
+    import org.antlr.symtab.*;
+
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
 /**
