@@ -6,7 +6,7 @@ import uem.antlr.GraceParserBaseListener;
 import uem.ast.expr.BinaryExpression;
 import uem.ast.expr.Expression;
 import uem.ast.stmt.Statement;
-import uem.validator.CheckSymbols;
+import uem.semantic.CheckSymbols;
 import uem.visitors.ExpressionVisitor;
 import uem.visitors.ListSpecParamVisitor;
 import uem.visitors.ListSpecVarVisitor;
@@ -44,7 +44,7 @@ public class FrontEnd extends GraceParserBaseListener {
     }
 
     /**
-     * Escopos de Função
+     * Escopos de Função / Procedure
      */
 
     public void enterDecFunc(GraceParser.DecFuncContext funCtx) {
@@ -55,13 +55,25 @@ public class FrontEnd extends GraceParserBaseListener {
         pushScope(fSymbol);
     }
 
+    public void enterDecProc(GraceParser.DecProcContext procCtx) {
+        FunctionSymbol fSymbol = new FunctionSymbol(procCtx.ID().getText());
+        fSymbol.setEnclosingScope(currentScope);
+        currentScope.define(fSymbol);
+        procCtx.scope = fSymbol;
+        pushScope(fSymbol);
+    }
+
 
     public void exitFunction(GraceParser.FunctionContext funCtx) {
         popScope();
     }
 
+    public void exitProcedure(GraceParser.ProcedureContext procCtx) {
+        popScope();
+    }
+
     /**
-     * Argumentos de Função
+     * Argumentos de Função / Procedure
      */
 
     public void enterLstParam(GraceParser.LstParamContext ctxLstParam) {

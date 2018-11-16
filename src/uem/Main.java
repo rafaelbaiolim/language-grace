@@ -7,7 +7,7 @@ import org.antlr.v4.runtime.tree.ParseTreeWalker;
 import uem.antlr.GraceLexer;
 import uem.antlr.GraceParser;
 import uem.listners.FrontEnd;
-import uem.validator.ErrorReport;
+import uem.semantic.ErrorReport;
 
 import java.io.FileInputStream;
 import java.io.IOException;

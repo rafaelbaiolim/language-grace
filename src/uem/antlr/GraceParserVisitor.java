@@ -442,6 +442,12 @@ public interface GraceParserVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitBool(GraceParser.BoolContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link GraceParser#stringLit}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStringLit(GraceParser.StringLitContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code intLiteral}
 	 * labeled alternative in {@link GraceParser#literal}.
 	 * @param ctx the parse tree

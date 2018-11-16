@@ -232,9 +232,15 @@ lstOP
 
 lstType
     : T_INT       # integer
-    | T_STRING    # string
+    | stringLit   # string
     | T_BOOL      # bool
     ;
+
+stringLit
+    : 'string'
+    | 'string' '[' NUMBERLITERAL ']'
+    ;
+
 
 literal
     : NUMBERLITERAL  # intLiteral

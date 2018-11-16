@@ -737,6 +737,16 @@ public interface GraceParserListener extends ParseTreeListener {
 	 */
 	void exitBool(GraceParser.BoolContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link GraceParser#stringLit}.
+	 * @param ctx the parse tree
+	 */
+	void enterStringLit(GraceParser.StringLitContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GraceParser#stringLit}.
+	 * @param ctx the parse tree
+	 */
+	void exitStringLit(GraceParser.StringLitContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code intLiteral}
 	 * labeled alternative in {@link GraceParser#literal}.
 	 * @param ctx the parse tree
