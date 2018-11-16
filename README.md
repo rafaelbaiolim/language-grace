@@ -7,50 +7,14 @@ utilizando a ferramenta antrl4.
 
 Doc Online Compilada.: https://din-ilp2018.readthedocs.io/en/latest
 
-[Branch de Instalação do Antrl4](https://github.com/rafaelbaiolim/compilador2018/tree/starting)
-
-InteliJ 
-==============================
-
-A build deste projeto assim como os testes unitários estão
-sendo executados na IDE InteliJ Community 
-
-Execução
-==============================
-No terminal da IDE 
-
-```
-$ gradle generateGrammarSource && gradle copyTokenFile
-```
-
-Antrl4
-==============================
-Os arquivos .g4 (src/main/antlr) podem executados/ testados 
-com a ferramenta antrl4 separadamente.
-
-```
-$ antlr4 *.g4
-$ javac *.java
-$ grun Ilp command -tree 
-```
-Caso o nome da linguagem seja alterado manter os arquivos no formato
-['NomeLP']Lexer.g4 e ['NomeLP']Parser.g4
+[Branch de Libs de dependências do projeto](https://github.com/rafaelbaiolim/compilador2018/tree/libs)
 
 Livros 
 ==============================
 
-| Link          | Nome          |
-| ------------- | ------------- |
-| [Download](https://drive.google.com/open?id=1xb9krsQnkukff2TdJAjoUP7A07t8Y4I6)  | The Definitive ANTLR4 Reference  |
-| [Download](https://drive.google.com/open?id=1U50fYxzygedAnlvL41KbZsmv522Q6czU)  | Language Implementation Patterns |
-
-
-Exemplo LLVM Generator
-=============================
-https://github.com/ppodgorski/compiler-example
-
-
-Testes Unitários
-==============================
-* [x] Var
+| Link          | Desc          | Obrigatório  |
+| :---: | ------------- | :---: |    
+| [Download](antlr-4.5.3-complete.jar)  | [ANTLR4](https://github.com/antlr/antlr4)  | X |
+| [Download](symtab-1.0.8.jar)  | [Tabela de Simbulos](https://github.com/antlr/symtab) | X |
+| [Download](symtab-1.0.8-javadoc.jar)  | Documentação - Tabela de Simbulos | | 
 

@@ -1,9 +1,0 @@
-starting/examples/*
-!starting/examples/*.g4
-generated/*
-!generated/*.g4
-ilp/out/*
-ilp/src/main/antlr/*.java
-*.class
-*.idea
-
