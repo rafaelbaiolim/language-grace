@@ -8,6 +8,7 @@ import uem.ast.expr.Expression;
 import uem.ast.stmt.Statement;
 import uem.validator.CheckSymbols;
 import uem.visitors.ExpressionVisitor;
+import uem.visitors.ListSpecParamVisitor;
 import uem.visitors.ListSpecVarVisitor;
 
 import java.util.List;
@@ -46,16 +47,34 @@ public class FrontEnd extends GraceParserBaseListener {
      * Escopos de Função
      */
 
-    public void enterFunction(GraceParser.FunctionContext funCtx) {
-        FunctionSymbol fSymbol = new FunctionSymbol(funCtx.getText());
+    public void enterDecFunc(GraceParser.DecFuncContext funCtx) {
+        FunctionSymbol fSymbol = new FunctionSymbol(funCtx.ID().getText());
         fSymbol.setEnclosingScope(currentScope);
         currentScope.define(fSymbol);
-        funCtx.decFunc().scope = fSymbol;
+        funCtx.scope = fSymbol;
         pushScope(fSymbol);
     }
 
+
     public void exitFunction(GraceParser.FunctionContext funCtx) {
         popScope();
+    }
+
+    /**
+     * Argumentos de Função
+     */
+
+    public void enterLstParam(GraceParser.LstParamContext ctxLstParam) {
+        try {
+            ListSpecParamVisitor listParamVisit = new ListSpecParamVisitor();
+            List<Statement> lst = listParamVisit.visit(ctxLstParam);
+            lst.forEach(stmt -> {
+                VariableSymbol v = new VariableSymbol(stmt.getVarName());
+                currentScope.define(v);
+            });
+        } catch (Exception ex) {
+            //Erro sintático
+        }
     }
 
     /**
@@ -70,8 +89,8 @@ public class FrontEnd extends GraceParserBaseListener {
 
     public void exitBlock(GraceParser.BlockContext blkCtx) {
         popScope();
-    }
 
+    }
 
     /**
      * Escopo de Variáveis
@@ -80,8 +99,8 @@ public class FrontEnd extends GraceParserBaseListener {
     public void exitDeclVar(GraceParser.DeclVarContext declVarCtx) {
         try {
             GraceParser.ListSpecVarsContext listSpecVarsContext = declVarCtx.listSpecVars();
-            ListSpecVarVisitor listExprVisit = new ListSpecVarVisitor();
-            List<Statement> lst = listExprVisit.visit(listSpecVarsContext);
+            ListSpecVarVisitor listVarVisit = new ListSpecVarVisitor();
+            List<Statement> lst = listVarVisit.visit(listSpecVarsContext);
             lst.forEach(stmt -> {
                 VariableSymbol v = new VariableSymbol(stmt.getVarName());
                 currentScope.define(v);
