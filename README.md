@@ -14,7 +14,7 @@ Livros
 
 | Link          | Desc          | Obrigatório  |
 | :---: | ------------- | :---: |    
-| [Download](antlr-4.5.3-complete.jar)  | [ANTLR4](https://github.com/antlr/antlr4)  | X |
-| [Download](symtab-1.0.8.jar)  | [Tabela de Simbulos](https://github.com/antlr/symtab) | X |
-| [Download](symtab-1.0.8-javadoc.jar)  | Documentação - Tabela de Simbulos | | 
+| <a href="antlr-4.5.3-complete.jar" download> Download</a> | [ANTLR4](https://github.com/antlr/antlr4)  | X |
+| <a href="symtab-1.0.8.jar" download> Download</a> | [Tabela de Simbulos](https://github.com/antlr/symtab) | X |
+| <a href="symtab-1.0.8-javadoc.jar" download> Download</a> | Documentação - Tabela de Simbulos | | 
 
