@@ -7,6 +7,7 @@ import uem.ast.Position;
 public class StringType implements Type {
 
     private final Position position;
+    private int size = 256;
 
     public Position getPosition() {
         return this.position;
@@ -18,6 +19,10 @@ public class StringType implements Type {
 
     public StringType() {
         this.position = null;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
     }
 
     @Override

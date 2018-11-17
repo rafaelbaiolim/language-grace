@@ -2,6 +2,7 @@ package uem.visitors;
 
 import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseVisitor;
+import uem.ast.stmt.DeclVar;
 import uem.ast.stmt.Statement;
 
 import java.util.LinkedList;
@@ -11,7 +12,6 @@ public class ListSpecVarVisitor extends GraceParserBaseVisitor<List<Statement>> 
 
     public LinkedList<Statement> visitListSpecVars(GraceParser.ListSpecVarsContext listSpecVarsCtx) {
         LinkedList<Statement> lstStmtSpecVar = new LinkedList<>();
-
         listSpecVarsCtx.specVar().forEach(specVar -> {
             lstStmtSpecVar.add(new SpecVarVisitor().visit(specVar));
         });

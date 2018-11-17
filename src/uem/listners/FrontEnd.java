@@ -5,11 +5,12 @@ import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseListener;
 import uem.ast.expr.BinaryExpression;
 import uem.ast.expr.Expression;
+import uem.ast.stmt.DeclVar;
 import uem.ast.stmt.Statement;
 import uem.semantic.CheckSymbols;
+import uem.visitors.DeclVarVisitor;
 import uem.visitors.ExpressionVisitor;
 import uem.visitors.ListSpecParamVisitor;
-import uem.visitors.ListSpecVarVisitor;
 
 import java.util.List;
 
@@ -110,13 +111,15 @@ public class FrontEnd extends GraceParserBaseListener {
 
     public void exitDeclVar(GraceParser.DeclVarContext declVarCtx) {
         try {
-            GraceParser.ListSpecVarsContext listSpecVarsContext = declVarCtx.listSpecVars();
-            ListSpecVarVisitor listVarVisit = new ListSpecVarVisitor();
-            List<Statement> lst = listVarVisit.visit(listSpecVarsContext);
-            lst.forEach(stmt -> {
-                VariableSymbol v = new VariableSymbol(stmt.getVarName());
-                currentScope.define(v);
+            DeclVar declVar = new DeclVarVisitor().visit(declVarCtx);
+            declVar.getListStmt().forEach(stmt -> {
+                {
+                    VariableSymbol v = new VariableSymbol(stmt.getVarName());
+                    v.setType(v.getType());
+                    currentScope.define(v);
+                }
             });
+
         } catch (Exception ex) {
             //Erro sintático
         }

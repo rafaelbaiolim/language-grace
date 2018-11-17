@@ -21,6 +21,14 @@ public class DeclVar implements Statement {
         this.type = type;
     }
 
+    public List<Statement> getListStmt() {
+        return this.stmt;
+    }
+
+    public Type getType() {
+        return this.type;
+    }
+
     @Override
     public String getVarName() {
         return varName;

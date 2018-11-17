@@ -15,8 +15,16 @@ public class ListTypeVisitor extends GraceParserBaseVisitor<Type> {
     }
 
     public Type visitString(GraceParser.StringContext stringCtx) {
+        String currentLit = stringCtx.stringLit().getClass().getSimpleName();
+        StringType stringType = new StringType();
 
-        return new StringType();
+        if (currentLit.equals(GraceParser.InitArrAlocContext.class.getSimpleName())) {
+            GraceParser.InitArrAlocContext arrStrCtx = ((GraceParser.InitArrAlocContext) stringCtx.stringLit());
+            int currentSize = Integer.parseInt(arrStrCtx.NUMBERLITERAL().get(0).getText());
+            stringType.setSize(currentSize);
+        }
+
+        return stringType;
     }
 
     public Type visitBool(GraceParser.BoolContext boolCtx) {

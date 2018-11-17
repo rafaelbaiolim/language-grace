@@ -14,5 +14,10 @@ public class SpecVarVisitor extends GraceParserBaseVisitor<Statement> {
         return spcVar;
     }
 
-
+    public Statement visitDirectSpecVar(GraceParser.DirectSpecVarContext directSpecVarSimpleIniContext) {
+        GraceParser.SpecVarSimpleContext specVarSimpleIni = directSpecVarSimpleIniContext.specVarSimple();
+        SpecVar spcVar = new SpecVar(specVarSimpleIni.ID().getText()); //não tem inicialização de valor/ exp
+        spcVar.setSymbol(specVarSimpleIni.ID().getSymbol());
+        return spcVar;
+    }
 }
