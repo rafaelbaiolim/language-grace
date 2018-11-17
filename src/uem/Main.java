@@ -6,6 +6,7 @@ import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 import uem.antlr.GraceLexer;
 import uem.antlr.GraceParser;
+import uem.ast.Ast;
 import uem.listners.FrontEnd;
 import uem.semantic.ErrorReport;
 
@@ -33,7 +34,8 @@ class Main {
         ParseTree tree = parser.graceFile();
         ParseTreeWalker walker = new ParseTreeWalker();
 
-        FrontEnd frontEnd = new FrontEnd();
+        Ast ast = new Ast();
+        FrontEnd frontEnd = new FrontEnd(ast);
         walker.walk(frontEnd, tree);
 
     }

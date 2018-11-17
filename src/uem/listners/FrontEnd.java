@@ -3,19 +3,27 @@ package uem.listners;
 import org.antlr.symtab.*;
 import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseListener;
-import uem.ast.expr.BinaryExpression;
-import uem.ast.expr.Expression;
+import uem.ast.Ast;
+import uem.ast.stmt.AtribStmt;
 import uem.ast.stmt.DeclVar;
 import uem.ast.stmt.Statement;
 import uem.semantic.CheckSymbols;
+import uem.symtab.ForScope;
+import uem.symtab.WhileScope;
+import uem.visitors.AtribVisitor;
 import uem.visitors.DeclVarVisitor;
-import uem.visitors.ExpressionVisitor;
 import uem.visitors.ListSpecParamVisitor;
 
 import java.util.List;
 
 public class FrontEnd extends GraceParserBaseListener {
-    Scope currentScope;
+    private Ast ast;
+    private Scope currentScope;
+
+    public FrontEnd(Ast ast) {
+        super();
+        this.ast = ast;
+    }
 
     /**
      * Estrutura para Escopo
@@ -95,7 +103,19 @@ public class FrontEnd extends GraceParserBaseListener {
      */
 
     public void enterBlock(GraceParser.BlockContext blkCtx) {
+
         LocalScope locScope = new LocalScope(currentScope);
+
+        String rootParent = blkCtx.getParent().getParent().getClass().getSimpleName();
+        if (rootParent.toLowerCase().contains("cmdwhile")) {
+            //verifica se não é um scope de loop
+            locScope = new WhileScope(currentScope);
+        }
+        if (rootParent.toLowerCase().contains("cmdfor")) {
+            //verifica se não é um scope de loop
+            locScope = new ForScope(currentScope);
+        }
+
         blkCtx.scope = locScope;
         pushScope(locScope);
     }
@@ -117,6 +137,8 @@ public class FrontEnd extends GraceParserBaseListener {
                     VariableSymbol v = new VariableSymbol(stmt.getVarName());
                     v.setType(v.getType());
                     currentScope.define(v);
+
+                    this.ast.getListStmt().add(stmt); //append AST
                 }
             });
 
@@ -132,16 +154,36 @@ public class FrontEnd extends GraceParserBaseListener {
         }
     }
 
-    /**
-     * Escopo para operações Binárias
-     */
-
-    public void exitBinaryOperation(GraceParser.BinaryOperationContext binCtx) {
-        Expression exp = new ExpressionVisitor().visit(binCtx);
-        if (exp instanceof BinaryExpression) {
-            Expression left = ((BinaryExpression) exp).getLeft();
-            Expression right = ((BinaryExpression) exp).getRight();
+    public void enterAtribVar(GraceParser.AtribVarContext ctx) {
+        Symbol sym = currentScope.resolve(ctx.atrib().ID().getText());
+        if (sym == null) {
+            CheckSymbols.error(ctx.atrib().ID().getSymbol(), "variável não declarada: " + ctx.getText());
         }
+    }
+
+    public void exitAtribVar(GraceParser.AtribVarContext ctx) {
+        AtribStmt atribStmt = new AtribVisitor().visit(ctx);
+        this.ast.getListStmt().add(atribStmt); //append AST
+    }
+
+    /**
+     * Escopo CMD
+     * TODO: COLOCAR WHILE SCOPE EM UMA CONST NO PACOTE DE UTILS
+     */
+    public void enterCmdSkip(GraceParser.CmdSkipContext ctx) {
+        if (!currentScope.getName().toLowerCase().equals("while")) {
+            CheckSymbols.error(ctx.start, "comando skip precisa estar dentro de uma estrutura de repetição.");
+        }
+    }
+
+    public void enterCmdStop(GraceParser.CmdStopContext ctx) {
+        if (!currentScope.getName().toLowerCase().equals("while")) {
+            CheckSymbols.error(ctx.start, "comando stop precisa estar dentro de uma estrutura de repetição.");
+        }
+    }
+
+    public void enterCmWhile(GraceParser.CmWhileContext ctx) {
+
     }
 
 

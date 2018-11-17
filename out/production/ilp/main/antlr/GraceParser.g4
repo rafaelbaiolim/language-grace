@@ -34,6 +34,7 @@ expression
     | '-' expression                                                                                    #minusExpression
     | '!' expression                                                                                    #differenceExpression
     | '(' expression ')'                                                                                #parenExpression
+    | ID '(' expression ')'                                                                             #subReference
     | ID '[' expression ']'                                                                             #arrReference
     | ID                                                                                                #varReference
     | literal                                                                                           #literalReference
@@ -96,7 +97,7 @@ lstParam
     ;
 
 specParam
-    : param (';' param)* ':' lstType
+    : param (',' param)* ':' lstType
     ;
 
 param
@@ -207,7 +208,7 @@ cmdWrite
 // Bloco de Comandos
 
 block returns [Scope scope]
-    : '{' declVar* command* '}'
+    : '{' statement* '}'
     ;
 // Operador Ternário (opTern -> exp:ternaryOperation)
 

@@ -8,7 +8,7 @@ import uem.ast.type.Type;
 
 import java.util.List;
 
-public class DeclVarVisitor extends GraceParserBaseVisitor<DeclVar> {
+public class CmSimpleVisitor extends GraceParserBaseVisitor<DeclVar> {
 
     public DeclVar visitDeclVar(GraceParser.DeclVarContext ctx) {
 

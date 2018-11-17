@@ -6,7 +6,7 @@ import uem.ast.expr.Expression;
 
 import java.util.List;
 
-public class WhileStmt implements LoopStatement {
+public class ForStmt implements LoopStatement {
 
     final String varName = null;
     private final List<Statement> stmt;
@@ -14,7 +14,7 @@ public class WhileStmt implements LoopStatement {
     private Expression cond;
     private Token symToken;
 
-    public WhileStmt(List<Statement> stmt, Expression cond) {
+    public ForStmt(List<Statement> stmt, Expression cond) {
         super();
         this.stmt = stmt;
         this.position = null;
