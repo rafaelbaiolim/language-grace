@@ -13,6 +13,7 @@ import uem.symtab.WhileScope;
 import uem.visitors.AtribVisitor;
 import uem.visitors.DeclVarVisitor;
 import uem.visitors.ListSpecParamVisitor;
+import uem.visitors.WhileVisitor;
 
 import java.util.List;
 
@@ -137,8 +138,9 @@ public class FrontEnd extends GraceParserBaseListener {
                     VariableSymbol v = new VariableSymbol(stmt.getVarName());
                     v.setType(v.getType());
                     currentScope.define(v);
-
-                    this.ast.getListStmt().add(stmt); //append AST
+                    if(currentScope.getName().toLowerCase().equals("global")) {
+                        this.ast.getListStmt().add(stmt); //append AST
+                    }
                 }
             });
 
@@ -170,6 +172,20 @@ public class FrontEnd extends GraceParserBaseListener {
      * Escopo CMD
      * TODO: COLOCAR WHILE SCOPE EM UMA CONST NO PACOTE DE UTILS
      */
+
+    /**
+     * While
+     */
+    public void enterCmWhile(GraceParser.CmWhileContext ctx) {
+        this.ast.getListStmt().add(new WhileVisitor().visit(ctx));
+    }
+
+    /**
+     * Loops Commons
+     *
+     * @param ctx
+     */
+
     public void enterCmdSkip(GraceParser.CmdSkipContext ctx) {
         if (!currentScope.getName().toLowerCase().equals("while")) {
             CheckSymbols.error(ctx.start, "comando skip precisa estar dentro de uma estrutura de repetição.");
@@ -180,10 +196,6 @@ public class FrontEnd extends GraceParserBaseListener {
         if (!currentScope.getName().toLowerCase().equals("while")) {
             CheckSymbols.error(ctx.start, "comando stop precisa estar dentro de uma estrutura de repetição.");
         }
-    }
-
-    public void enterCmWhile(GraceParser.CmWhileContext ctx) {
-
     }
 
 

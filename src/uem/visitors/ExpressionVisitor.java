@@ -6,6 +6,14 @@ import uem.ast.expr.*;
 
 public class ExpressionVisitor extends GraceParserBaseVisitor<Expression> {
 
+    public Expression visitCompareOperation(GraceParser.CompareOperationContext ctx) {
+        return new CompareExpression(
+                visit(ctx.right),
+                visit(ctx.left),
+                ctx.operator.getText()
+        );
+    }
+
     public Expression visitBinaryOperation(GraceParser.BinaryOperationContext ctx) {
         String op = ctx.operator.getText();
         switch (op) {

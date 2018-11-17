@@ -21,7 +21,7 @@ public class ForStmt implements LoopStatement {
         this.cond = cond;
     }
 
-    @Override
+
     public String getVarName() {
         return varName;
     }

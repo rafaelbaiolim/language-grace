@@ -62,6 +62,13 @@ public interface GraceParserVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitArrReference(GraceParser.ArrReferenceContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code subReference}
+	 * labeled alternative in {@link GraceParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSubReference(GraceParser.SubReferenceContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code differenceExpression}
 	 * labeled alternative in {@link GraceParser#expression}.
 	 * @param ctx the parse tree

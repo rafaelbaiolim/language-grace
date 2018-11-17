@@ -93,6 +93,18 @@ public interface GraceParserListener extends ParseTreeListener {
 	 */
 	void exitArrReference(GraceParser.ArrReferenceContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code subReference}
+	 * labeled alternative in {@link GraceParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterSubReference(GraceParser.SubReferenceContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code subReference}
+	 * labeled alternative in {@link GraceParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitSubReference(GraceParser.SubReferenceContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code differenceExpression}
 	 * labeled alternative in {@link GraceParser#expression}.
 	 * @param ctx the parse tree

@@ -21,7 +21,7 @@ public class AtribStmt implements CmdStatement {
         return this.expr;
     }
 
-    @Override
+
     public String getVarName() {
         return this.varName;
     }

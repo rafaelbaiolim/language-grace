@@ -9,7 +9,7 @@ import java.util.List;
 public class WhileStmt implements LoopStatement {
 
     final String varName = null;
-    private final List<Statement> stmt;
+    private List<Statement> stmt;
     private final Position position;
     private Expression cond;
     private Token symToken;
@@ -19,6 +19,10 @@ public class WhileStmt implements LoopStatement {
         this.stmt = stmt;
         this.position = null;
         this.cond = cond;
+    }
+
+    public void setStatment(List<Statement> stmt) {
+        this.stmt = stmt;
     }
 
     @Override
