@@ -25,8 +25,8 @@ public class CompareExpression implements BinaryExpression {
     }
 
     @Override
-    public Token setSymbol(Token sym) {
-        return this.symToken = sym;
+    public void setSymbol(Token sym) {
+        this.symToken = sym;
     }
 
     @Override

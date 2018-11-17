@@ -1,25 +1,26 @@
-package uem.ast.expr;
+package uem.ast.stmt.cmd;
 
 import org.antlr.v4.runtime.Token;
 import uem.ast.Position;
+import uem.ast.expr.Expression;
 
-public class VarReference implements Expression {
-
-    private final String varName;
-    private final Position position;
+public class AtribCmd implements CmdStatement {
+    String varName = null;
+    private final Position position = null;
     private Token symToken;
+    private Expression expr;
 
-    public VarReference(String varName, Position position) {
+    public AtribCmd(String varName, Expression expr) {
         super();
         this.varName = varName;
-        this.position = position;
+        this.expr = expr;
     }
 
-    public VarReference(String varName) {
-        super();
-        this.varName = varName;
-        this.position = null;
+    @Override
+    public Expression getExpr() {
+        return this.expr;
     }
+
 
     public String getVarName() {
         return this.varName;

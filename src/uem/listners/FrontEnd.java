@@ -4,16 +4,13 @@ import org.antlr.symtab.*;
 import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseListener;
 import uem.ast.Ast;
-import uem.ast.stmt.AtribStmt;
+import uem.ast.stmt.cmd.AtribCmd;
 import uem.ast.stmt.DeclVar;
 import uem.ast.stmt.Statement;
 import uem.semantic.CheckSymbols;
 import uem.symtab.ForScope;
 import uem.symtab.WhileScope;
-import uem.visitors.AtribVisitor;
-import uem.visitors.DeclVarVisitor;
-import uem.visitors.ListSpecParamVisitor;
-import uem.visitors.WhileVisitor;
+import uem.visitors.*;
 
 import java.util.List;
 
@@ -123,7 +120,6 @@ public class FrontEnd extends GraceParserBaseListener {
 
     public void exitBlock(GraceParser.BlockContext blkCtx) {
         popScope();
-
     }
 
     /**
@@ -138,7 +134,7 @@ public class FrontEnd extends GraceParserBaseListener {
                     VariableSymbol v = new VariableSymbol(stmt.getVarName());
                     v.setType(v.getType());
                     currentScope.define(v);
-                    if(currentScope.getName().toLowerCase().equals("global")) {
+                    if (currentScope.getName().toLowerCase().equals("global")) {
                         this.ast.getListStmt().add(stmt); //append AST
                     }
                 }
@@ -164,8 +160,8 @@ public class FrontEnd extends GraceParserBaseListener {
     }
 
     public void exitAtribVar(GraceParser.AtribVarContext ctx) {
-        AtribStmt atribStmt = new AtribVisitor().visit(ctx);
-        this.ast.getListStmt().add(atribStmt); //append AST
+        AtribCmd atribCmd = new AtribVisitor().visit(ctx);
+        this.ast.getListStmt().add(atribCmd); //append AST
     }
 
     /**
@@ -196,6 +192,22 @@ public class FrontEnd extends GraceParserBaseListener {
         if (!currentScope.getName().toLowerCase().equals("while")) {
             CheckSymbols.error(ctx.start, "comando stop precisa estar dentro de uma estrutura de repetição.");
         }
+    }
+
+
+    /**
+     * Cmd Read
+     */
+
+    public void enterCmdRead(GraceParser.CmdReadContext ctx) {
+        Symbol sym = currentScope.resolve(ctx.variable().getText());
+        if (sym == null) {
+            CheckSymbols.error(ctx.variable().getStart(), "variável não declarada: " + ctx.variable().getText());
+        }
+    }
+
+    public void exitCmdRead(GraceParser.CmdReadContext ctx) {
+        this.ast.getListStmt().add(new ReadVisitor().visit(ctx.variable()));
     }
 
 

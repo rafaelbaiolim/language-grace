@@ -1,8 +1,7 @@
-package uem.ast.stmt;
+package uem.ast.stmt.cmd;
 
 import uem.ast.expr.Expression;
-
-import java.util.List;
+import uem.ast.stmt.Statement;
 
 public interface CmdStatement extends Statement {
     public Expression getExpr();

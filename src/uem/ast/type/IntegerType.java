@@ -7,6 +7,7 @@ import uem.ast.Position;
 public class IntegerType implements Type {
 
     private final Position position;
+    private Token symbol;
 
     public Position getPosition() {
         return this.position;
@@ -36,8 +37,8 @@ public class IntegerType implements Type {
     }
 
     @Override
-    public Token setSymbol(Token sym) {
-        return null;
+    public void setSymbol(Token sym) {
+        this.symbol = sym;
     }
 
     @Override

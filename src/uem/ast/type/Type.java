@@ -17,7 +17,7 @@ public interface Type extends Node, org.antlr.symtab.Type {
     Position getPosition();
 
     @Override
-    Token setSymbol(Token sym);
+    void setSymbol(Token sym);
 
     @Override
     Token getSymbol();

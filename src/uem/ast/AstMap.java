@@ -3,7 +3,10 @@ package uem.ast;
 import org.antlr.v4.runtime.Token;
 import uem.antlr.GraceParser.*;
 import uem.ast.expr.*;
-import uem.ast.stmt.*;
+import uem.ast.stmt.DeclVar;
+import uem.ast.stmt.GraceFile;
+import uem.ast.stmt.SpecVar;
+import uem.ast.stmt.Statement;
 import uem.ast.type.BooleanType;
 import uem.ast.type.IntegerType;
 import uem.ast.type.StringType;
@@ -69,8 +72,8 @@ public class AstMap {
 
     /**
      * @param listspec
-     * @obs: Alterado no visitor
      * @return
+     * @obs: Alterado no visitor
      */
     public final Statement getAst(SpecVarContext listspec) {
         String canonicalListDecl = listspec.getClass().getCanonicalName();
@@ -126,9 +129,10 @@ public class AstMap {
 
     /**
      * Map types
-     * @TODO.: Verificar atribuição de tipos em particular para bool
+     *
      * @param typeCtx
      * @return
+     * @TODO.: Verificar atribuição de tipos em particular para bool
      */
     public final Type getAst(LstTypeContext typeCtx) {
         String canonicalType = typeCtx.getClass().getCanonicalName();
@@ -227,6 +231,7 @@ public class AstMap {
 
     /**
      * visitor -> LiteralVisitor
+     *
      * @param literalCtx
      * @return
      */

@@ -42,8 +42,8 @@ public class SpecVar implements Statement {
     }
 
     @Override
-    public Token setSymbol(Token sym) {
-        return this.symToken = sym;
+    public void setSymbol(Token sym) {
+        this.symToken = sym;
     }
 
     @Override

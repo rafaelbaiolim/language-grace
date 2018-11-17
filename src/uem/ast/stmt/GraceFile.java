@@ -22,8 +22,8 @@ public class GraceFile implements Node {
     }
     
     @Override
-    public Token setSymbol(Token sym) {
-        return this.symToken = sym;
+    public void setSymbol(Token sym) {
+        this.symToken =sym;
     }
 
     @Override

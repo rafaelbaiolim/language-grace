@@ -8,6 +8,7 @@ public class StringType implements Type {
 
     private final Position position;
     private int size = 256;
+    private Token symbol;
 
     public Position getPosition() {
         return this.position;
@@ -41,8 +42,8 @@ public class StringType implements Type {
     }
 
     @Override
-    public Token setSymbol(Token sym) {
-        return null;
+    public void setSymbol(Token sym) {
+        this.symbol = sym;
     }
 
     @Override

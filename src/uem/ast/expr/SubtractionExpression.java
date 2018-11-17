@@ -33,14 +33,15 @@ public class SubtractionExpression implements BinaryExpression {
         this.right = right;
         this.position = null;
     }
+
     @Override
     public Position getPosition() {
         return this.position;
     }
 
     @Override
-    public Token setSymbol(Token sym) {
-        return this.symToken = sym;
+    public void setSymbol(Token sym) {
+        this.symToken = sym;
     }
 
     @Override

@@ -2,15 +2,15 @@ package uem.visitors;
 
 import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseVisitor;
-import uem.ast.stmt.AtribStmt;
+import uem.ast.stmt.cmd.AtribCmd;
 
-public class AtribVisitor extends GraceParserBaseVisitor<AtribStmt> {
+public class AtribVisitor extends GraceParserBaseVisitor<AtribCmd> {
 
-    public AtribStmt visitAtribVar(GraceParser.AtribVarContext ctx) {
-        AtribStmt atribStmt = new AtribStmt(ctx.atrib().ID().getText(),
+    public AtribCmd visitAtribVar(GraceParser.AtribVarContext ctx) {
+        AtribCmd atribCmd = new AtribCmd(ctx.atrib().ID().getText(),
                 new ExpressionVisitor().visit(ctx.atrib().expression())
         );
-        return atribStmt;
+        return atribCmd;
     }
 
 }
