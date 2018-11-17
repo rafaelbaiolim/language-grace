@@ -4,9 +4,9 @@ import org.antlr.symtab.*;
 import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseListener;
 import uem.ast.Ast;
-import uem.ast.stmt.cmd.AtribCmd;
 import uem.ast.stmt.DeclVar;
 import uem.ast.stmt.Statement;
+import uem.ast.stmt.cmd.AtribCmd;
 import uem.semantic.CheckSymbols;
 import uem.symtab.ForScope;
 import uem.symtab.WhileScope;
@@ -208,6 +208,13 @@ public class FrontEnd extends GraceParserBaseListener {
 
     public void exitCmdRead(GraceParser.CmdReadContext ctx) {
         this.ast.getListStmt().add(new ReadVisitor().visit(ctx.variable()));
+    }
+
+    /**
+     * Cmd Write
+     */
+    public void exitCmdWrite(GraceParser.CmdWriteContext ctx) {
+        this.ast.getListStmt().add(new WriteVisitor().visit(ctx));
     }
 
 
