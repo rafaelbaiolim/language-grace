@@ -215,8 +215,8 @@ block returns [Scope scope]
 // Uso de Variável
 
 variable
-    : ID
-    | ID '[' expression+ ']' //#ask: Tratar boleanos ? i[] < não casa com a regra de variable então?
+    : ID                      #simpleVar
+    | ID '[' expression+ ']'  #arrVar  //#ask: Tratar boleanos ? i[] < não casa com a regra de variable então?
     ;
 
 
