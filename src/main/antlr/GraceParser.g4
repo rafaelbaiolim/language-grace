@@ -237,8 +237,8 @@ lstType
     ;
 
 stringLit
-    : 'string'
-    | 'string' '[' NUMBERLITERAL ']'
+    : 'string'                          # initLit
+    | 'string' '[' NUMBERLITERAL+ ']'   # initArrAloc
     ;
 
 
