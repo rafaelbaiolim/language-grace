@@ -169,6 +169,14 @@ public class FrontEnd extends GraceParserBaseListener {
     }
 
     /**
+     * For
+     */
+    public void enterCmFor(GraceParser.CmForContext ctx) {
+        this.ast.getListStmt().add(new ForVisitor().visit(ctx));
+    }
+
+
+    /**
      * Loops Commons
      *
      * @param ctx
