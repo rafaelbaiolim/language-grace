@@ -9,8 +9,37 @@ public class StatementVisitor extends GraceParserBaseVisitor<Statement> {
         return new DeclVarVisitor().visit(ctx.declVar());
     }
 
+    public Statement visitCmAtrib(GraceParser.CmAtribContext ctx) {
+        return new AtribVisitor().visit(ctx);
+    }
+
+    public Statement visitCmIf(GraceParser.CmIfContext ctx) {
+        return new CondicionalVisitor().visit(ctx);
+    }
+
+    public Statement visitCmWhile(GraceParser.CmWhileContext ctx) {
+        return new WhileVisitor().visit(ctx);
+    }
+
+    public Statement visitCmStop(GraceParser.CmStopContext ctx) {
+        return new StopVisitor().visit(ctx);
+    }
+
+    public Statement visitCmSkip(GraceParser.CmSkipContext ctx) {
+        return new SkipVisitor().visit(ctx);
+    }
+
+    public Statement visitCmReturn(GraceParser.CmReturnContext ctx) {
+        return new ReturnVisitor().visit(ctx);
+    }
+
+    public Statement visitCmRead(GraceParser.CmReadContext ctx) {
+        return new ReadVisitor().visit(ctx);
+    }
+
     public Statement visitCmWrite(GraceParser.CmWriteContext ctx) {
         return new WriteVisitor().visit(ctx);
     }
+
 
 }

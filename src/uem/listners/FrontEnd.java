@@ -228,7 +228,6 @@ public class FrontEnd extends GraceParserBaseListener {
     /**
      * Cmd Condicional
      */
-
     public void exitCmdIf(GraceParser.CmdIfContext ctx) {
         this.ast.getListStmt().add(new CondicionalVisitor().visit(ctx));
     }
