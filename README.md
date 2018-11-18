@@ -9,7 +9,7 @@ Doc Online Compilada.: https://din-ilp2018.readthedocs.io/en/latest
 
 [Branch de Libs de dependências do projeto](https://github.com/rafaelbaiolim/compilador2018/tree/libs)
 
-Livros 
+Libs (.jar) 
 ==============================
 
 | Link          | Desc          | Obrigatório  |
