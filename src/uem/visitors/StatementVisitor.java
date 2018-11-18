@@ -9,4 +9,8 @@ public class StatementVisitor extends GraceParserBaseVisitor<Statement> {
         return new DeclVarVisitor().visit(ctx.declVar());
     }
 
+    public Statement visitCmWrite(GraceParser.CmWriteContext ctx) {
+        return new WriteVisitor().visit(ctx);
+    }
+
 }

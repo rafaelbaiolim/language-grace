@@ -6,7 +6,6 @@ options { tokenVocab=GraceLexer; }
     Verificar se o programa sempre iniciar com proc / func
 **/
 
-
 /*
 #ask o livro diz que ANTLR4 consegue lidar com recursões diretas a esquerda
 associado o operador na ordem esquerd -> direita,

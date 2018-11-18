@@ -27,6 +27,10 @@ public class FrontEnd extends GraceParserBaseListener {
      * Estrutura para Escopo
      */
 
+    private boolean isGLobalScope() {
+        return (currentScope.getName().toLowerCase().equals("global"));
+    }
+
     private void pushScope(Scope s) {
         currentScope = s;
         System.out.println("entering: " + currentScope.getName() + ":" + s);
@@ -134,7 +138,7 @@ public class FrontEnd extends GraceParserBaseListener {
                     VariableSymbol v = new VariableSymbol(stmt.getVarName());
                     v.setType(v.getType());
                     currentScope.define(v);
-                    if (currentScope.getName().toLowerCase().equals("global")) {
+                    if (isGLobalScope()) {
                         this.ast.getListStmt().add(stmt); //append AST
                     }
                 }
@@ -207,14 +211,26 @@ public class FrontEnd extends GraceParserBaseListener {
     }
 
     public void exitCmdRead(GraceParser.CmdReadContext ctx) {
-        this.ast.getListStmt().add(new ReadVisitor().visit(ctx.variable()));
+        if (isGLobalScope()) {
+            this.ast.getListStmt().add(new ReadVisitor().visit(ctx.variable()));
+        }
     }
 
     /**
      * Cmd Write
      */
     public void exitCmdWrite(GraceParser.CmdWriteContext ctx) {
-        this.ast.getListStmt().add(new WriteVisitor().visit(ctx));
+        if (isGLobalScope()) {
+            this.ast.getListStmt().add(new WriteVisitor().visit(ctx));
+        }
+    }
+
+    /**
+     * Cmd Condicional
+     */
+
+    public void exitCmdIf(GraceParser.CmdIfContext ctx) {
+        this.ast.getListStmt().add(new CondicionalVisitor().visit(ctx));
     }
 
 

@@ -3,7 +3,6 @@ package uem.ast.stmt.cmd;
 import org.antlr.v4.runtime.Token;
 import uem.ast.Position;
 import uem.ast.expr.Expression;
-import uem.ast.expr.VarReference;
 
 import java.util.List;
 
@@ -11,7 +10,6 @@ public class WriteCmd implements CmdStatement {
 
     private final Position position = null;
     private Token symToken;
-    private VarReference varExpr;
     private List<Expression> expressionList;
 
     public WriteCmd(List<Expression> exprLst) {
@@ -22,9 +20,12 @@ public class WriteCmd implements CmdStatement {
 
     @Override
     public Expression getExpr() {
-        return this.varExpr;
+        return null;
     }
 
+    public List<Expression> getExprList() {
+        return this.expressionList;
+    }
 
     public String getVarName() {
         return null;
