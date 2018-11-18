@@ -8,19 +8,13 @@ import uem.ast.type.Type;
 
 import java.util.List;
 
+/**
+ * Todo: Implementar e colocar em CMDVisitor
+ */
 public class CmSimpleVisitor extends GraceParserBaseVisitor<DeclVar> {
 
     public DeclVar visitDeclVar(GraceParser.DeclVarContext ctx) {
-
-        GraceParser.ListSpecVarsContext listSpecVarsContext = ctx.listSpecVars();
-        //lista de vars
-        List<Statement> lst = new ListSpecVarVisitor().visit(listSpecVarsContext);
-
-        //tipo
-        Type type = new ListTypeVisitor().visit(ctx.lstType());
-        DeclVar declVar = new DeclVar(lst, type);
-
-        return declVar;
+        return null;
     }
 
 

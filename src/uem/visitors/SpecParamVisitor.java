@@ -13,7 +13,6 @@ public class SpecParamVisitor extends GraceParserBaseVisitor<Statement> {
      * @return
      */
     public Statement visitIdParam(GraceParser.IdParamContext ctxParam) {
-
         SpecVar spcVar = new SpecVar(ctxParam.ID().getText());
         spcVar.setSymbol(ctxParam.ID().getSymbol());
         return spcVar;

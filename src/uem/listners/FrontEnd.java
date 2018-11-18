@@ -5,14 +5,11 @@ import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseListener;
 import uem.ast.Ast;
 import uem.ast.stmt.DeclVar;
-import uem.ast.stmt.Statement;
 import uem.ast.stmt.cmd.AtribCmd;
 import uem.semantic.CheckSymbols;
 import uem.symtab.ForScope;
 import uem.symtab.WhileScope;
 import uem.visitors.*;
-
-import java.util.List;
 
 public class FrontEnd extends GraceParserBaseListener {
     private Ast ast;
@@ -26,10 +23,14 @@ public class FrontEnd extends GraceParserBaseListener {
     /**
      * Estrutura para Escopo
      */
-
     private boolean isGLobalScope() {
         return (currentScope.getName().toLowerCase().equals("global"));
     }
+
+    private boolean isWhileScope() {
+        return currentScope.getName().toLowerCase().equals("while");
+    }
+
 
     private void pushScope(Scope s) {
         currentScope = s;
@@ -64,6 +65,7 @@ public class FrontEnd extends GraceParserBaseListener {
         currentScope.define(fSymbol);
         funCtx.scope = fSymbol;
         pushScope(fSymbol);
+        this.ast.getListStmt().add(new DeclFunctionVisitor().visit(funCtx));
     }
 
     public void enterDecProc(GraceParser.DecProcContext procCtx) {
@@ -72,6 +74,7 @@ public class FrontEnd extends GraceParserBaseListener {
         currentScope.define(fSymbol);
         procCtx.scope = fSymbol;
         pushScope(fSymbol);
+        this.ast.getListStmt().add(new DeclProcedureVisitor().visit(procCtx));
     }
 
 
@@ -83,22 +86,7 @@ public class FrontEnd extends GraceParserBaseListener {
         popScope();
     }
 
-    /**
-     * Argumentos de Função / Procedure
-     */
-
-    public void enterLstParam(GraceParser.LstParamContext ctxLstParam) {
-        try {
-            ListSpecParamVisitor listParamVisit = new ListSpecParamVisitor();
-            List<Statement> lst = listParamVisit.visit(ctxLstParam);
-            lst.forEach(stmt -> {
-                VariableSymbol v = new VariableSymbol(stmt.getVarName());
-                currentScope.define(v);
-            });
-        } catch (Exception ex) {
-            //Erro sintático
-        }
-    }
+    // Argumentos de Função / Procedure : movido para visitor
 
     /**
      * Escopos de blocos (Locais)
@@ -187,13 +175,13 @@ public class FrontEnd extends GraceParserBaseListener {
      */
 
     public void enterCmdSkip(GraceParser.CmdSkipContext ctx) {
-        if (!currentScope.getName().toLowerCase().equals("while")) {
+        if (!isWhileScope()) {
             CheckSymbols.error(ctx.start, "comando skip precisa estar dentro de uma estrutura de repetição.");
         }
     }
 
     public void enterCmdStop(GraceParser.CmdStopContext ctx) {
-        if (!currentScope.getName().toLowerCase().equals("while")) {
+        if (!isWhileScope()) {
             CheckSymbols.error(ctx.start, "comando stop precisa estar dentro de uma estrutura de repetição.");
         }
     }

@@ -24,7 +24,7 @@ public class ReturnType implements Type, Statement {
 
     @Override
     public int getType() {
-        return GraceParser.T_BOOL;
+        return GraceParser.T_RETURN;
     }
 
     @Override
