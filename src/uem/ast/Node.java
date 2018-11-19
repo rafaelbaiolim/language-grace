@@ -8,4 +8,6 @@ public interface Node {
     void setSymbol(Token sym);
 
     Token getSymbol();
+
+
 }
