@@ -21,9 +21,7 @@ import static org.bytedeco.javacpp.LLVM.*;
 class Main {
 
     public static void main(String[] args) throws IOException {
-
-
-        LLVM.LLVMModuleRef mod = LLVMModuleCreateWithName("my_module");
+        LLVM.LLVMModuleRef mod = LLVMModuleCreateWithName("GraceLLVM");
         LLVM.LLVMContextRef context = LLVMContextCreate();
         LLVM.LLVMBuilderRef builder = LLVMCreateBuilder();
         LLVMEmitter Emmiter = new LLVMEmitter(
