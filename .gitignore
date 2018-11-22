@@ -6,4 +6,4 @@ ilp/out/*
 ilp/src/main/antlr/*.java
 *.class
 *.idea
-
+hs_err_*
