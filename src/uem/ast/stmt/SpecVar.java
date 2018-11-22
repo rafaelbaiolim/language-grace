@@ -1,10 +1,17 @@
 package uem.ast.stmt;
 
 import org.antlr.v4.runtime.Token;
+import org.bytedeco.javacpp.LLVM;
+import uem.IR.LLVMEmitter;
 import uem.ast.Position;
 import uem.ast.expr.Expression;
+import uem.ast.llvm.LLVMNode;
 
-public class SpecVar implements Statement {
+import static org.bytedeco.javacpp.LLVM.*;
+
+public class SpecVar
+        extends LLVMNode
+        implements Statement {
 
     private final String varName;
     private final Expression value;
@@ -12,24 +19,25 @@ public class SpecVar implements Statement {
     private Token symToken;
 
     public SpecVar(String varName, Expression value, Position position) {
-        super();
         this.varName = varName;
         this.value = value;
         this.position = position;
+        this.setLLVMBlock();
+
     }
 
     public SpecVar(String varName) {
-        super();
         this.varName = varName;
         this.value = null;
         this.position = null;
+        this.setLLVMBlock();
     }
 
     public SpecVar(String varName, Expression value) {
-        super();
         this.varName = varName;
         this.value = value;
         this.position = null;
+        this.setLLVMBlock();
     }
 
     public Expression getValue() {
@@ -54,5 +62,28 @@ public class SpecVar implements Statement {
     @Override
     public Position getPosition() {
         return this.position;
+    }
+
+    @Override
+    protected void setLLVMBlock() {
+        if (this.varName == null) return;
+
+        LLVM.LLVMValueRef varAlloc = LLVMBuildAlloca(LLVMEmitter.getInstance().builder,
+                LLVMInt32Type(), this.varName);
+
+        //teste
+        LLVMBuildStore(LLVMEmitter.getInstance().builder,
+                LLVMConstInt(LLVMInt32Type(), 10, 1),
+                varAlloc);
+
+        LLVMValueRef load = LLVMBuildLoad(LLVMEmitter.getInstance().builder,
+                varAlloc, "temp"
+        );
+
+        LLVMValueRef result = LLVMBuildAdd(LLVMEmitter.getInstance().builder,
+                load, load, "soma"
+        );
+
+        LLVMEmitter.getInstance().CallPrint(result, LLVMEmitter.FORMAT_NUMBER);
     }
 }

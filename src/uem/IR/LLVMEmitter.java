@@ -2,6 +2,7 @@ package uem.IR;
 
 import org.bytedeco.javacpp.LLVM;
 import org.bytedeco.javacpp.LLVM.*;
+import org.bytedeco.javacpp.PointerPointer;
 
 import java.util.*;
 
@@ -12,6 +13,36 @@ public class LLVMEmitter {
     public final LLVMModuleRef mod;
     public final LLVMBuilderRef builder;
     public final LLVMType types;
+    public static final String FORMAT_NUMBER = "NUMBER";
+    public static final String FORMAT_STRING = "STRING";
+    public static final String PRINT_FUN_NAME = "printf";
+
+    private LLVMEmitter(
+            LLVMContextRef context,
+            LLVMModuleRef mod,
+            LLVMBuilderRef builder
+    ) {
+        this.context = context;
+        this.mod = mod;
+        this.builder = builder;
+        this.types = new LLVMType(this);
+    }
+
+    private static LLVMEmitter uniqueInstance;
+
+    public static synchronized void setInstance(LLVMContextRef context,
+                                                LLVMModuleRef mod,
+                                                LLVMBuilderRef builder) {
+        uniqueInstance = new LLVMEmitter(
+                context,
+                mod,
+                builder);
+    }
+
+    public static synchronized LLVMEmitter getInstance() {
+        return uniqueInstance;
+    }
+
 
     /**
      * Auxiliar para indicar o inicio ou fim
@@ -104,16 +135,6 @@ public class LLVMEmitter {
         LLVMDisposeBuilder(this.builder);
     }
 
-    public LLVMEmitter(
-            LLVMContextRef context,
-            LLVMModuleRef mod,
-            LLVMBuilderRef builder
-    ) {
-        this.context = context;
-        this.mod = mod;
-        this.builder = builder;
-        this.types = new LLVMType(this);
-    }
 
     public HashMap<String, LLVMValueRef> printerArgs = new HashMap<>();
 
@@ -123,7 +144,7 @@ public class LLVMEmitter {
                 LLVMInt32Type(),
                 PrintfArgsTyList[0], 1, 1
         );
-        LLVMValueRef PrintfFunction = LLVMAddFunction(mod, "printf", PrintfTy);
+        LLVMAddFunction(mod, PRINT_FUN_NAME, PrintfTy);
         try {
             LLVMValueRef formatNumber = LLVMBuildGlobalStringPtr(
                     this.builder,
@@ -134,14 +155,20 @@ public class LLVMEmitter {
                     "%s",
                     ".format_string"
             );
-            this.printerArgs.put("STRING", formatString);
-            this.printerArgs.put("NUMBER", formatNumber);
-            //LLVMBuildCall(builder, PrintfFunction, new PointerPointer({get(STRING),[NUM,STIRNGLIT]}), 2, "printf");
+            this.printerArgs.put(FORMAT_STRING, formatString);
+            this.printerArgs.put(FORMAT_NUMBER, formatNumber);
         } catch (Exception ex) {
             //System.out.println(ex.getMessage());
         }
         return this;
     }
+
+    public void CallPrint(LLVMValueRef value, String format) {
+        LLVMValueRef printArgs[] = {this.printerArgs.get(format), value};
+        LLVMValueRef printf = LLVMGetNamedFunction(this.mod, PRINT_FUN_NAME);
+        LLVMBuildCall(builder, printf, new PointerPointer(printArgs), 2, PRINT_FUN_NAME);
+    }
+
 
     public LLVMEmitter Bootstrap() {
         this.GetLLVMConfig();

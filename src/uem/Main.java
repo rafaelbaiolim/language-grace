@@ -19,19 +19,8 @@ import java.io.InputStream;
 import static org.bytedeco.javacpp.LLVM.*;
 
 class Main {
-
+    //TODO:Criar um método de inicialização
     public static void main(String[] args) throws IOException {
-        LLVM.LLVMModuleRef mod = LLVMModuleCreateWithName("GraceLLVM");
-        LLVM.LLVMContextRef context = LLVMContextCreate();
-        LLVM.LLVMBuilderRef builder = LLVMCreateBuilder();
-        LLVMEmitter Emmiter = new LLVMEmitter(
-                context,
-                mod,
-                builder
-        );
-        Emmiter.Bootstrap().Finalize();
-        System.exit(0);
-
 
         String inputFile = null;
         if (args.length > 0) inputFile = args[0];
@@ -39,6 +28,7 @@ class Main {
         if (inputFile != null) {
             inputFileStream = new FileInputStream(inputFile);
         }
+
         ANTLRInputStream input = new ANTLRInputStream(inputFileStream);
         GraceLexer lexer = new GraceLexer(input);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
@@ -49,10 +39,20 @@ class Main {
         ParseTree tree = parser.graceFile();
         ParseTreeWalker walker = new ParseTreeWalker();
 
+        LLVM.LLVMModuleRef mod = LLVMModuleCreateWithName("GraceLLVM");
+        LLVM.LLVMContextRef context = LLVMContextCreate();
+        LLVM.LLVMBuilderRef builder = LLVMCreateBuilder();
+        LLVMEmitter.setInstance(
+                context,
+                mod,
+                builder
+        );
+        LLVMEmitter.getInstance().Bootstrap();
+
         Ast ast = new Ast();
         FrontEnd frontEnd = new FrontEnd(ast);
         walker.walk(frontEnd, tree);
 
-
+        LLVMEmitter.getInstance().Finalize();
     }
 }
