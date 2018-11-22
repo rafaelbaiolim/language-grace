@@ -19,8 +19,10 @@ public class Ast {
         );
     }
 
+
     public List<Statement> getListStmt() {
         return listStmt;
     }
+
 
 }

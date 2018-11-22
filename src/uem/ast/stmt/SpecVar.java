@@ -73,8 +73,7 @@ public class SpecVar
 
         //teste
         LLVMBuildStore(LLVMEmitter.getInstance().builder,
-                LLVMConstInt(LLVMInt32Type(), 10, 1),
-                varAlloc);
+                this.value.getLLVMValue(), varAlloc);
 
         LLVMValueRef load = LLVMBuildLoad(LLVMEmitter.getInstance().builder,
                 varAlloc, "temp"

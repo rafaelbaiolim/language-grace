@@ -1,6 +1,7 @@
 package uem.ast.expr;
 
 import org.antlr.v4.runtime.Token;
+import org.bytedeco.javacpp.LLVM;
 import uem.ast.Position;
 
 public class CompareExpression implements BinaryExpression {
@@ -42,5 +43,10 @@ public class CompareExpression implements BinaryExpression {
     @Override
     public Expression getRight() {
         return this.right;
+    }
+
+    @Override
+    public LLVM.LLVMValueRef getLLVMValue() {
+        return null;
     }
 }

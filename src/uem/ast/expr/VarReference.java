@@ -1,6 +1,7 @@
 package uem.ast.expr;
 
 import org.antlr.v4.runtime.Token;
+import org.bytedeco.javacpp.LLVM;
 import uem.ast.Position;
 
 public class VarReference implements Expression {
@@ -38,5 +39,10 @@ public class VarReference implements Expression {
     @Override
     public Token getSymbol() {
         return this.symToken;
+    }
+
+    @Override
+    public LLVM.LLVMValueRef getLLVMValue() {
+        return null;
     }
 }

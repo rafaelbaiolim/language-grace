@@ -1,6 +1,7 @@
 package uem.ast.expr;
 
 import org.antlr.v4.runtime.Token;
+import org.bytedeco.javacpp.LLVM;
 import uem.ast.Position;
 
 public class StringLiteral implements Expression {
@@ -33,5 +34,8 @@ public class StringLiteral implements Expression {
         this.value = tex;
     }
 
-
+    @Override
+    public LLVM.LLVMValueRef getLLVMValue() {
+        return null;
+    }
 }

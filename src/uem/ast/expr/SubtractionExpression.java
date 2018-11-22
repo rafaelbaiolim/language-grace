@@ -1,6 +1,7 @@
 package uem.ast.expr;
 
 import org.antlr.v4.runtime.Token;
+import org.bytedeco.javacpp.LLVM;
 import uem.ast.Position;
 
 public class SubtractionExpression implements BinaryExpression {
@@ -49,4 +50,8 @@ public class SubtractionExpression implements BinaryExpression {
         return this.symToken;
     }
 
+    @Override
+    public LLVM.LLVMValueRef getLLVMValue() {
+        return null;
+    }
 }

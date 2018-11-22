@@ -1,6 +1,7 @@
 package uem.ast.expr;
 
 import org.antlr.v4.runtime.Token;
+import org.bytedeco.javacpp.LLVM;
 import uem.ast.Position;
 
 public class BoolLiteral implements Expression {
@@ -34,4 +35,8 @@ public class BoolLiteral implements Expression {
     }
 
 
+    @Override
+    public LLVM.LLVMValueRef getLLVMValue() {
+        return null;
+    }
 }
