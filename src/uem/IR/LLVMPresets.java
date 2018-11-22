@@ -100,14 +100,13 @@ public class LLVMPresets {
     /**
      * Tratar o parametro de ValueRef em CondBR
      *
-     * @param ex
      * @param trueBlock
      * @param falseBlock
      */
     public void translateLLVMConditional(
-            Object ex,
+            LLVMValueRef If, //deixar generico
             LLVMBasicBlockRef trueBlock,
             LLVMBasicBlockRef falseBlock) {
-        LLVMBuildCondBr(llve.builder, (LLVM.LLVMValueRef) llve.getTranslation(ex), trueBlock, falseBlock);
+        LLVMBuildCondBr(llve.builder, If, trueBlock, falseBlock);
     }
 }

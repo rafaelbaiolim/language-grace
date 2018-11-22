@@ -1,8 +1,11 @@
 package uem.IR;
+
 import org.bytedeco.javacpp.LLVM;
 import org.bytedeco.javacpp.LLVM.*;
 
 import java.util.*;
+
+import static org.bytedeco.javacpp.LLVM.*;
 
 public class LLVMEmitter {
     public final LLVMContextRef context;
@@ -87,6 +90,20 @@ public class LLVMEmitter {
         return res;
     }
 
+    private final void GetLLVMConfig() {
+        LLVMLinkInMCJIT();
+        LLVMInitializeNativeAsmPrinter();
+        LLVMInitializeNativeAsmParser();
+        LLVMInitializeNativeDisassembler();
+        LLVMInitializeNativeTarget();
+    }
+
+    public final void Finalize() {
+        LLVMBuildRetVoid(this.builder);
+        LLVMDumpModule(this.mod);
+        LLVMDisposeBuilder(this.builder);
+    }
+
     public LLVMEmitter(
             LLVMContextRef context,
             LLVMModuleRef mod,
@@ -96,7 +113,54 @@ public class LLVMEmitter {
         this.mod = mod;
         this.builder = builder;
         this.types = new LLVMType(this);
+    }
 
+    public HashMap<String, LLVMValueRef> printerArgs = new HashMap<>();
+
+    private LLVMEmitter Printer() {
+        LLVMTypeRef PrintfArgsTyList[] = {LLVMPointerType(LLVMInt8Type(), 0)};
+        LLVMTypeRef PrintfTy = LLVMFunctionType(
+                LLVMInt32Type(),
+                PrintfArgsTyList[0], 1, 1
+        );
+        LLVMValueRef PrintfFunction = LLVMAddFunction(mod, "printf", PrintfTy);
+        try {
+            LLVMValueRef formatNumber = LLVMBuildGlobalStringPtr(
+                    this.builder,
+                    "%d",
+                    ".format_numer"
+            ), formatString = LLVMBuildGlobalStringPtr(
+                    this.builder,
+                    "%s",
+                    ".format_string"
+            );
+            this.printerArgs.put("STRING", formatString);
+            this.printerArgs.put("NUMBER", formatNumber);
+            //LLVMBuildCall(builder, PrintfFunction, new PointerPointer({get(STRING),[NUM,STIRNGLIT]}), 2, "printf");
+        } catch (Exception ex) {
+            //System.out.println(ex.getMessage());
+        }
+        return this;
+    }
+
+    public LLVMEmitter Bootstrap() {
+        this.GetLLVMConfig();
+
+        /**
+         * Main Func LLVM
+         */
+        LLVMTypeRef[] ARGS1 = {LLVMVoidType()};
+        LLVMTypeRef MainFunctionTy = LLVMFunctionType(
+                LLVMVoidType(),
+                ARGS1[0],
+                0,
+                0);
+
+        LLVMValueRef MainFunction = LLVMAddFunction(mod, "main", MainFunctionTy);
+        LLVMBasicBlockRef BasicBlock = LLVMAppendBasicBlock(MainFunction, "entrypoint");
+        LLVMPositionBuilderAtEnd(builder, BasicBlock);
+        this.Printer();
+        return this;
     }
 
 }
