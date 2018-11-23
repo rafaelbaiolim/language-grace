@@ -1,6 +1,7 @@
 package uem.ast.type;
 
 import org.antlr.v4.runtime.Token;
+import org.bytedeco.javacpp.LLVM;
 import uem.antlr.GraceParser;
 import uem.ast.Position;
 import uem.ast.stmt.Statement;
@@ -44,6 +45,11 @@ public class StopType implements Type, Statement {
 
     @Override
     public Token getSymbol() {
+        return null;
+    }
+
+    @Override
+    public LLVM.LLVMValueRef getLLVMValue() {
         return null;
     }
 

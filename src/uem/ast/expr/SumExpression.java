@@ -2,7 +2,11 @@ package uem.ast.expr;
 
 import org.antlr.v4.runtime.Token;
 import org.bytedeco.javacpp.LLVM;
+import uem.IR.LLVMEmitter;
 import uem.ast.Position;
+
+import static org.bytedeco.javacpp.LLVM.LLVMBuildAdd;
+import static org.bytedeco.javacpp.LLVM.LLVMBuildLoad;
 
 public class SumExpression implements BinaryExpression {
 
@@ -26,6 +30,7 @@ public class SumExpression implements BinaryExpression {
         this.left = left;
         this.right = right;
         this.position = position;
+        this.getLLVMValue();
     }
 
     public SumExpression(Expression left, Expression right) {
@@ -33,6 +38,7 @@ public class SumExpression implements BinaryExpression {
         this.left = left;
         this.right = right;
         this.position = null;
+        this.getLLVMValue();
     }
 
     @Override
@@ -52,6 +58,14 @@ public class SumExpression implements BinaryExpression {
 
     @Override
     public LLVM.LLVMValueRef getLLVMValue() {
-        return null;
+        LLVM.LLVMValueRef leftExp = this.left.getLLVMValue();
+        LLVM.LLVMValueRef rightExp = this.right.getLLVMValue();
+
+        LLVM.LLVMValueRef result = LLVMBuildAdd(LLVMEmitter.getInstance().builder,
+                leftExp, rightExp, "soma"
+        );
+
+        LLVMEmitter.getInstance().CallPrint(result, LLVMEmitter.FORMAT_NUMBER);
+        return result;
     }
 }

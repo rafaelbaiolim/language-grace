@@ -3,6 +3,7 @@ package uem.IR;
 import org.bytedeco.javacpp.LLVM;
 import org.bytedeco.javacpp.LLVM.*;
 import org.bytedeco.javacpp.PointerPointer;
+import uem.TestUtils;
 
 import java.util.*;
 
@@ -133,6 +134,7 @@ public class LLVMEmitter {
         LLVMBuildRetVoid(this.builder);
         LLVMDumpModule(this.mod);
         LLVMDisposeBuilder(this.builder);
+        LLVMWriteBitcodeToFile(this.mod, TestUtils.GetFolderAssets("/llvm/") + "out.bc");
     }
 
 

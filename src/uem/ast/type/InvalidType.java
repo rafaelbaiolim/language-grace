@@ -1,6 +1,7 @@
 package uem.ast.type;
 
 import org.antlr.v4.runtime.Token;
+import org.bytedeco.javacpp.LLVM;
 import uem.ast.Position;
 
 public class InvalidType implements Type {
@@ -42,6 +43,11 @@ public class InvalidType implements Type {
 
     @Override
     public Token getSymbol() {
+        return null;
+    }
+
+    @Override
+    public LLVM.LLVMValueRef getLLVMValue() {
         return null;
     }
 }

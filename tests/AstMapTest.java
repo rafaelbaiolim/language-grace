@@ -1,5 +1,6 @@
 import org.junit.Test;
 import uem.Lexer;
+import uem.TestUtils;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -21,7 +22,7 @@ public class AstMapTest {
     protected void assertEq(String filename, String[] wantedTokens, TypeTest typeTest) throws IOException {
         String recived = Arrays.toString(wantedTokens);
         String wanted = Arrays.toString(myUnit.getTokens(
-                myUnit.lexFromCode(tests.TestUtils.GetFileContent(filename)))
+                myUnit.lexFromCode(TestUtils.GetFileContent(filename)))
                 .toArray());
 
         switch (typeTest) {

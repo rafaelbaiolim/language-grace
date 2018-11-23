@@ -1,6 +1,7 @@
 package uem.ast.stmt;
 
 import org.antlr.v4.runtime.Token;
+import org.bytedeco.javacpp.LLVM;
 import uem.ast.Node;
 import uem.ast.Position;
 
@@ -29,5 +30,10 @@ public class GraceFile implements Node {
     @Override
     public Token getSymbol() {
         return this.symToken;
+    }
+
+    @Override
+    public LLVM.LLVMValueRef getLLVMValue() {
+        return null;
     }
 }

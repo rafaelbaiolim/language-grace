@@ -5,13 +5,10 @@ import org.bytedeco.javacpp.LLVM;
 import uem.IR.LLVMEmitter;
 import uem.ast.Position;
 import uem.ast.expr.Expression;
-import uem.ast.llvm.LLVMNode;
 
 import static org.bytedeco.javacpp.LLVM.*;
 
-public class SpecVar
-        extends LLVMNode
-        implements Statement {
+public class SpecVar implements Statement {
 
     private final String varName;
     private final Expression value;
@@ -22,7 +19,7 @@ public class SpecVar
         this.varName = varName;
         this.value = value;
         this.position = position;
-        this.setLLVMBlock();
+        this.getLLVMValue();
 
     }
 
@@ -30,14 +27,14 @@ public class SpecVar
         this.varName = varName;
         this.value = null;
         this.position = null;
-        this.setLLVMBlock();
+        this.getLLVMValue();
     }
 
     public SpecVar(String varName, Expression value) {
         this.varName = varName;
         this.value = value;
         this.position = null;
-        this.setLLVMBlock();
+        this.getLLVMValue();
     }
 
     public Expression getValue() {
@@ -60,29 +57,21 @@ public class SpecVar
     }
 
     @Override
-    public Position getPosition() {
-        return this.position;
-    }
-
-    @Override
-    protected void setLLVMBlock() {
-        if (this.varName == null) return;
+    public LLVMValueRef getLLVMValue() {
+        if (this.varName == null) return null;
 
         LLVM.LLVMValueRef varAlloc = LLVMBuildAlloca(LLVMEmitter.getInstance().builder,
                 LLVMInt32Type(), this.varName);
 
-        //teste
         LLVMBuildStore(LLVMEmitter.getInstance().builder,
                 this.value.getLLVMValue(), varAlloc);
 
-        LLVMValueRef load = LLVMBuildLoad(LLVMEmitter.getInstance().builder,
-                varAlloc, "temp"
-        );
-
-        LLVMValueRef result = LLVMBuildAdd(LLVMEmitter.getInstance().builder,
-                load, load, "soma"
-        );
-
-        LLVMEmitter.getInstance().CallPrint(result, LLVMEmitter.FORMAT_NUMBER);
+        return varAlloc;
     }
+
+    @Override
+    public Position getPosition() {
+        return this.position;
+    }
+
 }

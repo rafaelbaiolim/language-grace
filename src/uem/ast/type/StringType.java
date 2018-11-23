@@ -1,6 +1,7 @@
 package uem.ast.type;
 
 import org.antlr.v4.runtime.Token;
+import org.bytedeco.javacpp.LLVM;
 import uem.antlr.GraceParser;
 import uem.ast.Position;
 
@@ -48,6 +49,11 @@ public class StringType implements Type {
 
     @Override
     public Token getSymbol() {
+        return null;
+    }
+
+    @Override
+    public LLVM.LLVMValueRef getLLVMValue() {
         return null;
     }
 

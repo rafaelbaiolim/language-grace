@@ -36,6 +36,7 @@ public class StringLiteral implements Expression {
 
     @Override
     public LLVM.LLVMValueRef getLLVMValue() {
+
         return null;
     }
 }

@@ -1,6 +1,7 @@
 package uem.ast.stmt.sub;
 
 import org.antlr.v4.runtime.Token;
+import org.bytedeco.javacpp.LLVM;
 import uem.ast.Position;
 import uem.ast.stmt.Statement;
 import uem.ast.type.Type;
@@ -61,5 +62,10 @@ public class DeclFunction implements SubStatment {
     @Override
     public Token getSymbol() {
         return this.symbol;
+    }
+
+    @Override
+    public LLVM.LLVMValueRef getLLVMValue() {
+        return null;
     }
 }

@@ -77,7 +77,6 @@ public class FrontEnd extends GraceParserBaseListener {
         this.ast.getListStmt().add(new DeclProcedureVisitor().visit(procCtx));
     }
 
-
     public void exitFunction(GraceParser.FunctionContext funCtx) {
         popScope();
     }

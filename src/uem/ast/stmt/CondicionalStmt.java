@@ -1,6 +1,7 @@
 package uem.ast.stmt;
 
 import org.antlr.v4.runtime.Token;
+import org.bytedeco.javacpp.LLVM;
 import uem.ast.Position;
 import uem.ast.expr.Expression;
 
@@ -49,6 +50,11 @@ public class CondicionalStmt implements Statement {
     @Override
     public Token getSymbol() {
         return this.symToken;
+    }
+
+    @Override
+    public LLVM.LLVMValueRef getLLVMValue() {
+        return null;
     }
 
     @Override

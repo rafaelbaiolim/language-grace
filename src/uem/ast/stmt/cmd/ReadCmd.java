@@ -1,6 +1,7 @@
 package uem.ast.stmt.cmd;
 
 import org.antlr.v4.runtime.Token;
+import org.bytedeco.javacpp.LLVM;
 import uem.ast.Position;
 import uem.ast.expr.Expression;
 import uem.ast.expr.VarReference;
@@ -40,5 +41,10 @@ public class ReadCmd implements CmdStatement {
     @Override
     public Token getSymbol() {
         return this.symToken;
+    }
+
+    @Override
+    public LLVM.LLVMValueRef getLLVMValue() {
+        return null;
     }
 }
