@@ -33,7 +33,7 @@ Intelij
 
 Antrl4
 ==============================
-Os arquivos .g4 (src/main/antlr) podem executados/ testados 
+Os arquivos .g4 (src/main/antlr) podem ser executados/ testados 
 com a ferramenta antrl4 separadamente.
 
 ```
