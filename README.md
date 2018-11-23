@@ -17,11 +17,19 @@ sendo executados na IDE InteliJ Community
 
 Execução
 ==============================
-No terminal da IDE 
 
+Terminal
+------
+1. ANTLR4 Lex e Parser (executar somente se o pacote uem.antlr estiver vazio)
 ```
 $ gradle generateGrammarSource && gradle copyTokenFile
 ```
+
+Intelij
+------
+1. Configurar como argumento de execução o arquivo de teste (colocar os arquivos de teste em tests/assets/(parser|lex))
+2. F6 para executar e gerar o assembly da linguagem 
+3. No terminal, pode ser da própria IDE, execute: ``$lli tests/assets/llvm/out.bc`` 
 
 Antrl4
 ==============================
