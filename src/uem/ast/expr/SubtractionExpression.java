@@ -2,7 +2,10 @@ package uem.ast.expr;
 
 import org.antlr.v4.runtime.Token;
 import org.bytedeco.javacpp.LLVM;
+import uem.IR.LLVMEmitter;
 import uem.ast.Position;
+
+import static org.bytedeco.javacpp.LLVM.LLVMBuildSub;
 
 public class SubtractionExpression implements BinaryExpression {
 
@@ -52,6 +55,14 @@ public class SubtractionExpression implements BinaryExpression {
 
     @Override
     public LLVM.LLVMValueRef getLLVMValue() {
-        return null;
+        LLVM.LLVMValueRef leftExp = this.left.getLLVMValue();
+        LLVM.LLVMValueRef rightExp = this.right.getLLVMValue();
+
+        LLVM.LLVMValueRef result = LLVMBuildSub(LLVMEmitter.getInstance().builder,
+                leftExp, rightExp, "sub"
+        );
+
+        LLVMEmitter.getInstance().CallPrint(result, LLVMEmitter.FORMAT_NUMBER);
+        return result;
     }
 }

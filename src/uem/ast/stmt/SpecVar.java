@@ -5,6 +5,7 @@ import org.bytedeco.javacpp.LLVM;
 import uem.IR.LLVMEmitter;
 import uem.ast.Position;
 import uem.ast.expr.Expression;
+import uem.listners.FrontEnd;
 
 import static org.bytedeco.javacpp.LLVM.*;
 
@@ -65,6 +66,8 @@ public class SpecVar implements Statement {
 
         LLVMBuildStore(LLVMEmitter.getInstance().builder,
                 this.value.getLLVMValue(), varAlloc);
+
+        FrontEnd.currentScope.setLLVMSymRef(this.varName, varAlloc);
 
         return varAlloc;
     }

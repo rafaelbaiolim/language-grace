@@ -13,7 +13,7 @@ import uem.visitors.*;
 
 public class FrontEnd extends GraceParserBaseListener {
     private Ast ast;
-    private Scope currentScope;
+    public static Scope currentScope;
 
     public FrontEnd(Ast ast) {
         super();

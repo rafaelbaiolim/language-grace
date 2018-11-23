@@ -6,7 +6,6 @@ import uem.IR.LLVMEmitter;
 import uem.ast.Position;
 
 import static org.bytedeco.javacpp.LLVM.LLVMBuildAdd;
-import static org.bytedeco.javacpp.LLVM.LLVMBuildLoad;
 
 public class SumExpression implements BinaryExpression {
 
@@ -58,6 +57,7 @@ public class SumExpression implements BinaryExpression {
 
     @Override
     public LLVM.LLVMValueRef getLLVMValue() {
+
         LLVM.LLVMValueRef leftExp = this.left.getLLVMValue();
         LLVM.LLVMValueRef rightExp = this.right.getLLVMValue();
 
