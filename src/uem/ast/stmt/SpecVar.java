@@ -60,15 +60,13 @@ public class SpecVar implements Statement {
     @Override
     public LLVMValueRef getLLVMValue() {
         if (this.varName == null) return null;
-
         LLVM.LLVMValueRef varAlloc = LLVMBuildAlloca(LLVMEmitter.getInstance().builder,
                 LLVMInt32Type(), this.varName);
-
-        LLVMBuildStore(LLVMEmitter.getInstance().builder,
-                this.value.getLLVMValue(), varAlloc);
-
+        if(this.value != null) {
+            LLVMBuildStore(LLVMEmitter.getInstance().builder,
+                    this.value.getLLVMValue(), varAlloc);
+        }
         FrontEnd.currentScope.setLLVMSymRef(this.varName, varAlloc);
-
         return varAlloc;
     }
 

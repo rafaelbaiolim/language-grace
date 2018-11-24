@@ -2,10 +2,13 @@ package uem.ast.stmt.sub;
 
 import org.antlr.v4.runtime.Token;
 import org.bytedeco.javacpp.LLVM;
+import uem.IR.LLVMEmitter;
+import uem.IR.LLVMPresets;
 import uem.ast.Position;
 import uem.ast.stmt.Statement;
 import uem.ast.type.Type;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class DeclFunction implements SubStatment {
@@ -19,6 +22,7 @@ public class DeclFunction implements SubStatment {
         super();
         this.varName = name;
         this.body = body;
+        this.getLLVMValue();
     }
 
     public Type getReturnType() {
@@ -66,6 +70,14 @@ public class DeclFunction implements SubStatment {
 
     @Override
     public LLVM.LLVMValueRef getLLVMValue() {
-        return null;
+        List<LLVM.LLVMTypeRef> args = new LinkedList();
+        args.add(LLVMEmitter.getInstance().types.i32());
+        args.add(LLVMEmitter.getInstance().types.i32());
+        return LLVMPresets.getInstance().buildScopeFn(
+                this.getVarName(),
+                LLVMEmitter.getInstance().types.i32(),
+                args
+        );
+
     }
 }

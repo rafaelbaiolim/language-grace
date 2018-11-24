@@ -64,8 +64,6 @@ public class SumExpression implements BinaryExpression {
         LLVM.LLVMValueRef result = LLVMBuildAdd(LLVMEmitter.getInstance().builder,
                 leftExp, rightExp, "soma"
         );
-
-        LLVMEmitter.getInstance().CallPrint(result, LLVMEmitter.FORMAT_NUMBER);
         return result;
     }
 }

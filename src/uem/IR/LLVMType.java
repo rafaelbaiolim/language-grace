@@ -1,4 +1,5 @@
 package uem.IR;
+
 import org.bytedeco.javacpp.LLVM;
 
 import static org.bytedeco.javacpp.LLVM.*;
@@ -25,7 +26,7 @@ public class LLVMType {
     public LLVMTypeRef i64() {
         return LLVMInt64TypeInContext(llve.context);
     }
-    
+
     public LLVMTypeRef intType(int numBits) {
         return LLVMIntTypeInContext(llve.context, numBits);
     }

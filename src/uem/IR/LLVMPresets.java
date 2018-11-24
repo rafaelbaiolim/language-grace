@@ -1,6 +1,5 @@
 package uem.IR;
 
-import org.bytedeco.javacpp.LLVM;
 import org.bytedeco.javacpp.PointerPointer;
 
 import java.util.List;
@@ -10,8 +9,17 @@ import static org.bytedeco.javacpp.LLVM.*;
 public class LLVMPresets {
     private final LLVMEmitter llve;
 
-    public LLVMPresets(LLVMEmitter llvmEmitter) {
-        this.llve = llvmEmitter;
+    private LLVMPresets() {
+        this.llve = LLVMEmitter.getInstance();
+    }
+
+    private static LLVMPresets uniqueInstance;
+
+    public static synchronized LLVMPresets getInstance() {
+        if (uniqueInstance == null) {
+            uniqueInstance = new LLVMPresets();
+        }
+        return uniqueInstance;
     }
 
     /**
@@ -52,14 +60,11 @@ public class LLVMPresets {
     /**
      * Auxiliar para Construir Escopos de Func
      */
-    public void buildScopeFn(
-            Object pos,
+    public LLVMValueRef buildScopeFn(
             String name,
-            String debugName,
             LLVMTypeRef returnType,
-            List<LLVMTypeRef> argTypes,
-            List<LLVMMetadataRef> argDebugTypes,
-            Runnable bodyBuilder) {
+            List<LLVMTypeRef> argTypes
+    ) {
 
         LLVMBasicBlockRef prevBlock = LLVMGetInsertBlock(llve.builder);
 
@@ -67,18 +72,11 @@ public class LLVMPresets {
                 returnType, argTypes.toArray(new LLVMTypeRef[0]));
 
         LLVMValueRef func = getFunction(name, funcType);
-        //llve.debugInfo.beginFuncDebugInfo(pos, func, name, debugName, argDebugTypes);
         llve.pushScope(func);
-
-        //bloco reservado para alocação de instruções
         LLVMBasicBlockRef entry = buildBlock("entry");
         LLVMBasicBlockRef body = buildBlock("body");
-
-        // Build body.
         LLVMPositionBuilderAtEnd(llve.builder, body);
-        bodyBuilder.run();
 
-        // Add terminator if necessary.
         if (!blockTerminated()) {
             if (returnType.equals(llve.types.voidType())) {
                 LLVMBuildRetVoid(llve.builder);
@@ -86,14 +84,11 @@ public class LLVMPresets {
                 LLVMBuildUnreachable(llve.builder);
             }
         }
-
         LLVMPositionBuilderAtEnd(llve.builder, entry);
         LLVMBuildBr(llve.builder, body);
-
-        // Cleanup.
-//        v.debugInfo.popScope();
         llve.popScope();
         LLVMPositionBuilderAtEnd(llve.builder, prevBlock);
+        return func;
     }
 
 

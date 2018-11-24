@@ -62,7 +62,6 @@ public class MultiplicationExpression implements BinaryExpression {
                 leftExp, rightExp, "mul"
         );
 
-        LLVMEmitter.getInstance().CallPrint(result, LLVMEmitter.FORMAT_NUMBER);
         return result;
     }
 }

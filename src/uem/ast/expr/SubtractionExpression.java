@@ -61,8 +61,6 @@ public class SubtractionExpression implements BinaryExpression {
         LLVM.LLVMValueRef result = LLVMBuildSub(LLVMEmitter.getInstance().builder,
                 leftExp, rightExp, "sub"
         );
-
-        LLVMEmitter.getInstance().CallPrint(result, LLVMEmitter.FORMAT_NUMBER);
         return result;
     }
 }

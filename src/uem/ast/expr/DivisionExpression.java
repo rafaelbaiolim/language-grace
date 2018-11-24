@@ -62,7 +62,6 @@ public class DivisionExpression implements BinaryExpression {
                 leftExp, rightExp, "div"
         );
 
-        LLVMEmitter.getInstance().CallPrint(result, LLVMEmitter.FORMAT_NUMBER);
         return result;
     }
 }

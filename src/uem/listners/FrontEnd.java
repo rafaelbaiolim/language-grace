@@ -34,11 +34,11 @@ public class FrontEnd extends GraceParserBaseListener {
 
     private void pushScope(Scope s) {
         currentScope = s;
-        System.out.println("entering: " + currentScope.getName() + ":" + s);
+//        System.out.println("entering: " + currentScope.getName() + ":" + s);
     }
 
     private void popScope() {
-        System.out.println("leaving: " + currentScope.getName() + ":" + currentScope);
+//        System.out.println("leaving: " + currentScope.getName() + ":" + currentScope);
         currentScope = currentScope.getEnclosingScope();
     }
 
@@ -217,6 +217,15 @@ public class FrontEnd extends GraceParserBaseListener {
     public void exitCmdWrite(GraceParser.CmdWriteContext ctx) {
         if (isGLobalScope()) {
             this.ast.getListStmt().add(new WriteVisitor().visit(ctx));
+        }
+    }
+
+    /**
+     * Cmd Call Proc
+     */
+    public void exitCmdCallProc(GraceParser.CmdCallProcContext ctx) {
+        if (isGLobalScope()) {
+            this.ast.getListStmt().add(new CallProcVisitor().visit(ctx));
         }
     }
 
