@@ -2,6 +2,7 @@ package uem.ast;
 
 import org.antlr.v4.runtime.Token;
 import org.bytedeco.javacpp.LLVM;
+import uem.ast.type.Type;
 
 public interface Node {
     Position getPosition();
@@ -10,5 +11,5 @@ public interface Node {
 
     Token getSymbol();
 
-    public LLVM.LLVMValueRef getLLVMValue();
+    LLVM.LLVMValueRef getLLVMValue();
 }

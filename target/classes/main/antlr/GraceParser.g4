@@ -41,7 +41,7 @@ expression
 
 // Variáveis
 
-declVar
+declVar returns [Scope scope]
     : 'var' listSpecVars ':' lstType ';'
     ;
 

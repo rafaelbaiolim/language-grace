@@ -2,6 +2,7 @@ package uem.ast.type;
 
 import org.antlr.v4.runtime.Token;
 import org.bytedeco.javacpp.LLVM;
+import uem.IR.LLVMEmitter;
 import uem.antlr.GraceParser;
 import uem.ast.Position;
 
@@ -34,7 +35,7 @@ public class StringType implements Type {
 
     @Override
     public String getName() {
-        return null;
+        return LLVMEmitter.FORMAT_STRING;
     }
 
     @Override

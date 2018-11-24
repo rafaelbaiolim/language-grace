@@ -3,8 +3,10 @@ package uem.ast.stmt;
 import org.antlr.v4.runtime.Token;
 import org.bytedeco.javacpp.LLVM;
 import uem.IR.LLVMEmitter;
+import uem.antlr.GraceParser;
 import uem.ast.Position;
 import uem.ast.expr.Expression;
+import uem.ast.type.Type;
 import uem.listners.FrontEnd;
 
 import static org.bytedeco.javacpp.LLVM.*;
@@ -12,9 +14,11 @@ import static org.bytedeco.javacpp.LLVM.*;
 public class SpecVar implements Statement {
 
     private final String varName;
-    private final Expression value;
+    private Expression value;
+    private GraceParser.ExpressionContext parserExpr;
     private final Position position;
     private Token symToken;
+    LLVMValueRef llvmValRef;
 
     public SpecVar(String varName, Expression value, Position position) {
         this.varName = varName;
@@ -28,18 +32,20 @@ public class SpecVar implements Statement {
         this.varName = varName;
         this.value = null;
         this.position = null;
-        this.getLLVMValue();
     }
 
     public SpecVar(String varName, Expression value) {
         this.varName = varName;
         this.value = value;
         this.position = null;
-        this.getLLVMValue();
     }
 
     public Expression getValue() {
         return value;
+    }
+
+    public Expression setValue(Expression exp) {
+        return this.value = exp;
     }
 
     @Override
@@ -59,20 +65,36 @@ public class SpecVar implements Statement {
 
     @Override
     public LLVMValueRef getLLVMValue() {
+        return this.llvmValRef;
+    }
+
+    public LLVMValueRef getLLVMValue(Type type) {
         if (this.varName == null) return null;
-        LLVM.LLVMValueRef varAlloc = LLVMBuildAlloca(LLVMEmitter.getInstance().builder,
-                LLVMInt32Type(), this.varName);
-        if(this.value != null) {
+
+        LLVM.LLVMValueRef varAlloc = LLVMBuildAlloca(
+                LLVMEmitter.getInstance().builder,
+                LLVMEmitter.getInstance().types.getByTypeName(type.getName()),
+                this.varName);
+        if (this.value != null) {
             LLVMBuildStore(LLVMEmitter.getInstance().builder,
                     this.value.getLLVMValue(), varAlloc);
         }
+
         FrontEnd.currentScope.setLLVMSymRef(this.varName, varAlloc);
-        return varAlloc;
+        return this.llvmValRef = varAlloc;
     }
+
 
     @Override
     public Position getPosition() {
         return this.position;
     }
 
+    public void setParsetExpr(GraceParser.ExpressionContext expression) {
+        this.parserExpr = expression;
+    }
+
+    public GraceParser.ExpressionContext getParserExpr() {
+        return this.parserExpr;
+    }
 }

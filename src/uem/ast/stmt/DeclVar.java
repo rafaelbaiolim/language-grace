@@ -20,6 +20,7 @@ public class DeclVar implements Statement {
         this.stmt = stmt;
         this.position = null;
         this.type = type;
+        this.getLLVMValue();
     }
 
     public List<Statement> getListStmt() {
@@ -47,6 +48,21 @@ public class DeclVar implements Statement {
 
     @Override
     public LLVM.LLVMValueRef getLLVMValue() {
+//        this.getListStmt().forEach(stmt -> {
+//            LLVM.LLVMValueRef varAlloc = LLVMBuildAlloca(
+//                    LLVMEmitter.getInstance().builder,
+//                    LLVMEmitter.getInstance().types.getByTypeName(this.type.getName()),
+//                    stmt.getVarName());
+//
+//            if (stmt instanceof SpecVar) {
+//                SpecVar asSpecVar = (SpecVar) stmt;
+//                LLVMBuildStore(
+//                        LLVMEmitter.getInstance().builder,
+//                        asSpecVar.getValue().getLLVMValue(),
+//                        varAlloc);
+//            }
+//            FrontEnd.currentScope.setLLVMSymRef(this.varName, varAlloc);
+//        });
         return null;
     }
 

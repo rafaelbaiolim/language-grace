@@ -119,17 +119,9 @@ public class FrontEnd extends GraceParserBaseListener {
 
     public void exitDeclVar(GraceParser.DeclVarContext declVarCtx) {
         try {
+            declVarCtx.scope = currentScope;
             DeclVar declVar = new DeclVarVisitor().visit(declVarCtx);
-            declVar.getListStmt().forEach(stmt -> {
-                {
-                    VariableSymbol v = new VariableSymbol(stmt.getVarName());
-                    v.setType(v.getType());
-                    currentScope.define(v);
-                    if (isGLobalScope()) {
-                        this.ast.getListStmt().add(stmt); //append AST
-                    }
-                }
-            });
+            //set de scope movido para o visitor
 
         } catch (Exception ex) {
             //Erro sintático

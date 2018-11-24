@@ -750,6 +750,7 @@ public class GraceParser extends Parser {
 	}
 
 	public static class DeclVarContext extends ParserRuleContext {
+		public Scope scope;
 		public ListSpecVarsContext listSpecVars() {
 			return getRuleContext(ListSpecVarsContext.class,0);
 		}

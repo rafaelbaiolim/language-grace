@@ -2,7 +2,10 @@ package uem.ast.expr;
 
 import org.antlr.v4.runtime.Token;
 import org.bytedeco.javacpp.LLVM;
+import uem.IR.LLVMEmitter;
 import uem.ast.Position;
+
+import static org.bytedeco.javacpp.LLVM.LLVMBuildGlobalStringPtr;
 
 public class StringLiteral implements Expression {
 
@@ -36,7 +39,10 @@ public class StringLiteral implements Expression {
 
     @Override
     public LLVM.LLVMValueRef getLLVMValue() {
+        return LLVMBuildGlobalStringPtr(
+                LLVMEmitter.getInstance().builder,
+                this.value,
+                "const_" + this.value);
 
-        return null;
     }
 }

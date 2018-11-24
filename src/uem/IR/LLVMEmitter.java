@@ -188,6 +188,9 @@ public class LLVMEmitter {
         LLVMValueRef MainFunction = LLVMAddFunction(mod, "main", MainFunctionTy);
         LLVMBasicBlockRef BasicBlock = LLVMAppendBasicBlock(MainFunction, "entrypoint");
         LLVMPositionBuilderAtEnd(builder, BasicBlock);
+        
+        this.pushScope(MainFunction);
+
         this.Printer();
         return this;
     }

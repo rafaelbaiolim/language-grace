@@ -34,4 +34,16 @@ public class LLVMType {
     public LLVMTypeRef jniEnvType() {
         return i8();
     }
+
+    public LLVMTypeRef getByTypeName(String name) {
+        switch (name) {
+            case LLVMEmitter.FORMAT_NUMBER:
+                return this.i32();
+            case LLVMEmitter.FORMAT_STRING:
+                return this.i8();
+        }
+        return null;
+    }
+
+
 }
