@@ -3,6 +3,7 @@ package uem.visitors;
 import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseVisitor;
 import uem.ast.stmt.SpecVar;
+import uem.ast.stmt.SpecVarArr;
 import uem.ast.stmt.Statement;
 
 public class SpecVarVisitor extends GraceParserBaseVisitor<Statement> {
@@ -21,5 +22,14 @@ public class SpecVarVisitor extends GraceParserBaseVisitor<Statement> {
         SpecVar spcVar = new SpecVar(specVarSimpleIni.ID().getText()); //não tem inicialização de valor/ exp
         spcVar.setSymbol(specVarSimpleIni.ID().getSymbol());
         return spcVar;
+    }
+
+    public Statement visitSpecVarArr(GraceParser.SpecVarArrContext sVarArrCtx) {
+        SpecVarArr spcVarArr = new SpecVarArr(
+                sVarArrCtx.ID().getText(),
+                new ExpressionVisitor().visit(sVarArrCtx.expression())
+        ); //não tem inicialização de valor/ exp
+        spcVarArr.setSymbol(sVarArrCtx.ID().getSymbol());
+        return spcVarArr;
     }
 }

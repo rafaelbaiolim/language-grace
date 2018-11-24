@@ -6,12 +6,6 @@ options { tokenVocab=GraceLexer; }
     Verificar se o programa sempre iniciar com proc / func
 **/
 
-/*
-#ask o livro diz que ANTLR4 consegue lidar com recursões diretas a esquerda
-associado o operador na ordem esquerd -> direita,
-trata a Grace para remover e nunca ter a esquerda? ou segue o baile ?
-*/
-
 @header {
     import org.antlr.symtab.*;
 }
@@ -65,7 +59,7 @@ specVarSimpleIni
     ;
 
 specVarArr
-    : specVarSimple '[' NUMBERLITERAL+ ']'
+    : ID '[' expression ']'
     ;
 
 specVarArrIni
@@ -92,7 +86,7 @@ decFunc returns [Scope scope]
 // Lista de Parâmetros
 
 lstParam
-    : specParam (';' specParam)*  //#ask: listParam não pode ser vazia ? vide gramática
+    : specParam (';' specParam)*
     ;
 
 specParam

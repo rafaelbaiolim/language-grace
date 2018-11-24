@@ -2,10 +2,15 @@ package uem.ast.stmt;
 
 import org.antlr.v4.runtime.Token;
 import org.bytedeco.javacpp.LLVM;
+import uem.IR.LLVMEmitter;
+import uem.IR.LLVMPresets;
 import uem.ast.Position;
 import uem.ast.expr.Expression;
 
 import java.util.List;
+
+import static org.bytedeco.javacpp.LLVM.LLVMBuildBr;
+import static org.bytedeco.javacpp.LLVM.LLVMPositionBuilderAtEnd;
 
 public class WhileStmt implements LoopStatement {
 
@@ -20,6 +25,7 @@ public class WhileStmt implements LoopStatement {
         this.stmt = stmt;
         this.position = null;
         this.cond = cond;
+        this.getLLVMValue();
     }
 
     public void setStatment(List<Statement> stmt) {
@@ -33,17 +39,12 @@ public class WhileStmt implements LoopStatement {
 
     @Override
     public void setSymbol(Token sym) {
-        this.symToken =sym;
+        this.symToken = sym;
     }
 
     @Override
     public Token getSymbol() {
         return this.symToken;
-    }
-
-    @Override
-    public LLVM.LLVMValueRef getLLVMValue() {
-        return null;
     }
 
     @Override
@@ -59,6 +60,30 @@ public class WhileStmt implements LoopStatement {
     @Override
     public List<Statement> getBody() {
         return this.stmt;
+    }
+
+    @Override
+    public LLVM.LLVMValueRef getLLVMValue() {
+        LLVMPresets llvmp = LLVMPresets.getInstance();
+        LLVMEmitter llve = LLVMEmitter.getInstance();
+
+        LLVM.LLVMBasicBlockRef cond = llvmp.buildBlock("while.cond");
+        LLVM.LLVMBasicBlockRef body = llvmp.buildBlock("while.body");
+        LLVM.LLVMBasicBlockRef end = llvmp.buildBlock("while.end");
+
+        llve.pushLoop(cond, end);
+
+        // Conditional.
+        LLVMBuildBr(llve.builder, cond);
+        LLVMPositionBuilderAtEnd(llve.builder, cond);
+
+        //FAZER O IF PRIMEIRO
+        LLVMPositionBuilderAtEnd(llve.builder, body);
+
+        LLVMPositionBuilderAtEnd(llve.builder, end);
+        llve.popScope();
+
+        return null;
     }
 
 

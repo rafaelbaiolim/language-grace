@@ -11,31 +11,33 @@ import uem.listners.FrontEnd;
 
 import static org.bytedeco.javacpp.LLVM.*;
 
-public class SpecVar implements VarStatement {
+public class SpecVarArr implements VarStatement {
 
     private final String varName;
     private Expression value;
+    private Expression length;
     private final Position position;
     private Token symToken;
     LLVMValueRef llvmValRef;
 
-    public SpecVar(String varName, Expression value, Position position) {
+    public SpecVarArr(String varName, Expression length, Expression value, Position position) {
         this.varName = varName;
+        this.length = length;
         this.value = value;
         this.position = position;
         this.getLLVMValue();
 
     }
 
-    public SpecVar(String varName) {
+    public SpecVarArr(String varName) {
         this.varName = varName;
         this.value = null;
         this.position = null;
     }
 
-    public SpecVar(String varName, Expression value) {
+    public SpecVarArr(String varName, Expression length) {
         this.varName = varName;
-        this.value = value;
+        this.length = length;
         this.position = null;
     }
 
@@ -47,6 +49,14 @@ public class SpecVar implements VarStatement {
     @Override
     public Expression setValue(Expression exp) {
         return this.value = exp;
+    }
+
+    public Expression getLength() {
+        return this.length;
+    }
+
+    public Expression setLength(Expression expLen) {
+        return this.length = expLen;
     }
 
     @Override
@@ -71,21 +81,41 @@ public class SpecVar implements VarStatement {
 
     @Override
     public LLVMValueRef getLLVMValue(Type type) {
-        if (this.varName == null) return null;
+        //Considere que um array sempre será de Number -> int
+        LLVMGetDataLayout(LLVMEmitter.getInstance().mod);
+
+        LLVM.LLVMTypeRef typeArray = LLVMArrayType(
+                LLVMEmitter.getInstance().types.i32(),
+                10
+        );
+
+//        LLVM.LLVMValueRef varAlloc = LLVMBuildArrayAlloca(
+//                LLVMEmitter.getInstance().builder,
+//                typeArray,
+//                LLVMConstInt(
+//                        LLVMEmitter.getInstance().types.i32(),
+//                        10, 1
+//                ),
+//                "arr");
+
 
         LLVM.LLVMValueRef varAlloc = LLVMBuildAlloca(
                 LLVMEmitter.getInstance().builder,
-                LLVMEmitter.getInstance().types.getByTypeName(type.getName()),
+                typeArray,
                 this.varName);
+
         if (this.value != null) {
-            LLVMBuildStore(LLVMEmitter.getInstance().builder,
-                    this.value.getLLVMValue(), varAlloc);
+            LLVMBuildStore(
+                    LLVMEmitter.getInstance().builder,
+                    this.value.getLLVMValue(),
+                    varAlloc
+            );
         }
 
         FrontEnd.currentScope.setLLVMSymRef(this.varName, varAlloc);
         return this.llvmValRef = varAlloc;
-    }
 
+    }
 
     @Override
     public Position getPosition() {

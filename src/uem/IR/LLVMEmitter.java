@@ -72,6 +72,35 @@ public class LLVMEmitter {
         }
     }
 
+    public void pushLabel(String label, LLVMBasicBlockRef before, LLVMBasicBlockRef after) {
+        labelMap().put(label, new LabeledStmtLocation(before, after));
+    }
+
+    public void popLabel(String label) {
+        labelMap().remove(label);
+    }
+
+
+    private ScopeFn fnCtxt() {
+        return fnCtxts.getFirst();
+    }
+
+    private Map<String, LabeledStmtLocation> labelMap() {
+        return fnCtxt().labelMap;
+    }
+
+    private Deque<ControlTransferLocation> continueLocs = new ArrayDeque<>();
+    private Deque<ControlTransferLocation> breakLocs = new ArrayDeque<>();
+
+    public ControlTransferLocation getBreakLoc(String label) {
+        return label == null ? breakLocs.getLast() : labelMap().get(label).end;
+    }
+
+    public void pushLoop(LLVMBasicBlockRef head, LLVMBasicBlockRef end) {
+        continueLocs.addLast(new ControlTransferLocation(head));
+        breakLocs.addLast(new ControlTransferLocation(end));
+    }
+
 
     private static class ScopeFn {
         final LLVM.LLVMValueRef scope;
@@ -100,6 +129,11 @@ public class LLVMEmitter {
      */
     public void popScope() {
         fnCtxts.pop();
+    }
+
+    public void popLoop() {
+        continueLocs.removeLast();
+        breakLocs.removeLast();
     }
 
     public LLVMValueRef currentScope() {
@@ -188,7 +222,7 @@ public class LLVMEmitter {
         LLVMValueRef MainFunction = LLVMAddFunction(mod, "main", MainFunctionTy);
         LLVMBasicBlockRef BasicBlock = LLVMAppendBasicBlock(MainFunction, "entrypoint");
         LLVMPositionBuilderAtEnd(builder, BasicBlock);
-        
+
         this.pushScope(MainFunction);
 
         this.Printer();
