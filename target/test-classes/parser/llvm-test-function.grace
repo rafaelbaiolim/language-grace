@@ -1,5 +1,7 @@
-var i = 0:int;
-while(i < 3){
+var i = 5:int;
+
+if( i < 10 ){
     write 1;
-    i += 1;
+}else{
+    write 0;
 }

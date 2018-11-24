@@ -2,10 +2,14 @@ package uem.ast.stmt;
 
 import org.antlr.v4.runtime.Token;
 import org.bytedeco.javacpp.LLVM;
+import uem.IR.LLVMEmitter;
+import uem.IR.LLVMPresets;
 import uem.ast.Position;
 import uem.ast.expr.Expression;
 
 import java.util.List;
+
+import static org.bytedeco.javacpp.LLVM.*;
 
 public class CondicionalStmt implements Statement {
 
@@ -20,6 +24,7 @@ public class CondicionalStmt implements Statement {
         super();
         this.position = null;
         this.cond = cond;
+        this.getLLVMValue();
     }
 
     public CondicionalStmt(List<Statement> ifStmt, Expression cond) {
@@ -27,6 +32,7 @@ public class CondicionalStmt implements Statement {
         this.ifStmt = ifStmt;
         this.position = null;
         this.cond = cond;
+        this.getLLVMValue();
     }
 
     public CondicionalStmt(List<Statement> ifStmt, List<Statement> elseStmt, Expression cond) {
@@ -35,6 +41,7 @@ public class CondicionalStmt implements Statement {
         this.elseStmt = elseStmt;
         this.position = null;
         this.cond = cond;
+        this.getLLVMValue();
     }
 
     @Override
@@ -52,10 +59,6 @@ public class CondicionalStmt implements Statement {
         return this.symToken;
     }
 
-    @Override
-    public LLVM.LLVMValueRef getLLVMValue() {
-        return null;
-    }
 
     @Override
     public Position getPosition() {
@@ -82,5 +85,27 @@ public class CondicionalStmt implements Statement {
         return this.elseStmt;
     }
 
+    @Override
+    public LLVM.LLVMValueRef getLLVMValue() {
+        LLVMPresets llvmp = LLVMPresets.getInstance();
+        LLVMEmitter llve = LLVMEmitter.getInstance();
+
+        LLVM.LLVMBasicBlockRef ifTrue = llvmp.buildBlock("if.true");
+        LLVM.LLVMBasicBlockRef ifFalse = llvmp.buildBlock("if.false");
+        LLVM.LLVMBasicBlockRef end = llvmp.buildBlock("if.end");
+
+//        LLVMBuildCondBr(
+//                llve.builder,
+//                this.cond.getLLVMValue(),
+//                ifTrue,
+//                ifFalse); //fazer o comando cond
+
+        LLVMPositionBuilderAtEnd(llve.builder, ifTrue);
+        LLVMBuildBr(llve.builder, end);
+
+
+        LLVMPositionBuilderAtEnd(llve.builder, end);
+        return null;
+    }
 
 }
