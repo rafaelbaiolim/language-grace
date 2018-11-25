@@ -165,8 +165,16 @@ public class LLVMEmitter {
     }
 
     public final void Finalize() {
+
+        LLVMPassManagerRef pass = LLVMCreatePassManager();
+        LLVMAddConstantPropagationPass(pass);
+
+        //comentar, para visualizar op de alocadores porém, valores constantes param de funcionar
+        LLVMAddPromoteMemoryToRegisterPass(pass);
+        LLVMRunPassManager(pass, mod);
         LLVMBuildRetVoid(this.builder);
         LLVMDumpModule(this.mod);
+
         LLVMDisposeBuilder(this.builder);
         LLVMWriteBitcodeToFile(this.mod, TestUtils.GetFolderAssets("/llvm/") + "out.bc");
     }

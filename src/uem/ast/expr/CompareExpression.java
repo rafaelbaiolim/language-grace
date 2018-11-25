@@ -56,12 +56,13 @@ public class CompareExpression implements BinaryExpression {
         LLVMPresets llp = LLVMPresets.getInstance();
         LLVMEmitter lle = LLVMEmitter.getInstance();
         int pred = llp.getLLVMPredicate(this.operator);
+
         return LLVMBuildICmp(
                 lle.builder,
                 pred,
                 this.left.getLLVMValue(),
                 this.right.getLLVMValue(),
-                "compare " + this.operator
+                "compare(" + this.operator + ")"
         );
 
 

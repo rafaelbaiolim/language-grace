@@ -39,7 +39,6 @@ public class LLVMPresets {
         return this.LLVMPredicates.get(op);
     }
 
-
     /**
      * Auxiliar para construir Basic Blocks da API
      *

@@ -6,6 +6,7 @@ import uem.ast.Position;
 
 import static org.bytedeco.javacpp.LLVM.LLVMConstInt;
 import static org.bytedeco.javacpp.LLVM.LLVMInt32Type;
+import static org.bytedeco.javacpp.LLVM.LLVMIntType;
 
 public class NumberLiteral implements Expression {
 
@@ -39,6 +40,7 @@ public class NumberLiteral implements Expression {
 
     @Override
     public LLVM.LLVMValueRef getLLVMValue() {
-        return LLVMConstInt(LLVMInt32Type(), Integer.parseInt(this.value), 0);
+        return LLVMConstInt(LLVMInt32Type(),
+                Integer.parseInt(this.value), 1);
     }
 }

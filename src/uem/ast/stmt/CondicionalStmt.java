@@ -104,6 +104,11 @@ public class CondicionalStmt implements Statement {
         LLVMPositionBuilderAtEnd(llve.builder, ifTrue);
         LLVMBuildBr(llve.builder, end);
 
+        /**
+         * Tratar o caso de [if -> else] aqui
+         */
+        LLVMPositionBuilderAtEnd(llve.builder, ifFalse);
+        LLVMBuildRetVoid(llve.builder);
 
         LLVMPositionBuilderAtEnd(llve.builder, end);
         return null;
