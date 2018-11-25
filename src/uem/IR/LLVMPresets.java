@@ -2,6 +2,7 @@ package uem.IR;
 
 import org.bytedeco.javacpp.PointerPointer;
 
+import java.util.HashMap;
 import java.util.List;
 
 import static org.bytedeco.javacpp.LLVM.*;
@@ -10,6 +11,7 @@ public class LLVMPresets {
     private final LLVMEmitter llve;
 
     private LLVMPresets() {
+        this.populateLLVMPredicatesHash();
         this.llve = LLVMEmitter.getInstance();
     }
 
@@ -21,6 +23,22 @@ public class LLVMPresets {
         }
         return uniqueInstance;
     }
+
+    HashMap<String, Integer> LLVMPredicates = new HashMap<String, Integer>();
+
+    private void populateLLVMPredicatesHash() {
+        this.LLVMPredicates.put("<", LLVMIntSLT);
+        this.LLVMPredicates.put("<=", LLVMIntSLE);
+        this.LLVMPredicates.put(">", LLVMIntSGT);
+        this.LLVMPredicates.put(">=", LLVMIntSGE);
+        this.LLVMPredicates.put("==", LLVMIntEQ);
+        this.LLVMPredicates.put("!=", LLVMIntNE);
+    }
+
+    public int getLLVMPredicate(String op) {
+        return this.LLVMPredicates.get(op);
+    }
+
 
     /**
      * Auxiliar para construir Basic Blocks da API
@@ -91,17 +109,4 @@ public class LLVMPresets {
         return func;
     }
 
-
-    /**
-     * Tratar o parametro de ValueRef em CondBR
-     *
-     * @param trueBlock
-     * @param falseBlock
-     */
-    public void translateLLVMConditional(
-            LLVMValueRef If, //deixar generico
-            LLVMBasicBlockRef trueBlock,
-            LLVMBasicBlockRef falseBlock) {
-        LLVMBuildCondBr(llve.builder, If, trueBlock, falseBlock);
-    }
 }

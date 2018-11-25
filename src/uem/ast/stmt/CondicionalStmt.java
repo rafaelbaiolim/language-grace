@@ -25,6 +25,7 @@ public class CondicionalStmt implements Statement {
         this.position = null;
         this.cond = cond;
         this.getLLVMValue();
+
     }
 
     public CondicionalStmt(List<Statement> ifStmt, Expression cond) {
@@ -32,7 +33,7 @@ public class CondicionalStmt implements Statement {
         this.ifStmt = ifStmt;
         this.position = null;
         this.cond = cond;
-        this.getLLVMValue();
+
     }
 
     public CondicionalStmt(List<Statement> ifStmt, List<Statement> elseStmt, Expression cond) {
@@ -90,15 +91,15 @@ public class CondicionalStmt implements Statement {
         LLVMPresets llvmp = LLVMPresets.getInstance();
         LLVMEmitter llve = LLVMEmitter.getInstance();
 
-        LLVM.LLVMBasicBlockRef ifTrue = llvmp.buildBlock("if.true");
-        LLVM.LLVMBasicBlockRef ifFalse = llvmp.buildBlock("if.false");
-        LLVM.LLVMBasicBlockRef end = llvmp.buildBlock("if.end");
+        LLVM.LLVMBasicBlockRef ifTrue = llvmp.buildBlock("iftrue");
+        LLVM.LLVMBasicBlockRef ifFalse = llvmp.buildBlock("iffalse");
+        LLVM.LLVMBasicBlockRef end = llvmp.buildBlock("ifend");
 
-//        LLVMBuildCondBr(
-//                llve.builder,
-//                this.cond.getLLVMValue(),
-//                ifTrue,
-//                ifFalse); //fazer o comando cond
+        LLVMBuildCondBr(
+                llve.builder,
+                this.cond.getLLVMValue(),
+                ifTrue,
+                ifFalse);
 
         LLVMPositionBuilderAtEnd(llve.builder, ifTrue);
         LLVMBuildBr(llve.builder, end);

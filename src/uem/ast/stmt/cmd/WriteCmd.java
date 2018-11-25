@@ -58,7 +58,7 @@ public class WriteCmd implements CmdStatement {
         for (Expression expr : this.expressionList) {
             LLVMEmitter.getInstance().CallPrint(
                     expr.getLLVMValue(),
-                    LLVMEmitter.FORMAT_STRING
+                    LLVMEmitter.FORMAT_NUMBER
             );
         }
 

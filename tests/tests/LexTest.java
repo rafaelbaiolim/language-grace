@@ -2,7 +2,7 @@ package tests;
 
 import org.junit.Test;
 import uem.Lexer;
-import uem.TestUtils;
+import uem.utils.TestUtils;
 
 import java.io.IOException;
 import java.util.Arrays;

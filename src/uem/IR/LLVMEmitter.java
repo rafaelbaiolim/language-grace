@@ -3,7 +3,7 @@ package uem.IR;
 import org.bytedeco.javacpp.LLVM;
 import org.bytedeco.javacpp.LLVM.*;
 import org.bytedeco.javacpp.PointerPointer;
-import uem.TestUtils;
+import uem.utils.TestUtils;
 
 import java.util.*;
 

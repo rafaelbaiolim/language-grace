@@ -39,6 +39,6 @@ public class NumberLiteral implements Expression {
 
     @Override
     public LLVM.LLVMValueRef getLLVMValue() {
-        return LLVMConstInt(LLVMInt32Type(), Integer.parseInt(this.value), 1);
+        return LLVMConstInt(LLVMInt32Type(), Integer.parseInt(this.value), 0);
     }
 }
