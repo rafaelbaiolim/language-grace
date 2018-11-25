@@ -59,7 +59,7 @@ specVarSimpleIni
     ;
 
 specVarArr
-    : ID '[' expression ']'
+    : ID '[' NUMBERLITERAL+ ']' //posição sempre alocada como uma constante de inteiro
     ;
 
 specVarArrIni

@@ -15,12 +15,12 @@ public class SpecVarArr implements VarStatement {
 
     private final String varName;
     private Expression value;
-    private Expression length;
+    private String length;
     private final Position position;
     private Token symToken;
     LLVMValueRef llvmValRef;
 
-    public SpecVarArr(String varName, Expression length, Expression value, Position position) {
+    public SpecVarArr(String varName, String length, Expression value, Position position) {
         this.varName = varName;
         this.length = length;
         this.value = value;
@@ -33,12 +33,14 @@ public class SpecVarArr implements VarStatement {
         this.varName = varName;
         this.value = null;
         this.position = null;
+        this.getLLVMValue();
     }
 
-    public SpecVarArr(String varName, Expression length) {
+    public SpecVarArr(String varName, String length) {
         this.varName = varName;
         this.length = length;
         this.position = null;
+        this.getLLVMValue();
     }
 
     @Override
@@ -51,12 +53,12 @@ public class SpecVarArr implements VarStatement {
         return this.value = exp;
     }
 
-    public Expression getLength() {
-        return this.length;
+    public Integer getLength() {
+        return Integer.parseInt(this.length);
     }
 
-    public Expression setLength(Expression expLen) {
-        return this.length = expLen;
+    public void setLength(Integer len) {
+        this.length = String.valueOf(len);
     }
 
     @Override
@@ -83,21 +85,10 @@ public class SpecVarArr implements VarStatement {
     public LLVMValueRef getLLVMValue(Type type) {
         //Considere que um array sempre será de Number -> int
         LLVMGetDataLayout(LLVMEmitter.getInstance().mod);
-
         LLVM.LLVMTypeRef typeArray = LLVMArrayType(
                 LLVMEmitter.getInstance().types.i32(),
-                10
+                Integer.parseInt(this.length)
         );
-
-//        LLVM.LLVMValueRef varAlloc = LLVMBuildArrayAlloca(
-//                LLVMEmitter.getInstance().builder,
-//                typeArray,
-//                LLVMConstInt(
-//                        LLVMEmitter.getInstance().types.i32(),
-//                        10, 1
-//                ),
-//                "arr");
-
 
         LLVM.LLVMValueRef varAlloc = LLVMBuildAlloca(
                 LLVMEmitter.getInstance().builder,

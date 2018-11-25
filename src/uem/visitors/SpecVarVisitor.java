@@ -27,8 +27,8 @@ public class SpecVarVisitor extends GraceParserBaseVisitor<Statement> {
     public Statement visitSpecVarArr(GraceParser.SpecVarArrContext sVarArrCtx) {
         SpecVarArr spcVarArr = new SpecVarArr(
                 sVarArrCtx.ID().getText(),
-                new ExpressionVisitor().visit(sVarArrCtx.expression())
-        ); //não tem inicialização de valor/ exp
+                sVarArrCtx.NUMBERLITERAL().get(0).getText()
+        );
         spcVarArr.setSymbol(sVarArrCtx.ID().getSymbol());
         return spcVarArr;
     }
