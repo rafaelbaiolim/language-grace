@@ -52,7 +52,6 @@ class Main {
         Ast ast = new Ast();
         FrontEnd frontEnd = new FrontEnd(ast);
         walker.walk(frontEnd, tree);
-
         LLVMEmitter.getInstance().Finalize();
     }
 }
