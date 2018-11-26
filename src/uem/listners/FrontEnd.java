@@ -217,7 +217,7 @@ public class FrontEnd extends GraceParserBaseListener {
 
     public void exitCmdRead(GraceParser.CmdReadContext ctx) {
         if (isGLobalScope()) {
-            this.ast.getListStmt().add(new ReadVisitor().visit(ctx.variable()));
+            this.ast.getListStmt().add(new ReadVisitor().visit(ctx));
         }
     }
 
@@ -229,6 +229,7 @@ public class FrontEnd extends GraceParserBaseListener {
             this.ast.getListStmt().add(new WriteVisitor().visit(ctx));
         }
     }
+
 
     /**
      * Cmd Call Proc

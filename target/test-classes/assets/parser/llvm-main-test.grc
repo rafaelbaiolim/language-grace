@@ -1,8 +1,7 @@
-var a[2]:int;
-a[0] = 10;
-a[1] = 15;
-a[2] = 20;
+var a:int;
 
-a[0] = a[2];
-var c = a[0]:int;
-write c;
+read a;
+write a;
+
+read a;
+write a;

@@ -40,6 +40,12 @@ public class ExpressionVisitor extends GraceParserBaseVisitor<Expression> {
         return varRef;
     }
 
+    public Expression visitSimpleVar(GraceParser.SimpleVarContext varRefCtx) {
+        Variable varRef = new Variable(varRefCtx.ID().getText());
+        varRef.setSymbol(varRefCtx.ID().getSymbol());
+        return varRef;
+    }
+
     public Expression visitArrReference(GraceParser.ArrReferenceContext varArrRefCtx) {
         VarArrReference arrRef = new VarArrReference(
                 varArrRefCtx.ID().getText(),

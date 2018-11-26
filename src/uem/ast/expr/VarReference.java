@@ -5,9 +5,7 @@ import org.bytedeco.javacpp.PointerPointer;
 import uem.IR.LLVMEmitter;
 import uem.listners.FrontEnd;
 
-import static org.bytedeco.javacpp.LLVM.LLVMBuildGEP;
-import static org.bytedeco.javacpp.LLVM.LLVMBuildLoad;
-import static org.bytedeco.javacpp.LLVM.LLVMConstInt;
+import static org.bytedeco.javacpp.LLVM.*;
 
 public class VarReference extends VarRefExpression {
 
@@ -21,6 +19,7 @@ public class VarReference extends VarRefExpression {
 
         try {
             LLVM.LLVMValueRef varAllocated = FrontEnd.currentScope.getLLVMSymRef(this.varName);
+
             load = LLVMBuildLoad(LLVMEmitter.getInstance().builder,
                     varAllocated, "temp"
             );

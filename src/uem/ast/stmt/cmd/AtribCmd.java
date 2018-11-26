@@ -37,7 +37,6 @@ public abstract class AtribCmd implements CmdStatement {
         return this.expr;
     }
 
-
     public String getVarName() {
         return this.varName;
     }

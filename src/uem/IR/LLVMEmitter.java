@@ -19,6 +19,7 @@ public class LLVMEmitter {
     public static final String FORMAT_NUMBER = "NUMBER";
     public static final String FORMAT_STRING = "STRING";
     public static final String PRINT_FUN_NAME = "printf";
+    public static final String SCAN_FUN_NAME = "scanf";
     BytePointer error;
 
     private LLVMEmitter(
@@ -198,7 +199,7 @@ public class LLVMEmitter {
         LLVMPassManagerRef pass = LLVMCreatePassManager();
         LLVMAddConstantPropagationPass(pass);
         //comentar, para visualizar op de alocadores porém, valores constantes param de funcionar
-        LLVMAddPromoteMemoryToRegisterPass(pass);
+//        LLVMAddPromoteMemoryToRegisterPass(pass);
         LLVMRunPassManager(pass, this.mod);
 
         //descomentar para gerar o LLI mesmo estando com erros
@@ -241,10 +242,45 @@ public class LLVMEmitter {
         return this;
     }
 
+    public HashMap<String, LLVMValueRef> scanArgs = new HashMap<>();
+
+    private LLVMEmitter Scanner() {
+        LLVMTypeRef ScanfArgsTyList[] = {
+                LLVMPointerType(LLVMInt8Type(), 0)
+        };
+        LLVMTypeRef ScanfTy = LLVMFunctionType(
+                LLVMInt32Type(),
+                ScanfArgsTyList[0], 1, 1
+        );
+        LLVMAddFunction(mod, SCAN_FUN_NAME, ScanfTy);
+        try { //TODO: generalizar esses argumentos scan e print
+            LLVMValueRef formatNumber = LLVMBuildGlobalStringPtr(
+                    this.builder,
+                    "%d",
+                    ".sc_format_numer"
+            ), formatString = LLVMBuildGlobalStringPtr(
+                    this.builder,
+                    "%s",
+                    ".sc_format_string"
+            );
+            this.scanArgs.put(FORMAT_STRING, formatString);
+            this.scanArgs.put(FORMAT_NUMBER, formatNumber);
+        } catch (Exception ex) {
+            //System.out.scanln(ex.getMessage());
+        }
+        return this;
+    }
+
     public void CallPrint(LLVMValueRef value, String format) {
         LLVMValueRef printArgs[] = {this.printerArgs.get(format), value};
         LLVMValueRef printf = LLVMGetNamedFunction(this.mod, PRINT_FUN_NAME);
         LLVMBuildCall(builder, printf, new PointerPointer(printArgs), 2, PRINT_FUN_NAME);
+    }
+
+    public void CallScan(LLVMValueRef value, String format) {
+        LLVMValueRef scanArgs[] = {this.scanArgs.get(format), value};
+        LLVMValueRef scanf = LLVMGetNamedFunction(this.mod, SCAN_FUN_NAME);
+        LLVMBuildCall(builder, scanf, new PointerPointer(scanArgs), 2, SCAN_FUN_NAME);
     }
 
 
@@ -268,7 +304,9 @@ public class LLVMEmitter {
         this.pushScope(MainFunction);
 
         this.Printer();
+        this.Scanner();
         return this;
     }
+
 
 }

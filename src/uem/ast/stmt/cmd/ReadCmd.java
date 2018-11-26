@@ -2,20 +2,22 @@ package uem.ast.stmt.cmd;
 
 import org.antlr.v4.runtime.Token;
 import org.bytedeco.javacpp.LLVM;
+import uem.IR.LLVMEmitter;
 import uem.ast.Position;
 import uem.ast.expr.Expression;
 import uem.ast.expr.VarReference;
+import uem.listners.FrontEnd;
 
 public class ReadCmd implements CmdStatement {
     String varName = null;
     private final Position position = null;
     private Token symToken;
-    private VarReference varExpr;
+    private Expression varExpr;
 
-    public ReadCmd(VarReference var) {
+    public ReadCmd(Expression varExpr) {
         super();
-        this.varExpr = var;
-
+        this.varExpr = varExpr;
+        this.getLLVMValue();
     }
 
     @Override
@@ -45,6 +47,13 @@ public class ReadCmd implements CmdStatement {
 
     @Override
     public LLVM.LLVMValueRef getLLVMValue() {
+
+        LLVMEmitter.getInstance().CallScan(
+                this.varExpr.getLLVMValue(),
+                LLVMEmitter.FORMAT_NUMBER
+        );
+
+
         return null;
     }
 }

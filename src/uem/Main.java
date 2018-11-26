@@ -48,7 +48,6 @@ class Main {
                 builder
         );
         LLVMEmitter.getInstance().Bootstrap();
-
         Ast ast = new Ast();
         FrontEnd frontEnd = new FrontEnd(ast);
         walker.walk(frontEnd, tree);
