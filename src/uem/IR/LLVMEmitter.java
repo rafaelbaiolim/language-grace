@@ -1,7 +1,9 @@
 package uem.IR;
 
+import org.bytedeco.javacpp.BytePointer;
 import org.bytedeco.javacpp.LLVM;
 import org.bytedeco.javacpp.LLVM.*;
+import org.bytedeco.javacpp.Pointer;
 import org.bytedeco.javacpp.PointerPointer;
 import uem.utils.TestUtils;
 
@@ -17,6 +19,7 @@ public class LLVMEmitter {
     public static final String FORMAT_NUMBER = "NUMBER";
     public static final String FORMAT_STRING = "STRING";
     public static final String PRINT_FUN_NAME = "printf";
+    BytePointer error;
 
     private LLVMEmitter(
             LLVMContextRef context,
@@ -46,19 +49,24 @@ public class LLVMEmitter {
 
     public LLVMValueRef getArray(String idx, LLVMValueRef arrAllocated) {
         int index = Integer.parseInt(idx);
+        int anterior = 0;
+        if ((index - 1) > 0) {
+            anterior = index - 1;
+        }
+
         LLVM.LLVMValueRef[] indices = {
                 LLVMConstInt(
                         this.types.i32(),
-                        0,
-                        0), //inicial
+                        anterior,
+                        anterior), //inicial
                 LLVMConstInt(this.types.i32(),
                         index,
-                        0)  //indice
+                        index)  //indice
         };
         return LLVMBuildGEP(this.builder,
                 arrAllocated,
                 new PointerPointer(indices),
-                index,
+                2, //total de registradores
                 "arr_ptr");
 
     }
@@ -176,6 +184,7 @@ public class LLVMEmitter {
     }
 
     private final void GetLLVMConfig() {
+        error = new BytePointer((Pointer) null); // Erros são capturados por essa instância
         LLVMLinkInMCJIT();
         LLVMInitializeNativeAsmPrinter();
         LLVMInitializeNativeAsmParser();
@@ -184,18 +193,22 @@ public class LLVMEmitter {
     }
 
     public final void Finalize() {
+        LLVMBuildRetVoid(this.builder);
 
         LLVMPassManagerRef pass = LLVMCreatePassManager();
         LLVMAddConstantPropagationPass(pass);
-
         //comentar, para visualizar op de alocadores porém, valores constantes param de funcionar
         LLVMAddPromoteMemoryToRegisterPass(pass);
-        LLVMRunPassManager(pass, mod);
-        LLVMBuildRetVoid(this.builder);
-        LLVMDumpModule(this.mod);
+        LLVMRunPassManager(pass, this.mod);
 
+        //descomentar para gerar o LLI mesmo estando com erros
+//        LLVMVerifyModule(this.mod, LLVMAbortProcessAction, this.error);
+//        LLVMDisposeMessage(this.error);
+
+        LLVMDumpModule(this.mod);
         LLVMDisposeBuilder(this.builder);
         LLVMWriteBitcodeToFile(this.mod, TestUtils.GetFolderAssets("/llvm/") + "out.bc");
+        LLVMDisposePassManager(pass);
     }
 
 

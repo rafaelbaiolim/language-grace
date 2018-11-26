@@ -1,6 +1,13 @@
 var a[2]:int;
-a[2] = 22;
+a[0] = 10;
+a[1] = 15;
+a[2] = 20;
+
+var c = a[0]:int;
+write c;
+
+var d = a[1]:int;
+write d;
 
 var b = a[2]:int;
 write b;
-
