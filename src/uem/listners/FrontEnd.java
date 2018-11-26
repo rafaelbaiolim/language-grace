@@ -148,6 +148,24 @@ public class FrontEnd extends GraceParserBaseListener {
     }
 
     /**
+     * Arrays
+     *
+     * @param ctx
+     */
+
+    public void enterAtribArr(GraceParser.AtribArrContext ctx) {
+        Symbol sym = currentScope.resolve(ctx.arrAtrib().ID().getText());
+        if (sym == null) {
+            CheckSymbols.error(ctx.arrAtrib().ID().getSymbol(), "variável não declarada: " + ctx.getText());
+        }
+    }
+
+    public void exitAtribArr(GraceParser.AtribArrContext ctx) {
+        AtribCmd atribCmd = new AtribVisitor().visit(ctx);
+        this.ast.getListStmt().add(atribCmd); //append AST
+    }
+
+    /**
      * Escopo CMD
      * TODO: COLOCAR WHILE SCOPE EM UMA CONST NO PACOTE DE UTILS
      */

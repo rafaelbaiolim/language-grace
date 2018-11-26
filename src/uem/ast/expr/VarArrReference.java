@@ -1,28 +1,26 @@
 package uem.ast.expr;
 
 import org.bytedeco.javacpp.LLVM;
-import org.bytedeco.javacpp.PointerPointer;
 import uem.IR.LLVMEmitter;
 import uem.listners.FrontEnd;
 
-import static org.bytedeco.javacpp.LLVM.LLVMBuildGEP;
 import static org.bytedeco.javacpp.LLVM.LLVMBuildLoad;
-import static org.bytedeco.javacpp.LLVM.LLVMConstInt;
 
-public class VarReference extends VarRefExpression {
+public class VarArrReference extends VarRefExpression {
 
-    public VarReference(String varName) {
-        super(varName);
+    public VarArrReference(String varName, String idx) {
+        super(varName, idx);
+        this.getLLVMValue();
     }
 
     @Override
     public LLVM.LLVMValueRef getLLVMValue() {
         LLVM.LLVMValueRef load = null;
-
+        LLVMEmitter lle = LLVMEmitter.getInstance();
         try {
-            LLVM.LLVMValueRef varAllocated = FrontEnd.currentScope.getLLVMSymRef(this.varName);
+            LLVM.LLVMValueRef arrAllocated = FrontEnd.currentScope.getLLVMSymRef(this.varName);
             load = LLVMBuildLoad(LLVMEmitter.getInstance().builder,
-                    varAllocated, "temp"
+                    lle.getArray(this.idx, arrAllocated), "temp"
             );
         } catch (Exception ex) {
 

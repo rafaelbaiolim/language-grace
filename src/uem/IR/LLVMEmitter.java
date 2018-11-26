@@ -44,6 +44,25 @@ public class LLVMEmitter {
         return uniqueInstance;
     }
 
+    public LLVMValueRef getArray(String idx, LLVMValueRef arrAllocated) {
+        int index = Integer.parseInt(idx);
+        LLVM.LLVMValueRef[] indices = {
+                LLVMConstInt(
+                        this.types.i32(),
+                        0,
+                        0), //inicial
+                LLVMConstInt(this.types.i32(),
+                        index,
+                        0)  //indice
+        };
+        return LLVMBuildGEP(this.builder,
+                arrAllocated,
+                new PointerPointer(indices),
+                index,
+                "arr_ptr");
+
+    }
+
 
     /**
      * Auxiliar para indicar o inicio ou fim
@@ -183,7 +202,9 @@ public class LLVMEmitter {
     public HashMap<String, LLVMValueRef> printerArgs = new HashMap<>();
 
     private LLVMEmitter Printer() {
-        LLVMTypeRef PrintfArgsTyList[] = {LLVMPointerType(LLVMInt8Type(), 0)};
+        LLVMTypeRef PrintfArgsTyList[] = {
+                LLVMPointerType(LLVMInt8Type(), 0)
+        };
         LLVMTypeRef PrintfTy = LLVMFunctionType(
                 LLVMInt32Type(),
                 PrintfArgsTyList[0], 1, 1

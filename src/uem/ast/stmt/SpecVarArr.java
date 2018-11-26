@@ -83,8 +83,7 @@ public class SpecVarArr implements VarStatement {
 
     @Override
     public LLVMValueRef getLLVMValue(Type type) {
-        //Considere que um array sempre será de Number -> int
-        LLVMGetDataLayout(LLVMEmitter.getInstance().mod);
+
         LLVM.LLVMTypeRef typeArray = LLVMArrayType(
                 LLVMEmitter.getInstance().types.i32(),
                 Integer.parseInt(this.length)
@@ -95,16 +94,9 @@ public class SpecVarArr implements VarStatement {
                 typeArray,
                 this.varName);
 
-        if (this.value != null) {
-            LLVMBuildStore(
-                    LLVMEmitter.getInstance().builder,
-                    this.value.getLLVMValue(),
-                    varAlloc
-            );
-        }
-
         FrontEnd.currentScope.setLLVMSymRef(this.varName, varAlloc);
-        return this.llvmValRef = varAlloc;
+        this.llvmValRef = varAlloc;
+        return varAlloc;
 
     }
 

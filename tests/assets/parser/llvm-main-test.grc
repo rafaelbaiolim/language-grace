@@ -1,0 +1,6 @@
+var a[2]:int;
+a[2] = 22;
+
+var b = a[2]:int;
+write b;
+
