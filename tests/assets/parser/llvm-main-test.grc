@@ -1,7 +1,7 @@
-def fooFunction(x:int):int{
-    var a[10]:int;
-    a[2] = 5;
+var i = 0:int;
+if (i < 10){
+    i = 10;
+    write 1;
+}else{
+    write 0;
 }
-
-
-fooFunction(4);

@@ -20,7 +20,7 @@ public class WriteCmd implements CmdStatement {
     public WriteCmd(List<Expression> exprLst) {
         super();
         this.expressionList = exprLst;
-        this.getLLVMValue();
+//        this.getLLVMValue();
 
     }
 

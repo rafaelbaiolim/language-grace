@@ -24,7 +24,7 @@ public class CondicionalStmt implements Statement {
         super();
         this.position = null;
         this.cond = cond;
-        this.getLLVMValue();
+//        this.getLLVMValue();
 
     }
 
@@ -42,7 +42,7 @@ public class CondicionalStmt implements Statement {
         this.elseStmt = elseStmt;
         this.position = null;
         this.cond = cond;
-        this.getLLVMValue();
+//        this.getLLVMValue();
     }
 
     @Override
@@ -88,29 +88,6 @@ public class CondicionalStmt implements Statement {
 
     @Override
     public LLVM.LLVMValueRef getLLVMValue() {
-        LLVMPresets llvmp = LLVMPresets.getInstance();
-        LLVMEmitter llve = LLVMEmitter.getInstance();
-
-        LLVM.LLVMBasicBlockRef ifTrue = llvmp.buildBlock("iftrue");
-        LLVM.LLVMBasicBlockRef ifFalse = llvmp.buildBlock("iffalse");
-        LLVM.LLVMBasicBlockRef end = llvmp.buildBlock("ifend");
-
-        LLVMBuildCondBr(
-                llve.builder,
-                this.cond.getLLVMValue(),
-                ifTrue,
-                ifFalse);
-
-        LLVMPositionBuilderAtEnd(llve.builder, ifTrue);
-        LLVMBuildBr(llve.builder, end);
-
-        /**
-         * Tratar o caso de [if -> else] aqui
-         */
-        LLVMPositionBuilderAtEnd(llve.builder, ifFalse);
-        LLVMBuildRetVoid(llve.builder);
-
-        LLVMPositionBuilderAtEnd(llve.builder, end);
         return null;
     }
 

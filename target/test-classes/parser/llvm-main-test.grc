@@ -1,7 +1,0 @@
-def fooFunction(x:int):int{
-    var a[10]:int;
-    a[2] = 5;
-}
-
-
-fooFunction(4);

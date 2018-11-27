@@ -1,15 +1,15 @@
 package uem.listners;
 
-import org.antlr.symtab.FunctionSymbol;
-import org.antlr.symtab.GlobalScope;
-import org.antlr.symtab.Scope;
-import org.antlr.symtab.Symbol;
+import org.antlr.symtab.*;
 import uem.IR.LLVMEmitter;
 import uem.IR.LLVMPresets;
 import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseListener;
 import uem.ast.Ast;
+import uem.ast.Node;
+import uem.ast.stmt.CondicionalStmt;
 import uem.ast.stmt.DeclVar;
+import uem.ast.stmt.WhileStmt;
 import uem.ast.stmt.cmd.AtribCmd;
 import uem.semantic.CheckSymbols;
 import uem.visitors.*;
@@ -17,9 +17,13 @@ import uem.visitors.*;
 public class FrontEnd extends GraceParserBaseListener {
     private Ast ast;
     public static Scope currentScope;
+    private LLVMEmitter llve;
+    private LLVMPresets llvp;
 
     public FrontEnd(Ast ast) {
         super();
+        this.llve = LLVMEmitter.getInstance();
+        this.llvp = LLVMPresets.getInstance();
         this.ast = ast;
     }
 
@@ -82,14 +86,14 @@ public class FrontEnd extends GraceParserBaseListener {
 
     public void exitFunction(GraceParser.FunctionContext funCtx) {
         popScope();
-        LLVMEmitter.getInstance().popScope();               //sai do escopo da função
+        this.llve.popScope();               //sai do escopo da função
         LLVMPresets.getInstance().finalizeFunctionScope();  //volta para o bloco anterior
     }
 
     public void exitProcedure(GraceParser.ProcedureContext procCtx) {
 
         popScope();
-        LLVMEmitter.getInstance().popScope();               //sai do escopo da procedure
+        this.llve.popScope();               //sai do escopo da procedure
         LLVMPresets.getInstance().finalizeFunctionScope();  //volta para o bloco anterior
     }
 
@@ -185,7 +189,9 @@ public class FrontEnd extends GraceParserBaseListener {
      * While
      */
     public void enterCmWhile(GraceParser.CmWhileContext ctx) {
-        this.ast.getListStmt().add(new WhileVisitor().visit(ctx));
+        WhileStmt w = new WhileVisitor().visit(ctx);
+        this.ast.getListStmt().add(w);
+        w.getLLVMValue();
     }
 
     /**
@@ -251,8 +257,28 @@ public class FrontEnd extends GraceParserBaseListener {
     /**
      * Cmd Condicional
      */
+    public void enterCmdIf(GraceParser.CmdIfContext ctx) {
+        LocalScope locScope = new LocalScope(currentScope);
+        CondicionalStmt condicionalStmt = new CondicionalVisitor().visit(ctx);
+        this.ast.getListStmt().add(condicionalStmt);
+
+        LLVMPresets.getInstance().pushConditionalScope(condicionalStmt.getCond());
+        condicionalStmt.setIfStatment(condicionalStmt.getIfStmt());
+        if (condicionalStmt.getIfStmt().size() > 0) {
+            condicionalStmt.getIfStmt().forEach(Node::getLLVMValue);
+        }
+        LLVMPresets.getInstance().popConditionalScope();
+
+        condicionalStmt.setElseStatment(condicionalStmt.getElseStmt());
+        if (condicionalStmt.getElseStmt() != null) {
+            condicionalStmt.getElseStmt().forEach(Node::getLLVMValue);
+            LLVMPresets.getInstance().popConditionalScope();
+        }
+        pushScope(locScope);
+    }
+
     public void exitCmdIf(GraceParser.CmdIfContext ctx) {
-        this.ast.getListStmt().add(new CondicionalVisitor().visit(ctx));
+        popScope();
     }
 
 
