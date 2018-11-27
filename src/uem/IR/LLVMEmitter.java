@@ -211,7 +211,7 @@ public class LLVMEmitter {
         LLVMPassManagerRef pass = LLVMCreatePassManager();
         LLVMAddConstantPropagationPass(pass);
         //comentar, para visualizar op de alocadores porém, valores constantes param de funcionar
-//        LLVMAddPromoteMemoryToRegisterPass(pass);
+        LLVMAddPromoteMemoryToRegisterPass(pass);
         LLVMRunPassManager(pass, this.mod);
 
         //descomentar para gerar o LLI mesmo estando com erros

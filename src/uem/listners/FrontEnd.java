@@ -1,6 +1,9 @@
 package uem.listners;
 
-import org.antlr.symtab.*;
+import org.antlr.symtab.FunctionSymbol;
+import org.antlr.symtab.GlobalScope;
+import org.antlr.symtab.Scope;
+import org.antlr.symtab.Symbol;
 import uem.IR.LLVMEmitter;
 import uem.IR.LLVMPresets;
 import uem.antlr.GraceParser;
@@ -9,8 +12,6 @@ import uem.ast.Ast;
 import uem.ast.stmt.DeclVar;
 import uem.ast.stmt.cmd.AtribCmd;
 import uem.semantic.CheckSymbols;
-import uem.symtab.ForScope;
-import uem.symtab.WhileScope;
 import uem.visitors.*;
 
 public class FrontEnd extends GraceParserBaseListener {
@@ -99,25 +100,26 @@ public class FrontEnd extends GraceParserBaseListener {
      */
 
     public void enterBlock(GraceParser.BlockContext blkCtx) {
-
-        LocalScope locScope = new LocalScope(currentScope);
-
-        String rootParent = blkCtx.getParent().getParent().getClass().getSimpleName();
-        if (rootParent.toLowerCase().contains("cmdwhile")) {
-            //verifica se não é um scope de loop
-            locScope = new WhileScope(currentScope);
-        }
-        if (rootParent.toLowerCase().contains("cmdfor")) {
-            //verifica se não é um scope de loop
-            locScope = new ForScope(currentScope);
-        }
-
-        blkCtx.scope = locScope;
-        pushScope(locScope);
+//
+//        LocalScope locScope;
+//        String rootParent = blkCtx.getParent().getParent().getClass().getSimpleName();
+//        if (rootParent.toLowerCase().contains("cmdwhile")) {
+//            locScope = new LocalScope(currentScope);
+//            //verifica se não é um scope de loop
+//            locScope = new WhileScope(currentScope);
+//        }
+//        if (rootParent.toLowerCase().contains("cmdfor")) {
+//            locScope = new LocalScope(currentScope);
+//            //verifica se não é um scope de loop
+//            locScope = new ForScope(currentScope);
+//        }
+//
+//        blkCtx.scope = locScope;
+//        pushScope(locScope);
     }
 
     public void exitBlock(GraceParser.BlockContext blkCtx) {
-        popScope();
+//        popScope();
     }
 
     /**

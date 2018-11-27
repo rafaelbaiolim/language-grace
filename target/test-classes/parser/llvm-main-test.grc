@@ -1,8 +1,7 @@
-var a[10]:int;
-var i = 1:int;
+def fooFunction(x:int):int{
+    var a[10]:int;
+    a[2] = 5;
+}
 
-a[1 + 1] = 99;
-a[3] = a[1 + 1];
 
-var c = 3:int;
-write a[c];
+fooFunction(4);
