@@ -28,7 +28,7 @@ expression
     | '!' expression                                                                                    #differenceExpression
     | '(' expression ')'                                                                                #parenExpression
     | ID '(' expression ')'                                                                             #subReference
-    | ID '[' NUMBERLITERAL+ ']'                                                                         #arrReference
+    | ID '[' expression ']'                                                                             #arrReference
     | ID                                                                                                #varReference
     | literal                                                                                           #literalReference
     ;

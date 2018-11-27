@@ -58,7 +58,7 @@ public class ExpressionVisitor extends GraceParserBaseVisitor<Expression> {
     public Expression visitArrReference(GraceParser.ArrReferenceContext varArrRefCtx) {
         VarArrReference arrRef = new VarArrReference(
                 varArrRefCtx.ID().getText(),
-                varArrRefCtx.NUMBERLITERAL().get(0).getText()
+                new ExpressionVisitor().visit(varArrRefCtx.expression())
         );
         arrRef.setSymbol(varArrRefCtx.ID().getSymbol());
         return arrRef;

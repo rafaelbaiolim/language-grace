@@ -1,11 +1,8 @@
-def fooFunction(x:int):int{
-    var c = 10:int;
-    write x;
-    write c;
+var a[10]:int;
+var i = 1:int;
 
-    var d:int;
-    read d;
-    write d;
-}
+a[1 + 1] = 99;
+a[3] = a[1 + 1];
 
-fooFunction(4);
+var c = 3:int;
+write a[c];
