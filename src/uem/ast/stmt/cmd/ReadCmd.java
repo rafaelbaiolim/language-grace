@@ -5,8 +5,6 @@ import org.bytedeco.javacpp.LLVM;
 import uem.IR.LLVMEmitter;
 import uem.ast.Position;
 import uem.ast.expr.Expression;
-import uem.ast.expr.VarReference;
-import uem.listners.FrontEnd;
 
 public class ReadCmd implements CmdStatement {
     String varName = null;

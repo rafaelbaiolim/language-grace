@@ -1,6 +1,11 @@
-def fooFunction():int{
+def fooFunction(x:int):int{
     var c = 10:int;
+    write x;
     write c;
+
+    var d:int;
+    read d;
+    write d;
 }
 
-fooFunction();
+fooFunction(4);

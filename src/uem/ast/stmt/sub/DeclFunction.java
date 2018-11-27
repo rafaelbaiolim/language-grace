@@ -5,12 +5,16 @@ import org.bytedeco.javacpp.LLVM;
 import uem.IR.LLVMEmitter;
 import uem.IR.LLVMPresets;
 import uem.ast.Position;
+import uem.ast.stmt.SpecParam;
 import uem.ast.stmt.Statement;
 import uem.ast.type.Type;
 import uem.listners.FrontEnd;
 
 import java.util.LinkedList;
 import java.util.List;
+
+import static org.bytedeco.javacpp.LLVM.LLVMBuildStore;
+import static org.bytedeco.javacpp.LLVM.LLVMGetParam;
 
 public class DeclFunction implements SubStatment {
     private Type returnType;
@@ -75,13 +79,26 @@ public class DeclFunction implements SubStatment {
     @Override
     public LLVM.LLVMValueRef getLLVMValue() {
         List<LLVM.LLVMTypeRef> args = new LinkedList();
-//        args.add(LLVMEmitter.getInstance().types.i32());
-//        args.add(LLVMEmitter.getInstance().types.i32());
+        for(Statement param:this.params){
+            SpecParam currentParam = (SpecParam) param;
+            args.add(currentParam.getTypeLLVMRef());
+        }
         LLVM.LLVMValueRef fun = LLVMPresets.getInstance().buildScopeFn(
                 this.getVarName(),
                 LLVMEmitter.getInstance().types.i32(),
                 args
         );
+        //coloca os parametros no escopo da função
+        int i =0;
+        for(Statement param:this.params){
+            SpecParam currentParam = (SpecParam) param;
+            currentParam.getLLVMValue();
+            LLVM.LLVMValueRef allocatedParam = FrontEnd.currentScope.getLLVMSymRef(param.getVarName());
+            LLVM.LLVMValueRef pLLVMVal = LLVMGetParam(fun, i);
+            LLVMBuildStore(LLVMEmitter.getInstance().builder,
+                    pLLVMVal, allocatedParam);
+            i++;
+        }
         FrontEnd.currentScope.setLLVMSymRef(this.varName, fun);
         return fun;
     }

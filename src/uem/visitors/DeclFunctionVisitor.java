@@ -12,17 +12,12 @@ import java.util.LinkedList;
 public class DeclFunctionVisitor extends GraceParserBaseVisitor<DeclFunction> {
 
     public DeclFunction visitDecFunc(GraceParser.DecFuncContext ctx) {
+        //Declaração da função
+        DeclFunction declFunction = new DeclFunction(
+                ctx.ID().getText());
 
         //tipo
         Type type = new ListTypeVisitor().visit(ctx.lstType());
-
-        //stmt
-        DeclFunction declFunction = new DeclFunction(
-                ctx.ID().getText());
-        declFunction.getLLVMValue();
-
-        declFunction.setBody(new BlockVisitor().visit(ctx.block()));
-        declFunction.setReturnType(type);
         LinkedList<Statement> params = new ListSpecParamVisitor().visitLstParam(ctx.lstParam());
 
         //define parametros para o escopo
@@ -31,6 +26,13 @@ public class DeclFunctionVisitor extends GraceParserBaseVisitor<DeclFunction> {
             ctx.scope.define(p);
         });
         declFunction.setParams(params);
+
+        //stmt
+        declFunction.getLLVMValue();
+
+        declFunction.setBody(new BlockVisitor().visit(ctx.block()));
+        declFunction.setReturnType(type);
+
         return declFunction;
     }
 
