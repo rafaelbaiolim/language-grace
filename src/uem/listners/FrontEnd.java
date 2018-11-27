@@ -1,6 +1,8 @@
 package uem.listners;
 
 import org.antlr.symtab.*;
+import uem.IR.LLVMEmitter;
+import uem.IR.LLVMPresets;
 import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseListener;
 import uem.ast.Ast;
@@ -79,10 +81,15 @@ public class FrontEnd extends GraceParserBaseListener {
 
     public void exitFunction(GraceParser.FunctionContext funCtx) {
         popScope();
+        LLVMEmitter.getInstance().popScope();               //sai do escopo da função
+        LLVMPresets.getInstance().finalizeFunctionScope();  //volta para o bloco anterior
     }
 
     public void exitProcedure(GraceParser.ProcedureContext procCtx) {
+
         popScope();
+        LLVMEmitter.getInstance().popScope();               //sai do escopo da procedure
+        LLVMPresets.getInstance().finalizeFunctionScope();  //volta para o bloco anterior
     }
 
     // Argumentos de Função / Procedure : movido para visitor

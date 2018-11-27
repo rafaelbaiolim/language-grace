@@ -142,13 +142,14 @@ public class LLVMEmitter {
         }
     }
 
-
-    private Deque<ScopeFn> fnCtxts = new ArrayDeque<ScopeFn>();
+    protected Deque<LLVMBasicBlockRef> prevBasicBlocks = new ArrayDeque<LLVMBasicBlockRef>();
+    protected Deque<ScopeFn> fnCtxts = new ArrayDeque<ScopeFn>();
 
     /**
      * Empilha um Escopo de função LLVM
      */
     public void pushScope(LLVMValueRef fn) {
+
         fnCtxts.push(new ScopeFn(fn));
     }
 

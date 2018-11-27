@@ -7,6 +7,7 @@ import uem.IR.LLVMPresets;
 import uem.ast.Position;
 import uem.ast.stmt.Statement;
 import uem.ast.type.Type;
+import uem.listners.FrontEnd;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -18,11 +19,9 @@ public class DeclFunction implements SubStatment {
     private String varName;
     private Token symbol;
 
-    public DeclFunction(String name, List<Statement> body) {
+    public DeclFunction(String name) {
         super();
         this.varName = name;
-        this.body = body;
-        this.getLLVMValue();
     }
 
     public Type getReturnType() {
@@ -49,6 +48,11 @@ public class DeclFunction implements SubStatment {
     }
 
     @Override
+    public void setBody(List<Statement> body) {
+        this.body = body;
+    }
+
+    @Override
     public String getVarName() {
         return this.varName;
     }
@@ -71,13 +75,14 @@ public class DeclFunction implements SubStatment {
     @Override
     public LLVM.LLVMValueRef getLLVMValue() {
         List<LLVM.LLVMTypeRef> args = new LinkedList();
-        args.add(LLVMEmitter.getInstance().types.i32());
-        args.add(LLVMEmitter.getInstance().types.i32());
-        return LLVMPresets.getInstance().buildScopeFn(
+//        args.add(LLVMEmitter.getInstance().types.i32());
+//        args.add(LLVMEmitter.getInstance().types.i32());
+        LLVM.LLVMValueRef fun = LLVMPresets.getInstance().buildScopeFn(
                 this.getVarName(),
                 LLVMEmitter.getInstance().types.i32(),
                 args
         );
-
+        FrontEnd.currentScope.setLLVMSymRef(this.varName, fun);
+        return fun;
     }
 }

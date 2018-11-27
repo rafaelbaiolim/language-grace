@@ -74,6 +74,7 @@ public class LLVMPresets {
         return LLVMFunctionType(ret, new PointerPointer<>(args), args.length, /* isVarArgs */ 0);
     }
 
+
     /**
      * Auxiliar para Construir Escopos de Func
      */
@@ -82,30 +83,34 @@ public class LLVMPresets {
             LLVMTypeRef returnType,
             List<LLVMTypeRef> argTypes
     ) {
-
-        LLVMBasicBlockRef prevBlock = LLVMGetInsertBlock(llve.builder);
+//
+        llve.prevBasicBlocks.push(LLVMGetInsertBlock(llve.builder));
 
         LLVMTypeRef funcType = functionType(
                 returnType, argTypes.toArray(new LLVMTypeRef[0]));
 
         LLVMValueRef func = getFunction(name, funcType);
         llve.pushScope(func);
-        LLVMBasicBlockRef entry = buildBlock("entry");
         LLVMBasicBlockRef body = buildBlock("body");
         LLVMPositionBuilderAtEnd(llve.builder, body);
 
-        if (!blockTerminated()) {
-            if (returnType.equals(llve.types.voidType())) {
-                LLVMBuildRetVoid(llve.builder);
-            } else {
-                LLVMBuildUnreachable(llve.builder);
-            }
-        }
-        LLVMPositionBuilderAtEnd(llve.builder, entry);
-        LLVMBuildBr(llve.builder, body);
-        llve.popScope();
-        LLVMPositionBuilderAtEnd(llve.builder, prevBlock);
+//        if (!blockTerminated()) {
+//            if (returnType.equals(llve.types.voidType())) {
+//                LLVMBuildRetVoid(llve.builder);
+//            } else {
+//                LLVMBuildUnreachable(llve.builder);
+//            }
+//        }
+//        LLVMPositionBuilderAtEnd(llve.builder, entry);
+//        LLVMBuildBr(llve.builder, body);
+//        llve.popScope();
         return func;
+    }
+
+    public void finalizeFunctionScope() {
+        //colocar o tipo de retorno aqui
+        LLVMBuildRet(llve.builder,LLVMConstInt(LLVMInt32Type(),1,0));
+        LLVMPositionBuilderAtEnd(llve.builder, llve.prevBasicBlocks.pop());
     }
 
 }

@@ -9,6 +9,7 @@ import uem.ast.stmt.SpecVar;
 import uem.ast.stmt.SpecVarArr;
 import uem.ast.stmt.Statement;
 import uem.ast.type.Type;
+import uem.listners.FrontEnd;
 
 import java.util.List;
 
@@ -31,7 +32,7 @@ public class DeclVarVisitor extends GraceParserBaseVisitor<DeclVar> {
             }
             VariableSymbol v = new VariableSymbol(stmt.getVarName());
             v.setType(type);
-            ctx.scope.define(v);
+            FrontEnd.currentScope.define(v);
             currentStmt.getLLVMValue(type);
         }
 

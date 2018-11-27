@@ -10,4 +10,5 @@ public interface SubStatment extends Statement {
     public List<Statement> setParams(List<Statement> params);
 
     public List<Statement> getBody();
+    void setBody(List<Statement> body);
 }

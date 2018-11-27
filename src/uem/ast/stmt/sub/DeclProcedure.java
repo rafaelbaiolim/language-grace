@@ -45,6 +45,11 @@ public class DeclProcedure implements SubStatment {
     }
 
     @Override
+    public void setBody(List<Statement> body) {
+        this.body = body;
+    }
+
+    @Override
     public String getVarName() {
         return this.varName;
     }

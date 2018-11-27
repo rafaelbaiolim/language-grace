@@ -180,6 +180,7 @@ public class GraceParser extends Parser {
 	}
 
 	public static class StatementContext extends ParserRuleContext {
+		public Scope scope;
 		public StatementContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -188,6 +189,7 @@ public class GraceParser extends Parser {
 		public StatementContext() { }
 		public void copyFrom(StatementContext ctx) {
 			super.copyFrom(ctx);
+			this.scope = ctx.scope;
 		}
 	}
 	public static class DecSubStatementContext extends StatementContext {
@@ -819,6 +821,7 @@ public class GraceParser extends Parser {
 	}
 
 	public static class ListSpecVarsContext extends ParserRuleContext {
+		public Scope scope;
 		public List<SpecVarContext> specVar() {
 			return getRuleContexts(SpecVarContext.class);
 		}
@@ -883,6 +886,7 @@ public class GraceParser extends Parser {
 	}
 
 	public static class SpecVarContext extends ParserRuleContext {
+		public Scope scope;
 		public SpecVarContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -891,6 +895,7 @@ public class GraceParser extends Parser {
 		public SpecVarContext() { }
 		public void copyFrom(SpecVarContext ctx) {
 			super.copyFrom(ctx);
+			this.scope = ctx.scope;
 		}
 	}
 	public static class DirectSpecVarArrContext extends SpecVarContext {
@@ -1023,6 +1028,7 @@ public class GraceParser extends Parser {
 	}
 
 	public static class SpecVarSimpleContext extends ParserRuleContext {
+		public Scope scope;
 		public TerminalNode ID() { return getToken(GraceParser.ID, 0); }
 		public SpecVarSimpleContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1065,6 +1071,7 @@ public class GraceParser extends Parser {
 	}
 
 	public static class SpecVarSimpleIniContext extends ParserRuleContext {
+		public Scope scope;
 		public TerminalNode ID() { return getToken(GraceParser.ID, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
@@ -1114,6 +1121,7 @@ public class GraceParser extends Parser {
 	}
 
 	public static class SpecVarArrContext extends ParserRuleContext {
+		public Scope scope;
 		public TerminalNode ID() { return getToken(GraceParser.ID, 0); }
 		public List<TerminalNode> NUMBERLITERAL() { return getTokens(GraceParser.NUMBERLITERAL); }
 		public TerminalNode NUMBERLITERAL(int i) {
@@ -1179,6 +1187,7 @@ public class GraceParser extends Parser {
 	}
 
 	public static class SpecVarArrIniContext extends ParserRuleContext {
+		public Scope scope;
 		public SpecVarArrContext specVarArr() {
 			return getRuleContext(SpecVarArrContext.class,0);
 		}
@@ -1254,6 +1263,7 @@ public class GraceParser extends Parser {
 	}
 
 	public static class DecSubContext extends ParserRuleContext {
+		public Scope scope;
 		public DecSubContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1262,6 +1272,7 @@ public class GraceParser extends Parser {
 		public DecSubContext() { }
 		public void copyFrom(DecSubContext ctx) {
 			super.copyFrom(ctx);
+			this.scope = ctx.scope;
 		}
 	}
 	public static class FunctionContext extends DecSubContext {
@@ -1702,6 +1713,7 @@ public class GraceParser extends Parser {
 	}
 
 	public static class CommandContext extends ParserRuleContext {
+		public Scope scope;
 		public CommandContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1710,6 +1722,7 @@ public class GraceParser extends Parser {
 		public CommandContext() { }
 		public void copyFrom(CommandContext ctx) {
 			super.copyFrom(ctx);
+			this.scope = ctx.scope;
 		}
 	}
 	public static class CmblockContext extends CommandContext {
@@ -1797,6 +1810,7 @@ public class GraceParser extends Parser {
 	}
 
 	public static class CmdSimpleContext extends ParserRuleContext {
+		public Scope scope;
 		public CmdSimpleContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1805,6 +1819,7 @@ public class GraceParser extends Parser {
 		public CmdSimpleContext() { }
 		public void copyFrom(CmdSimpleContext ctx) {
 			super.copyFrom(ctx);
+			this.scope = ctx.scope;
 		}
 	}
 	public static class CmWhileContext extends CmdSimpleContext {
@@ -3023,6 +3038,7 @@ public class GraceParser extends Parser {
 	}
 
 	public static class VariableContext extends ParserRuleContext {
+		public Scope scope;
 		public VariableContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -3031,6 +3047,7 @@ public class GraceParser extends Parser {
 		public VariableContext() { }
 		public void copyFrom(VariableContext ctx) {
 			super.copyFrom(ctx);
+			this.scope = ctx.scope;
 		}
 	}
 	public static class SimpleVarContext extends VariableContext {

@@ -1,7 +1,6 @@
-var a:int;
+def fooFunction():int{
+    var c = 10:int;
+    write c;
+}
 
-read a;
-write a;
-
-read a;
-write a;
+fooFunction();

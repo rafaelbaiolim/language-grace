@@ -18,9 +18,10 @@ public class DeclFunctionVisitor extends GraceParserBaseVisitor<DeclFunction> {
 
         //stmt
         DeclFunction declFunction = new DeclFunction(
-                ctx.ID().getText(),
-                new BlockVisitor().visit(ctx.block()));
+                ctx.ID().getText());
+        declFunction.getLLVMValue();
 
+        declFunction.setBody(new BlockVisitor().visit(ctx.block()));
         declFunction.setReturnType(type);
         LinkedList<Statement> params = new ListSpecParamVisitor().visitLstParam(ctx.lstParam());
 

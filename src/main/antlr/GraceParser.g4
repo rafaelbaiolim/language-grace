@@ -13,7 +13,7 @@ options { tokenVocab=GraceLexer; }
 graceFile returns [Scope scope]:
     (statement)+ ;
 
-statement
+statement returns [Scope scope]
     : declVar #declVarStatement
     | decSub  #decSubStatement
     | command #cmd
@@ -39,36 +39,36 @@ declVar returns [Scope scope]
     : 'var' listSpecVars ':' lstType ';'
     ;
 
-listSpecVars
+listSpecVars returns [Scope scope]
     : specVar (',' specVar)*
     ;
 
-specVar
+specVar returns [Scope scope]
     : specVarSimple      #directSpecVar
     | specVarSimpleIni   #directSpecVarSimpleIni
     | specVarArr         #directSpecVarArr
     | specVarArrIni      #directSpecVarArrIni
     ;
 
-specVarSimple
+specVarSimple returns [Scope scope]
     : ID
     ;
 
-specVarSimpleIni
+specVarSimpleIni returns [Scope scope]
     : ID '=' expression
     ;
 
-specVarArr
+specVarArr returns [Scope scope]
     : ID '[' NUMBERLITERAL+ ']' //posição sempre alocada como uma constante de inteiro
     ;
 
-specVarArrIni
+specVarArrIni returns [Scope scope]
     : specVarArr '=' '{' literal (',' literal)* '}'
     ;
 
 // Declaração de Subprogramas
 
-decSub
+decSub returns [Scope scope]
     : decProc #procedure
     | decFunc #function
     ;
@@ -100,7 +100,7 @@ param
 
 // Comandos
 
-command
+command returns [Scope scope]
     : cmdSimple #cmsimple
     | block     #cmblock
     ;
@@ -108,7 +108,7 @@ command
 
 // A seguir são especificados os comandos simples:
 
-cmdSimple
+cmdSimple returns [Scope scope]
     : cmdAtrib    #cmAtrib
     | cmdIf       #cmIf
     | cmdWhile    #cmWhile
@@ -207,7 +207,7 @@ block returns [Scope scope]
 
 // Uso de Variável
 
-variable
+variable returns [Scope scope]
     : ID                      #simpleVar
     | ID '[' expression+ ']'  #arrVar  //#ask: Tratar boleanos ? i[] < não casa com a regra de variable então?
     ;
