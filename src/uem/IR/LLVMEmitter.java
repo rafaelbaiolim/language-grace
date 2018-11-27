@@ -320,7 +320,5 @@ public class LLVMEmitter {
         return this;
     }
 
-    protected Deque<LLVMBasicBlockRef> basicBlockRef = new ArrayDeque<>();
-
 
 }
