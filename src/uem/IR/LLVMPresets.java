@@ -1,6 +1,9 @@
 package uem.IR;
 
 import org.bytedeco.javacpp.PointerPointer;
+import uem.ast.expr.Expression;
+import uem.ast.stmt.SpecVar;
+import uem.ast.type.IntegerType;
 
 import java.util.HashMap;
 import java.util.List;
@@ -109,8 +112,16 @@ public class LLVMPresets {
 
     public void finalizeFunctionScope() {
         //colocar o tipo de retorno aqui
-        LLVMBuildRet(llve.builder,LLVMConstInt(LLVMInt32Type(),1,0));
+        LLVMBuildRet(llve.builder, LLVMConstInt(LLVMInt32Type(), 1, 0));
         LLVMPositionBuilderAtEnd(llve.builder, llve.prevBasicBlocks.pop());
     }
 
+    public LLVMValueRef parseExprToInt(Expression index) {
+        LLVMValueRef valToSext = new SpecVar("result_expr_idx", index)
+                .getLLVMValue(new IntegerType());
+        return LLVMBuildLoad(llve.builder,
+                valToSext,
+                "ref_result_idx");
+
+    }
 }

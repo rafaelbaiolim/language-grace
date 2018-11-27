@@ -217,14 +217,11 @@ public class FrontEnd extends GraceParserBaseListener {
      * Cmd Read
      */
 
-    public void enterCmdRead(GraceParser.CmdReadContext ctx) {
-        Symbol sym = currentScope.resolve(ctx.variable().getText());
-        if (sym == null) {
-            CheckSymbols.error(ctx.variable().getStart(), "variável não declarada: " + ctx.variable().getText());
-        }
-    }
-
     public void exitCmdRead(GraceParser.CmdReadContext ctx) {
+//        Symbol sym = currentScope.resolve(ctx.variable().getText());
+//        if (sym == null) {
+//            CheckSymbols.error(ctx.variable().getStart(), "variável não declarada: " + ctx.variable().getText());
+//        }
         if (isGLobalScope()) {
             this.ast.getListStmt().add(new ReadVisitor().visit(ctx));
         }

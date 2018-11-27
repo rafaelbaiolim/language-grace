@@ -18,8 +18,8 @@ public class AtribVisitor extends GraceParserBaseVisitor<AtribCmd> {
     public AtribCmd visitAtribArr(GraceParser.AtribArrContext ctx) {
         AtribVarArr atribVarArr = new AtribVarArr(
                 ctx.arrAtrib().ID().getText(),
-                ctx.arrAtrib().NUMBERLITERAL(0).getText(),
-                new ExpressionVisitor().visit(ctx.arrAtrib().expression())
+                new ExpressionVisitor().visit(ctx.arrAtrib().expression().get(0)),
+                new ExpressionVisitor().visit(ctx.arrAtrib().expression(1))
         );
         return atribVarArr;
     }

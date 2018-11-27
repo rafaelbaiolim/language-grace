@@ -2205,12 +2205,11 @@ public class GraceParser extends Parser {
 
 	public static class ArrAtribContext extends ParserRuleContext {
 		public TerminalNode ID() { return getToken(GraceParser.ID, 0); }
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
+		public List<ExpressionContext> expression() {
+			return getRuleContexts(ExpressionContext.class);
 		}
-		public List<TerminalNode> NUMBERLITERAL() { return getTokens(GraceParser.NUMBERLITERAL); }
-		public TerminalNode NUMBERLITERAL(int i) {
-			return getToken(GraceParser.NUMBERLITERAL, i);
+		public ExpressionContext expression(int i) {
+			return getRuleContext(ExpressionContext.class,i);
 		}
 		public ArrAtribContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -2249,13 +2248,13 @@ public class GraceParser extends Parser {
 				{
 				{
 				setState(254);
-				match(NUMBERLITERAL);
+				expression(0);
 				}
 				}
 				setState(257); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( _la==NUMBERLITERAL );
+			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_FALSE) | (1L << T_TRUE) | (1L << T_LEFT_PAREN) | (1L << T_MINUS) | (1L << NEG_UN) | (1L << ID) | (1L << NUMBERLITERAL) | (1L << STRINGLITERAL))) != 0) );
 			setState(259);
 			match(T_RIGHT_SQUARE);
 			setState(260);
@@ -3659,7 +3658,7 @@ public class GraceParser extends Parser {
 		"%\3\2\2\2\u00f6\u00f7\5*\26\2\u00f7\u00f8\7\32\2\2\u00f8\u00fd\3\2\2\2"+
 		"\u00f9\u00fa\5(\25\2\u00fa\u00fb\7\32\2\2\u00fb\u00fd\3\2\2\2\u00fc\u00f6"+
 		"\3\2\2\2\u00fc\u00f9\3\2\2\2\u00fd\'\3\2\2\2\u00fe\u00ff\7\64\2\2\u00ff"+
-		"\u0101\7\25\2\2\u0100\u0102\7\67\2\2\u0101\u0100\3\2\2\2\u0102\u0103\3"+
+		"\u0101\7\25\2\2\u0100\u0102\5\6\4\2\u0101\u0100\3\2\2\2\u0102\u0103\3"+
 		"\2\2\2\u0103\u0101\3\2\2\2\u0103\u0104\3\2\2\2\u0104\u0105\3\2\2\2\u0105"+
 		"\u0106\7\26\2\2\u0106\u0107\t\5\2\2\u0107\u0108\5\6\4\2\u0108)\3\2\2\2"+
 		"\u0109\u010a\7\64\2\2\u010a\u010b\t\5\2\2\u010b\u010c\5\6\4\2\u010c+\3"+

@@ -11,6 +11,7 @@ public abstract class VarRefExpression implements Expression {
     protected Token symToken;
     protected LLVM.LLVMValueRef llvmValueRef;
     protected String idx;
+    protected Expression index;
 
     /**
      * Array Ref
@@ -22,6 +23,19 @@ public abstract class VarRefExpression implements Expression {
         super();
         this.varName = varName;
         this.idx = idex;
+        this.position = null;
+    }
+
+    /**
+     * Arr Variable
+     *
+     * @param varName
+     * @param idex
+     */
+    public VarRefExpression(String varName, Expression idex) {
+        super();
+        this.varName = varName;
+        this.index = idex;
         this.position = null;
     }
 

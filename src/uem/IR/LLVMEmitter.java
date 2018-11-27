@@ -48,21 +48,32 @@ public class LLVMEmitter {
         return uniqueInstance;
     }
 
+    public LLVMValueRef getArray(LLVMValueRef valIdex, LLVMValueRef arrAllocated) {
+        LLVM.LLVMValueRef[] indices = {
+                LLVMConstInt(
+                        this.types.i32(),
+                        0,
+                        0), valIdex
+        };
+        return LLVMBuildGEP(this.builder,
+                arrAllocated,
+                new PointerPointer(indices),
+                2, //total de registradores
+                "arr_ptr");
+
+    }
+
     public LLVMValueRef getArray(String idx, LLVMValueRef arrAllocated) {
         int index = Integer.parseInt(idx);
-        int anterior = 0;
-        if ((index - 1) > 0) {
-            anterior = index - 1;
-        }
 
         LLVM.LLVMValueRef[] indices = {
                 LLVMConstInt(
                         this.types.i32(),
-                        anterior,
-                        anterior), //inicial
+                        0,
+                        0), //inicial
                 LLVMConstInt(this.types.i32(),
                         index,
-                        index)  //indice
+                        0)  //indice
         };
         return LLVMBuildGEP(this.builder,
                 arrAllocated,

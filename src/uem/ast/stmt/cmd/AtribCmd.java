@@ -11,7 +11,7 @@ public abstract class AtribCmd implements CmdStatement {
     private Token symToken;
     private Expression expr;
     protected String length;
-    protected String idx;
+    protected Expression idx;
 
     public AtribCmd(String varName, Expression expr) {
         super();
@@ -25,7 +25,7 @@ public abstract class AtribCmd implements CmdStatement {
         this.length = length;
     }
 
-    public AtribCmd(String varName, String idx, Expression value) {
+    public AtribCmd(String varName, Expression idx, Expression value) {
         super();
         this.varName = varName;
         this.idx = idx;

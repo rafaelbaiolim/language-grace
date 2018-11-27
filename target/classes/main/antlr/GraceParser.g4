@@ -28,7 +28,7 @@ expression
     | '!' expression                                                                                    #differenceExpression
     | '(' expression ')'                                                                                #parenExpression
     | ID '(' expression ')'                                                                             #subReference
-    | ID '[' NUMBERLITERAL+ ']'                                                                             #arrReference
+    | ID '[' NUMBERLITERAL+ ']'                                                                         #arrReference
     | ID                                                                                                #varReference
     | literal                                                                                           #literalReference
     ;
@@ -129,7 +129,7 @@ cmdAtrib
     ;
 
 arrAtrib
-    : ID '[' NUMBERLITERAL+ ']' ('='|'+='|'-='|'*='|'/='|'%=') expression
+    : ID '[' expression+ ']' ('='|'+='|'-='|'*='|'/='|'%=') expression
     ;
 
 atrib
