@@ -20,12 +20,16 @@ public class WhileStmt implements LoopStatement {
     private Expression cond;
     private Token symToken;
 
+    public WhileStmt() {
+        super();
+        this.position = null;
+    }
+
     public WhileStmt(List<Statement> stmt, Expression cond) {
         super();
         this.stmt = stmt;
         this.position = null;
         this.cond = cond;
-        this.getLLVMValue();
     }
 
     public void setStatment(List<Statement> stmt) {
@@ -55,6 +59,10 @@ public class WhileStmt implements LoopStatement {
     @Override
     public Expression getCond() {
         return this.cond;
+    }
+
+    public void setCond(Expression cond){
+        this.cond = cond;
     }
 
     @Override
