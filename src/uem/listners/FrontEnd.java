@@ -12,6 +12,7 @@ import uem.ast.stmt.DeclVar;
 import uem.ast.stmt.cmd.AtribCmd;
 import uem.semantic.CheckSymbols;
 import uem.symtab.CondScope;
+import uem.symtab.WhileScope;
 import uem.visitors.*;
 
 public class FrontEnd extends GraceParserBaseListener {
@@ -184,16 +185,23 @@ public class FrontEnd extends GraceParserBaseListener {
         }
     }
 
-    /**
-     * Escopo CMD
-     * TODO: COLOCAR WHILE SCOPE EM UMA CONST NO PACOTE DE UTILS
-     */
+
 
     /**
      * While
+     * TODO: COLOCAR WHILE SCOPE EM UMA CONST NO PACOTE DE UTILS
      */
-    public void enterCmWhile(GraceParser.CmWhileContext ctx) {
-        this.ast.getListStmt().add(new WhileVisitor().visit(ctx));
+    public void enterCmdWhile(GraceParser.CmdWhileContext ctx) {
+        LocalScope locScope = new WhileScope(currentScope);
+        pushScope(locScope);
+    }
+
+
+    public void exitCmdWhile(GraceParser.CmdWhileContext ctx) {
+        if (currentScope.getEnclosingScope().getName().equals("global")) {
+            this.ast.getListStmt().add(new WhileVisitor().visit(ctx));
+        }
+
     }
 
     /**

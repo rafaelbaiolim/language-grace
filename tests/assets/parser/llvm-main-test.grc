@@ -1,4 +1,7 @@
-var x = 0:int;
-while( x > 3){
-    x = x + 1;
+var a = 3:int;
+var b = 4:int;
+var c = a + b:int;
+
+if( c > 10 ){
+    write 1;
 }

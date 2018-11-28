@@ -1,8 +1,7 @@
-var x = 10: int;
-if( x < 2 ){
-    write 1;
-}else{
-    var j = 10:int;
-    write 2;
+var a = 3:int;
+var b = 4:int;
+var c = a + b:int;
 
+if( c > 10 ){
+    write 1;
 }

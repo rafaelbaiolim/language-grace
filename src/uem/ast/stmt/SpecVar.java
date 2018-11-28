@@ -81,8 +81,8 @@ public class SpecVar implements VarStatement {
             LLVMBuildStore(LLVMEmitter.getInstance().builder,
                     this.value.getLLVMValue(), varAlloc);
         }
-        FrontEnd.currentScope.resolve(this.varName).getScope().setLLVMSymRef(this.varName, varAlloc);
 
+        FrontEnd.currentScope.setLLVMSymRef(this.varName, varAlloc);
         return this.llvmValRef = varAlloc;
     }
 

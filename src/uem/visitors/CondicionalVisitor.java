@@ -70,7 +70,7 @@ public class CondicionalVisitor extends GraceParserBaseVisitor<CondicionalStmt> 
 
         condicionalStmt.setElseStatment(lstElse.get());
         condicionalStmt.setIfStatment(lstIF.get());
-
+        LLVMPositionBuilderAtEnd(llve.builder, end);
         return condicionalStmt;
     }
 

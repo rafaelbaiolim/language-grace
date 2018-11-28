@@ -95,6 +95,7 @@ public class SpecVarArr implements VarStatement {
                 this.varName);
 
         FrontEnd.currentScope.resolve(this.varName).getScope().setLLVMSymRef(this.varName, varAlloc);
+
         this.llvmValRef = varAlloc;
         return varAlloc;
 
