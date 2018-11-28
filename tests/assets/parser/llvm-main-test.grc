@@ -1,7 +1,11 @@
-var a = 3:int;
-var b = 4:int;
-var c = a + b:int;
+var a[10]:int;
+var i = 0:int;
+var aux:int;
 
-if( c > 10 ){
-    write 1;
+while(i < 2){
+    a[i] = i;
+    aux = a[i];
+    write aux;
+    i = i + 1;
 }
+

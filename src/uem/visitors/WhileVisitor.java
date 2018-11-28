@@ -8,9 +8,7 @@ import uem.antlr.GraceParserBaseVisitor;
 import uem.ast.expr.Expression;
 import uem.ast.stmt.WhileStmt;
 
-import static org.bytedeco.javacpp.LLVM.LLVMBuildCondBr;
-import static org.bytedeco.javacpp.LLVM.LLVMPositionBuilderAtEnd;
-import static org.bytedeco.javacpp.LLVM.LLVMPositionBuilderBefore;
+import static org.bytedeco.javacpp.LLVM.*;
 
 public class WhileVisitor extends GraceParserBaseVisitor<WhileStmt> {
 
@@ -25,24 +23,25 @@ public class WhileVisitor extends GraceParserBaseVisitor<WhileStmt> {
         LLVM.LLVMBasicBlockRef bEnd = llvmp.buildBlock("whileend");
 
         Expression exprCond = new ExpressionVisitor().visit(ctx.expression());
-//        LLVMPositionBuilderAtEnd(llve.builder,bEnd);
-//        LLVMBuildCondBr(
-//                LLVMEmitter.getInstance().builder,
-//                exprCond.getLLVMValue(),
-//                bBody,
-//                bEnd);
+        LLVMBuildBr(llve.builder, bCond);
+        LLVMPositionBuilderAtEnd(llve.builder, bCond);
 
-//        LLVMPositionBuilderAtEnd(llve.builder, bCond);
-//        LLVMBuildBr(llve.builder, bCond);
+        LLVMBuildCondBr(
+                LLVMEmitter.getInstance().builder,
+                exprCond.getLLVMValue(),
+                bBody,
+                bEnd);
+
 
         whileStmt.setCond(exprCond);
-
-
         String nodeCtxStr = ctx.command().getClass().getSimpleName().toLowerCase();
 
         //Visitor de block
+        LLVMPositionBuilderAtEnd(llve.builder, bBody);
         whileStmt.setStatment(new CommandVisitor().visit(ctx.command()));
+        LLVMBuildBr(llve.builder, bCond);
 
+        LLVMPositionBuilderAtEnd(llve.builder, bEnd);
         return whileStmt;
     }
 
