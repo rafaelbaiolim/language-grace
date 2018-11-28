@@ -93,13 +93,14 @@ public class DeclFunction implements SubStatment {
         for(Statement param:this.params){
             SpecParam currentParam = (SpecParam) param;
             currentParam.getLLVMValue();
-            LLVM.LLVMValueRef allocatedParam = FrontEnd.currentScope.getLLVMSymRef(param.getVarName());
+            LLVM.LLVMValueRef allocatedParam = FrontEnd.currentScope.resolve(this.varName).getScope().getLLVMSymRef(this.varName);
             LLVM.LLVMValueRef pLLVMVal = LLVMGetParam(fun, i);
             LLVMBuildStore(LLVMEmitter.getInstance().builder,
                     pLLVMVal, allocatedParam);
             i++;
         }
-        FrontEnd.currentScope.setLLVMSymRef(this.varName, fun);
+        FrontEnd.currentScope.resolve(this.varName).getScope().setLLVMSymRef(this.varName, fun);
+
         return fun;
     }
 }

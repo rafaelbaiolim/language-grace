@@ -35,9 +35,7 @@ public class DeclVarVisitor extends GraceParserBaseVisitor<DeclVar> {
             FrontEnd.currentScope.define(v);
             currentStmt.getLLVMValue(type);
         }
-
         DeclVar declVar = new DeclVar(lst, type);
-
         return declVar;
     }
 

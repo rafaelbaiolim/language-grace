@@ -20,7 +20,6 @@ public class DeclVar implements Statement {
         this.stmt = stmt;
         this.position = null;
         this.type = type;
-        this.getLLVMValue();
     }
 
     public List<Statement> getListStmt() {

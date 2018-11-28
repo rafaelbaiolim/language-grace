@@ -1,17 +1,17 @@
 package uem.listners;
 
-import org.antlr.symtab.FunctionSymbol;
-import org.antlr.symtab.GlobalScope;
-import org.antlr.symtab.Scope;
-import org.antlr.symtab.Symbol;
+import org.antlr.symtab.*;
 import uem.IR.LLVMEmitter;
 import uem.IR.LLVMPresets;
 import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseListener;
 import uem.ast.Ast;
+import uem.ast.Node;
+import uem.ast.stmt.CondicionalStmt;
 import uem.ast.stmt.DeclVar;
 import uem.ast.stmt.cmd.AtribCmd;
 import uem.semantic.CheckSymbols;
+import uem.symtab.CondScope;
 import uem.visitors.*;
 
 public class FrontEnd extends GraceParserBaseListener {
@@ -154,8 +154,10 @@ public class FrontEnd extends GraceParserBaseListener {
     }
 
     public void exitAtribVar(GraceParser.AtribVarContext ctx) {
-        AtribCmd atribCmd = new AtribVisitor().visit(ctx);
-        this.ast.getListStmt().add(atribCmd); //append AST
+        if (isGLobalScope()) {
+            AtribCmd atribCmd = new AtribVisitor().visit(ctx);
+            this.ast.getListStmt().add(atribCmd); //append AST
+        }
     }
 
     /**
@@ -172,8 +174,10 @@ public class FrontEnd extends GraceParserBaseListener {
     }
 
     public void exitAtribArr(GraceParser.AtribArrContext ctx) {
-        AtribCmd atribCmd = new AtribVisitor().visit(ctx);
-        this.ast.getListStmt().add(atribCmd); //append AST
+        if (isGLobalScope()) {
+            AtribCmd atribCmd = new AtribVisitor().visit(ctx);
+            this.ast.getListStmt().add(atribCmd); //append AST
+        }
     }
 
     /**
@@ -230,7 +234,7 @@ public class FrontEnd extends GraceParserBaseListener {
     }
 
     /**
-     * Cmd Write
+     * Cmd write
      */
     public void exitCmdWrite(GraceParser.CmdWriteContext ctx) {
         if (isGLobalScope()) {
@@ -251,8 +255,14 @@ public class FrontEnd extends GraceParserBaseListener {
     /**
      * Cmd Condicional
      */
+    public void enterCmdIf(GraceParser.CmdIfContext ctx) {
+        LocalScope locScope = new CondScope(currentScope);
+        pushScope(locScope);
+    }
+
     public void exitCmdIf(GraceParser.CmdIfContext ctx) {
         this.ast.getListStmt().add(new CondicionalVisitor().visit(ctx));
+        popScope();
     }
 
 

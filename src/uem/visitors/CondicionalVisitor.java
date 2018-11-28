@@ -1,5 +1,6 @@
 package uem.visitors;
 
+import uem.IR.LLVMPresets;
 import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseVisitor;
 import uem.ast.expr.Expression;
@@ -18,7 +19,6 @@ public class CondicionalVisitor extends GraceParserBaseVisitor<CondicionalStmt> 
 
         AtomicInteger i = new AtomicInteger();
         int totalComands = ctx.command().toArray().length;
-
         boolean temElseStmt = false;
         if (ctx.getTokens(GraceParser.T_ELSE).toArray().length > 0) {
             temElseStmt = true;
@@ -27,15 +27,17 @@ public class CondicionalVisitor extends GraceParserBaseVisitor<CondicionalStmt> 
 
         AtomicReference<List<Statement>> lstElse = new AtomicReference<>();
         AtomicReference<List<Statement>> lstIF = new AtomicReference<>();
+        LLVMPresets.getInstance().pushConditionalScope(condicionalStmt.getCond());
         ctx.command().forEach(stmt -> {
             if (finalTemElseStmt && (i.get() == (totalComands - 1))) {
+                LLVMPresets.getInstance().popConditionalScope();
                 lstElse.set(new CommandVisitor().visit(stmt));
                 return;
             }
             lstIF.set(new CommandVisitor().visit(stmt));
             i.getAndIncrement();
         });
-
+        LLVMPresets.getInstance().popConditionalScope();
         condicionalStmt.setElseStatment(lstElse.get());
         condicionalStmt.setIfStatment(lstIF.get());
 

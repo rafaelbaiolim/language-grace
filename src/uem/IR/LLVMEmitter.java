@@ -319,6 +319,6 @@ public class LLVMEmitter {
         this.Scanner();
         return this;
     }
-
+    protected Deque<LLVMBasicBlockRef> basicBlockRef = new ArrayDeque<>();
 
 }

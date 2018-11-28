@@ -2,9 +2,14 @@ package uem.visitors;
 
 import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseVisitor;
+import uem.ast.expr.Expression;
 import uem.ast.stmt.SpecVar;
 import uem.ast.stmt.SpecVarArr;
+import uem.ast.stmt.SpecVarArrIni;
 import uem.ast.stmt.Statement;
+
+import java.util.LinkedList;
+import java.util.List;
 
 public class SpecVarVisitor extends GraceParserBaseVisitor<Statement> {
 
@@ -31,5 +36,16 @@ public class SpecVarVisitor extends GraceParserBaseVisitor<Statement> {
         );
         spcVarArr.setSymbol(sVarArrCtx.ID().getSymbol());
         return spcVarArr;
+    }
+
+    public Statement visitSpecVarArrIni(GraceParser.SpecVarArrIniContext sVarArrCtx) {
+        LinkedList<Expression> iniList = new LinkedList<>();
+        sVarArrCtx.literal().forEach(stmt -> iniList.add(new LiteralVisitor().visit(stmt)));
+        SpecVarArrIni spcVarArrIni = new SpecVarArrIni(
+                sVarArrCtx.specVarArr().ID().getText(),
+                sVarArrCtx.specVarArr().NUMBERLITERAL().get(0).getText() //size
+        );
+        spcVarArrIni.setInicializacao(iniList);
+        return spcVarArrIni;
     }
 }

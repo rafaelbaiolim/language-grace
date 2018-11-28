@@ -1,14 +1,8 @@
 var a[10]:int;
 var i = 1:int;
 
-//atribuição aceita expr
-//ex.: a[1 + 1] = 10
+a[1 + 1] = 10;
+a[3] = a[1 + 1];
 
-//referencia não
-//ex.: a[3] = a[1 + 1];
-
-read a[i+1];
-
-//var c = 2:int;
-//write a[c]; ainda não funciona
-
+var c = 3:int;
+write a[c];

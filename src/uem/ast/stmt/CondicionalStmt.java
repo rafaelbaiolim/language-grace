@@ -24,7 +24,6 @@ public class CondicionalStmt implements Statement {
         super();
         this.position = null;
         this.cond = cond;
-        this.getLLVMValue();
 
     }
 
@@ -42,8 +41,7 @@ public class CondicionalStmt implements Statement {
         this.elseStmt = elseStmt;
         this.position = null;
         this.cond = cond;
-        this.getLLVMValue();
-    }
+     }
 
     @Override
     public String getVarName() {

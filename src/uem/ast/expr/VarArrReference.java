@@ -19,7 +19,9 @@ public class VarArrReference extends VarRefExpression {
         LLVMEmitter lle = LLVMEmitter.getInstance();
         LLVMPresets llp = LLVMPresets.getInstance();
         try {
-            LLVM.LLVMValueRef arrAllocated = FrontEnd.currentScope.getLLVMSymRef(this.varName);
+            LLVM.LLVMValueRef arrAllocated =
+                    FrontEnd.currentScope.resolve(this.varName).getScope().getLLVMSymRef(this.varName);
+
             load = LLVMBuildLoad(LLVMEmitter.getInstance().builder,
                     lle.getArray(llp.parseExprToInt(this.index), arrAllocated), "temp"
             );

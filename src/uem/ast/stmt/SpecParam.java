@@ -87,7 +87,7 @@ public class SpecParam implements VarStatement {
                 LLVMEmitter.getInstance().builder,
                 this.llvmTypeRef,
                 this.varName);
-        FrontEnd.currentScope.setLLVMSymRef(this.varName, varAlloc);
+        FrontEnd.currentScope.resolve(this.varName).getScope().setLLVMSymRef(this.varName,varAlloc);
         return this.llvmValRef = varAlloc;
     }
 

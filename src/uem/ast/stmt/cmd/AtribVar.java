@@ -16,7 +16,8 @@ public class AtribVar extends AtribCmd {
 
     @Override
     public LLVM.LLVMValueRef getLLVMValue() {
-        LLVM.LLVMValueRef allocatedVar = FrontEnd.currentScope.getLLVMSymRef(this.varName);
+        LLVM.LLVMValueRef allocatedVar =
+        FrontEnd.currentScope.resolve(this.varName).getScope().getLLVMSymRef(this.varName);
         LLVMBuildStore(
                 LLVMEmitter.getInstance().builder,
                 this.getExpr().getLLVMValue(),
