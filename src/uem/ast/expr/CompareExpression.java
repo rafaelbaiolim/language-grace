@@ -23,7 +23,6 @@ public class CompareExpression implements BinaryExpression {
         this.right = right;
         this.left = left;
         this.operator = operator;
-        this.getLLVMValue();
     }
 
     @Override

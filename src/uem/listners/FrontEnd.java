@@ -34,6 +34,10 @@ public class FrontEnd extends GraceParserBaseListener {
         return currentScope.getName().toLowerCase().equals("while");
     }
 
+    private boolean isCondScope() {
+        return currentScope.getName().toLowerCase().equals("condicional");
+    }
+
 
     private void pushScope(Scope s) {
         currentScope = s;
@@ -261,7 +265,9 @@ public class FrontEnd extends GraceParserBaseListener {
     }
 
     public void exitCmdIf(GraceParser.CmdIfContext ctx) {
-        this.ast.getListStmt().add(new CondicionalVisitor().visit(ctx));
+        if(currentScope.getEnclosingScope().getName().equals("global")) {
+            this.ast.getListStmt().add(new CondicionalVisitor().visit(ctx));
+        }
         popScope();
     }
 

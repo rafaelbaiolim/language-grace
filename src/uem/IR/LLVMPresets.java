@@ -87,7 +87,7 @@ public class LLVMPresets {
             LLVMTypeRef returnType,
             List<LLVMTypeRef> argTypes
     ) {
-//
+
         llve.prevBasicBlocks.push(LLVMGetInsertBlock(llve.builder));
 
         LLVMTypeRef funcType = functionType(
@@ -98,16 +98,6 @@ public class LLVMPresets {
         LLVMBasicBlockRef body = buildBlock("body");
         LLVMPositionBuilderAtEnd(llve.builder, body);
 
-//        if (!blockTerminated()) {
-//            if (returnType.equals(llve.types.voidType())) {
-//                LLVMBuildRetVoid(llve.builder);
-//            } else {
-//                LLVMBuildUnreachable(llve.builder);
-//            }
-//        }
-//        LLVMPositionBuilderAtEnd(llve.builder, entry);
-//        LLVMBuildBr(llve.builder, body);
-//        llve.popScope();
         return func;
     }
 
@@ -123,41 +113,6 @@ public class LLVMPresets {
         return LLVMBuildLoad(llve.builder,
                 valToSext,
                 "ref_result_idx");
-    }
-
-
-    LLVM.LLVMBasicBlockRef currentBlockRef;
-
-    public void pushConditionalScope(Expression cond) {
-        LLVM.LLVMBasicBlockRef ifTrue = this.buildBlock("iftrue");
-        LLVM.LLVMBasicBlockRef ifFalse = this.buildBlock("iffalse");
-        LLVM.LLVMBasicBlockRef end = this.buildBlock("ifend");
-        llve.basicBlockRef.push(end);
-        llve.basicBlockRef.push(ifFalse);
-
-
-        LLVMBuildCondBr(
-                llve.builder,
-                cond.getLLVMValue(),
-                ifTrue,
-                ifFalse);
-        currentBlockRef = ifTrue;
-        LLVMPositionBuilderAtEnd(llve.builder, ifTrue);
-    }
-
-    public void popConditionalScope() {
-        currentBlockRef = llve.basicBlockRef.pop();
-        LLVMBuildBr(llve.builder, currentBlockRef);
-        LLVMPositionBuilderAtEnd(llve.builder, currentBlockRef);
-    }
-
-    public void popConditionalScope(boolean untilEnd) {
-        if (untilEnd && llve.basicBlockRef.size() > 0) {
-            while (llve.basicBlockRef.size() > 0) {
-                llve.basicBlockRef.pop();
-                LLVMBuildRetVoid(llve.builder);
-            }
-        }
     }
 
 

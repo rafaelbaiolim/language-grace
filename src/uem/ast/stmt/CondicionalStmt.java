@@ -20,11 +20,9 @@ public class CondicionalStmt implements Statement {
     private Expression cond;
     private Token symToken;
 
-    public CondicionalStmt(Expression cond) {
+    public CondicionalStmt() {
         super();
         this.position = null;
-        this.cond = cond;
-
     }
 
     public CondicionalStmt(List<Statement> ifStmt, Expression cond) {
@@ -41,7 +39,7 @@ public class CondicionalStmt implements Statement {
         this.elseStmt = elseStmt;
         this.position = null;
         this.cond = cond;
-     }
+    }
 
     @Override
     public String getVarName() {
@@ -66,6 +64,10 @@ public class CondicionalStmt implements Statement {
 
     public Expression getCond() {
         return this.cond;
+    }
+
+    public void setCond(Expression cond) {
+        this.cond = cond;
     }
 
     public void setIfStatment(List<Statement> stmt) {
