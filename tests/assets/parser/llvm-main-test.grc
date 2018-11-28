@@ -1,11 +1,5 @@
-var a[10]:int;
 var i = 0:int;
-var aux:int;
 
-while(i < 2){
-    a[i] = i;
-    aux = a[i];
-    write aux;
-    i = i + 1;
+for(i = 0; i < 3; i = i + 1){
+    write "teste";
 }
-

@@ -5,6 +5,9 @@ import org.bytedeco.javacpp.LLVM;
 import uem.IR.LLVMEmitter;
 import uem.ast.Position;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import static org.bytedeco.javacpp.LLVM.LLVMBuildGlobalStringPtr;
 
 public class StringLiteral implements Expression {
@@ -39,9 +42,10 @@ public class StringLiteral implements Expression {
 
     @Override
     public LLVM.LLVMValueRef getLLVMValue() {
+        String val = this.value.replaceAll("^.|.$", "");
         return LLVMBuildGlobalStringPtr(
                 LLVMEmitter.getInstance().builder,
-                this.value,
+                val,
                 "const_" + this.value);
 
     }

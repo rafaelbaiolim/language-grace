@@ -15,17 +15,13 @@ public class ForStmt implements LoopStatement {
     private AtribCmd itera;
     private Expression cond;
 
-    private final List<Statement> stmt;
+    private List<Statement> stmt;
     private final Position position;
     private Token symToken;
 
-    public ForStmt(AtribCmd init, Expression cond, AtribCmd itera, List<Statement> body) {
+    public ForStmt() {
         super();
         this.position = null;
-        this.init = init;
-        this.cond = cond;
-        this.itera = init;
-        this.stmt = body;
     }
 
     public String getVarName() {
@@ -62,12 +58,27 @@ public class ForStmt implements LoopStatement {
         return this.cond;
     }
 
-    public AtribCmd getItera() {
-        return this.itera;
-    }
-
     public AtribCmd getInit() {
         return this.init;
     }
+    public void setInit(AtribCmd init) {
+        this.init = init;
+    }
+
+    public void setStmt(List<Statement> stmt) {
+        this.stmt = stmt;
+    }
+
+    public void setCond(Expression cond) {
+        this.cond = cond;
+    }
+
+    public AtribCmd getItera() {
+        return this.itera;
+    }
+    public void setItera(AtribCmd itera) {
+        this.itera = itera;
+    }
+
 
 }

@@ -1,13 +1,11 @@
 package uem.ast.stmt.cmd;
 
-import org.antlr.symtab.Symbol;
-import org.antlr.symtab.VariableSymbol;
 import org.antlr.v4.runtime.Token;
 import org.bytedeco.javacpp.LLVM;
 import uem.IR.LLVMEmitter;
 import uem.ast.Position;
 import uem.ast.expr.Expression;
-import uem.listners.FrontEnd;
+import uem.ast.expr.StringLiteral;
 
 import java.util.List;
 
@@ -55,10 +53,16 @@ public class WriteCmd implements CmdStatement {
     @Override
     public LLVM.LLVMValueRef getLLVMValue() {
 
+
         for (Expression expr : this.expressionList) {
+            String format = LLVMEmitter.FORMAT_NUMBER;
+            if (expr instanceof StringLiteral) {
+                format = LLVMEmitter.FORMAT_STRING;
+            }
+
             LLVMEmitter.getInstance().CallPrint(
                     expr.getLLVMValue(),
-                    LLVMEmitter.FORMAT_NUMBER
+                    format
             );
         }
 

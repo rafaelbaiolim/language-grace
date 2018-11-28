@@ -6,12 +6,11 @@ import uem.IR.LLVMPresets;
 import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseListener;
 import uem.ast.Ast;
-import uem.ast.Node;
-import uem.ast.stmt.CondicionalStmt;
 import uem.ast.stmt.DeclVar;
 import uem.ast.stmt.cmd.AtribCmd;
 import uem.semantic.CheckSymbols;
 import uem.symtab.CondScope;
+import uem.symtab.ForScope;
 import uem.symtab.WhileScope;
 import uem.visitors.*;
 
@@ -186,7 +185,6 @@ public class FrontEnd extends GraceParserBaseListener {
     }
 
 
-
     /**
      * While
      * TODO: COLOCAR WHILE SCOPE EM UMA CONST NO PACOTE DE UTILS
@@ -207,10 +205,18 @@ public class FrontEnd extends GraceParserBaseListener {
     /**
      * For
      */
-    public void enterCmFor(GraceParser.CmForContext ctx) {
-        this.ast.getListStmt().add(new ForVisitor().visit(ctx));
+    public void enterCmdFor(GraceParser.CmdForContext ctx) {
+        LocalScope locScope = new ForScope(currentScope);
+        pushScope(locScope);
     }
 
+
+    public void exitCmdFor(GraceParser.CmdForContext ctx) {
+        if (currentScope.getEnclosingScope().getName().equals("global")) {
+            this.ast.getListStmt().add(new ForVisitor().visit(ctx));
+        }
+
+    }
 
     /**
      * Loops Commons
@@ -273,7 +279,7 @@ public class FrontEnd extends GraceParserBaseListener {
     }
 
     public void exitCmdIf(GraceParser.CmdIfContext ctx) {
-        if(currentScope.getEnclosingScope().getName().equals("global")) {
+        if (currentScope.getEnclosingScope().getName().equals("global")) {
             this.ast.getListStmt().add(new CondicionalVisitor().visit(ctx));
         }
         popScope();

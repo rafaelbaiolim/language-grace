@@ -7,6 +7,12 @@ import uem.ast.stmt.cmd.AtribVar;
 import uem.ast.stmt.cmd.AtribVarArr;
 
 public class AtribVisitor extends GraceParserBaseVisitor<AtribCmd> {
+    public AtribCmd visitAtrib(GraceParser.AtribContext ctx) {
+        AtribVar atribVar = new AtribVar(ctx.ID().getText(),
+                new ExpressionVisitor().visit(ctx.expression())
+        );
+        return atribVar;
+    }
 
     public AtribCmd visitAtribVar(GraceParser.AtribVarContext ctx) {
         AtribVar atribVar = new AtribVar(ctx.atrib().ID().getText(),
@@ -23,5 +29,6 @@ public class AtribVisitor extends GraceParserBaseVisitor<AtribCmd> {
         );
         return atribVarArr;
     }
+
 
 }
