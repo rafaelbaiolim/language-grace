@@ -11,11 +11,13 @@ public abstract class AtribCmd implements CmdStatement {
     private Token symToken;
     private Expression expr;
     protected String length;
+    protected String op;
     protected Expression idx;
 
-    public AtribCmd(String varName, Expression expr) {
+    public AtribCmd(String varName, String op, Expression expr) {
         super();
         this.varName = varName;
+        this.op = op;
         this.expr = expr;
     }
 

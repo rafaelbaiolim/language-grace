@@ -57,18 +57,6 @@ public interface GraceParserListener extends ParseTreeListener {
 	 */
 	void exitCmd(GraceParser.CmdContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code incrementOperation}
-	 * labeled alternative in {@link GraceParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void enterIncrementOperation(GraceParser.IncrementOperationContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code incrementOperation}
-	 * labeled alternative in {@link GraceParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void exitIncrementOperation(GraceParser.IncrementOperationContext ctx);
-	/**
 	 * Enter a parse tree produced by the {@code minusExpression}
 	 * labeled alternative in {@link GraceParser#expression}.
 	 * @param ctx the parse tree

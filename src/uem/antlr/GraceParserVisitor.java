@@ -41,13 +41,6 @@ public interface GraceParserVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitCmd(GraceParser.CmdContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code incrementOperation}
-	 * labeled alternative in {@link GraceParser#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitIncrementOperation(GraceParser.IncrementOperationContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code minusExpression}
 	 * labeled alternative in {@link GraceParser#expression}.
 	 * @param ctx the parse tree

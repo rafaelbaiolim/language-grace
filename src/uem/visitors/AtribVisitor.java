@@ -9,13 +9,14 @@ import uem.ast.stmt.cmd.AtribVarArr;
 public class AtribVisitor extends GraceParserBaseVisitor<AtribCmd> {
     public AtribCmd visitAtrib(GraceParser.AtribContext ctx) {
         AtribVar atribVar = new AtribVar(ctx.ID().getText(),
-                new ExpressionVisitor().visit(ctx.expression())
-        );
+                ctx.operator.getText(),
+                new ExpressionVisitor().visit(ctx.expression()));
         return atribVar;
     }
 
     public AtribCmd visitAtribVar(GraceParser.AtribVarContext ctx) {
         AtribVar atribVar = new AtribVar(ctx.atrib().ID().getText(),
+                ctx.atrib().operator.getText(),
                 new ExpressionVisitor().visit(ctx.atrib().expression())
         );
         return atribVar;

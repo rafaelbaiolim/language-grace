@@ -31,20 +31,6 @@ public class ExpressionVisitor extends GraceParserBaseVisitor<Expression> {
         throw new UnsupportedOperationException(ctx.getText());
     }
 
-    public Expression visitIncrementOperation(GraceParser.IncrementOperationContext ctx){
-//        String op = ;
-//        switch (op) {
-//            case "+=":
-//            case "++":
-//                return new SumExpression(visit(ctx.left), visit(ctx.right));
-//            case "-=":
-//            case "--":
-//                return new SubtractionExpression(visit(ctx.left), visit(ctx.right));
-//        }
-        throw new UnsupportedOperationException(ctx.getText());
-    }
-
-
 
     public Expression visitLiteralReference(GraceParser.LiteralReferenceContext literalRefCtx) {
         GraceParser.LiteralContext literal = literalRefCtx.literal();

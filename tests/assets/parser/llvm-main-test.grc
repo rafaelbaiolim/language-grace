@@ -1,18 +1,6 @@
 var a = 10:int;
-var b = 5:int;
-var c:int;
+a += 1;
+write a;
 
-c = a + b;
-write c, " ";
-
-c = a - b;
-write c, " ";
-
-c = a * b;
-write c, " ";
-
-c = a / b;
-write c, " ";
-
-c = a % b;
-write c, " ";
+a *= 2;
+write a;

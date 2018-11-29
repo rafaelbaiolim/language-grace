@@ -23,7 +23,6 @@ expression
     : left=expression operator='?' right=expression operator=':' right=expression                       #ternaryOperation
     | left=expression operator=('||' | '&&' | '==' | '!=' | '<' | '<=' | '>' | '>=' ) right=expression  #compareOperation
     | left=expression operator=( '+'| '-' | '/' | '*' | '%') right=expression                           #binaryOperation
-    | left=expression operator=( '+=' | '-=' | '++' | '--' )                                            #incrementOperation
     | '-' expression                                                                                    #minusExpression
     | '!' expression                                                                                    #differenceExpression
     | '(' expression ')'                                                                                #parenExpression
@@ -129,11 +128,11 @@ cmdAtrib
     ;
 
 arrAtrib
-    : ID '[' expression+ ']' ('='|'+='|'-='|'*='|'/='|'%=') expression
+    : ID '[' expression+ ']' operator=('='|'+='|'-='|'*='|'/='|'%=') expression
     ;
 
 atrib
-    : ID ('='|'+='|'-='|'*='|'/='|'%=') expression
+    : ID operator=('='|'+='|'-='|'*='|'/='|'%=') expression
     ;
 
 // Condicional If
