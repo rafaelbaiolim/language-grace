@@ -23,7 +23,7 @@ expression
     : left=expression operator='?' right=expression operator=':' right=expression                       #ternaryOperation
     | left=expression operator=('||' | '&&' | '==' | '!=' | '<' | '<=' | '>' | '>=' ) right=expression  #compareOperation
     | left=expression operator=( '+'| '-' | '/' | '*' | '%') right=expression                           #binaryOperation
-    | left=expression ( '+' | '-' | '++' | '--' )                                                       #incrementOperation
+    | left=expression operator=( '+=' | '-=' | '++' | '--' )                                            #incrementOperation
     | '-' expression                                                                                    #minusExpression
     | '!' expression                                                                                    #differenceExpression
     | '(' expression ')'                                                                                #parenExpression
