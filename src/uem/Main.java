@@ -18,15 +18,19 @@ import java.io.InputStream;
 
 import static org.bytedeco.javacpp.LLVM.*;
 
-class Main {
-    //TODO: 1.Criar um método de inicialização
-    //TODO: 2.Não Esquecer de documentar o modo verbose do assembly
+public class Main {
+    //TODO: 1.Não Esquecer de documentar o modo verbose do assembly
     public static void main(String[] args) throws IOException {
-
         String inputFile = null;
-        boolean noVerbose = true;
+        boolean verbose = false;
         if (args.length > 0) inputFile = args[0];
-        if (args.length > 1) noVerbose = Boolean.parseBoolean(args[1]);
+        if (args.length > 1) verbose = Boolean.parseBoolean(args[1]);
+        compile(inputFile, true, verbose);
+    }
+
+    public static void compile(String inputFile,
+                               boolean dumpAssembly,
+                               boolean verbose) throws IOException {
 
         InputStream inputFileStream = System.in;
         if (inputFile != null) {
@@ -52,12 +56,13 @@ class Main {
                 builder
         );
         LLVMEmitter.getInstance().Bootstrap();
-
-        LLVMEmitter.getInstance().setNoVerbose(noVerbose);
-
+        LLVMEmitter.getInstance().setVerbose(verbose);
+        LLVMEmitter.getInstance().setDumpAssembly(dumpAssembly);
         Ast ast = new Ast();
         FrontEnd frontEnd = new FrontEnd(ast);
         walker.walk(frontEnd, tree);
         LLVMEmitter.getInstance().Finalize();
     }
+
+
 }

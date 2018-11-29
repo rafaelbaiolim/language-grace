@@ -1,8 +1,5 @@
-var a = 1:int;
-
-while(a < 5){
-    var a = 2:int;
-    var b = 3:int;
-    var j = 10:int;
+var i = 0:int;
+while( i < 5){
+    i = i + 1;
+    write "i[",i,"]";
 }
-stop;

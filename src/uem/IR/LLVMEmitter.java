@@ -16,11 +16,12 @@ public class LLVMEmitter {
     public final LLVMModuleRef mod;
     public final LLVMBuilderRef builder;
     public final LLVMType types;
-    private boolean noVerbose = true;
+    private boolean verbose = true;
     public static final String FORMAT_NUMBER = "NUMBER";
     public static final String FORMAT_STRING = "STRING";
     public static final String PRINT_FUN_NAME = "printf";
     public static final String SCAN_FUN_NAME = "scanf";
+    private boolean dumpAssembly;
     BytePointer error;
 
     private LLVMEmitter(
@@ -84,8 +85,12 @@ public class LLVMEmitter {
 
     }
 
-    public void setNoVerbose(boolean noVerbose) {
-        this.noVerbose = noVerbose;
+    public void setVerbose(boolean verbose) {
+        this.verbose = verbose;
+    }
+
+    public void setDumpAssembly(boolean dumpAssembly) {
+        this.dumpAssembly = dumpAssembly;
     }
 
 
@@ -214,7 +219,7 @@ public class LLVMEmitter {
         LLVMBuildRetVoid(this.builder);
 
         LLVMPassManagerRef pass = LLVMCreatePassManager();
-        if(this.noVerbose) {
+        if(!this.verbose) {
             LLVMAddConstantPropagationPass(pass);
             LLVMAddInstructionCombiningPass(pass);
             LLVMAddPromoteMemoryToRegisterPass(pass);
@@ -222,7 +227,9 @@ public class LLVMEmitter {
             LLVMAddCFGSimplificationPass(pass);
             LLVMRunPassManager(pass, mod);
         }
-        LLVMDumpModule(this.mod);
+        if(this.dumpAssembly) {
+            LLVMDumpModule(this.mod);
+        }
         LLVMDisposeBuilder(this.builder);
         LLVMWriteBitcodeToFile(this.mod, TestUtils.GetFolderAssets("/llvm/") + "out.bc");
         LLVMDisposePassManager(pass);
