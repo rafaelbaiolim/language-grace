@@ -9,11 +9,6 @@ Doc Online Compilada.: https://din-ilp2018.readthedocs.io/en/latest
 
 [Branch de Instalação do Antrl4](https://github.com/rafaelbaiolim/compilador2018/tree/starting)
 
-InteliJ 
-==============================
-
-A build deste projeto assim como os testes unitários estão
-sendo executados na IDE InteliJ Community 
 
 Execução
 ==============================
@@ -25,8 +20,11 @@ Terminal
 $ gradle generateGrammarSource && gradle copyTokenFile
 ```
 
-Intelij
+InteliJ
 ------
+A build deste projeto assim como os testes unitários estão
+sendo executados na IDE InteliJ Community.
+
 1. Configurar como argumento de execução o arquivo de teste (colocar os arquivos de teste em tests/assets/(parser|lex))
 2. F6 para executar e gerar o assembly da linguagem 
 3. No terminal, pode ser da própria IDE, execute: ``$lli tests/assets/llvm/out.bc`` 
