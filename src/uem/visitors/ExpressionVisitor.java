@@ -25,6 +25,8 @@ public class ExpressionVisitor extends GraceParserBaseVisitor<Expression> {
                 return new MultiplicationExpression(visit(ctx.left), visit(ctx.right));
             case "/":
                 return new DivisionExpression(visit(ctx.left), visit(ctx.right));
+            case "%":
+                return new ModExpression(visit(ctx.left), visit(ctx.right));
         }
         throw new UnsupportedOperationException(ctx.getText());
     }

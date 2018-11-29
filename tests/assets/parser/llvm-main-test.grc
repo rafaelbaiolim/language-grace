@@ -1,19 +1,18 @@
-var v[10]: int;
-var i: int;
+var a = 10:int;
+var b = 5:int;
+var c:int;
 
-write "Digite os valores do arranjo:\n";
+c = a + b;
+write c, " ";
 
-//for (i=0; i < 3; i = i + 1) {
-    write "A[", i, "] = ";
-//    read v[i];
-//}
-read v[i];
+c = a - b;
+write c, " ";
 
-//bubblesort(v, 10);
+c = a * b;
+write c, " ";
 
-write "Arranjo ordenado:\nA = ";
+c = a / b;
+write c, " ";
 
-//for (i=0; i<3; i + 1) {
-    write v[i], " ";
-//}
-
+c = a % b;
+write c, " ";

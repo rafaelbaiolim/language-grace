@@ -24,8 +24,12 @@ public class Main {
         String inputFile = null;
         boolean optimization = false;
 
-        if (args[0] != null) inputFile = args[0];
-        if (args[1] != null) optimization = Boolean.parseBoolean(args[1]);
+        if (args.length > 0) {
+            inputFile = args[0];
+        }
+        if (args.length > 1) {
+            optimization = Boolean.parseBoolean(args[1]);
+        }
         compile(inputFile, true, optimization);
     }
 
