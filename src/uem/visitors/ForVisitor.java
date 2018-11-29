@@ -50,8 +50,6 @@ public class ForVisitor extends GraceParserBaseVisitor<ForStmt> {
 
         AtribCmd forItera = new AtribVisitor().visit(ctx.forItera().atrib());
         forStmt.setItera(forItera);
-
-        forItera.getLLVMValue();
         LLVMPositionBuilderAtEnd(llve.builder, bItera);
         LLVMBuildBr(llve.builder, bCond);
         LLVMPositionBuilderAtEnd(llve.builder, bEnd);

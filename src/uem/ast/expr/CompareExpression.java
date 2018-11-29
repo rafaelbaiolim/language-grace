@@ -56,7 +56,7 @@ public class CompareExpression implements BinaryExpression {
 
         LLVMPresets llp = LLVMPresets.getInstance();
         LLVMEmitter lle = LLVMEmitter.getInstance();
-        int pred = 0;
+        int pred;
         try {
             pred = llp.getLLVMPredicate(this.operator);
         } catch (NullPointerException ex) { // Operação Binária AND | OR

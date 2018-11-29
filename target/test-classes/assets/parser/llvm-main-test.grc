@@ -1,7 +1,5 @@
-var i:int;
-i = 16;
-if( i > 10 &&  i > 15){
-    write "TRUE";
-}else{
-    write "FALSE";
+var i = 0:int;
+
+for(i = 0; i <= 4; i = i + 1){
+    write "i(", i, ")";
 }
