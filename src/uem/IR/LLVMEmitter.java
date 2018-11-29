@@ -16,7 +16,7 @@ public class LLVMEmitter {
     public final LLVMModuleRef mod;
     public final LLVMBuilderRef builder;
     public final LLVMType types;
-    private boolean verbose = true;
+    private boolean optimization = true;
     public static final String FORMAT_NUMBER = "NUMBER";
     public static final String FORMAT_STRING = "STRING";
     public static final String PRINT_FUN_NAME = "printf";
@@ -85,8 +85,8 @@ public class LLVMEmitter {
 
     }
 
-    public void setVerbose(boolean verbose) {
-        this.verbose = verbose;
+    public void setOptimization(boolean optimization) {
+        this.optimization = optimization;
     }
 
     public void setDumpAssembly(boolean dumpAssembly) {
@@ -219,7 +219,7 @@ public class LLVMEmitter {
         LLVMBuildRetVoid(this.builder);
 
         LLVMPassManagerRef pass = LLVMCreatePassManager();
-        if(!this.verbose) {
+        if(this.optimization) {
             LLVMAddConstantPropagationPass(pass);
             LLVMAddInstructionCombiningPass(pass);
             LLVMAddPromoteMemoryToRegisterPass(pass);

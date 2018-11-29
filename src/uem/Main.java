@@ -19,18 +19,19 @@ import java.io.InputStream;
 import static org.bytedeco.javacpp.LLVM.*;
 
 public class Main {
-    //TODO: 1.Não Esquecer de documentar o modo verbose do assembly
+    //TODO: 1.Não Esquecer de documentar o modo optimization do assembly
     public static void main(String[] args) throws IOException {
         String inputFile = null;
-        boolean verbose = false;
-        if (args.length > 0) inputFile = args[0];
-        if (args.length > 1) verbose = Boolean.parseBoolean(args[1]);
-        compile(inputFile, true, verbose);
+        boolean optimization = false;
+
+        if (args[0] != null) inputFile = args[0];
+        if (args[1] != null) optimization = Boolean.parseBoolean(args[1]);
+        compile(inputFile, true, optimization);
     }
 
     public static void compile(String inputFile,
                                boolean dumpAssembly,
-                               boolean verbose) throws IOException {
+                               boolean optimization) throws IOException {
 
         InputStream inputFileStream = System.in;
         if (inputFile != null) {
@@ -56,7 +57,7 @@ public class Main {
                 builder
         );
         LLVMEmitter.getInstance().Bootstrap();
-        LLVMEmitter.getInstance().setVerbose(verbose);
+        LLVMEmitter.getInstance().setOptimization(optimization);
         LLVMEmitter.getInstance().setDumpAssembly(dumpAssembly);
         Ast ast = new Ast();
         FrontEnd frontEnd = new FrontEnd(ast);

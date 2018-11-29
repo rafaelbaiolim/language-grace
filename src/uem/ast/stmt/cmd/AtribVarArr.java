@@ -19,7 +19,7 @@ public class AtribVarArr extends AtribCmd {
     public LLVM.LLVMValueRef getLLVMValue() {
         LLVMEmitter lle = LLVMEmitter.getInstance();
         LLVMPresets llp = LLVMPresets.getInstance();
-        LLVM.LLVMValueRef arrAllocated = FrontEnd.currentScope.resolve(this.varName).getScope().getLLVMSymRef(this.varName);
+        LLVM.LLVMValueRef arrAllocated = FrontEnd.currentScope.getLLVMSymRef(this.varName);
         return LLVMBuildStore(
                 LLVMEmitter.getInstance().builder,
                 this.getExpr().getLLVMValue(),

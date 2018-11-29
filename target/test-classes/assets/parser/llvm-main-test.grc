@@ -1,5 +1,19 @@
-var i = 0:int;
+var v[10]: int;
+var i: int;
 
-for(i = 0; i <= 4; i = i + 1){
-    write "i(", i, ")";
-}
+write "Digite os valores do arranjo:\n";
+
+//for (i=0; i < 3; i = i + 1) {
+    write "A[", i, "] = ";
+//    read v[i];
+//}
+read v[i];
+
+//bubblesort(v, 10);
+
+write "Arranjo ordenado:\nA = ";
+
+//for (i=0; i<3; i + 1) {
+    write v[i], " ";
+//}
+

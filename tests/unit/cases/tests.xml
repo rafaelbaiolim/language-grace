@@ -17,4 +17,10 @@
         <file>/home/rafaellb/Documents/uem/ilp2018/compilador2018/tests/assets/parser/test-aritmetimethic-op.grc</file>
     </test>
 
+    <!--<test>-->
+        <!--<wanted>10</wanted>-->
+        <!--<type>EQUALS</type>-->
+        <!--<file>/home/rafaellb/Documents/uem/ilp2018/compilador2018/tests/assets/parser/test-write-arr.grc</file>-->
+    <!--</test>-->
+
 </tests>

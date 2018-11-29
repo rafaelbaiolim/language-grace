@@ -72,7 +72,7 @@ public class CompillerTest {
             testCase.put("type", type);
 
             String file = getTagValue("file", element);
-            Main.compile(file, false, false);
+            Main.compile(file, false, true);
             String recived = executeLLI();
             if (recived != null) {
                 System.out.println("Executando.:" + new File(file).getName());
