@@ -43,6 +43,7 @@ public class LLVMPresets {
     private void populateLLVMBinPredicatesHash() {
         this.LLVMBinPredicates.put("&&", LLVMAnd);
         this.LLVMBinPredicates.put("||", LLVMOr);
+        this.LLVMBinPredicates.put("XOR", LLVMXor);
     }
 
     public int getLLVMPredicate(String op) {
@@ -123,6 +124,25 @@ public class LLVMPresets {
         return LLVMBuildLoad(llve.builder,
                 valToSext,
                 "ref_result_idx");
+    }
+
+
+    public LLVMValueRef castExprToInt(LLVMValueRef val) {
+        return LLVMBuildIntCast(
+                llve.builder,
+                val,
+                llve.types.i32(),
+                "icast"
+        );
+    }
+
+    public LLVMValueRef castExprToBool(LLVMValueRef val) {
+        return LLVMBuildIntCast(
+                llve.builder,
+                val,
+                llve.types.i1(),
+                "bcast"
+        );
     }
 
 

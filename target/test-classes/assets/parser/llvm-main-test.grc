@@ -1,4 +1,7 @@
 var i:int;
-if( i == 0 && i > 10){
-    write "minha rola";
+i = 16;
+if( i > 10 &&  i > 15){
+    write "TRUE";
+}else{
+    write "FALSE";
 }

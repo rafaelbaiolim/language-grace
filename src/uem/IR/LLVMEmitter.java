@@ -16,6 +16,7 @@ public class LLVMEmitter {
     public final LLVMModuleRef mod;
     public final LLVMBuilderRef builder;
     public final LLVMType types;
+    private boolean noVerbose = true;
     public static final String FORMAT_NUMBER = "NUMBER";
     public static final String FORMAT_STRING = "STRING";
     public static final String PRINT_FUN_NAME = "printf";
@@ -81,6 +82,10 @@ public class LLVMEmitter {
                 2, //total de registradores
                 "arr_ptr");
 
+    }
+
+    public void setNoVerbose(boolean noVerbose) {
+        this.noVerbose = noVerbose;
     }
 
 
@@ -209,15 +214,14 @@ public class LLVMEmitter {
         LLVMBuildRetVoid(this.builder);
 
         LLVMPassManagerRef pass = LLVMCreatePassManager();
-        LLVMAddConstantPropagationPass(pass);
-        //comentar, para visualizar op de alocadores porém, valores constantes param de funcionar
-//        LLVMAddPromoteMemoryToRegisterPass(pass);
-        LLVMRunPassManager(pass, this.mod);
-
-        //descomentar para gerar o LLI mesmo estando com erros
-//        LLVMVerifyModule(this.mod, LLVMAbortProcessAction, this.error);
-//        LLVMDisposeMessage(this.error);
-
+        if(this.noVerbose) {
+            LLVMAddConstantPropagationPass(pass);
+            LLVMAddInstructionCombiningPass(pass);
+            LLVMAddPromoteMemoryToRegisterPass(pass);
+            LLVMAddGVNPass(pass);
+            LLVMAddCFGSimplificationPass(pass);
+            LLVMRunPassManager(pass, mod);
+        }
         LLVMDumpModule(this.mod);
         LLVMDisposeBuilder(this.builder);
         LLVMWriteBitcodeToFile(this.mod, TestUtils.GetFolderAssets("/llvm/") + "out.bc");
@@ -319,6 +323,6 @@ public class LLVMEmitter {
         this.Scanner();
         return this;
     }
-    protected Deque<LLVMBasicBlockRef> basicBlockRef = new ArrayDeque<>();
+
 
 }

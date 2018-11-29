@@ -9,7 +9,6 @@ import uem.ast.Position;
 
 import static org.bytedeco.javacpp.LLVM.LLVMBuildBinOp;
 import static org.bytedeco.javacpp.LLVM.LLVMBuildICmp;
-import static org.bytedeco.javacpp.LLVM.LLVMBuildSExtOrBitCast;
 
 public class CompareExpression implements BinaryExpression {
 
@@ -65,8 +64,8 @@ public class CompareExpression implements BinaryExpression {
 
             return LLVMBuildBinOp(lle.builder,
                     pred,
-                    this.left.getLLVMValue(),
-                    this.right.getLLVMValue(),
+                    llp.castExprToInt(this.left.getLLVMValue()),
+                    llp.castExprToInt(this.right.getLLVMValue()),
                     "bin_compare(" + this.operator + ")");
         }
 
