@@ -54,6 +54,7 @@ public class CondicionalVisitor extends GraceParserBaseVisitor<CondicionalStmt> 
         AtomicReference<List<Statement>> lstElse = new AtomicReference<>();
         AtomicReference<List<Statement>> lstIF = new AtomicReference<>();
 
+
         for (GraceParser.CommandContext stmt : ctx.command()) {
             if (finalTemElseStmt && (i.get() == (totalComands - 1))) { //else
                 LLVMPositionBuilderAtEnd(llve.builder, ifFalse);
@@ -67,6 +68,12 @@ public class CondicionalVisitor extends GraceParserBaseVisitor<CondicionalStmt> 
             LLVMBuildBr(llve.builder, end);
         }
 
+
+        if(!finalTemElseStmt){//não tem else
+            LLVMPositionBuilderAtEnd(llve.builder, ifFalse);
+            LLVMBuildBr(llve.builder, end);
+            LLVMPositionBuilderAtEnd(llve.builder, end);
+        }
 
         condicionalStmt.setElseStatment(lstElse.get());
         condicionalStmt.setIfStatment(lstIF.get());

@@ -15,6 +15,10 @@ public class LLVMType {
         return LLVMVoidTypeInContext(llve.context);
     }
 
+    public LLVMTypeRef i1() {
+        return LLVMInt1TypeInContext(llve.context);
+    }
+
     public LLVMTypeRef i8() {
         return LLVMInt8TypeInContext(llve.context);
     }

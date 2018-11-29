@@ -1,6 +1,5 @@
 package uem.IR;
 
-import org.bytedeco.javacpp.LLVM;
 import org.bytedeco.javacpp.PointerPointer;
 import uem.ast.expr.Expression;
 import uem.ast.stmt.SpecVar;
@@ -16,6 +15,7 @@ public class LLVMPresets {
 
     private LLVMPresets() {
         this.populateLLVMPredicatesHash();
+        this.populateLLVMBinPredicatesHash();
         this.llve = LLVMEmitter.getInstance();
     }
 
@@ -28,7 +28,8 @@ public class LLVMPresets {
         return uniqueInstance;
     }
 
-    HashMap<String, Integer> LLVMPredicates = new HashMap<String, Integer>();
+    HashMap<String, Integer> LLVMPredicates = new HashMap<>();
+    HashMap<String, Integer> LLVMBinPredicates = new HashMap<>();
 
     private void populateLLVMPredicatesHash() {
         this.LLVMPredicates.put("<", LLVMIntSLT);
@@ -39,8 +40,17 @@ public class LLVMPresets {
         this.LLVMPredicates.put("!=", LLVMIntNE);
     }
 
+    private void populateLLVMBinPredicatesHash() {
+        this.LLVMBinPredicates.put("&&", LLVMAnd);
+        this.LLVMBinPredicates.put("||", LLVMOr);
+    }
+
     public int getLLVMPredicate(String op) {
         return this.LLVMPredicates.get(op);
+    }
+
+    public int getLLVMPredicateBin(String op) {
+        return this.LLVMBinPredicates.get(op);
     }
 
     /**
