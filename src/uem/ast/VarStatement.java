@@ -12,6 +12,7 @@ public interface VarStatement extends Statement {
 
     Expression setValue(Expression exp);
 
+    void setType(Type t);
 
     LLVM.LLVMValueRef getLLVMValue(Type type);
 }

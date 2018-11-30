@@ -1,8 +1,10 @@
-def func(){
-    var a = 22:int;
-    write a;
+def printVoid(){
+    write "Printa void ai";
 }
 
-var d:int;
-d = 33;
-write d;
+def test():int{
+    return 1;
+}
+
+printVoid();
+write test();

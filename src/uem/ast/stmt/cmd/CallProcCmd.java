@@ -17,14 +17,22 @@ public class CallProcCmd implements CmdStatement {
     private final Position position = null;
     private Token symToken;
     String name;
+
+    public boolean isVoid() {
+        return isVoid;
+    }
+
+    public void setVoid(boolean aVoid) {
+        isVoid = aVoid;
+    }
+
+    boolean isVoid;
     private List<Expression> expressionList;
 
     public CallProcCmd(String name, List<Expression> exprLst) {
         super();
         this.expressionList = exprLst;
         this.name = name;
-//        this.getLLVMValue();
-
     }
 
     @Override
@@ -66,11 +74,13 @@ public class CallProcCmd implements CmdStatement {
         LLVM.LLVMValueRef procName = LLVMGetNamedFunction(
                 LLVMEmitter.getInstance().mod,
                 this.name);
+
+        String llvmLabel = (this.isVoid ? "" : this.name);
         return LLVMBuildCall(LLVMEmitter.getInstance().builder,
                 procName,
                 new PointerPointer<>(argsProc),
                 this.expressionList.size(),
-                this.name);
+                llvmLabel);
 
     }
 }

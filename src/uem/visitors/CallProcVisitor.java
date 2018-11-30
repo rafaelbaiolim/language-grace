@@ -1,9 +1,12 @@
 package uem.visitors;
 
+import org.antlr.symtab.FunctionSymbol;
+import org.antlr.symtab.Symbol;
 import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseVisitor;
 import uem.ast.expr.Expression;
 import uem.ast.stmt.cmd.CallProcCmd;
+import uem.listners.FrontEnd;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -15,7 +18,17 @@ public class CallProcVisitor extends GraceParserBaseVisitor<CallProcCmd> {
         ctx.expression().forEach(stmtExpr -> {
             lstExpr.add(new ExpressionVisitor().visit(stmtExpr));
         });
-        return new CallProcCmd(ctx.ID().getText(), lstExpr);
+
+        Symbol fun = FrontEnd.currentScope.getSymbol(ctx.ID().getText());
+        FunctionSymbol func = (FunctionSymbol) fun;
+
+        CallProcCmd callCmd = new CallProcCmd(ctx.ID().getText(), lstExpr);
+        if(func.getType() == null || func.getType().getName().toLowerCase() == "void"){
+            callCmd.setVoid(true);
+        }
+
+        callCmd.getLLVMValue();
+        return callCmd;
     }
 
 

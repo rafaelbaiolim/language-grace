@@ -18,6 +18,7 @@ public class SpecVarArr implements VarStatement {
     private String length;
     private final Position position;
     private Token symToken;
+    private Type type;
     LLVMValueRef llvmValRef;
 
     public SpecVarArr(String varName, String length, Expression value, Position position) {
@@ -51,6 +52,11 @@ public class SpecVarArr implements VarStatement {
     @Override
     public Expression setValue(Expression exp) {
         return this.value = exp;
+    }
+
+    @Override
+    public void setType(Type t) {
+        this.type = t;
     }
 
     public Integer getLength() {

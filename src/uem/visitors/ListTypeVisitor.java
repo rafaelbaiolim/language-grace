@@ -10,7 +10,6 @@ import uem.ast.type.Type;
 public class ListTypeVisitor extends GraceParserBaseVisitor<Type> {
 
     public Type visitInteger(GraceParser.IntegerContext intCtx) {
-
         return new IntegerType();
     }
 

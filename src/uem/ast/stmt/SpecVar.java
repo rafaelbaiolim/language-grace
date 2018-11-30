@@ -17,6 +17,7 @@ public class SpecVar implements VarStatement {
     private Expression value;
     private final Position position;
     private Token symToken;
+    private Type type;
     LLVMValueRef llvmValRef;
 
     public SpecVar(String varName, Expression value, Position position) {
@@ -47,6 +48,11 @@ public class SpecVar implements VarStatement {
     @Override
     public Expression setValue(Expression exp) {
         return this.value = exp;
+    }
+
+    @Override
+    public void setType(Type t) {
+        this.type = t;
     }
 
     @Override

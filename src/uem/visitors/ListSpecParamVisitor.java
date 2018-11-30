@@ -2,7 +2,9 @@ package uem.visitors;
 
 import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseVisitor;
+import uem.ast.VarStatement;
 import uem.ast.stmt.SpecParam;
+import uem.ast.stmt.SpecParamArr;
 import uem.ast.stmt.Statement;
 import uem.ast.type.Type;
 
@@ -18,9 +20,14 @@ public class ListSpecParamVisitor extends GraceParserBaseVisitor<List<Statement>
                 Type type = new ListTypeVisitor().visit(specParam.lstType());
                 specParam.param().forEach(param -> {
                     Statement p = new SpecParamVisitor().visit(param);
-                    SpecParam parametro = (SpecParam) p;
+                    VarStatement parametro;
+                    if (p instanceof SpecParam) {
+                        parametro = (SpecParam) p;
+                    } else {
+                        parametro = (SpecParamArr) p;
+                    }
                     parametro.setType(type);
-                    //TODO: NOME DE PARAM COMO ARR AINDA NÂO IMPLEMENTADO
+
                     if (parametro != null) {
                         lstStmtSpecParam.add(parametro);
                     }

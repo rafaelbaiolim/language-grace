@@ -46,7 +46,7 @@ public class StatementVisitor extends GraceParserBaseVisitor<Statement> {
     }
 
     public Statement visitDecSubStatement(GraceParser.DecSubStatementContext ctx) {
-        return new SubVisitor().visit(ctx.decSub()); //TODO: vai ter que tratar isso
+        return new SubVisitor().visit(ctx.decSub());
     }
 
 }

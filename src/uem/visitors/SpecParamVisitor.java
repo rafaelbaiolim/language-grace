@@ -3,7 +3,7 @@ package uem.visitors;
 import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseVisitor;
 import uem.ast.stmt.SpecParam;
-import uem.ast.stmt.SpecVar;
+import uem.ast.stmt.SpecParamArr;
 import uem.ast.stmt.Statement;
 
 public class SpecParamVisitor extends GraceParserBaseVisitor<Statement> {
@@ -22,6 +22,10 @@ public class SpecParamVisitor extends GraceParserBaseVisitor<Statement> {
     /**
      * Arr Param
      */
-
+    public Statement visitArrParam(GraceParser.ArrParamContext ctxParam) {
+        SpecParamArr spcVarArr = new SpecParamArr(ctxParam.ID().getText());
+        spcVarArr.setSymbol(ctxParam.ID().getSymbol());
+        return spcVarArr;
+    }
 
 }

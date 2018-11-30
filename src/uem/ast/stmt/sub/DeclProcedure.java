@@ -5,7 +5,9 @@ import org.bytedeco.javacpp.LLVM;
 import uem.IR.LLVMEmitter;
 import uem.IR.LLVMPresets;
 import uem.ast.Position;
+import uem.ast.VarStatement;
 import uem.ast.stmt.SpecParam;
+import uem.ast.stmt.SpecParamArr;
 import uem.ast.stmt.Statement;
 import uem.ast.type.Type;
 import uem.listners.FrontEnd;
@@ -13,8 +15,7 @@ import uem.listners.FrontEnd;
 import java.util.LinkedList;
 import java.util.List;
 
-import static org.bytedeco.javacpp.LLVM.LLVMBuildStore;
-import static org.bytedeco.javacpp.LLVM.LLVMGetParam;
+import static org.bytedeco.javacpp.LLVM.*;
 
 public class DeclProcedure implements SubStatment {
     private Type returnType;
@@ -84,14 +85,21 @@ public class DeclProcedure implements SubStatment {
 
     /**
      * TODO:Generalizar para classe abstrata
+     *
      * @param fun
      * @param params
      * @param varName
      */
     static void paramItera(LLVM.LLVMValueRef fun, List<Statement> params, String varName) {
-        int i =0;
-        for(Statement param: params){
-            SpecParam currentParam = (SpecParam) param;
+        int i = 0;
+        for (Statement param : params) {
+            VarStatement currentParam;
+            if (param instanceof SpecParam) {
+                currentParam = (SpecParam) param;
+            } else {
+                currentParam = (SpecParamArr) param;
+
+            }
             currentParam.getLLVMValue();
             LLVM.LLVMValueRef allocatedParam = FrontEnd.currentScope.resolve(varName).getScope().getLLVMSymRef(varName);
             LLVM.LLVMValueRef pLLVMVal = LLVMGetParam(fun, i);
@@ -104,9 +112,16 @@ public class DeclProcedure implements SubStatment {
     @Override
     public LLVM.LLVMValueRef getLLVMValue() {
         List<LLVM.LLVMTypeRef> args = new LinkedList();
-        for(Statement param:this.params){
-            SpecParam currentParam = (SpecParam) param;
-            args.add(currentParam.getTypeLLVMRef());
+        for (Statement param : this.params) {
+            VarStatement currentParam;
+            if (param instanceof SpecParam) {
+                currentParam = (SpecParam) param;
+            } else {
+                currentParam = (SpecParamArr) param;
+
+            }
+//            args.add(currentParam.getTypeLLVMRef());
+            args.add(LLVMInt32Type());
         }
         LLVM.LLVMValueRef fun = LLVMPresets.getInstance().buildScopeFn(
                 this.getVarName(),
@@ -114,7 +129,7 @@ public class DeclProcedure implements SubStatment {
                 args
         );
         //coloca os parametros no escopo da função
-        paramItera(fun,this.params, this.varName);
+        paramItera(fun, this.params, this.varName);
         FrontEnd.currentScope.resolve(this.varName).getScope().setLLVMSymRef(this.varName, fun);
 
         return fun;
