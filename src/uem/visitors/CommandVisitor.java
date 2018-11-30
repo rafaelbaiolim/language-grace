@@ -13,7 +13,7 @@ public class CommandVisitor extends GraceParserBaseVisitor<List<Statement>> {
     }
 
     public List<Statement> visitCmsimple(GraceParser.CmsimpleContext ctx) {
-//        return new CommandSimpleVisitor().visit(ctx.cmdSimple());
+//        return new CmSimpleVisitor().visit(ctx.cmdSimple());
         return null;
     }
 
