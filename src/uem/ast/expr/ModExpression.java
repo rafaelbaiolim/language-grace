@@ -5,7 +5,6 @@ import org.bytedeco.javacpp.LLVM;
 import uem.IR.LLVMEmitter;
 import uem.ast.Position;
 
-import static org.bytedeco.javacpp.LLVM.LLVMBuildAdd;
 import static org.bytedeco.javacpp.LLVM.LLVMBuildSRem;
 
 public class ModExpression implements BinaryExpression {

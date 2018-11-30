@@ -33,14 +33,28 @@ public class AtribVar extends AtribCmd {
                         LLVMBuildNSWSub(LLVMEmitter.getInstance().builder,
                                 LLVMBuildLoad(LLVMEmitter.getInstance().builder,
                                         allocatedVar, "load"),
-                                this.getExpr().getLLVMValue(), "dec"), allocatedVar);
+                                this.getExpr().getLLVMValue(), "isub"), allocatedVar);
                 break;
             case "*=":
                 LLVMBuildStore(LLVMEmitter.getInstance().builder,
                         LLVMBuildNSWMul(LLVMEmitter.getInstance().builder,
                                 LLVMBuildLoad(LLVMEmitter.getInstance().builder,
                                         allocatedVar, "load"),
-                                this.getExpr().getLLVMValue(), "dec"), allocatedVar);
+                                this.getExpr().getLLVMValue(), "imul"), allocatedVar);
+                break;
+            case "/=":
+                LLVMBuildStore(LLVMEmitter.getInstance().builder,
+                        LLVMBuildSDiv(LLVMEmitter.getInstance().builder,
+                                LLVMBuildLoad(LLVMEmitter.getInstance().builder,
+                                        allocatedVar, "load"),
+                                this.getExpr().getLLVMValue(), "idiv"), allocatedVar);
+                break;
+            case "%=":
+                LLVMBuildStore(LLVMEmitter.getInstance().builder,
+                        LLVMBuildSRem(LLVMEmitter.getInstance().builder,
+                                LLVMBuildLoad(LLVMEmitter.getInstance().builder,
+                                        allocatedVar, "load"),
+                                this.getExpr().getLLVMValue(), "imod"), allocatedVar);
                 break;
 
             default:
