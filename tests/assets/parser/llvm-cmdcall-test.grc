@@ -1,0 +1,10 @@
+def printVoid(){
+    write "Printa void ai";
+}
+
+def test():int{
+    return 1;
+}
+
+printVoid();
+write test();
