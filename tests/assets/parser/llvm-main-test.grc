@@ -1,8 +1,7 @@
-def func(){
-    var a = 22:int;
-    write a;
+var arr[10]:int;
+var i:int;
+arr[0] = 2;
+i+=1;
+for(i = 0; i < 2; i+=1){
+    write arr[0];
 }
-
-var d:int;
-d = 33;
-write d;
