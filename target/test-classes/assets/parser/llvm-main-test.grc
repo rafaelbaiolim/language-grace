@@ -1,6 +1,8 @@
-var a = 10:int;
-a += 1;
-write a;
+def func():int {
+    var a = 10:int;
+    return a;
+}
 
-a *= 2;
-write a;
+var d:int;
+d = func();
+write d;

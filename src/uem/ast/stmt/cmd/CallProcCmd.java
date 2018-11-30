@@ -23,7 +23,7 @@ public class CallProcCmd implements CmdStatement {
         super();
         this.expressionList = exprLst;
         this.name = name;
-        this.getLLVMValue();
+//        this.getLLVMValue();
 
     }
 
@@ -57,10 +57,10 @@ public class CallProcCmd implements CmdStatement {
 
     @Override
     public LLVM.LLVMValueRef getLLVMValue() {
-        LLVM.LLVMValueRef printArgs[] = new LLVM.LLVMValueRef[this.expressionList.size()];
+        LLVM.LLVMValueRef argsProc[] = new LLVM.LLVMValueRef[this.expressionList.size()];
         int i = 0;
         for (Expression expr : this.expressionList) {
-            printArgs[i] = expr.getLLVMValue();
+            argsProc[i] = expr.getLLVMValue();
             i++;
         }
         LLVM.LLVMValueRef procName = LLVMGetNamedFunction(
@@ -68,7 +68,7 @@ public class CallProcCmd implements CmdStatement {
                 this.name);
         return LLVMBuildCall(LLVMEmitter.getInstance().builder,
                 procName,
-                new PointerPointer(printArgs),
+                new PointerPointer<>(argsProc),
                 this.expressionList.size(),
                 this.name);
 

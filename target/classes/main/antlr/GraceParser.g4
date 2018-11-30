@@ -26,7 +26,7 @@ expression
     | '-' expression                                                                                    #minusExpression
     | '!' expression                                                                                    #differenceExpression
     | '(' expression ')'                                                                                #parenExpression
-    | ID '(' expression ')'                                                                             #subReference
+    | ID '(' expression? (',' expression)* ')'                                                          #subReference
     | ID '[' expression ']'                                                                             #arrReference
     | ID                                                                                                #varReference
     | literal                                                                                           #literalReference

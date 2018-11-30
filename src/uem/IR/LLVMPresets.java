@@ -113,8 +113,6 @@ public class LLVMPresets {
     }
 
     public void finalizeFunctionScope() {
-        //colocar o tipo de retorno aqui
-        LLVMBuildRet(llve.builder, LLVMConstInt(LLVMInt32Type(), 1, 0));
         LLVMPositionBuilderAtEnd(llve.builder, llve.prevBasicBlocks.pop());
     }
 

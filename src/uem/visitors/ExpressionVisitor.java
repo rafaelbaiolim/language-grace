@@ -4,6 +4,8 @@ import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseVisitor;
 import uem.ast.expr.*;
 
+import java.util.LinkedList;
+
 public class ExpressionVisitor extends GraceParserBaseVisitor<Expression> {
 
     public Expression visitCompareOperation(GraceParser.CompareOperationContext ctx) {
@@ -65,6 +67,15 @@ public class ExpressionVisitor extends GraceParserBaseVisitor<Expression> {
         );
         arrRef.setSymbol(varArrRefCtx.ID().getSymbol());
         return arrRef;
+    }
+
+    public Expression visitSubReference(GraceParser.SubReferenceContext ctx) {
+        LinkedList<Expression> exprL = new LinkedList<>();
+        ctx.expression().forEach(expr -> {
+            exprL.add(new ExpressionVisitor().visit(expr));
+        });
+        return new SubReference(ctx.ID().getText(), exprL);
+
     }
 
 }

@@ -51,7 +51,6 @@ public class ReadCmd implements CmdStatement {
                 LLVMEmitter.FORMAT_NUMBER
         );
 
-
         return null;
     }
 }
