@@ -217,8 +217,12 @@ public class LLVMEmitter {
 
     public final void Finalize() {
         LLVMBuildRetVoid(this.builder);
-
         LLVMPassManagerRef pass = LLVMCreatePassManager();
+
+        //TODO: deixar setavel via flag
+//        LLVMVerifyModule(mod, LLVMAbortProcessAction, error);
+//        LLVMDisposeMessage(error);
+
         if(this.optimization) {
             LLVMAddConstantPropagationPass(pass);
             LLVMAddInstructionCombiningPass(pass);
