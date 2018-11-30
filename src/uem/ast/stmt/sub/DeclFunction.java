@@ -13,9 +13,6 @@ import uem.listners.FrontEnd;
 import java.util.LinkedList;
 import java.util.List;
 
-import static org.bytedeco.javacpp.LLVM.LLVMBuildStore;
-import static org.bytedeco.javacpp.LLVM.LLVMGetParam;
-
 public class DeclFunction implements SubStatment {
     private Type returnType;
     private List<Statement> params;
@@ -78,8 +75,8 @@ public class DeclFunction implements SubStatment {
 
     @Override
     public LLVM.LLVMValueRef getLLVMValue() {
-        List<LLVM.LLVMTypeRef> args = new LinkedList();
-        for(Statement param:this.params){
+        List<LLVM.LLVMTypeRef> args = new LinkedList<>();
+        for (Statement param : this.params) {
             SpecParam currentParam = (SpecParam) param;
             args.add(currentParam.getTypeLLVMRef());
         }
@@ -89,16 +86,7 @@ public class DeclFunction implements SubStatment {
                 args
         );
         //coloca os parametros no escopo da função
-        int i =0;
-        for(Statement param:this.params){
-            SpecParam currentParam = (SpecParam) param;
-            currentParam.getLLVMValue();
-            LLVM.LLVMValueRef allocatedParam = FrontEnd.currentScope.resolve(this.varName).getScope().getLLVMSymRef(this.varName);
-            LLVM.LLVMValueRef pLLVMVal = LLVMGetParam(fun, i);
-            LLVMBuildStore(LLVMEmitter.getInstance().builder,
-                    pLLVMVal, allocatedParam);
-            i++;
-        }
+        DeclProcedure.paramItera(fun, this.params, this.varName);
         FrontEnd.currentScope.resolve(this.varName).getScope().setLLVMSymRef(this.varName, fun);
 
         return fun;

@@ -1,8 +1,8 @@
-def func():int {
-    var a = 10:int;
-    return a;
+def func(){
+    var a = 22:int;
+    write a;
 }
 
 var d:int;
-d = func();
+d = 33;
 write d;
