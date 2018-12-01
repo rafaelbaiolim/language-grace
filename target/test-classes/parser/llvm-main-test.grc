@@ -1,10 +1,8 @@
-def printVoid(){
-    write "Printa void ai";
-}
+var a[10]:int;
+var i = 1:int;
 
-def test():int{
-    return 1;
-}
+a[1 + 1] = 10;
+a[3] = a[1 + 1];
 
-printVoid();
-write test();
+var c = 3:int;
+write a[c];

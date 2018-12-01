@@ -1,109 +1,100 @@
 package unit;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-import uem.Main;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
+@RunWith(Parameterized.class)
 public class CompillerTest {
-    protected void assertResults(HashMap<String, String> tests) throws IOException {
+    /**
+     * Adicionar o nome dos arquivos de teste disponiveis estaticamente aqui
+     * e alterar o indice de @TESTS_XML_RELATIVE_PATH
+     */
+    private static final String[] XML_FILE_NAME = {
+            "arr-write.xml",
+            "lote-test.xml"
+    };
 
-        String recived = tests.get("recived");
-        String wanted = tests.get("wanted");
-        String typeTest = tests.get("type");
+    private static final String TESTS_XML_RELATIVE_PATH = "tests/unit/cases/" + XML_FILE_NAME[1];
+    private String wanted;
+    private String file;
+    private String fileName;
+    private String type;
+    private boolean opt;
 
-        System.out.println("Esperado.:" + wanted);
-        System.out.println("Recebido.:" + recived);
-
-        switch (typeTest) {
-            case "EQUALS":
-                assertEquals(recived, wanted);
-                break;
-            case "NOT_EQUALS":
-                assertNotEquals(recived, wanted);
-                break;
-        }
-        System.out.println("\n");
+    public CompillerTest(String wanted,
+                         String file,
+                         String type,
+                         String fileName,
+                         String opt
+    ) {
+        this.wanted = wanted;
+        this.file = file;
+        this.type = type;
+        this.fileName = fileName;
+        this.opt = Boolean.parseBoolean(opt);
     }
 
-
     @Test
-    public void testFromFiles() throws IOException, ParserConfigurationException, SAXException {
-        File xmlFile = new File("tests/unit/cases/tests.xml");
+    public void testFromXML() throws IOException {
+        String recived = new TestCase().getLLIResult(file, opt);
+        System.out.println("-> (" + fileName + "): " + recived + "\n");
+        switch (type) {
+            case TestCase.EQUALS:
+                assertEquals(wanted.trim(), recived.trim());
+                break;
+
+            case TestCase.NOT_EQUALS:
+                assertNotEquals(wanted.trim(), recived.trim());
+                break;
+
+        }
+    }
+
+    @Parameterized.Parameters(name = "{index}: {3}")
+    public static Collection<String[]> testesAdded() {
+        File xmlFile = new File(TESTS_XML_RELATIVE_PATH);
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder;
+        List<String[]> tests = new LinkedList<>();
         try {
             dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(xmlFile);
             doc.getDocumentElement().normalize();
             NodeList nodeList = doc.getElementsByTagName("test");
             for (int i = 0; i < nodeList.getLength(); i++) {
-                executeTest(nodeList.item(i));
+                HashMap<String, String> current =
+                        TestCase.GetTag(nodeList.item(i));
+                String[] formatedCurrentCase = new String[]{
+                        current.get(TestCase.WANTED),
+                        current.get(TestCase.FILE),
+                        current.get(TestCase.TYPE),
+                        new File(current.get(TestCase.FILE)).getName(),
+                        current.get(TestCase.OPTIMIZELLVM),
+                };
+                tests.add(formatedCurrentCase);
             }
 
         } catch (SAXException | ParserConfigurationException | IOException e1) {
             e1.printStackTrace();
         }
-    }
-
-    private void executeTest(Node node) throws IOException {
-        if (node.getNodeType() == Node.ELEMENT_NODE) {
-            HashMap<String, String> testCase = new HashMap<String, String>();
-
-            Element element = (Element) node;
-            String wanted = getTagValue("wanted", element);
-            String type = getTagValue("type", element);
-            testCase.put("wanted", wanted);
-            testCase.put("type", type);
-
-            String file = getTagValue("file", element);
-            Main.compile(file, false, true);
-            String recived = executeLLI();
-            if (recived != null) {
-                System.out.println("Executando.:" + new File(file).getName());
-                testCase.put("recived", recived);
-                this.assertResults(testCase);
-            }
-        }
-    }
-
-    private static String executeLLI() throws IOException {
-        String s;
-        StringBuilder stringBuilder = new StringBuilder();
-        Process p;
-        try {
-            p = Runtime.getRuntime().exec("lli /home/rafaellb/Documents/uem/ilp2018/compilador2018/tests/assets/llvm/out.bc");
-            BufferedReader br = new BufferedReader(
-                    new InputStreamReader(p.getInputStream()));
-            while ((s = br.readLine()) != null)
-                stringBuilder.append(s);
-            p.waitFor();
-            p.destroy();
-        } catch (Exception e) {
-        }
-
-        return stringBuilder.toString();
-    }
-
-    private static String getTagValue(String tag, Element element) {
-        NodeList nodeList = element.getElementsByTagName(tag).item(0).getChildNodes();
-        Node node = (Node) nodeList.item(0);
-        return node.getNodeValue();
+        return tests;
     }
 
 
