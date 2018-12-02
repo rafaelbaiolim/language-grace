@@ -1,8 +1,7 @@
-var a[10]:int;
-var i = 1:int;
+var v[10]:int;
+def foo(){
+//    write v[0];
+}
 
-a[1 + 1] = 10;
-a[3] = a[1 + 1];
-
-var c = 3:int;
-write a[c];
+v[0] = 33;
+foo(v);

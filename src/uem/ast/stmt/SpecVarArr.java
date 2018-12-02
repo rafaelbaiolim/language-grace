@@ -60,7 +60,11 @@ public class SpecVarArr implements VarStatement {
     }
 
     public Integer getLength() {
-        return Integer.parseInt(this.length);
+        try {
+            return Integer.parseInt(this.length);
+        } catch (NumberFormatException ex) {
+            return 0;
+        }
     }
 
     public void setLength(Integer len) {

@@ -13,6 +13,10 @@ public class VarArrReference extends VarRefExpression {
         super(varName, posicao);
     }
 
+    public VarArrReference(String varName) {
+        super(varName);
+    }
+
     @Override
     public LLVM.LLVMValueRef getLLVMValue() {
         LLVM.LLVMValueRef load = null;
@@ -20,9 +24,8 @@ public class VarArrReference extends VarRefExpression {
         LLVMPresets llp = LLVMPresets.getInstance();
         try {
             LLVM.LLVMValueRef arrAllocated = FrontEnd.currentScope.resolve(this.varName).getScope().getLLVMSymRef(this.varName);
-            load = LLVMBuildLoad(LLVMEmitter.getInstance().builder,
-                    lle.getArray(llp.parseExprToInt(this.index), arrAllocated), "temp"
-            );
+            load = lle.getArray(llp.parseExprToInt(this.index),
+                    arrAllocated); //GEP serve para setore e load
         } catch (Exception ex) {
 
         }

@@ -1,5 +1,6 @@
 package uem.visitors;
 
+import org.antlr.symtab.ArrayType;
 import org.antlr.symtab.VariableSymbol;
 import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseVisitor;
@@ -25,13 +26,16 @@ public class DeclVarVisitor extends GraceParserBaseVisitor<DeclVar> {
         Type type = new ListTypeVisitor().visit(ctx.lstType());
         for (Statement stmt : lst) {
             VarStatement currentStmt;
+            VariableSymbol v = new VariableSymbol(stmt.getVarName());
             if (stmt instanceof SpecVar) {
                 currentStmt = (SpecVar) stmt;
+                v.setType(type);
             } else {
                 currentStmt = (SpecVarArr) stmt;
+                ArrayType arrType = new ArrayType(type,
+                        ((SpecVarArr) currentStmt).getLength());
+                v.setType(arrType);
             }
-            VariableSymbol v = new VariableSymbol(stmt.getVarName());
-            v.setType(type);
             FrontEnd.currentScope.define(v);
             currentStmt.getLLVMValue(type);
         }

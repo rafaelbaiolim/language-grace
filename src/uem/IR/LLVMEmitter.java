@@ -50,6 +50,7 @@ public class LLVMEmitter {
         return uniqueInstance;
     }
 
+
     public LLVMValueRef getArray(LLVMValueRef valIdex, LLVMValueRef arrAllocated) {
         LLVM.LLVMValueRef[] indices = {
                 LLVMConstInt(
@@ -57,7 +58,7 @@ public class LLVMEmitter {
                         0,
                         0), valIdex
         };
-        return LLVMBuildGEP(this.builder,
+        return LLVMBuildInBoundsGEP(this.builder,
                 arrAllocated,
                 new PointerPointer(indices),
                 2, //total de registradores
@@ -77,7 +78,7 @@ public class LLVMEmitter {
                         index,
                         0)  //indice
         };
-        return LLVMBuildGEP(this.builder,
+        return LLVMBuildInBoundsGEP(this.builder,
                 arrAllocated,
                 new PointerPointer(indices),
                 2, //total de registradores

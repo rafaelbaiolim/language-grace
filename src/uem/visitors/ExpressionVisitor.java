@@ -1,8 +1,10 @@
 package uem.visitors;
 
+import org.antlr.symtab.VariableSymbol;
 import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseVisitor;
 import uem.ast.expr.*;
+import uem.listners.FrontEnd;
 
 import java.util.LinkedList;
 
@@ -39,8 +41,22 @@ public class ExpressionVisitor extends GraceParserBaseVisitor<Expression> {
         return new LiteralVisitor().visit(literal);
     }
 
+    /**
+     * Aqui ocorre o caso em que pode ser tanto uma variável como
+     * um arranjo.: ex.: var a = 10:int; f(a) || var a[10]:int; f(a)
+     *
+     * @param varRefCtx
+     * @return
+     */
     public Expression visitVarReference(GraceParser.VarReferenceContext varRefCtx) {
-        VarReference varRef = new VarReference(varRefCtx.ID().getText());
+        String varName = varRefCtx.ID().getText();
+        VariableSymbol sym = (VariableSymbol) FrontEnd.currentScope.resolve(varName).getScope().getSymbol(varName);
+        if (sym.getType().getName().toLowerCase().contains("[]")) {
+            VarArrReference arrRef = new VarArrReference(varName);
+            arrRef.setSymbol(varRefCtx.ID().getSymbol());
+            return arrRef;
+        }
+        VarReference varRef = new VarReference(varName);
         varRef.setSymbol(varRefCtx.ID().getSymbol());
         return varRef;
     }
