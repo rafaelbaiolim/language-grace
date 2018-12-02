@@ -21,6 +21,10 @@ public class StatementVisitor extends GraceParserBaseVisitor<Statement> {
         return new WhileVisitor().visit(ctx);
     }
 
+    public Statement visitCmFor(GraceParser.CmForContext ctx) {
+        return new ForVisitor().visit(ctx);
+    }
+
     public Statement visitCmProc(GraceParser.CmProcContext ctx) {
         return new CallProcVisitor().visit(ctx);
     }
