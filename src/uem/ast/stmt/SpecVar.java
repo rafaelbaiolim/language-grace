@@ -97,6 +97,22 @@ public class SpecVar implements VarStatement {
         return this.llvmValRef = varAlloc;
     }
 
+    public LLVMValueRef getLLVMValue(Type type, boolean safeIndex) {
+        //garante que se não houver expr, sera acessado i32 0,i32 0
+        LLVM.LLVMValueRef varAlloc = LLVMBuildAlloca(
+                LLVMEmitter.getInstance().builder,
+                LLVMEmitter.getInstance().types.getByTypeName(type.getName()),
+                this.varName);
+        if (this.value != null) {
+            LLVMBuildStore(LLVMEmitter.getInstance().builder,
+                    this.value.getLLVMValue(), varAlloc);
+        } else {
+            LLVMBuildStore(LLVMEmitter.getInstance().builder, LLVMConstInt(LLVMInt32Type(), 0, 0), varAlloc);
+        }
+        FrontEnd.currentScope.setLLVMSymRef(this.varName, varAlloc);
+
+        return this.llvmValRef = varAlloc;
+    }
 
     @Override
     public Position getPosition() {

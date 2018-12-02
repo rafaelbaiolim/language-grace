@@ -7,7 +7,7 @@ import uem.IR.LLVMEmitter;
 import uem.IR.LLVMPresets;
 import uem.listners.FrontEnd;
 
-import static org.bytedeco.javacpp.LLVM.LLVMBuildLoad;
+import static org.bytedeco.javacpp.LLVM.*;
 
 public class VarArrReference extends VarRefExpression {
 
@@ -27,15 +27,16 @@ public class VarArrReference extends VarRefExpression {
         LLVM.LLVMValueRef arrAllocated = FrontEnd.currentScope.resolve(this.varName)
                 .getScope().getLLVMSymRef(this.varName);
         Symbol sym = FrontEnd.currentScope.getSymbol(this.varName);
+        LLVM.LLVMValueRef calcIdx = llp.parseExprToInt(this.index);
 
         if (sym instanceof ParameterSymbol) {
             LLVM.LLVMValueRef loadArr = LLVMBuildLoad(lle.builder,
                     arrAllocated, "getSavedArr");
-            toLoad = lle.getArray(llp.parseExprToInt(this.index), loadArr, 1); //GEP serve para setore e load
-        } else {
-            toLoad = lle.getArray(llp.parseExprToInt(this.index), arrAllocated, 2); //GEP serve para setore e load
-        }
 
+            toLoad = lle.getArray(calcIdx, loadArr, 1); //GEP serve para setore e load
+        } else {
+            toLoad = lle.getArray(calcIdx, arrAllocated, 2); //GEP serve para setore e load
+        }
         return LLVMBuildLoad(lle.builder, toLoad, "arr_result");
 
     }
