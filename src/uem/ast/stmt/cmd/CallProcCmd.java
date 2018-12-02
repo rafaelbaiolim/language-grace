@@ -6,6 +6,7 @@ import org.bytedeco.javacpp.PointerPointer;
 import uem.IR.LLVMEmitter;
 import uem.ast.Position;
 import uem.ast.expr.Expression;
+import uem.ast.expr.VarArrReference;
 
 import java.util.List;
 
@@ -68,6 +69,11 @@ public class CallProcCmd implements CmdStatement {
         LLVM.LLVMValueRef argsProc[] = new LLVM.LLVMValueRef[this.expressionList.size()];
         int i = 0;
         for (Expression expr : this.expressionList) {
+            if (expr instanceof VarArrReference) {
+                argsProc[i] = ((VarArrReference) expr).getLLVMValue(true);
+                i++;
+                continue;
+            }
             argsProc[i] = expr.getLLVMValue();
             i++;
         }

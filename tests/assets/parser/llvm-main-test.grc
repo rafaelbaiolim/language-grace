@@ -1,10 +1,8 @@
-var v[10]:int;
+var a[10]:int;
+var i = 1:int;
 
-def foo(x[]:int){
-    var c = x[0]:int;
-    write c;
-}
+a[1 + 1] = 10;
+a[3] = a[1 + 1];
 
-v[0] = 55;
-foo(v);
-
+var c = 3:int;
+write a[c];

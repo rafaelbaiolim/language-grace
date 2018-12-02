@@ -1,0 +1,13 @@
+var v[10]:int;
+
+def foo(x[]:int){
+    write x[0];
+    write x[1];
+    write x[2];
+}
+
+v[0] = 55;
+v[1] = 90;
+v[2] = 102;
+foo(v);
+
