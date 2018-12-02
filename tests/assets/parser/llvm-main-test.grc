@@ -1,8 +1,13 @@
-var a[10]:int;
-var i = 1:int;
+var v[10]: int;
 
-a[1 + 1] = 10;
-a[3] = a[1 + 1];
+def bubblesort(v[]: int; n: int) {
 
-var c = 3:int;
-write a[c];
+}
+
+var i: int;
+v[0] = 10;
+for (i=0; i<1; i+=1) {
+    write "A[", i, "] = ", v[i];
+}
+
+bubblesort(v, 10);

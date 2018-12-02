@@ -179,9 +179,9 @@ public class LLVMEmitter {
      * Empilha um Escopo de função LLVM
      */
     public void pushScope(LLVMValueRef fn) {
-
         fnCtxts.push(new ScopeFn(fn));
     }
+
 
     /**
      * Desempilha Escopo de função LLVM

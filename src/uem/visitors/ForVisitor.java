@@ -13,12 +13,12 @@ import uem.ast.stmt.cmd.AtribCmd;
 import java.util.List;
 
 import static org.bytedeco.javacpp.LLVM.*;
+import static org.bytedeco.javacpp.LLVM.LLVMAppendBasicBlock;
 
 public class ForVisitor extends GraceParserBaseVisitor<ForStmt> {
 
     public ForStmt visitCmdFor(GraceParser.CmdForContext ctx) {
         ForStmt forStmt = new ForStmt();
-
         LLVMPresets llvmp = LLVMPresets.getInstance();
         LLVMEmitter llve = LLVMEmitter.getInstance();
 
@@ -52,8 +52,8 @@ public class ForVisitor extends GraceParserBaseVisitor<ForStmt> {
         forStmt.setItera(forItera);
         LLVMPositionBuilderAtEnd(llve.builder, bItera);
         LLVMBuildBr(llve.builder, bCond);
-        LLVMPositionBuilderAtEnd(llve.builder, bEnd);
 
+        LLVMPositionBuilderAtEnd(llve.builder, bEnd);
         return forStmt;
     }
 

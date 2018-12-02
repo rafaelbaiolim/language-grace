@@ -27,14 +27,16 @@ public class CompillerTest {
      * e alterar o indice de @TESTS_XML_RELATIVE_PATH
      */
     private static final String[] XML_FILE_NAME = {
-            "lote-test.xml", //0
-            "arr.xml", //1
-            "func.xml", //2
+            "lote-test.xml",            //0
+            "arr.xml",                  //1
+            "func/atrib-param-arr.xml", //2
+            "func/param.xml",           //3
     };
 
 //    private static final String TESTS_XML_RELATIVE_PATH = "tests/unit/cases/" + XML_FILE_NAME[0];
 //    private static final String TESTS_XML_RELATIVE_PATH = "tests/unit/cases/" + XML_FILE_NAME[1];
-    private static final String TESTS_XML_RELATIVE_PATH = "tests/unit/cases/" + XML_FILE_NAME[2];
+//    private static final String TESTS_XML_RELATIVE_PATH = "tests/unit/cases/" + XML_FILE_NAME[2];
+    private static final String TESTS_XML_RELATIVE_PATH = "tests/unit/cases/" + XML_FILE_NAME[3];
 
     private String wanted;
     private String file;

@@ -1,0 +1,11 @@
+var v[10]:int;
+var j:int;
+
+def foo(x[]:int):int{
+    var c = 12:int;
+    return x[0] + c;
+}
+
+v[0] = 33;
+j = foo(v);
+write j;

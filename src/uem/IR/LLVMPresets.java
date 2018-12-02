@@ -98,9 +98,7 @@ public class LLVMPresets {
             LLVMTypeRef returnType,
             List<LLVMTypeRef> argTypes
     ) {
-
-        llve.prevBasicBlocks.push(LLVMGetInsertBlock(llve.builder));
-
+        this.pushAsPrevBlock();
         LLVMTypeRef funcType = functionType(
                 returnType, argTypes.toArray(new LLVMTypeRef[0]));
 
@@ -112,14 +110,28 @@ public class LLVMPresets {
         return func;
     }
 
-    public void finalizeFunctionScope() {
+    /**
+     * Alias push prev block
+     */
+    public void pushAsPrevBlock() {
+        llve.prevBasicBlocks.push(LLVMGetInsertBlock(llve.builder));
+    }
+
+    /**
+     * Alias pop prev block
+     */
+    public void popPrevBlock() {
         LLVMPositionBuilderAtEnd(llve.builder, llve.prevBasicBlocks.pop());
+    }
+
+    public void finalizeFunctionScope() {
+        this.popPrevBlock();
     }
 
     public LLVMValueRef parseExprToInt(Expression index) {
 
         LLVMValueRef valToSext = new SpecVar("result_expr_idx", index).getLLVMValue(
-                new IntegerType(),true);
+                new IntegerType(), true);
         return LLVMBuildLoad(llve.builder,
                 valToSext,
                 "ref_result_idx");

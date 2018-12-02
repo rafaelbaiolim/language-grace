@@ -199,6 +199,7 @@ public class FrontEnd extends GraceParserBaseListener {
         if (currentScope.getEnclosingScope().getName().equals("global")) {
             this.ast.getListStmt().add(new WhileVisitor().visit(ctx));
         }
+        popScope();
 
     }
 
@@ -215,6 +216,7 @@ public class FrontEnd extends GraceParserBaseListener {
         if (currentScope.getEnclosingScope().getName().equals("global")) {
             this.ast.getListStmt().add(new ForVisitor().visit(ctx));
         }
+        popScope();
 
     }
 
