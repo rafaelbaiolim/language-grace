@@ -25,7 +25,7 @@ public class VarArrReference extends VarRefExpression {
         try {
             LLVM.LLVMValueRef arrAllocated = FrontEnd.currentScope.resolve(this.varName).getScope().getLLVMSymRef(this.varName);
             load = lle.getArray(llp.parseExprToInt(this.index),
-                    arrAllocated); //GEP serve para setore e load
+                    arrAllocated,2); //GEP serve para setore e load
         } catch (Exception ex) {
 
         }

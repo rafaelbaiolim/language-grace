@@ -51,20 +51,28 @@ public class LLVMEmitter {
     }
 
 
-    public LLVMValueRef getArray(LLVMValueRef valIdex, LLVMValueRef arrAllocated) {
-        LLVM.LLVMValueRef[] indices = {
-                LLVMConstInt(
-                        this.types.i32(),
-                        0,
-                        0), valIdex
-        };
+    public LLVMValueRef getArray(LLVMValueRef valIdex, LLVMValueRef arrAllocated, int numReg) {
+        LLVM.LLVMValueRef[] indices;
+        if (numReg > 1) {
+            indices = new LLVMValueRef[]{
+                    LLVMConstInt(
+                            this.types.i32(),
+                            0,
+                            0), valIdex};
+        } else {
+            indices = new LLVMValueRef[]{
+                    LLVMConstInt(LLVMInt32Type(), 0, 0)
+            };
+
+        }
         return LLVMBuildInBoundsGEP(this.builder,
                 arrAllocated,
                 new PointerPointer(indices),
-                2, //total de registradores
+                numReg, //total de registradores
                 "arr_ptr");
 
     }
+
 
     public LLVMValueRef getArray(String idx, LLVMValueRef arrAllocated) {
         int index = Integer.parseInt(idx);
@@ -224,7 +232,7 @@ public class LLVMEmitter {
 //        LLVMVerifyModule(mod, LLVMAbortProcessAction, error);
 //        LLVMDisposeMessage(error);
 
-        if(this.optimization) {
+        if (this.optimization) {
             LLVMAddConstantPropagationPass(pass);
             LLVMAddInstructionCombiningPass(pass);
             LLVMAddPromoteMemoryToRegisterPass(pass);
@@ -232,7 +240,7 @@ public class LLVMEmitter {
             LLVMAddCFGSimplificationPass(pass);
             LLVMRunPassManager(pass, mod);
         }
-        if(this.dumpAssembly) {
+        if (this.dumpAssembly) {
             LLVMDumpModule(this.mod);
         }
         LLVMDisposeBuilder(this.builder);

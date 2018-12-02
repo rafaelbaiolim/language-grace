@@ -23,6 +23,6 @@ public class AtribVarArr extends AtribCmd {
         return LLVMBuildStore(
                 LLVMEmitter.getInstance().builder,
                 this.getExpr().getLLVMValue(),
-                lle.getArray(llp.parseExprToInt(this.idx), arrAllocated));
+                lle.getArray(llp.parseExprToInt(this.idx), arrAllocated, 2));
     }
 }
