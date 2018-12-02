@@ -1,5 +1,6 @@
 package uem.visitors;
 
+import org.antlr.symtab.LocalScope;
 import org.bytedeco.javacpp.LLVM;
 import uem.IR.LLVMEmitter;
 import uem.IR.LLVMPresets;
@@ -8,6 +9,8 @@ import uem.antlr.GraceParserBaseVisitor;
 import uem.ast.expr.Expression;
 import uem.ast.stmt.CondicionalStmt;
 import uem.ast.stmt.Statement;
+import uem.listners.FrontEnd;
+import uem.symtab.CondScope;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -21,6 +24,9 @@ import static org.bytedeco.javacpp.LLVM.LLVMPositionBuilderAtEnd;
 public class CondicionalVisitor extends GraceParserBaseVisitor<CondicionalStmt> {
 
     public CondicionalStmt visitCmdIf(GraceParser.CmdIfContext ctx) {
+        LocalScope locScope = new CondScope(FrontEnd.currentScope);
+        FrontEnd.pushScope(locScope);
+
         LLVMEmitter llve = LLVMEmitter.getInstance();
         LLVMPresets llvp = LLVMPresets.getInstance();
 

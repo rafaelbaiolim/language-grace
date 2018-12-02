@@ -1,5 +1,6 @@
 package uem.visitors;
 
+import org.antlr.symtab.LocalScope;
 import org.bytedeco.javacpp.LLVM;
 import uem.IR.LLVMEmitter;
 import uem.IR.LLVMPresets;
@@ -7,12 +8,16 @@ import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseVisitor;
 import uem.ast.expr.Expression;
 import uem.ast.stmt.WhileStmt;
+import uem.listners.FrontEnd;
+import uem.symtab.WhileScope;
 
 import static org.bytedeco.javacpp.LLVM.*;
 
 public class WhileVisitor extends GraceParserBaseVisitor<WhileStmt> {
 
     public WhileStmt visitCmdWhile(GraceParser.CmdWhileContext ctx) {
+        LocalScope locScope = new WhileScope(FrontEnd.currentScope);
+        FrontEnd.pushScope(locScope);
         WhileStmt whileStmt = new WhileStmt();
 
         LLVMPresets llvmp = LLVMPresets.getInstance();

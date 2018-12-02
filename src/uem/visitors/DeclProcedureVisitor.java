@@ -2,11 +2,13 @@ package uem.visitors;
 
 import org.antlr.symtab.ParameterSymbol;
 import uem.IR.LLVMEmitter;
+import uem.IR.LLVMPresets;
 import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseVisitor;
 import uem.ast.VarStatement;
 import uem.ast.stmt.Statement;
 import uem.ast.stmt.sub.DeclProcedure;
+import uem.listners.FrontEnd;
 
 import java.util.LinkedList;
 
@@ -26,7 +28,7 @@ public class DeclProcedureVisitor extends GraceParserBaseVisitor<DeclProcedure> 
         params.forEach(param -> {
             ParameterSymbol p = new ParameterSymbol(param.getVarName());
             p.setType(((VarStatement) param).getType());
-            ctx.scope.define(p);
+            FrontEnd.currentScope.define(p);
         });
         declProcedure.setParams(params);
 
@@ -37,7 +39,8 @@ public class DeclProcedureVisitor extends GraceParserBaseVisitor<DeclProcedure> 
 
         //TODO: Verificar se vai ser possível validar no semantico
         LLVMBuildRetVoid(LLVMEmitter.getInstance().builder);
-
+        LLVMEmitter.getInstance().popScope();               //sai do escopo da função
+        LLVMPresets.getInstance().finalizeFunctionScope();  //volta para o bloco anterior
         return declProcedure;
     }
 

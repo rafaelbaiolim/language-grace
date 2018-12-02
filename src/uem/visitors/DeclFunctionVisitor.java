@@ -8,6 +8,7 @@ import uem.antlr.GraceParserBaseVisitor;
 import uem.ast.stmt.Statement;
 import uem.ast.stmt.sub.DeclFunction;
 import uem.ast.type.Type;
+import uem.listners.FrontEnd;
 
 import java.util.LinkedList;
 
@@ -25,7 +26,7 @@ public class DeclFunctionVisitor extends GraceParserBaseVisitor<DeclFunction> {
         //define parametros para o escopo
         params.forEach(param -> {
             ParameterSymbol p = new ParameterSymbol(param.getVarName());
-            ctx.scope.define(p);
+            FrontEnd.currentScope.define(p);
         });
         declFunction.setParams(params);
 
@@ -34,7 +35,8 @@ public class DeclFunctionVisitor extends GraceParserBaseVisitor<DeclFunction> {
 
         declFunction.setBody(new BlockVisitor().visit(ctx.block()));
         declFunction.setReturnType(type);
-
+        LLVMEmitter.getInstance().popScope();               //sai do escopo da procedure
+        LLVMPresets.getInstance().finalizeFunctionScope();  //volta para o bloco anterior
         return declFunction;
     }
 

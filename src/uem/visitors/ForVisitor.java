@@ -1,5 +1,6 @@
 package uem.visitors;
 
+import org.antlr.symtab.LocalScope;
 import org.bytedeco.javacpp.LLVM;
 import uem.IR.LLVMEmitter;
 import uem.IR.LLVMPresets;
@@ -9,6 +10,8 @@ import uem.ast.expr.Expression;
 import uem.ast.stmt.ForStmt;
 import uem.ast.stmt.Statement;
 import uem.ast.stmt.cmd.AtribCmd;
+import uem.listners.FrontEnd;
+import uem.symtab.ForScope;
 
 import java.util.List;
 
@@ -18,6 +21,8 @@ import static org.bytedeco.javacpp.LLVM.LLVMAppendBasicBlock;
 public class ForVisitor extends GraceParserBaseVisitor<ForStmt> {
 
     public ForStmt visitCmdFor(GraceParser.CmdForContext ctx) {
+        LocalScope locScope = new ForScope(FrontEnd.currentScope);
+        FrontEnd.pushScope(locScope);
         ForStmt forStmt = new ForStmt();
         LLVMPresets llvmp = LLVMPresets.getInstance();
         LLVMEmitter llve = LLVMEmitter.getInstance();

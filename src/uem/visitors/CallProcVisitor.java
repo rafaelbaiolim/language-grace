@@ -23,7 +23,11 @@ public class CallProcVisitor extends GraceParserBaseVisitor<CallProcCmd> {
         FunctionSymbol func = (FunctionSymbol) fun;
 
         CallProcCmd callCmd = new CallProcCmd(ctx.ID().getText(), lstExpr);
-        if(func.getType() == null || func.getType().getName().toLowerCase() == "void"){
+        try {
+            if (func.getType() == null || func.getType().getName().toLowerCase() == "void") {
+                callCmd.setVoid(true);
+            }
+        } catch (NullPointerException nEx) {
             callCmd.setVoid(true);
         }
 
