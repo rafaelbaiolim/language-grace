@@ -31,7 +31,9 @@ public class CompillerTest {
             "lote-test.xml", //1
     };
 
-    private static final String TESTS_XML_RELATIVE_PATH = "tests/unit/cases/" + XML_FILE_NAME[1];
+    private static final String TESTS_XML_RELATIVE_PATH = "tests/unit/cases/" + XML_FILE_NAME[0];
+//    private static final String TESTS_XML_RELATIVE_PATH = "tests/unit/cases/" + XML_FILE_NAME[1];
+
     private String wanted;
     private String file;
     private String fileName;

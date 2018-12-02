@@ -61,7 +61,7 @@ public class LLVMEmitter {
                             0), valIdex};
         } else {
             indices = new LLVMValueRef[]{
-                    LLVMConstInt(LLVMInt32Type(), 0, 0)
+                    valIdex
             };
 
         }
