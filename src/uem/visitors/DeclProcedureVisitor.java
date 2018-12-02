@@ -4,12 +4,13 @@ import org.antlr.symtab.ParameterSymbol;
 import uem.IR.LLVMEmitter;
 import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseVisitor;
+import uem.ast.VarStatement;
 import uem.ast.stmt.Statement;
 import uem.ast.stmt.sub.DeclProcedure;
 
 import java.util.LinkedList;
 
-import static org.bytedeco.javacpp.LLVM.*;
+import static org.bytedeco.javacpp.LLVM.LLVMBuildRetVoid;
 
 public class DeclProcedureVisitor extends GraceParserBaseVisitor<DeclProcedure> {
 
@@ -24,6 +25,7 @@ public class DeclProcedureVisitor extends GraceParserBaseVisitor<DeclProcedure> 
         //define parametros para o escopo
         params.forEach(param -> {
             ParameterSymbol p = new ParameterSymbol(param.getVarName());
+            p.setType(((VarStatement) param).getType());
             ctx.scope.define(p);
         });
         declProcedure.setParams(params);

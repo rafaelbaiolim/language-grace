@@ -59,6 +59,11 @@ public class SpecVarArr implements VarStatement {
         this.type = t;
     }
 
+    @Override
+    public Type getType() {
+        return this.type;
+    }
+
     public Integer getLength() {
         try {
             return Integer.parseInt(this.length);

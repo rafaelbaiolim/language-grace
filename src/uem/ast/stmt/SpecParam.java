@@ -81,13 +81,19 @@ public class SpecParam implements VarStatement {
         this.setTypeLLVMRef();
     }
 
+    @Override
+    public Type getType() {
+        return this.type;
+    }
+
     private LLVMValueRef getValueByType() {
         if (this.varName == null) return null;
         LLVMValueRef varAlloc = LLVMBuildAlloca(
                 LLVMEmitter.getInstance().builder,
                 this.llvmTypeRef,
                 this.varName);
-        FrontEnd.currentScope.resolve(this.varName).getScope().setLLVMSymRef(this.varName,varAlloc);
+        FrontEnd.currentScope.resolve(this.varName).getScope()
+                .setLLVMSymRef(this.varName, varAlloc);
         return this.llvmValRef = varAlloc;
     }
 

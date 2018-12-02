@@ -1,7 +1,8 @@
 var v[10]:int;
-def foo(){
-//    write v[0];
+def foo(x[]:int){
+    //write x[0];
 }
 
 v[0] = 33;
 foo(v);
+

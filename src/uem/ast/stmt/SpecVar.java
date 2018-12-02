@@ -56,6 +56,11 @@ public class SpecVar implements VarStatement {
     }
 
     @Override
+    public Type getType() {
+        return this.type;
+    }
+
+    @Override
     public String getVarName() {
         return varName;
     }

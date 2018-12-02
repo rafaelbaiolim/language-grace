@@ -100,11 +100,12 @@ public class DeclProcedure implements SubStatment {
                 currentParam = (SpecParamArr) param;
 
             }
-            currentParam.getLLVMValue();
-            LLVM.LLVMValueRef allocatedParam = FrontEnd.currentScope.resolve(varName).getScope().getLLVMSymRef(varName);
+            LLVM.LLVMValueRef allocatedParam = currentParam.getLLVMValue();
             LLVM.LLVMValueRef pLLVMVal = LLVMGetParam(fun, i);
-            LLVMBuildStore(LLVMEmitter.getInstance().builder,
-                    pLLVMVal, allocatedParam);
+            LLVMBuildStore(
+                    LLVMEmitter.getInstance().builder,
+                    pLLVMVal,
+                    allocatedParam);
             i++;
         }
     }

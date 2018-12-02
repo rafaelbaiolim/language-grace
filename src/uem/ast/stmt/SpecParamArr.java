@@ -82,6 +82,11 @@ public class SpecParamArr implements VarStatement {
         this.setTypeLLVMRef();
     }
 
+    @Override
+    public Type getType() {
+        return this.type;
+    }
+
     private LLVMValueRef getValueByType() {
         if (this.varName == null) return null;
         LLVMValueRef varAlloc = LLVMBuildAlloca(
@@ -95,14 +100,17 @@ public class SpecParamArr implements VarStatement {
     @Override
     public LLVMValueRef getLLVMValue() {
         LLVMEmitter lle = LLVMEmitter.getInstance();
-        // LLVM.LLVMValueRef arrAllocated = FrontEnd.currentScope.resolve(this.varName).getScope().getLLVMSymRef(this.varName);
-        LLVM.LLVMValueRef arrAllocated = FrontEnd.currentScope.getEnclosingScope().resolve(this.varName).getScope().getLLVMSymRef(this.varName);
+        LLVMTypeRef[] fac_args = {LLVMPointerType(LLVMInt32Type(), 0)};
+        LLVM.LLVMValueRef FUNC_PARAM = LLVMGetParam(
+                lle.currentScope(), 0);
 
-        LLVMValueRef load = LLVMBuildLoad(LLVMEmitter.getInstance().builder,
-                lle.getArray("0", arrAllocated), "temp"
-        );
+        LLVM.LLVMValueRef allocForParam = LLVMBuildAlloca(
+                lle.builder,
+                fac_args[0],
+                "alocParam");
 
-        return load;
+        FrontEnd.currentScope.setLLVMSymRef(this.varName, allocForParam);
+        return allocForParam;
     }
 
     @Override

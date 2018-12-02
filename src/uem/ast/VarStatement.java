@@ -14,5 +14,7 @@ public interface VarStatement extends Statement {
 
     void setType(Type t);
 
+    Type getType();
+
     LLVM.LLVMValueRef getLLVMValue(Type type);
 }
