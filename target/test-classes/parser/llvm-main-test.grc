@@ -1,10 +1,35 @@
-var j[10]:int;
-var a = 0:int;
-var x = 12:int;
-if(x == 12){
-        var i = 0:int;
-        for(i = 0; i< 3; i+=1){
-            j[a + 1]  = 10;
-            write j[1];
+var v[5]: int;
+var i: int;
+v[0] = 5;
+v[1] = 4;
+v[2] = 3;
+v[3] = 2;
+v[4] = 1;
+v[5] = 0;
+
+def bubblesort(v[]: int; n: int) {
+    var i=0, j: int;
+    var trocou = 1: int;
+    if(i < n -1 && trocou == 1){
+        trocou = 0;
+        for (j=0; j< n -i - 1; j+=1) {
+             if (v[j] > v[j+1]) {
+                var aux:int;
+                aux = v[j];
+                write v[j+1];
+                //v[j+1] = aux;
+                trocou = 1;
+             }
         }
     }
+    write "fim";
+}
+
+
+write "Digite os valores do arranjo:";
+for (i=0; i<5; i+=1) {
+    write "A[", i, "] = ";
+    write v[i], " ";
+}
+
+bubblesort(v, 5);

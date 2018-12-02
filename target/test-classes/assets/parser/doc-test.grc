@@ -6,7 +6,6 @@ var v[10]: int;
 def bubblesort(v[]: int; n: int) {
     var i=0, j: int;
     var trocou = true: bool;
-
     while (i < n-1 && trocou) {
         trocou = false;
         for (j=0; j<(n-i-1); j+=1) {
