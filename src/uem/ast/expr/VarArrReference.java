@@ -35,7 +35,7 @@ public class VarArrReference extends VarRefExpression {
 
             toLoad = lle.getArray(calcIdx, loadArr, 1); //GEP serve para setore e load
         } else {
-            toLoad = lle.getArray(calcIdx, arrAllocated, 2); //GEP serve para setore e load
+            return toLoad = lle.getArray(calcIdx, arrAllocated, 2); //GEP serve para setore e load
         }
         return LLVMBuildLoad(lle.builder, toLoad, "arr_result");
 

@@ -113,17 +113,7 @@ public class DeclProcedure implements SubStatment {
     @Override
     public LLVM.LLVMValueRef getLLVMValue() {
         List<LLVM.LLVMTypeRef> args = new LinkedList();
-        for (Statement param : this.params) {
-            VarStatement currentParam;
-            if (param instanceof SpecParam) {
-                currentParam = (SpecParam) param;
-            } else {
-                currentParam = (SpecParamArr) param;
-
-            }
-//            args.add(currentParam.getTypeLLVMRef());
-            args.add(LLVMInt32Type());
-        }
+        DeclFunction.setParamsScopeFn(args, this.params);
         LLVM.LLVMValueRef fun = LLVMPresets.getInstance().buildScopeFn(
                 this.getVarName(),
                 LLVMEmitter.getInstance().types.voidType(),

@@ -5,6 +5,6 @@ def foo(x[]:int){
     write c;
 }
 
-v[1] = 55;
+v[0] = 55;
 foo(v);
 

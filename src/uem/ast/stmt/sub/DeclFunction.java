@@ -5,13 +5,18 @@ import org.bytedeco.javacpp.LLVM;
 import uem.IR.LLVMEmitter;
 import uem.IR.LLVMPresets;
 import uem.ast.Position;
+import uem.ast.VarStatement;
 import uem.ast.stmt.SpecParam;
+import uem.ast.stmt.SpecParamArr;
 import uem.ast.stmt.Statement;
 import uem.ast.type.Type;
 import uem.listners.FrontEnd;
 
 import java.util.LinkedList;
 import java.util.List;
+
+import static org.bytedeco.javacpp.LLVM.LLVMInt32Type;
+import static org.bytedeco.javacpp.LLVM.LLVMPointerType;
 
 public class DeclFunction implements SubStatment {
     private Type returnType;
@@ -76,10 +81,7 @@ public class DeclFunction implements SubStatment {
     @Override
     public LLVM.LLVMValueRef getLLVMValue() {
         List<LLVM.LLVMTypeRef> args = new LinkedList<>();
-        for (Statement param : this.params) {
-            SpecParam currentParam = (SpecParam) param;
-            args.add(currentParam.getTypeLLVMRef());
-        }
+        setParamsScopeFn(args, this.params);
         LLVM.LLVMValueRef fun = LLVMPresets.getInstance().buildScopeFn(
                 this.getVarName(),
                 LLVMEmitter.getInstance().types.i32(),
@@ -90,5 +92,19 @@ public class DeclFunction implements SubStatment {
         FrontEnd.currentScope.resolve(this.varName).getScope().setLLVMSymRef(this.varName, fun);
 
         return fun;
+    }
+
+    static void setParamsScopeFn(List<LLVM.LLVMTypeRef> args, List<Statement> params) {
+        for (Statement param : params) {
+            VarStatement currentParam;
+            if (param instanceof SpecParam) {
+                currentParam = (SpecParam) param;
+                args.add(LLVMInt32Type());
+            } else {
+                currentParam = (SpecParamArr) param;
+                args.add(LLVMPointerType(LLVMInt32Type(), 0));
+
+            }
+        }
     }
 }
