@@ -99,15 +99,15 @@ public class SpecVarArr implements VarStatement {
     @Override
     public LLVMValueRef getLLVMValue(Type type) {
 
+
         LLVM.LLVMTypeRef typeArray = LLVMArrayType(
                 LLVMEmitter.getInstance().types.i32(),
                 Integer.parseInt(this.length)
         );
 
-        LLVM.LLVMValueRef varAlloc = LLVMBuildAlloca(
-                LLVMEmitter.getInstance().builder,
-                typeArray,
-                this.varName);
+        LLVM.LLVMValueRef varAlloc = LLVMEmitter.getInstance().LLVMBuildAllocWithScope(
+                typeArray, this.varName
+        );
 
         FrontEnd.currentScope.setLLVMSymRef(this.varName, varAlloc);
         this.llvmValRef = varAlloc;

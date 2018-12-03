@@ -1,3 +1,14 @@
-var x= 10:int;
-write "Pula linha \n";
-write "Pulei";
+var a[10]:int;
+var i:int;
+for(i = 0; i< 10; i+=1){
+    a[i] = i;
+}
+write "Arr preenchido : ";
+for(i = 0; i< 10; i+=1){
+    write a[i];
+    if(i < 9){
+        write ",";
+    }else{
+        write "\n";
+    }
+}

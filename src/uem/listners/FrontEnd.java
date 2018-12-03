@@ -18,6 +18,21 @@ public class FrontEnd extends GraceParserBaseListener {
         this.ast = ast;
     }
 
+    /**
+     * Estrutura para Escopo
+     */
+    public static boolean isGLobalScope() {
+        return (currentScope.getName().toLowerCase().equals("global"));
+    }
+
+    public static boolean isWhileScope() {
+        return currentScope.getName().toLowerCase().equals("while");
+    }
+
+    public static boolean isCondScope() {
+        return currentScope.getName().toLowerCase().equals("condicional");
+    }
+
     public static void pushScope(Scope s) {
         currentScope = s;
 //        System.out.println("entering: " + currentScope.getName() + ":" + s);

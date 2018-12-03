@@ -1,11 +1,10 @@
 package uem.ast.expr;
 
+import static org.bytedeco.javacpp.LLVM.LLVMBuildGlobalStringPtr;
 import org.antlr.v4.runtime.Token;
 import org.bytedeco.javacpp.LLVM;
 import uem.IR.LLVMEmitter;
 import uem.ast.Position;
-
-import static org.bytedeco.javacpp.LLVM.LLVMBuildGlobalStringPtr;
 
 public class StringLiteral implements Expression {
 
@@ -44,6 +43,7 @@ public class StringLiteral implements Expression {
         val = val.replace("\\n", "" + ((char) (10)));
         val = val.replace("\\r", "" + ((char) (13)));
         val = val.replace("\\t", "" + ((char) (9)));
+
         return LLVMBuildGlobalStringPtr(
                 LLVMEmitter.getInstance().builder,
                 val,

@@ -5,6 +5,7 @@ import org.bytedeco.javacpp.LLVM;
 import org.bytedeco.javacpp.LLVM.*;
 import org.bytedeco.javacpp.Pointer;
 import org.bytedeco.javacpp.PointerPointer;
+import uem.listners.FrontEnd;
 import uem.utils.TestUtils;
 
 import java.util.*;
@@ -91,7 +92,6 @@ public class LLVMEmitter {
                 new PointerPointer(indices),
                 2, //total de registradores
                 "arr_ptr");
-
     }
 
     public void setOptimization(boolean optimization) {
@@ -100,6 +100,20 @@ public class LLVMEmitter {
 
     public void setDumpAssembly(boolean dumpAssembly) {
         this.dumpAssembly = dumpAssembly;
+    }
+
+    public LLVMValueRef LLVMBuildAllocWithScope(LLVMTypeRef byTypeName, String varName) {
+        if (FrontEnd.isGLobalScope()) {
+            LLVMValueRef globalArr = LLVMAddGlobal(
+                    mod,
+                    byTypeName,
+                    varName);
+            LLVMSetGlobalConstant(globalArr, LLVMCommonLinkage);
+        }
+        return LLVMBuildAlloca(
+                builder,
+                byTypeName,
+                varName);
     }
 
 

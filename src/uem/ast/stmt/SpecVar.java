@@ -84,10 +84,11 @@ public class SpecVar implements VarStatement {
     public LLVMValueRef getLLVMValue(Type type) {
         if (this.varName == null) return null;
 
-        LLVM.LLVMValueRef varAlloc = LLVMBuildAlloca(
-                LLVMEmitter.getInstance().builder,
+        LLVM.LLVMValueRef varAlloc = LLVMEmitter.getInstance().LLVMBuildAllocWithScope(
                 LLVMEmitter.getInstance().types.getByTypeName(type.getName()),
-                this.varName);
+                this.varName
+        );
+
         if (this.value != null) {
             LLVMBuildStore(LLVMEmitter.getInstance().builder,
                     this.value.getLLVMValue(), varAlloc);

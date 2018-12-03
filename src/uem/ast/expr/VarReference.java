@@ -23,7 +23,6 @@ public class VarReference extends VarRefExpression {
                 load = LLVMBuildLoad(LLVMEmitter.getInstance().builder,
                         varAllocated, "temp"
                 );
-
             }
         } catch (Exception ex) {
 
