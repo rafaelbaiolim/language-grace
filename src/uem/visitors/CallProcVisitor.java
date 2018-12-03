@@ -26,10 +26,14 @@ public class CallProcVisitor extends GraceParserBaseVisitor<CallProcCmd> {
         /**
          * semântico
          */
-        int numParams = ((FunctionSymbol) fun).getNumberOfParameters();
-        CheckSymbols.callFunError(
-                numParams, ctx.expression().size(), ctx.ID().getSymbol()
-        );
+        try {
+            int numParams = ((FunctionSymbol) fun).getNumberOfParameters();
+            CheckSymbols.callFunError(
+                    numParams, ctx.expression().size(), ctx.ID().getSymbol()
+            );
+        }catch (Exception ex){
+            //tratar exceção para procedure
+        }
 
 
         CallProcCmd callCmd = new CallProcCmd(ctx.ID().getText(), lstExpr);
