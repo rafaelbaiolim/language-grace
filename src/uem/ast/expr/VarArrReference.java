@@ -26,7 +26,7 @@ public class VarArrReference extends VarRefExpression {
         LLVMPresets llp = LLVMPresets.getInstance();
         LLVM.LLVMValueRef arrAllocated = FrontEnd.currentScope.resolve(this.varName)
                 .getScope().getLLVMSymRef(this.varName);
-        Symbol sym = FrontEnd.currentScope.getSymbol(this.varName);
+        Symbol sym = FrontEnd.currentScope.resolve(this.varName).getScope().getSymbol(this.varName);
         LLVM.LLVMValueRef calcIdx = llp.parseExprToInt(this.index);
 
         if (sym instanceof ParameterSymbol) {

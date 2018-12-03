@@ -4,6 +4,8 @@ import org.antlr.symtab.FunctionSymbol;
 import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseVisitor;
 import uem.ast.stmt.Statement;
+import uem.ast.stmt.sub.DeclFunction;
+import uem.ast.stmt.sub.DeclProcedure;
 import uem.listners.FrontEnd;
 
 public class SubVisitor extends GraceParserBaseVisitor<Statement> {
@@ -15,7 +17,9 @@ public class SubVisitor extends GraceParserBaseVisitor<Statement> {
         FrontEnd.currentScope.define(fSymbol);
         FrontEnd.pushScope(fSymbol);
         ctx.scope = FrontEnd.currentScope;
-        return new DeclProcedureVisitor().visit(ctx);
+        DeclProcedure dclProc = new DeclProcedureVisitor().visit(ctx);
+        FrontEnd.popScope();
+        return dclProc;
     }
 
     public Statement visitFunction(GraceParser.FunctionContext ctx) {
@@ -24,7 +28,9 @@ public class SubVisitor extends GraceParserBaseVisitor<Statement> {
         FrontEnd.currentScope.define(fSymbol);
         FrontEnd.pushScope(fSymbol);
         ctx.scope = FrontEnd.currentScope;
-        return new DeclFunctionVisitor().visit(ctx);
+        DeclFunction dclFun = new DeclFunctionVisitor().visit(ctx);
+        FrontEnd.popScope();
+        return dclFun;
     }
 
 }

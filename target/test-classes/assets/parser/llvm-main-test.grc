@@ -1,11 +1,8 @@
-var v[10]:int;
-var j:int;
-
-def foo(x[]:int):int{
-    var c = 12:int;
-    return x[0] + c;
+def minhaRola(x[]:int){
+    var i=0:int;
+    x[0] = 1;
 }
 
-v[0] = 33;
-j = foo(v);
-write j;
+var v[5]:int;
+v[0] = 10;
+write v[0];

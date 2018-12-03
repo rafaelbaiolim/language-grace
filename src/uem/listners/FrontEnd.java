@@ -21,7 +21,7 @@ public class FrontEnd extends GraceParserBaseListener {
 //        System.out.println("entering: " + currentScope.getName() + ":" + s);
     }
 
-    private void popScope() {
+    public static void popScope() {
 //        System.out.println("leaving: " + currentScope.getName() + ":" + currentScope);
         currentScope = currentScope.getEnclosingScope();
     }
@@ -41,14 +41,6 @@ public class FrontEnd extends GraceParserBaseListener {
     /**
      * Escopos de Função / Procedure
      */
-
-    public void exitFunction(GraceParser.FunctionContext funCtx) {
-        popScope();
-    }
-
-    public void exitProcedure(GraceParser.ProcedureContext procCtx) {
-        popScope();
-    }
 
     /**
      * Escopo de Variáveis

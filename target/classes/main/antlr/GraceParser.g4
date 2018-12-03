@@ -25,7 +25,7 @@ expression
     | left=expression operator=( '+'| '-' | '/' | '*' | '%') right=expression                           #binaryOperation
     | '-' expression                                                                                    #minusExpression
     | '!' expression                                                                                    #differenceExpression
-    | '(' expression ')'                                                                                #parenExpression
+    | '(' expression? (',' expression)* ')'                                                             #parenExpression
     | ID '(' expression? (',' expression)* ')'                                                          #subReference
     | ID '[' expression ']'                                                                             #arrReference
     | ID                                                                                                #varReference

@@ -91,7 +91,14 @@ public class ExpressionVisitor extends GraceParserBaseVisitor<Expression> {
             exprL.add(new ExpressionVisitor().visit(expr));
         });
         return new SubReference(ctx.ID().getText(), exprL);
+    }
 
+    public Expression visitParenExpression(GraceParser.ParenExpressionContext ctx) {
+        LinkedList<Expression> exprL = new LinkedList<>();
+        ctx.expression().forEach(expr -> {
+            exprL.add(new ExpressionVisitor().visit(expr));
+        });
+        return exprL.get(0);
     }
 
 }

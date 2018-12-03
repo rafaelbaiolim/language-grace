@@ -130,7 +130,8 @@ public class LLVMPresets {
 
     public LLVMValueRef parseExprToInt(Expression index) {
 
-        LLVMValueRef valToSext = new SpecVar("result_expr_idx", index).getLLVMValue(
+        LLVMValueRef valToSext = new SpecVar(
+                "result_expr_idx", index).getLLVMValue(
                 new IntegerType(), true);
         return LLVMBuildLoad(llve.builder,
                 valToSext,

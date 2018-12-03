@@ -6,6 +6,7 @@ import uem.IR.LLVMPresets;
 import uem.ast.expr.Expression;
 import uem.listners.FrontEnd;
 
+import static org.bytedeco.javacpp.LLVM.LLVMBuildLoad;
 import static org.bytedeco.javacpp.LLVM.LLVMBuildStore;
 
 public class AtribVarArr extends AtribCmd {
@@ -20,9 +21,19 @@ public class AtribVarArr extends AtribCmd {
         LLVMEmitter lle = LLVMEmitter.getInstance();
         LLVMPresets llp = LLVMPresets.getInstance();
         LLVM.LLVMValueRef arrAllocated = FrontEnd.currentScope.resolve(this.varName).getScope().getLLVMSymRef(this.varName);
-        return LLVMBuildStore(
-                LLVMEmitter.getInstance().builder,
-                this.getExpr().getLLVMValue(),
-                lle.getArray(llp.parseExprToInt(this.idx), arrAllocated, 2));
+
+        if (FrontEnd.currentScope.resolve(this.varName).getScope().getName().equals("global")) {
+
+            return LLVMBuildStore(
+                    LLVMEmitter.getInstance().builder,
+                    this.getExpr().getLLVMValue(),
+                    lle.getArray(llp.parseExprToInt(this.idx), arrAllocated, 2));
+        } else {
+            LLVM.LLVMValueRef x = LLVMBuildLoad(lle.builder, arrAllocated, "loaded");
+            return LLVMBuildStore(
+                    LLVMEmitter.getInstance().builder,
+                    this.getExpr().getLLVMValue(),
+                    lle.getArray(llp.parseExprToInt(this.idx), x, 1));
+        }
     }
 }

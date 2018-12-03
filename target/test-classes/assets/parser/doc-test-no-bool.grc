@@ -1,18 +1,22 @@
 var v[5]: int;
+var i: int;
+v[0] = 5;
+v[1] = 4;
+v[2] = 3;
+v[3] = 2;
+v[4] = 1;
+v[5] = 0;
 
-// Procedimento de ordenação por troca
-// Observe como um parâmetro de arranjo é declarado
-
-def bubblesort(v[]: int; n: int) {
+def bubblesort(x[]: int; n: int) {
     var i=0, j: int;
     var trocou = 1: int;
     while (i < n-1 && trocou) {
         trocou = 0;
         for (j=0; j<(n-i-1); j+=1) {
-            if (v[j] > v[j+1]) {
-                var aux = v[j]: int;
-                v[j] = v[j+1];
-                v[j+1] = aux;
+            if (x[j] > x[j+1]) {
+                var aux = x[j]: int;
+                x[j] = x[j+1];
+                x[j+1] = aux;
                 trocou = 1;
             }
         }
@@ -20,20 +24,11 @@ def bubblesort(v[]: int; n: int) {
     }
 }
 
-def main(): int {
-    var i: int;
-    write "Digite os valores do arranjo:\n";
-    for (i=0; i<5; i+=1) {
-        write "A[", i, "] = ";
-        read v[i];
-    }
 
-    bubblesort(v, 5);
-
-    write "Arranjo ordenado:\nA = ";
-
-    for (i=0; i<5; i+=1) {
-        write v[i], " ";
-    }
-
+write "Digite os valores do arranjo:";
+for (i=0; i<5; i+=1) {
+    write "A[", i, "] = ";
+    write v[i], " ";
 }
+
+bubblesort(v, 5);
