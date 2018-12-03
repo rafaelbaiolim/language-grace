@@ -1,3 +1,4 @@
+//Teste array acessado por param
 var v[10]:int;
 
 def foo(x[]:int){

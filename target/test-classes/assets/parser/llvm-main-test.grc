@@ -1,4 +1,4 @@
-def minhaRola(x[]:int){
+def godSaveMe(x[]:int){
     var i=0:int;
     x[i] = 1;
     write x[i];
@@ -6,4 +6,4 @@ def minhaRola(x[]:int){
 
 var v[5]:int;
 v[0] = 10;
-minhaRola(v);
+godSaveMe(v);

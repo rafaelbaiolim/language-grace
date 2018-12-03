@@ -1,3 +1,5 @@
+//Teste de Retorno de função
+
 var v[10]:int;
 var j:int;
 

@@ -1,0 +1,12 @@
+<!--Testes que precisam de mais memória não conseguem ser executados em lote,-->
+<!--devido ao GC do Java + as implementações estáticas da LLVM, colocar -->
+<!--este tipo de teste em arquivos separados;-->
+<tests>
+    <test>
+        <wanted>1</wanted>
+        <type>EQUALS</type>
+        <optimize>false</optimize>
+        <file>/home/rafaellb/Documents/uem/ilp2018/compilador2018/tests/assets/parser/teste-fun-arr-inside.grc</file>
+    </test>
+
+</tests>
