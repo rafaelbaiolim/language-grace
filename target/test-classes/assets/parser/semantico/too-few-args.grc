@@ -1,0 +1,3 @@
+def teste(n:int;x:int){
+}
+teste(1);

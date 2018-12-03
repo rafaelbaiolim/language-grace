@@ -1,14 +1,14 @@
-var a[10]:int;
-var i:int;
-for(i = 0; i< 10; i+=1){
-    a[i] = i;
+var vet[5]:int;
+
+def pesquisaBinaria(x[]: int; chave:int):int{
+
 }
-write "Arr preenchido : ";
-for(i = 0; i< 10; i+=1){
-    write a[i];
-    if(i < 9){
-        write ",";
-    }else{
-        write "\n";
-    }
-}
+
+vet[0]=  10;
+vet[1]=  8;
+vet[2]=  2;
+vet[3]=  5;
+vet[4]=  7;
+vet[5]=  9;
+
+pesquisaBinaria(vet,7,5);

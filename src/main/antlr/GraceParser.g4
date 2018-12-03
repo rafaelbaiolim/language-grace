@@ -20,7 +20,8 @@ statement returns [Scope scope]
     ;
 
 expression
-    : left=expression operator='?' right=expression operator=':' right=expression                       #ternaryOperation
+    : literal                                                                                           #literalReference
+    | left=expression operator='?' right=expression operator=':' right=expression                       #ternaryOperation
     | left=expression operator=('||' | '&&' | '==' | '!=' | '<' | '<=' | '>' | '>=' ) right=expression  #compareOperation
     | left=expression operator=( '+'| '-' | '/' | '*' | '%') right=expression                           #binaryOperation
     | '-' expression                                                                                    #minusExpression
@@ -29,7 +30,6 @@ expression
     | ID '(' expression? (',' expression)* ')'                                                          #subReference
     | ID '[' expression ']'                                                                             #arrReference
     | ID                                                                                                #varReference
-    | literal                                                                                           #literalReference
     ;
 
 // Variáveis
@@ -182,7 +182,7 @@ cmdReturn
 // Chamada de procedimento
 
 cmdCallProc
-    : ID '(' (expression* (',' expression)? ) ')' ';'
+    : ID '(' expression? (',' expression)*  ')' ';'
     ;
 
 // Entrada Read

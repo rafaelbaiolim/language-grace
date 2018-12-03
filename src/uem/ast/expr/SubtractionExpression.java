@@ -55,12 +55,16 @@ public class SubtractionExpression implements BinaryExpression {
 
     @Override
     public LLVM.LLVMValueRef getLLVMValue() {
-        LLVM.LLVMValueRef leftExp = this.left.getLLVMValue();
-        LLVM.LLVMValueRef rightExp = this.right.getLLVMValue();
+        try {
+            LLVM.LLVMValueRef leftExp = this.left.getLLVMValue();
+            LLVM.LLVMValueRef rightExp = this.right.getLLVMValue();
 
-        LLVM.LLVMValueRef result = LLVMBuildSub(LLVMEmitter.getInstance().builder,
-                leftExp, rightExp, "sub"
-        );
-        return result;
+            LLVM.LLVMValueRef result = LLVMBuildSub(LLVMEmitter.getInstance().builder,
+                    leftExp, rightExp, "sub"
+            );
+            return result;
+        }catch (NullPointerException ex){
+            return null;
+        }
     }
 }

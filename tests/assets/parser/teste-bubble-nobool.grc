@@ -7,6 +7,7 @@ v[3] = 2;
 v[4] = 1;
 
 def bubblesort(x[]: int; n: int) {
+    var l:int;
     var k=0, j: int;
     var trocou = 1: int;
     while (k < (n - 1) && trocou == 1) {
@@ -23,7 +24,6 @@ def bubblesort(x[]: int; n: int) {
     }
 
     write ":: Arranjo Ordenado:";
-    var l:int;
     for (l=0; l < 5; l+=1) {
         write "A[", l, "] = ";
         write x[l], " ";

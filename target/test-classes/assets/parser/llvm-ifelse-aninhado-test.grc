@@ -1,0 +1,12 @@
+var x:int;
+read x;
+write x;
+if( x < 10 ){
+    write 1;
+}else{
+    if( x > 15){
+        write 2;
+    }else{
+        write 3;
+    }
+}
