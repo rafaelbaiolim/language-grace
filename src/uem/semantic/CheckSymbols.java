@@ -20,7 +20,16 @@ public class CheckSymbols {
 //    }
 
     public static void error(Token t, String msg) {
-        System.err.printf("line %d:%d %s\n", t.getLine(), t.getCharPositionInLine() +1, msg);
+        System.err.printf("Line %d:%d %s\n: ", t.getLine(), t.getCharPositionInLine() + 1, msg);
     }
+
+    public static void callFunError(int totDecl, int totCall, Token t) {
+        if (totCall != totDecl) {
+            System.err.printf("Line %d:%d: error:Too few arguments to function `" + t.getText() + "’\n",
+                    t.getLine(), t.getCharPositionInLine() + 1
+            );
+        }
+    }
+
 
 }

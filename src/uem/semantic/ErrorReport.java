@@ -8,7 +8,7 @@ public class ErrorReport extends DefaultErrorStrategy {
 
     public void reportNoViableAlternative(Parser recognizer, NoViableAltException e) {
         recognizer.notifyErrorListeners(e.getOffendingToken(),
-                "nenhuma alternativa encontrada para a entrada: " + e.getStartToken().getText(),
+                "no viable alternative found for input: " + e.getStartToken().getText(),
                 e);
     }
 

@@ -7,6 +7,7 @@ import uem.antlr.GraceParserBaseVisitor;
 import uem.ast.expr.Expression;
 import uem.ast.stmt.cmd.CallProcCmd;
 import uem.listners.FrontEnd;
+import uem.semantic.CheckSymbols;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -21,6 +22,15 @@ public class CallProcVisitor extends GraceParserBaseVisitor<CallProcCmd> {
 
         Symbol fun = FrontEnd.currentScope.getSymbol(ctx.ID().getText());
         FunctionSymbol func = (FunctionSymbol) fun;
+
+        /**
+         * semântico
+         */
+        int numParams = ((FunctionSymbol) fun).getNumberOfParameters();
+        CheckSymbols.callFunError(
+                numParams, ctx.expression().size(), ctx.ID().getSymbol()
+        );
+
 
         CallProcCmd callCmd = new CallProcCmd(ctx.ID().getText(), lstExpr);
         try {
