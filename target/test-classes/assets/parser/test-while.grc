@@ -1,6 +1,0 @@
-//teste para o laço while
-var i = 0:int;
-while( i < 5){
-    i = i + 1;
-    write "i[",i,"]";
-}

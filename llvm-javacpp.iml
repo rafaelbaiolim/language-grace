@@ -17,5 +17,7 @@
     <orderEntry type="library" name="Maven: org.bytedeco.javacpp-presets:llvm:macosx-x86_64:7.0.0-1.4.3" level="project" />
     <orderEntry type="library" name="Maven: org.bytedeco.javacpp-presets:llvm:windows-x86:7.0.0-1.4.3" level="project" />
     <orderEntry type="library" name="Maven: org.bytedeco.javacpp-presets:llvm:windows-x86_64:7.0.0-1.4.3" level="project" />
+    <orderEntry type="library" name="Maven: junit:junit:4.8.1" level="project" />
+    <orderEntry type="library" name="Maven: org.antlr:antlr4:4.5.3" level="project" />
   </component>
 </module>

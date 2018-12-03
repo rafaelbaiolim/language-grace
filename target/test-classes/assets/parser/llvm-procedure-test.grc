@@ -1,8 +1,0 @@
-def func(){
-    var a = 22:int;
-    write a;
-}
-
-var d:int;
-d = 33;
-write d;

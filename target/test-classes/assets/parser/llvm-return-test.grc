@@ -1,8 +1,0 @@
-def func():int {
-    var a = 10:int;
-    return a;
-}
-
-var d:int;
-d = func();
-write d;
