@@ -1,7 +1,10 @@
 var vet[5]:int;
 
-def pesquisaBinaria(x[]: int; chave:int):int{
-
+def pesquisaBinaria(x[]: int; chave:int; tam:int):int{
+    var inf = 0:int;
+    var sup:int;
+    sup = 1- tam;
+    return -1;
 }
 
 vet[0]=  10;
@@ -9,6 +12,7 @@ vet[1]=  8;
 vet[2]=  2;
 vet[3]=  5;
 vet[4]=  7;
-vet[5]=  9;
 
-pesquisaBinaria(vet,7,5);
+var ret:int;
+ret = pesquisaBinaria(vet,7,5);
+write ret;
