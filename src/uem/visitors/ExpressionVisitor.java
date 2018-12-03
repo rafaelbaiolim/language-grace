@@ -49,16 +49,21 @@ public class ExpressionVisitor extends GraceParserBaseVisitor<Expression> {
      * @return
      */
     public Expression visitVarReference(GraceParser.VarReferenceContext varRefCtx) {
-        String varName = varRefCtx.ID().getText();
-        VariableSymbol sym = (VariableSymbol) FrontEnd.currentScope.resolve(varName).getScope().getSymbol(varName);
-        if (sym.getType().getName().toLowerCase().contains("[]")) {
-            VarArrReference arrRef = new VarArrReference(varName);
-            arrRef.setSymbol(varRefCtx.ID().getSymbol());
-            return arrRef;
+        try {
+            String varName = varRefCtx.ID().getText();
+            VariableSymbol sym = (VariableSymbol) FrontEnd.currentScope.resolve(varName).getScope().getSymbol(varName);
+            if (sym.getType().getName().toLowerCase().contains("[]")) {
+                VarArrReference arrRef = new VarArrReference(varName);
+                arrRef.setSymbol(varRefCtx.ID().getSymbol());
+                return arrRef;
+            }
+            VarReference varRef = new VarReference(varName);
+            varRef.setSymbol(varRefCtx.ID().getSymbol());
+            return varRef;
+
+        }catch (NullPointerException ex){
+            return null;
         }
-        VarReference varRef = new VarReference(varName);
-        varRef.setSymbol(varRefCtx.ID().getSymbol());
-        return varRef;
     }
 
     public Expression visitSimpleVar(GraceParser.SimpleVarContext varRefCtx) {

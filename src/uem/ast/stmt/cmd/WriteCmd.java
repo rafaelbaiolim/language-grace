@@ -53,17 +53,20 @@ public class WriteCmd implements CmdStatement {
     @Override
     public LLVM.LLVMValueRef getLLVMValue() {
 
+        try {
+            for (Expression expr : this.expressionList) {
+                String format = LLVMEmitter.FORMAT_NUMBER;
+                if (expr instanceof StringLiteral) {
+                    format = LLVMEmitter.FORMAT_STRING;
+                }
 
-        for (Expression expr : this.expressionList) {
-            String format = LLVMEmitter.FORMAT_NUMBER;
-            if (expr instanceof StringLiteral) {
-                format = LLVMEmitter.FORMAT_STRING;
+                LLVMEmitter.getInstance().CallPrint(
+                        expr.getLLVMValue(),
+                        format
+                );
             }
+        } catch (NullPointerException ex) {
 
-            LLVMEmitter.getInstance().CallPrint(
-                    expr.getLLVMValue(),
-                    format
-            );
         }
 
         return null;

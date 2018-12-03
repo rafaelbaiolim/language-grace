@@ -2,9 +2,11 @@ package uem.listners;
 
 import org.antlr.symtab.GlobalScope;
 import org.antlr.symtab.Scope;
+import org.antlr.symtab.Symbol;
 import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseListener;
 import uem.ast.Ast;
+import uem.semantic.CheckSymbols;
 import uem.visitors.StatementVisitor;
 
 public class FrontEnd extends GraceParserBaseListener {
@@ -47,12 +49,12 @@ public class FrontEnd extends GraceParserBaseListener {
      */
 
 
-//    public void enterVarReference(GraceParser.VarReferenceContext ctx) {
-//        Symbol sym = currentScope.resolve(ctx.ID().getText());
-//        if (sym == null) {
-//            CheckSymbols.error(ctx.ID().getSymbol(), "variável não declarada: " + ctx.getText());
-//        }
-//    }
+    public void enterVarReference(GraceParser.VarReferenceContext ctx) {
+        Symbol sym = currentScope.resolve(ctx.ID().getText());
+        if (sym == null) {
+            CheckSymbols.error(ctx.ID().getSymbol(), " use of undeclared identifier: `" + ctx.getText() + "´");
+        }
+    }
 
 //    public void enterAtribVar(GraceParser.AtribVarContext ctx) {
 //        Symbol sym = currentScope.resolve(ctx.atrib().ID().getText());
