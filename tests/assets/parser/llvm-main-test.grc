@@ -1,9 +1,35 @@
-var x = 10:int;
+var i: int;
+var v[5]={5,4,3,2,1}: int;
 
-def rola(){
-    write x;
+
+def bubblesort(x[]: int; n: int) {
+    var l:int;
+    var k=0, j: int;
+    var trocou = 1: int;
+    while (k < (n - 1) && trocou == 1) {
+        trocou = 0;
+        for (j=0; j < (n - k - 1); j+=1) {
+            if ( x[j] > x[j+1] ) {
+                var aux = x[j]: int;
+                x[j] = x[j+1];
+                x[j+1] = aux;
+                trocou = 1;
+            }
+        }
+        k += 1;
+    }
+
+    write ":: Arranjo Ordenado:";
+    for (l=0; l < 5; l+=1) {
+        write "A[", l, "] = ";
+        write x[l], " ";
+    }
 }
 
-def main():int{
-    rola();
+write "Arranjo Inicial:";
+for (i=0; i<5; i+=1) {
+    write "A[", i, "] = ";
+    write v[i], " ";
 }
+
+bubblesort(v,5);

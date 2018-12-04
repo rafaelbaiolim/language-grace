@@ -121,7 +121,9 @@ public class LLVMEmitter {
     public LLVMValueRef LLVMBuildAllocWithScope(LLVMTypeRef byTypeName, String varName, Expression value) {
         if (FrontEnd.isGLobalScope()) {
             LLVMValueRef globalArr = this.LLVMBuildAllocWithScope(byTypeName, varName);
-            LLVMSetInitializer(globalArr, value.getLLVMValue());
+            if(value != null) {
+                LLVMSetInitializer(globalArr, value.getLLVMValue());
+            }
             return globalArr;
         }
         return LLVMBuildAlloca(
