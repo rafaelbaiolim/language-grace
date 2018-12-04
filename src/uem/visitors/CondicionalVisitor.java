@@ -74,8 +74,7 @@ public class CondicionalVisitor extends GraceParserBaseVisitor<CondicionalStmt> 
             LLVMBuildBr(llve.builder, end);
         }
 
-
-        if(!finalTemElseStmt){//não tem else
+        if (!finalTemElseStmt) {//não tem else
             LLVMPositionBuilderAtEnd(llve.builder, ifFalse);
             LLVMBuildBr(llve.builder, end);
             LLVMPositionBuilderAtEnd(llve.builder, end);
@@ -84,6 +83,7 @@ public class CondicionalVisitor extends GraceParserBaseVisitor<CondicionalStmt> 
         condicionalStmt.setElseStatment(lstElse.get());
         condicionalStmt.setIfStatment(lstIF.get());
         LLVMPositionBuilderAtEnd(llve.builder, end);
+        FrontEnd.popScope();
         return condicionalStmt;
     }
 }

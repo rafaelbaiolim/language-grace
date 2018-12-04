@@ -47,6 +47,7 @@ public class WhileVisitor extends GraceParserBaseVisitor<WhileStmt> {
         LLVMBuildBr(llve.builder, bCond);
 
         LLVMPositionBuilderAtEnd(llve.builder, bEnd);
+        FrontEnd.popScope();
         return whileStmt;
     }
 

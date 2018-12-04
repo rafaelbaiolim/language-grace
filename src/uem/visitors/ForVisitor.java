@@ -59,6 +59,7 @@ public class ForVisitor extends GraceParserBaseVisitor<ForStmt> {
         LLVMBuildBr(llve.builder, bCond);
 
         LLVMPositionBuilderAtEnd(llve.builder, bEnd);
+        FrontEnd.popScope();
         return forStmt;
     }
 

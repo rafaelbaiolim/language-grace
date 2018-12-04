@@ -1,2 +1,4 @@
-var x = 10:int;
-var x:int;
+var i = 0:int;
+while (i < 10) {
+    i+=1;
+}
