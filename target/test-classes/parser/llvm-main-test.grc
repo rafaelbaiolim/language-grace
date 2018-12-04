@@ -1,2 +1,5 @@
-var x = 10:int;
-var x:int;
+def noRet(){
+    return;
+}
+
+noRet();

@@ -12,7 +12,7 @@ public class SubVisitor extends GraceParserBaseVisitor<Statement> {
 
 
     public Statement visitProcedure(GraceParser.ProcedureContext ctx) {
-        FunctionSymbol fSymbol = new FunctionSymbol(ctx.decProc().ID().getText());
+        FunctionSymbol fSymbol = new FunctionSymbol(ctx.decProc().ID().getText(), true);
         fSymbol.setEnclosingScope(FrontEnd.currentScope);
         FrontEnd.currentScope.define(fSymbol);
         FrontEnd.pushScope(fSymbol);

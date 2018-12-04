@@ -5,7 +5,6 @@ import org.bytedeco.javacpp.LLVM;
 import uem.IR.LLVMEmitter;
 import uem.ast.Position;
 import uem.ast.expr.Expression;
-import uem.ast.stmt.Statement;
 
 import java.util.List;
 
@@ -42,12 +41,13 @@ public class Return implements Statement {
     public LLVM.LLVMValueRef getLLVMValue() {
         LLVM.LLVMValueRef refToReturn = null;
         for (Expression exp : exprList) {
-            refToReturn  = exp.getLLVMValue(); //retorna a última operação LLVM
+            refToReturn = exp.getLLVMValue(); //retorna a última operação LLVM
         }
         if (refToReturn != null) {
             LLVMBuildRet(LLVMEmitter.getInstance().builder,
                     refToReturn);
         }
+
         return refToReturn;
     }
 

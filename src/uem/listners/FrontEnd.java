@@ -1,14 +1,12 @@
 package uem.listners;
 
+import org.antlr.symtab.FunctionSymbol;
 import org.antlr.symtab.GlobalScope;
 import org.antlr.symtab.Scope;
 import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseListener;
 import uem.ast.Ast;
-import uem.semantic.CheckSymbols;
 import uem.visitors.StatementVisitor;
-
-import java.util.Arrays;
 
 public class FrontEnd extends GraceParserBaseListener {
     private Ast ast;
@@ -43,6 +41,24 @@ public class FrontEnd extends GraceParserBaseListener {
         return false;
     }
 
+    /**
+     * Pega a função que encapsula desconsidrendo o scopo global
+     * e retorna seu tipo, se houver
+     *
+     * @return
+     */
+    public static FunctionSymbol getFunctionWithin() {
+        FunctionSymbol f = null;
+        for (Scope s : FrontEnd.currentScope.getEnclosingPathToRoot()) {
+            try {
+                f = ((FunctionSymbol) s);
+                return f;
+            } catch (Exception ex) {
+                f = null;
+            }
+        }
+        return f;
+    }
 
     public static void pushScope(Scope s) {
         currentScope = s;

@@ -1,0 +1,34 @@
+var i: int;
+var v[5]={5,4,3,2,1}: int;
+
+def bubblesort(x[]: int; n: int) {
+    var l:int;
+    var k=0, j: int;
+    var trocou = true: bool;
+    while (k < (n - 1) && trocou == true) {
+        trocou = false;
+        for (j=0; j < (n - k - 1); j+=1) {
+            if ( x[j] > x[j+1] ) {
+                var aux = x[j]: int;
+                x[j] = x[j+1];
+                x[j+1] = aux;
+                trocou = true;
+            }
+        }
+        k += 1;
+    }
+
+    write ":: Arranjo Ordenado:";
+    for (l=0; l < 5; l+=1) {
+        write "A[", l, "] = ";
+        write x[l], " ";
+    }
+}
+
+write "Arranjo Inicial:";
+for (i=0; i<5; i+=1) {
+    write "A[", i, "] = ";
+    write v[i], " ";
+}
+
+bubblesort(v,5);
