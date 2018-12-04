@@ -7,6 +7,7 @@ import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseListener;
 import uem.ast.Ast;
 import uem.semantic.CheckSymbols;
+import uem.visitors.BlockVisitor;
 import uem.visitors.StatementVisitor;
 
 public class FrontEnd extends GraceParserBaseListener {
@@ -84,8 +85,10 @@ public class FrontEnd extends GraceParserBaseListener {
             try {
                 GraceParser.DecSubContext sub = ((GraceParser.DecSubStatementContext) stmt).decSub();
                 if (sub instanceof GraceParser.FunctionContext) {
-                    if (((GraceParser.FunctionContext) sub).decFunc().ID().getText().toLowerCase().equals("main")) {
+                    GraceParser.DecFuncContext mainFun = ((GraceParser.FunctionContext) sub).decFunc();
+                    if (mainFun.ID().getText().toLowerCase().equals("main")) {
                         CheckSymbols.MainCreated();
+                        new BlockVisitor().visit(mainFun.block());
                         continue;
                     }
                 }

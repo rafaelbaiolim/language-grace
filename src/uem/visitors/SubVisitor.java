@@ -24,7 +24,6 @@ public class SubVisitor extends GraceParserBaseVisitor<Statement> {
     }
 
     public Statement visitFunction(GraceParser.FunctionContext ctx) {
-
         FunctionSymbol fSymbol = new FunctionSymbol(ctx.decFunc().ID().getText());
         fSymbol.setEnclosingScope(FrontEnd.currentScope);
         FrontEnd.currentScope.define(fSymbol);

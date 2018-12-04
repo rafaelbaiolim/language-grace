@@ -31,7 +31,7 @@ public class CheckSymbols {
     public static boolean hasMainFatalEror() {
         if (noMain) {
             System.err.printf("No Grace Main found.");
-            System.exit(1);
+//          *TODO: DESCOMENTAR / VERIFICAR COM O NANNI System.exit(1);
         }
         return false;
     }
