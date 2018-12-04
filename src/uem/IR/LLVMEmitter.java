@@ -109,21 +109,7 @@ public class LLVMEmitter {
                     mod,
                     byTypeName,
                     varName);
-            LLVMSetGlobalConstant(globalArr, LLVMCommonLinkage);
-            return globalArr;
-        }
-        return LLVMBuildAlloca(
-                builder,
-                byTypeName,
-                varName);
-    }
-
-    public LLVMValueRef LLVMBuildAllocWithScope(LLVMTypeRef byTypeName, String varName, Expression value) {
-        if (FrontEnd.isGLobalScope()) {
-            LLVMValueRef globalArr = this.LLVMBuildAllocWithScope(byTypeName, varName);
-            if(value != null) {
-                LLVMSetInitializer(globalArr, value.getLLVMValue());
-            }
+            LLVMSetInitializer(globalArr,LLVMConstInt(LLVMInt32Type(),0,0));
             return globalArr;
         }
         return LLVMBuildAlloca(

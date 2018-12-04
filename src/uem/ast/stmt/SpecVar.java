@@ -85,13 +85,20 @@ public class SpecVar implements VarStatement {
         if (this.varName == null) return null;
         LLVM.LLVMValueRef varAlloc = LLVMEmitter.getInstance().LLVMBuildAllocWithScope(
                 LLVMEmitter.getInstance().types.getByTypeName(type.getName()),
-                this.varName, this.value
+                this.varName
         );
 
-        if (this.value != null && !FrontEnd.isGLobalScope()) {
-            LLVMBuildStore(LLVMEmitter.getInstance().builder,
-                    this.value.getLLVMValue(), varAlloc);
+        if (this.value != null) {
+            if (!FrontEnd.isGLobalScope()) {
+                LLVMBuildStore(LLVMEmitter.getInstance().builder,
+                        this.value.getLLVMValue(), varAlloc);
+            } else {
+                LLVMSetInitializer(varAlloc,
+                        this.value.getLLVMValue());
+            }
         }
+
+
         FrontEnd.currentScope.setLLVMSymRef(this.varName, varAlloc);
 
         return this.llvmValRef = varAlloc;
@@ -99,16 +106,16 @@ public class SpecVar implements VarStatement {
 
     public LLVMValueRef getLLVMValue(Type type, boolean safeIndex) {
         //garante que se não houver expr, sera acessado i32 0,i32 0
-        LLVM.LLVMValueRef varAlloc = LLVMBuildAlloca(
-                LLVMEmitter.getInstance().builder,
-                LLVMEmitter.getInstance().types.getByTypeName(type.getName()),
-                this.varName);
+        LLVM.LLVMValueRef varAlloc = LLVMEmitter.getInstance().LLVMBuildAllocWithScope(
+                LLVMEmitter.getInstance().types.getByTypeName(type.getName()), this.varName);
+
         if (this.value != null) {
             LLVMBuildStore(LLVMEmitter.getInstance().builder,
                     this.value.getLLVMValue(), varAlloc);
         } else {
             LLVMBuildStore(LLVMEmitter.getInstance().builder, LLVMConstInt(LLVMInt32Type(), 0, 0), varAlloc);
         }
+
         FrontEnd.currentScope.setLLVMSymRef(this.varName, varAlloc);
 
         return this.llvmValRef = varAlloc;

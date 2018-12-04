@@ -1,7 +1,6 @@
 var i: int;
 var v[5]={5,4,3,2,1}: int;
 
-
 def bubblesort(x[]: int; n: int) {
     var l:int;
     var k=0, j: int;

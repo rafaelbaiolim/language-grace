@@ -2,6 +2,7 @@ package uem.ast.stmt;
 
 import org.antlr.v4.runtime.Token;
 import org.bytedeco.javacpp.LLVM;
+import org.bytedeco.javacpp.PointerPointer;
 import uem.IR.LLVMEmitter;
 import uem.ast.Position;
 import uem.ast.VarStatement;
@@ -9,6 +10,7 @@ import uem.ast.expr.Expression;
 import uem.ast.type.Type;
 import uem.listners.FrontEnd;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import static org.bytedeco.javacpp.LLVM.*;
@@ -103,17 +105,18 @@ public class SpecVarArrIni implements VarStatement {
         LLVM.LLVMValueRef varAlloc = LLVMEmitter.getInstance().LLVMBuildAllocWithScope(
                 typeArray, this.getVarName()
         );
-        int i = 0;
+
+        List<LLVM.LLVMValueRef> values = new LinkedList<>();
         for (Expression exp : this.inicializacao) {
-            LLVMBuildStore(
-                    lle.builder,
-                    exp.getLLVMValue(),
-                    lle.getArray(i, varAlloc));
-            i++;
+            values.add(exp.getLLVMValue());
         }
+        LLVMValueRef[] stockValues = new LLVMValueRef[values.size()];
+        stockValues = values.toArray(stockValues);
+        LLVMSetInitializer(varAlloc,LLVMConstArray(lle.types.i32(),
+                new PointerPointer(stockValues),
+                this.inicializacao.size()));
         FrontEnd.currentScope.setLLVMSymRef(this.getVarName(), varAlloc);
         this.llvmValRef = varAlloc;
-
         return varAlloc;
 
     }
