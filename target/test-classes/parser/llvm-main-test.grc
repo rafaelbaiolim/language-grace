@@ -1,33 +1,11 @@
 var i: int;
-var v[5]={5,4,3,2,1}: int;
+var v[5]: int;
 
-def bubblesort(n: int) {
-    var l:int;
-    var k=0, j: int;
-    var trocou = 1: int;
-    while (k < (n - 1) && trocou == 1) {
-        trocou = 0;
-        for (j=0; j < (n - k - 1); j+=1) {
-            if ( v[j] > v[j+1] ) {
-                var aux = v[j]: int;
-                v[j] = v[j+1];
-                v[j+1] = aux;
-                trocou = 1;
-            }
-        }
-        k += 1;
-    }
-}
 
 def main():int{
     write "Arranjo Inicial:";
     for (i=0; i<5; i+=1) {
+        read v[i];
         write v[i], " ";
     }
-    bubblesort(5);
-
-    write ":: Arranjo Ordenado:";
-    for (i=0; i<5; i+=1) {
-            write v[i], " ";
-        }
 }

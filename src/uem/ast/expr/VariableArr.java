@@ -16,9 +16,10 @@ public class VariableArr extends VarRefExpression {
     public LLVMValueRef getLLVMValue() {
         LLVMEmitter lle = LLVMEmitter.getInstance();
         LLVMPresets llp = LLVMPresets.getInstance();
-
-        LLVMValueRef arrIdexRef = lle.getArray(llp.parseExprToInt(this.index),
-                FrontEnd.currentScope.getLLVMSymRef(this.varName),2);
+        LLVMValueRef alloc = FrontEnd.currentScope.resolve(this.varName).getScope().getLLVMSymRef(this.varName);
+        LLVMValueRef arrIdexRef = lle.getArray(
+                llp.parseExprToInt(this.index),
+                alloc,2);
 
         return arrIdexRef;
     }
