@@ -19,6 +19,7 @@ public class LLVMEmitter {
     public final LLVMType types;
     private boolean optimization = true;
     public static final String FORMAT_NUMBER = "NUMBER";
+    public static final String FORMAT_BOOL = "BOOL";
     public static final String FORMAT_STRING = "STRING";
     public static final String PRINT_FUN_NAME = "printf";
     public static final String SCAN_FUN_NAME = "scanf";

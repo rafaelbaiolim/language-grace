@@ -29,7 +29,7 @@ public class BooleanType implements Type {
 
     @Override
     public String getName() {
-        return null;
+        return "BOOL";
     }
 
     @Override

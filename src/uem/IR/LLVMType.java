@@ -42,6 +42,7 @@ public class LLVMType {
     public LLVMTypeRef getByTypeName(String name) {
         switch (name) {
             case LLVMEmitter.FORMAT_NUMBER:
+            case LLVMEmitter.FORMAT_BOOL:
                 return this.i32();
             case LLVMEmitter.FORMAT_STRING:
                 return this.i8();

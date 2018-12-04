@@ -4,6 +4,9 @@ import org.antlr.v4.runtime.Token;
 import org.bytedeco.javacpp.LLVM;
 import uem.ast.Position;
 
+import static org.bytedeco.javacpp.LLVM.LLVMConstInt;
+import static org.bytedeco.javacpp.LLVM.LLVMInt32Type;
+
 public class BoolLiteral implements Expression {
 
     private final Position position;
@@ -37,6 +40,14 @@ public class BoolLiteral implements Expression {
 
     @Override
     public LLVM.LLVMValueRef getLLVMValue() {
+        if (this.value.toLowerCase().equals("true")) {
+            return LLVMConstInt(LLVMInt32Type(),
+                    1, 0);
+        }
+        if (this.value.toLowerCase().equals("false")) {
+            return LLVMConstInt(LLVMInt32Type(),
+                    0, 0);
+        }
         return null;
     }
 }
