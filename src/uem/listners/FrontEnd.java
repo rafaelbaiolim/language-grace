@@ -2,11 +2,9 @@ package uem.listners;
 
 import org.antlr.symtab.GlobalScope;
 import org.antlr.symtab.Scope;
-import org.antlr.symtab.Symbol;
 import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseListener;
 import uem.ast.Ast;
-import uem.semantic.CheckSymbols;
 import uem.visitors.StatementVisitor;
 
 public class FrontEnd extends GraceParserBaseListener {
@@ -45,14 +43,17 @@ public class FrontEnd extends GraceParserBaseListener {
 
     /**
      * Escopo Global
+     * TODO: Versão final: colocar try/catch
      */
     public void enterGraceFile(GraceParser.GraceFileContext ctx) {
+
         GlobalScope globalScope = new GlobalScope(null);
         ctx.scope = globalScope;
         pushScope(globalScope);
         ctx.statement().forEach(stmt -> {
             new StatementVisitor().visit(stmt);
         });
+
     }
 
     /**

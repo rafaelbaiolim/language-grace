@@ -8,6 +8,7 @@ import uem.ast.VarStatement;
 import uem.ast.stmt.*;
 import uem.ast.type.Type;
 import uem.listners.FrontEnd;
+import uem.semantic.CheckSymbols;
 
 import java.util.List;
 
@@ -47,7 +48,13 @@ public class DeclVarVisitor extends GraceParserBaseVisitor<DeclVar> {
                     ((SpecVarArr) currentStmt).getLength());
             v.setType(arrType);
         }
-        FrontEnd.currentScope.define(v);
+        
+        try {
+            FrontEnd.currentScope.define(v);
+        } catch (java.lang.IllegalArgumentException ex) {
+            CheckSymbols.error(currentStmt.getSymbol(), "duplicate symbol `x`");
+        }
+
         currentStmt.getLLVMValue(type);
     }
 

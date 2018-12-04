@@ -20,6 +20,7 @@ public class CheckSymbols {
 //    }
 
     public static void error(Token t, String msg) {
+
         System.err.printf("Line %d:%d %s\n: ", t.getLine(), t.getCharPositionInLine() + 1, msg);
     }
 

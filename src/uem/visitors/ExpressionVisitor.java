@@ -1,5 +1,6 @@
 package uem.visitors;
 
+import org.antlr.symtab.Symbol;
 import org.antlr.symtab.VariableSymbol;
 import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseVisitor;
@@ -51,20 +52,17 @@ public class ExpressionVisitor extends GraceParserBaseVisitor<Expression> {
      */
     public Expression visitVarReference(GraceParser.VarReferenceContext varRefCtx) {
         String varName = varRefCtx.ID().getText();
-        VariableSymbol sym = (VariableSymbol) FrontEnd.currentScope.resolve(varName).getScope().getSymbol(varName);
-
-        if (sym == null) {//semântico
-            CheckSymbols.error(varRefCtx.ID().getSymbol(), " use of undeclared identifier: `" + varRefCtx.getText() + "´");
-        }
-
+        Symbol sym = null;
         try {
-            if (sym.getType().getName().toLowerCase().contains("[]")) {
+            sym = FrontEnd.currentScope.resolve(varName).getScope().getSymbol(varName);
+            VariableSymbol varSym = (VariableSymbol) sym;
+            if (varSym.getType().getName().toLowerCase().contains("[]")) {
                 VarArrReference arrRef = new VarArrReference(varName);
                 arrRef.setSymbol(varRefCtx.ID().getSymbol());
                 return arrRef;
             }
-        }catch (Exception ex){
-            //getType:empty
+        } catch (Exception ex) {
+            CheckSymbols.error(varRefCtx.ID().getSymbol(), " use of undeclared identifier: `" + varRefCtx.getText() + "´");
         }
 
         VarReference varRef = new VarReference(varName);
