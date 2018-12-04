@@ -10,6 +10,7 @@ import uem.ast.stmt.Statement;
 import uem.ast.stmt.sub.DeclFunction;
 import uem.ast.type.Type;
 import uem.listners.FrontEnd;
+import uem.semantic.CheckSymbols;
 
 import java.util.LinkedList;
 

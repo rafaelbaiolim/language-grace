@@ -7,6 +7,7 @@ import uem.ast.stmt.Statement;
 import uem.ast.stmt.sub.DeclFunction;
 import uem.ast.stmt.sub.DeclProcedure;
 import uem.listners.FrontEnd;
+import uem.semantic.CheckSymbols;
 
 public class SubVisitor extends GraceParserBaseVisitor<Statement> {
 
@@ -23,6 +24,7 @@ public class SubVisitor extends GraceParserBaseVisitor<Statement> {
     }
 
     public Statement visitFunction(GraceParser.FunctionContext ctx) {
+
         FunctionSymbol fSymbol = new FunctionSymbol(ctx.decFunc().ID().getText());
         fSymbol.setEnclosingScope(FrontEnd.currentScope);
         FrontEnd.currentScope.define(fSymbol);

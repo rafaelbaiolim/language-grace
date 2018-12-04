@@ -238,7 +238,13 @@ public class LLVMEmitter {
     }
 
     public final void Finalize() {
+//        LLVMValueRef llvmMainRet = LLVMConstInt(types.i32(), 0, 0);
+//        if (CheckSymbols.hasError > 0) {
+//            llvmMainRet = LLVMConstInt(types.i32(), 1, 0);
+//        }
+//        LLVMBuildRet(builder, llvmMainRet);
         LLVMBuildRetVoid(this.builder);
+
         LLVMPassManagerRef pass = LLVMCreatePassManager();
 
         //TODO: deixar setavel via flag

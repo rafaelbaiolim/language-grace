@@ -6,6 +6,7 @@ import org.antlr.symtab.Scope;
 import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseListener;
 import uem.ast.Ast;
+import uem.semantic.CheckSymbols;
 import uem.visitors.StatementVisitor;
 
 public class FrontEnd extends GraceParserBaseListener {
@@ -79,9 +80,21 @@ public class FrontEnd extends GraceParserBaseListener {
         GlobalScope globalScope = new GlobalScope(null);
         ctx.scope = globalScope;
         pushScope(globalScope);
-        ctx.statement().forEach(stmt -> {
+        for (GraceParser.StatementContext stmt : ctx.statement()) {
+            try {
+                GraceParser.DecSubContext sub = ((GraceParser.DecSubStatementContext) stmt).decSub();
+                if (sub instanceof GraceParser.FunctionContext) {
+                    if (((GraceParser.FunctionContext) sub).decFunc().ID().getText().toLowerCase().equals("main")) {
+                        CheckSymbols.MainCreated();
+                        continue;
+                    }
+                }
+            } catch (Exception ex) {
+
+            }
+
             new StatementVisitor().visit(stmt);
-        });
+        }
     }
 
 }
