@@ -5,6 +5,7 @@ import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseVisitor;
 import uem.ast.expr.*;
 import uem.listners.FrontEnd;
+import uem.semantic.CheckSymbols;
 
 import java.util.LinkedList;
 
@@ -50,22 +51,27 @@ public class ExpressionVisitor extends GraceParserBaseVisitor<Expression> {
      */
     public Expression visitVarReference(GraceParser.VarReferenceContext varRefCtx) {
         String varName = varRefCtx.ID().getText();
+        VariableSymbol sym = (VariableSymbol) FrontEnd.currentScope.resolve(varName).getScope().getSymbol(varName);
+
+        if (sym == null) {//semântico
+            CheckSymbols.error(varRefCtx.ID().getSymbol(), " use of undeclared identifier: `" + varRefCtx.getText() + "´");
+        }
+
         try {
-            VariableSymbol sym = (VariableSymbol) FrontEnd.currentScope.resolve(varName).getScope().getSymbol(varName);
             if (sym.getType().getName().toLowerCase().contains("[]")) {
                 VarArrReference arrRef = new VarArrReference(varName);
                 arrRef.setSymbol(varRefCtx.ID().getSymbol());
                 return arrRef;
             }
-            VarReference varRef = new VarReference(varName);
-            varRef.setSymbol(varRefCtx.ID().getSymbol());
-            return varRef;
-
-        } catch (NullPointerException ex) { //*TODO.: ARRUMAR AQUI
-            VarReference varRef = new VarReference(varName);
-            varRef.setSymbol(varRefCtx.ID().getSymbol());
-            return varRef;
+        }catch (Exception ex){
+            //getType:empty
         }
+
+        VarReference varRef = new VarReference(varName);
+        varRef.setSymbol(varRefCtx.ID().getSymbol());
+        return varRef;
+
+
     }
 
     public Expression visitSimpleVar(GraceParser.SimpleVarContext varRefCtx) {

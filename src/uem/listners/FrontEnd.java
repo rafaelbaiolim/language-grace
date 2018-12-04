@@ -61,16 +61,8 @@ public class FrontEnd extends GraceParserBaseListener {
 
     /**
      * Escopo de Variáveis
+     * @moved: visitor
      */
-
-
-    public void enterVarReference(GraceParser.VarReferenceContext ctx) {
-        Symbol sym = currentScope.resolve(ctx.ID().getText());
-        if (sym == null) {
-            CheckSymbols.error(ctx.ID().getSymbol(), " use of undeclared identifier: `" + ctx.getText() + "´");
-        }
-    }
-
 //    public void enterAtribVar(GraceParser.AtribVarContext ctx) {
 //        Symbol sym = currentScope.resolve(ctx.atrib().ID().getText());
 //        if (sym == null) {

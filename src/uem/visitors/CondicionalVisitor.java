@@ -8,9 +8,7 @@ import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseVisitor;
 import uem.ast.expr.Expression;
 import uem.ast.stmt.CondicionalStmt;
-import uem.ast.stmt.Return;
 import uem.ast.stmt.Statement;
-import uem.ast.stmt.cmd.ReturnCmd;
 import uem.listners.FrontEnd;
 import uem.symtab.CondScope;
 
@@ -19,24 +17,22 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
-import static org.bytedeco.javacpp.LLVM.*;
+import static org.bytedeco.javacpp.LLVM.LLVMBuildBr;
+import static org.bytedeco.javacpp.LLVM.LLVMBuildCondBr;
+import static org.bytedeco.javacpp.LLVM.LLVMPositionBuilderAtEnd;
 
 public class CondicionalVisitor extends GraceParserBaseVisitor<CondicionalStmt> {
-    static int hasBuilt = 0;
 
     public CondicionalStmt visitCmdIf(GraceParser.CmdIfContext ctx) {
-        CondicionalVisitor.hasBuilt = 0;
         LocalScope locScope = new CondScope(FrontEnd.currentScope);
         FrontEnd.pushScope(locScope);
-
-        boolean avoidBRIF = false, avoidBRElse = false;
 
         LLVMEmitter llve = LLVMEmitter.getInstance();
         LLVMPresets llvp = LLVMPresets.getInstance();
 
         LLVM.LLVMBasicBlockRef ifTrue = llvp.buildBlock("iftrue");
         LLVM.LLVMBasicBlockRef ifFalse = llvp.buildBlock("iffalse");
-        LLVM.LLVMBasicBlockRef end = null;
+        LLVM.LLVMBasicBlockRef end = llvp.buildBlock("ifend");
 
         CondicionalStmt condicionalStmt = new CondicionalStmt();
         Expression exprCond = new ExpressionVisitor().visit(ctx.expression());
@@ -69,25 +65,17 @@ public class CondicionalVisitor extends GraceParserBaseVisitor<CondicionalStmt> 
             if (finalTemElseStmt && (i.get() == (totalComands - 1))) { //else
                 LLVMPositionBuilderAtEnd(llve.builder, ifFalse);
                 lstElse.set(new CommandVisitor().visit(stmt));
-                if (this.canAppendBR(lstElse.get())) {
-                    this.builtEnd(end);
-                    LLVMBuildBr(llve.builder, end);
-                    avoidBRElse = true;
-                }
+                LLVMBuildBr(llve.builder, end);
                 LLVMPositionBuilderAtEnd(llve.builder, end);
                 continue;
             }
             lstIF.set(new CommandVisitor().visit(stmt));
             i.getAndIncrement();
-            if (this.canAppendBR(lstIF.get())) {
-                this.builtEnd(end);
-                LLVMBuildBr(llve.builder, end);
-                avoidBRIF = true;
-            }
+            LLVMBuildBr(llve.builder, end);
         }
 
-        if (!finalTemElseStmt) {//não tem else
-            this.builtEnd(end);
+
+        if(!finalTemElseStmt){//não tem else
             LLVMPositionBuilderAtEnd(llve.builder, ifFalse);
             LLVMBuildBr(llve.builder, end);
             LLVMPositionBuilderAtEnd(llve.builder, end);
@@ -95,32 +83,7 @@ public class CondicionalVisitor extends GraceParserBaseVisitor<CondicionalStmt> 
 
         condicionalStmt.setElseStatment(lstElse.get());
         condicionalStmt.setIfStatment(lstIF.get());
-        if (CondicionalVisitor.hasBuilt > 0) {
-            LLVMPositionBuilderAtEnd(llve.builder, end);
-        }
-        if (avoidBRElse && avoidBRIF) {
-            LLVMBuildRetVoid(llve.builder);
-        }
+        LLVMPositionBuilderAtEnd(llve.builder, end);
         return condicionalStmt;
     }
-
-    private boolean canAppendBR(List<Statement> statements) {
-        boolean appendBR = true;
-        for (Statement st : statements) {
-            if (st instanceof Return) {
-                appendBR = false;
-            }
-        }
-        return appendBR;
-    }
-
-    private void builtEnd(LLVM.LLVMBasicBlockRef end) {
-        if (CondicionalVisitor.hasBuilt == 0) {
-            end = LLVMPresets.getInstance().buildBlock("ifend");
-            return;
-        }
-        CondicionalVisitor.hasBuilt++;
-    }
-
-
 }
