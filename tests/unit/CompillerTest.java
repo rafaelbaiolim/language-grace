@@ -37,7 +37,7 @@ public class CompillerTest {
             "fib.xml",                  //7
     };
 
-//    private static final String TESTS_XML_RELATIVE_PATH = "tests/unit/cases/" + XML_FILE_NAME[0];
+    private static final String TESTS_XML_RELATIVE_PATH = "tests/unit/cases/" + XML_FILE_NAME[0];
 //    private static final String TESTS_XML_RELATIVE_PATH = "tests/unit/cases/" + XML_FILE_NAME[1];
 //    private static final String TESTS_XML_RELATIVE_PATH = "tests/unit/cases/" + XML_FILE_NAME[2];
 //    private static final String TESTS_XML_RELATIVE_PATH = "tests/unit/cases/" + XML_FILE_NAME[3];

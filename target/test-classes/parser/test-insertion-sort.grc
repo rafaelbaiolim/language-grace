@@ -23,10 +23,12 @@ def printArray(y[]:int; n:int)
    write "\n";
 }
 
-write "inicial:";
-printArray(arr, 5);
-write "::";
+def main():int{
+    write "inicial:";
+    printArray(arr, 5);
+    write "::";
 
-insertionSort(arr, 5);
-write "ordenado:";
-printArray(arr, 5);
+    insertionSort(arr, 5);
+    write "ordenado:";
+    printArray(arr, 5);
+}

@@ -1,19 +1,21 @@
-var n, first = 0, second = 1, next, c:int;
-//write "Total de termos\n";
-//read n;
+def main():int{
+    var n, first = 0, second = 1, next, c:int;
+    //write "Total de termos\n";
+    //read n;
 
-n = 5;
+    n = 5;
 
-//write "Primeiro(s) ", n , " termos da serie Fib:\n";
-for (c = 0; c < n; c +=1)
-{
-    if (c <= 1){
-      next = c;
-    }else{
-      next = first + second;
-      first = second;
-      second = next;
+    //write "Primeiro(s) ", n , " termos da serie Fib:\n";
+    for (c = 0; c < n; c +=1)
+    {
+        if (c <= 1){
+          next = c;
+        }else{
+          next = first + second;
+          first = second;
+          second = next;
+        }
+        write next," ";
     }
-    write next," ";
+    write "\n";
 }
-write "\n";

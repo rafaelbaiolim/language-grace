@@ -1,15 +1,17 @@
-var a = 10:int;
-var b = 5:int;
-var c:int;
+def main():int{
+    var a = 10:int;
+    var b = 5:int;
+    var c:int;
 
-c = a + b;
-write c, " ";
+    c = a + b;
+    write c, " ";
 
-c = a - b;
-write c, " ";
+    c = a - b;
+    write c, " ";
 
-c = a * b;
-write c, " ";
+    c = a * b;
+    write c, " ";
 
-c = a / b;
-write c, " ";
+    c = a / b;
+    write c, " ";
+}

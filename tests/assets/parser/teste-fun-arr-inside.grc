@@ -6,6 +6,8 @@ def godSaveMe(x[]:int){
     write x[i];
 }
 
-var v[5]:int;
-v[0] = 10;
-godSaveMe(v);
+def main():int{
+    var v[5]:int;
+    v[0] = 10;
+    godSaveMe(v);
+}

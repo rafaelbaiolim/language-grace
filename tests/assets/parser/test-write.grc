@@ -1,3 +1,5 @@
 //teste para o comando WRITE
-var a = 10:int;
-write a, "compilador 2018", "universo disney";
+def main():int{
+    var a = 10:int;
+    write a, "compilador 2018", "universo disney";
+}

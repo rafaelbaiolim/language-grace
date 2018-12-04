@@ -1,12 +1,12 @@
 //Teste array acessado por param
-var v[10]:int;
-
 def foo(x[]:int){
     write x[0]," ",x[1]," ",x[2];
 }
 
-v[0] = 55;
-v[1] = 90;
-v[2] = 102;
-foo(v);
-
+def main():int{
+    var v[10]:int;
+    v[0] = 55;
+    v[1] = 90;
+    v[2] = 102;
+    foo(v);
+}
