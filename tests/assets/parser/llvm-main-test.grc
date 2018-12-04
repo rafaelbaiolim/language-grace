@@ -25,10 +25,12 @@ def bubblesort(x[]: int; n: int) {
     }
 }
 
-write "Arranjo Inicial:";
-for (i=0; i<5; i+=1) {
-    write "A[", i, "] = ";
-    write v[i], " ";
-}
+def main():int{
+    write "Arranjo Inicial:";
+    for (i=0; i<5; i+=1) {
+        write "A[", i, "] = ";
+        write v[i], " ";
+    }
 
-bubblesort(v,5);
+    bubblesort(v,5);
+}

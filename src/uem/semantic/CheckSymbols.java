@@ -27,4 +27,12 @@ public class CheckSymbols {
             hasError--;
         }
     }
+
+    public static boolean hasMainFatalEror() {
+        if (noMain) {
+            System.err.printf("No Grace Main found.");
+            System.exit(1);
+        }
+        return false;
+    }
 }
