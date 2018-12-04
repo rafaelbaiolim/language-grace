@@ -30,7 +30,7 @@ public class CheckSymbols {
 
     public static boolean hasMainFatalEror() {
         if (noMain) {
-            System.err.printf("No Grace Main found.");
+            System.err.printf("error: undefined reference to `main’\n");
 //          *TODO: DESCOMENTAR / VERIFICAR COM O NANNI System.exit(1);
         }
         return false;
