@@ -6,8 +6,10 @@ import org.antlr.symtab.Scope;
 import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseListener;
 import uem.ast.Ast;
+import uem.ast.stmt.sub.DeclFunction;
 import uem.semantic.CheckSymbols;
 import uem.visitors.BlockVisitor;
+import uem.visitors.DeclFunctionVisitor;
 import uem.visitors.StatementVisitor;
 
 public class FrontEnd extends GraceParserBaseListener {
@@ -87,17 +89,24 @@ public class FrontEnd extends GraceParserBaseListener {
                 if (sub instanceof GraceParser.FunctionContext) {
                     GraceParser.DecFuncContext mainFun = ((GraceParser.FunctionContext) sub).decFunc();
                     if (mainFun.ID().getText().toLowerCase().equals("main")) {
-                        CheckSymbols.MainCreated();
-                        new BlockVisitor().visit(mainFun.block());
+                        enterMainScope(mainFun);
                         continue;
                     }
                 }
             } catch (Exception ex) {
-
             }
-
             new StatementVisitor().visit(stmt);
         }
+    }
+
+    protected void enterMainScope(GraceParser.DecFuncContext mainFun) {
+        FunctionSymbol fSymbol = new FunctionSymbol("main");
+        fSymbol.setEnclosingScope(FrontEnd.currentScope);
+        FrontEnd.currentScope.define(fSymbol);
+        FrontEnd.pushScope(fSymbol);
+        CheckSymbols.MainCreated();
+        new BlockVisitor().visit(mainFun.block());
+        FrontEnd.popScope();
     }
 
 }
