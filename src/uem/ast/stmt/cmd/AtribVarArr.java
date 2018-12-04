@@ -22,7 +22,10 @@ public class AtribVarArr extends AtribCmd {
         LLVMPresets llp = LLVMPresets.getInstance();
         LLVM.LLVMValueRef arrAllocated = FrontEnd.currentScope.resolve(this.varName).getScope().getLLVMSymRef(this.varName);
 
-        if (FrontEnd.currentScope.resolve(this.varName).getScope().getName().equals("global")) {
+        if (
+                FrontEnd.currentScope.resolve(this.varName).getScope().getName().equals("global")
+                ||FrontEnd.currentScope.resolve(this.varName).getScope().getName().equals("main")
+        ) {
 
             return LLVMBuildStore(
                     LLVMEmitter.getInstance().builder,
