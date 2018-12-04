@@ -28,5 +28,10 @@ arr[2] = 13;
 arr[3] = 5;
 arr[4] = 6;
 
+write "inicial:";
+printArray(arr, 5);
+write "::";
+
 insertionSort(arr, 5);
+write "ordenado:";
 printArray(arr, 5);

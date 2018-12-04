@@ -1,7 +1,10 @@
 var n, first = 0, second = 1, next, c:int;
-write "Total de termos\n";
-read n;
-write "Primeiro(s) ", n , " termos da serie Fib:\n";
+//write "Total de termos\n";
+//read n;
+
+n = 5;
+
+//write "Primeiro(s) ", n , " termos da serie Fib:\n";
 for (c = 0; c < n; c +=1)
 {
     if (c <= 1){

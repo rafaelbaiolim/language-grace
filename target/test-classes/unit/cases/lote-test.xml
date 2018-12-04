@@ -1,7 +1,6 @@
 <!--Testes que precisam de mais memória não conseguem ser executados em lote,-->
 <!--devido ao GC do Java + as implementações estáticas da LLVM, colocar -->
 <!--este tipo de teste em arquivos separados;-->
-
 <tests>
     <test>
         <wanted>10compilador 2018universo disney</wanted>
@@ -21,6 +20,4 @@
         <optimize>true</optimize>
         <file>/home/rafaellb/Documents/uem/ilp2018/compilador2018/tests/assets/parser/test-aritmetimethic-op.grc</file>
     </test>
-
-
 </tests>

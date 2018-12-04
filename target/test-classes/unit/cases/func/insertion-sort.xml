@@ -3,9 +3,11 @@
 <!--este tipo de teste em arquivos separados;-->
 <tests>
     <test>
-        <wanted>Arranjo Inicial:A[0] = 5 A[1] = 4 A[2] = 3 A[3] = 2 A[4] = 1 :: Arranjo Ordenado:A[0] = 1 A[1] = 2 A[2] = 3 A[3] = 4 A[4] = 5</wanted>
+        <wanted>
+            inicial:12 11 13 5 6 ::ordenado:5 6 11 12 13
+        </wanted>
         <type>EQUALS</type>
         <optimize>false</optimize>
-        <file>/home/rafaellb/Documents/uem/ilp2018/compilador2018/tests/assets/parser/teste-insertion-sort.grc</file>
+        <file>/home/rafaellb/Documents/uem/ilp2018/compilador2018/tests/assets/parser/test-insertion-sort.grc</file>
     </test>
 </tests>
