@@ -5,6 +5,7 @@ import org.bytedeco.javacpp.LLVM;
 import org.bytedeco.javacpp.LLVM.*;
 import org.bytedeco.javacpp.Pointer;
 import org.bytedeco.javacpp.PointerPointer;
+import uem.ast.expr.Expression;
 import uem.listners.FrontEnd;
 import uem.semantic.CheckSymbols;
 import uem.utils.TestUtils;
@@ -109,6 +110,19 @@ public class LLVMEmitter {
                     byTypeName,
                     varName);
             LLVMSetGlobalConstant(globalArr, LLVMCommonLinkage);
+            return globalArr;
+        }
+        return LLVMBuildAlloca(
+                builder,
+                byTypeName,
+                varName);
+    }
+
+    public LLVMValueRef LLVMBuildAllocWithScope(LLVMTypeRef byTypeName, String varName, Expression value) {
+        if (FrontEnd.isGLobalScope()) {
+            LLVMValueRef globalArr = this.LLVMBuildAllocWithScope(byTypeName, varName);
+            LLVMSetInitializer(globalArr, value.getLLVMValue());
+            return globalArr;
         }
         return LLVMBuildAlloca(
                 builder,
