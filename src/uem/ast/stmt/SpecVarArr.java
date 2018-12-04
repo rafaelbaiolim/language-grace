@@ -9,33 +9,19 @@ import uem.ast.expr.Expression;
 import uem.ast.type.Type;
 import uem.listners.FrontEnd;
 
-import static org.bytedeco.javacpp.LLVM.*;
+import java.util.List;
+
+import static org.bytedeco.javacpp.LLVM.LLVMArrayType;
+import static org.bytedeco.javacpp.LLVM.LLVMValueRef;
 
 public class SpecVarArr implements VarStatement {
-
-    private final String varName;
+    private String varName;
     private Expression value;
     private String length;
-    private final Position position;
+    private Position position;
     private Token symToken;
     private Type type;
     LLVMValueRef llvmValRef;
-
-    public SpecVarArr(String varName, String length, Expression value, Position position) {
-        this.varName = varName;
-        this.length = length;
-        this.value = value;
-        this.position = position;
-        this.getLLVMValue();
-
-    }
-
-    public SpecVarArr(String varName) {
-        this.varName = varName;
-        this.value = null;
-        this.position = null;
-        this.getLLVMValue();
-    }
 
     public SpecVarArr(String varName, String length) {
         this.varName = varName;

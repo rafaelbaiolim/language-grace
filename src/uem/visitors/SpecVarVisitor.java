@@ -9,7 +9,6 @@ import uem.ast.stmt.SpecVarArrIni;
 import uem.ast.stmt.Statement;
 
 import java.util.LinkedList;
-import java.util.List;
 
 public class SpecVarVisitor extends GraceParserBaseVisitor<Statement> {
 
@@ -40,12 +39,15 @@ public class SpecVarVisitor extends GraceParserBaseVisitor<Statement> {
 
     public Statement visitSpecVarArrIni(GraceParser.SpecVarArrIniContext sVarArrCtx) {
         LinkedList<Expression> iniList = new LinkedList<>();
-        sVarArrCtx.literal().forEach(stmt -> iniList.add(new LiteralVisitor().visit(stmt)));
+        sVarArrCtx.literal().forEach(stmt -> {
+            iniList.add(new LiteralVisitor().visit(stmt));
+        });
         SpecVarArrIni spcVarArrIni = new SpecVarArrIni(
                 sVarArrCtx.specVarArr().ID().getText(),
                 sVarArrCtx.specVarArr().NUMBERLITERAL().get(0).getText() //size
         );
         spcVarArrIni.setInicializacao(iniList);
+        spcVarArrIni.getLLVMValue();
         return spcVarArrIni;
     }
 }

@@ -75,16 +75,14 @@ public class LLVMEmitter {
     }
 
 
-    public LLVMValueRef getArray(String idx, LLVMValueRef arrAllocated) {
-        int index = Integer.parseInt(idx);
-
+    public LLVMValueRef getArray(int idx, LLVMValueRef arrAllocated) {
         LLVM.LLVMValueRef[] indices = {
                 LLVMConstInt(
                         this.types.i32(),
                         0,
                         0), //inicial
                 LLVMConstInt(this.types.i32(),
-                        index,
+                        idx,
                         0)  //indice
         };
         return LLVMBuildInBoundsGEP(this.builder,

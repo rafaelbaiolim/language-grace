@@ -5,10 +5,7 @@ import org.antlr.symtab.VariableSymbol;
 import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseVisitor;
 import uem.ast.VarStatement;
-import uem.ast.stmt.DeclVar;
-import uem.ast.stmt.SpecVar;
-import uem.ast.stmt.SpecVarArr;
-import uem.ast.stmt.Statement;
+import uem.ast.stmt.*;
 import uem.ast.type.Type;
 import uem.listners.FrontEnd;
 
@@ -25,23 +22,33 @@ public class DeclVarVisitor extends GraceParserBaseVisitor<DeclVar> {
         //tipo
         Type type = new ListTypeVisitor().visit(ctx.lstType());
         for (Statement stmt : lst) {
-            VarStatement currentStmt;
             VariableSymbol v = new VariableSymbol(stmt.getVarName());
-            if (stmt instanceof SpecVar) {
-                currentStmt = (SpecVar) stmt;
-                v.setType(type);
-            } else {
-                currentStmt = (SpecVarArr) stmt;
-                ArrayType arrType = new ArrayType(type,
-                        ((SpecVarArr) currentStmt).getLength());
-                v.setType(arrType);
-            }
-            FrontEnd.currentScope.define(v);
-            currentStmt.getLLVMValue(type);
+            this.setTypeCurrentStmt(stmt, type, v);
         }
         DeclVar declVar = new DeclVar(lst, type);
         return declVar;
     }
 
+
+    private void setTypeCurrentStmt(Statement stmt,
+                                    Type type, VariableSymbol v) {
+        VarStatement currentStmt;
+        if (stmt instanceof SpecVar) {
+            currentStmt = (SpecVar) stmt;
+            v.setType(type);
+        } else if (stmt instanceof SpecVarArrIni) {
+            currentStmt = (SpecVarArrIni) stmt;
+            ArrayType arrType = new ArrayType(type,
+                    ((SpecVarArrIni) currentStmt).getLength());
+            v.setType(arrType);
+        } else {
+            currentStmt = (SpecVarArr) stmt;
+            ArrayType arrType = new ArrayType(type,
+                    ((SpecVarArr) currentStmt).getLength());
+            v.setType(arrType);
+        }
+        FrontEnd.currentScope.define(v);
+        currentStmt.getLLVMValue(type);
+    }
 
 }
