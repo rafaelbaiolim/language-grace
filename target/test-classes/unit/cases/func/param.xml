@@ -3,7 +3,7 @@
 <!--este tipo de teste em arquivos separados;-->
 <tests>
     <test>
-        <wanted>5590102</wanted>
+        <wanted>55 90 102</wanted>
         <type>EQUALS</type>
         <optimize>false</optimize>
         <file>/home/rafaellb/Documents/uem/ilp2018/compilador2018/tests/assets/parser/test-func-arr-param.grc</file>
