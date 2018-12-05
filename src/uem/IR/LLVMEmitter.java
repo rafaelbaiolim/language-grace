@@ -5,7 +5,6 @@ import org.bytedeco.javacpp.LLVM;
 import org.bytedeco.javacpp.LLVM.*;
 import org.bytedeco.javacpp.Pointer;
 import org.bytedeco.javacpp.PointerPointer;
-import uem.ast.expr.Expression;
 import uem.listners.FrontEnd;
 import uem.semantic.CheckSymbols;
 import uem.utils.TestUtils;
@@ -109,7 +108,7 @@ public class LLVMEmitter {
                     mod,
                     byTypeName,
                     varName);
-            LLVMSetInitializer(globalArr,LLVMConstInt(LLVMInt32Type(),0,0));
+            LLVMSetInitializer(globalArr, LLVMConstInt(LLVMInt32Type(), 0, 0));
             return globalArr;
         }
         return LLVMBuildAlloca(
@@ -363,6 +362,18 @@ public class LLVMEmitter {
         this.Printer();
         this.Scanner();
         return this;
+    }
+
+    /**
+     * Verifica se a ultima condição do bloco não é de um tipo
+     * terminal
+     *
+     * @param block
+     * @return
+     */
+    public boolean canPutTerminatorInst(LLVMBasicBlockRef block) {
+        int lastInstruction = LLVMGetInstructionOpcode(LLVMGetLastInstruction(block));
+        return (lastInstruction != LLVMBr && lastInstruction != LLVMRet);
     }
 
 

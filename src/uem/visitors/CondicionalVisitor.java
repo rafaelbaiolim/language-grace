@@ -17,9 +17,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
-import static org.bytedeco.javacpp.LLVM.LLVMBuildBr;
-import static org.bytedeco.javacpp.LLVM.LLVMBuildCondBr;
-import static org.bytedeco.javacpp.LLVM.LLVMPositionBuilderAtEnd;
+import static org.bytedeco.javacpp.LLVM.*;
 
 public class CondicionalVisitor extends GraceParserBaseVisitor<CondicionalStmt> {
 
@@ -69,15 +67,21 @@ public class CondicionalVisitor extends GraceParserBaseVisitor<CondicionalStmt> 
                 LLVMPositionBuilderAtEnd(llve.builder, end);
                 continue;
             }
+
             lstIF.set(new CommandVisitor().visit(stmt));
             i.getAndIncrement();
-            LLVMBuildBr(llve.builder, end);
+            if (llve.canPutTerminatorInst(ifTrue)) {
+                LLVMBuildBr(llve.builder, end);
+            }
+
         }
 
         if (!finalTemElseStmt) {//não tem else
             LLVMPositionBuilderAtEnd(llve.builder, ifFalse);
             LLVMBuildBr(llve.builder, end);
-            LLVMPositionBuilderAtEnd(llve.builder, end);
+            if (llve.canPutTerminatorInst(ifTrue)) {
+                LLVMPositionBuilderAtEnd(llve.builder, end);
+            }
         }
 
         condicionalStmt.setElseStatment(lstElse.get());

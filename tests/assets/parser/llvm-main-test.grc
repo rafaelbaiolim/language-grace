@@ -2,9 +2,11 @@
 def main():int{
     var i=0:int;
     while(i < 10){
-        if( i == 2){
-            stop;
+        if( i == 3){
+            i += 1;
+            skip;
         }
+        write i;
         i += 1;
     }
 }
