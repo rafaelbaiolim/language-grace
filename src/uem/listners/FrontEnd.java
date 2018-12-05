@@ -52,16 +52,16 @@ public class FrontEnd extends GraceParserBaseListener {
      * @return
      */
     public static FunctionSymbol getFunctionWithin() {
-        FunctionSymbol f = null;
+        FunctionSymbol fun = null;
         for (Scope s : FrontEnd.currentScope.getEnclosingPathToRoot()) {
             try {
-                f = ((FunctionSymbol) s);
-                return f;
+                fun = ((FunctionSymbol) s);
+                return fun;
             } catch (Exception ex) {
-                f = null;
+                fun = null;
             }
         }
-        return f;
+        return fun;
     }
 
     public static void pushScope(Scope s) {
@@ -86,6 +86,15 @@ public class FrontEnd extends GraceParserBaseListener {
         for (GraceParser.StatementContext stmt : ctx.statement()) {
             try {
                 GraceParser.DecSubContext sub = ((GraceParser.DecSubStatementContext) stmt).decSub();
+                if (sub instanceof GraceParser.ProcedureContext) {
+                    GraceParser.DecProcContext mainFun = ((GraceParser.ProcedureContext) sub).decProc();
+                    if (mainFun.ID().getText().toLowerCase().equals("main")) {
+                        CheckSymbols.error(stmt.start, ": erorr: Main should be instance of function. Procedure found.");
+                        enterMainScope(mainFun);
+                        continue;
+                    }
+                }
+
                 if (sub instanceof GraceParser.FunctionContext) {
                     GraceParser.DecFuncContext mainFun = ((GraceParser.FunctionContext) sub).decFunc();
                     if (mainFun.ID().getText().toLowerCase().equals("main")) {
@@ -99,14 +108,24 @@ public class FrontEnd extends GraceParserBaseListener {
         }
     }
 
+    private void enterMainScope(GraceParser.DecProcContext mainFun) {
+        FunctionSymbol fSymbol = new FunctionSymbol("main", true);
+        visitMain(fSymbol, mainFun.block());
+        FrontEnd.popScope();
+    }
+
     protected void enterMainScope(GraceParser.DecFuncContext mainFun) {
         FunctionSymbol fSymbol = new FunctionSymbol("main");
+        visitMain(fSymbol, mainFun.block());
+        FrontEnd.popScope();
+    }
+
+    private void visitMain(FunctionSymbol fSymbol, GraceParser.BlockContext block) {
         fSymbol.setEnclosingScope(FrontEnd.currentScope);
         FrontEnd.currentScope.define(fSymbol);
         FrontEnd.pushScope(fSymbol);
         CheckSymbols.MainCreated();
-        new BlockVisitor().visit(mainFun.block());
-        FrontEnd.popScope();
+        new BlockVisitor().visit(block);
     }
 
 }
