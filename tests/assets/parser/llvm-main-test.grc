@@ -1,15 +1,10 @@
-//Teste de Retorno de função
-
-
-def foo(x[]:int):int{
-    var c = 12:int;
-    return x[0] + c;
-}
 
 def main():int{
-    var v[10]:int;
-    var j:int;
-    v[0] = 33;
-    j = foo(v);
-    write j;
+    var i=0:int;
+    while(i < 10){
+        if( i == 2){
+            stop;
+        }
+        i += 1;
+    }
 }

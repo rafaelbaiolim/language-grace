@@ -26,6 +26,8 @@ public class WhileVisitor extends GraceParserBaseVisitor<WhileStmt> {
         LLVM.LLVMBasicBlockRef bCond = llvmp.buildBlock("while.cond");
         LLVM.LLVMBasicBlockRef bBody = llvmp.buildBlock("while.body");
         LLVM.LLVMBasicBlockRef bEnd = llvmp.buildBlock("while.end");
+        locScope.setBlock("cond", bCond);
+        locScope.setBlock("end", bEnd);
 
         Expression exprCond = new ExpressionVisitor().visit(ctx.expression());
         LLVMBuildBr(llve.builder, bCond);

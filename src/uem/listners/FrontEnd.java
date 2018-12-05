@@ -2,6 +2,7 @@ package uem.listners;
 
 import org.antlr.symtab.FunctionSymbol;
 import org.antlr.symtab.GlobalScope;
+import org.antlr.symtab.LocalScope;
 import org.antlr.symtab.Scope;
 import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseListener;
@@ -36,13 +37,25 @@ public class FrontEnd extends GraceParserBaseListener {
         return currentScope.getName().toLowerCase().equals("condicional");
     }
 
-    public static boolean isWithinScope(String scopeName) {
+    public static Scope isWithinScope(String scopeName) {
         for (Scope scope : FrontEnd.currentScope.getEnclosingPathToRoot()) {
             if (scope.getName().equals(scopeName)) {
-                return true;
+                return scope;
             }
         }
-        return false;
+        return null;
+    }
+
+    public static LocalScope isWithinLoopScope(){
+        try {
+            Scope enclosing = isWithinScope("while");
+            if (enclosing == null) {
+                enclosing = FrontEnd.isWithinScope("for");
+            }
+            return (LocalScope) enclosing;
+        } catch (Exception ex) {
+            return null;
+        }
     }
 
     /**
