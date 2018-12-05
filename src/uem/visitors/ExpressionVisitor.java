@@ -112,4 +112,10 @@ public class ExpressionVisitor extends GraceParserBaseVisitor<Expression> {
         return exprL.get(0);
     }
 
+    public Expression visitTernaryOperation(GraceParser.TernaryOperationContext ctx) {
+        ctx.expression();
+
+        return null;
+    }
+
 }

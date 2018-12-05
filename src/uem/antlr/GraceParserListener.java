@@ -177,6 +177,16 @@ public interface GraceParserListener extends ParseTreeListener {
 	 */
 	void exitVarReference(GraceParser.VarReferenceContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link GraceParser#expTern}.
+	 * @param ctx the parse tree
+	 */
+	void enterExpTern(GraceParser.ExpTernContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GraceParser#expTern}.
+	 * @param ctx the parse tree
+	 */
+	void exitExpTern(GraceParser.ExpTernContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link GraceParser#declVar}.
 	 * @param ctx the parse tree
 	 */

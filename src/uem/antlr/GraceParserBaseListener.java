@@ -187,6 +187,18 @@ public class GraceParserBaseListener implements GraceParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterExpTern(GraceParser.ExpTernContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExpTern(GraceParser.ExpTernContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterDeclVar(GraceParser.DeclVarContext ctx) { }
 	/**
 	 * {@inheritDoc}

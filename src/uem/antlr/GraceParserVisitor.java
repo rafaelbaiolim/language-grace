@@ -111,6 +111,12 @@ public interface GraceParserVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitVarReference(GraceParser.VarReferenceContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link GraceParser#expTern}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExpTern(GraceParser.ExpTernContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link GraceParser#declVar}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
