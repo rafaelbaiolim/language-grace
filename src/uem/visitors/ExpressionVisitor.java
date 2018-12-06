@@ -5,6 +5,7 @@ import org.antlr.symtab.VariableSymbol;
 import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseVisitor;
 import uem.ast.expr.*;
+import uem.ast.stmt.Statement;
 import uem.listners.FrontEnd;
 import uem.semantic.CheckSymbols;
 
@@ -113,9 +114,7 @@ public class ExpressionVisitor extends GraceParserBaseVisitor<Expression> {
     }
 
     public Expression visitTernaryOperation(GraceParser.TernaryOperationContext ctx) {
-        ctx.expression();
-
-        return null;
+        return new CondicionalVisitor().visit(ctx);
     }
 
 }

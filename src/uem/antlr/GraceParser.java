@@ -31,7 +31,7 @@ public class GraceParser extends Parser {
 		AND=47, PLUS_INC=48, MINUS_DEC=49, ID=50, COMMENT=51, WS=52, NUMBERLITERAL=53, 
 		STRINGLITERAL=54;
 	public static final int
-		RULE_graceFile = 0, RULE_statement = 1, RULE_expression = 2, RULE_expTern = 3, 
+		RULE_graceFile = 0, RULE_statement = 1, RULE_expression = 2, RULE_ternResult = 3, 
 		RULE_declVar = 4, RULE_listSpecVars = 5, RULE_specVar = 6, RULE_specVarSimple = 7, 
 		RULE_specVarSimpleIni = 8, RULE_specVarArr = 9, RULE_specVarArrIni = 10, 
 		RULE_decSub = 11, RULE_decProc = 12, RULE_decFunc = 13, RULE_lstParam = 14, 
@@ -42,7 +42,7 @@ public class GraceParser extends Parser {
 		RULE_cmdRead = 31, RULE_cmdWrite = 32, RULE_block = 33, RULE_variable = 34, 
 		RULE_lstOP = 35, RULE_lstType = 36, RULE_stringLit = 37, RULE_literal = 38;
 	public static final String[] ruleNames = {
-		"graceFile", "statement", "expression", "expTern", "declVar", "listSpecVars", 
+		"graceFile", "statement", "expression", "ternResult", "declVar", "listSpecVars", 
 		"specVar", "specVarSimple", "specVarSimpleIni", "specVarArr", "specVarArrIni", 
 		"decSub", "decProc", "decFunc", "lstParam", "specParam", "param", "command", 
 		"cmdSimple", "cmdAtrib", "arrAtrib", "atrib", "cmdIf", "cmdWhile", "cmdFor", 
@@ -400,12 +400,12 @@ public class GraceParser extends Parser {
 	public static class TernaryOperationContext extends ExpressionContext {
 		public ExpressionContext left;
 		public Token operator;
-		public ExpTernContext right;
+		public TernResultContext right;
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
-		public ExpTernContext expTern() {
-			return getRuleContext(ExpTernContext.class,0);
+		public TernResultContext ternResult() {
+			return getRuleContext(TernResultContext.class,0);
 		}
 		public TernaryOperationContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
@@ -699,7 +699,7 @@ public class GraceParser extends Parser {
 						((CompareOperationContext)_localctx).left = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(127);
-						if (!(precpred(_ctx, 9))) throw new FailedPredicateException(this, "precpred(_ctx, 9)");
+						if (!(precpred(_ctx, 10))) throw new FailedPredicateException(this, "precpred(_ctx, 10)");
 						setState(128);
 						((CompareOperationContext)_localctx).operator = _input.LT(1);
 						_la = _input.LA(1);
@@ -709,7 +709,7 @@ public class GraceParser extends Parser {
 							consume();
 						}
 						setState(129);
-						((CompareOperationContext)_localctx).right = expression(10);
+						((CompareOperationContext)_localctx).right = expression(11);
 						}
 						break;
 					case 2:
@@ -737,11 +737,11 @@ public class GraceParser extends Parser {
 						((TernaryOperationContext)_localctx).left = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(133);
-						if (!(precpred(_ctx, 10))) throw new FailedPredicateException(this, "precpred(_ctx, 10)");
+						if (!(precpred(_ctx, 9))) throw new FailedPredicateException(this, "precpred(_ctx, 9)");
 						setState(134);
 						((TernaryOperationContext)_localctx).operator = match(T_TERN);
 						setState(135);
-						((TernaryOperationContext)_localctx).right = expTern();
+						((TernaryOperationContext)_localctx).right = ternResult();
 						}
 						break;
 					}
@@ -764,47 +764,47 @@ public class GraceParser extends Parser {
 		return _localctx;
 	}
 
-	public static class ExpTernContext extends ParserRuleContext {
-		public ExpressionContext right;
-		public Token operator;
+	public static class TernResultContext extends ParserRuleContext {
 		public ExpressionContext left;
+		public Token operator;
+		public ExpressionContext right;
 		public List<ExpressionContext> expression() {
 			return getRuleContexts(ExpressionContext.class);
 		}
 		public ExpressionContext expression(int i) {
 			return getRuleContext(ExpressionContext.class,i);
 		}
-		public ExpTernContext(ParserRuleContext parent, int invokingState) {
+		public TernResultContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_expTern; }
+		@Override public int getRuleIndex() { return RULE_ternResult; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterExpTern(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).enterTernResult(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitExpTern(this);
+			if ( listener instanceof GraceParserListener ) ((GraceParserListener)listener).exitTernResult(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitExpTern(this);
+			if ( visitor instanceof GraceParserVisitor ) return ((GraceParserVisitor<? extends T>)visitor).visitTernResult(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final ExpTernContext expTern() throws RecognitionException {
-		ExpTernContext _localctx = new ExpTernContext(_ctx, getState());
-		enterRule(_localctx, 6, RULE_expTern);
+	public final TernResultContext ternResult() throws RecognitionException {
+		TernResultContext _localctx = new TernResultContext(_ctx, getState());
+		enterRule(_localctx, 6, RULE_ternResult);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(141);
-			((ExpTernContext)_localctx).right = expression(0);
+			((TernResultContext)_localctx).left = expression(0);
 			setState(142);
-			((ExpTernContext)_localctx).operator = match(T_COLON);
+			((TernResultContext)_localctx).operator = match(T_COLON);
 			setState(143);
-			((ExpTernContext)_localctx).left = expression(0);
+			((TernResultContext)_localctx).right = expression(0);
 			}
 		}
 		catch (RecognitionException re) {
@@ -3610,11 +3610,11 @@ public class GraceParser extends Parser {
 	private boolean expression_sempred(ExpressionContext _localctx, int predIndex) {
 		switch (predIndex) {
 		case 0:
-			return precpred(_ctx, 9);
+			return precpred(_ctx, 10);
 		case 1:
 			return precpred(_ctx, 8);
 		case 2:
-			return precpred(_ctx, 10);
+			return precpred(_ctx, 9);
 		}
 		return true;
 	}
@@ -3670,9 +3670,9 @@ public class GraceParser extends Parser {
 		"uw\3\2\2\2vt\3\2\2\2w\u0080\7\24\2\2xy\7\64\2\2yz\7\25\2\2z{\5\6\4\2{"+
 		"|\7\26\2\2|\u0080\3\2\2\2}\u0080\7\64\2\2~\u0080\5N(\2\177Z\3\2\2\2\177"+
 		"]\3\2\2\2\177_\3\2\2\2\177k\3\2\2\2\177x\3\2\2\2\177}\3\2\2\2\177~\3\2"+
-		"\2\2\u0080\u008c\3\2\2\2\u0081\u0082\f\13\2\2\u0082\u0083\t\2\2\2\u0083"+
-		"\u008b\5\6\4\f\u0084\u0085\f\n\2\2\u0085\u0086\t\3\2\2\u0086\u008b\5\6"+
-		"\4\13\u0087\u0088\f\f\2\2\u0088\u0089\7.\2\2\u0089\u008b\5\b\5\2\u008a"+
+		"\2\2\u0080\u008c\3\2\2\2\u0081\u0082\f\f\2\2\u0082\u0083\t\2\2\2\u0083"+
+		"\u008b\5\6\4\r\u0084\u0085\f\n\2\2\u0085\u0086\t\3\2\2\u0086\u008b\5\6"+
+		"\4\13\u0087\u0088\f\13\2\2\u0088\u0089\7.\2\2\u0089\u008b\5\b\5\2\u008a"+
 		"\u0081\3\2\2\2\u008a\u0084\3\2\2\2\u008a\u0087\3\2\2\2\u008b\u008e\3\2"+
 		"\2\2\u008c\u008a\3\2\2\2\u008c\u008d\3\2\2\2\u008d\7\3\2\2\2\u008e\u008c"+
 		"\3\2\2\2\u008f\u0090\5\6\4\2\u0090\u0091\7\33\2\2\u0091\u0092\5\6\4\2"+

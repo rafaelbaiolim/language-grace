@@ -95,16 +95,20 @@ public class DeclFunction implements SubStatment {
     }
 
     static void setParamsScopeFn(List<LLVM.LLVMTypeRef> args, List<Statement> params) {
-        for (Statement param : params) {
-            VarStatement currentParam;
-            if (param instanceof SpecParam) {
-                currentParam = (SpecParam) param;
-                args.add(LLVMInt32Type());
-            } else {
-                currentParam = (SpecParamArr) param;
-                args.add(LLVMPointerType(LLVMInt32Type(), 0));
+        try{
+            for (Statement param : params) {
+                VarStatement currentParam;
+                if (param instanceof SpecParam) {
+                    currentParam = (SpecParam) param;
+                    args.add(LLVMInt32Type());
+                } else {
+                    currentParam = (SpecParamArr) param;
+                    args.add(LLVMPointerType(LLVMInt32Type(), 0));
 
+                }
             }
+        }catch (NullPointerException ne){
+            //casos especiais
         }
     }
 }

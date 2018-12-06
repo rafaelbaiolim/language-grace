@@ -118,7 +118,7 @@ public class GraceParserBaseVisitor<T> extends AbstractParseTreeVisitor<T> imple
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitExpTern(GraceParser.ExpTernContext ctx) { return visitChildren(ctx); }
+	@Override public T visitTernResult(GraceParser.TernResultContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

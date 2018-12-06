@@ -2,44 +2,32 @@ package uem.ast.stmt;
 
 import org.antlr.v4.runtime.Token;
 import org.bytedeco.javacpp.LLVM;
+import org.bytedeco.javacpp.PointerPointer;
 import uem.IR.LLVMEmitter;
-import uem.IR.LLVMPresets;
 import uem.ast.Position;
 import uem.ast.expr.Expression;
 
 import java.util.List;
 
-import static org.bytedeco.javacpp.LLVM.*;
+import static org.bytedeco.javacpp.LLVM.LLVMBuildCall;
+import static org.bytedeco.javacpp.LLVM.LLVMGetNamedFunction;
 
-public class CondicionalStmt implements Statement {
-
+public class CondicionalStmt implements Statement, Expression {
+    public static final String TernFunName = "__TernOP";
     final String varName = null;
     private List<Statement> ifStmt;
     private List<Statement> elseStmt;
     private final Position position;
     private Expression cond;
     private Token symToken;
+    private Expression eThen;
+    private Expression eElse;
 
     public CondicionalStmt() {
         super();
         this.position = null;
     }
 
-    public CondicionalStmt(List<Statement> ifStmt, Expression cond) {
-        super();
-        this.ifStmt = ifStmt;
-        this.position = null;
-        this.cond = cond;
-
-    }
-
-    public CondicionalStmt(List<Statement> ifStmt, List<Statement> elseStmt, Expression cond) {
-        super();
-        this.ifStmt = ifStmt;
-        this.elseStmt = elseStmt;
-        this.position = null;
-        this.cond = cond;
-    }
 
     @Override
     public String getVarName() {
@@ -88,30 +76,35 @@ public class CondicionalStmt implements Statement {
 
     @Override
     public LLVM.LLVMValueRef getLLVMValue() {
-        LLVMPresets llvmp = LLVMPresets.getInstance();
-        LLVMEmitter llve = LLVMEmitter.getInstance();
+        if (this.eElse != null && this.eThen != null) {
 
-        LLVM.LLVMBasicBlockRef ifTrue = llvmp.buildBlock("iftrue");
-        LLVM.LLVMBasicBlockRef ifFalse = llvmp.buildBlock("iffalse");
-        LLVM.LLVMBasicBlockRef end = llvmp.buildBlock("ifend");
+            LLVM.LLVMValueRef argsProc[] = new LLVM.LLVMValueRef[0];
+            LLVM.LLVMValueRef procName = LLVMGetNamedFunction(
+                    LLVMEmitter.getInstance().mod,
+                    TernFunName);
 
-        LLVMBuildCondBr(
-                llve.builder,
-                this.cond.getLLVMValue(),
-                ifTrue,
-                ifFalse);
-
-        LLVMPositionBuilderAtEnd(llve.builder, ifTrue);
-        LLVMBuildBr(llve.builder, end);
-
-        /**
-         * Tratar o caso de [if -> else] aqui
-         */
-        LLVMPositionBuilderAtEnd(llve.builder, ifFalse);
-        LLVMBuildRetVoid(llve.builder);
-
-        LLVMPositionBuilderAtEnd(llve.builder, end);
+            return LLVMBuildCall(LLVMEmitter.getInstance().builder,
+                    procName,
+                    new PointerPointer<>(argsProc),
+                    0,
+                    CondicionalStmt.TernFunName);
+        }
         return null;
     }
 
+    public Expression geteElse() {
+        return eElse;
+    }
+
+    public void seteElse(Expression eElse) {
+        this.eElse = eElse;
+    }
+
+    public Expression geteThen() {
+        return eThen;
+    }
+
+    public void seteThen(Expression eThen) {
+        this.eThen = eThen;
+    }
 }

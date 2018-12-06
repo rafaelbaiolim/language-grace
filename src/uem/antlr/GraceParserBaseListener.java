@@ -187,13 +187,13 @@ public class GraceParserBaseListener implements GraceParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExpTern(GraceParser.ExpTernContext ctx) { }
+	@Override public void enterTernResult(GraceParser.TernResultContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExpTern(GraceParser.ExpTernContext ctx) { }
+	@Override public void exitTernResult(GraceParser.TernResultContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

@@ -20,8 +20,8 @@ statement returns [Scope scope]
     ;
 
 expression
-    : left=expression operator='?' right=expTern                                                        #ternaryOperation
-    | left=expression operator=('||' | '&&' | '==' | '!=' | '<' | '<=' | '>' | '>=' ) right=expression  #compareOperation
+    : left=expression operator=('||' | '&&' | '==' | '!=' | '<' | '<=' | '>' | '>=' ) right=expression  #compareOperation
+    | left=expression operator='?' right=ternResult                                                     #ternaryOperation
     | left=expression operator=( '+'| '-' | '/' | '*' | '%') right=expression                           #binaryOperation
     | '-' expression                                                                                    #minusExpression
     | '!' expression                                                                                    #differenceExpression
@@ -32,12 +32,10 @@ expression
     | literal                                                                                           #literalReference
     ;
 
-expTern
-   : right=expression operator=':' left=expression
-   ;
+ternResult
+    : left=expression operator=':' right=expression;
 
 // Variáveis
-
 declVar returns [Scope scope]
     : 'var' listSpecVars ':' lstType ';'
     ;

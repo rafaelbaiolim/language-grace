@@ -91,22 +91,26 @@ public class DeclProcedure implements SubStatment {
      * @param varName
      */
     static void paramItera(LLVM.LLVMValueRef fun, List<Statement> params, String varName) {
-        int i = 0;
-        for (Statement param : params) {
-            VarStatement currentParam;
-            if (param instanceof SpecParam) {
-                currentParam = (SpecParam) param;
-            } else {
-                currentParam = (SpecParamArr) param;
+        try {
+            int i = 0;
+            for (Statement param : params) {
+                VarStatement currentParam;
+                if (param instanceof SpecParam) {
+                    currentParam = (SpecParam) param;
+                } else {
+                    currentParam = (SpecParamArr) param;
 
+                }
+                LLVM.LLVMValueRef allocatedParam = currentParam.getLLVMValue();
+                LLVM.LLVMValueRef pLLVMVal = LLVMGetParam(fun, i);
+                LLVMBuildStore(
+                        LLVMEmitter.getInstance().builder,
+                        pLLVMVal,
+                        allocatedParam);
+                i++;
             }
-            LLVM.LLVMValueRef allocatedParam = currentParam.getLLVMValue();
-            LLVM.LLVMValueRef pLLVMVal = LLVMGetParam(fun, i);
-            LLVMBuildStore(
-                    LLVMEmitter.getInstance().builder,
-                    pLLVMVal,
-                    allocatedParam);
-            i++;
+        }catch (NullPointerException ne){
+            //casos especiais
         }
     }
 
