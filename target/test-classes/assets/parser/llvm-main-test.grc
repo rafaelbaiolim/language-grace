@@ -1,5 +1,6 @@
 def main():int{
     var x:int;
     var a = 10:int;
-    write a;
+    x = a > 0 ? a * 2 : a + 1;
+    write x;
 }

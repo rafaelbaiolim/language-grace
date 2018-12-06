@@ -3,7 +3,7 @@
 <!--este tipo de teste em arquivos separados;-->
 <tests>
     <test>
-        <wanted>55</wanted>
+        <wanted>20</wanted>
         <type>EQUALS</type>
         <optimize>false</optimize>
         <file>/home/rafaellb/Documents/uem/ilp2018/compilador2018/tests/assets/parser/test-ternario.grc</file>
