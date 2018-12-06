@@ -60,6 +60,14 @@ Testes Unitários
 em seguida [insira a linha que referencia a entrada criada](https://github.com/rafaelbaiolim/compilador2018/blob/1b96d887462019dc72f0044f1fd282c2553cbbbd/tests/unit/CompillerTest.java#L57) .
 
 Abaixo é mostrado um exemplo de teste unitário do trabalho
+
+| Tag          | Descrição          |
+| ------------- | ------------- |
+| wanted | Valor esperado do output  |
+| type | EQUALS ou NOT_EQUALS |
+| optimize | Utilizar Otimizações ( true | false) |
+| file | Caminho absoluto do arquivo de teste XML |
+
 ```xml
 <tests>
     <test>
@@ -70,4 +78,3 @@ Abaixo é mostrado um exemplo de teste unitário do trabalho
     </test>
 </tests>
 ```
-
