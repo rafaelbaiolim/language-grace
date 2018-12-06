@@ -53,5 +53,21 @@ Livros
 
 Testes Unitários
 ==============================
-* [x] Var
+1. Setar a pasta de 'tests' como 'test resource' na IDE.
+2. Como a LLVM possui a maior parte dos métodos e builders estáticos, 
+é necessário escrever cada teste em um XML separado.
+3. Insira uma nova entrada no [array de arquivos de testes](https://github.com/rafaelbaiolim/compilador2018/blob/1b96d887462019dc72f0044f1fd282c2553cbbbd/tests/unit/CompillerTest.java#L29) e 
+em seguida [insira a linha que referencia a entrada criada](https://github.com/rafaelbaiolim/compilador2018/blob/1b96d887462019dc72f0044f1fd282c2553cbbbd/tests/unit/CompillerTest.java#L57) .
+
+Abaixo é mostrado um exemplo de teste unitário do trabalho
+```xml
+<tests>
+    <test>
+        <wanted>0 1 1 2 3</wanted>
+        <type>EQUALS</type>
+        <optimize>true</optimize>
+        <file>CAMINHO_ABSOLUTO/test-fib.grc</file>
+    </test>
+</tests>
+```
 
