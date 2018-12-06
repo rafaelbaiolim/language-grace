@@ -1,8 +1,10 @@
-//teste para o laço while
+def func():int{
+    return 0;
+}
+
 def main():int{
-    var i = 0:int;
-    while( i < 5){
-        i = i + 1;
-        write "i[",i,"]";
-    }
+    var arr[10]:int;
+    arr[func()] = 20;
+    write arr[0];
+
 }

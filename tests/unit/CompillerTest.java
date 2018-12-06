@@ -27,7 +27,7 @@ public class CompillerTest {
      * e alterar o indice de @TESTS_XML_RELATIVE_PATH
      */
     private static final String[] XML_FILE_NAME = {
-            "lote/write.xml",            //0
+            "lote/write.xml",           //0
             "arr.xml",                  //1
             "func/atrib-param-arr.xml", //2
             "func/param.xml",           //3
