@@ -1,6 +1,8 @@
+//teste para o laço while
 def main():int{
-    var x:int;
-    var a = 10:int;
-    x = a > 0 ? a * 2 : a + 1;
-    write x;
+    var i = 0:int;
+    while( i < 5){
+        i = i + 1;
+        write "i[",i,"]";
+    }
 }

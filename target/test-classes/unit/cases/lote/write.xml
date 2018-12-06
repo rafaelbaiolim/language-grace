@@ -8,16 +8,4 @@
         <optimize>true</optimize>
         <file>/home/rafaellb/Documents/uem/ilp2018/compilador2018/tests/assets/parser/test-write.grc</file>
     </test>
-    <test>
-        <wanted>i[1]i[2]i[3]i[4]i[5]</wanted>
-        <type>EQUALS</type>
-        <optimize>true</optimize>
-        <file>/home/rafaellb/Documents/uem/ilp2018/compilador2018/tests/assets/parser/test-while.grc</file>
-    </test>
-    <test>
-        <wanted>15 5 50 2</wanted>
-        <type>EQUALS</type>
-        <optimize>true</optimize>
-        <file>/home/rafaellb/Documents/uem/ilp2018/compilador2018/tests/assets/parser/test-aritmetimethic-op.grc</file>
-    </test>
 </tests>
