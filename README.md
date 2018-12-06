@@ -66,7 +66,7 @@ Abaixo é mostrado um exemplo de teste unitário do trabalho
 | wanted | Valor esperado do output  |
 | type | EQUALS ou NOT_EQUALS |
 | optimize | Utilizar Otimizações ( true / false) |
-| file | Caminho absoluto do arquivo de teste XML |
+| file | Caminho absoluto do arquivo de teste .grc |
 
 ```xml
 <tests>
