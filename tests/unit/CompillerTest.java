@@ -39,6 +39,7 @@ public class CompillerTest {
             "loop/skip.xml",            //9
             "loop/skip-pares.xml",      //10
             "loop/skip-impares.xml",    //11
+            "tern.xml",                 //12
     };
 
 //    private static final String TESTS_XML_RELATIVE_PATH = "tests/unit/cases/" + XML_FILE_NAME[0];
@@ -52,7 +53,8 @@ public class CompillerTest {
 //    private static final String TESTS_XML_RELATIVE_PATH = "tests/unit/cases/" + XML_FILE_NAME[8];
 //    private static final String TESTS_XML_RELATIVE_PATH = "tests/unit/cases/" + XML_FILE_NAME[9];
 //    private static final String TESTS_XML_RELATIVE_PATH = "tests/unit/cases/" + XML_FILE_NAME[10];
-    private static final String TESTS_XML_RELATIVE_PATH = "tests/unit/cases/" + XML_FILE_NAME[11];
+//    private static final String TESTS_XML_RELATIVE_PATH = "tests/unit/cases/" + XML_FILE_NAME[11];
+    private static final String TESTS_XML_RELATIVE_PATH = "tests/unit/cases/" + XML_FILE_NAME[12];
 
     private String wanted;
     private String file;

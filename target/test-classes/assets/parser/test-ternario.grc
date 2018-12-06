@@ -1,0 +1,5 @@
+def main():int{
+   var a:int;
+   a = (10 < 2 ? 303 : 55);
+   write a;
+}
