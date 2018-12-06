@@ -63,7 +63,9 @@ public class ExpressionVisitor extends GraceParserBaseVisitor<Expression> {
                 return arrRef;
             }
         } catch (Exception ex) {
-            CheckSymbols.error(varRefCtx.ID().getSymbol(), "error: use of undeclared identifier: `" + varRefCtx.getText() + "´.");
+            if(sym == null) {
+                CheckSymbols.error(varRefCtx.ID().getSymbol(), "error: use of undeclared identifier: `" + varRefCtx.getText() + "´.");
+            }
         }
 
         VarReference varRef = new VarReference(varName);

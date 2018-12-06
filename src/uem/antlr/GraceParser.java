@@ -1,4 +1,4 @@
-// Generated from GraceParser.g4 by ANTLR 4.5.3
+// Generated from GraceParser.g4 by ANTLR 4.7.1
 package uem.antlr;
 
     import org.antlr.symtab.*;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class GraceParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.5.3", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.7.1", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -256,6 +256,7 @@ public class GraceParser extends Parser {
 		enterRule(_localctx, 2, RULE_statement);
 		try {
 			setState(86);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T_VAR:
 				_localctx = new DeclVarStatementContext(_localctx);
@@ -581,6 +582,7 @@ public class GraceParser extends Parser {
 				setState(93);
 				match(T_LEFT_PAREN);
 				setState(95);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_FALSE) | (1L << T_TRUE) | (1L << T_LEFT_PAREN) | (1L << T_MINUS) | (1L << NEG_UN) | (1L << ID) | (1L << NUMBERLITERAL) | (1L << STRINGLITERAL))) != 0)) {
 					{
@@ -619,6 +621,7 @@ public class GraceParser extends Parser {
 				setState(106);
 				match(T_LEFT_PAREN);
 				setState(108);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_FALSE) | (1L << T_TRUE) | (1L << T_LEFT_PAREN) | (1L << T_MINUS) | (1L << NEG_UN) | (1L << ID) | (1L << NUMBERLITERAL) | (1L << STRINGLITERAL))) != 0)) {
 					{
@@ -705,7 +708,10 @@ public class GraceParser extends Parser {
 						_la = _input.LA(1);
 						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_COMP) | (1L << T_DIFFERENT) | (1L << T_GREATER) | (1L << T_GREATER_OR_EQUAL) | (1L << T_LOWER) | (1L << T_LOWER_OR_EQUAL) | (1L << OR) | (1L << AND))) != 0)) ) {
 							((CompareOperationContext)_localctx).operator = (Token)_errHandler.recoverInline(this);
-						} else {
+						}
+						else {
+							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+							_errHandler.reportMatch(this);
 							consume();
 						}
 						setState(129);
@@ -724,7 +730,10 @@ public class GraceParser extends Parser {
 						_la = _input.LA(1);
 						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_PLUS) | (1L << T_MINUS) | (1L << T_ASTERISK) | (1L << T_SLASH) | (1L << T_PERCENT))) != 0)) ) {
 							((BinaryOperationContext)_localctx).operator = (Token)_errHandler.recoverInline(this);
-						} else {
+						}
+						else {
+							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+							_errHandler.reportMatch(this);
 							consume();
 						}
 						setState(132);
@@ -1446,6 +1455,7 @@ public class GraceParser extends Parser {
 			setState(199);
 			match(T_LEFT_PAREN);
 			setState(201);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==ID) {
 				{
@@ -1516,6 +1526,7 @@ public class GraceParser extends Parser {
 			setState(208);
 			match(T_LEFT_PAREN);
 			setState(210);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==ID) {
 				{
@@ -1823,6 +1834,7 @@ public class GraceParser extends Parser {
 		enterRule(_localctx, 34, RULE_command);
 		try {
 			setState(244);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T_FOR:
 			case T_IF:
@@ -2317,7 +2329,10 @@ public class GraceParser extends Parser {
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_EQUAL) | (1L << T_INCREMENT) | (1L << T_DECREMENT) | (1L << T_INC_MULT) | (1L << T_INC_DIV) | (1L << T_INC_MOD))) != 0)) ) {
 				((ArrAtribContext)_localctx).operator = (Token)_errHandler.recoverInline(this);
-			} else {
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
 				consume();
 			}
 			setState(275);
@@ -2374,7 +2389,10 @@ public class GraceParser extends Parser {
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_EQUAL) | (1L << T_INCREMENT) | (1L << T_DECREMENT) | (1L << T_INC_MULT) | (1L << T_INC_DIV) | (1L << T_INC_MOD))) != 0)) ) {
 				((AtribContext)_localctx).operator = (Token)_errHandler.recoverInline(this);
-			} else {
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
 				consume();
 			}
 			setState(279);
@@ -2870,6 +2888,7 @@ public class GraceParser extends Parser {
 			setState(329);
 			match(T_LEFT_PAREN);
 			setState(331);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_FALSE) | (1L << T_TRUE) | (1L << T_LEFT_PAREN) | (1L << T_MINUS) | (1L << NEG_UN) | (1L << ID) | (1L << NUMBERLITERAL) | (1L << STRINGLITERAL))) != 0)) {
 				{
@@ -3238,7 +3257,10 @@ public class GraceParser extends Parser {
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T_PLUS) | (1L << T_MINUS) | (1L << T_ASTERISK) | (1L << T_SLASH) | (1L << T_PERCENT) | (1L << T_EQUAL))) != 0)) ) {
 			_errHandler.recoverInline(this);
-			} else {
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
 				consume();
 			}
 			}
@@ -3324,6 +3346,7 @@ public class GraceParser extends Parser {
 		enterRule(_localctx, 72, RULE_lstType);
 		try {
 			setState(384);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T_INT:
 				_localctx = new IntegerContext(_localctx);
@@ -3552,6 +3575,7 @@ public class GraceParser extends Parser {
 		enterRule(_localctx, 76, RULE_literal);
 		try {
 			setState(401);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case NUMBERLITERAL:
 				_localctx = new IntLiteralContext(_localctx);
@@ -3620,7 +3644,7 @@ public class GraceParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\38\u0196\4\2\t\2\4"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\38\u0196\4\2\t\2\4"+
 		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
 		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
 		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31\t\31"+
@@ -3651,8 +3675,8 @@ public class GraceParser extends Parser {
 		"\n$\3%\3%\3&\3&\3&\5&\u0183\n&\3\'\3\'\3\'\3\'\6\'\u0189\n\'\r\'\16\'"+
 		"\u018a\3\'\5\'\u018e\n\'\3(\3(\3(\3(\5(\u0194\n(\3(\2\3\6)\2\4\6\b\n\f"+
 		"\16\20\22\24\26\30\32\34\36 \"$&(*,.\60\62\64\668:<>@BDFHJLN\2\6\6\2!"+
-		"!#%+,\60\61\3\2\34 \4\2\"\"&*\4\2\34 \"\"\u01a5\2Q\3\2\2\2\4X\3\2\2\2"+
-		"\6\177\3\2\2\2\b\u008f\3\2\2\2\n\u0093\3\2\2\2\f\u0099\3\2\2\2\16\u00a5"+
+		"!#%+,\60\61\3\2\34 \4\2\"\"&*\4\2\34 \"\"\2\u01a5\2Q\3\2\2\2\4X\3\2\2"+
+		"\2\6\177\3\2\2\2\b\u008f\3\2\2\2\n\u0093\3\2\2\2\f\u0099\3\2\2\2\16\u00a5"+
 		"\3\2\2\2\20\u00a7\3\2\2\2\22\u00a9\3\2\2\2\24\u00ad\3\2\2\2\26\u00b6\3"+
 		"\2\2\2\30\u00c5\3\2\2\2\32\u00c7\3\2\2\2\34\u00d0\3\2\2\2\36\u00db\3\2"+
 		"\2\2 \u00e3\3\2\2\2\"\u00f2\3\2\2\2$\u00f6\3\2\2\2&\u0102\3\2\2\2(\u010a"+
