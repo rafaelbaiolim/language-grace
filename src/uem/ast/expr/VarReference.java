@@ -27,7 +27,6 @@ public class VarReference extends VarRefExpression {
         } catch (Exception ex) {
 
         }
-
         return load;
     }
 }

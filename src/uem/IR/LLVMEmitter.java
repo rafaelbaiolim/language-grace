@@ -272,46 +272,42 @@ public class LLVMEmitter {
 
     private LLVMEmitter Ternary() {
         List<LLVMTypeRef> args = new LinkedList<LLVMTypeRef>();
-        args.add(LLVMPointerType(types.i1(), 0));
-        args.add(LLVMPointerType(types.i32(), 0));
-        args.add(LLVMPointerType(types.i32(), 0));
-
+        args.add(types.i1());
+        args.add(types.i32());
+        args.add(types.i32());
         LLVMPresets llp = LLVMPresets.getInstance();
         LLVMValueRef fun = llp.buildScopeFn(TERN_FUN_NAME, LLVMInt32Type(), args);
         LLVM.LLVMBasicBlockRef ternThen = llp.buildBlock("ternThen");
         LLVM.LLVMBasicBlockRef ternElse = llp.buildBlock("ternElse");
-
         LLVM.LLVMValueRef condParam = LLVMGetParam(fun, 0); //primeiro param cond
-        LLVMValueRef condAlloc = LLVMBuildAlloca(builder, types.i1(), "allocCond");
-        LLVMBuildStore(builder, condParam,condAlloc);
-        LLVMValueRef loadCond = LLVMBuildLoad(builder, condAlloc, "loadAllocCond");
-
         LLVM.LLVMValueRef thenParam = LLVMGetParam(fun, 1); //primeiro param then
-        LLVMValueRef thenAlloc = LLVMBuildAlloca(builder, types.i32(), "allocThen");
-        LLVMBuildStore(builder, thenParam,thenAlloc);
-        LLVMValueRef loadThen = LLVMBuildLoad(builder, thenAlloc, "loadAllocThen");
-
         LLVM.LLVMValueRef elseParam = LLVMGetParam(fun, 2); //primeiro param else
-        LLVMValueRef elseAlloc = LLVMBuildAlloca(builder, types.i32(), "allocElse");
-        LLVMBuildStore(builder, elseParam,elseAlloc);
-        LLVMValueRef loadElse = LLVMBuildLoad(builder, elseAlloc, "loadAllocElse");
-
         LLVMBuildCondBr(
                 LLVMEmitter.getInstance().builder,
-                loadCond,
+                condParam,
                 ternThen,
                 ternElse);
-
-        //then label
         LLVMPositionBuilderAtEnd(builder, ternThen);
-        LLVMBuildRet(builder, loadThen);
-
+        LLVMBuildRet(builder, thenParam);
         LLVMPositionBuilderAtEnd(builder, ternElse);
-        LLVMBuildRet(builder, loadElse);
+        LLVMBuildRet(builder, elseParam);
         LLVMPositionBuilderAtEnd(builder, mainBlock);
         this.popScope();
         return this;
     }
+
+    public LLVMValueRef CallTernary(LLVMValueRef lvCond,
+                                    LLVMValueRef lvThen,
+                                    LLVMValueRef lvElse) {
+        LLVMValueRef tern = LLVMGetNamedFunction(mod, TERN_FUN_NAME);
+        LLVMValueRef args[] = {
+                lvCond,
+                lvThen,
+                lvElse,
+        };
+        return LLVMBuildCall(builder, tern, new PointerPointer(args), 3, TERN_FUN_NAME);
+    }
+
 
     private LLVMEmitter Printer() {
         LLVMTypeRef PrintfArgsTyList[] = {
@@ -367,12 +363,6 @@ public class LLVMEmitter {
             //System.out.scanln(ex.getMessage());
         }
         return this;
-    }
-
-    public LLVMValueRef CallTernary(LLVMValueRef lvCond, LLVMValueRef lvThen, LLVMValueRef lvElse) {
-        LLVMValueRef tern = LLVMGetNamedFunction(mod, TERN_FUN_NAME);
-        LLVMValueRef args[] = {lvCond, lvThen, lvElse};
-        return LLVMBuildCall(builder, tern, new PointerPointer(args), args.length, TERN_FUN_NAME);
     }
 
     public void CallPrint(LLVMValueRef value, String format) {

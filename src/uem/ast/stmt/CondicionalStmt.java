@@ -10,9 +10,7 @@ import uem.visitors.ExpressionVisitor;
 
 import java.util.List;
 
-import static org.bytedeco.javacpp.LLVM.LLVMBuildCall;
-import static org.bytedeco.javacpp.LLVM.LLVMBuildLoad;
-import static org.bytedeco.javacpp.LLVM.LLVMGetNamedFunction;
+import static org.bytedeco.javacpp.LLVM.*;
 
 public class CondicionalStmt implements Statement, Expression {
     public static final String TernFunName = "__TernOP";
@@ -80,13 +78,18 @@ public class CondicionalStmt implements Statement, Expression {
     public LLVM.LLVMValueRef getLLVMValue() {
         if (this.eElse != null && this.eThen != null) {
             LLVMEmitter lle = LLVMEmitter.getInstance();
-            LLVM.LLVMValueRef lvCond = LLVMBuildLoad(lle.builder, this.cond.getLLVMValue(), "loadCond");
-            //if label
-            LLVM.LLVMValueRef lvThen = LLVMBuildLoad(lle.builder, this.eThen.getLLVMValue(), "loadThen");
 
-            //else label
-            LLVM.LLVMValueRef lvElse = LLVMBuildLoad(lle.builder, this.eElse.getLLVMValue(), "loadElse");
-            return lle.CallTernary(lvCond, lvThen, lvElse);
+//            //if label
+//            LLVM.LLVMValueRef lvThen = LLVMBuildLoad(lle.builder, this.eThen.getLLVMValue(), "loadThen");
+//
+//            //else label
+//            LLVM.LLVMValueRef lvElse = LLVMBuildLoad(lle.builder, this.eElse.getLLVMValue(), "loadElse");
+
+            return lle.CallTernary(
+                    this.cond.getLLVMValue(),
+                    this.eThen.getLLVMValue(),
+                    this.eElse.getLLVMValue()
+                    );
         }
         return null;
     }
