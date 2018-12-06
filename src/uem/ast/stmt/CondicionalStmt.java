@@ -6,10 +6,12 @@ import org.bytedeco.javacpp.PointerPointer;
 import uem.IR.LLVMEmitter;
 import uem.ast.Position;
 import uem.ast.expr.Expression;
+import uem.visitors.ExpressionVisitor;
 
 import java.util.List;
 
 import static org.bytedeco.javacpp.LLVM.LLVMBuildCall;
+import static org.bytedeco.javacpp.LLVM.LLVMBuildLoad;
 import static org.bytedeco.javacpp.LLVM.LLVMGetNamedFunction;
 
 public class CondicionalStmt implements Statement, Expression {
@@ -77,17 +79,14 @@ public class CondicionalStmt implements Statement, Expression {
     @Override
     public LLVM.LLVMValueRef getLLVMValue() {
         if (this.eElse != null && this.eThen != null) {
+            LLVMEmitter lle = LLVMEmitter.getInstance();
+            LLVM.LLVMValueRef lvCond = LLVMBuildLoad(lle.builder, this.cond.getLLVMValue(), "loadCond");
+            //if label
+            LLVM.LLVMValueRef lvThen = LLVMBuildLoad(lle.builder, this.eThen.getLLVMValue(), "loadThen");
 
-            LLVM.LLVMValueRef argsProc[] = new LLVM.LLVMValueRef[0];
-            LLVM.LLVMValueRef procName = LLVMGetNamedFunction(
-                    LLVMEmitter.getInstance().mod,
-                    TernFunName);
-
-            return LLVMBuildCall(LLVMEmitter.getInstance().builder,
-                    procName,
-                    new PointerPointer<>(argsProc),
-                    0,
-                    CondicionalStmt.TernFunName);
+            //else label
+            LLVM.LLVMValueRef lvElse = LLVMBuildLoad(lle.builder, this.eElse.getLLVMValue(), "loadElse");
+            return lle.CallTernary(lvCond, lvThen, lvElse);
         }
         return null;
     }

@@ -8,7 +8,6 @@ import org.bytedeco.javacpp.PointerPointer;
 import uem.listners.FrontEnd;
 import uem.semantic.CheckSymbols;
 import uem.utils.TestUtils;
-import uem.visitors.ExpressionVisitor;
 
 import java.util.*;
 
@@ -273,7 +272,7 @@ public class LLVMEmitter {
 
     private LLVMEmitter Ternary() {
         List<LLVMTypeRef> args = new LinkedList<LLVMTypeRef>();
-        args.add(LLVMPointerType(types.i32(), 0));
+        args.add(LLVMPointerType(types.i1(), 0));
         args.add(LLVMPointerType(types.i32(), 0));
         args.add(LLVMPointerType(types.i32(), 0));
 
@@ -283,26 +282,32 @@ public class LLVMEmitter {
         LLVM.LLVMBasicBlockRef ternElse = llp.buildBlock("ternElse");
 
         LLVM.LLVMValueRef condParam = LLVMGetParam(fun, 0); //primeiro param cond
-        LLVMValueRef loadParamCond = LLVMBuildLoad(this.builder, condParam, "loadCondParam");
+        LLVMValueRef condAlloc = LLVMBuildAlloca(builder, types.i1(), "allocCond");
+        LLVMBuildStore(builder, condParam,condAlloc);
+        LLVMValueRef loadCond = LLVMBuildLoad(builder, condAlloc, "loadAllocCond");
 
-        LLVM.LLVMValueRef thenParam = LLVMGetParam(fun, 1); //primeiro param cond
-        LLVMValueRef loadParamThen = LLVMBuildLoad(this.builder, thenParam, "loadThenParam");
+        LLVM.LLVMValueRef thenParam = LLVMGetParam(fun, 1); //primeiro param then
+        LLVMValueRef thenAlloc = LLVMBuildAlloca(builder, types.i32(), "allocThen");
+        LLVMBuildStore(builder, thenParam,thenAlloc);
+        LLVMValueRef loadThen = LLVMBuildLoad(builder, thenAlloc, "loadAllocThen");
 
-        LLVM.LLVMValueRef elseParam = LLVMGetParam(fun, 2); //primeiro param cond
-        LLVMValueRef loadParamElse = LLVMBuildLoad(this.builder, elseParam, "loadElseParam");
+        LLVM.LLVMValueRef elseParam = LLVMGetParam(fun, 2); //primeiro param else
+        LLVMValueRef elseAlloc = LLVMBuildAlloca(builder, types.i32(), "allocElse");
+        LLVMBuildStore(builder, elseParam,elseAlloc);
+        LLVMValueRef loadElse = LLVMBuildLoad(builder, elseAlloc, "loadAllocElse");
 
         LLVMBuildCondBr(
                 LLVMEmitter.getInstance().builder,
-                loadParamCond,
+                loadCond,
                 ternThen,
                 ternElse);
 
         //then label
         LLVMPositionBuilderAtEnd(builder, ternThen);
-        LLVMBuildRet(builder, loadParamThen);
+        LLVMBuildRet(builder, loadThen);
 
         LLVMPositionBuilderAtEnd(builder, ternElse);
-        LLVMBuildRet(builder, loadParamElse);
+        LLVMBuildRet(builder, loadElse);
         LLVMPositionBuilderAtEnd(builder, mainBlock);
         this.popScope();
         return this;
@@ -364,10 +369,10 @@ public class LLVMEmitter {
         return this;
     }
 
-    public void CallTernary(LLVMValueRef lvCond, LLVMValueRef lvThen, LLVMValueRef lvElse) {
-        LLVMValueRef tern = LLVMGetNamedFunction(this.mod, TERN_FUN_NAME);
+    public LLVMValueRef CallTernary(LLVMValueRef lvCond, LLVMValueRef lvThen, LLVMValueRef lvElse) {
+        LLVMValueRef tern = LLVMGetNamedFunction(mod, TERN_FUN_NAME);
         LLVMValueRef args[] = {lvCond, lvThen, lvElse};
-        LLVMBuildCall(builder, tern, new PointerPointer(args), args.length, TERN_FUN_NAME);
+        return LLVMBuildCall(builder, tern, new PointerPointer(args), args.length, TERN_FUN_NAME);
     }
 
     public void CallPrint(LLVMValueRef value, String format) {

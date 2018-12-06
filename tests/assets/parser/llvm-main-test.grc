@@ -1,18 +1,5 @@
-def fib(number:int):int{
-  if (number == 0){
-      return 0;
-  }
-  if (number == 1){
-    return 1;
-  }
-  return (fib(number-1) + fib(number-2));
-}
-
 def main():int{
-    var n,i:int;
-    n = 5;
-    for (i = 0; i < n; i+=1){
-      write fib(i)," ";
-    }
-
+    var x:int;
+    var a = 10:int;
+    x = (a > 0 ? a * 2 : a + 1);
 }

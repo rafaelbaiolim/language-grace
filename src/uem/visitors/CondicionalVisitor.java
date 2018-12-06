@@ -96,58 +96,20 @@ public class CondicionalVisitor extends GraceParserBaseVisitor<CondicionalStmt> 
 
 
     public CondicionalStmt visitTernaryOperation(GraceParser.TernaryOperationContext ctx) {
-        FunctionSymbol fSymbol = new FunctionSymbol(CondicionalStmt.TernFunName);
-        fSymbol.setEnclosingScope(FrontEnd.currentScope);
-        FrontEnd.currentScope.define(fSymbol);
-        FrontEnd.pushScope(fSymbol);
-        //stmt
-        DeclFunction declFunction = new DeclFunction(CondicionalStmt.TernFunName);
-        declFunction.getLLVMValue();
-
-        LLVMEmitter llve = LLVMEmitter.getInstance();
-        LLVMPresets llvp = LLVMPresets.getInstance();
-
-
-        LLVM.LLVMBasicBlockRef ternThen = llvp.buildBlock("ternThen");
-        LLVM.LLVMBasicBlockRef ternElse = llvp.buildBlock("ternElse");
-
-        CondicionalStmt condicionalStmt = new CondicionalStmt();
+        LLVMEmitter lle = LLVMEmitter.getInstance();
         Expression exprCond = new ExpressionVisitor().visit(ctx.left); //Condição
-        LLVM.LLVMValueRef cond = exprCond.getLLVMValue();
-
-        LLVMBuildCondBr(
-                LLVMEmitter.getInstance().builder,
-                cond,
-                ternThen,
-                ternElse);
-
-        LLVMPositionBuilderAtEnd(llve.builder, ternThen);
-        condicionalStmt.setCond(exprCond);
-
-        /////Sempre vai ter uma else-cond
-
-        Expression eThen;
-        Expression eElse;
 
         //if label
-        eThen = new ExpressionVisitor().visit(ctx.right.left);
-        LLVMBuildRet(llve.builder, eThen.getLLVMValue());
-
+        Expression eThen = new ExpressionVisitor().visit(ctx.right.left);
 
         //else label
-        LLVMPositionBuilderAtEnd(llve.builder, ternElse);
-        eElse = new ExpressionVisitor().visit(ctx.right.right);
-        LLVMBuildRet(llve.builder, eElse.getLLVMValue());
+        Expression eElse = new ExpressionVisitor().visit(ctx.right.right);
 
+        CondicionalStmt condicionalStmt = new CondicionalStmt();
+
+        condicionalStmt.setCond(exprCond);
         condicionalStmt.seteThen(eThen);
         condicionalStmt.seteElse(eElse);
-
-        FrontEnd.popScope();
-        declFunction.setReturnType(new IntegerType());
-        LLVMEmitter.getInstance().popScope();               //sai do escopo da procedure
-        LLVMPresets.getInstance().finalizeFunctionScope();  //volta para o bloco anterior
-
-
 
         return condicionalStmt;
     }
