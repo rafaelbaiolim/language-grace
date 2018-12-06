@@ -35,8 +35,10 @@ public class CompillerTest {
             "func/bubble-sort.xml",     //5
             "func/insertion-sort.xml",  //6
             "fib.xml",                  //7
-            "stop.xml",                 //8
-            "skip.xml",                 //9
+            "loop/stop.xml",            //8
+            "loop/skip.xml",            //9
+            "loop/skip-pares.xml",      //10
+            "loop/skip-impares.xml",    //11
     };
 
 //    private static final String TESTS_XML_RELATIVE_PATH = "tests/unit/cases/" + XML_FILE_NAME[0];
@@ -49,6 +51,8 @@ public class CompillerTest {
 //    private static final String TESTS_XML_RELATIVE_PATH = "tests/unit/cases/" + XML_FILE_NAME[7];
 //    private static final String TESTS_XML_RELATIVE_PATH = "tests/unit/cases/" + XML_FILE_NAME[8];
 //    private static final String TESTS_XML_RELATIVE_PATH = "tests/unit/cases/" + XML_FILE_NAME[9];
+//    private static final String TESTS_XML_RELATIVE_PATH = "tests/unit/cases/" + XML_FILE_NAME[10];
+    private static final String TESTS_XML_RELATIVE_PATH = "tests/unit/cases/" + XML_FILE_NAME[11];
 
     private String wanted;
     private String file;

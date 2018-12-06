@@ -1,6 +1,13 @@
-
 def main():int{
-    var a = 10:int;
-    var b:int;
-    b = (a == 2 ? 3 : 5);
+    var i=0:int;
+    var c:int;
+    while(i < 10){
+        c = i % 2;
+        if( c == 1){
+            i += 1;
+            skip;
+        }
+        write i, " ";
+        i += 1;
+    }
 }
