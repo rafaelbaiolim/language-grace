@@ -8,6 +8,7 @@ import org.bytedeco.javacpp.PointerPointer;
 import uem.listners.FrontEnd;
 import uem.semantic.CheckSymbols;
 import uem.utils.TestUtils;
+import uem.visitors.ExpressionVisitor;
 
 import java.util.*;
 
@@ -17,6 +18,7 @@ public class LLVMEmitter {
     public final LLVMContextRef context;
     public final LLVMModuleRef mod;
     public final LLVMBuilderRef builder;
+    public LLVMBasicBlockRef mainBlock;
     public final LLVMType types;
     private boolean optimization = true;
     public static final String FORMAT_NUMBER = "NUMBER";
@@ -24,6 +26,7 @@ public class LLVMEmitter {
     public static final String FORMAT_STRING = "STRING";
     public static final String PRINT_FUN_NAME = "printf";
     public static final String SCAN_FUN_NAME = "scanf";
+    public static final String TERN_FUN_NAME = "_ternary";
     private boolean dumpAssembly;
     BytePointer error;
 
@@ -174,7 +177,6 @@ public class LLVMEmitter {
         breakLocs.addLast(new ControlTransferLocation(end));
     }
 
-
     private static class ScopeFn {
         final LLVM.LLVMValueRef scope;
         /**
@@ -196,7 +198,6 @@ public class LLVMEmitter {
     public void pushScope(LLVMValueRef fn) {
         fnCtxts.push(new ScopeFn(fn));
     }
-
 
     /**
      * Desempilha Escopo de função LLVM
@@ -268,8 +269,44 @@ public class LLVMEmitter {
         LLVMDisposePassManager(pass);
     }
 
-
     public HashMap<String, LLVMValueRef> printerArgs = new HashMap<>();
+
+    private LLVMEmitter Ternary() {
+        List<LLVMTypeRef> args = new LinkedList<LLVMTypeRef>();
+        args.add(LLVMPointerType(types.i32(), 0));
+        args.add(LLVMPointerType(types.i32(), 0));
+        args.add(LLVMPointerType(types.i32(), 0));
+
+        LLVMPresets llp = LLVMPresets.getInstance();
+        LLVMValueRef fun = llp.buildScopeFn(TERN_FUN_NAME, LLVMInt32Type(), args);
+        LLVM.LLVMBasicBlockRef ternThen = llp.buildBlock("ternThen");
+        LLVM.LLVMBasicBlockRef ternElse = llp.buildBlock("ternElse");
+
+        LLVM.LLVMValueRef condParam = LLVMGetParam(fun, 0); //primeiro param cond
+        LLVMValueRef loadParamCond = LLVMBuildLoad(this.builder, condParam, "loadCondParam");
+
+        LLVM.LLVMValueRef thenParam = LLVMGetParam(fun, 1); //primeiro param cond
+        LLVMValueRef loadParamThen = LLVMBuildLoad(this.builder, thenParam, "loadThenParam");
+
+        LLVM.LLVMValueRef elseParam = LLVMGetParam(fun, 2); //primeiro param cond
+        LLVMValueRef loadParamElse = LLVMBuildLoad(this.builder, elseParam, "loadElseParam");
+
+        LLVMBuildCondBr(
+                LLVMEmitter.getInstance().builder,
+                loadParamCond,
+                ternThen,
+                ternElse);
+
+        //then label
+        LLVMPositionBuilderAtEnd(builder, ternThen);
+        LLVMBuildRet(builder, loadParamThen);
+
+        LLVMPositionBuilderAtEnd(builder, ternElse);
+        LLVMBuildRet(builder, loadParamElse);
+        LLVMPositionBuilderAtEnd(builder, mainBlock);
+        this.popScope();
+        return this;
+    }
 
     private LLVMEmitter Printer() {
         LLVMTypeRef PrintfArgsTyList[] = {
@@ -327,6 +364,12 @@ public class LLVMEmitter {
         return this;
     }
 
+    public void CallTernary(LLVMValueRef lvCond, LLVMValueRef lvThen, LLVMValueRef lvElse) {
+        LLVMValueRef tern = LLVMGetNamedFunction(this.mod, TERN_FUN_NAME);
+        LLVMValueRef args[] = {lvCond, lvThen, lvElse};
+        LLVMBuildCall(builder, tern, new PointerPointer(args), args.length, TERN_FUN_NAME);
+    }
+
     public void CallPrint(LLVMValueRef value, String format) {
         LLVMValueRef printArgs[] = {this.printerArgs.get(format), value};
         LLVMValueRef printf = LLVMGetNamedFunction(this.mod, PRINT_FUN_NAME);
@@ -338,7 +381,6 @@ public class LLVMEmitter {
         LLVMValueRef scanf = LLVMGetNamedFunction(this.mod, SCAN_FUN_NAME);
         LLVMBuildCall(builder, scanf, new PointerPointer(scanArgs), 2, SCAN_FUN_NAME);
     }
-
 
     public LLVMEmitter Bootstrap() {
         this.GetLLVMConfig();
@@ -355,12 +397,13 @@ public class LLVMEmitter {
 
         LLVMValueRef MainFunction = LLVMAddFunction(mod, "main", MainFunctionTy);
         LLVMBasicBlockRef BasicBlock = LLVMAppendBasicBlock(MainFunction, "entrypoint");
+        this.mainBlock = BasicBlock;
         LLVMPositionBuilderAtEnd(builder, BasicBlock);
-
         this.pushScope(MainFunction);
 
         this.Printer();
         this.Scanner();
+        this.Ternary();
         return this;
     }
 
