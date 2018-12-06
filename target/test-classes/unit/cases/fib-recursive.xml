@@ -1,0 +1,11 @@
+<!--Testes que precisam de mais memória não conseguem ser executados em lote,-->
+<!--devido ao GC do Java + as implementações estáticas da LLVM, colocar -->
+<!--este tipo de teste em arquivos separados;-->
+<tests>
+    <test>
+        <wanted>0 1 1 2 3</wanted>
+        <type>EQUALS</type>
+        <optimize>true</optimize>
+        <file>/home/rafaellb/Documents/uem/ilp2018/compilador2018/tests/assets/parser/test-fib-recursive.grc</file>
+    </test>
+</tests>
