@@ -1,8 +1,5 @@
 def main():int{
     var title = "Trabalho de compiladores 2018":string;
-    var i:int;
-    for(i = 0; i < 30; i+=1){
-        write title[i];
-    }
+    write title;
 
 }
