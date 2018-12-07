@@ -1,0 +1,9 @@
+def func():int{
+    return 0;
+}
+
+def main():int{
+    var arr[10]:int;
+    arr[func()] = 20;
+    write arr[0];
+}

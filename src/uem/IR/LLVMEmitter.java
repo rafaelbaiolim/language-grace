@@ -296,6 +296,20 @@ public class LLVMEmitter {
         return this;
     }
 
+    public LLVMValueRef LLVMBuildLocalString(String data, int len) {
+        LLVM.LLVMValueRef glob = LLVMAddGlobal(LLVMEmitter.getInstance().mod
+                , LLVMArrayType(LLVMEmitter.getInstance().types.i8(), len), "localString");
+
+        // set as internal linkage and constant
+        LLVMSetLinkage(glob, LLVMInternalLinkage);
+        LLVMSetGlobalConstant(glob, 1);
+
+        // Initialize with string:
+        LLVMSetInitializer(glob, LLVMConstString(data, len, 1));
+        return glob;
+    }
+
+
     public LLVMValueRef CallTernary(LLVMValueRef lvCond,
                                     LLVMValueRef lvThen,
                                     LLVMValueRef lvElse) {

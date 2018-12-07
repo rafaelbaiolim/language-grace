@@ -1,10 +1,6 @@
-def func():int{
-    return 0;
-}
-
 def main():int{
-    var arr[10]:int;
-    arr[func()] = 20;
-    write arr[0];
-
+    var x:int;
+    var a = 10:int;
+    x = a > 0 ? a * 2 : a + 1;
+    write x;
 }
