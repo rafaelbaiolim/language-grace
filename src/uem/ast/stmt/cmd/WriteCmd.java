@@ -8,7 +8,9 @@ import uem.IR.LLVMEmitter;
 import uem.ast.Position;
 import uem.ast.expr.Expression;
 import uem.ast.expr.StringLiteral;
+import uem.ast.expr.VarArrReference;
 import uem.ast.expr.VarReference;
+import uem.ast.type.StringType;
 import uem.listners.FrontEnd;
 
 import java.util.List;
@@ -63,16 +65,24 @@ public class WriteCmd implements CmdStatement {
                 if (expr instanceof StringLiteral) {
                     format = LLVMEmitter.FORMAT_STRING;
                 }
-
-                if(expr instanceof VarReference){
+                if (expr instanceof VarReference) {
                     String varName = ((VarReference) expr).getVarName();
                     Symbol sym = FrontEnd.currentScope.resolve(varName).getScope().getSymbol(varName);
-                    if(sym != null){
-                        VariableSymbol var  = ((VariableSymbol) sym);
+                    if (sym != null) {
+                        VariableSymbol var = ((VariableSymbol) sym);
                         format = var.getType().getName();
                     }
                 }
-
+                if (expr instanceof VarArrReference) {
+                    String varName = ((VarArrReference) expr).getVarName();
+                    Symbol sym = FrontEnd.currentScope.resolve(varName).getScope().getSymbol(varName);
+                    if (sym != null) {
+                        VariableSymbol var = ((VariableSymbol) sym);
+                        if (var.getType() instanceof StringType) {
+                            format = LLVMEmitter.FORMAT_CHAR;
+                        }
+                    }
+                }
                 LLVMEmitter.getInstance().CallPrint(
                         expr.getLLVMValue(),
                         format

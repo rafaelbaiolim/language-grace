@@ -2,9 +2,11 @@ package uem.ast.expr;
 
 import org.antlr.symtab.ParameterSymbol;
 import org.antlr.symtab.Symbol;
+import org.antlr.symtab.VariableSymbol;
 import org.bytedeco.javacpp.LLVM;
 import uem.IR.LLVMEmitter;
 import uem.IR.LLVMPresets;
+import uem.ast.type.StringType;
 import uem.listners.FrontEnd;
 
 import static org.bytedeco.javacpp.LLVM.LLVMBuildLoad;
@@ -30,7 +32,7 @@ public class VarArrReference extends VarRefExpression {
             Symbol sym = FrontEnd.currentScope.resolve(this.varName).getScope().getSymbol(this.varName);
             LLVM.LLVMValueRef calcIdx = llp.parseExprToInt(this.index);
 
-            if (sym instanceof ParameterSymbol) {
+            if (sym instanceof ParameterSymbol || ((VariableSymbol) sym).getType() instanceof StringType) {
                 LLVM.LLVMValueRef loadArr = LLVMBuildLoad(lle.builder,
                         arrAllocated, "getSavedArr");
 

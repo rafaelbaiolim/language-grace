@@ -24,6 +24,7 @@ public class LLVMEmitter {
     public static final String FORMAT_BOOL = "BOOL";
     public static final String FORMAT_STRING = "STRING";
     public static final String FORMAT_STRING_VAR = "STRING_VAR";
+    public static final String FORMAT_CHAR = "STRING_VAR";
     public static final String PRINT_FUN_NAME = "printf";
     public static final String SCAN_FUN_NAME = "scanf";
     public static final String TERN_FUN_NAME = "_ternary";
@@ -342,9 +343,14 @@ public class LLVMEmitter {
                     this.builder,
                     "%s",
                     ".format_string"
+            ), formatChar = LLVMBuildGlobalStringPtr(
+                    this.builder,
+                    "%c",
+                    ".format_char"
             );
             this.printerArgs.put(FORMAT_STRING, formatString);
             this.printerArgs.put(FORMAT_STRING_VAR, formatString);
+            this.printerArgs.put(FORMAT_CHAR, formatChar);
             this.printerArgs.put(FORMAT_NUMBER, formatNumber);
         } catch (Exception ex) {
             //System.out.println(ex.getMessage());
@@ -372,9 +378,14 @@ public class LLVMEmitter {
                     this.builder,
                     "%s",
                     ".sc_format_string"
+            ), formatChar = LLVMBuildGlobalStringPtr(
+                    this.builder,
+                    "%c",
+                    ".format_char"
             );
             this.scanArgs.put(FORMAT_STRING, formatString);
             this.printerArgs.put(FORMAT_STRING_VAR, formatString);
+            this.printerArgs.put(FORMAT_CHAR, formatChar);
             this.scanArgs.put(FORMAT_NUMBER, formatNumber);
         } catch (Exception ex) {
             //System.out.scanln(ex.getMessage());
