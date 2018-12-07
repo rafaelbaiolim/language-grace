@@ -1,6 +1,6 @@
 def main():int{
-    var x:int;
-    var a = 10:int;
-    x = a > 0 ? a * 2 : a + 1;
-    write x;
+    var title = "Trabalho de compiladores 2018":string;
+    write "***************";
+    write title;
+    write "***************\n";
 }

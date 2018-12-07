@@ -35,7 +35,7 @@ public class StringType implements Type {
 
     @Override
     public String getName() {
-        return LLVMEmitter.FORMAT_STRING;
+        return LLVMEmitter.FORMAT_STRING_VAR;
     }
 
     @Override

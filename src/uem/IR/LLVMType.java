@@ -46,6 +46,8 @@ public class LLVMType {
                 return this.i32();
             case LLVMEmitter.FORMAT_STRING:
                 return this.i8();
+            case LLVMEmitter.FORMAT_STRING_VAR:
+                return LLVMPointerType(this.i8(), 0);
         }
         return null;
     }
