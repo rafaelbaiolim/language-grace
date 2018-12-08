@@ -38,9 +38,13 @@ public class AtribVisitor extends GraceParserBaseVisitor<AtribCmd> {
         GraceParser.ExpressionContext expr = ctx.atrib().expression();
         Expression aExp = new ExpressionVisitor().visit(expr);
         //Semântico
-        this.validatePhases(ctx.atrib().ID().getText(), ctx.start, aExp);
+        String varName = ctx.atrib().ID().getText();
+        this.validatePhases(varName, ctx.start, aExp);
+        CheckSymbols.verifyIlegalArrayAtrib(ctx.start,
+                FrontEnd.resolveWithScope(varName));
 
-        return new AtribVar(ctx.atrib().ID().getText(),
+
+        return new AtribVar(varName,
                 ctx.atrib().operator.getText(),
                 new ExpressionVisitor().visit(expr)
         );

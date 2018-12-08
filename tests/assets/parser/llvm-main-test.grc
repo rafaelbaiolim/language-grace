@@ -1,8 +1,4 @@
-def valida(x:string){
-    write x;
-}
-
 def main():int{
-    var x = "Teste string":string;
-    valida(x);
+    var x[10]:int;
+
 }
