@@ -28,6 +28,10 @@ public class StringType implements Type {
         this.size = size;
     }
 
+    public int getSize() {
+        return this.size;
+    }
+
     @Override
     public int getType() {
         return GraceParser.T_STRING;
@@ -59,7 +63,7 @@ public class StringType implements Type {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "string";
     }
 }

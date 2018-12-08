@@ -85,7 +85,6 @@ public class SpecVarArr implements VarStatement {
     @Override
     public LLVMValueRef getLLVMValue(Type type) {
 
-
         LLVM.LLVMTypeRef typeArray = LLVMArrayType(
                 LLVMEmitter.getInstance().types.i32(),
                 Integer.parseInt(this.length)

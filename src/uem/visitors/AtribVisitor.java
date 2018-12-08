@@ -1,5 +1,6 @@
 package uem.visitors;
 
+import org.antlr.symtab.VariableSymbol;
 import org.antlr.v4.runtime.Token;
 import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseVisitor;
@@ -43,6 +44,11 @@ public class AtribVisitor extends GraceParserBaseVisitor<AtribCmd> {
         CheckSymbols.verifyIlegalArrayAtrib(ctx.start,
                 FrontEnd.resolveWithScope(varName));
 
+        CheckSymbols.verifySizeStringArr(
+                ctx.start,
+                (VariableSymbol) FrontEnd.resolveWithScope(varName),
+                ctx.atrib().getText()
+        );
 
         return new AtribVar(varName,
                 ctx.atrib().operator.getText(),

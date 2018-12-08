@@ -4,6 +4,7 @@ import org.antlr.symtab.Symbol;
 import org.antlr.symtab.VariableSymbol;
 import org.antlr.v4.runtime.Token;
 import uem.ast.expr.Expression;
+import uem.ast.type.StringType;
 import uem.listners.FrontEnd;
 
 public class CheckSymbols {
@@ -14,6 +15,7 @@ public class CheckSymbols {
     /**
      * Método genérico para mostrar indicar erros
      * semanticos e controlar a quantidade de erros
+     *
      * @param t
      * @param msg
      */
@@ -24,6 +26,7 @@ public class CheckSymbols {
 
     /**
      * Validação de simbulo já existente
+     *
      * @param varName
      * @param t
      * @param msg
@@ -41,6 +44,7 @@ public class CheckSymbols {
 
     /**
      * Valida total de arumentos de chamada de func
+     *
      * @param totDecl
      * @param totCall
      * @param t
@@ -67,6 +71,7 @@ public class CheckSymbols {
 
     /**
      * Sem main declarada
+     *
      * @return
      */
     public static boolean hasMainFatalEror() {
@@ -79,6 +84,7 @@ public class CheckSymbols {
     /**
      * Alias para função de tipos compativeis
      * utilizada para chamada de func / proc
+     *
      * @param tok
      * @param param
      * @param call
@@ -89,6 +95,7 @@ public class CheckSymbols {
 
     /**
      * Validação de tipos compativeis
+     *
      * @param tok
      * @param currentSym
      * @param expr
@@ -118,13 +125,22 @@ public class CheckSymbols {
 
     /**
      * Valida atribuição arr = exp
+     *
      * @param tok
      * @param paramSym
      */
-    public static void verifyIlegalArrayAtrib(Token tok,Symbol paramSym) {
+    public static void verifyIlegalArrayAtrib(Token tok, Symbol paramSym) {
         VariableSymbol sym = ((VariableSymbol) paramSym);
         if (sym.getType().toString().contains("[]") && sym.getType().toString().contains("int")) {
-            error(tok,":error: assignment to expression with array type");
+            error(tok, ":error: assignment to expression with array type");
+        }
+    }
+
+    public static void verifySizeStringArr(Token tok, VariableSymbol sym, String text) {
+        if (sym.getType() instanceof StringType) {
+            if (((StringType) sym.getType()).getSize() < text.length()) {
+                error(tok, ":error: not enough space allocated to string `" + sym.getName() + "`");
+            }
         }
     }
 }

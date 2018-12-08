@@ -83,12 +83,14 @@ public class FrontEnd extends GraceParserBaseListener {
 
     public static void pushScope(Scope s) {
         currentScope = s;
-//        System.out.println("entering: " + currentScope.getName() + ":" + s);
+//        System.out.println("Entering: " + currentScope.getName() + ":" + s);
     }
 
     public static void popScope() {
-//        System.out.println("leaving: " + currentScope.getName() + ":" + currentScope);
-        currentScope = currentScope.getEnclosingScope();
+//        System.out.println("Leaving: " + currentScope.getName() + ":" + currentScope);
+        if (currentScope.getEnclosingScope() != null) {
+            currentScope = currentScope.getEnclosingScope();
+        }
     }
 
     /**
@@ -129,6 +131,7 @@ public class FrontEnd extends GraceParserBaseListener {
                 //Exeções são tratados pelo semantico nos visitors
             }
         }
+        popScope();
     }
 
     private void enterMainScope(GraceParser.DecProcContext mainFun) {
