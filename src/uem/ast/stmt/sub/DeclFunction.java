@@ -15,7 +15,6 @@ import uem.listners.FrontEnd;
 import java.util.LinkedList;
 import java.util.List;
 
-import static org.bytedeco.javacpp.LLVM.LLVMInt32Type;
 import static org.bytedeco.javacpp.LLVM.LLVMPointerType;
 
 public class DeclFunction implements SubStatment {
@@ -95,19 +94,21 @@ public class DeclFunction implements SubStatment {
     }
 
     static void setParamsScopeFn(List<LLVM.LLVMTypeRef> args, List<Statement> params) {
-        try{
+        try {
+            LLVMEmitter lle = LLVMEmitter.getInstance();
             for (Statement param : params) {
                 VarStatement currentParam;
                 if (param instanceof SpecParam) {
                     currentParam = (SpecParam) param;
-                    args.add(LLVMInt32Type());
+                    args.add(lle.types.getByTypeName(((SpecParam) param).getType().getName()));
                 } else {
                     currentParam = (SpecParamArr) param;
-                    args.add(LLVMPointerType(LLVMInt32Type(), 0));
+                    args.add(LLVMPointerType(lle.types.getByTypeName(
+                            ((SpecParamArr) param).getType().getName()), 0));
 
                 }
             }
-        }catch (NullPointerException ne){
+        } catch (NullPointerException ne) {
             //casos especiais
         }
     }
