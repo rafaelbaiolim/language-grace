@@ -14,12 +14,19 @@ import java.util.*;
 import static org.bytedeco.javacpp.LLVM.*;
 
 public class LLVMEmitter {
+    //declarações
     public final LLVMContextRef context;
     public final LLVMModuleRef mod;
     public final LLVMBuilderRef builder;
     public LLVMBasicBlockRef mainBlock;
     public final LLVMType types;
-    private boolean optimization = true;
+
+    //flags de execução
+    private boolean optimization = false;
+    private boolean abortIfModFail = false;
+    private boolean dumpAssembly = true;
+
+    //constantes
     public static final String FORMAT_NUMBER = "NUMBER";
     public static final String FORMAT_BOOL = "BOOL";
     public static final String FORMAT_STRING = "STRING";
@@ -28,7 +35,6 @@ public class LLVMEmitter {
     public static final String PRINT_FUN_NAME = "printf";
     public static final String SCAN_FUN_NAME = "scanf";
     public static final String TERN_FUN_NAME = "_ternary";
-    private boolean dumpAssembly;
     BytePointer error;
 
     private LLVMEmitter(
@@ -104,6 +110,10 @@ public class LLVMEmitter {
 
     public void setDumpAssembly(boolean dumpAssembly) {
         this.dumpAssembly = dumpAssembly;
+    }
+
+    public void setAbortOnLLVMFail(boolean aborOnFail) {
+        this.abortIfModFail = aborOnFail;
     }
 
     public LLVMValueRef LLVMBuildAllocWithScope(LLVMTypeRef byTypeName, String varName) {
@@ -250,9 +260,11 @@ public class LLVMEmitter {
         CheckSymbols.hasMainFatalEror();
 
         LLVMPassManagerRef pass = LLVMCreatePassManager();
-        //TODO: deixar setavel via flag
-//        LLVMVerifyModule(mod, LLVMAbortProcessAction, error);
-//        LLVMDisposeMessage(error);
+
+        if (this.abortIfModFail) {
+            LLVMVerifyModule(mod, LLVMAbortProcessAction, error);
+            LLVMDisposeMessage(error);
+        }
 
         if (this.optimization) {
             LLVMAddConstantPropagationPass(pass);
@@ -369,7 +381,7 @@ public class LLVMEmitter {
                 ScanfArgsTyList[0], 1, 1
         );
         LLVMAddFunction(mod, SCAN_FUN_NAME, ScanfTy);
-        try { //TODO: generalizar esses argumentos scan e print
+        try {
             LLVMValueRef formatNumber = LLVMBuildGlobalStringPtr(
                     this.builder,
                     "%d",

@@ -32,6 +32,12 @@ public class FrontEnd extends GraceParserBaseListener {
         return currentScope.getName().toLowerCase().equals("condicional");
     }
 
+    /**
+     * Procura a primeira ocorrência de um tipo de escopo
+     * da folha para raíz
+     * @param scopeName
+     * @return
+     */
     public static Scope isWithinScope(String scopeName) {
         for (Scope scope : FrontEnd.currentScope.getEnclosingPathToRoot()) {
             if (scope.getName().equals(scopeName)) {
@@ -65,7 +71,6 @@ public class FrontEnd extends GraceParserBaseListener {
     /**
      * Pega a função que encapsula desconsidrendo o scopo global
      * e retorna seu tipo, se houver
-     *
      * @return
      */
     public static FunctionSymbol getFunctionWithin() {
@@ -81,11 +86,23 @@ public class FrontEnd extends GraceParserBaseListener {
         return fun;
     }
 
+    /**
+     * Empilha um escopo
+     * descomentar o print, para mostrar os simbulos pertencentes
+     * ao escopo
+     * @param s
+     */
     public static void pushScope(Scope s) {
         currentScope = s;
 //        System.out.println("entering: " + currentScope.getName() + ":" + s);
     }
 
+
+    /**
+     * Desempilha um escopo
+     * descomentar o print, para mostrar os simbulos pertencentes
+     * ao escopo
+     */
     public static void popScope() {
 //        System.out.println("leaving: " + currentScope.getName() + ":" + currentScope);
         currentScope = currentScope.getEnclosingScope();
@@ -118,26 +135,42 @@ public class FrontEnd extends GraceParserBaseListener {
                         continue;
                     }
                 }
-
+                new StatementVisitor().visit(stmt);
             } catch (Exception ex) {
+                /**
+                 * As exceptions são tratadas pelo semântico
+                 * no percurso dos visitors
+                 */
 //                System.out.println(ex.getMessage());
             }
-                new StatementVisitor().visit(stmt);
         }
     }
 
+    /**
+     * Entra no escopo da main como uma procedure
+     * @param mainFun
+     */
     private void enterMainScope(GraceParser.DecProcContext mainFun) {
         FunctionSymbol fSymbol = new FunctionSymbol("main", true);
         visitMain(fSymbol, mainFun.block());
         FrontEnd.popScope();
     }
 
+    /**
+     * Entra no escopo da main como uma function
+     * @param mainFun
+     */
     protected void enterMainScope(GraceParser.DecFuncContext mainFun) {
         FunctionSymbol fSymbol = new FunctionSymbol("main");
         visitMain(fSymbol, mainFun.block());
         FrontEnd.popScope();
     }
 
+    /**
+     * Percorre os statements da main
+     * @param fSymbol
+     * @param block
+     */
     private void visitMain(FunctionSymbol fSymbol, GraceParser.BlockContext block) {
         fSymbol.setEnclosingScope(FrontEnd.currentScope);
         FrontEnd.currentScope.define(fSymbol);

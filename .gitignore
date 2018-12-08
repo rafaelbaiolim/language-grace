@@ -4,6 +4,8 @@ generated/*
 !generated/*.g4
 ilp/out/*
 ilp/src/main/antlr/*.java
+libs/*
+target/*
 *.class
 *.idea
 hs_err_*

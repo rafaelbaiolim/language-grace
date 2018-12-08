@@ -132,7 +132,6 @@ public class AstMap {
      *
      * @param typeCtx
      * @return
-     * @TODO.: Verificar atribuição de tipos em particular para bool
      */
     public final Type getAst(LstTypeContext typeCtx) {
         String canonicalType = typeCtx.getClass().getCanonicalName();

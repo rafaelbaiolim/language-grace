@@ -1,4 +1,4 @@
-﻿# :carousel_horse:  Trabalho ILP 2018 
+﻿# Trabalho ILP 2018 
 
 Informática UEM 
 ================
@@ -7,11 +7,21 @@ utilizando a ferramenta antrl4.
 
 Doc Online Compilada.: https://din-ilp2018.readthedocs.io/en/latest
 
-[Branch de Instalação do Antrl4](https://github.com/rafaelbaiolim/compilador2018/tree/starting)
-
-
 Execução
 ==============================
+
+Parâmetros 
+----------
+
+| Arg          | Descrição      |
+| ------------- | ------------- |
+| 0 | Caminho absoluto do arquivo .grc |
+| -o | Ativar otimizações LLVM |
+| -a | Abortar geração de IR para módulos com warnings/erros |
+| -nd | Não mostrar o dump do IR |
+
+> `O output das execuções é gerado em..: tests/assets/llvm/out.bc`
+
 
 Terminal
 ------
@@ -25,7 +35,6 @@ InteliJ
 A build deste projeto assim como os testes unitários estão
 sendo executados na IDE InteliJ Community.
 
-
 1. Configurar como argumento de execução o arquivo de teste (colocar os arquivos de teste em unit/assets/(parser|lex))
 2. F6 para executar e gerar o assembly da linguagem 
 3. No terminal, pode ser da própria IDE, execute: ``$lli unit/assets/llvm/out.bc`` 
@@ -38,10 +47,8 @@ com a ferramenta antrl4 separadamente.
 ```
 $ antlr4 *.g4
 $ javac *.java
-$ grun Ilp command -tree 
+$ grun Grace command -tree 
 ```
-Caso o nome da linguagem seja alterado manter os arquivos no formato
-['NomeLP']Lexer.g4 e ['NomeLP']Parser.g4
 
 Livros 
 ==============================

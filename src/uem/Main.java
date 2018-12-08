@@ -18,24 +18,46 @@ import java.io.InputStream;
 
 import static org.bytedeco.javacpp.LLVM.*;
 
+/**
+ * Rafael Baiolim  .:83021
+ * Thiago Alberto  .:82703
+ * Ricardo Andrade .:61653
+ */
 public class Main {
-    //TODO: 1.Não Esquecer de documentar o modo optimization do assembly
-    public static void main(String[] args) throws IOException {
+
+    public static void main(String[] args) throws Exception {
         String inputFile = null;
         boolean optimization = false;
+        boolean dumpAssembly = true;
+        boolean abortModLLVMOnFail = false;
 
         if (args.length > 0) {
             inputFile = args[0];
+        }else{
+            throw new Exception("First argument require a .grc file.");
         }
+
         if (args.length > 1) {
-            optimization = Boolean.parseBoolean(args[1]);
+            for (String arg : args) {
+                if (arg.toLowerCase().equals("-a")) {
+                    abortModLLVMOnFail = true;
+                }
+                if (arg.toLowerCase().equals("-o")) {
+                    optimization = true;
+                }
+                if (arg.toLowerCase().equals("-nd")) { //no dump
+                    dumpAssembly = false;
+                }
+            }
         }
-        compile(inputFile, true, optimization);
+        compile(inputFile, dumpAssembly, optimization, abortModLLVMOnFail);
     }
 
     public static void compile(String inputFile,
                                boolean dumpAssembly,
-                               boolean optimization) throws IOException {
+                               boolean optimization,
+                               boolean abortOnFail)
+            throws IOException {
 
         InputStream inputFileStream = System.in;
         if (inputFile != null) {
@@ -60,9 +82,13 @@ public class Main {
                 mod,
                 builder
         );
+
         LLVMEmitter.getInstance().Bootstrap();
+        //flags dinâmicas de inicialização
         LLVMEmitter.getInstance().setOptimization(optimization);
         LLVMEmitter.getInstance().setDumpAssembly(dumpAssembly);
+        LLVMEmitter.getInstance().setAbortOnLLVMFail(abortOnFail);
+
         Ast ast = new Ast();
         FrontEnd frontEnd = new FrontEnd(ast);
         walker.walk(frontEnd, tree);

@@ -1,4 +1,34 @@
+var arr[5]={12,11,13,5,6}:int;
+
+def insertionSort(x[]:int; n:int){
+   var i, key, j:int;
+   for (i = 1; i < n; i+=1){
+       key = x[i];
+       j = i - 1;
+
+       while (j >= 0 && x[j] > key){
+           x[j+1] = x[j];
+           j = j-1;
+       }
+       x[j+1] = key;
+   }
+}
+
+def printArray(y[]:int; n:int)
+{
+   var i:int;
+   for (i=0; i < n; i+=1){
+       write y[i], " ";
+   }
+   write "\n";
+}
+
 def main():int{
-    var x[10]:int;
-    x[0] = 10;
+    write "inicial:";
+    printArray(arr, 5);
+    write "::";
+
+    insertionSort(arr, 5);
+    write "ordenado:";
+    printArray(arr, 5);
 }

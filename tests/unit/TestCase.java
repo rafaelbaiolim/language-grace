@@ -30,7 +30,7 @@ public class TestCase {
     }
 
     private void compileCurrentCase(String file, boolean opt) throws IOException {
-        Main.compile(file, false, opt);
+        Main.compile(file, false, opt, false);
         System.gc();
     }
 
