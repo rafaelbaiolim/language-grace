@@ -52,4 +52,9 @@ public class IntegerType implements Type {
     public LLVM.LLVMValueRef getLLVMValue() {
         return null;
     }
+
+    @Override
+    public String toString(){
+        return "int";
+    }
 }

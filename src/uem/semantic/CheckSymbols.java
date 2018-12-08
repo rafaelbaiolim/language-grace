@@ -3,8 +3,7 @@ package uem.semantic;
 import org.antlr.symtab.Symbol;
 import org.antlr.symtab.VariableSymbol;
 import org.antlr.v4.runtime.Token;
-import uem.ast.type.BooleanType;
-import uem.ast.type.IntegerType;
+import uem.ast.expr.Expression;
 import uem.listners.FrontEnd;
 
 public class CheckSymbols {
@@ -48,30 +47,33 @@ public class CheckSymbols {
     public static boolean hasMainFatalEror() {
         if (noMain) {
             System.err.printf("error: undefined reference to `main’\n");
-//          *TODO: DESCOMENTAR / VERIFICAR COM O NANNI System.exit(1);
         }
         return false;
     }
 
-    public static void checkTypeAtrib(Token tok, Symbol currentSym, String expr) {
+    public static void checkTypeParam(Token tok, VariableSymbol param, Expression call) {
+        checkTypeAtrib(tok, param, call);
+    }
+
+    public static void checkTypeAtrib(Token tok, Symbol currentSym, Expression expr) {
         try {
             VariableSymbol sym = ((VariableSymbol) currentSym);
-            if (sym.getType() instanceof IntegerType) {
-                if (!expr.matches("-?\\d+(\\.\\d+)?")) {
-                    error(tok, ":error: expecting integer type expression.");
+            if (!sym.getType().equals(expr.getType())) {
+                String typeName = sym.getType().toString();
+                String typeExpr = expr.getType().toString();
+                if (typeName.contains("[]")) {
+                    typeName = typeName.replace("[]", "");
+                }
+                if (typeExpr.contains("[]")) {
+                    typeExpr = typeExpr.replace("[]", "");
+                }
+                if (!typeName.equals(typeExpr)) {
+                    error(tok, ":error: expecting " + sym.getType().toString() +
+                            " type for `" + currentSym.getName() + "`, " +
+                            "" + expr.getType().toString() + " recived.");
                 }
             }
-            if (sym.getType() instanceof BooleanType) {
-                if (!expr.toLowerCase().equals("true") &&
-                        !expr.toLowerCase().equals("false")
-                ) {
-                    error(tok, ":error: expecting boolean type expression.");
-                }
-            }
-
-
         } catch (Exception ex) {
-
         }
     }
 }

@@ -12,6 +12,7 @@ import uem.semantic.CheckSymbols;
 import java.util.LinkedList;
 
 public class ReturnVisitor extends GraceParserBaseVisitor<Statement> {
+
     public Statement visitCmReturn(GraceParser.CmReturnContext ctx) {
         LinkedList<Expression> exprL = new LinkedList<Expression>();
         ctx.cmdReturn().expression().forEach(expr -> {
@@ -25,11 +26,10 @@ public class ReturnVisitor extends GraceParserBaseVisitor<Statement> {
         if(funScope != null){
             if(funScope.isProcedure()){
                 if(exprL.size() > 0){ // é procedure e ta retornando elementos
-                    CheckSymbols.error(ctx.start,"error: Procedure should not return value(s).");
+                    CheckSymbols.error(ctx.start,"error: Procedure should not return value(s)." );
                 }
             }
         }
-
         return new Return(exprL);
     }
 }

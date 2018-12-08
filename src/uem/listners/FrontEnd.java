@@ -119,10 +119,10 @@ public class FrontEnd extends GraceParserBaseListener {
                     }
                 }
 
-                new StatementVisitor().visit(stmt);
             } catch (Exception ex) {
-                System.out.println("++++++++++++EXECEPTION+++++++++++++++");
+//                System.out.println(ex.getMessage());
             }
+                new StatementVisitor().visit(stmt);
         }
     }
 

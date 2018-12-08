@@ -4,6 +4,8 @@ import org.antlr.v4.runtime.Token;
 import org.bytedeco.javacpp.LLVM;
 import uem.IR.LLVMEmitter;
 import uem.ast.Position;
+import uem.ast.type.IntegerType;
+import org.antlr.symtab.Type;
 
 import static org.bytedeco.javacpp.LLVM.LLVMBuildUDiv;
 
@@ -13,6 +15,7 @@ public class DivisionExpression implements BinaryExpression {
     private final Expression right;
     private final Position position;
     private Token symToken;
+    private Type type = new IntegerType();
 
     @Override
     public Expression getLeft() {
@@ -63,5 +66,15 @@ public class DivisionExpression implements BinaryExpression {
         );
 
         return result;
+    }
+
+    @Override
+    public void setType(Type type) {
+        this.type = type;
+    }
+
+    @Override
+    public Type getType() {
+        return this.type;
     }
 }

@@ -58,4 +58,8 @@ public class StringType implements Type {
         return null;
     }
 
+    @Override
+    public String toString(){
+        return "string";
+    }
 }

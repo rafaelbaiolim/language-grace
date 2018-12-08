@@ -5,12 +5,15 @@ import org.antlr.v4.runtime.Token;
 import org.bytedeco.javacpp.LLVM;
 import uem.IR.LLVMEmitter;
 import uem.ast.Position;
+import uem.ast.type.StringType;
+import org.antlr.symtab.Type;
 
 public class StringLiteral implements Expression {
 
     private final Position position;
     private String value;
     private Token symToken;
+    private Type type = new StringType();
 
     @Override
     public Position getPosition() {
@@ -48,6 +51,15 @@ public class StringLiteral implements Expression {
                 LLVMEmitter.getInstance().builder,
                 val,
                 "const_" + val);
+    }
 
+    @Override
+    public void setType(Type type) {
+        this.type = type;
+    }
+
+    @Override
+    public Type getType() {
+        return this.type;
     }
 }

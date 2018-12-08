@@ -1,8 +1,11 @@
 package uem.ast.expr;
 
+import org.antlr.symtab.VariableSymbol;
 import org.antlr.v4.runtime.Token;
 import org.bytedeco.javacpp.LLVM;
 import uem.ast.Position;
+import org.antlr.symtab.Type;
+import uem.listners.FrontEnd;
 
 public abstract class VarRefExpression implements Expression {
 
@@ -10,21 +13,9 @@ public abstract class VarRefExpression implements Expression {
     protected final Position position;
     protected Token symToken;
     protected LLVM.LLVMValueRef llvmValueRef;
-    protected String idx;
     protected Expression index;
+    private Type type;
 
-    /**
-     * Array Ref
-     *
-     * @param varName
-     * @param idex
-     */
-    public VarRefExpression(String varName, String idex) {
-        super();
-        this.varName = varName;
-        this.idx = idex;
-        this.position = null;
-    }
 
     /**
      * Arr Variable
@@ -47,12 +38,13 @@ public abstract class VarRefExpression implements Expression {
     public VarRefExpression(String varName) {
         super();
         this.varName = varName;
-        this.position = null;
-    }
 
-    protected VarRefExpression(String varName, Position position) {
-        this.varName = varName;
-        this.position = position;
+        VariableSymbol var = (VariableSymbol) FrontEnd.resolveWithScope(varName);
+        if (var != null) {
+            this.setType(var.getType());
+        }
+
+        this.position = null;
     }
 
     public String getVarName() {
@@ -77,5 +69,16 @@ public abstract class VarRefExpression implements Expression {
     @Override
     public LLVM.LLVMValueRef getLLVMValue() {
         return this.llvmValueRef;
+    }
+
+    @Override
+    public void setType(Type type) {
+        this.type = type;
+    }
+
+
+    @Override
+    public Type getType() {
+        return this.type;
     }
 }

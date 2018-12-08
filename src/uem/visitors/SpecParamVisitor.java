@@ -8,12 +8,11 @@ import uem.ast.stmt.Statement;
 
 public class SpecParamVisitor extends GraceParserBaseVisitor<Statement> {
     /**
-     * Consideramos um Parametro como uma Variável
-     *
      * @param ctxParam
      * @return
      */
     public Statement visitIdParam(GraceParser.IdParamContext ctxParam) {
+
         SpecParam spcVar = new SpecParam(ctxParam.ID().getText());
         spcVar.setSymbol(ctxParam.ID().getSymbol());
         return spcVar;
@@ -23,6 +22,7 @@ public class SpecParamVisitor extends GraceParserBaseVisitor<Statement> {
      * Arr Param
      */
     public Statement visitArrParam(GraceParser.ArrParamContext ctxParam) {
+
         SpecParamArr spcVarArr = new SpecParamArr(ctxParam.ID().getText());
         spcVarArr.setSymbol(ctxParam.ID().getSymbol());
         return spcVarArr;

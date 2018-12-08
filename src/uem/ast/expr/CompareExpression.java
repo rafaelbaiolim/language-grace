@@ -6,6 +6,8 @@ import org.bytedeco.javacpp.LLVM;
 import uem.IR.LLVMEmitter;
 import uem.IR.LLVMPresets;
 import uem.ast.Position;
+import uem.ast.type.BooleanType;
+import org.antlr.symtab.Type;
 
 import static org.bytedeco.javacpp.LLVM.LLVMBuildBinOp;
 import static org.bytedeco.javacpp.LLVM.LLVMBuildICmp;
@@ -17,6 +19,7 @@ public class CompareExpression implements BinaryExpression {
     private Expression left;
     private Token symToken;
     private String operator;
+    private Type type = new BooleanType();
 
     public CompareExpression(Expression right, Expression left, String operator) {
         super();
@@ -76,7 +79,16 @@ public class CompareExpression implements BinaryExpression {
                 this.right.getLLVMValue(),
                 "compare(" + this.operator + ")"
         );
-
-
     }
+
+    @Override
+    public void setType(Type type) {
+        this.type = type;
+    }
+
+    @Override
+    public Type getType() {
+        return this.type;
+    }
+
 }
