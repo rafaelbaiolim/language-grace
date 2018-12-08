@@ -25,10 +25,11 @@ Parâmetros
 
 Terminal
 ------
-1. ANTLR4 Lex e Parser (executar somente se o pacote uem.antlr estiver vazio)
+1. ANTLR4 Lex e Parser
 ```
 $ gradle generateGrammarSource && gradle copyTokenFile
 ```
+> `executar somente se o pacote uem.antlr estiver vazio`
 
 InteliJ
 ------
