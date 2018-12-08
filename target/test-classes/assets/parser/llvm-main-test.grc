@@ -1,34 +1,35 @@
-var arr[5]={12,11,13,5,6}:int;
+var i: int;
+var v[5]={5,4,3,2,1}: int;
 
-def insertionSort(x[]:int; n:int){
-   var i, key, j:int;
-   for (i = 1; i < n; i+=1){
-       key = x[i];
-       j = i - 1;
+def bubblesort(x[]: int; n: int) {
+    var l:int;
+    var k=0, j: int;
+    var trocou = 1: int;
+    while (k < (n - 1) && trocou == 1) {
+        trocou = 0;
+        for (j=0; j < (n - k - 1); j+=1) {
+            if ( x[j] > x[j+1] ) {
+                var aux = x[j]: int;
+                x[j] = x[j+1];
+                x[j+1] = aux;
+                trocou = 1;
+            }
+        }
+        k += 1;
+    }
 
-       while (j >= 0 && x[j] > key){
-           x[j+1] = x[j];
-           j = j-1;
-       }
-       x[j+1] = key;
-   }
 }
-
-def printArray(y[]:int; n:int)
-{
-   var i:int;
-   for (i=0; i < n; i+=1){
-       write y[i], " ";
-   }
-   write "\n";
-}
-
 def main():int{
-    write "inicial:";
-    printArray(arr, 5);
-    write "::";
-
-    insertionSort(arr, 5);
-    write "ordenado:";
-    printArray(arr, 5);
+    write "Arranjo Inicial:\n";
+    for (i=0; i<5; i+=1) {
+        write "A[", i, "] = ";
+        write v[i], " ";
+    }
+    bubblesort(v,5);
+    write "\n\nArranjo Ordenado:\n";
+    for (i=0; i<5; i+=1) {
+        write "A[", i, "] = ";
+        write v[i], " ";
+    }
+     write "\n";
 }

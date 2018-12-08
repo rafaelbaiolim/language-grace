@@ -18,11 +18,6 @@ def bubblesort(x[]: int; n: int) {
         k += 1;
     }
 
-    write ":: Arranjo Ordenado:";
-    for (l=0; l < 5; l+=1) {
-        write "A[", l, "] = ";
-        write x[l], " ";
-    }
 }
 def main():int{
     write "Arranjo Inicial:";
@@ -30,6 +25,10 @@ def main():int{
         write "A[", i, "] = ";
         write v[i], " ";
     }
-
     bubblesort(v,5);
+    write ":: Arranjo Ordenado:";
+    for (i=0; i<5; i+=1) {
+        write "A[", i, "] = ";
+        write v[i], " ";
+    }
 }
