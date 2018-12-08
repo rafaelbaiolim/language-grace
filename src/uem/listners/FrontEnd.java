@@ -120,9 +120,14 @@ public class FrontEnd extends GraceParserBaseListener {
                 }
 
             } catch (Exception ex) {
-//                System.out.println(ex.getMessage());
+                //Exeções são tratados pelo semantico nos visitors
+                //System.out.println(ex.getMessage());
             }
-            new StatementVisitor().visit(stmt);
+            try {
+                new StatementVisitor().visit(stmt);
+            } catch (Exception ex) {
+                //Exeções são tratados pelo semantico nos visitors
+            }
         }
     }
 
