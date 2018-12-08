@@ -20,21 +20,28 @@ public class CallProcVisitor extends GraceParserBaseVisitor<CallProcCmd> {
             lstExpr.add(new ExpressionVisitor().visit(stmtExpr));
         });
 
-        Symbol fun = FrontEnd.currentScope.getSymbol(ctx.ID().getText());
+        Symbol fun = FrontEnd.currentScope.resolve(ctx.ID().getText()).getScope().getSymbol(ctx.ID().getText());
         FunctionSymbol func = (FunctionSymbol) fun;
 
         /**
-         * semântico
+         * semântico - fun name
+         */
+        if (func == null) {
+            CheckSymbols.error(ctx.start, ":error: undefined reference to '" +
+                    ctx.ID().getText() + "(...)'.");
+        }
+
+        /**
+         * semântico - num param
          */
         try {
             int numParams = ((FunctionSymbol) fun).getNumberOfParameters();
             CheckSymbols.callFunError(
                     numParams, ctx.expression().size(), ctx.ID().getSymbol()
             );
-        }catch (Exception ex){
+        } catch (Exception ex) {
             //tratar exceção para procedure
         }
-
 
         CallProcCmd callCmd = new CallProcCmd(ctx.ID().getText(), lstExpr);
         try {

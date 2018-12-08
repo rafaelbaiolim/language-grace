@@ -1,16 +1,11 @@
 package uem.listners;
 
-import org.antlr.symtab.FunctionSymbol;
-import org.antlr.symtab.GlobalScope;
-import org.antlr.symtab.LocalScope;
-import org.antlr.symtab.Scope;
+import org.antlr.symtab.*;
 import uem.antlr.GraceParser;
 import uem.antlr.GraceParserBaseListener;
 import uem.ast.Ast;
-import uem.ast.stmt.sub.DeclFunction;
 import uem.semantic.CheckSymbols;
 import uem.visitors.BlockVisitor;
-import uem.visitors.DeclFunctionVisitor;
 import uem.visitors.StatementVisitor;
 
 public class FrontEnd extends GraceParserBaseListener {
@@ -46,7 +41,7 @@ public class FrontEnd extends GraceParserBaseListener {
         return null;
     }
 
-    public static LocalScope isWithinLoopScope(){
+    public static LocalScope isWithinLoopScope() {
         try {
             Scope enclosing = isWithinScope("while");
             if (enclosing == null) {
@@ -57,6 +52,15 @@ public class FrontEnd extends GraceParserBaseListener {
             return null;
         }
     }
+
+    public static Symbol resolveWithScope(String varName) {
+        Symbol currentSymbol = FrontEnd.currentScope.resolve(varName);
+        if (currentSymbol != null) {//garante que o simbulo ref é o do escopo
+            return currentSymbol.getScope().getSymbol(varName);
+        }
+        return null;
+    }
+
 
     /**
      * Pega a função que encapsula desconsidrendo o scopo global
@@ -89,7 +93,6 @@ public class FrontEnd extends GraceParserBaseListener {
 
     /**
      * Escopo Global
-     * TODO: Versão final: colocar try/catch
      */
     public void enterGraceFile(GraceParser.GraceFileContext ctx) {
 
@@ -115,9 +118,11 @@ public class FrontEnd extends GraceParserBaseListener {
                         continue;
                     }
                 }
+
+                new StatementVisitor().visit(stmt);
             } catch (Exception ex) {
+                System.out.println("++++++++++++EXECEPTION+++++++++++++++");
             }
-            new StatementVisitor().visit(stmt);
         }
     }
 

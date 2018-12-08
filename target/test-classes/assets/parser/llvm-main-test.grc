@@ -1,5 +1,4 @@
 def main():int{
-    var title = "Trabalho de compiladores 2018":string;
-    write title;
-
+    var minharola:bool;
+    minharola = false;
 }

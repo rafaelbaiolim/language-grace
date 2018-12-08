@@ -58,12 +58,12 @@ public class AtribVar extends AtribCmd {
                 break;
 
             default:
-                try{
+                try {
                     LLVMBuildStore(
                             LLVMEmitter.getInstance().builder,
                             this.getExpr().getLLVMValue(),
                             allocatedVar);
-                }catch(NullPointerException ne){
+                } catch (NullPointerException ne) {
                     //sem ref para LLVMValue
                 }
         }
