@@ -28,6 +28,8 @@ public class ReturnVisitor extends GraceParserBaseVisitor<Statement> {
                 if(exprL.size() > 0){ // é procedure e ta retornando elementos
                     CheckSymbols.error(ctx.start,"error: Procedure should not return value(s)." );
                 }
+            }else{
+                CheckSymbols.validateReturn(ctx.start,funScope,exprL);
             }
         }
         return new Return(exprL);

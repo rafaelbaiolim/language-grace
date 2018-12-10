@@ -1,11 +1,16 @@
 package uem.semantic;
 
+import org.antlr.symtab.FunctionSymbol;
 import org.antlr.symtab.Symbol;
+import org.antlr.symtab.Type;
 import org.antlr.symtab.VariableSymbol;
 import org.antlr.v4.runtime.Token;
 import uem.ast.expr.Expression;
+import uem.ast.expr.VarReference;
 import uem.ast.type.StringType;
 import uem.listners.FrontEnd;
+
+import java.util.LinkedList;
 
 public class CheckSymbols {
 
@@ -20,7 +25,7 @@ public class CheckSymbols {
      * @param msg
      */
     public static void error(Token t, String msg) {
-        System.err.printf("Line %d:%d %s\n: ", t.getLine(), t.getCharPositionInLine() + 1, msg);
+        System.err.printf("Line %d:%d %s\n", t.getLine(), t.getCharPositionInLine() + 1, msg);
         hasError++;
     }
 
@@ -93,6 +98,14 @@ public class CheckSymbols {
         checkTypeAtrib(tok, param, call);
     }
 
+    private static String simplifyTypeName(String typeName) {
+        if (typeName.contains("[]")) {
+            return typeName.replace("[]", "");
+        }
+        return typeName;
+    }
+
+
     /**
      * Validação de tipos compativeis
      *
@@ -104,15 +117,10 @@ public class CheckSymbols {
         try {
             VariableSymbol sym = ((VariableSymbol) currentSym);
             if (!sym.getType().equals(expr.getType())) {
-                String typeName = sym.getType().toString();
-                String typeExpr = expr.getType().toString();
+                String typeName = simplifyTypeName(sym.getType().toString());
+                String typeExpr = simplifyTypeName(expr.getType().toString());
+                typeName = simplifyTypeName(typeName);
 
-                if (typeName.contains("[]")) {
-                    typeName = typeName.replace("[]", "");
-                }
-                if (typeExpr.contains("[]")) {
-                    typeExpr = typeExpr.replace("[]", "");
-                }
                 if (!typeName.equals(typeExpr)) {
                     error(tok, ":error: expecting " + sym.getType().toString() +
                             " type for `" + currentSym.getName() + "`, " +
@@ -142,5 +150,33 @@ public class CheckSymbols {
                 error(tok, ":error: not enough space allocated to string `" + sym.getName() + "`");
             }
         }
+    }
+
+    public static void validateReturn(Token tok, FunctionSymbol funScope, LinkedList<Expression> exprL) {
+        try {
+            for (Expression expr : exprL) {
+                Type currentType = null;
+                if (expr instanceof VarReference) {
+                    Symbol sym = FrontEnd.resolveWithScope(((VarReference) expr).getVarName());
+                    currentType = ((VariableSymbol) sym).getType();
+                } else {
+                    currentType = expr.getType();
+                }
+
+                if (!funScope.getType().equals(currentType)) {
+                    String currentStrType = simplifyTypeName(currentType.toString());
+                    String funStrTypeName = simplifyTypeName(funScope.getType().toString());
+                    if (!funStrTypeName.equals(currentStrType)) {
+                        error(tok, ":error: expecting " + funStrTypeName +
+                                " return type for `" + funScope.getName() + "`, " +
+                                "" + currentStrType + " recived.");
+                        break;
+                    }
+                }
+            }
+        } catch (ClassCastException castEx) {
+            //não encontrou um varSymbol
+        }
+
     }
 }

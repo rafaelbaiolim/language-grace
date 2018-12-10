@@ -100,16 +100,11 @@ public class SpecParamArr implements VarStatement {
     @Override
     public LLVMValueRef getLLVMValue() {
         LLVMEmitter lle = LLVMEmitter.getInstance();
-        /**
-         * *TODO: ISSO TEM QUE VIR DO LLE
-         */
         LLVMTypeRef[] fac_args = {LLVMPointerType(LLVMInt32Type(), 0)};
-
         LLVM.LLVMValueRef allocForParam = LLVMBuildAlloca(
                 lle.builder,
                 fac_args[0],
                 "alocParam");
-
         FrontEnd.currentScope.setLLVMSymRef(this.varName, allocForParam);
         return allocForParam;
     }

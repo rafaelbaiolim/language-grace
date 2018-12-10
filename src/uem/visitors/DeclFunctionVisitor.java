@@ -1,7 +1,6 @@
 package uem.visitors;
 
 import org.antlr.symtab.FunctionSymbol;
-import org.antlr.symtab.ParameterSymbol;
 import uem.IR.LLVMEmitter;
 import uem.IR.LLVMPresets;
 import uem.antlr.GraceParser;
@@ -10,7 +9,6 @@ import uem.ast.stmt.Statement;
 import uem.ast.stmt.sub.DeclFunction;
 import uem.ast.type.Type;
 import uem.listners.FrontEnd;
-import uem.semantic.CheckSymbols;
 
 import java.util.LinkedList;
 
@@ -27,10 +25,7 @@ public class DeclFunctionVisitor extends GraceParserBaseVisitor<DeclFunction> {
         ((FunctionSymbol) FrontEnd.currentScope).setType(type);
 
         //define parametros para o escopo
-        params.forEach(param -> {
-            ParameterSymbol p = new ParameterSymbol(param.getVarName());
-            FrontEnd.currentScope.define(p);
-        });
+        DeclProcedureVisitor.defineParam(params);
         declFunction.setParams(params);
 
         //stmt

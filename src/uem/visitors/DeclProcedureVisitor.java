@@ -25,11 +25,7 @@ public class DeclProcedureVisitor extends GraceParserBaseVisitor<DeclProcedure> 
         LinkedList<Statement> params = new ListSpecParamVisitor().visitLstParam(ctx.lstParam());
 
         //define parametros para o escopo
-        params.forEach(param -> {
-            ParameterSymbol p = new ParameterSymbol(param.getVarName());
-            p.setType(((VarStatement) param).getType());
-            FrontEnd.currentScope.define(p);
-        });
+        defineParam(params);
         declProcedure.setParams(params);
 
         //stmt
@@ -37,11 +33,22 @@ public class DeclProcedureVisitor extends GraceParserBaseVisitor<DeclProcedure> 
 
         declProcedure.setBody(new BlockVisitor().visit(ctx.block()));
 
-        //TODO: Verificar se vai ser possível validar no semantico
         LLVMBuildRetVoid(LLVMEmitter.getInstance().builder);
         LLVMEmitter.getInstance().popScope();               //sai do escopo da função
         LLVMPresets.getInstance().finalizeFunctionScope();  //volta para o bloco anterior
         return declProcedure;
+    }
+
+    static void defineParam(LinkedList<Statement> params) {
+        params.forEach(param -> {
+            ParameterSymbol p = new ParameterSymbol(param.getVarName());
+            try {
+                p.setType(((VarStatement) param).getType());
+            } catch (ClassCastException ce) {
+                //não encerra a execução se a cast der errado
+            }
+            FrontEnd.currentScope.define(p);
+        });
     }
 
 

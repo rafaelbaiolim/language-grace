@@ -84,8 +84,7 @@ public class DeclProcedure implements SubStatment {
     }
 
     /**
-     * TODO:Generalizar para classe abstrata
-     *
+     * Para cada parâmetro pega o valor LLVM
      * @param fun
      * @param params
      * @param varName

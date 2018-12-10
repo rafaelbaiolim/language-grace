@@ -66,7 +66,7 @@ public class DeclVarVisitor extends GraceParserBaseVisitor<DeclVar> {
         try {
             FrontEnd.currentScope.define(v);
         } catch (java.lang.IllegalArgumentException ex) {
-            CheckSymbols.error(currentStmt.getSymbol(), "duplicate symbol `x`");
+            CheckSymbols.error(currentStmt.getSymbol(), ":error: redefinition of `" + v.getName() + "`");
         }
 
         currentStmt.getLLVMValue(type);
