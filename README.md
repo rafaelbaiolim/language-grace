@@ -1,4 +1,4 @@
-﻿# :carousel_horse:  Trabalho ILP 2018 
+﻿# Trabalho ILP 2018 
 
 Informática UEM 
 ================
