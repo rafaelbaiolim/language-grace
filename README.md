@@ -1,73 +1,70 @@
-﻿# Trabalho ILP 2018 
+﻿# Grace Language
 
-Informática UEM 
-================
-Repositório destinado a Implementação do Trabalho de ILP 2018 
-utilizando a ferramenta antrl4.
+Grace is a language with an academic purpose, elaborated on course of Compilers (Computer Science) from State University of Maringa. The version of this repository was developed using [Antlr4](https://www.antlr.org/), [Java 9](https://www.oracle.com/java/java9.html), [Gradle](https://gradle.org/), [LLVM 8.0](https://llvm.org/) and [JavaCPP](https://github.com/bytedeco/javacpp-presets) for generate the intermediate code.
 
-Doc Online Compilada.: https://din-ilp2018.readthedocs.io/en/latest
+The grammar of the language as well lexical, semantic and syntactic specifications can be consulted in:
 
-Execução
+https://din-ilp2018.readthedocs.io/en/latest
+
+Execution
 ==============================
 
-Parâmetros 
+Parameters 
 ----------
 
-| Arg          | Descrição      |
+| Arg          | Description      |
 | ------------- | ------------- |
-| 0 | Caminho absoluto do arquivo .grc |
-| -o | Ativar otimizações LLVM |
-| -a | Abortar geração de IR para módulos com warnings/erros |
-| -nd | Não mostrar o dump do IR |
+| 0 | Absolute path of .grc file |
+| -o | Enable LLVM optimizations |
+| -a | Abort IR generation for modules with warnings/errors |
+| -nd | Do not show the IR dump on terminal |
 
-> `O output das execuções é gerado em..: tests/assets/llvm/out.bc`
+> `The IR output file is generated on: tests/assets/llvm/out.bc`
 
 
-Terminal
+Console
 ------
-1. ANTLR4 Lex e Parser
+> `Only execute this step if package uem.antlr was empty.This repository already have one compiled version of this step`
+
+1. Execute ANTLR4 with Gradle as follow, for generate lex and parser files 
 ```
 $ gradle generateGrammarSource && gradle copyTokenFile
 ```
-> `executar somente se o pacote uem.antlr estiver vazio`
 
 InteliJ
 ------
-A build deste projeto assim como os testes unitários estão
-sendo executados na IDE InteliJ Community.
+The build of this project as well as the unit tests were
+running on the InteliJ Community IDE. This is how execute:
 
-1. Configurar como argumento de execução o arquivo de teste (colocar os arquivos de teste em unit/assets/(parser|lex))
-2. F6 para executar e gerar o assembly da linguagem 
-3. No terminal, pode ser da própria IDE, execute: ``$lli unit/assets/llvm/out.bc`` 
+1. Create a test `.grc` file on `tests/assets/parser/`, 
+and use this file as first argument on IDE execution. 
+
+2. F6 key, for execute and generate the assembly of language 
+
+3. On terminal (you could use IDE terminal), execute: ``$lli unit/assets/llvm/out.bc``
+(This should output the result of your code)
 
 Antrl4
 ==============================
-Os arquivos .g4 (src/main/antlr) podem ser executados/ testados 
-com a ferramenta antrl4 separadamente.
-
+The .G4 files `src/main/antlr` can be executed or tested
+with the antrl4 tool:
 ```
 $ antlr4 *.g4
 $ javac *.java
 $ grun Grace command -tree 
 ```
+I strongly recommend you to install [ANTLR4 plugin for InteliJ](https://plugins.jetbrains.com/plugin/7358-antlr-v4-grammar-plugin). 
+This way you can debug and validate your grammar much faster. 
 
-Testes Unitários
+Unit Tests
 ==============================
-1. Setar a pasta de `tests` como `test resource` na IDE.
-2. Como a LLVM possui a maior parte dos métodos e builders estáticos, 
-é necessário escrever cada teste em um XML separado.
-3. Insira uma nova entrada no [array de arquivos de testes](https://github.com/rafaelbaiolim/compilador2018/blob/1b96d887462019dc72f0044f1fd282c2553cbbbd/tests/unit/CompillerTest.java#L29) e 
-em seguida [insira a linha que referencia a entrada criada](https://github.com/rafaelbaiolim/compilador2018/blob/1b96d887462019dc72f0044f1fd282c2553cbbbd/tests/unit/CompillerTest.java#L57) .
+All tests was written in XML structure, if you want create one you could do as follow:
 
-Abaixo é mostrado um exemplo de teste unitário do trabalho
+1. Set the `tests` folder as `test resource` on `project structure` of your IDE.
+2. Because JavaCPP has the most methods and builders on static way, you must write each test in a separated XML.
+3. Add a new entry [ with XML name on array of tests files](https://github.com/rafaelbaiolim/compilador2018/blob/1b96d887462019dc72f0044f1fd282c2553cbbbd/tests/unit/CompillerTest.java#L29) and [create a new static final String of the line that references this entry on CompillerTest.java](https://github.com/rafaelbaiolim/compilador2018/blob/1b96d887462019dc72f0044f1fd282c2553cbbbd/tests/unit/CompillerTest.java#L57) .
 
-| Tag          | Descrição          |
-| ------------- | ------------- |
-| wanted | Valor esperado do output  |
-| type | EQUALS ou NOT_EQUALS |
-| optimize | Utilizar Otimizações ( true / false) |
-| file | Caminho absoluto do arquivo de teste .grc |
-
+This is how your XML test should like:
 ```xml
 <tests>
     <test>
@@ -78,3 +75,12 @@ Abaixo é mostrado um exemplo de teste unitário do trabalho
     </test>
 </tests>
 ```
+
+| Tag          | Description          |
+| ------------- | ------------- |
+| wanted | Expected value of llvm output |
+| type | EQUALS ou NOT_EQUALS |
+| optimize | Use llvm optimizations ( true or false) |
+| file | Absoule path of your `.grc` code |
+
+> I really hope this implementation helps someone who needs help with compiler development.
