@@ -79,7 +79,7 @@ This is how your XML test should like:
 | Tag          | Description          |
 | ------------- | ------------- |
 | wanted | Expected value of llvm output |
-| type | EQUALS ou NOT_EQUALS |
+| type | EQUALS or NOT_EQUALS |
 | optimize | Use llvm optimizations ( true or false) |
 | file | Absoule path of your `.grc` code |
 
